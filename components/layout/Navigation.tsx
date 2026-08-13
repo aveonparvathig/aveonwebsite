@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navigation } from "@/lib/constants";
 import TopBar from "./TopBar";
+import ProductIcon from "@/components/ui/ProductIcon";
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -87,25 +88,34 @@ export default function Navigation() {
                   >
                     <div className="animate-dropdown overflow-hidden rounded-2xl border border-navy-100 bg-white p-2.5 shadow-[0_20px_60px_-15px_rgb(16_26_51_/_0.25)]">
                       <div className={isProducts ? "grid grid-cols-2 gap-0.5" : ""}>
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className="group/item flex items-start gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-primary-50"
-                          >
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-navy-200 transition-colors group-hover/item:bg-primary-500" />
-                            <span>
-                              <span className="block text-sm font-semibold text-navy-900 group-hover/item:text-primary-700">
-                                {child.label}
-                              </span>
-                              {child.description && (
-                                <span className="mt-0.5 block text-xs text-navy-500">
-                                  {child.description}
+                        {item.children.map((child) => {
+                          const slug = child.href.split("/").pop() ?? "";
+                          return (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="group/item flex items-center gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-primary-50"
+                            >
+                              {isProducts ? (
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-600 transition-colors group-hover/item:bg-primary-600 group-hover/item:text-white">
+                                  <ProductIcon slug={slug} className="h-[18px] w-[18px]" />
                                 </span>
+                              ) : (
+                                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-navy-200 transition-colors group-hover/item:bg-primary-500" />
                               )}
-                            </span>
-                          </Link>
-                        ))}
+                              <span className="min-w-0">
+                                <span className="block truncate text-sm font-semibold text-navy-900 group-hover/item:text-primary-700">
+                                  {child.label}
+                                </span>
+                                {child.description && (
+                                  <span className="block text-[11px] font-medium uppercase tracking-wide text-navy-400">
+                                    {child.description}
+                                  </span>
+                                )}
+                              </span>
+                            </Link>
+                          );
+                        })}
                       </div>
                       {isProducts && (
                         <Link

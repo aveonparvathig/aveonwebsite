@@ -45,7 +45,11 @@ export async function fetchOrFallback<T>(
     const result = await sanityClient.fetch<T>(query, params, {
       next: { revalidate: 3600, tags: [SANITY_CACHE_TAG] },
     });
-    return result ?? fallback;
+    // Empty CMS (not yet populated, or all docs unpublished) → fallback.
+    if (result == null || (Array.isArray(result) && result.length === 0)) {
+      return fallback;
+    }
+    return result;
   } catch {
     return fallback;
   }
