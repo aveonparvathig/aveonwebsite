@@ -1,3 +1,5 @@
+import { products } from "./data/products";
+
 export const siteConfig = {
   name: "Aveon Infotech",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.aveoninfotech.com",
@@ -31,17 +33,11 @@ export const navigation: NavItem[] = [
   {
     label: "Products",
     href: "/products",
-    children: [
-      { label: "University ERP", href: "/products/university-erp" },
-      { label: "College ERP", href: "/products/college-erp" },
-      { label: "School ERP", href: "/products/school-erp" },
-      { label: "LMS & AI Chatbot", href: "/products/lms-ai-chatbot" },
-      { label: "HRM & Payroll", href: "/products/hrm-payroll" },
-      { label: "Library Management", href: "/products/library-management" },
-      { label: "Hostel & Mess", href: "/products/hostel-mess" },
-      { label: "Controller of Examination (COE)", href: "/products/coe" },
-      { label: "Inventory Management", href: "/products/inventory-management" },
-    ],
+    children: products.map((p) => ({
+      label: p.title,
+      href: `/products/${p.slug}`,
+      description: p.tagline,
+    })),
   },
   { label: "Solutions", href: "/solutions" },
   { label: "Blog", href: "/blog" },
