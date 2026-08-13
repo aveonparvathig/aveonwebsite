@@ -15,9 +15,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="rounded-lg bg-white px-3 py-2 inline-block">
-              <Image src="/images/aveon-logo.svg" alt="Aveon Infotech" width={140} height={30} />
-            </div>
+            <Image src="/images/aveon-logo.svg" alt="Aveon Infotech" width={150} height={32} />
             <p className="mt-4 text-sm leading-relaxed">
               Aveon Infotech builds comprehensive ERP solutions for universities,
               colleges and schools — trusted by institutions to run academics,

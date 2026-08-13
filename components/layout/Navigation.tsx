@@ -17,7 +17,7 @@ export default function Navigation() {
       <TopBar />
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center" aria-label="Aveon Infotech home">
-          <Image src="/images/aveon-logo.svg" alt="Aveon Infotech" width={160} height={35} priority />
+          <Image src="/images/aveon-logo-dark.svg" alt="Aveon Infotech" width={160} height={35} priority />
         </Link>
 
         {/* Desktop nav */}
