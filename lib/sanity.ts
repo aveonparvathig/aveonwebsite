@@ -2,7 +2,10 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+// The project id is public by design (it ships in the client bundle),
+// so a hardcoded default keeps the site + studio working even when the
+// env var isn't configured on the host.
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "jc3ht4hv";
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2026-08-01";
 
