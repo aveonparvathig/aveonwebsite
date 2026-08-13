@@ -1,7 +1,7 @@
 import { siteConfig } from "./constants";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const NOTIFY_TO = process.env.CONTACT_NOTIFY_EMAIL ?? siteConfig.email;
+const NOTIFY_TO = process.env.CONTACT_NOTIFY_EMAIL || siteConfig.email;
 
 /**
  * Send a notification email via Resend. When RESEND_API_KEY is not set

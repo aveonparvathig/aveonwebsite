@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Aveon Infotech",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.aveoninfotech.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.aveoninfotech.com",
   phone: "+91 87540 06483",
   email: "contact@aveoninfotech.com",
   address: "Coimbatore, Tamil Nadu, India",
