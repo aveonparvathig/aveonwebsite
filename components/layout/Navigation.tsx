@@ -5,14 +5,33 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navigation } from "@/lib/constants";
+import type { Product } from "@/lib/data/products";
 import TopBar from "./TopBar";
 import ProductIcon from "@/components/ui/ProductIcon";
 
-export default function Navigation() {
+export default function Navigation({
+  products,
+}: {
+  products?: Product[];
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  // CMS-driven product entries keep the menu in sync with published content.
+  const items = navigation.map((item) =>
+    item.label === "Products" && products?.length
+      ? {
+          ...item,
+          children: products.map((p) => ({
+            label: p.title,
+            href: `/products/${p.slug}`,
+            description: p.tagline,
+          })),
+        }
+      : item,
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -40,7 +59,7 @@ export default function Navigation() {
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-0.5 lg:flex">
-          {navigation.map((item) => {
+          {items.map((item) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
@@ -173,7 +192,7 @@ export default function Navigation() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="animate-dropdown max-h-[calc(100vh-120px)] overflow-y-auto border-t border-navy-100 bg-white px-4 pb-6 pt-2 lg:hidden">
-          {navigation.map((item) => (
+          {items.map((item) => (
             <div key={item.label} className="border-b border-navy-50 last:border-0">
               <div className="flex items-center justify-between">
                 <Link

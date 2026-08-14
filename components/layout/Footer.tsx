@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { navigation, siteConfig } from "@/lib/constants";
-import { products } from "@/lib/data/products";
+import { products as fallbackProducts, type Product } from "@/lib/data/products";
 import SocialIcon from "@/components/ui/SocialIcons";
 
-export default function Footer() {
+export default function Footer({
+  products = fallbackProducts,
+}: {
+  products?: Product[];
+}) {
   const year = new Date().getFullYear();
   const company = navigation.filter((n) =>
     ["About Us", "Solutions", "Blog", "Careers", "Partners", "Contact"].includes(n.label),
