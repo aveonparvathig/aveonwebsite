@@ -33,15 +33,15 @@ export async function generateMetadata({
 
 /** Per-product hero image (place PNGs/JPGs in /public/products/) */
 const heroImages: Record<string, string> = {
-  "university-erp": "/products/university-erp.png",
-  "college-erp": "/products/college-erp.png",
-  "school-erp": "/products/school-erp.png",
-  "lms-ai-chatbot": "/products/lms-ai-chatbot.png",
-  "hrm-payroll": "/products/hrm-payroll.png",
-  "library-management": "/products/library-management.png",
-  "hostel-mess": "/products/hostel-mess.png",
-  "coe": "/products/coe.png",
-  "inventory-management": "/products/inventory-management.png",
+  "university-erp": "/products/university.png",
+  "college-erp": "/products/cms.png",
+  "school-erp": "/products/school.png",
+  "lms-ai-chatbot": "/products/lms.png",
+  "hrm-payroll": "/products/hrm.png",
+  "library-management": "/products/lib.png",
+  "hostel-mess": "/products/hostel.png",
+  "coe": "/products/co.png",
+  "inventory-management": "/products/invent.png",
 };
 
 export default async function ProductPage({ params }: ProductPageProps) {
@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product = await loadProduct(slug);
   if (!product) notFound();
 
-  const heroImg = heroImages[product.slug] ?? "/images/dashboard_hero.png";
+  const heroImg = heroImages[product.slug] ?? "/images/university.png";
 
   const jsonLd = [
     productJsonLd(product),

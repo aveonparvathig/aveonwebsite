@@ -34,7 +34,7 @@ export default function AboutSection() {
         {/* RIGHT — Image */}
         <div className="relative overflow-hidden rounded-xl">
           <Image
-            src="/images/about-aveon.jpg"
+            src="/images/erp1.jpg"
             alt="Aveon team working together"
             width={900}
             height={600}

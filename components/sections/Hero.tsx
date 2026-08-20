@@ -6,21 +6,21 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/images/slide 3.png",
+    image: "/images/s33.png",
     title: "One Platform.",
     highlight: "Every Institution.",
     description:
       "Connect and manage Schools, Colleges and Universities through one unified campus management platform.",
   },
   {
-    image: "/images/qw.png",
+    image: "/images/s22.png",
     title: "Smarter Campus.",
     highlight: "Better Management.",
     description:
       "Simplify academic and administrative operations with a powerful digital campus management solution.",
   },
   {
-    image: "/images/slide 2.png",
+    image: "/images/s11.png",
     title: "Connected Campus.",
     highlight: "Powerful Operations.",
     description:

@@ -34,7 +34,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="We Build the Operating System for Education"
-        description="Aveon Infotech is an education technology company from Coimbatore, India — helping universities, colleges and schools run smarter campuses."
+        description="Aveon Infotech is an education technology company from Coimbatore, India helping universities, colleges and schools run smarter campuses."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Today our ERP platform powers universities, colleges and
-                schools across India — managing academics, admissions,
+                schools across India managing academics, admissions,
                 examinations, finance, hostels, libraries and people, all from
                 a single integrated system.
               </p>
