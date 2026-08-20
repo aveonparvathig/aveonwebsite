@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Aveon Infotech — book a demo, ask about our ERP products, or talk to our team.",
+    "Get in touch with Aveon Infotech to book a demo, ask about our ERP products, or talk to our team.",
 };
 
 const contactCards = [
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="Let's Talk About Your Campus"
-        description="Questions, demos, partnerships — we respond within one business day."
+        description="Questions, demos, partnerships we respond within one business day."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -83,7 +83,7 @@ export default function ContactPage() {
               Send a Message
             </h2>
             <p className="mt-2 text-navy-600">
-              For everything else — support, partnerships, careers.
+              For everything else, including support, partnerships, and careers.
             </p>
             <div className="mt-6 rounded-2xl border border-navy-100 bg-white p-6 shadow-card sm:p-8">
               <ContactForm />

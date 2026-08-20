@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 const departments = [
   {
     title: "Engineering",
-    text: "Product engineers building and evolving the nine-product Aveon platform.",
+    text: "Product engineers building and evolving the nine product Aveon platform.",
   },
   {
     title: "Implementation",
-    text: "Specialists who handle data migration, configuration and go-live for every campus.",
+    text: "Specialists who handle data migration, configuration and go live for every campus.",
   },
   {
     title: "Customer Success",
-    text: "Dedicated support teams answering institutions through phone, email and on-site visits.",
+    text: "Dedicated support teams answering institutions through phone email and on-site visits.",
   },
   {
     title: "Aveon Academy",
-    text: "Trainers who upskill administrators, faculty and staff on the platform.",
+    text: "Trainers who upskill administrators faculty and staff on the platform.",
   },
 ];
 

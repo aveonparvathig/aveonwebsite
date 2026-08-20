@@ -20,7 +20,7 @@ export const products: Product[] = [
     category: "erp",
     tagline: "Education ERP",
     description:
-      "End-to-end ERP for universities — academics, admissions, accounts, examinations, and departmental analytics in one integrated platform.",
+      "End-to-end ERP for universities covering admissions, accounts, examinations, and departmental analytics in one integrated platform.",
     features: [
       "Academics & curriculum management",
       "Admissions & enrollment workflows",
@@ -54,7 +54,7 @@ export const products: Product[] = [
     category: "erp",
     tagline: "Education ERP",
     description:
-      "Simple, reliable school management — attendance, communication, fees, transport, and academics for K-12 institutions.",
+      "Simple, reliable school management attendance, communication, fees, transport and academics for K-12 institutions.",
     features: [
       "Attendance & leave tracking",
       "Parent communication & alerts",
@@ -71,7 +71,7 @@ export const products: Product[] = [
     category: "lms",
     tagline: "Learning Management",
     description:
-      "A modern learning management system with an AI chatbot that answers student queries, delivers courses, and tracks learning outcomes.",
+      "A modern learning management system with an AI chatbot that answers student queries, delivers courses and tracks learning outcomes.",
     features: [
       "Course authoring & delivery",
       "AI chatbot for student support",
@@ -88,7 +88,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "HR Management",
     description:
-      "Human resource management and payroll processing built for educational institutions — from recruitment to retirement.",
+      "Human resource management and payroll processing built for educational institutions  from recruitment to retirement.",
     features: [
       "Employee records & self-service",
       "Payroll processing & payslips",
@@ -122,7 +122,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "Campus Management",
     description:
-      "Hostel room allotment, mess planning, attendance, and billing — manage residential campuses without spreadsheets.",
+      "Hostel room allotment, mess planning, attendance and billing  manage residential campuses without spreadsheets.",
     features: [
       "Room allotment & transfers",
       "Mess menu planning & food category tracking",
@@ -139,7 +139,7 @@ export const products: Product[] = [
     category: "erp",
     tagline: "Examination Management",
     description:
-      "Complete examination lifecycle management — question banks, hall tickets, valuation, moderation, and result publication.",
+      "Complete examination lifecycle management question banks, hall tickets, valuation, moderation and result publication.",
     features: [
       "Exam scheduling & hall tickets",
       "Question bank management",
@@ -156,7 +156,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "Campus Management",
     description:
-      "Track assets, stores, and purchases across departments with indent workflows, stock registers, and audit-ready reports.",
+      "Track assets, stores, and purchases across departments with indent workflows, stock registers and audit-ready reports.",
     features: [
       "Asset & stock registers",
       "Purchase & indent workflows",
