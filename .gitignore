@@ -42,3 +42,7 @@ next-env.d.ts
 
 # keep the env template
 !.env.example
+
+# Redesign source drop (not part of the app)
+/Responsive website redesign/
+/Responsive website redesign.zip
