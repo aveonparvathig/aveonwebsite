@@ -22,7 +22,7 @@ export default function Footer({
             <Image src="/images/aveon-logo-dark.svg" alt="Aveon Infotech" width={150} height={32} />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-600">
               Aveon Infotech builds comprehensive ERP solutions for
-              universities, colleges and schools — trusted by institutions to
+              universities, colleges and schools trusted by institutions to
               run academics, administration and everything in between.
             </p>
             <div className="mt-5 flex gap-2.5">

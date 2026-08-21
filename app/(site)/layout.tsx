@@ -10,10 +10,15 @@ export default async function SiteLayout({
   children: React.ReactNode;
 }) {
   // Fetched once here so the menu and footer stay in sync with the CMS.
-  const products = await fetchOrFallback<Product[]>(
+  const fetchedProducts = await fetchOrFallback<Product[]>(
     productsQuery,
     fallbackProducts,
   );
+
+  const products = fetchedProducts.map((p) => ({
+    ...p,
+    slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
+  }));
 
   return (
     <>

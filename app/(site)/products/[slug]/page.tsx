@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products, getProduct, type Product } from "@/lib/data/products";
 import { productJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
+import UniversityERPContent from "@/components/sections/UniversityERPContent";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -27,16 +29,28 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = await loadProduct(slug);
   if (!product) return {};
-  return {
-    title: product.title,
-    description: product.description,
-  };
+  return { title: product.title, description: product.description };
 }
+
+/** Per-product hero image (place PNGs/JPGs in /public/products/) */
+const heroImages: Record<string, string> = {
+  "university-erp": "/products/university.png",
+  "college-erp": "/products/cms.png",
+  "school-erp": "/products/school.png",
+  "lms-ai-chatbot": "/products/lms.png",
+  "hrm-payroll": "/products/hrm.png",
+  "library-management": "/products/lib.png",
+  "hostel-mess": "/products/hostel.png",
+  "coe": "/products/co.png",
+  "inventory-management": "/products/invent.png",
+};
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = await loadProduct(slug);
   if (!product) notFound();
+
+  const heroImg = heroImages[product.slug] ?? "/images/university.png";
 
   const jsonLd = [
     productJsonLd(product),
@@ -54,38 +68,63 @@ export default async function ProductPage({ params }: ProductPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="bg-gradient-to-b from-navy-50 to-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <p className="text-sm font-bold uppercase tracking-wider text-accent-600">
-            {product.tagline}
-          </p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-extrabold text-navy-900 sm:text-5xl">
-            {product.title}
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-navy-600">
-            {product.description}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact#demo"
-              className="inline-flex items-center gap-2 rounded-full bg-accent-500 px-7 py-3 text-sm font-semibold text-white hover:bg-accent-600"
-            >
-              Get a DEMO →
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-full border border-navy-200 px-7 py-3 text-sm font-semibold text-navy-900 hover:border-primary-400 hover:text-primary-600"
-            >
-              Talk to Us
-            </Link>
+      {/* ── Hero: 2-column split ── */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-navy-50 to-white border-b border-navy-100">
+        {/* ambient glows */}
+        <div aria-hidden className="pointer-events-none absolute -top-24 left-1/3 h-80 w-80 rounded-full bg-primary-200/30 blur-[100px]" />
+        <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-accent-200/20 blur-[80px]" />
+
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
+
+          {/* Left: text */}
+          <div>
+            <span className="inline-block rounded-full border border-primary-200 bg-primary-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-primary-600">
+              {product.tagline}
+            </span>
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-navy-900 sm:text-5xl xl:text-6xl">
+              {product.title}
+            </h1>
+            <p className="mt-5 max-w-lg text-lg leading-relaxed text-navy-600">
+              {product.description}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact#demo"
+                className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-700"
+              >
+                Get a DEMO →
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-full border border-navy-200 bg-white px-7 py-3 text-sm font-semibold text-navy-800 transition hover:border-primary-400 hover:text-primary-600"
+              >
+                Talk to Us
+              </Link>
+            </div>
+          </div>
+
+          {/* Right: product image */}
+          <div className="relative flex items-center justify-center">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-100/40 via-transparent to-accent-100/30 blur-2xl" />
+            <div className="relative overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
+              <Image
+                src={heroImg}
+                alt={`${product.title} dashboard`}
+                width={680}
+                height={430}
+                priority
+                className="w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
+      {product.slug === "university-erp" && <UniversityERPContent />}
+
+      {/* ── Key Features ── */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
-          Key Features
-        </h2>
+        <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Key Features</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {product.features.map((feature) => (
             <div
@@ -103,6 +142,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </section>
 
+      {/* ── Related Products ── */}
       <section className="mx-auto max-w-7xl px-4 pb-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-navy-900">Related Products</h2>
         <div className="mt-6 flex flex-wrap gap-3">

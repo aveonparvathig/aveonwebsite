@@ -19,7 +19,7 @@ export const testimonials: Testimonial[] = [
     name: "Prof. Meena Krishnan",
     role: "Principal",
     institution: "Autonomous Arts & Science College",
-    text: "The implementation team understood college workflows out of the box — attendance, internals, fee collection. Our staff needed just one week of training to go live.",
+    text: "The implementation team understood college workflows out of the box, including attendance, internals, and fee collection. Our staff needed just one week of training to go live.",
     rating: 5,
   },
   {

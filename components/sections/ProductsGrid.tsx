@@ -5,12 +5,17 @@ import { productsQuery } from "@/lib/queries";
 import ProductIcon from "@/components/ui/ProductIcon";
 
 export default async function ProductsGrid() {
-  const products = await fetchOrFallback<Product[]>(
+  const fetchedProducts = await fetchOrFallback<Product[]>(
     productsQuery,
     fallbackProducts,
   );
+  
+  const products = fetchedProducts.map((p) => ({
+    ...p,
+    slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
+  }));
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20 bg-transparent">
       <div className="mx-auto max-w-2xl text-center">
         <p className="text-sm font-bold uppercase tracking-wider text-primary-600">
           Our Products
@@ -20,7 +25,7 @@ export default async function ProductsGrid() {
         </h2>
         <p className="mt-4 text-base text-navy-600 sm:text-lg">
           Nine integrated products covering academics, administration, finance
-          and campus life — use them together or start with one.
+          and campus life  use them together or start with one.
         </p>
       </div>
 
@@ -29,7 +34,7 @@ export default async function ProductsGrid() {
           <Link
             key={product.slug}
             href={`/products/${product.slug}`}
-            className="group relative overflow-hidden rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary-300 hover:shadow-card-hover sm:p-7"
+            className="group relative overflow-hidden rounded-2xl border border-navy-100 p-6 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary-300 hover:shadow-card-hover sm:p-7"
           >
             {/* Top accent line on hover */}
             <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-primary-600 to-accent-500 transition-transform duration-300 group-hover:scale-x-100" />

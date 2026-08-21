@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const programs = [
   {
     title: "Administrator Certification",
-    text: "Deep-dive training for ERP administrators — configuration, user management, reports and troubleshooting.",
+    text: "Deep-dive training for ERP administrators  configuration, user management, reports and troubleshooting.",
     duration: "2 weeks",
   },
   {
@@ -26,7 +26,7 @@ const programs = [
   },
   {
     title: "COE Operations",
-    text: "Examination cell training — exam setup, valuation workflows, results and transcripts.",
+    text: "Examination cell training exam setup, valuation workflows, results and transcripts.",
     duration: "1 week",
   },
 ];
