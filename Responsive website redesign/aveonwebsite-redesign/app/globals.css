@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors — Aveon Infotech */
+  --color-primary-50: #eef5ff;
+  --color-primary-100: #d9e8ff;
+  --color-primary-200: #bcd7ff;
+  --color-primary-300: #8ebeff;
+  --color-primary-400: #599aff;
+  --color-primary-500: #3376ff;
+  --color-primary-600: #1d6ff2;
+  --color-primary-700: #153fd6;
+  --color-primary-800: #1836ad;
+  --color-primary-900: #1a3388;
+  --color-primary-950: #152153;
+
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+
+  --color-navy-50: #f4f6fb;
+  --color-navy-100: #e8ecf6;
+  --color-navy-200: #ccd6ea;
+  --color-navy-300: #9fb2d6;
+  --color-navy-400: #6c89bd;
+  --color-navy-500: #4a6ba6;
+  --color-navy-600: #38538b;
+  --color-navy-700: #2f4371;
+  --color-navy-800: #2a3a5f;
+  --color-navy-900: #101a33;
+  --color-navy-950: #0a0e27;
+
+  /* Single type family — Plus Jakarta Sans */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 14px 40px -22px rgb(16 26 51 / 0.3);
+  --shadow-card-hover: 0 30px 60px -24px rgb(16 26 51 / 0.35);
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-dropdown: dropdown 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  --animate-floaty: floaty 7s ease-in-out infinite;
+  --animate-floaty-slow: floatySlow 6s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes dropdown {
+    from { opacity: 0; transform: translateY(-8px) scale(0.99); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes floatySlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  @keyframes drawerIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-navy-900);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+}
+
+::selection {
+  background: var(--color-primary-600);
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
