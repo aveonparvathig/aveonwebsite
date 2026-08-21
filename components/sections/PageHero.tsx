@@ -8,18 +8,22 @@ export default function PageHero({
   description?: string;
 }) {
   return (
-    <section className="bg-gradient-to-b from-navy-50 to-white py-16 text-center lg:py-20 border-b border-navy-100">
-      <div className="mx-auto max-w-3xl px-4">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary-700 via-primary-800 to-navy-900 py-16 text-center lg:py-24">
+      {/* Decorative ambient glows */}
+      <div aria-hidden className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-primary-500/20 blur-[100px]" />
+      <div aria-hidden className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-accent-500/20 blur-[100px]" />
+
+      <div className="relative mx-auto max-w-3xl px-4">
         {eyebrow && (
-          <p className="text-sm font-bold uppercase tracking-wider text-primary-600">
+          <p className="text-sm font-bold uppercase tracking-wider text-primary-200">
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-3 text-4xl font-extrabold text-navy-900 sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-extrabold text-white sm:text-5xl">
           {title}
         </h1>
         {description && (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-navy-600">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-blue-100/90">
             {description}
           </p>
         )}

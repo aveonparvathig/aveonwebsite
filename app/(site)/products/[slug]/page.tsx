@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { products, getProduct, type Product } from "@/lib/data/products";
 import { productJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
+import UniversityERPContent from "@/components/sections/UniversityERPContent";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -118,6 +119,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </div>
       </section>
+
+      {product.slug === "university-erp" && <UniversityERPContent />}
 
       {/* ── Key Features ── */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
