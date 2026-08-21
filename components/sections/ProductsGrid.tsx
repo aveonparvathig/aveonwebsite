@@ -5,10 +5,15 @@ import { productsQuery } from "@/lib/queries";
 import ProductIcon from "@/components/ui/ProductIcon";
 
 export default async function ProductsGrid() {
-  const products = await fetchOrFallback<Product[]>(
+  const fetchedProducts = await fetchOrFallback<Product[]>(
     productsQuery,
     fallbackProducts,
   );
+  
+  const products = fetchedProducts.map((p) => ({
+    ...p,
+    slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
+  }));
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20 bg-transparent">
       <div className="mx-auto max-w-2xl text-center">
