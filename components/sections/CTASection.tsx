@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="mx-auto max-w-[1320px] px-4 pb-14 pt-6 sm:px-6 lg:px-10 lg:pb-22">
+    <section className="mx-auto max-w-[1320px] px-4 pb-12 pt-6 sm:px-6 lg:px-10 lg:pb-16">
       <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 px-6 py-14 text-center shadow-[0_40px_90px_-34px_rgb(29_111_242_/_0.7)] sm:px-15 lg:py-18">
         <div aria-hidden className="absolute -right-20 -top-20 h-65 w-65 rounded-full bg-accent-500/85" />
         <div aria-hidden className="absolute -bottom-28 -left-22 h-70 w-70 rounded-full bg-white/12" />

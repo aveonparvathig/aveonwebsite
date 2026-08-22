@@ -5,7 +5,7 @@ import { services } from "@/lib/data/services";
 export default function ServicesSection() {
   return (
     <section className="border-y border-navy-900/6 bg-[#f0f7ff]">
-      <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-6 lg:px-10 lg:py-22">
+      <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-6 lg:px-10 lg:py-14">
         <div className="flex flex-wrap items-end justify-between gap-5.5">
           <div>
             <span className="inline-block rounded-full bg-accent-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">
