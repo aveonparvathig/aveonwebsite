@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products, getProduct, type Product } from "@/lib/data/products";
-import { productJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import UniversityERPContent from "@/components/sections/UniversityERPContent";
+import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
+import CollegeDashboardMockup from "@/components/sections/CollegeDashboardMockup";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -23,13 +25,41 @@ async function loadProduct(slug: string): Promise<Product | undefined> {
   );
 }
 
+/** Per-slug SEO overrides (title/description/keywords) for high-value pages. */
+const seoOverrides: Record<string, Metadata> = {
+  "college-erp": {
+    title: "College ERP Software | Complete Campus Management System",
+    description:
+      "Manage your complete college digitally with Aveon College ERP. Admissions, academics, OBE, CBCS, COE, fees, library, hostel, HR, placement, NAAC, communication and analytics.",
+    keywords: [
+      "College ERP Software",
+      "College Management Software",
+      "Campus Management System",
+      "Higher Education ERP",
+      "Academic Management System",
+      "Student Management System",
+      "COE Management System",
+      "College Fee Management Software",
+      "College Hostel Management Software",
+      "College Library Management Software",
+      "College HR & Payroll Software",
+      "College Placement Management Software",
+    ],
+  },
+};
+
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
   const product = await loadProduct(slug);
   if (!product) return {};
-  return { title: product.title, description: product.description };
+  const override = seoOverrides[slug];
+  return {
+    title: override?.title ?? product.title,
+    description: override?.description ?? product.description,
+    ...(override?.keywords ? { keywords: override.keywords } : {}),
+  };
 }
 
 /** Per-product hero image (place PNGs/JPGs in /public/products/) */
@@ -59,6 +89,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       { name: "Products", href: "/products" },
       { name: product.title, href: `/products/${product.slug}` },
     ]),
+    ...(product.slug === "college-erp" ? [faqJsonLd(collegeErpFaqs)] : []),
   ];
 
   return (
@@ -74,7 +105,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div aria-hidden className="pointer-events-none absolute -top-24 left-1/3 h-80 w-80 rounded-full bg-primary-200/30 blur-[100px]" />
         <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-accent-200/20 blur-[80px]" />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-14 lg:grid-cols-2 lg:py-20">
 
           {/* Left: text */}
           <div>
@@ -103,27 +134,32 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          {/* Right: product image */}
-          <div className="relative flex items-center justify-center">
+          {/* Right: product image (College ERP uses a bespoke dashboard mockup) */}
+          <div className="relative flex w-full items-center justify-center">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-100/40 via-transparent to-accent-100/30 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
-              <Image
-                src={heroImg}
-                alt={`${product.title} dashboard`}
-                width={680}
-                height={430}
-                priority
-                className="w-full object-cover"
-              />
+            <div className="relative w-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
+              {product.slug === "college-erp" ? (
+                <CollegeDashboardMockup />
+              ) : (
+                <Image
+                  src={heroImg}
+                  alt={`${product.title} dashboard`}
+                  width={680}
+                  height={430}
+                  priority
+                  className="w-full object-cover"
+                />
+              )}
             </div>
           </div>
         </div>
       </section>
 
       {product.slug === "university-erp" && <UniversityERPContent />}
+      {product.slug === "college-erp" && <CollegeERPContent />}
 
       {/* ── Key Features ── */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Key Features</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {product.features.map((feature) => (

@@ -1,30 +1,39 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import HeroDashboard, { type HeroVariant } from "@/components/sections/HeroDashboards";
 
-const slides = [
+const slides: {
+  variant: HeroVariant;
+  title: string;
+  highlight: string;
+  description: string;
+  caption: string;
+}[] = [
   {
-    image: "/images/s33-hero.png",
+    variant: "exam",
     title: "One Platform.",
     highlight: "Every Institution.",
     description:
       "Connect and manage Schools, Colleges and Universities through one unified campus management platform.",
+    caption: "EXAM & RESULT ANALYTICS",
   },
   {
-    image: "/images/s22-hero.png",
+    variant: "payroll",
     title: "Smarter Campus.",
     highlight: "Better Management.",
     description:
       "Simplify academic and administrative operations with a powerful digital campus management solution.",
+    caption: "PAYROLL & FINANCE",
   },
   {
-    image: "/images/s11-hero.png",
+    variant: "hostel",
     title: "Connected Campus.",
     highlight: "Powerful Operations.",
     description:
       "Bring your entire institution together with automation, analytics and centralized campus management.",
+    caption: "HOSTEL & MESS",
   },
 ];
 
@@ -85,7 +94,7 @@ export default function Hero() {
           <div className="mt-8.5 flex items-center gap-2.5">
             {slides.map((s, i) => (
               <button
-                key={s.image}
+                key={s.variant}
                 type="button"
                 onClick={() => setCurrent(i)}
                 aria-label={`Go to slide ${i + 1}`}
@@ -107,32 +116,90 @@ export default function Hero() {
               <span className="h-2.25 w-2.25 rounded-full bg-[#ff5f57]" />
               <span className="h-2.25 w-2.25 rounded-full bg-[#febc2e]" />
               <span className="h-2.25 w-2.25 rounded-full bg-[#28c840]" />
+              <span className="ml-3 text-[11.5px] font-bold tracking-[0.05em] text-[#8a97b4]">
+                {slide.caption}
+              </span>
             </div>
-            <div className="relative aspect-[1.12/1] w-full bg-[#f4f8ff]">
+            <div className="relative aspect-[640/440] w-full bg-[#f4f8ff]">
               {slides.map((s, i) => (
-                <Image
-                  key={s.image}
-                  src={s.image}
-                  alt={`${s.title} ${s.highlight}`}
-                  fill
-                  priority={i === 0}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className={`object-cover transition-opacity duration-[800ms] ${i === current ? "opacity-100" : "opacity-0"}`}
-                />
+                <div
+                  key={s.variant}
+                  aria-hidden={i !== current}
+                  className={`absolute inset-0 transition-opacity duration-[800ms] ${i === current ? "opacity-100" : "opacity-0"}`}
+                >
+                  <HeroDashboard variant={s.variant} />
+                </div>
               ))}
             </div>
           </div>
 
-          <div className="absolute -left-1 bottom-3.5 flex animate-floaty-slow items-center gap-3 rounded-[20px] bg-white px-4.5 py-3.5 shadow-[0_24px_50px_-20px_rgb(16_26_51_/_0.4)]">
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-50 text-primary-600">
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.5l3.75-3.75 3 3L16.5 6l4.5 4.5M3 20.25h18" />
-              </svg>
-            </span>
-            <span>
-              <span className="block text-[19px] font-extrabold text-navy-900">1M+</span>
-              <span className="block text-xs font-semibold text-navy-600">Students Managed</span>
-            </span>
+          {/* Animated enrolment stat card */}
+          <div className="absolute -left-14 bottom-[-34px] z-[2] w-[206px] animate-floaty-slow rounded-[22px] border border-navy-900/7 bg-white px-4.5 py-4 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)]">
+            <div className="flex items-start justify-between gap-2.5">
+              <span>
+                <span className="block text-[10.5px] font-extrabold uppercase tracking-[0.14em] text-[#8a97b4]">
+                  Enrolment
+                </span>
+                <span className="mt-1 block animate-count-pulse text-[22px] font-extrabold tracking-[-0.02em] text-navy-900">
+                  1M+
+                </span>
+              </span>
+              <span className="inline-flex items-center gap-0.5 rounded-full bg-[#ecfdf3] px-2 py-1 text-[11px] font-extrabold text-[#067647]">
+                <svg className="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5V4.5M12 4.5L5.25 11.25M12 4.5l6.75 6.75" />
+                </svg>
+                18%
+              </span>
+            </div>
+
+            <svg viewBox="0 0 200 62" width="100%" height="52" className="mt-2.5 block overflow-visible" aria-hidden>
+              <defs>
+                <linearGradient id="heroSparkFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#1d6ff2" stopOpacity="0.26" />
+                  <stop offset="100%" stopColor="#1d6ff2" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M2 52 L2 46 L30 40 L58 44 L86 28 L114 32 L142 16 L170 20 L198 6 L198 52 Z"
+                fill="url(#heroSparkFill)"
+                className="animate-fade-in"
+              />
+              <path
+                d="M2 46 L30 40 L58 44 L86 28 L114 32 L142 16 L170 20 L198 6"
+                fill="none"
+                stroke="#1d6ff2"
+                strokeWidth="2.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="animate-draw-line"
+                style={{ strokeDasharray: 520 }}
+              />
+              <circle
+                r="4"
+                fill="#f97316"
+                stroke="#fff"
+                strokeWidth="2"
+                className="animate-sweep-dot"
+                style={{ offsetPath: "path('M2 46 L30 40 L58 44 L86 28 L114 32 L142 16 L170 20 L198 6')" }}
+              />
+            </svg>
+
+            <div className="mt-3 flex h-[34px] items-end gap-1.5">
+              {[
+                { h: "38%", bg: "bg-[#d9e8ff]", d: "0s" },
+                { h: "62%", bg: "bg-[#bcd7ff]", d: "0.12s" },
+                { h: "48%", bg: "bg-[#d9e8ff]", d: "0.24s" },
+                { h: "82%", bg: "bg-primary-600", d: "0.36s" },
+                { h: "56%", bg: "bg-[#bcd7ff]", d: "0.48s" },
+                { h: "100%", bg: "bg-accent-500", d: "0.6s" },
+              ].map((bar, i) => (
+                <span
+                  key={i}
+                  className={`flex-1 origin-bottom animate-rise-bar rounded-t-[4px] ${bar.bg}`}
+                  style={{ height: bar.h, animationDelay: bar.d }}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="absolute -right-0.5 top-2 flex items-center gap-2.5 rounded-[18px] bg-navy-900 px-4 py-3 shadow-[0_24px_50px_-22px_rgb(16_26_51_/_0.6)]">

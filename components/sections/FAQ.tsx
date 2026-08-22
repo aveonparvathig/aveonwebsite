@@ -35,7 +35,7 @@ export function faqJsonLd() {
 
 export default function FAQ() {
   return (
-    <section className="mx-auto max-w-[860px] px-4 pb-16 sm:px-6 lg:pb-22">
+    <section className="mx-auto max-w-[860px] px-4 pb-12 sm:px-6 lg:pb-16">
       <h2 className="text-center text-[clamp(26px,3.2vw,38px)] font-extrabold text-navy-900">
         Frequently Asked Questions
       </h2>

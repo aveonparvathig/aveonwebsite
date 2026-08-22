@@ -27,7 +27,7 @@ export default async function Testimonials() {
   const items = await fetchOrFallback<Testimonial[]>(testimonialsQuery, fallbackTestimonials);
 
   return (
-    <section className="mx-auto max-w-[1320px] px-4 py-14 sm:px-6 lg:px-10 lg:py-22">
+    <section className="mx-auto max-w-[1320px] px-4 py-12 sm:px-6 lg:px-10 lg:py-14">
       <div className="mx-auto max-w-[620px] text-center">
         <span className="inline-block rounded-full bg-accent-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">
           Testimonials

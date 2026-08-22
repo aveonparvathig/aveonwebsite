@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -31,7 +32,21 @@ export default function Navigation({ products }: { products?: Product[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  // Portal target is only available after mount (avoids SSR/document errors).
+  useEffect(() => setMounted(true), []);
+
+  // Lock background scroll while the mobile drawer is open.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [mobileOpen]);
 
   // CMS-driven product entries keep the Products mega menu in sync.
   const items: NavItem[] = navigation.map((item) => {
@@ -193,9 +208,11 @@ export default function Navigation({ products }: { products?: Product[] }) {
         </div>
       )}
 
-      {/* Mobile drawer */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-[60] flex justify-end xl:hidden">
+      {/* Mobile drawer — portaled to <body> so `fixed` covers the viewport
+          instead of being trapped by the header's backdrop-filter containing block. */}
+      {mounted && mobileOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[60] flex justify-end xl:hidden">
           <div
             onClick={() => setMobileOpen(false)}
             className="absolute inset-0 bg-navy-900/50 backdrop-blur-sm"
@@ -286,8 +303,9 @@ export default function Navigation({ products }: { products?: Product[] }) {
               </div>
             </div>
           </aside>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
     </header>
   );
 }

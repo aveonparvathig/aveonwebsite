@@ -20,7 +20,7 @@ export default async function ProductsGrid() {
 
   return (
     <section className="bg-gradient-to-b from-navy-50 to-white">
-      <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-6 lg:px-10 lg:py-22">
+      <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-6 lg:px-10 lg:py-14">
         <div className="mx-auto max-w-[660px] text-center">
           <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
             Our Products
