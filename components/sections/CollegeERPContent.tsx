@@ -292,6 +292,34 @@ const DEEP_MODULES: DeepModule[] = [
       },
     ],
   },
+  {
+    title: "Inventory & Asset Management",
+    summary: "Track every store item and asset — from purchase to write-off — across all departments.",
+    groups: [
+      {
+        label: "Inventory & Stores",
+        items: [
+          "Item categories & stock registers",
+          "Indent & requisition workflow",
+          "Purchase orders & goods receipt",
+          "Issue, return & inter-department transfers",
+          "Minimum-level & reorder alerts",
+          "Supplier management & stock verification",
+        ],
+      },
+      {
+        label: "Assets",
+        items: [
+          "Asset register & categorisation",
+          "Barcode / tag & department allocation",
+          "Maintenance & service tracking",
+          "Depreciation & valuation",
+          "Audit & physical verification",
+          "Disposal & write-off",
+        ],
+      },
+    ],
+  },
 ];
 
 /** Student lifecycle — 16 stages grouped into 4 phases, rendered as a staircase. */
@@ -322,6 +350,11 @@ const STAKEHOLDERS = [
     role: "Management",
     line: "See it. Understand it. Lead it.",
     text: "Live dashboards on admissions, fees, results and staff — so you lead with facts, not guesswork.",
+  },
+  {
+    role: "Principal",
+    line: "Lead academics with confidence.",
+    text: "Track attendance, results, faculty performance and outcomes across every department — and act early where it matters.",
   },
   {
     role: "Administrators",
