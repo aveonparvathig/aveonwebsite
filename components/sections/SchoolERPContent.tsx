@@ -4,26 +4,26 @@ import Link from "next/link";
    Data
    ────────────────────────────────────────────────────────────── */
 
-/** Department nodes orbiting the platform hub in the intro graphic. */
-const UNI_NODES = ["Admissions", "Academics", "Examinations", "Research", "Placement", "Hostel", "Library", "Fees"];
+/** Function nodes orbiting the platform hub in the intro graphic. */
+const SCHOOL_NODES = ["Admissions", "Academics", "Attendance", "Exams", "Fees", "Transport", "Library", "Parents"];
 
 /** Module ecosystem — four functional groups. */
-const UNI_GROUPS: { title: string; items: string[] }[] = [
+const SCHOOL_GROUPS: { title: string; items: string[] }[] = [
   {
-    title: "Academic & Student",
-    items: ["Admission Management", "Student Information", "Academic Management", "Attendance", "OBE", "CBCS & Open Elective", "Learning Management (LMS)"],
+    title: "Student & Academic",
+    items: ["Admission Management", "Student Information", "Class & Section", "Academic Management", "Subject & Timetable", "Attendance", "Assignments", "Teacher Management"],
   },
   {
     title: "Examination & Assessment",
-    items: ["Controller of Examination", "Question Papers", "Exam Scheduling", "Hall & Seating", "Marks & Moderation", "Result Processing", "Revaluation & Supplementary"],
+    items: ["Examination Management", "Exam Scheduling", "Marks Management", "Result Management", "Report Cards", "Student Performance"],
   },
   {
     title: "Administration & Operations",
-    items: ["Fee Management", "Library", "Hostel & Mess", "HR Management", "Payroll", "Transport", "Communication"],
+    items: ["Fee Management", "Staff Management", "Payroll", "Library", "Transport", "Communication", "Notifications", "Reports & Dashboards"],
   },
   {
-    title: "Institutional Development",
-    items: ["Research & Activities", "NAAC Data", "Placement", "Alumni", "Feedback & Grievance", "Reports & Analytics"],
+    title: "Parent & Student Services",
+    items: ["Student Portal", "Parent Access", "Attendance Updates", "Academic Information", "Fee Information", "School Communication"],
   },
 ];
 
@@ -31,261 +31,206 @@ type ModuleGroup = { label?: string; items: string[] };
 type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 
 /** Flagship modules rendered as expandable accordions. */
-const UNI_DEEP: DeepModule[] = [
+const SCHOOL_DEEP: DeepModule[] = [
   {
     title: "Admission Management",
-    summary: "Turn every enquiry into an enrolled student — organised from first contact to conversion.",
+    summary: "Turn admission enquiries into enrollments — organised from first contact to registration.",
     groups: [
       {
         items: [
-          "Online & offline admission",
-          "Candidate enquiry & application",
-          "Candidate profile & qualifications",
-          "Course preference",
-          "Certificate verification",
-          "Online payment & candidate conversion",
-          "Scholarship management",
-          "Bulk student & photo import",
-          "Admission reports & strength analysis",
+          "Online admission & enquiry",
+          "Application management",
+          "Candidate information & registration",
+          "Student profile & qualifications",
+          "Document details",
+          "Admission reports & data management",
         ],
       },
     ],
   },
   {
     title: "Student Information Management",
-    summary: "One student, one complete digital record — consistent across every department.",
+    summary: "One student, one complete digital record — organised and role-accessible.",
     groups: [
       {
-        label: "Student Record",
         items: [
-          "Personal & contact details",
-          "Academic information & qualifications",
-          "Certificates & registration / roll number",
-          "Programme, department, batch & class",
-          "Scholarship, discipline, leave & grievance",
+          "Student profile & personal information",
+          "Parent / guardian information & contacts",
+          "Academic information, class & section",
+          "Admission information & student status",
+          "Certificates & documents",
+          "Student services",
         ],
-      },
-      {
-        label: "Student Self-Service",
-        items: ["Attendance & marks", "Timetable & fees", "Assignments & feedback", "Library & examination information"],
       },
     ],
   },
   {
     title: "Academic Management",
-    summary: "Bring academic planning and execution into one workflow — curriculum to performance.",
+    summary: "Plan, teach, monitor and improve — structured tools for everyday academics.",
     groups: [
       {
         items: [
           "Academic year & calendar",
-          "Department, programme, batch & class",
-          "Subject, regulation & syllabus",
-          "Faculty allocation & timetable",
-          "Working hours & lesson planning",
-          "Lesson-plan approval & teaching methods",
-          "Learning materials & student leave",
-          "Holiday, staff replacement & performance",
+          "Classes, sections & subjects",
+          "Teachers & subject allocation",
+          "Timetable & lesson planning",
+          "Learning activities & academic materials",
+          "Class management & student performance",
+          "Academic reports",
         ],
       },
     ],
   },
   {
-    title: "OBE, CBCS & Open Elective",
-    summary: "Connect curriculum, teaching and outcomes — with real credit-based flexibility.",
+    title: "Timetable Management",
+    summary: "Build better timetables with less effort — classes, teachers and periods in sync.",
     groups: [
       {
-        label: "Outcome Based Education (OBE)",
-        items: ["PEO", "PO", "PEO–PO Mapping", "CO", "LO", "CO–LO Mapping", "TLO"],
-      },
-      {
-        label: "CBCS & Open Elective",
-        items: ["Subject creation & syllabus", "Faculty & student allocation", "Student subject selection", "Timetable & attendance", "Topic, lesson-plan & syllabus coverage"],
+        items: [
+          "Class & teacher timetable",
+          "Subject allocation",
+          "Working hours & periods",
+          "Class divisions",
+          "Academic schedules",
+          "Timetable changes",
+        ],
       },
     ],
   },
   {
-    title: "Learning Management System",
-    summary: "Extend learning beyond the classroom — assignments, assessments and digital interaction.",
+    title: "Attendance Management",
+    summary: "Make attendance a connected part of student management — and keep parents in the loop.",
     groups: [
       {
-        items: ["Online assignments", "Feedback", "Online examinations", "Learning activities", "Assignment submission", "Digital learning interaction"],
+        items: [
+          "Daily, class-wise & subject-wise attendance",
+          "Attendance reports & history",
+          "Leave management",
+          "Student absence information",
+          "Attendance communication to parents",
+        ],
       },
     ],
   },
   {
-    title: "Controller of Examination (COE)",
-    summary: "Run the entire examination lifecycle — planning to final mark sheet — in one workflow.",
+    title: "Examination Management",
+    summary: "Manage exams from schedule to report card — one structured workflow.",
     groups: [
       {
-        label: "Administration & Configuration",
         items: [
-          "COE / student / evaluator / parent access",
-          "Student data import & nominal roll",
-          "Examination master & types",
-          "Academic sessions, subjects & regulations",
-          "Marks configuration",
-        ],
-      },
-      {
-        label: "Question Papers & Scheduling",
-        items: [
-          "Question entry, upload, types & patterns",
-          "Question generation & approval",
-          "Exam dates, programme & semester selection",
-          "Theory, online & student-wise timetables",
-        ],
-      },
-      {
-        label: "Halls, Evaluation & Results",
-        items: [
-          "Exam rooms, layouts & automatic seating (row / column / zig-zag)",
-          "Internal & external marks, moderation",
-          "Result processing, analysis & revaluation",
-          "Supplementary exams & mark sheets",
-          "Consolidated mark sheets & completion certificates",
+          "Examination creation & schedule",
+          "Subject selection & exam timetable",
+          "Student examination records",
+          "Marks entry & management",
+          "Result processing & analysis",
+          "Report cards & performance reports",
         ],
       },
     ],
   },
   {
     title: "Fee Management",
-    summary: "Bring student fees into one structured, transparent digital workflow.",
+    summary: "Simple for admins, transparent for parents — fee collection in one place.",
     groups: [
       {
         items: [
-          "Fee types, frequency, groups & variables",
-          "Fee structures & application",
-          "Bulk receipts & receipt import",
-          "Mess fees, bus fees & route-wise fees",
-          "Student & advance receipts",
-          "Online fee payment",
+          "Fee types, structures & groups",
+          "Fee collection & student fee records",
+          "Fee receipts & outstanding fees",
+          "Payment records & fee reports",
+          "Online payment support (where configured)",
         ],
+      },
+    ],
+  },
+  {
+    title: "Staff, HR & Payroll",
+    summary: "Manage the people behind your school — from records to payslips.",
+    groups: [
+      {
+        label: "Staff Management",
+        items: ["Staff profiles & contacts", "Education & experience", "Department & designation", "Attendance, leave & permissions", "Staff performance & records"],
+      },
+      {
+        label: "HR & Payroll",
+        items: ["Salary structure, allowances & deductions", "Salary calculation & advances", "Salary payments & payslips"],
       },
     ],
   },
   {
     title: "Library Management",
-    summary: "Manage knowledge resources digitally — catalogue, circulation and discovery.",
+    summary: "Connect students with knowledge — catalogue, circulation and search.",
     groups: [
       {
         items: [
-          "Catalogue, accession & author management",
-          "Book quantity & supplier management",
-          "Catalogue import & stock verification",
-          "Journals, newspapers, magazines & subscriptions",
-          "Question papers & project materials",
-          "Patron categories & circulation rules",
-          "Gate register, OPAC & online book search",
+          "Book catalogue & accession",
+          "Author & supplier information",
+          "Book quantity & stock verification",
+          "Subscription management",
+          "Patron management & circulation",
+          "Library rules, book search & reports",
         ],
       },
     ],
   },
   {
-    title: "Hostel & Mess Management",
-    summary: "Manage campus living end to end — accommodation, attendance and full mess operations.",
-    groups: [
-      {
-        label: "Hostel",
-        items: [
-          "Application, student & guardian details",
-          "Building, wing, room & bed management",
-          "Room allocation & vacancy",
-          "Attendance (incl. biometric) & leave",
-          "Permission, gate pass & outing permission",
-          "Complaint management",
-        ],
-      },
-      {
-        label: "Mess",
-        items: ["Mess attendance & meal timing", "Menu calendar & members", "Billing cycle & calculation", "Extra sales & raw-material stock", "Recipe cards, purchase & payments"],
-      },
-    ],
-  },
-  {
-    title: "HR & Payroll",
-    summary: "Manage the people behind your institution — from recruitment to payslips.",
-    groups: [
-      {
-        label: "HR Management",
-        items: ["Staff profiles, education & experience", "Certificates & pay scale", "Recruitment & interview management", "Candidate registration", "Appraisal & performance management"],
-      },
-      {
-        label: "Payroll",
-        items: ["Attendance, leave, permission & overtime", "Salary structure, allowances & deductions", "Salary increments & calculation", "Advances, payments & payslips"],
-      },
-    ],
-  },
-  {
-    title: "Research & Academic Activities",
-    summary: "Build a stronger digital record of research — capture contributions as they happen.",
+    title: "Transport Management",
+    summary: "From route planning to daily operations — manage school transport digitally.",
     groups: [
       {
         items: [
-          "Research projects & consultancy",
-          "Publications & awards",
-          "Conferences, workshops & seminars",
-          "FDP & professional activities",
-          "Academic memberships",
-          "Student research activities",
+          "Vehicle & bus details",
+          "Driver details",
+          "Routes & route paths",
+          "Student / passenger information",
+          "Trip management",
+          "Vehicle service & insurance",
+          "Transport reports",
         ],
       },
     ],
   },
   {
-    title: "NAAC & Institutional Data",
-    summary: "Build accreditation readiness into everyday operations — all year, not the last minute.",
-    groups: [
-      {
-        label: "Department",
-        items: ["Research, conferences & workshops", "Seminars & consultancy", "Extension activities, MoUs & linkages", "BOS & student visits"],
-      },
-      {
-        label: "Students & Faculty",
-        items: ["Research, publications & awards", "Fellowships, internships & higher studies", "Employment records", "Faculty memberships, FDP & books/chapters"],
-      },
-    ],
-  },
-  {
-    title: "Placement & Alumni",
-    summary: "Connect students with opportunity — and stay connected beyond graduation.",
+    title: "Communication & Notifications",
+    summary: "The right information to the right parent at the right time.",
     groups: [
       {
         items: [
-          "Employer & position management",
-          "Candidate filtering & online tests",
-          "Interview management & qualification",
-          "Student positions & placement results",
-          "Alumni registration",
+          "SMS & email",
+          "Notifications & reminders",
+          "Circulars & announcements",
+          "Events",
+          "Attendance communication",
+          "Group communication",
         ],
       },
     ],
   },
   {
-    title: "Transport & Communication",
-    summary: "Keep the campus moving and informed — routes on time, the right message to the right people.",
+    title: "Student & Parent Portal",
+    summary: "Essential school information in one place — for students and families.",
     groups: [
       {
-        label: "Transport",
-        items: ["Bus types & driver details", "Vehicle services & insurance renewal", "Routes, route paths & trip sheets", "Passenger & vehicle information"],
+        label: "Student Services",
+        items: ["Attendance & timetable", "Academic information & marks", "Examination information", "Assignments, fees & notifications"],
       },
       {
-        label: "Communication",
-        items: ["SMS templates, email & group SMS", "Absence & attendance communication", "Circulars, news & events", "Notifications & reminders"],
+        label: "Parent Services",
+        items: ["Student attendance & academic updates", "Examination information", "Fee information", "School communication & notifications"],
       },
     ],
   },
   {
-    title: "Dashboards & Analytics",
-    summary: "Turn institutional data into decisions — see what's happening and what needs action.",
+    title: "Dashboards & Reports",
+    summary: "Turn school data into decisions — see what's happening and what needs action.",
     groups: [
       {
         items: [
-          "Admissions & student attendance",
-          "Fee collection",
-          "COE marks & subjects",
-          "Result analysis",
-          "Staff & student management",
-          "Payroll & pending tasks",
+          "Student strength & admissions",
+          "Attendance & fees",
+          "Academic performance & exam results",
+          "Staff & student information",
+          "Pending activities & operational reports",
         ],
       },
     ],
@@ -293,64 +238,56 @@ const UNI_DEEP: DeepModule[] = [
 ];
 
 /** Student lifecycle — 16 stages grouped into 4 phases, rendered as a staircase. */
-const UNI_JOURNEY: { label: string; range: string; steps: string[] }[] = [
+const SCHOOL_JOURNEY: { label: string; range: string; steps: string[] }[] = [
   { label: "Onboarding", range: "01–04", steps: ["Enquiry", "Application", "Admission", "Registration"] },
-  { label: "Academics", range: "05–08", steps: ["Academics", "Attendance", "Learning", "Assessment"] },
-  { label: "Examinations", range: "09–12", steps: ["Examination", "Results", "Fees", "Library"] },
-  { label: "Campus & Outcome", range: "13–16", steps: ["Hostel", "Placement", "Graduation", "Alumni"] },
+  { label: "Classroom", range: "05–08", steps: ["Class Allocation", "Timetable", "Attendance", "Learning"] },
+  { label: "Assessment", range: "09–12", steps: ["Assignments", "Examination", "Results", "Report Cards"] },
+  { label: "Outcome", range: "13–16", steps: ["Fees", "Communication", "Promotion", "Next Year"] },
 ];
 
 const STAIR_OFFSET = ["lg:mt-[72px]", "lg:mt-12", "lg:mt-6", "lg:mt-0"];
 
-const UNI_STAKEHOLDERS = [
-  { role: "University Management", line: "See the university as one institution.", text: "Visibility across admissions, academics, examinations, students, staff, finance and institutional activity." },
-  { role: "Administration", line: "Simplify everyday operations.", text: "Bring information and workflows together in one structured, connected environment." },
-  { role: "Faculty", line: "Spend more time on education.", text: "Manage academic activities, attendance, lesson plans, marks and student interaction in one place." },
-  { role: "Examination Teams", line: "Bring structure to exams.", text: "Run examination operations end to end through a connected COE workflow." },
-  { role: "Students", line: "Every service, digital.", text: "Attendance, timetable, marks, fees, assignments and examinations — on any device." },
-  { role: "Parents", line: "Stay informed.", text: "Receive relevant student and institutional communication, without chasing anyone." },
+const SCHOOL_STAKEHOLDERS = [
+  { role: "School Management", line: "See the school at a glance.", text: "Important information through dashboards, reports and centralized records — decide with facts." },
+  { role: "Principal", line: "Lead with visibility.", text: "Monitor academics, students, attendance, fees, examinations, staff and daily operations." },
+  { role: "Administration", line: "Simplify daily operations.", text: "Bring information and workflows together in one structured, connected environment." },
+  { role: "Teachers", line: "More time teaching.", text: "Manage classes, attendance, academic activities, marks and student information in one place." },
+  { role: "Students", line: "School services, digital.", text: "Academic information, attendance, timetable, examinations and assignments — on any device." },
+  { role: "Parents", line: "Stay connected.", text: "Timely updates on attendance, academics, examinations, fees and school communication." },
 ];
 
 /** FAQ — exported so the page can emit matching FAQPage JSON-LD (AEO). */
-export const universityErpFaqs: { question: string; answer: string }[] = [
+export const schoolErpFaqs: { question: string; answer: string }[] = [
   {
-    question: "What is University ERP software?",
+    question: "What is School ERP software?",
     answer:
-      "University ERP software is an integrated platform that helps institutions manage academic, administrative and operational activities through one centralized digital system — replacing the disconnected tools most universities juggle today.",
+      "School ERP software is an integrated digital platform that helps schools manage student information, admissions, academics, attendance, examinations, fees, staff, communication and other operations in one place.",
   },
   {
-    question: "What is a University Management System?",
-    answer:
-      "A University Management System connects functions such as admissions, academics, students, examinations, fees, library, hostel, HR, placement and institutional administration on a single connected platform.",
+    question: "What is a School Management System?",
+    answer: "A School Management System connects the academic, administrative and operational activities of a school through one centralized platform.",
   },
   {
-    question: "What modules are included in Aveon University Management System?",
+    question: "What modules are included in Aveon School ERP?",
     answer:
-      "Aveon covers admission, student management, academics, attendance, OBE, CBCS, LMS, COE, fees, library, hostel, mess, HR, payroll, research activities, NAAC data, transport, placement, alumni, communication and dashboards.",
+      "Aveon School ERP covers admission, student management, academics, attendance, examinations, fees, staff and HR, payroll, library, transport, communication, parent/student services and dashboards.",
   },
   {
-    question: "Does Aveon have a Controller of Examination module?",
-    answer:
-      "Yes — in depth. Aveon's COE covers examination fees, subject management, question papers, scheduling, online examinations, exam halls, seating, marks, moderation, results, revaluation, supplementary examinations and mark sheets.",
+    question: "Can teachers use Aveon School ERP?",
+    answer: "Yes. Teacher-facing functions support academic activities, attendance, marks, timetable and other relevant school processes.",
   },
   {
-    question: "Does Aveon support OBE?",
-    answer: "Yes. Aveon supports Outcome Based Education end to end — PEO, PO, PEO–PO mapping, CO, LO, CO–LO mapping and TLO.",
+    question: "Can parents access school information?",
+    answer: "Yes. Parent-facing services provide relevant information such as attendance, academic updates, examinations, fees and school communication.",
   },
   {
-    question: "Does Aveon support CBCS?",
-    answer:
-      "Yes. The CBCS and Open Elective functionality covers subject management, faculty allocation, student selection, timetable, attendance and academic coverage.",
+    question: "Can schools manage transportation?",
+    answer: "Yes. Aveon includes transport capabilities such as vehicle, driver, route, trip and passenger management.",
   },
   {
-    question: "Does Aveon support hostel management?",
+    question: "Can the system manage staff and payroll?",
     answer:
-      "Yes. Aveon manages hostel applications, buildings, rooms, beds, allocation, attendance, leave, permissions, gate passes and complaints — plus full mess operations.",
-  },
-  {
-    question: "Does Aveon include HR and Payroll?",
-    answer:
-      "Yes. Aveon covers staff information, recruitment, appraisal, attendance, leave, salary structures, allowances, deductions, salary calculation, advances, payments and payslips.",
+      "Yes. Aveon includes employee attendance, leave, salary structures, allowances, deductions, salary calculation, advances, payments and payslips.",
   },
 ];
 
@@ -366,14 +303,14 @@ function CheckIcon() {
   );
 }
 
-/** Hub-and-spoke graphic: the platform hub connecting every university function. */
-function ConnectedUniversityGraphic() {
+/** Hub-and-spoke graphic: the platform hub connecting every school function. */
+function ConnectedSchoolGraphic() {
   const size = 480;
   const c = size / 2;
   const r = 176;
   const pillW = 120;
   const pillH = 38;
-  const nodes = UNI_NODES.map((label, i) => {
+  const nodes = SCHOOL_NODES.map((label, i) => {
     const angle = (-90 + i * 45) * (Math.PI / 180);
     return { label, x: c + r * Math.cos(angle), y: c + r * Math.sin(angle) };
   });
@@ -381,48 +318,48 @@ function ConnectedUniversityGraphic() {
   return (
     <div className="relative mx-auto w-full max-w-md">
       <style>{`
-        @keyframes uni-spin { to { transform: rotate(360deg); } }
-        @keyframes uni-flow { to { stroke-dashoffset: -16; } }
-        @keyframes uni-breathe { 0%,100% { opacity:.5; transform: scale(1); } 50% { opacity:.95; transform: scale(1.07); } }
-        @keyframes uni-in { from { opacity:0; transform: scale(.85); } to { opacity:1; transform: scale(1); } }
-        .uni-ring { transform-box: fill-box; transform-origin: center; animation: uni-spin 90s linear infinite; }
-        .uni-glow { transform-box: fill-box; transform-origin: center; animation: uni-breathe 5s ease-in-out infinite; }
-        .uni-flow { stroke-dasharray: 4 12; animation: uni-flow 1.5s linear infinite; }
-        .uni-node { transform-box: fill-box; transform-origin: center; animation: uni-in .55s cubic-bezier(.2,.8,.2,1) both; }
+        @keyframes sch-spin { to { transform: rotate(360deg); } }
+        @keyframes sch-flow { to { stroke-dashoffset: -16; } }
+        @keyframes sch-breathe { 0%,100% { opacity:.5; transform: scale(1); } 50% { opacity:.95; transform: scale(1.07); } }
+        @keyframes sch-in { from { opacity:0; transform: scale(.85); } to { opacity:1; transform: scale(1); } }
+        .sch-ring { transform-box: fill-box; transform-origin: center; animation: sch-spin 90s linear infinite; }
+        .sch-glow { transform-box: fill-box; transform-origin: center; animation: sch-breathe 5s ease-in-out infinite; }
+        .sch-flow { stroke-dasharray: 4 12; animation: sch-flow 1.5s linear infinite; }
+        .sch-node { transform-box: fill-box; transform-origin: center; animation: sch-in .55s cubic-bezier(.2,.8,.2,1) both; }
         @media (prefers-reduced-motion: reduce) {
-          .uni-ring, .uni-glow, .uni-flow, .uni-node { animation: none !important; opacity: 1 !important; }
+          .sch-ring, .sch-glow, .sch-flow, .sch-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every university function — Admissions, Academics, Examinations, Research, Placement, Hostel, Library and Fees — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every school function — Admissions, Academics, Attendance, Exams, Fees, Transport, Library and Parents — on one platform.">
         <defs>
-          <radialGradient id="uni-glow" cx="50%" cy="50%" r="50%">
+          <radialGradient id="sch-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
             <stop offset="100%" stopColor="#d9e8ff" stopOpacity="0" />
           </radialGradient>
-          <linearGradient id="uni-hub" x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id="sch-hub" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#3376ff" />
             <stop offset="100%" stopColor="#153fd6" />
           </linearGradient>
         </defs>
-        <circle className="uni-glow" cx={c} cy={c} r={158} fill="url(#uni-glow)" />
-        <circle className="uni-ring" cx={c} cy={c} r={r} fill="none" stroke="#ccd6ea" strokeWidth="1.5" strokeDasharray="3 8" />
+        <circle className="sch-glow" cx={c} cy={c} r={158} fill="url(#sch-glow)" />
+        <circle className="sch-ring" cx={c} cy={c} r={r} fill="none" stroke="#ccd6ea" strokeWidth="1.5" strokeDasharray="3 8" />
         {nodes.map((n) => (
           <line key={`l-${n.label}`} x1={c} y1={c} x2={n.x} y2={n.y} stroke="#dbe3f1" strokeWidth="1.5" />
         ))}
         {nodes.map((n, i) => (
-          <line key={`f-${n.label}`} className="uni-flow" x1={c} y1={c} x2={n.x} y2={n.y} stroke="#599aff" strokeWidth="2" strokeLinecap="round" style={{ animationDelay: `${(i * 0.18).toFixed(2)}s` }} />
+          <line key={`f-${n.label}`} className="sch-flow" x1={c} y1={c} x2={n.x} y2={n.y} stroke="#599aff" strokeWidth="2" strokeLinecap="round" style={{ animationDelay: `${(i * 0.18).toFixed(2)}s` }} />
         ))}
         {nodes.map((n, i) => (
-          <g key={`n-${n.label}`} className="uni-node" style={{ animationDelay: `${(0.15 + i * 0.09).toFixed(2)}s` }}>
+          <g key={`n-${n.label}`} className="sch-node" style={{ animationDelay: `${(0.15 + i * 0.09).toFixed(2)}s` }}>
             <rect x={n.x - pillW / 2} y={n.y - pillH / 2} width={pillW} height={pillH} rx={pillH / 2} fill="#ffffff" stroke="#e8ecf6" strokeWidth="1.5" />
             <circle cx={n.x - pillW / 2 + 17} cy={n.y} r="3.5" fill="#1d6ff2" />
             <text x={n.x - pillW / 2 + 30} y={n.y + 1} dominantBaseline="central" fontSize="13" fontWeight="600" fill="#2a3a5f">{n.label}</text>
           </g>
         ))}
         <circle cx={c} cy={c} r="56" fill="none" stroke="#bcd7ff" strokeWidth="10" strokeOpacity="0.5" />
-        <circle cx={c} cy={c} r="52" fill="url(#uni-hub)" />
+        <circle cx={c} cy={c} r="52" fill="url(#sch-hub)" />
         <text x={c} y={c - 5} textAnchor="middle" dominantBaseline="central" fontSize="20" fontWeight="800" fill="#ffffff">Aveon</text>
-        <text x={c} y={c + 15} textAnchor="middle" dominantBaseline="central" fontSize="9" fontWeight="700" letterSpacing="2" fill="#d9e8ff">UMS</text>
+        <text x={c} y={c + 15} textAnchor="middle" dominantBaseline="central" fontSize="8.5" fontWeight="700" letterSpacing="1.5" fill="#d9e8ff">SCHOOL</text>
       </svg>
     </div>
   );
@@ -432,34 +369,33 @@ function ConnectedUniversityGraphic() {
    Component
    ────────────────────────────────────────────────────────────── */
 
-export default function UniversityERPContent() {
+export default function SchoolERPContent() {
   return (
     <>
       {/* ── Intro ── */}
       <section className="border-b border-navy-100 bg-gradient-to-b from-white to-navy-50">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-12 pt-6 sm:pb-14 sm:pt-8 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div className="order-2 lg:order-1">
-            <ConnectedUniversityGraphic />
+            <ConnectedSchoolGraphic />
           </div>
           <div className="order-1 lg:order-2">
             <span className="inline-block rounded-full border border-primary-200 bg-primary-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-primary-600">
-              One Connected Platform
+              One Connected School
             </span>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl">
-              One University. Every Function. One Connected Platform.
+              One School. One Platform. Everything Connected.
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
-                A university doesn&apos;t run through one department — it runs through an interconnected network of
-                schools, programmes, faculty, students, examinations, finance, libraries, hostels, research and
-                placement, all operating at once.
+                Running a modern school means bringing together students, teachers, parents, academics, examinations,
+                fees, attendance, transport, communication and administration.
               </p>
               <p>
-                Aveon University Management System connects them on one platform — from admission and registration to
-                academics, examinations, fees, library, hostel, HR, research and placement — so your team stops
-                coordinating between silos and starts acting on shared information.
+                Aveon School ERP connects the essential functions on one integrated platform — from admission and
+                academics to attendance, examinations, fees, communication and administration — so your school stops
+                moving information between systems and starts running as one.
               </p>
-              <p className="font-semibold text-navy-800">Reduce complexity. Connect information. Improve visibility.</p>
+              <p className="font-semibold text-navy-800">Manage smarter. Teach better. Connect everyone.</p>
             </div>
           </div>
         </div>
@@ -468,14 +404,13 @@ export default function UniversityERPContent() {
       {/* ── Module ecosystem ── */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">University Management System Modules</h2>
+          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete School ERP Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything your university needs to run its digital operations — grouped into four connected domains,
-            tied together by one student record.
+            Everything your school needs — grouped into four connected domains, tied together by one student record.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {UNI_GROUPS.map((g) => (
+          {SCHOOL_GROUPS.map((g) => (
             <div key={g.title} className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
               <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600">{g.title}</h3>
               <ul className="mt-4 space-y-2">
@@ -501,7 +436,7 @@ export default function UniversityERPContent() {
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
-            {UNI_DEEP.map((mod) => (
+            {SCHOOL_DEEP.map((mod) => (
               <details
                 key={mod.title}
                 className="group relative overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_24px_50px_-20px_rgb(29_111_242_/_0.38)] open:-translate-y-0 open:border-primary-200 open:shadow-[0_24px_50px_-22px_rgb(29_111_242_/_0.3)] [&_summary::-webkit-details-marker]:hidden"
@@ -555,11 +490,11 @@ export default function UniversityERPContent() {
               <h2 className="mt-5 text-3xl font-extrabold leading-[1.05] tracking-tight text-navy-900 sm:text-4xl xl:text-5xl">
                 One Student.
                 <br />
-                One Connected University Journey.
+                One Connected Digital Journey.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                A student&apos;s journey crosses many departments. Aveon connects every major stage — from the first
-                enquiry to lifelong alumni.
+                A student&apos;s school journey creates information across many departments. Aveon brings that journey
+                together — from the first enquiry to the next academic year.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -573,7 +508,7 @@ export default function UniversityERPContent() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            {UNI_JOURNEY.map((group, gi) => (
+            {SCHOOL_JOURNEY.map((group, gi) => (
               <div key={group.label} className={STAIR_OFFSET[gi]}>
                 <div className="flex items-baseline gap-2 border-b-2 border-primary-600 pb-3">
                   <span className="text-xs font-bold uppercase tracking-[0.16em] text-navy-900">{group.label}</span>
@@ -594,7 +529,7 @@ export default function UniversityERPContent() {
           <div className="mt-12 flex items-center gap-5 text-xs font-semibold uppercase tracking-[0.14em] text-navy-400">
             <span className="shrink-0">First enquiry</span>
             <span className="h-px flex-1 bg-navy-200" />
-            <span className="shrink-0">Alumni</span>
+            <span className="shrink-0">Next academic year</span>
           </div>
         </div>
       </section>
@@ -603,13 +538,13 @@ export default function UniversityERPContent() {
       <section className="border-b border-navy-100 bg-navy-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Every University Stakeholder</h2>
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Everyone in Your School</h2>
             <p className="mt-3 text-lg text-navy-600">
               Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {UNI_STAKEHOLDERS.map((s) => (
+            {SCHOOL_STAKEHOLDERS.map((s) => (
               <div key={s.role} className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
                 <h3 className="text-lg font-bold text-primary-700">{s.role}</h3>
                 <p className="mt-1 font-semibold text-navy-800">{s.line}</p>
@@ -623,31 +558,31 @@ export default function UniversityERPContent() {
       {/* ── Before → After ── */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">From Departmental Systems to a Connected University</h2>
+          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">From Multiple Processes to One Connected School</h2>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-navy-200 bg-navy-50 p-8">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">The Old Way</h3>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">Traditional School Management</h3>
             <p className="mt-4 text-navy-700">
-              Separate systems for admission, academics, examination, fees, library, hostel, HR and placement — none of
-              them talking to each other.
+              Separate processes for admission, academics, attendance, examination, fees, library, transport and staff —
+              none of them connected.
             </p>
-            <p className="mt-4 font-semibold text-navy-900">= Information stays in different places</p>
+            <p className="mt-4 font-semibold text-navy-900">= Different processes, different information</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-600">
-              {["Repeated data entry", "Scattered information", "Manual coordination & delayed reports", "Communication gaps", "Limited management visibility"].map((x) => (
+              {["More administrative work", "Repeated data entry", "Manual coordination", "Communication gaps", "Delayed reports"].map((x) => (
                 <li key={x}>• {x}</li>
               ))}
             </ul>
           </div>
           <div className="rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50 to-white p-8">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-primary-600">The Aveon Way</h3>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-primary-600">With Aveon School ERP</h3>
             <p className="mt-4 text-navy-700">
-              Admission, student, academics, examination, finance, library, hostel, HR and placement all read from — and
-              write to — one live record.
+              Admission, students, academics, attendance, examination, fees, library, transport, staff and parents all
+              connect through one platform.
             </p>
-            <p className="mt-4 font-semibold text-primary-800">= One connected university</p>
+            <p className="mt-4 font-semibold text-primary-800">= One connected school</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-700">
-              {["Integrated management", "Connected workflows", "Digital operations & less paperwork", "Reporting & dashboards", "Complete institutional visibility"].map((x) => (
+              {["Complete school management", "Centralized student information", "Connected operations", "Digital workflows & less paperwork", "Better parent communication"].map((x) => (
                 <li key={x} className="flex items-start gap-2">
                   <CheckIcon />
                   <span>{x}</span>
@@ -663,7 +598,7 @@ export default function UniversityERPContent() {
         <div className="mx-auto max-w-4xl px-6 py-12 sm:py-14">
           <h2 className="text-center text-2xl font-bold text-navy-900 sm:text-3xl">Frequently Asked Questions</h2>
           <div className="mt-10 space-y-3">
-            {universityErpFaqs.map((faq) => (
+            {schoolErpFaqs.map((faq) => (
               <details
                 key={faq.question}
                 className="group relative overflow-hidden rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-[0_20px_44px_-22px_rgb(29_111_242_/_0.35)] open:border-primary-200 open:shadow-[0_20px_44px_-24px_rgb(29_111_242_/_0.28)] [&_summary::-webkit-details-marker]:hidden"
@@ -683,17 +618,17 @@ export default function UniversityERPContent() {
           </div>
 
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
-            <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">One University. One Platform. Everything Connected.</h3>
+            <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">One School. One Platform. Everything Connected.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              Connect your students, faculty, departments, examinations, administration and data — on one University ERP
-              built around the way universities actually work.
+              Less paperwork, less repetition, better communication and clearer visibility — a smarter way to manage your
+              school, built around the way schools actually work.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link href="/contact#demo" className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-700">
-                Request a Personalized Demo →
+                Get a Free Demo →
               </Link>
               <Link href="/contact" className="inline-flex items-center rounded-full border border-navy-200 bg-white px-7 py-3 text-sm font-semibold text-navy-800 transition hover:border-primary-400 hover:text-primary-600">
-                Talk to Aveon Infotech
+                Talk to a School ERP Expert
               </Link>
             </div>
           </div>

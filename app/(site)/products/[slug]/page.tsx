@@ -5,8 +5,9 @@ import { notFound } from "next/navigation";
 import { products, getProduct, type Product } from "@/lib/data/products";
 import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
-import UniversityERPContent from "@/components/sections/UniversityERPContent";
+import UniversityERPContent, { universityErpFaqs } from "@/components/sections/UniversityERPContent";
 import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
+import SchoolERPContent, { schoolErpFaqs } from "@/components/sections/SchoolERPContent";
 import CollegeDashboardMockup from "@/components/sections/CollegeDashboardMockup";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
@@ -27,6 +28,44 @@ async function loadProduct(slug: string): Promise<Product | undefined> {
 
 /** Per-slug SEO overrides (title/description/keywords) for high-value pages. */
 const seoOverrides: Record<string, Metadata> = {
+  "school-erp": {
+    title: "School ERP Software | School Management System",
+    description:
+      "Aveon School ERP is an integrated school management system for admissions, student records, academics, attendance, fees, examinations, transport, communication, staff and parent services.",
+    keywords: [
+      "School ERP Software",
+      "School Management Software",
+      "School ERP System",
+      "School Management System",
+      "School Administration Software",
+      "Student Management System",
+      "School Fee Management Software",
+      "School Attendance Management Software",
+      "School Examination Management System",
+      "School Transport Management Software",
+      "Education ERP Software",
+      "Digital School Management System",
+    ],
+  },
+  "university-erp": {
+    title: "University ERP Software | University Management System",
+    description:
+      "Aveon University Management System connects admissions, academics, students, examinations, fees, library, hostel, HR, research, placement and administration on one digital platform.",
+    keywords: [
+      "University Management System",
+      "University ERP Software",
+      "University ERP",
+      "University Management Software",
+      "Higher Education ERP",
+      "University Academic Management System",
+      "University Examination Management System",
+      "University Student Management System",
+      "University Fee Management Software",
+      "University HR & Payroll Software",
+      "University Hostel Management System",
+      "University Library Management System",
+    ],
+  },
   "college-erp": {
     title: "College ERP Software | Complete Campus Management System",
     description:
@@ -90,6 +129,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
       { name: product.title, href: `/products/${product.slug}` },
     ]),
     ...(product.slug === "college-erp" ? [faqJsonLd(collegeErpFaqs)] : []),
+    ...(product.slug === "university-erp" ? [faqJsonLd(universityErpFaqs)] : []),
+    ...(product.slug === "school-erp" ? [faqJsonLd(schoolErpFaqs)] : []),
   ];
 
   return (
@@ -138,7 +179,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="relative flex w-full items-center justify-center">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-100/40 via-transparent to-accent-100/30 blur-2xl" />
             <div className="relative w-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
-              {product.slug === "college-erp" ? (
+              {product.slug === "college-erp" || product.slug === "university-erp" || product.slug === "school-erp" ? (
                 <CollegeDashboardMockup />
               ) : (
                 <Image
@@ -157,6 +198,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       {product.slug === "university-erp" && <UniversityERPContent />}
       {product.slug === "college-erp" && <CollegeERPContent />}
+      {product.slug === "school-erp" && <SchoolERPContent />}
 
       {/* ── Key Features ── */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
