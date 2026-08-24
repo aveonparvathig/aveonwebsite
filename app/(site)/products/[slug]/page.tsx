@@ -8,7 +8,9 @@ import CTASection from "@/components/sections/CTASection";
 import UniversityERPContent, { universityErpFaqs } from "@/components/sections/UniversityERPContent";
 import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
 import SchoolERPContent, { schoolErpFaqs } from "@/components/sections/SchoolERPContent";
+import HrmPayrollContent, { hrmPayrollFaqs } from "@/components/sections/HrmPayrollContent";
 import CollegeDashboardMockup from "@/components/sections/CollegeDashboardMockup";
+import HeroDashboard from "@/components/sections/HeroDashboards";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -28,6 +30,23 @@ async function loadProduct(slug: string): Promise<Product | undefined> {
 
 /** Per-slug SEO overrides (title/description/keywords) for high-value pages. */
 const seoOverrides: Record<string, Metadata> = {
+  "hrm-payroll": {
+    title: "HR & Payroll Software | HRMS & Payroll Management",
+    description:
+      "Aveon HR & Payroll (HRMS) manages recruitment, employee records, attendance, leave, salary structures, payroll processing, statutory compliance (PF, ESI, TDS), payslips and employee self-service on one platform.",
+    keywords: [
+      "HR & Payroll Software",
+      "HRMS Software",
+      "Payroll Software",
+      "HR Management System",
+      "Payroll Management Software",
+      "Attendance Management Software",
+      "Leave Management System",
+      "Statutory Compliance Software",
+      "Employee Self-Service Portal",
+      "Payroll Software for educational institutions",
+    ],
+  },
   "school-erp": {
     title: "School ERP Software | School Management System",
     description:
@@ -131,6 +150,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ...(product.slug === "college-erp" ? [faqJsonLd(collegeErpFaqs)] : []),
     ...(product.slug === "university-erp" ? [faqJsonLd(universityErpFaqs)] : []),
     ...(product.slug === "school-erp" ? [faqJsonLd(schoolErpFaqs)] : []),
+    ...(product.slug === "hrm-payroll" ? [faqJsonLd(hrmPayrollFaqs)] : []),
   ];
 
   return (
@@ -181,6 +201,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="relative w-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
               {product.slug === "college-erp" || product.slug === "university-erp" || product.slug === "school-erp" ? (
                 <CollegeDashboardMockup />
+              ) : product.slug === "hrm-payroll" ? (
+                <HeroDashboard variant="payroll" />
               ) : (
                 <Image
                   src={heroImg}
@@ -199,6 +221,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {product.slug === "university-erp" && <UniversityERPContent />}
       {product.slug === "college-erp" && <CollegeERPContent />}
       {product.slug === "school-erp" && <SchoolERPContent />}
+      {product.slug === "hrm-payroll" && <HrmPayrollContent />}
 
       {/* ── Key Features ── */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
