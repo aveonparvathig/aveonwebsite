@@ -53,6 +53,72 @@ export default function ServicesPage() {
               </span>
               <h2 className="mt-5 text-[21px] font-extrabold text-navy-900">{service.title}</h2>
               <p className="mt-2.5 flex-1 text-[15px] leading-[1.72] text-navy-700">{service.text}</p>
+              {service.slug === "process-automation" && (
+                <Link
+                  href="/services/ai-process-automation"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition hover:gap-2.5"
+                >
+                  Explore AI Process Automation
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              )}
+              {service.slug === "mobile-app-development" && (
+                <Link
+                  href="/services/mobile-app-development"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition hover:gap-2.5"
+                >
+                  Explore Mobile App Development
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              )}
+              {service.slug === "custom-software-development" && (
+                <Link
+                  href="/services/custom-software-development"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition hover:gap-2.5"
+                >
+                  Explore Custom Software Development
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              )}
+              {service.slug === "order-management-system" && (
+                <Link
+                  href="/services/order-management-system"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition hover:gap-2.5"
+                >
+                  Explore Order Management System
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              )}
+              {service.slug === "warehouse-management-system" && (
+                <Link
+                  href="/services/warehouse-management-system"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition hover:gap-2.5"
+                >
+                  Explore Warehouse Management System
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              )}
+              {service.slug === "offshore-team" && (
+                <Link
+                  href="/services/offshore-team"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition hover:gap-2.5"
+                >
+                  Explore Offshore Development Team
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              )}
             </div>
           ))}
         </div>
