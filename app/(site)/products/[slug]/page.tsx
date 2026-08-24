@@ -8,7 +8,13 @@ import CTASection from "@/components/sections/CTASection";
 import UniversityERPContent, { universityErpFaqs } from "@/components/sections/UniversityERPContent";
 import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
 import SchoolERPContent, { schoolErpFaqs } from "@/components/sections/SchoolERPContent";
+import HrmPayrollContent, { hrmPayrollFaqs } from "@/components/sections/HrmPayrollContent";
+import CoeContent, { coeFaqs } from "@/components/sections/CoeContent";
+import LibraryContent, { libraryFaqs } from "@/components/sections/LibraryContent";
+import HostelContent, { hostelFaqs } from "@/components/sections/HostelContent";
+import InventoryContent, { inventoryFaqs } from "@/components/sections/InventoryContent";
 import CollegeDashboardMockup from "@/components/sections/CollegeDashboardMockup";
+import HeroDashboard from "@/components/sections/HeroDashboards";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -28,6 +34,94 @@ async function loadProduct(slug: string): Promise<Product | undefined> {
 
 /** Per-slug SEO overrides (title/description/keywords) for high-value pages. */
 const seoOverrides: Record<string, Metadata> = {
+  "inventory-management": {
+    title: "Inventory Management System | Inventory ERP Software",
+    description:
+      "Aveon Inventory Management System helps educational institutions organize items, suppliers, stores, purchases, stock receipts, issues, transfers, returns and inventory reports through an integrated ERP platform.",
+    keywords: [
+      "Inventory Management System",
+      "Inventory Management Software",
+      "Inventory ERP Software",
+      "Stock Management System",
+      "School Inventory Management Software",
+      "College Inventory Management System",
+      "University Inventory Management Software",
+      "Store Management Software",
+      "Inventory Control System",
+      "Digital Inventory Management",
+    ],
+  },
+  "hostel-mess": {
+    title: "Hostel & Mess Management System | Hostel ERP Software",
+    description:
+      "Aveon Hostel & Mess Management System helps colleges and universities manage hostel applications, rooms, beds, attendance, leave, permissions, gate passes, mess, billing, menus, stock and purchases.",
+    keywords: [
+      "Hostel Management System",
+      "Hostel & Mess Management Software",
+      "College Hostel Management System",
+      "University Hostel Management Software",
+      "Hostel ERP Software",
+      "Hostel Room Allocation Software",
+      "Hostel Attendance Management System",
+      "Hostel Mess Management System",
+      "Mess Billing Software",
+      "College Mess Management Software",
+    ],
+  },
+  "library-management": {
+    title: "Library Management System | Library Management Software",
+    description:
+      "Aveon Library Management System helps schools, colleges and universities manage catalogues, books, accession, patrons, circulation rules, subscriptions, stock verification and OPAC online book search.",
+    keywords: [
+      "Library Management System",
+      "Library Management Software",
+      "Digital Library Management System",
+      "College Library Management Software",
+      "University Library Management System",
+      "School Library Management Software",
+      "Library ERP Software",
+      "OPAC Library Software",
+      "Library Catalogue Management",
+      "Library Circulation Management",
+    ],
+  },
+  "coe": {
+    title: "Controller of Examination Software | COE Management System",
+    description:
+      "Aveon COE Software helps colleges and universities manage examinations, fees, question papers, timetables, hall seating, evaluation, results, revaluation and mark sheets on one platform.",
+    keywords: [
+      "Controller of Examination Software",
+      "COE Software",
+      "Examination Management System",
+      "University Examination Software",
+      "College Examination Management System",
+      "COE Management System",
+      "Online Examination Software",
+      "University Result Management System",
+      "Examination Scheduling Software",
+      "Question Paper Management System",
+      "Exam Hall Management Software",
+    ],
+  },
+  "hrm-payroll": {
+    title: "HR Management & Payroll Software | Employee Management System",
+    description:
+      "Aveon HR Management & Payroll Software helps educational institutions manage employee profiles, recruitment, leave, attendance (biometric & face reader), overtime, salary calculation, payroll, appraisal and payslips through one integrated ERP platform.",
+    keywords: [
+      "HR Management & Payroll Software",
+      "Human Resource Management Software",
+      "Payroll Software for Colleges",
+      "Payroll Software for Universities",
+      "Employee Management System",
+      "Staff Management Software",
+      "HRMS for Educational Institutions",
+      "Employee Attendance Software",
+      "Face Recognition Attendance Software",
+      "Leave Management System",
+      "Payroll Processing Software",
+      "Staff Appraisal Software",
+    ],
+  },
   "school-erp": {
     title: "School ERP Software | School Management System",
     description:
@@ -121,6 +215,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const heroImg = heroImages[product.slug] ?? "/images/university.png";
 
+  /** Products with a bespoke content component — the generic Key Features
+   *  grid (sourced from CMS data) is redundant and hidden for these. */
+  const richContentSlugs = new Set([
+    "university-erp",
+    "college-erp",
+    "school-erp",
+    "hrm-payroll",
+    "coe",
+    "library-management",
+    "hostel-mess",
+    "inventory-management",
+  ]);
+  const hasRichContent = richContentSlugs.has(product.slug);
+
   const jsonLd = [
     productJsonLd(product),
     breadcrumbJsonLd([
@@ -131,6 +239,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ...(product.slug === "college-erp" ? [faqJsonLd(collegeErpFaqs)] : []),
     ...(product.slug === "university-erp" ? [faqJsonLd(universityErpFaqs)] : []),
     ...(product.slug === "school-erp" ? [faqJsonLd(schoolErpFaqs)] : []),
+    ...(product.slug === "hrm-payroll" ? [faqJsonLd(hrmPayrollFaqs)] : []),
+    ...(product.slug === "coe" ? [faqJsonLd(coeFaqs)] : []),
+    ...(product.slug === "library-management" ? [faqJsonLd(libraryFaqs)] : []),
+    ...(product.slug === "hostel-mess" ? [faqJsonLd(hostelFaqs)] : []),
+    ...(product.slug === "inventory-management" ? [faqJsonLd(inventoryFaqs)] : []),
   ];
 
   return (
@@ -181,6 +294,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="relative w-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
               {product.slug === "college-erp" || product.slug === "university-erp" || product.slug === "school-erp" ? (
                 <CollegeDashboardMockup />
+              ) : product.slug === "hrm-payroll" ? (
+                <HeroDashboard variant="payroll" />
+              ) : product.slug === "coe" ? (
+                <HeroDashboard variant="exam" />
+              ) : product.slug === "hostel-mess" ? (
+                <HeroDashboard variant="hostel" />
               ) : (
                 <Image
                   src={heroImg}
@@ -199,26 +318,33 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {product.slug === "university-erp" && <UniversityERPContent />}
       {product.slug === "college-erp" && <CollegeERPContent />}
       {product.slug === "school-erp" && <SchoolERPContent />}
+      {product.slug === "hrm-payroll" && <HrmPayrollContent />}
+      {product.slug === "coe" && <CoeContent />}
+      {product.slug === "library-management" && <LibraryContent />}
+      {product.slug === "hostel-mess" && <HostelContent />}
+      {product.slug === "inventory-management" && <InventoryContent />}
 
-      {/* ── Key Features ── */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Key Features</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {product.features.map((feature) => (
-            <div
-              key={feature}
-              className="flex items-start gap-3 rounded-xl border border-navy-100 bg-white p-5 shadow-card"
-            >
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-600">
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
-              </span>
-              <p className="text-sm font-medium text-navy-800">{feature}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* ── Key Features (only for products without a bespoke content page) ── */}
+      {!hasRichContent && (
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Key Features</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {product.features.map((feature) => (
+              <div
+                key={feature}
+                className="flex items-start gap-3 rounded-xl border border-navy-100 bg-white p-5 shadow-card"
+              >
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-600">
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <p className="text-sm font-medium text-navy-800">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ── Related Products ── */}
       <section className="mx-auto max-w-7xl px-4 pb-4 sm:px-6 lg:px-8">
