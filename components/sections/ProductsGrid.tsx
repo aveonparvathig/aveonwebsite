@@ -39,7 +39,7 @@ export default async function ProductsGrid() {
           {featured && (
             <Link
               href={`/products/${featured.slug}`}
-              className="group flex flex-wrap items-center gap-6.5 rounded-[28px] border border-primary-600/18 bg-gradient-to-br from-primary-50 to-[#dce9ff] p-7.5 shadow-[0_20px_50px_-26px_rgb(29_111_242_/_0.4)] transition-transform duration-300 hover:-translate-y-1.5 sm:col-span-2"
+              className="spotlight-card group flex flex-wrap items-center gap-6.5 rounded-[28px] border border-primary-600/18 bg-gradient-to-br from-primary-50 to-[#dce9ff] p-7.5 shadow-[0_20px_50px_-26px_rgb(29_111_242_/_0.4)] transition-transform duration-300 hover:-translate-y-1.5 sm:col-span-2"
             >
               <span className="min-w-0 flex-1 basis-60">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">

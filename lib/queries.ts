@@ -57,3 +57,10 @@ export const postBySlugQuery = groq`
     category
   }
 `;
+
+export const customersQuery = groq`
+  *[_type == "customer"] | order(order asc) {
+    name,
+    "logo": logo.asset->url
+  }
+`;

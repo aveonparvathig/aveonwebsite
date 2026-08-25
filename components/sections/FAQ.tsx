@@ -43,7 +43,7 @@ export default function FAQ() {
         {faqs.map((f) => (
           <details
             key={f.q}
-            className="group rounded-[20px] border border-navy-900/8 bg-white shadow-[0_12px_34px_-24px_rgb(16_26_51_/_0.35)]"
+            className="spotlight-card group rounded-[20px] border border-navy-900/8 bg-white shadow-[0_12px_34px_-24px_rgb(16_26_51_/_0.35)]"
           >
             <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-base font-bold text-navy-900 marker:content-none [&::-webkit-details-marker]:hidden">
               {f.q}

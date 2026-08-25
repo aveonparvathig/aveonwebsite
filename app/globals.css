@@ -137,3 +137,42 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
+
+/* ── Cursor spotlight on content cards ──────────────────────────
+   Attaches a brand-blue glow that follows the cursor to every card
+   using the shared `shadow-card` token (and anything tagged
+   `spotlight-card`), excluding small rounded-full pills. The cursor
+   position is fed in via --spot-x / --spot-y by SpotlightController. */
+.shadow-card:not(.rounded-full),
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+}
+.shadow-card:not(.rounded-full)::before,
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    220px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(29, 111, 242, 0.14),
+    transparent 62%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.shadow-card:not(.rounded-full):hover::before,
+.shadow-card:not(.rounded-full):focus-within::before,
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shadow-card::before,
+  .spotlight-card::before {
+    transition: none;
+  }
+}
