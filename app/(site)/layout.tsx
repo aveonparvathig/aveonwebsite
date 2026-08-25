@@ -1,6 +1,7 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import ChatWidget from "@/components/chat/ChatWidget";
+import SpotlightController from "@/components/ui/SpotlightController";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productsQuery } from "@/lib/queries";
 import { products as fallbackProducts, type Product } from "@/lib/data/products";
@@ -27,6 +28,7 @@ export default async function SiteLayout({
       <main className="flex-1">{children}</main>
       <Footer products={products} />
       <ChatWidget />
+      <SpotlightController />
     </>
   );
 }
