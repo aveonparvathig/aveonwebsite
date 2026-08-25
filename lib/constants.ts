@@ -74,7 +74,7 @@ export const navigation: NavItem[] = [
         title: "Build",
         items: services.slice(0, 3).map((s) => ({
           label: s.title,
-          href: "/services",
+          href: s.slug === "process-automation" ? "/services/ai-process-automation" : `/services/${s.slug}`,
           description: "Software Development",
           icon: s.icon,
         })),
@@ -83,7 +83,7 @@ export const navigation: NavItem[] = [
         title: "Operations",
         items: services.slice(3).map((s) => ({
           label: s.title,
-          href: "/services",
+          href: s.slug === "process-automation" ? "/services/ai-process-automation" : `/services/${s.slug}`,
           description: "Software Development",
           icon: s.icon,
         })),
