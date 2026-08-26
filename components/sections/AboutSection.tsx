@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import AboutIllustration from "@/components/sections/AboutIllustration";
 
 export default function AboutSection() {
   return (
@@ -34,13 +34,7 @@ export default function AboutSection() {
         <div className="relative">
           <div aria-hidden className="absolute inset-[8%_6%_6%_8%] rounded-[30px] bg-gradient-to-br from-primary-600/28 to-accent-500/20 blur-[34px]" />
           <div className="relative overflow-hidden rounded-3xl border border-navy-900/7 bg-gradient-to-b from-[#f4f8ff] to-white shadow-[0_34px_70px_-28px_rgb(16_26_51_/_0.4)]">
-            <Image
-              src="/images/illo-dashboards.webp"
-              alt="Team reviewing campus analytics dashboards"
-              width={900}
-              height={600}
-              className="box-border h-[300px] w-full animate-floaty-slow object-contain p-3 sm:h-[340px] lg:h-[380px]"
-            />
+            <AboutIllustration className="block aspect-[600/410] w-full" />
           </div>
         </div>
       </div>
