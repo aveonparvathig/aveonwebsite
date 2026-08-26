@@ -55,18 +55,19 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 pb-12 pt-8 sm:px-6 lg:grid-cols-2 lg:gap-13 lg:px-10 lg:pb-16 lg:pt-13">
         <div>
           <span className="inline-flex items-center gap-2.5 rounded-full border border-primary-600/20 bg-white py-2 pl-3 pr-4 text-[11.5px] font-extrabold uppercase tracking-[0.12em] text-primary-700 shadow-[0_8px_20px_-12px_rgb(29_111_242_/_0.5)]">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary-600 text-white">
-              <svg className="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-              </svg>
+            <span className="relative flex h-2.25 w-2.25">
+              <span className="absolute inset-0 rounded-full bg-primary-600 animate-pulse-ring" />
+              <span className="relative h-2.25 w-2.25 rounded-full bg-primary-600" />
             </span>
             Total Campus Management Solution
           </span>
 
-          <h1 className="mt-5.5 max-w-[600px] text-[clamp(34px,4.6vw,58px)] font-extrabold leading-[1.06] text-navy-900">
+          <h1 className="mt-5.5 max-w-[640px] text-[clamp(38px,5.4vw,68px)] font-extrabold leading-[1.18] text-navy-900 text-balance">
             {slide.title}
             <br />
-            <span className="text-primary-600">{slide.highlight}</span>
+            <span className="inline-block -rotate-[1.6deg] rounded-2xl bg-accent-500 px-3.5 text-white">
+              {slide.highlight}
+            </span>
           </h1>
 
           <p className="mt-5.5 max-w-[520px] text-[clamp(16px,1.5vw,18.5px)] leading-relaxed text-navy-700">

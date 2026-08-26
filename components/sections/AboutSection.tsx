@@ -33,13 +33,13 @@ export default function AboutSection() {
 
         <div className="relative">
           <div aria-hidden className="absolute inset-[8%_6%_6%_8%] rounded-[30px] bg-gradient-to-br from-primary-600/28 to-accent-500/20 blur-[34px]" />
-          <div className="relative overflow-hidden rounded-3xl shadow-[0_34px_70px_-28px_rgb(16_26_51_/_0.4)]">
+          <div className="relative overflow-hidden rounded-3xl border border-navy-900/7 bg-gradient-to-b from-[#f4f8ff] to-white shadow-[0_34px_70px_-28px_rgb(16_26_51_/_0.4)]">
             <Image
-              src="/images/erp1.jpg"
-              alt="Aveon team working together"
+              src="/images/illo-dashboards.webp"
+              alt="Team reviewing campus analytics dashboards"
               width={900}
               height={600}
-              className="h-[260px] w-full object-cover sm:h-[320px] lg:h-[380px]"
+              className="box-border h-[300px] w-full animate-floaty-slow object-contain p-3 sm:h-[340px] lg:h-[380px]"
             />
           </div>
         </div>
