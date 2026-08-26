@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/lib/data/services";
 
 /** Software development services — a light-blue band, distinct from the ERP products. */
@@ -6,7 +7,7 @@ export default function ServicesSection() {
   return (
     <section className="border-y border-navy-900/6 bg-[#f0f7ff]">
       <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-6 lg:px-10 lg:py-14">
-        <div className="flex flex-wrap items-end justify-between gap-5.5">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
             <span className="inline-block rounded-full bg-accent-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">
               Software Development
@@ -14,11 +15,18 @@ export default function ServicesSection() {
             <h2 className="mt-5 max-w-[620px] text-[clamp(28px,3.8vw,44px)] font-extrabold leading-tight text-navy-900">
               Software Built Around the Way You Work
             </h2>
+            <p className="mt-4.5 max-w-[460px] text-[15.5px] leading-[1.7] text-navy-700">
+              Beyond campus ERP, our engineering team builds automation, apps and business
+              systems for organisations of every kind.
+            </p>
           </div>
-          <p className="max-w-[380px] text-[15.5px] leading-[1.7] text-navy-700">
-            Beyond campus ERP, our engineering team builds automation, apps and business
-            systems for organisations of every kind.
-          </p>
+          <Image
+            src="/images/illo-pipeline.avif"
+            alt="Automated delivery pipeline from idea to shipped product"
+            width={710}
+            height={473}
+            className="w-full animate-floaty"
+          />
         </div>
 
         <div className="mt-9.5 grid gap-4.5 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const faqs = [
   {
     q: "How long does implementation take?",
@@ -35,27 +37,38 @@ export function faqJsonLd() {
 
 export default function FAQ() {
   return (
-    <section className="mx-auto max-w-[860px] px-4 pb-12 sm:px-6 lg:pb-16">
-      <h2 className="text-center text-[clamp(26px,3.2vw,38px)] font-extrabold text-navy-900">
-        Frequently Asked Questions
-      </h2>
-      <div className="mt-8 flex flex-col gap-3">
-        {faqs.map((f) => (
-          <details
-            key={f.q}
-            className="spotlight-card group rounded-[20px] border border-navy-900/8 bg-white shadow-[0_12px_34px_-24px_rgb(16_26_51_/_0.35)]"
-          >
-            <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-base font-bold text-navy-900 marker:content-none [&::-webkit-details-marker]:hidden">
-              {f.q}
-              <span className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-600">
-                <svg className="h-3.5 w-3.5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </span>
-            </summary>
-            <p className="px-6 pb-5.5 text-[15px] leading-[1.74] text-navy-700">{f.a}</p>
-          </details>
-        ))}
+    <section className="mx-auto max-w-[1320px] px-4 pb-12 sm:px-6 lg:px-10 lg:pb-16">
+      <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+        <Image
+          src="/images/illo-monitor.avif"
+          alt="Support team answering institution questions"
+          width={710}
+          height={473}
+          className="mx-auto w-full max-w-[440px] animate-floaty-slow lg:max-w-none"
+        />
+        <div>
+          <h2 className="text-[clamp(26px,3.2vw,38px)] font-extrabold text-navy-900">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-7 flex flex-col gap-3">
+            {faqs.map((f) => (
+              <details
+                key={f.q}
+                className="spotlight-card group rounded-[20px] border border-navy-900/8 bg-white shadow-[0_12px_34px_-24px_rgb(16_26_51_/_0.35)]"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-base font-bold text-navy-900 marker:content-none [&::-webkit-details-marker]:hidden">
+                  {f.q}
+                  <span className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-600">
+                    <svg className="h-3.5 w-3.5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="px-6 pb-5.5 text-[15px] leading-[1.74] text-navy-700">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
