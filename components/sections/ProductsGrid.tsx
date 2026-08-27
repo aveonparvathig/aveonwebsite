@@ -6,8 +6,12 @@ import { productsQuery } from "@/lib/queries";
 import ProductIcon from "@/components/ui/ProductIcon";
 
 const heroImages: Record<string, string> = {
+  "college-erp": "/products/cms.png",
   "university-erp": "/products/university.png",
 };
+
+// The wide "Most deployed" card at the top of the grid.
+const FEATURED_SLUG = "college-erp";
 
 export default async function ProductsGrid() {
   const fetched = await fetchOrFallback<Product[]>(productsQuery, fallbackProducts);
@@ -16,7 +20,8 @@ export default async function ProductsGrid() {
     slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
   }));
 
-  const [featured, ...rest] = products;
+  const featured = products.find((p) => p.slug === FEATURED_SLUG) ?? products[0];
+  const rest = products.filter((p) => p.slug !== featured?.slug);
 
   return (
     <section className="bg-gradient-to-b from-navy-50 to-white">
@@ -60,7 +65,7 @@ export default async function ProductsGrid() {
               </span>
               <span className="min-w-0 flex-1 basis-65 overflow-hidden rounded-[20px] border border-primary-600/18 bg-[#f4f8ff]">
                 <Image
-                  src={heroImages[featured.slug] ?? "/products/university.png"}
+                  src={heroImages[featured.slug] ?? "/products/cms.png"}
                   alt={`${featured.title} dashboard`}
                   width={680}
                   height={393}
