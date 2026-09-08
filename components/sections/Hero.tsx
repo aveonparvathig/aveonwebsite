@@ -2,40 +2,47 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import HeroDashboard, { type HeroVariant } from "@/components/sections/HeroDashboards";
 
 const slides: {
-  variant: HeroVariant;
+  image: string;
   title: string;
   highlight: string;
   description: string;
   caption: string;
 }[] = [
-  {
-    variant: "exam",
-    title: "One Platform.",
-    highlight: "Every Institution.",
-    description:
-      "Connect and manage Schools, Colleges and Universities through one unified campus management platform.",
-    caption: "EXAM & RESULT ANALYTICS",
-  },
-  {
-    variant: "payroll",
-    title: "Smarter Campus.",
-    highlight: "Better Management.",
-    description:
-      "Simplify academic and administrative operations with a powerful digital campus management solution.",
-    caption: "PAYROLL & FINANCE",
-  },
-  {
-    variant: "hostel",
-    title: "Connected Campus.",
-    highlight: "Powerful Operations.",
-    description:
-      "Bring your entire institution together with automation, analytics and centralized campus management.",
-    caption: "HOSTEL & MESS",
-  },
-];
+    {
+      image: "/products/university erp.png",
+      title: "One Platform.",
+      highlight: "Every Institution.",
+      description:
+        "Connect and manage Schools, Colleges and Universities through one unified campus management platform.",
+      caption: "UNIVERSITY ERP",
+    },
+    {
+      image: "/products/college.png",
+      title: "Smarter Campus.",
+      highlight: "Better Management.",
+      description:
+        "Simplify academic and administrative operations with a powerful digital campus management solution.",
+      caption: "COLLEGE ERP",
+    },
+    {
+      image: "/products/hrm.png",
+      title: "Connected Campus.",
+      highlight: "Powerful Operations.",
+      description:
+        "Bring your entire institution together with automation, analytics and centralized campus management.",
+      caption: "PAYROLL & FINANCE",
+    },
+    {
+      image: "/products/examination.png",
+      title: "Smart Administration.",
+      highlight: "Total Control.",
+      description:
+        "Unified campus management system for examinations, results, and academic records.",
+      caption: "CONTROLLER OF EXAMINATION",
+    },
+  ];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -95,14 +102,13 @@ export default function Hero() {
           <div className="mt-8.5 flex items-center gap-2.5">
             {slides.map((s, i) => (
               <button
-                key={s.variant}
+                key={i}
                 type="button"
                 onClick={() => setCurrent(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === current ? "true" : undefined}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-8 bg-primary-600" : "w-2 bg-navy-200 hover:bg-primary-400"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-primary-600" : "w-2 bg-navy-200 hover:bg-primary-400"
+                  }`}
               />
             ))}
           </div>
@@ -121,15 +127,15 @@ export default function Hero() {
                 {slide.caption}
               </span>
             </div>
-            <div className="relative aspect-[640/440] w-full bg-[#f4f8ff]">
+            <div className="relative aspect-[640/440] w-full bg-[#f4f8ff] overflow-hidden">
               {slides.map((s, i) => (
-                <div
-                  key={s.variant}
+                <img
+                  key={s.image}
+                  src={s.image}
+                  alt={s.caption}
                   aria-hidden={i !== current}
-                  className={`absolute inset-0 transition-opacity duration-[800ms] ${i === current ? "opacity-100" : "opacity-0"}`}
-                >
-                  <HeroDashboard variant={s.variant} />
-                </div>
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[800ms] ${i === current ? "opacity-100" : "opacity-0"}`}
+                />
               ))}
             </div>
           </div>

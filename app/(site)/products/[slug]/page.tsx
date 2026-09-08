@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products, getProduct, type Product } from "@/lib/data/products";
 import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
+import ProductHeroImage from "@/components/sections/ProductHeroImage";
 import UniversityERPContent, { universityErpFaqs } from "@/components/sections/UniversityERPContent";
 import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
 import SchoolERPContent, { schoolErpFaqs } from "@/components/sections/SchoolERPContent";
@@ -13,8 +13,6 @@ import CoeContent, { coeFaqs } from "@/components/sections/CoeContent";
 import LibraryContent, { libraryFaqs } from "@/components/sections/LibraryContent";
 import HostelContent, { hostelFaqs } from "@/components/sections/HostelContent";
 import InventoryContent, { inventoryFaqs } from "@/components/sections/InventoryContent";
-import CollegeDashboardMockup from "@/components/sections/CollegeDashboardMockup";
-import HeroDashboard from "@/components/sections/HeroDashboards";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -195,25 +193,11 @@ export async function generateMetadata({
   };
 }
 
-/** Per-product hero image (place PNGs/JPGs in /public/products/) */
-const heroImages: Record<string, string> = {
-  "university-erp": "/products/university.png",
-  "college-erp": "/products/cms.png",
-  "school-erp": "/products/school.png",
-  "lms-ai-chatbot": "/products/lms.png",
-  "hrm-payroll": "/products/hrm.png",
-  "library-management": "/products/lib.png",
-  "hostel-mess": "/products/hostel.png",
-  "coe": "/products/co.png",
-  "inventory-management": "/products/invent.png",
-};
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = await loadProduct(slug);
   if (!product) notFound();
-
-  const heroImg = heroImages[product.slug] ?? "/images/university.png";
 
   /** Products with a bespoke content component — the generic Key Features
    *  grid (sourced from CMS data) is redundant and hidden for these. */
@@ -288,28 +272,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          {/* Right: product image (College ERP uses a bespoke dashboard mockup) */}
+          {/* Right: product dashboard hero image */}
           <div className="relative flex w-full items-center justify-center">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-100/40 via-transparent to-accent-100/30 blur-2xl" />
             <div className="relative w-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
-              {product.slug === "college-erp" || product.slug === "university-erp" || product.slug === "school-erp" ? (
-                <CollegeDashboardMockup />
-              ) : product.slug === "hrm-payroll" ? (
-                <HeroDashboard variant="payroll" />
-              ) : product.slug === "coe" ? (
-                <HeroDashboard variant="exam" />
-              ) : product.slug === "hostel-mess" ? (
-                <HeroDashboard variant="hostel" />
-              ) : (
-                <Image
-                  src={heroImg}
-                  alt={`${product.title} dashboard`}
-                  width={680}
-                  height={430}
-                  priority
-                  className="w-full object-cover"
-                />
-              )}
+              <ProductHeroImage slug={product.slug} title={product.title} />
             </div>
           </div>
         </div>

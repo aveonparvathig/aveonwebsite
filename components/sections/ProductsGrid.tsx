@@ -6,12 +6,12 @@ import { productsQuery } from "@/lib/queries";
 import ProductIcon from "@/components/ui/ProductIcon";
 
 const heroImages: Record<string, string> = {
-  "college-erp": "/products/cms.png",
-  "university-erp": "/products/university.png",
+  "university-erp": "/products/uerp.png",
+  "college-erp": "/products/college erp.png",
 };
 
 // The wide "Most deployed" card at the top of the grid.
-const FEATURED_SLUG = "college-erp";
+const FEATURED_SLUG = "university-erp";
 
 export default async function ProductsGrid() {
   const fetched = await fetchOrFallback<Product[]>(productsQuery, fallbackProducts);
@@ -67,9 +67,9 @@ export default async function ProductsGrid() {
                 <Image
                   src={heroImages[featured.slug] ?? "/products/cms.png"}
                   alt={`${featured.title} dashboard`}
-                  width={680}
-                  height={393}
-                  className="aspect-[1.73/1] w-full object-cover"
+                  width={400}
+                  height={480}
+                  className="w-full h-full object-cover"
                 />
               </span>
             </Link>
