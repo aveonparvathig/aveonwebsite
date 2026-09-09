@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/sections/PageHero";
+import Image from "next/image";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
@@ -27,11 +27,31 @@ const models = [
 export default function PartnersPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Partners"
-        title="Grow With the Aveon Ecosystem"
-        description="We work with resellers, implementation specialists and technology providers across India and beyond."
-      />
+      <section className="relative overflow-hidden border-b border-navy-900/8 bg-gradient-to-b from-[#f4f8ff] to-white">
+        <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-primary-600/20 blur-[120px]" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-accent-500/15 blur-[120px]" />
+
+        <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-20">
+          <div>
+            <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
+              Partners
+            </span>
+            <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
+              Grow With the Aveon Ecosystem
+            </h1>
+            <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
+              We work with resellers, implementation specialists and technology providers across India and beyond.
+            </p>
+          </div>
+          <Image
+            src="/products/part.jpg"
+            alt="Aveon Partners"
+            width={600}
+            height={400}
+            className="w-full rounded-2xl object-cover"
+          />
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-3">

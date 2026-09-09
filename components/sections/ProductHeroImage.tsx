@@ -7,15 +7,15 @@ interface ProductHeroImageProps {
 
 // Map product slugs to their dashboard image filenames
 const productImages: Record<string, string> = {
-  "university-erp": "/products/uerp.png",
-  "college-erp": "/products/college erp.png",
-  "school-erp": "/products/school erp.png",
-  "lms-ai-chatbot": "/products/lms erp.png",
-  "hrm-payroll": "/products/hrm erp.png",
-  "library-management": "/products/library erp (1).png",
-  "hostel-mess": "/products/hostel mess erp.png",
-  "coe": "/products/coe erp.png",
-  "inventory-management": "/products/inventory erp.png",
+  "university-erp": "/products/uni.png",
+  "college-erp": "/products/clg.png",
+  "school-erp": "/products/s.png",
+  "lms-ai-chatbot": "/products/la.png",
+  "hrm-payroll": "/products/hrm.png",
+  "library-management": "/products/li.png",
+  "hostel-mess": "/products/hm.png",
+  "coe": "/products/c.png",
+  "inventory-management": "/products/in.png",
 };
 
 export default function ProductHeroImage({ slug, title }: ProductHeroImageProps) {
@@ -33,7 +33,7 @@ export default function ProductHeroImage({ slug, title }: ProductHeroImageProps)
     <img
       src={imagePath}
       alt={`${title} dashboard`}
-      className="w-full h-auto object-cover"
+      className="w-full h-full object-contain"
     />
   );
 }

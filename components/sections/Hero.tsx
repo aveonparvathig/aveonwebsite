@@ -11,7 +11,7 @@ const slides: {
   caption: string;
 }[] = [
     {
-      image: "/products/university erp.png",
+      image: "/products/uerp.png",
       title: "One Platform.",
       highlight: "Every Institution.",
       description:
@@ -19,7 +19,7 @@ const slides: {
       caption: "UNIVERSITY ERP",
     },
     {
-      image: "/products/college.png",
+      image: "/products/college erp.png",
       title: "Smarter Campus.",
       highlight: "Better Management.",
       description:
@@ -27,7 +27,7 @@ const slides: {
       caption: "COLLEGE ERP",
     },
     {
-      image: "/products/hrm.png",
+      image: "/products/hrm erp.png",
       title: "Connected Campus.",
       highlight: "Powerful Operations.",
       description:
@@ -35,7 +35,7 @@ const slides: {
       caption: "PAYROLL & FINANCE",
     },
     {
-      image: "/products/examination.png",
+      image: "/products/coe erp.png",
       title: "Smart Administration.",
       highlight: "Total Control.",
       description:
