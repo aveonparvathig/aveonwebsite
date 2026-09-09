@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/images/s33-hero.png",
+    image: "/images/university erp.png",
     title: "One Platform.",
     highlight: "Every Institution.",
     description:
@@ -90,9 +90,8 @@ export default function Hero() {
                 onClick={() => setCurrent(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === current ? "true" : undefined}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-8 bg-primary-600" : "w-2 bg-navy-200 hover:bg-primary-400"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-primary-600" : "w-2 bg-navy-200 hover:bg-primary-400"
+                  }`}
               />
             ))}
           </div>

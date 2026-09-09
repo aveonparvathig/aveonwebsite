@@ -1,0 +1,21 @@
+<svg viewBox="0 0 640 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gradhero-payroll.svg" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#f0f4f8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e8f0f8;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect width="640" height="440" fill="url(#gradhero-payroll.svg)"/>
+    <rect width="640" height="40" fill="#f59e0b"/>
+    <text x="20" y="25" font-size="14" font-weight="bold" fill="white">CMS</text>
+    <text x="30" y="70" font-size="18" font-weight="bold" fill="#1a1a1a">HR & Payroll Dashboard</text>
+    <rect x="30" y="100" width="580" height="60" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="50" y="135" font-size="14" font-weight="bold" fill="#f59e0b">Total Active Users: 2,483</text>
+    <rect x="30" y="180" width="580" height="60" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="50" y="215" font-size="14" font-weight="bold" fill="#f59e0b">System Status: Running</text>
+    <rect x="30" y="260" width="580" height="120" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="50" y="285" font-size="14" font-weight="bold" fill="#f59e0b">Analytics & Reports</text>
+    <rect x="50" y="310" width="150" height="60" rx="4" fill="#f59e0b" opacity="0.1"/>
+    <rect x="240" y="310" width="150" height="60" rx="4" fill="#f59e0b" opacity="0.15"/>
+    <rect x="430" y="310" width="150" height="60" rx="4" fill="#f59e0b" opacity="0.2"/>
+  </svg>

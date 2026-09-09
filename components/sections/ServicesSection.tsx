@@ -21,8 +21,8 @@ export default function ServicesSection() {
             </p>
           </div>
           <Image
-            src="/images/illo-pipeline.avif"
-            alt="Automated delivery pipeline from idea to shipped product"
+            src="/products/erp3.jpeg"
+            alt="Enterprise resource planning system dashboard"
             width={710}
             height={473}
             className="w-full animate-floaty"
