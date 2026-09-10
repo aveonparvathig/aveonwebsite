@@ -15,7 +15,16 @@ const FEATURED_SLUG = "college-erp";
 
 export default async function ProductsGrid() {
   const fetched = await fetchOrFallback<Product[]>(productsQuery, fallbackProducts);
-  const products = fetched.map((p) => ({
+
+  // Merge Sanity results with fallback products to ensure all products are displayed
+  const sanityProductSlugs = new Set(fetched.map(p => p.slug?.replace(/\s+/g, "-").toLowerCase()));
+  const fallbackProductSlugs = new Set(fallbackProducts.map(p => p.slug));
+
+  // Add fallback products that aren't in Sanity
+  const missingProducts = fallbackProducts.filter(p => !sanityProductSlugs.has(p.slug));
+  const allProducts = [...fetched, ...missingProducts];
+
+  const products = allProducts.map((p) => ({
     ...p,
     slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
   }));
@@ -34,7 +43,7 @@ export default async function ProductsGrid() {
             One Platform for Every Campus Need
           </h2>
           <p className="mt-4 text-[17px] leading-relaxed text-navy-700">
-            Nine integrated products covering academics, administration, finance and campus
+            Twelve integrated products covering academics, administration, finance and campus
             life use them together or start with one.
           </p>
         </div>

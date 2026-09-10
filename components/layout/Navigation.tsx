@@ -92,8 +92,8 @@ export default function Navigation({ products }: { products?: Product[] }) {
           <Image src="/images/aveon-logo-dark.svg" alt="Aveon Infotech" width={160} height={34} priority className="h-8 w-auto" />
         </Link>
 
-        {/* Desktop nav — underline indicator */}
-        <div className="hidden h-full items-stretch xl:flex">
+        {/* Desktop nav — clean design */}
+        <div className="hidden h-full items-stretch xl:flex gap-0.5">
           {items.map((item) => {
             const active = isActive(item);
             return (
@@ -101,10 +101,10 @@ export default function Navigation({ products }: { products?: Product[] }) {
                 key={item.label}
                 href={item.href}
                 onMouseEnter={() => setOpenMenu(item.groups ? item.label : null)}
-                className={`flex items-center gap-1.5 px-4 text-[15px] font-semibold transition-colors ${
+                className={`flex items-center gap-1 px-3.5 py-2 text-sm font-medium transition-all rounded-lg ${
                   active
-                    ? "text-primary-600 shadow-[inset_0_-3px_0_var(--color-primary-600)]"
-                    : "text-navy-700 shadow-[inset_0_-3px_0_transparent] hover:text-primary-600 hover:shadow-[inset_0_-3px_0_var(--color-primary-200)]"
+                    ? "text-primary-600 bg-primary-50"
+                    : "text-navy-700 hover:text-primary-600 hover:bg-navy-50"
                 }`}
               >
                 {item.label}
@@ -166,14 +166,14 @@ export default function Navigation({ products }: { products?: Product[] }) {
                       >
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 text-primary-600">
                           {child.icon ? (
-                            <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
+                            <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                               <path strokeLinecap="round" strokeLinejoin="round" d={child.icon} />
                             </svg>
                           ) : (
                             <ProductIcon slug={slug} className="h-[18px] w-[18px]" />
                           )}
                         </span>
-                        <span className="min-w-0">
+                        <span className="min-w-0 flex-1">
                           <span className="block truncate text-[15px] font-bold text-navy-900">{child.label}</span>
                           {child.description && (
                             <span className="block truncate text-[12.5px] text-navy-600">{child.description}</span>
@@ -239,11 +239,11 @@ export default function Navigation({ products }: { products?: Product[] }) {
                 const flat = item.groups?.flatMap((g) => g.items) ?? [];
                 return (
                   <div key={item.label} className="mb-1.5">
-                    <div className={`flex items-center justify-between gap-2 rounded-2xl pl-3.5 ${active ? "bg-primary-50" : ""}`}>
+                    <div className={`flex items-center justify-between gap-2 rounded-2xl ${active ? "bg-primary-50" : ""}`}>
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className={`flex min-h-12 flex-1 items-center py-3.5 text-[16.5px] font-bold ${active ? "text-primary-600" : "text-navy-900"}`}
+                        className={`flex min-h-12 flex-1 items-center py-3.5 px-3.5 text-[16.5px] font-bold ${active ? "text-primary-600" : "text-navy-900"}`}
                       >
                         {item.label}
                       </Link>

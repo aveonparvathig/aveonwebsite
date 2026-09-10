@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { siteConfig } from "@/lib/constants";
-import { organizationJsonLd } from "@/lib/structured-data";
+import { organizationJsonLd, localBusinessJsonLd } from "@/lib/structured-data";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -16,19 +16,22 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Aveon Infotech — University, College & School ERP Solutions",
+    default: "AI-Powered Campus ERP & LMS | Aveon Infotech",
     template: "%s | Aveon Infotech",
   },
   description:
-    "Aveon Infotech builds ERP solutions for education — University ERP, College ERP, School ERP, LMS with AI Chatbot, HRM & Payroll, and more.",
+    "Unified AI-powered campus ERP & LMS for universities, colleges, and schools. Manage admissions, academics, fees, and operations on one platform. OBE-compliant, NAAC/AICTE ready. Serving 5000+ institutions.",
   keywords: [
-    "University ERP",
-    "College ERP",
-    "School ERP",
-    "Education ERP",
-    "LMS",
-    "AI Chatbot",
-    "HRM Payroll",
+    "AI-powered campus ERP",
+    "university ERP",
+    "college ERP",
+    "school ERP",
+    "learning management system",
+    "student information system",
+    "outcome-based education",
+    "campus management software",
+    "AI education technology",
+    "HRM & Payroll",
     "Aveon Infotech",
   ],
   openGraph: {
@@ -36,15 +39,15 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Aveon Infotech — Education ERP Solutions",
+    title: "AI-Powered Campus ERP & LMS | Aveon Infotech",
     description:
-      "Comprehensive ERP solutions for universities, colleges and schools.",
+      "Unified platform for education management. AI-powered campus ERP for universities, colleges, and schools. NAAC/AICTE compliant.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aveon Infotech — Education ERP Solutions",
+    title: "AI-Powered Campus ERP & LMS | Aveon Infotech",
     description:
-      "Comprehensive ERP solutions for universities, colleges and schools.",
+      "Unified AI-powered campus management platform serving 5000+ institutions.",
   },
   robots: { index: true, follow: true },
 };
@@ -56,13 +59,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd()),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd()),
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
         <SpeedInsights />

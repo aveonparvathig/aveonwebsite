@@ -17,7 +17,12 @@ export default async function SiteLayout({
     fallbackProducts,
   );
 
-  const products = fetchedProducts.map((p) => ({
+  // Merge Sanity results with fallback products to ensure all products are displayed
+  const sanityProductSlugs = new Set(fetchedProducts.map(p => p.slug?.replace(/\s+/g, "-").toLowerCase()));
+  const missingProducts = fallbackProducts.filter(p => !sanityProductSlugs.has(p.slug));
+  const allProducts = [...fetchedProducts, ...missingProducts];
+
+  const products = allProducts.map((p) => ({
     ...p,
     slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
   }));

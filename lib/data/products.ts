@@ -167,6 +167,57 @@ export const products: Product[] = [
     ],
     order: 9,
   },
+  {
+    title: "IQAC / NAAC / NBA",
+    slug: "iqac-naac-nba",
+    category: "management",
+    tagline: "Institutional Quality Assurance & Accreditation",
+    description:
+      "Comprehensive quality assurance system for institutional excellence — IQAC compliance, NAAC accreditation, NBA accreditation, quality metrics, feedback management, and accreditation reporting, all integrated.",
+    features: [
+      "IQAC cell management & coordination",
+      "NAAC accreditation (7 criteria framework)",
+      "NBA accreditation for engineering programs",
+      "Quality indicators & benchmarking",
+      "Stakeholder feedback & surveys",
+      "Accreditation reports & documentation",
+    ],
+    order: 10,
+  },
+  {
+    title: "Grievance Management",
+    slug: "grievance-management",
+    category: "management",
+    tagline: "Grievance & Complaint Management System",
+    description:
+      "One connected platform for managing grievances from students, staff and others — registration, tracking, escalation, resolution and redressal, with reports and analytics.",
+    features: [
+      "Anonymous grievance submission",
+      "Multiple channels (portal, SMS, email)",
+      "Automatic routing & assignment",
+      "Escalation & SLA management",
+      "Resolution tracking & closure",
+      "Reports, analytics & KPIs",
+    ],
+    order: 11,
+  },
+  {
+    title: "Canteen Management",
+    slug: "canteen-management",
+    category: "management",
+    tagline: "Canteen & Food Service Management",
+    description:
+      "One digital canteen platform — menu management, orders, billing, inventory, vendor management, staff scheduling and health compliance, all connected.",
+    features: [
+      "Digital menu & daily offerings",
+      "Online order & payment",
+      "Inventory & stock management",
+      "Vendor & supplier management",
+      "Staff scheduling & attendance",
+      "Health & hygiene compliance",
+    ],
+    order: 12,
+  },
 ];
 
 export function getProduct(slug: string): Product | undefined {
