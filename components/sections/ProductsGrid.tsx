@@ -34,7 +34,7 @@ export default async function ProductsGrid() {
             One Platform for Every Campus Need
           </h2>
           <p className="mt-4 text-[17px] leading-relaxed text-navy-700">
-            Nine integrated products covering academics, administration, finance and campus
+            Twelve integrated products covering academics, administration, finance and campus
             life use them together or start with one.
           </p>
         </div>

@@ -34,7 +34,7 @@ export default function ProductsPage() {
               Our Products
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Nine integrated products built for education — pick one, or run your entire campus on Aveon.
+              Twelve integrated products built for education — pick one, or run your entire campus on Aveon.
             </p>
           </div>
           <Image
