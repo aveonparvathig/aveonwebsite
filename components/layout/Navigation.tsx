@@ -107,6 +107,11 @@ export default function Navigation({ products }: { products?: Product[] }) {
                     : "text-navy-700 shadow-[inset_0_-3px_0_transparent] hover:text-primary-600 hover:shadow-[inset_0_-3px_0_var(--color-primary-200)]"
                 }`}
               >
+                {item.icon && (
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                  </svg>
+                )}
                 {item.label}
                 {item.groups && <Chevron open={openMenu === item.label} />}
               </Link>
@@ -243,8 +248,13 @@ export default function Navigation({ products }: { products?: Product[] }) {
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className={`flex min-h-12 flex-1 items-center py-3.5 text-[16.5px] font-bold ${active ? "text-primary-600" : "text-navy-900"}`}
+                        className={`flex min-h-12 flex-1 items-center gap-2.5 py-3.5 text-[16.5px] font-bold ${active ? "text-primary-600" : "text-navy-900"}`}
                       >
+                        {item.icon && (
+                          <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                          </svg>
+                        )}
                         {item.label}
                       </Link>
                       {flat.length > 0 && (
