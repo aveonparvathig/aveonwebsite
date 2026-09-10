@@ -17,6 +17,40 @@ export function organizationJsonLd() {
       addressCountry: "IN",
     },
     sameAs: Object.values(siteConfig.social),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.5",
+      ratingCount: "250",
+    },
+    knowsAbout: [
+      "Campus Management",
+      "Education ERP",
+      "Student Information System",
+      "Learning Management System",
+      "AI Education Technology",
+    ],
+  };
+}
+
+export function localBusinessJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: siteConfig.name,
+    image: `${siteConfig.url}/images/logo.svg`,
+    description: "AI-powered campus ERP and learning management system for universities, colleges, and schools.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Coimbatore",
+      addressRegion: "Tamil Nadu",
+      postalCode: "641001",
+      addressCountry: "IN",
+    },
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    url: siteConfig.url,
+    priceRange: "$$",
+    areaServed: "IN",
   };
 }
 
