@@ -6,7 +6,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Campus ERP Products | University, College & School Solutions | Aveon",
   description:
-    "Explore Aveon's integrated campus ERP products: University ERP, College ERP, School ERP, LMS with AI Chatbot, HRM & Payroll, Hostel Management, and more. OBE-compliant, NAAC-ready solutions.",
+    "Explore Aveon's 12 integrated campus ERP products: University ERP, College ERP, School ERP, LMS with AI Chatbot, IQAC/NAAC, Grievance Management, Canteen Management, and more. OBE-compliant, NAAC-ready solutions.",
   keywords: [
     "university ERP",
     "college ERP",
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "campus management software",
     "education ERP solutions",
     "student information system",
+    "IQAC NAAC management",
+    "grievance management system",
+    "canteen management",
   ],
 };
 

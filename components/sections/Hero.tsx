@@ -211,7 +211,7 @@ export default function Hero() {
 
           <div className="absolute -right-0.5 top-2 flex items-center gap-2.5 rounded-[18px] bg-navy-900 px-4 py-3 shadow-[0_24px_50px_-22px_rgb(16_26_51_/_0.6)]">
             <span className="h-2.25 w-2.25 rounded-full bg-green-400" />
-            <span className="text-[12.5px] font-semibold text-white">One login · Nine products</span>
+            <span className="text-[12.5px] font-semibold text-white">One login · Twelve products</span>
           </div>
         </div>
       </div>

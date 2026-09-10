@@ -67,7 +67,7 @@ export const navigation: NavItem[] = [
     ],
     promo: {
       eyebrow: "All Products",
-      title: "Nine products, one database",
+      title: "Twelve products, one database",
       text: "Start with one module and add the rest later — no migration in between.",
       cta: "Browse all",
       href: "/products",
