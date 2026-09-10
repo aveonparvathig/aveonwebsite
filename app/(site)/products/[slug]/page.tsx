@@ -243,11 +243,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div aria-hidden className="pointer-events-none absolute -top-24 left-1/3 h-80 w-80 rounded-full bg-primary-200/30 blur-[100px]" />
         <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-accent-200/20 blur-[80px]" />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-14 lg:grid-cols-2 lg:py-20">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-6 py-14 lg:grid-cols-2 lg:py-20 min-h-[550px] lg:min-h-[600px]">
 
           {/* Left: text */}
-          <div>
-            <span className="inline-block rounded-full border border-primary-200 bg-primary-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-primary-600">
+          <div className="flex flex-col justify-center">
+            <span className="inline-block rounded-full border border-primary-200 bg-primary-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-primary-600 w-fit">
               {product.tagline}
             </span>
             <h1 className="mt-5 text-4xl font-extrabold leading-tight text-navy-900 sm:text-5xl xl:text-6xl">
@@ -273,9 +273,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
 
           {/* Right: product dashboard hero image */}
-          <div className="relative flex w-full items-center justify-center">
+          <div className="relative w-full h-full">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-100/40 via-transparent to-accent-100/30 blur-2xl" />
-            <div className="relative w-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
+            <div className="relative w-full h-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
               <ProductHeroImage slug={product.slug} title={product.title} />
             </div>
           </div>

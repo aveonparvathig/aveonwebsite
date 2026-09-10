@@ -11,7 +11,7 @@ const heroImages: Record<string, string> = {
 };
 
 // The wide "Most deployed" card at the top of the grid.
-const FEATURED_SLUG = "university-erp";
+const FEATURED_SLUG = "college-erp";
 
 export default async function ProductsGrid() {
   const fetched = await fetchOrFallback<Product[]>(productsQuery, fallbackProducts);

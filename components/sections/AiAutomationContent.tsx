@@ -318,22 +318,141 @@ export default function AiAutomationContent() {
       </section>
 
       {/* ── Typical workflow flow ── */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">A Typical AI-Powered Workflow</h2>
-          <p className="mt-3 text-lg text-navy-600">From human-driven processes to intelligent, connected workflows.</p>
-        </div>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          {AI_FLOW.map((step, i) => (
-            <div key={step} className="flex items-center gap-2">
-              <span className="rounded-full border border-navy-100 bg-white px-4 py-2 text-sm font-semibold text-navy-800 shadow-card">{step}</span>
-              {i < AI_FLOW.length - 1 && (
-                <svg className="h-4 w-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              )}
-            </div>
-          ))}
+      <section className="border-t border-navy-100 bg-gradient-to-b from-white via-navy-50/40 to-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-extrabold text-navy-900 sm:text-4xl">A Typical AI-Powered Workflow</h2>
+            <p className="mt-4 text-lg text-navy-600">From human-driven processes to intelligent, connected workflows.</p>
+          </div>
+
+          {/* Workflow Illustration - Horizontal Flow */}
+          <div className="mt-14 hidden lg:block">
+            <svg viewBox="0 0 1400 320" className="h-auto w-full max-w-6xl mx-auto" role="img" aria-label="Complete AI workflow from input to result">
+              <defs>
+                <linearGradient id="flowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#3376ff" />
+                  <stop offset="100%" stopColor="#1d5ae5" />
+                </linearGradient>
+                <linearGradient id="flowOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f39c12" />
+                  <stop offset="100%" stopColor="#e8830b" />
+                </linearGradient>
+              </defs>
+
+              {/* Flowing connector line */}
+              <path d="M 60 160 Q 200 80, 280 160 T 520 160 T 760 160 T 1000 160 T 1200 160 T 1340 160" stroke="#e0e8f6" strokeWidth="3" fill="none" />
+
+              {/* Step 1: Input - Lightbulb idea */}
+              <g>
+                <circle cx="60" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
+                <text x="60" y="185" textAnchor="middle" fontSize="24" fontWeight="bold" fill="#3376ff">💡</text>
+                <text x="60" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Input</text>
+              </g>
+
+              {/* Step 2: Understand - Brain/Analysis */}
+              <g>
+                <circle cx="280" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
+                <text x="280" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">🧠</text>
+                <text x="280" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Understand</text>
+              </g>
+
+              {/* Step 3: Process - Gears */}
+              <g>
+                <circle cx="500" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
+                <text x="500" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">⚙️</text>
+                <text x="500" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Process</text>
+              </g>
+
+              {/* Step 4: Decision - Chess Knight */}
+              <g>
+                <circle cx="720" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
+                <text x="720" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">♞</text>
+                <text x="720" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Decision</text>
+              </g>
+
+              {/* Step 5: Automate - Rocket */}
+              <g>
+                <circle cx="940" cy="160" r="45" fill="#fff8f0" stroke="#f39c12" strokeWidth="2" />
+                <text x="940" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">🚀</text>
+                <text x="940" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Automate</text>
+              </g>
+
+              {/* Step 6: Action - Checkmark */}
+              <g>
+                <circle cx="1160" cy="160" r="45" fill="#fff8f0" stroke="#f39c12" strokeWidth="2" />
+                <text x="1160" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">✓</text>
+                <text x="1160" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Action</text>
+              </g>
+
+              {/* Step 7: Notify - Bell */}
+              <g>
+                <circle cx="1340" cy="160" r="45" fill="#fff8f0" stroke="#f39c12" strokeWidth="2" />
+                <text x="1340" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">🔔</text>
+                <text x="1340" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Notify</text>
+              </g>
+
+              {/* Description callouts */}
+              <text x="60" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Request arrives</text>
+              <text x="280" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">AI analyzes</text>
+              <text x="500" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Data extracted</text>
+              <text x="720" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Route determined</text>
+              <text x="940" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Execute action</text>
+              <text x="1160" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">System updated</text>
+              <text x="1340" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Complete</text>
+            </svg>
+          </div>
+
+          {/* Mobile: Vertical flow */}
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
+            {AI_FLOW.map((step, i) => {
+              const icons = ["💡", "🧠", "⚙️", "♞", "🚀", "✓", "🔔", "🎯"];
+              const descriptions = [
+                "Request arrives",
+                "AI analyzes",
+                "Data extracted",
+                "Route determined",
+                "Execute action",
+                "System updated",
+                "Stakeholder notified",
+                "Complete"
+              ];
+
+              return (
+                <div key={step} className="flex gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-100 to-primary-50 border-2 border-primary-300 text-2xl">
+                    {icons[i]}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-navy-900">{step}</h4>
+                    <p className="text-sm text-navy-600 mt-1">{descriptions[i]}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Process Phases Summary */}
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { phase: "Phase 1", title: "Capture", desc: "Input & Understanding", steps: "Steps 1-2", color: "primary" },
+              { phase: "Phase 2", title: "Analyze", desc: "Analysis & Decision", steps: "Steps 3-4", color: "primary" },
+              { phase: "Phase 3", title: "Execute", desc: "Automation & Action", steps: "Steps 5-6", color: "accent" },
+              { phase: "Phase 4", title: "Complete", desc: "Notification & Result", steps: "Steps 7-8", color: "accent" }
+            ].map((p, i) => (
+              <div key={p.phase} className={`rounded-2xl border-2 p-5 transition-all ${
+                p.color === "primary"
+                  ? "border-primary-200 bg-primary-50/40 hover:border-primary-400 hover:bg-primary-50/60"
+                  : "border-accent-200 bg-accent-50/40 hover:border-accent-400 hover:bg-accent-50/60"
+              }`}>
+                <span className={`text-xs font-bold uppercase tracking-wider ${
+                  p.color === "primary" ? "text-primary-600" : "text-accent-600"
+                }`}>{p.phase}</span>
+                <h4 className="mt-2 font-bold text-navy-900 text-lg">{p.title}</h4>
+                <p className="mt-1 text-sm text-navy-600">{p.desc}</p>
+                <p className="mt-2 text-xs text-navy-500 font-medium">{p.steps}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
