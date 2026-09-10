@@ -171,14 +171,14 @@ export default function Navigation({ products }: { products?: Product[] }) {
                       >
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 text-primary-600">
                           {child.icon ? (
-                            <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
+                            <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                               <path strokeLinecap="round" strokeLinejoin="round" d={child.icon} />
                             </svg>
                           ) : (
                             <ProductIcon slug={slug} className="h-[18px] w-[18px]" />
                           )}
                         </span>
-                        <span className="min-w-0">
+                        <span className="min-w-0 flex-1">
                           <span className="block truncate text-[15px] font-bold text-navy-900">{child.label}</span>
                           {child.description && (
                             <span className="block truncate text-[12.5px] text-navy-600">{child.description}</span>
