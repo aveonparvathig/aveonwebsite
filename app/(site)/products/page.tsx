@@ -4,9 +4,18 @@ import ProductsGrid from "@/components/sections/ProductsGrid";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Products",
+  title: "Campus ERP Products | University, College & School Solutions | Aveon",
   description:
-    "Explore Aveon Infotech's product suite University ERP, College ERP, School ERP, LMS & AI Chatbot, HRM & Payroll and more.",
+    "Explore Aveon's integrated campus ERP products: University ERP, College ERP, School ERP, LMS with AI Chatbot, HRM & Payroll, Hostel Management, and more. OBE-compliant, NAAC-ready solutions.",
+  keywords: [
+    "university ERP",
+    "college ERP",
+    "school ERP",
+    "learning management system",
+    "campus management software",
+    "education ERP solutions",
+    "student information system",
+  ],
 };
 
 export default function ProductsPage() {

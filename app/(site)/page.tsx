@@ -6,7 +6,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ProductsGrid from "@/components/sections/ProductsGrid";
 import OBEComplianceSection from "@/components/sections/OBEComplianceSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import Testimonials from "@/components/sections/Testimonials";
+import TestimonialsWithRatings from "@/components/sections/TestimonialsWithRatings";
 import FAQ from "@/components/sections/FAQ";
 import CTASection from "@/components/sections/CTASection";
 import { siteConfig } from "@/lib/constants";
@@ -42,7 +42,7 @@ export default function HomePage() {
       <ProductsGrid />
       <OBEComplianceSection />
       <ServicesSection />
-      <Testimonials />
+      <TestimonialsWithRatings />
       <FAQ />
       <CTASection />
     </>
