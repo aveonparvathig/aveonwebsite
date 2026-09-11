@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Canteen Management System | Aveon Campus ERP",
@@ -17,22 +18,25 @@ export default function CanteenManagementPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <div className="max-w-[800px]">
-            <span className="inline-block rounded-full bg-orange-100 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-orange-700">
+      <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white">
+        <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-orange-600/20 blur-[120px]" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-orange-500/15 blur-[120px]" />
+
+        <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-20">
+          <div>
+            <span className="inline-block rounded-full bg-orange-100 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-orange-700">
               Product
             </span>
-            <h1 className="mt-6 text-[clamp(36px,5vw,56px)] font-extrabold leading-tight text-navy-900">
+            <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
               Canteen & Food Service Management
             </h1>
-            <p className="mt-6 text-lg text-navy-700">
+            <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
               Complete digital platform for canteen operations — menu management, online ordering, billing, inventory, vendor management, and health compliance, all integrated.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact#demo"
-                className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-6 py-3 font-bold text-white hover:bg-orange-700"
+                className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-7.5 py-4 text-[15px] font-bold text-white shadow-[0_18px_40px_-14px_rgb(234_88_12_/_0.8)] transition-all hover:-translate-y-0.5 hover:bg-orange-700"
               >
                 Request Demo
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -41,12 +45,19 @@ export default function CanteenManagementPage() {
               </Link>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 rounded-lg border border-orange-600 px-6 py-3 font-bold text-orange-600 hover:bg-orange-50"
+                className="inline-flex items-center rounded-full border border-orange-600 bg-white px-7.5 py-4 text-[15px] font-bold text-orange-600 transition hover:border-orange-700 hover:text-orange-700"
               >
                 All Products
               </Link>
             </div>
           </div>
+          <Image
+            src="/products/canteen.png"
+            alt="Canteen and Food Service Management System"
+            width={600}
+            height={400}
+            className="w-full rounded-2xl object-contain"
+          />
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
-import Customers from "@/components/sections/Customers";
+import ClientLogosCarousel from "@/components/sections/ClientLogosCarousel";
 import AboutSection from "@/components/sections/AboutSection";
 import ProductsGrid from "@/components/sections/ProductsGrid";
 import OBEComplianceSection from "@/components/sections/OBEComplianceSection";
@@ -37,7 +37,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Stats />
-      <Customers />
+      <ClientLogosCarousel />
       <AboutSection />
       <ProductsGrid />
       <OBEComplianceSection />
