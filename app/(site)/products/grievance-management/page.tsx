@@ -52,7 +52,7 @@ export default function GrievanceManagementPage() {
             </div>
           </div>
           <Image
-            src="/products/grievance.png"
+            src="/products/grievance(1).png"
             alt="Grievance and Complaint Management System"
             width={600}
             height={400}
