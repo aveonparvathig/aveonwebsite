@@ -32,7 +32,7 @@ export default function TopBar() {
             {siteConfig.email}
           </a>
           <span className="hidden text-[10.5px] font-semibold uppercase tracking-[0.16em] text-navy-400 lg:inline">
-            Coimbatore · Alpharetta
+            Coimbatore
           </span>
         </div>
         <div className="flex items-center gap-2">

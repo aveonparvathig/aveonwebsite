@@ -1,0 +1,11 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="javaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F89820;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E76B3C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="56" fill="#FFFFFF" stroke="#E8E8E8" stroke-width="1"/>
+  <path d="M 45 70 Q 45 60 55 58 Q 65 55 75 60 Q 80 70 75 78 Q 65 85 55 82 Q 45 80 45 70" fill="url(#javaGrad)"/>
+  <path d="M 50 85 Q 55 88 65 87 Q 70 86 68 92 Q 60 95 50 93" fill="url(#javaGrad)" opacity="0.8"/>
+</svg>

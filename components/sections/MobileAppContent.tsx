@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /* ──────────────────────────────────────────────────────────────
    Data
@@ -8,19 +9,22 @@ import Link from "next/link";
 const MOB_NODES = ["UI/UX", "Android", "iOS", "Cross-Platform", "APIs", "Payments", "AI", "Security"];
 
 /** Platforms — three headline cards. */
-const PLATFORMS: { name: string; tagline: string; items: string[] }[] = [
+const PLATFORMS: { name: string; logo: string; tagline: string; items: string[] }[] = [
   {
     name: "Android",
+    logo: "Android",
     tagline: "Reach the world's largest mobile platform.",
     items: ["Custom UI & authentication", "API integration", "Push notifications", "Payment & location services", "Camera & file management", "Cloud & offline support"],
   },
   {
     name: "iOS",
+    logo: "iOS",
     tagline: "Premium experiences for iPhone & iPad.",
     items: ["Custom interfaces & authentication", "API integration", "Push notifications", "Payments & location", "Camera & media", "Cloud & secure data handling"],
   },
   {
     name: "Cross-Platform",
+    logo: "Cross-Platform",
     tagline: "One product experience, multiple platforms.",
     items: ["Shared development approach", "Consistent user experience", "Faster development cycles", "Easier maintenance", "Reduced duplication", "Multi-platform deployment"],
   },
@@ -328,9 +332,20 @@ export default function MobileAppContent() {
         <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {PLATFORMS.map((p) => (
             <div key={p.name} className="flex flex-col rounded-2xl border border-navy-100 bg-white p-7 shadow-card transition hover:-translate-y-1 hover:border-primary-200 hover:shadow-md">
-              <h3 className="text-xl font-extrabold text-navy-900">{p.name}</h3>
-              <p className="mt-1.5 text-sm font-medium text-primary-700">{p.tagline}</p>
-              <ul className="mt-5 space-y-2">
+              <div className="mb-4 flex justify-center">
+                <div className="relative h-24 w-24">
+                  <Image
+                    src={`/platform-logos/${p.logo}.svg`}
+                    alt={p.name}
+                    width={96}
+                    height={96}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-extrabold text-navy-900">{p.name}</h3>
+              <p className="mt-1.5 text-center text-sm font-medium text-primary-700">{p.tagline}</p>
+              <ul className="mt-6 space-y-2">
                 {p.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-navy-700">
                     <CheckIcon />

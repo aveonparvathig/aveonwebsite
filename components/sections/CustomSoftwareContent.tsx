@@ -1,4 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+import { customSoftwareFaqs } from "@/lib/data/custom-software-faqs";
+import { TechLogo } from "@/components/ui/TechLogo";
+export { customSoftwareFaqs };
 
 /* ──────────────────────────────────────────────────────────────
    Data
@@ -32,6 +39,30 @@ const TECH_STACK: { title: string; items: string[] }[] = [
   { title: "API & Integration", items: ["REST API", "JSON", "Third-Party APIs", "Payment Gateways", "ERP / CRM Integration"] },
 ];
 
+/** Offshore team collaboration tools and development practices */
+const OFFSHORE_TEAM = {
+  collaboration: [
+    { name: "Microsoft Teams", icon: "MicrosoftTeams" },
+    { name: "Slack", icon: "Slack" },
+    { name: "Google Meet", icon: "GoogleMeet" },
+    { name: "Zoom", icon: "Zoom" },
+    { name: "GitHub", icon: "GitHub" },
+    { name: "GitLab", icon: "GitLab" },
+    { name: "Jira", icon: "Jira" },
+    { name: "Trello", icon: "Trello" },
+  ],
+  practices: [
+    { name: "Agile", icon: "Agile" },
+    { name: "Scrum", icon: "Scrum" },
+    { name: "Sprint Planning", icon: "SprintPlanning" },
+    { name: "Daily Stand-ups", icon: "StandUp" },
+    { name: "Code Reviews", icon: "CodeReview" },
+    { name: "Version Control", icon: "Git" },
+    { name: "QA Processes", icon: "QA" },
+    { name: "CI/CD", icon: "CICD" },
+  ],
+};
+
 /** Development process — 6 stages across 4 phases, rendered as a staircase. */
 const CSD_JOURNEY: { label: string; range: string; steps: string[] }[] = [
   { label: "Plan", range: "01–02", steps: ["Discover", "Design"] },
@@ -56,29 +87,6 @@ const WHY: { title: string; text: string }[] = [
   { title: "End-to-End Development", text: "From concept and design to deployment and ongoing support." },
 ];
 
-/** FAQ — exported so the page can emit matching FAQPage JSON-LD (AEO). */
-export const customSoftwareFaqs: { question: string; answer: string }[] = [
-  {
-    question: "What is Custom Software Development?",
-    answer: "Custom software development is the process of building software specifically around an organization's unique requirements, workflows and business objectives.",
-  },
-  {
-    question: "Can Aveon build software from scratch?",
-    answer: "Yes. Aveon can transform a business idea, workflow or requirement into a complete custom software solution.",
-  },
-  {
-    question: "Can you modernize existing software?",
-    answer: "Yes. Existing applications can be redesigned, upgraded, migrated or extended based on their architecture and requirements.",
-  },
-  {
-    question: "Can custom software integrate with existing systems?",
-    answer: "Yes. Aveon can integrate suitable APIs, databases, ERP, CRM, payment gateways and third-party applications.",
-  },
-  {
-    question: "Can AI be integrated into custom software?",
-    answer: "Yes. AI assistants, document processing, intelligent search, automation, recommendations and other AI capabilities can be integrated based on the use case.",
-  },
-];
 
 /* ──────────────────────────────────────────────────────────────
    Presentational helpers
@@ -89,6 +97,31 @@ function CheckIcon() {
     <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden>
       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
     </svg>
+  );
+}
+
+/** Team tool logo component */
+function TeamToolLogo({ name, icon }: { name: string; icon: string }) {
+  const [hasError, setHasError] = React.useState(false);
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-2">
+      <div className={`h-16 w-16 flex items-center justify-center rounded-xl border transition ${hasError ? 'bg-primary-50 border-primary-200' : 'bg-white border-navy-100 hover:border-primary-300 hover:shadow-md'}`}>
+        {!hasError ? (
+          <Image
+            src={`/team-tools/${icon}.svg`}
+            alt={name}
+            width={48}
+            height={48}
+            className="h-10 w-10 object-contain"
+            onError={() => setHasError(true)}
+          />
+        ) : (
+          <span className="text-xs font-bold text-primary-700 text-center">{name.split(' ')[0].substring(0, 2)}</span>
+        )}
+      </div>
+      <p className="text-xs font-semibold text-navy-700 text-center max-w-[70px]">{name}</p>
+    </div>
   );
 }
 
@@ -219,9 +252,9 @@ export default function CustomSoftwareContent() {
             {TECH_STACK.map((t) => (
               <div key={t.title} className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
                 <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600">{t.title}</h3>
-                <div className="mt-3 flex flex-wrap gap-1.5">
+                <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
                   {t.items.map((i) => (
-                    <span key={i} className="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-700">{i}</span>
+                    <TechLogo key={i} name={i} />
                   ))}
                 </div>
               </div>
@@ -301,6 +334,42 @@ export default function CustomSoftwareContent() {
               <p className="mt-2 text-sm leading-relaxed text-navy-600">{w.text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Offshore Team ── */}
+      <section className="border-t border-navy-100 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Your Offshore Team Should Feel Like Your Own</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              Distance shouldn&apos;t create barriers — teams collaborate with your preferred tools and processes.
+            </p>
+          </div>
+
+          {/* Collaboration Tools */}
+          <div className="mt-12">
+            <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600 mb-6">Collaboration Tools</h3>
+            <div className="flex flex-wrap gap-3">
+              {OFFSHORE_TEAM.collaboration.map((tool) => (
+                <span key={tool.name} className="inline-block rounded-full border border-primary-300 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:border-primary-400 hover:bg-primary-100 transition">
+                  {tool.name}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Development Practices */}
+          <div className="mt-12">
+            <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600 mb-6">Development Practices</h3>
+            <div className="flex flex-wrap gap-3">
+              {OFFSHORE_TEAM.practices.map((practice) => (
+                <span key={practice.name} className="inline-block rounded-full border border-primary-300 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:border-primary-400 hover:bg-primary-100 transition">
+                  {practice.name}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
