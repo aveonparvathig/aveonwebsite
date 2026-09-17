@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactInput } from "@/lib/validations";
+import { useFormLock } from "@/components/forms/FormLockContext";
 
 const inputClass =
   "w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-navy-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100";
@@ -19,6 +20,25 @@ export default function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
+  const { ref: registerMessageRef, ...messageField } = register("message");
+
+  const resetMessageHeight = useCallback(() => {
+    if (messageRef.current) messageRef.current.style.height = "";
+  }, []);
+
+  const autoResizeMessage = useCallback((el: HTMLTextAreaElement) => {
+    el.style.height = "auto";
+    el.style.height = `${Math.min(el.scrollHeight, 260)}px`;
+  }, []);
+
+  const clearForm = useCallback(() => {
+    reset();
+    setStatus("idle");
+    resetMessageHeight();
+  }, [reset, resetMessageHeight]);
+  const { activate } = useFormLock("contact", clearForm);
+
   async function onSubmit(data: ContactInput) {
     setStatus("submitting");
     try {
@@ -30,6 +50,7 @@ export default function ContactForm() {
       if (!res.ok) throw new Error(await res.text());
       setStatus("success");
       reset();
+      resetMessageHeight();
     } catch {
       setStatus("error");
     }
@@ -56,7 +77,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={activate} noValidate autoComplete="off" className="space-y-4">
       <input
         type="text"
         tabIndex={-1}
@@ -68,22 +89,22 @@ export default function ContactForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Name *" className={inputClass} {...register("name")} />
+          <input placeholder="Name *" autoComplete="off" className={inputClass} {...register("name")} />
           {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
         </div>
         <div>
-          <input placeholder="Email *" type="email" className={inputClass} {...register("email")} />
+          <input placeholder="Email *" type="email" autoComplete="off" className={inputClass} {...register("email")} />
           {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Phone *" type="tel" className={inputClass} {...register("phone")} />
+          <input placeholder="Phone *" type="tel" autoComplete="off" className={inputClass} {...register("phone")} />
           {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone.message}</p>}
         </div>
         <div>
-          <input placeholder="Subject *" className={inputClass} {...register("subject")} />
+          <input placeholder="Subject *" autoComplete="off" className={inputClass} {...register("subject")} />
           {errors.subject && <p className="mt-1 text-xs text-red-600">{errors.subject.message}</p>}
         </div>
       </div>
@@ -92,8 +113,14 @@ export default function ContactForm() {
         <textarea
           placeholder="Your message *"
           rows={5}
-          className={inputClass}
-          {...register("message")}
+          autoComplete="off"
+          className={`${inputClass} resize-none overflow-y-auto transition-[height] duration-150`}
+          {...messageField}
+          ref={(el) => {
+            registerMessageRef(el);
+            messageRef.current = el;
+          }}
+          onInput={(e) => autoResizeMessage(e.currentTarget)}
         />
         {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message.message}</p>}
       </div>

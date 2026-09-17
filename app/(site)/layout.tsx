@@ -1,6 +1,7 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import ChatWidget from "@/components/chat/ChatWidget";
+import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 import SpotlightController from "@/components/ui/SpotlightController";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productsQuery } from "@/lib/queries";
@@ -33,6 +34,7 @@ export default async function SiteLayout({
       <main className="flex-1">{children}</main>
       <Footer products={products} />
       <ChatWidget />
+      <ScrollToTopButton />
       <SpotlightController />
     </>
   );
