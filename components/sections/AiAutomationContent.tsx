@@ -219,6 +219,80 @@ function CheckIcon() {
   );
 }
 
+/** Modern line-style workflow step icons */
+function WorkflowIcon({ type }: { type: string }) {
+  const iconProps = {
+    className: "h-6 w-6",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.5",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+
+  switch (type) {
+    case "input":
+      return (
+        <svg {...iconProps} aria-label="Input">
+          <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path d="M12 7v5m0 0v3m0-8h3m-3 0H9" />
+        </svg>
+      );
+    case "understand":
+      return (
+        <svg {...iconProps} aria-label="Understand">
+          <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path d="M12 8c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z" />
+          <path d="M12 14c-1.657 0-3 .896-3 2s1.343 2 3 2 3-.896 3-2-1.343-2-3-2z" />
+        </svg>
+      );
+    case "analyze":
+      return (
+        <svg {...iconProps} aria-label="Analyze">
+          <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      );
+    case "decide":
+      return (
+        <svg {...iconProps} aria-label="Decide">
+          <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      );
+    case "automate":
+      return (
+        <svg {...iconProps} aria-label="Automate">
+          <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+        </svg>
+      );
+    case "execute":
+      return (
+        <svg {...iconProps} aria-label="Execute">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      );
+    case "notify":
+      return (
+        <svg {...iconProps} aria-label="Notify">
+          <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        </svg>
+      );
+    case "result":
+      return (
+        <svg {...iconProps} aria-label="Result">
+          <path d="M9 12l2 2 4-4m7 8a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...iconProps} aria-label="Step">
+          <circle cx="12" cy="12" r="9" />
+        </svg>
+      );
+  }
+}
+
 /** Hub-and-spoke graphic: the AI hub connecting every automation capability. */
 function ConnectedAiGraphic() {
   const size = 480;
@@ -325,110 +399,152 @@ export default function AiAutomationContent() {
             <p className="mt-4 text-lg text-navy-600">From human-driven processes to intelligent, connected workflows.</p>
           </div>
 
-          {/* Workflow Illustration - Horizontal Flow */}
+          {/* Workflow Illustration - Zigzag Flow with Numbered Diamonds */}
           <div className="mt-14 hidden lg:block">
-            <svg viewBox="0 0 1400 320" className="h-auto w-full max-w-6xl mx-auto" role="img" aria-label="Complete AI workflow from input to result">
-              <defs>
-                <linearGradient id="flowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3376ff" />
-                  <stop offset="100%" stopColor="#1d5ae5" />
-                </linearGradient>
-                <linearGradient id="flowOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#f39c12" />
-                  <stop offset="100%" stopColor="#e8830b" />
-                </linearGradient>
-              </defs>
+            <div className="mx-auto max-w-7xl">
+              <svg viewBox="0 0 1440 380" className="h-auto w-full" role="img" aria-label="Complete AI workflow from input to result">
+                {(() => {
+                  const flowSteps = [
+                    { title: "Input", desc: "Request arrives", color: "#3B82F6" },
+                    { title: "Understand", desc: "AI analyzes", color: "#0EA5E9" },
+                    { title: "Analyze", desc: "Data extracted", color: "#14B8A6" },
+                    { title: "Decide", desc: "Route determined", color: "#8B5CF6" },
+                    { title: "Automate", desc: "Execute action", color: "#F59E0B" },
+                    { title: "Execute", desc: "System updated", color: "#F97316" },
+                    { title: "Notify", desc: "Complete", color: "#10B981" },
+                  ];
+                  const startX = 110;
+                  const xGap = 205;
+                  const midY = 190;
+                  const amp = 60;
+                  const boxW = 150;
+                  const boxH = 60;
 
-              {/* Flowing connector line */}
-              <path d="M 60 160 Q 200 80, 280 160 T 520 160 T 760 160 T 1000 160 T 1200 160 T 1340 160" stroke="#e0e8f6" strokeWidth="3" fill="none" />
+                  const pts = flowSteps.map((_, i) => ({
+                    x: startX + i * xGap,
+                    y: i % 2 === 0 ? midY - amp : midY + amp,
+                  }));
 
-              {/* Step 1: Input - Lightbulb idea */}
-              <g>
-                <circle cx="60" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
-                <text x="60" y="185" textAnchor="middle" fontSize="24" fontWeight="bold" fill="#3376ff">💡</text>
-                <text x="60" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Input</text>
-              </g>
+                  return (
+                    <>
+                      {/* Connecting curved arrows */}
+                      {pts.slice(0, -1).map((p, i) => {
+                        const next = pts[i + 1];
+                        const x1 = p.x + boxW / 2;
+                        const x2 = next.x - boxW / 2;
+                        const cx1 = x1 + (x2 - x1) * 0.5;
+                        const cx2 = x1 + (x2 - x1) * 0.5;
+                        return (
+                          <g key={`arrow-${i}`}>
+                            <path
+                              d={`M ${x1} ${p.y} C ${cx1} ${p.y}, ${cx2} ${next.y}, ${x2 - 10} ${next.y}`}
+                              stroke={flowSteps[i].color}
+                              strokeWidth="2.5"
+                              fill="none"
+                            />
+                            <polygon
+                              points={`${x2 - 10},${next.y - 5} ${x2},${next.y} ${x2 - 10},${next.y + 5}`}
+                              fill={flowSteps[i].color}
+                            />
+                          </g>
+                        );
+                      })}
 
-              {/* Step 2: Understand - Brain/Analysis */}
-              <g>
-                <circle cx="280" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
-                <text x="280" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">🧠</text>
-                <text x="280" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Understand</text>
-              </g>
+                      {flowSteps.map((step, i) => {
+                        const p = pts[i];
+                        const isUp = i % 2 === 0;
+                        const diamondY = isUp ? p.y - boxH / 2 - 26 : p.y + boxH / 2 + 26;
+                        const descY = isUp ? diamondY - 26 : diamondY + 32;
+                        const numberLabel = String(i + 1).padStart(2, "0");
 
-              {/* Step 3: Process - Gears */}
-              <g>
-                <circle cx="500" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
-                <text x="500" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">⚙️</text>
-                <text x="500" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Process</text>
-              </g>
+                        return (
+                          <g key={step.title}>
+                            {/* Rounded box */}
+                            <rect
+                              x={p.x - boxW / 2}
+                              y={p.y - boxH / 2}
+                              width={boxW}
+                              height={boxH}
+                              rx="14"
+                              fill="white"
+                              stroke={step.color}
+                              strokeWidth="2.5"
+                            />
+                            <text x={p.x} y={p.y + 6} textAnchor="middle" fontSize="17" fontWeight="700" fill="#1a2a4a">
+                              {step.title}
+                            </text>
 
-              {/* Step 4: Decision - Chess Knight */}
-              <g>
-                <circle cx="720" cy="160" r="45" fill="#f0f5ff" stroke="#3376ff" strokeWidth="2" />
-                <text x="720" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">♞</text>
-                <text x="720" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Decision</text>
-              </g>
+                            {/* Diamond number badge */}
+                            <g transform={`translate(${p.x}, ${diamondY}) rotate(45)`}>
+                              <rect x="-16" y="-16" width="32" height="32" rx="6" fill={step.color} />
+                            </g>
+                            <text x={p.x} y={diamondY + 5} textAnchor="middle" fontSize="13" fontWeight="700" fill="white">
+                              {numberLabel}
+                            </text>
 
-              {/* Step 5: Automate - Rocket */}
-              <g>
-                <circle cx="940" cy="160" r="45" fill="#fff8f0" stroke="#f39c12" strokeWidth="2" />
-                <text x="940" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">🚀</text>
-                <text x="940" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Automate</text>
-              </g>
-
-              {/* Step 6: Action - Checkmark */}
-              <g>
-                <circle cx="1160" cy="160" r="45" fill="#fff8f0" stroke="#f39c12" strokeWidth="2" />
-                <text x="1160" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">✓</text>
-                <text x="1160" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Action</text>
-              </g>
-
-              {/* Step 7: Notify - Bell */}
-              <g>
-                <circle cx="1340" cy="160" r="45" fill="#fff8f0" stroke="#f39c12" strokeWidth="2" />
-                <text x="1340" y="185" textAnchor="middle" fontSize="24" fontWeight="bold">🔔</text>
-                <text x="1340" y="225" textAnchor="middle" fontSize="13" fontWeight="600" fill="#1a2a4a">Notify</text>
-              </g>
-
-              {/* Description callouts */}
-              <text x="60" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Request arrives</text>
-              <text x="280" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">AI analyzes</text>
-              <text x="500" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Data extracted</text>
-              <text x="720" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Route determined</text>
-              <text x="940" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Execute action</text>
-              <text x="1160" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">System updated</text>
-              <text x="1340" y="280" textAnchor="middle" fontSize="12" fill="#666" fontWeight="500">Complete</text>
-            </svg>
+                            {/* Description */}
+                            <text x={p.x} y={descY} textAnchor="middle" fontSize="13.5" fontWeight="600" fill="#374151">
+                              {step.desc}
+                            </text>
+                          </g>
+                        );
+                      })}
+                    </>
+                  );
+                })()}
+              </svg>
+            </div>
           </div>
 
-          {/* Mobile: Vertical flow */}
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
-            {AI_FLOW.map((step, i) => {
-              const icons = ["💡", "🧠", "⚙️", "♞", "🚀", "✓", "🔔", "🎯"];
-              const descriptions = [
-                "Request arrives",
-                "AI analyzes",
-                "Data extracted",
-                "Route determined",
-                "Execute action",
-                "System updated",
-                "Stakeholder notified",
-                "Complete"
-              ];
+          {/* Mobile: Vertical flow with connecting lines */}
+          <div className="mt-10 lg:hidden">
+            <div className="max-w-lg mx-auto space-y-0">
+              {AI_FLOW.map((step, i) => {
+                const descriptions = [
+                  "Request arrives",
+                  "AI analyzes",
+                  "Data extracted",
+                  "Route determined",
+                  "Execute action",
+                  "System updated",
+                  "Stakeholder notified",
+                  "Complete"
+                ];
+                const isBluePhase = i < 4;
+                const iconTypes = ["input", "understand", "analyze", "decide", "automate", "execute", "notify", "result"];
 
-              return (
-                <div key={step} className="flex gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-100 to-primary-50 border-2 border-primary-300 text-2xl">
-                    {icons[i]}
+                return (
+                  <div key={step} className="relative">
+                    {/* Connecting line to next step */}
+                    {i < AI_FLOW.length - 1 && (
+                      <div className={`absolute left-7 top-16 h-8 w-0.5 ${isBluePhase ? "bg-gradient-to-b from-primary-400 to-primary-300" : "bg-gradient-to-b from-accent-400 to-accent-300"}`} />
+                    )}
+
+                    {/* Step card */}
+                    <div className="relative flex gap-4 pb-6">
+                      {/* Icon circle */}
+                      <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 shadow-md ${
+                        isBluePhase
+                          ? "bg-gradient-to-br from-primary-100 to-primary-50 border-primary-400"
+                          : "bg-gradient-to-br from-accent-100 to-accent-50 border-accent-400"
+                      }`}>
+                        <div className={isBluePhase ? "text-primary-600" : "text-accent-600"}>
+                          <WorkflowIcon type={iconTypes[i]} />
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 pt-1">
+                        <h4 className={`font-bold text-base ${isBluePhase ? "text-primary-700" : "text-accent-700"}`}>
+                          {step}
+                        </h4>
+                        <p className="text-sm text-navy-600 mt-1">{descriptions[i]}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-navy-900">{step}</h4>
-                    <p className="text-sm text-navy-600 mt-1">{descriptions[i]}</p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
           {/* Process Phases Summary */}

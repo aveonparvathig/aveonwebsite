@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
-import CustomSoftwareContent, { customSoftwareFaqs } from "@/components/sections/CustomSoftwareContent";
+import CustomSoftwareContent from "@/components/sections/CustomSoftwareContent";
+import { customSoftwareFaqs } from "@/lib/data/custom-software-faqs";
 
 export const metadata: Metadata = {
   title: "Custom Software Development Company",

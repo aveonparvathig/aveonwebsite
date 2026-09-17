@@ -7,8 +7,18 @@ import Link from "next/link";
 /** Function nodes orbiting the hub in the intro graphic. */
 const WMS_NODES = ["Receiving", "Put-Away", "Storage", "Picking", "Packing", "Dispatch", "Transfers", "Returns"];
 
-/** Warehouse workflow, shown as a connected flow. */
-const WMS_FLOW = ["Inbound", "Receiving", "Quality Check", "Put Away", "Storage", "Picking", "Packing", "Dispatch", "Returns"];
+/** Warehouse workflow with icons and descriptions — professional design */
+const WMS_FLOW_PROFESSIONAL = [
+  { step: 1, title: "Inbound", icon: "📦", description: "Goods received into the warehouse" },
+  { step: 2, title: "Receiving", icon: "✓", description: "Items verified and recorded" },
+  { step: 3, title: "Quality Check", icon: "🔍", description: "Quality assurance inspection" },
+  { step: 4, title: "Put Away", icon: "📍", description: "Items stored in locations" },
+  { step: 5, title: "Storage", icon: "🏢", description: "Inventory held in warehouse" },
+  { step: 6, title: "Picking", icon: "🎯", description: "Items collected for orders" },
+  { step: 7, title: "Packing", icon: "📬", description: "Items packed for shipment" },
+  { step: 8, title: "Dispatch", icon: "🚚", description: "Orders shipped to customers" },
+  { step: 9, title: "Returns", icon: "↩️", description: "Returned items processed" }
+];
 
 /** Tool ecosystem — four functional groups. */
 const WMS_GROUPS: { title: string; items: string[] }[] = [
@@ -274,23 +284,124 @@ export default function WarehouseContent() {
         </div>
       </section>
 
-      {/* ── Warehouse flow ── */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">The Warehouse Workflow</h2>
-          <p className="mt-3 text-lg text-navy-600">From inbound to outbound, every stage connected on one platform.</p>
-        </div>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          {WMS_FLOW.map((step, i) => (
-            <div key={step} className="flex items-center gap-2">
-              <span className="rounded-full border border-navy-100 bg-white px-4 py-2 text-sm font-semibold text-navy-800 shadow-card">{step}</span>
-              {i < WMS_FLOW.length - 1 && (
-                <svg className="h-4 w-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              )}
-            </div>
-          ))}
+      {/* ── Warehouse Workflow — Professional Design with Icons ── */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="w-full">
+          {/* Heading and subtitle */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">The Warehouse Workflow</h2>
+            <p className="mt-6 text-lg text-primary-600 font-medium">From inbound to outbound, every stage connected on one platform.</p>
+          </div>
+
+          {/* Desktop: Snake-flow diagram */}
+          <div className="mt-12 hidden justify-center lg:flex">
+            <svg viewBox="0 0 900 680" className="h-auto w-full max-w-5xl" role="img" aria-label="Warehouse workflow from inbound to returns">
+              {(() => {
+                const colX = [150, 450, 750];
+                const rowY = [110, 320, 530];
+                const radius = 55;
+                const colors = ["#10B981", "#14B8A6", "#06B6D4", "#3B82F6", "#6366F1", "#8B5CF6", "#A855F7", "#D946EF", "#EC4899"];
+
+                const pts = WMS_FLOW_PROFESSIONAL.map((item, i) => {
+                  const rowIndex = Math.floor(i / 3);
+                  const colPos = i % 3;
+                  const colIndex = rowIndex % 2 === 1 ? 2 - colPos : colPos;
+                  return { x: colX[colIndex], y: rowY[rowIndex], color: colors[i], item };
+                });
+
+                return (
+                  <>
+                    {/* Connectors */}
+                    {pts.slice(0, -1).map((p, i) => {
+                      const next = pts[i + 1];
+                      if (p.y === next.y) {
+                        const dir = next.x > p.x ? 1 : -1;
+                        const x1 = p.x + dir * radius;
+                        const x2 = next.x - dir * radius;
+                        return (
+                          <g key={`h-${i}`}>
+                            <line x1={x1} y1={p.y} x2={x2 - dir * 10} y2={p.y} stroke={p.color} strokeWidth="3" />
+                            <polygon
+                              points={dir > 0 ? `${x2},${p.y} ${x2 - 10},${p.y - 6} ${x2 - 10},${p.y + 6}` : `${x2},${p.y} ${x2 + 10},${p.y - 6} ${x2 + 10},${p.y + 6}`}
+                              fill={p.color}
+                            />
+                          </g>
+                        );
+                      }
+                      const side = p.x > 450 ? 1 : -1;
+                      const startX = p.x + side * radius;
+                      const endX = next.x + side * radius;
+                      const bulgeX = p.x + side * (radius + 65);
+                      return (
+                        <g key={`v-${i}`}>
+                          <path
+                            d={`M ${startX} ${p.y} C ${bulgeX} ${p.y}, ${bulgeX} ${next.y}, ${endX} ${next.y}`}
+                            stroke={p.color}
+                            strokeWidth="3"
+                            fill="none"
+                          />
+                          <polygon points={`${endX},${next.y} ${endX + side * 10},${next.y - 6} ${endX + side * 10},${next.y + 6}`} fill={p.color} />
+                        </g>
+                      );
+                    })}
+
+                    {/* Nodes */}
+                    {pts.map((p) => (
+                      <g key={p.item.step}>
+                        <circle cx={p.x} cy={p.y} r={radius} fill="white" stroke={p.color} strokeWidth="4" />
+                        <text x={p.x} y={p.y + 12} textAnchor="middle" fontSize="34">{p.item.icon}</text>
+
+                        {/* Step number badge — sits on the top rim */}
+                        <circle cx={p.x} cy={p.y - radius} r="19" fill={p.color} />
+                        <text x={p.x} y={p.y - radius + 5} textAnchor="middle" fontSize="14" fontWeight="700" fill="white">
+                          {String(p.item.step).padStart(2, "0")}
+                        </text>
+
+                        <text x={p.x} y={p.y + radius + 28} textAnchor="middle" fontSize="17" fontWeight="700" fill="#1a2a4a">
+                          {p.item.title}
+                        </text>
+                        {p.item.description.split(" ").reduce((lines: string[], word) => {
+                          const last = lines[lines.length - 1];
+                          if (last && (last + " " + word).length <= 20) {
+                            lines[lines.length - 1] = last + " " + word;
+                          } else {
+                            lines.push(word);
+                          }
+                          return lines;
+                        }, []).map((line, li) => (
+                          <text key={li} x={p.x} y={p.y + radius + 48 + li * 16} textAnchor="middle" fontSize="12.5" fontWeight="500" fill="#6B7280">
+                            {line}
+                          </text>
+                        ))}
+                      </g>
+                    ))}
+                  </>
+                );
+              })()}
+            </svg>
+          </div>
+
+          {/* Mobile / tablet: simple card grid */}
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
+            {WMS_FLOW_PROFESSIONAL.map((item) => (
+              <div key={item.step} className="rounded-lg border border-navy-100 bg-white p-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-50 border-2 border-primary-200">
+                      <span className="text-2xl">{item.icon}</span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary-600 text-white text-xs font-bold">{item.step}</span>
+                      <h4 className="font-bold text-navy-900">{item.title}</h4>
+                    </div>
+                    <p className="text-sm text-navy-600 mt-2">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

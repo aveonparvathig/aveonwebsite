@@ -11,33 +11,13 @@ export const metadata: Metadata = {
     "Get in touch with Aveon Infotech to book a demo, ask about our ERP products, or talk to our team.",
 };
 
-const contactCards = [
-  {
-    label: "Call Us",
-    value: siteConfig.phone,
-    href: `tel:${siteConfig.phone.replace(/\s/g, "")}`,
-  },
-  {
-    label: "Email Us",
-    value: siteConfig.email,
-    href: `mailto:${siteConfig.email}`,
-  },
-];
-
 const offices = [
   {
     label: "INDIA OFFICE",
     title: "Coimbatore, India",
     address: siteConfig.address,
     mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Coimbatore,Tamil+Nadu,India",
-  },
-  {
-    label: "HEAD OFFICE",
-    title: "Alpharetta, USA",
-    address: "5261 New Bay Passage, Alpharetta, GA 30005, USA",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=5261+New+Bay+Passage,Alpharetta,GA+30005,USA",
+      "https://www.google.com/maps/search/?api=1&query=Aveon+Infotech,Coimbatore,Tamil+Nadu,India",
   },
 ];
 
@@ -77,110 +57,126 @@ export default function ContactPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
 
-        {/* CALL + EMAIL */}
-        <div className="grid gap-6 sm:grid-cols-2">
-          {contactCards.map((card) => (
-            <div
-              key={card.label}
-              className="rounded-2xl border border-navy-100 bg-white p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              <p className="text-xs font-bold uppercase tracking-wider text-primary-600">
-                {card.label}
-              </p>
+        {/* GET IN TOUCH — 3-column: Call, Email, Office */}
+        <div className="mb-8 text-center">
+          <p className="text-sm font-bold uppercase tracking-wider text-primary-600">
+            Get In Touch
+          </p>
 
-              <a
-                href={card.href}
-                className="mt-2 block font-medium text-navy-900 transition-colors hover:text-primary-600"
-              >
-                {card.value}
-              </a>
-            </div>
-          ))}
+          <h2 className="mt-2 text-2xl font-bold text-navy-900 sm:text-3xl">
+            Connect With Aveon
+          </h2>
+
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-navy-600 sm:text-base">
+            Call, email, or visit us at our office in India.
+          </p>
         </div>
 
-        {/* OUR OFFICES */}
-        <div className="mt-14">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-bold uppercase tracking-wider text-primary-600">
-              Our Offices
-            </p>
-
-            <h2 className="mt-2 text-2xl font-bold text-navy-900 sm:text-3xl">
-              Connect With Aveon
-            </h2>
-
-            <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-navy-600 sm:text-base">
-              Visit us at one of our offices in India or the United States.
-            </p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Call Us */}
+          <div className="group relative overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50/80 to-white p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl">
+            <div className="absolute left-0 right-0 top-0 h-1 bg-primary-600" />
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-4 border-white bg-blue-100 shadow-sm">
+              <svg className="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+            </div>
+            <div className="mt-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-primary-600">Call Us</p>
+              <a
+                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                className="mt-1 block text-xl font-bold text-navy-900 transition-colors hover:text-primary-600"
+              >
+                {siteConfig.phone}
+              </a>
+            </div>
           </div>
 
-          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
-            {offices.map((office) => (
-              <div
-                key={office.label}
-                className="group relative overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50/80 to-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl"
+          {/* Email Us */}
+          <div className="group relative overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50/80 to-white p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl">
+            <div className="absolute left-0 right-0 top-0 h-1 bg-primary-600" />
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-4 border-white bg-blue-100 shadow-sm">
+              <svg className="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <div className="mt-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-primary-600">Email Us</p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="mt-1 block text-xl font-bold text-navy-900 transition-colors hover:text-primary-600"
               >
-                {/* Top Accent */}
-                <div className="absolute left-0 right-0 top-0 h-1 bg-primary-600" />
+                {siteConfig.email}
+              </a>
+            </div>
+          </div>
 
-                {/* Location Icon */}
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-4 border-white bg-blue-100 shadow-sm">
+          {/* Office */}
+          {offices.map((office) => (
+            <div
+              key={office.label}
+              className="group relative overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50/80 to-white p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl sm:col-span-2 lg:col-span-1"
+            >
+              {/* Top Accent */}
+              <div className="absolute left-0 right-0 top-0 h-1 bg-primary-600" />
+
+              {/* Location Icon */}
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-4 border-white bg-blue-100 shadow-sm">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="h-7 w-7 text-primary-600"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"
+                  />
+                  <circle cx="12" cy="9" r="2.3" />
+                </svg>
+              </div>
+
+              {/* Office Content */}
+              <div className="mt-5">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary-600">
+                  {office.label}
+                </p>
+
+                <h3 className="mt-1 text-xl font-bold text-navy-900">
+                  {office.title}
+                </h3>
+
+                <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-navy-600">
+                  {office.address}
+                </p>
+
+                {/* Map CTA */}
+                <a
+                  href={office.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center rounded-full bg-primary-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
+                >
+                  View Location
                   <svg
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 20 20"
                     fill="none"
-                    className="h-7 w-7 text-primary-600"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
+                    className="ml-2 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <path
+                      d="M4 10h11M10 5l5 5-5 5"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"
                     />
-                    <circle cx="12" cy="9" r="2.3" />
                   </svg>
-                </div>
-
-                {/* Office Content */}
-                <div className="mt-5 text-center">
-                  <p className="text-xs font-bold uppercase tracking-wider text-primary-600">
-                    {office.label}
-                  </p>
-
-                  <h3 className="mt-1 text-xl font-bold text-navy-900">
-                    {office.title}
-                  </h3>
-
-                  <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-navy-600">
-                    {office.address}
-                  </p>
-
-                  {/* Map CTA */}
-                  <a
-                    href={office.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center rounded-full bg-primary-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
-                  >
-                    View Location
-                    <svg
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      className="ml-2 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
-                    >
-                      <path
-                        d="M4 10h11M10 5l5 5-5 5"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </a>
-                </div>
+                </a>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* FORMS — EQUAL HEIGHT */}

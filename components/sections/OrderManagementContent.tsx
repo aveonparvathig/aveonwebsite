@@ -7,8 +7,18 @@ import Link from "next/link";
 /** Function nodes orbiting the hub in the intro graphic. */
 const OMS_NODES = ["Orders", "Customers", "Products", "Inventory", "Fulfilment", "Payments", "Tracking", "Returns"];
 
-/** The order lifecycle, shown as a connected flow. */
-const OMS_FLOW = ["Order Capture", "Validation", "Confirmation", "Inventory Check", "Processing", "Packing", "Dispatch", "Delivery", "Completion"];
+/** The order lifecycle, shown as a connected flow with icons and descriptions. */
+const OMS_FLOW = [
+  { step: 1, title: "Order Capture", icon: "📋", description: "Order is captured via omnichannel sources" },
+  { step: 2, title: "Validation", icon: "🔍", description: "Data is validated; customer details, pricing." },
+  { step: 3, title: "Confirmation", icon: "✓", description: "System confirms the order with customer." },
+  { step: 4, title: "Inventory Check", icon: "📦", description: "Order details sent to fulfillment process" },
+  { step: 5, title: "Processing", icon: "⚙️", description: "Items are picked and sorted from warehouse." },
+  { step: 6, title: "Packing", icon: "📬", description: "Items packed and prepared for shipment." },
+  { step: 7, title: "Dispatch", icon: "🚚", description: "Package is tagged and shipped out." },
+  { step: 8, title: "Delivery", icon: "🎯", description: "Package tracked and delivered to customer." },
+  { step: 9, title: "Completion", icon: "✅", description: "Order is successfully completed." }
+];
 
 /** Tool ecosystem — four functional groups. */
 const OMS_GROUPS: { title: string; items: string[] }[] = [
@@ -83,6 +93,19 @@ const OMS_DEEP: DeepModule[] = [
     summary: "Turn order information into useful business reports.",
     groups: [{ items: ["Order & sales reports", "Customer-wise & product-wise orders", "Date-wise orders", "Pending & cancelled reports", "Return & fulfilment reports"] }],
   },
+];
+
+/** Warehouse workflow — professional flow with icons and descriptions */
+const WAREHOUSE_FLOW_PROFESSIONAL = [
+  { step: 1, title: "Order Capture", icon: "📋", description: "Order is captured via omnichannel sources" },
+  { step: 2, title: "Validation", icon: "🔍", description: "Data is validated; customer details, pricing." },
+  { step: 3, title: "Confirmation", icon: "👍", description: "System confirms the order with details confirmed." },
+  { step: 4, title: "Inventory Check", icon: "📦", description: "Order details are present and sent to the fulfil process" },
+  { step: 5, title: "Processing", icon: "⚙", description: "Items are picked, sorted, and appropriate materials included." },
+  { step: 6, title: "Packing", icon: "📬", description: "Items are packed, sorted, and appropriate materials included." },
+  { step: 7, title: "Dispatch", icon: "🚚", description: "Package is tagged, carrier, and shipped out." },
+  { step: 8, title: "Delivery", icon: "🎯", description: "Package is tracked, in transit, and nearing final delivery." },
+  { step: 9, title: "Completion", icon: "✓", description: "Order is successfully completed." }
 ];
 
 /** Order workflow — 9 stages across 4 phases, rendered as a staircase. */
@@ -270,20 +293,174 @@ export default function OrderManagementContent() {
       </section>
 
       {/* ── Order lifecycle flow ── */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">The Order Lifecycle</h2>
-          <p className="mt-3 text-lg text-navy-600">Every stage, from capture to completion, connected on one platform.</p>
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center mb-12">
+          <h2 className="text-3xl font-bold text-navy-900 sm:text-4xl">Order Lifecycle</h2>
+          <p className="mt-4 text-lg text-navy-600">Complete order journey from receiving inventory to managing returns</p>
         </div>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          {OMS_FLOW.map((step, i) => (
-            <div key={step} className="flex items-center gap-2">
-              <span className="rounded-full border border-navy-100 bg-white px-4 py-2 text-sm font-semibold text-navy-800 shadow-card">{step}</span>
-              {i < OMS_FLOW.length - 1 && (
-                <svg className="h-4 w-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              )}
+
+        {/* Order Lifecycle Linear Flow Diagram - Desktop */}
+        <div className="hidden lg:block overflow-x-auto">
+          <svg viewBox="0 0 1200 300" className="w-full h-auto min-w-max" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="orderGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#3B82F6" />
+                <stop offset="100%" stopColor="#1D4ED8" />
+              </linearGradient>
+              <linearGradient id="orderGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#EF4444" />
+                <stop offset="100%" stopColor="#DC2626" />
+              </linearGradient>
+              <linearGradient id="orderGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#10B981" />
+                <stop offset="100%" stopColor="#059669" />
+              </linearGradient>
+              <linearGradient id="orderGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#F59E0B" />
+                <stop offset="100%" stopColor="#D97706" />
+              </linearGradient>
+            </defs>
+
+            {/* Step 1: Order Capture */}
+            <g>
+              <rect x="20" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad1)" strokeWidth="2.5"/>
+              <text x="70" y="120" textAnchor="middle" fontSize="32">📋</text>
+              <text x="70" y="155" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Order</text>
+              <text x="70" y="170" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Capture</text>
+              <circle cx="70" cy="45" r="20" fill="url(#orderGrad1)" />
+              <text x="70" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">1</text>
+            </g>
+            <line x1="120" y1="130" x2="150" y2="130" stroke="#3B82F6" strokeWidth="2.5" />
+            <polygon points="150,130 142,126 142,134" fill="#3B82F6" />
+
+            {/* Step 2: Validation */}
+            <g>
+              <rect x="150" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad1)" strokeWidth="2.5"/>
+              <text x="200" y="125" textAnchor="middle" fontSize="32">🔍</text>
+              <text x="200" y="160" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Validation</text>
+              <circle cx="200" cy="45" r="20" fill="url(#orderGrad1)" />
+              <text x="200" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">2</text>
+            </g>
+            <line x1="250" y1="130" x2="280" y2="130" stroke="#3B82F6" strokeWidth="2.5" />
+            <polygon points="280,130 272,126 272,134" fill="#3B82F6" />
+
+            {/* Step 3: Confirmation */}
+            <g>
+              <rect x="280" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad2)" strokeWidth="2.5"/>
+              <text x="330" y="120" textAnchor="middle" fontSize="32">✓</text>
+              <text x="330" y="160" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Confirmation</text>
+              <circle cx="330" cy="45" r="20" fill="url(#orderGrad2)" />
+              <text x="330" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">3</text>
+            </g>
+            <line x1="380" y1="130" x2="410" y2="130" stroke="#EF4444" strokeWidth="2.5" />
+            <polygon points="410,130 402,126 402,134" fill="#EF4444" />
+
+            {/* Step 4: Inventory Check */}
+            <g>
+              <rect x="410" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad2)" strokeWidth="2.5"/>
+              <text x="460" y="120" textAnchor="middle" fontSize="32">📦</text>
+              <text x="460" y="155" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Inventory</text>
+              <text x="460" y="170" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Check</text>
+              <circle cx="460" cy="45" r="20" fill="url(#orderGrad2)" />
+              <text x="460" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">4</text>
+            </g>
+            <line x1="510" y1="130" x2="540" y2="130" stroke="#EF4444" strokeWidth="2.5" />
+            <polygon points="540,130 532,126 532,134" fill="#EF4444" />
+
+            {/* Step 5: Processing */}
+            <g>
+              <rect x="540" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad3)" strokeWidth="2.5"/>
+              <text x="590" y="125" textAnchor="middle" fontSize="32">⚙️</text>
+              <text x="590" y="160" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Processing</text>
+              <circle cx="590" cy="45" r="20" fill="url(#orderGrad3)" />
+              <text x="590" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">5</text>
+            </g>
+            <line x1="640" y1="130" x2="670" y2="130" stroke="#10B981" strokeWidth="2.5" />
+            <polygon points="670,130 662,126 662,134" fill="#10B981" />
+
+            {/* Step 6: Packing */}
+            <g>
+              <rect x="670" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad3)" strokeWidth="2.5"/>
+              <text x="720" y="125" textAnchor="middle" fontSize="32">📬</text>
+              <text x="720" y="160" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Packing</text>
+              <circle cx="720" cy="45" r="20" fill="url(#orderGrad3)" />
+              <text x="720" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">6</text>
+            </g>
+            <line x1="770" y1="130" x2="800" y2="130" stroke="#10B981" strokeWidth="2.5" />
+            <polygon points="800,130 792,126 792,134" fill="#10B981" />
+
+            {/* Step 7: Dispatch */}
+            <g>
+              <rect x="800" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad4)" strokeWidth="2.5"/>
+              <text x="850" y="125" textAnchor="middle" fontSize="32">🚚</text>
+              <text x="850" y="160" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Dispatch</text>
+              <circle cx="850" cy="45" r="20" fill="url(#orderGrad4)" />
+              <text x="850" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">7</text>
+            </g>
+            <line x1="900" y1="130" x2="930" y2="130" stroke="#F59E0B" strokeWidth="2.5" />
+            <polygon points="930,130 922,126 922,134" fill="#F59E0B" />
+
+            {/* Step 8: Delivery */}
+            <g>
+              <rect x="930" y="80" width="100" height="100" rx="8" fill="white" stroke="url(#orderGrad4)" strokeWidth="2.5"/>
+              <text x="980" y="125" textAnchor="middle" fontSize="32">🎯</text>
+              <text x="980" y="160" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Delivery</text>
+              <circle cx="980" cy="45" r="20" fill="url(#orderGrad4)" />
+              <text x="980" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">8</text>
+            </g>
+            <line x1="1030" y1="130" x2="1060" y2="130" stroke="#F59E0B" strokeWidth="2.5" />
+            <polygon points="1060,130 1052,126 1052,134" fill="#F59E0B" />
+
+            {/* Step 9: Completion */}
+            <g>
+              <rect x="1060" y="80" width="100" height="100" rx="8" fill="white" stroke="#10B981" strokeWidth="2.5"/>
+              <text x="1110" y="125" textAnchor="middle" fontSize="32">✅</text>
+              <text x="1110" y="160" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1F2937">Completion</text>
+              <circle cx="1110" cy="45" r="20" fill="#10B981" />
+              <text x="1110" y="50" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">9</text>
+            </g>
+          </svg>
+        </div>
+
+        {/* Mobile vertical flow */}
+        <div className="lg:hidden space-y-4">
+          {OMS_FLOW.map((item, i) => (
+            <div key={item.step} className="flex gap-4">
+              <div className="flex flex-col items-center flex-shrink-0">
+                <div className="relative w-16 h-16 rounded-full flex items-center justify-center bg-white border-4 border-primary-300 shadow-md">
+                  <span className="text-2xl">{item.icon}</span>
+                  <div className="absolute -top-2 -right-2 w-7 h-7 bg-primary-600 text-white rounded-full flex items-center justify-center text-xs font-bold">{item.step}</div>
+                </div>
+                {i < OMS_FLOW.length - 1 && (
+                  <div className="w-1 h-10 bg-gradient-to-b from-primary-300 to-primary-200 mt-2" />
+                )}
+              </div>
+              <div className="flex-1 pt-1">
+                <h4 className="font-bold text-navy-900">{item.title}</h4>
+                <p className="text-sm text-navy-600 mt-1">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Order Lifecycle Steps - Grid View */}
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {OMS_FLOW.map((item) => (
+            <div key={item.step} className="rounded-lg border border-navy-100 bg-white p-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-50 border-2 border-primary-200">
+                    <span className="text-2xl">{item.icon}</span>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary-600 text-white text-xs font-bold">{item.step}</span>
+                    <h4 className="font-bold text-navy-900">{item.title}</h4>
+                  </div>
+                  <p className="text-sm text-navy-600 mt-2">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -364,59 +541,74 @@ export default function OrderManagementContent() {
         </div>
       </section>
 
-      {/* ── Order workflow staircase ── */}
-      <section className="relative overflow-hidden border-b border-navy-100 bg-navy-50">
-        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-70" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(16,26,51,0.07) 1px, transparent 0)", backgroundSize: "32px 32px" }} />
-        <div aria-hidden className="absolute inset-x-0 top-0 h-1.5 bg-primary-600" />
-        <div className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-14 lg:px-10">
-          <div className="flex flex-wrap items-end justify-between gap-8">
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-navy-400">
-                <span className="block h-px w-8 bg-navy-300" />
-                <span>Order workflow</span>
+      {/* ── Warehouse Workflow — Professional Design with Icons ── */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 border-t border-navy-100 bg-white">
+        <div className="mx-auto max-w-5xl">
+          {/* Heading and subtitle */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">The Warehouse Workflow</h2>
+            <p className="mt-6 text-lg text-primary-600 font-medium">From inbound to outbound, every stage connected on one platform.</p>
+          </div>
+
+          {/* Desktop flow with circles and line */}
+          <div className="hidden lg:block">
+            <div className="relative">
+              {/* Connecting line background */}
+              <div className="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary-300 via-primary-400 to-emerald-400" style={{ zIndex: 0 }} />
+
+              {/* Steps container */}
+              <div className="relative flex items-start justify-between gap-3 pb-12" style={{ zIndex: 1 }}>
+                {WAREHOUSE_FLOW_PROFESSIONAL.map((item) => (
+                  <div key={`warehouse-${item.step}`} className="flex flex-col items-center flex-1">
+                    {/* Circle with icon and number */}
+                    <div className={`relative w-24 h-24 rounded-full flex items-center justify-center font-bold text-2xl shadow-lg border-4 mb-6 transition-all ${
+                      item.step === 9
+                        ? 'bg-emerald-50 border-emerald-400 text-emerald-700'
+                        : 'bg-primary-50 border-primary-400 text-primary-700 hover:shadow-xl'
+                    }`}>
+                      <span>{item.icon}</span>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold">{item.step}</div>
+                    </div>
+
+                    {/* Title and description */}
+                    <div className="text-center">
+                      <h3 className="text-sm font-bold text-navy-900 mb-2">{item.title}</h3>
+                      <p className="text-xs text-navy-600 leading-relaxed max-w-[100px]">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h2 className="mt-5 text-3xl font-extrabold leading-[1.05] tracking-tight text-navy-900 sm:text-4xl xl:text-5xl">
-                From Customer Order.
-                <br />
-                To Final Delivery.
-              </h2>
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                Capture, process, fulfil, deliver and complete — every order follows one connected workflow.
-              </p>
-            </div>
-            <div className="flex items-baseline gap-3 text-navy-400">
-              <span className="text-5xl font-extrabold leading-none text-navy-900 sm:text-6xl">{JOURNEY_TOTAL}</span>
-              <span className="text-xs font-semibold uppercase leading-tight tracking-[0.16em]">
-                workflow
-                <br />
-                stages
-              </span>
             </div>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            {OMS_JOURNEY.map((group, gi) => (
-              <div key={group.label} className={STAIR_OFFSET[gi]}>
-                <div className="flex items-baseline gap-2 border-b-2 border-primary-600 pb-3">
-                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-navy-900">{group.label}</span>
-                  <span className="ml-auto text-xs tracking-wide text-navy-400">{group.range}</span>
+          {/* Mobile vertical flow */}
+          <div className="lg:hidden space-y-6">
+            {WAREHOUSE_FLOW_PROFESSIONAL.map((item, i) => (
+              <div key={`warehouse-mobile-${item.step}`}>
+                <div className="flex gap-4">
+                  {/* Circle with icon and number */}
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <div className={`relative w-20 h-20 rounded-full flex items-center justify-center font-bold text-lg shadow-md border-4 transition-all ${
+                      item.step === 9
+                        ? 'bg-emerald-50 border-emerald-400 text-emerald-700'
+                        : 'bg-primary-50 border-primary-400 text-primary-700'
+                    }`}>
+                      <span>{item.icon}</span>
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-xs font-bold">{item.step}</div>
+                    </div>
+                    {i < WAREHOUSE_FLOW_PROFESSIONAL.length - 1 && (
+                      <div className="w-1 h-8 bg-gradient-to-b from-primary-300 to-primary-200 mt-2" />
+                    )}
+                  </div>
+
+                  {/* Title and description */}
+                  <div className="flex-1 pt-2">
+                    <h3 className="font-bold text-navy-900">{item.title}</h3>
+                    <p className="text-sm text-navy-600 mt-1">{item.description}</p>
+                  </div>
                 </div>
-                <ul>
-                  {group.steps.map((step, si) => (
-                    <li key={step} className="flex items-center gap-4 border-b border-navy-100 py-3 last:border-0">
-                      <span className="w-6 text-xs tabular-nums text-navy-400">{String(JOURNEY_OFFSETS[gi] + si + 1).padStart(2, "0")}</span>
-                      <span className="text-lg font-semibold text-navy-900">{step}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 flex items-center gap-5 text-xs font-semibold uppercase tracking-[0.14em] text-navy-400">
-            <span className="shrink-0">Customer order</span>
-            <span className="h-px flex-1 bg-navy-200" />
-            <span className="shrink-0">Final delivery</span>
           </div>
         </div>
       </section>

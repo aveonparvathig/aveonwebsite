@@ -1,0 +1,14 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="figmaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F24E1E;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9945FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5E1DAE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="56" fill="#FFFFFF" stroke="#E8E8E8" stroke-width="1"/>
+  <path d="M 45 50 L 55 50 L 55 60 L 45 60 Z" fill="url(#figmaGrad)"/>
+  <path d="M 60 50 L 70 50 L 70 60 L 60 60 Z" fill="url(#figmaGrad)"/>
+  <path d="M 45 65 L 55 65 L 55 75 L 45 75 Z" fill="url(#figmaGrad)"/>
+  <path d="M 60 65 L 70 65 L 70 85 Q 70 90 65 90 Q 60 90 60 85 Z" fill="url(#figmaGrad)"/>
+</svg>

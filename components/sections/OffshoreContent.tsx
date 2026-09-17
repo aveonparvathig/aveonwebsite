@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TechLogo } from "@/components/ui/TechLogo";
 
 /* ──────────────────────────────────────────────────────────────
    Data
@@ -132,6 +133,21 @@ function ChipGroup({ title, items }: { title: string; items: string[] }) {
       <div className="mt-3 flex flex-wrap gap-1.5">
         {items.map((i) => (
           <span key={i} className="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-700">{i}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/** Technology logo component */
+/** Technology logo group component */
+function TechLogoGroup({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
+      <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600">{title}</h3>
+      <div className="mt-4 grid grid-cols-3 gap-4 sm:grid-cols-4">
+        {items.map((i) => (
+          <TechLogo key={i} name={i} />
         ))}
       </div>
     </div>
@@ -276,7 +292,7 @@ export default function OffshoreContent() {
           </div>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TECH_STACK.map((t) => (
-              <ChipGroup key={t.title} title={t.title} items={t.items} />
+              <TechLogoGroup key={t.title} title={t.title} items={t.items} />
             ))}
           </div>
           <p className="mt-6 text-sm text-navy-500">Technology availability depends on the required skill profile and project scope.</p>

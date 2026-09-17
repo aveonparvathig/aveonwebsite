@@ -1,0 +1,12 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="linuxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FCC624;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F39200;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="56" fill="#FFFFFF" stroke="#E8E8E8" stroke-width="1"/>
+  <circle cx="64" cy="50" r="6" fill="#000000"/>
+  <path d="M 50 58 L 55 70 L 60 65 L 64 75 L 68 65 L 73 70 L 78 58" stroke="url(#linuxGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 48 75 Q 48 85 64 88 Q 80 85 80 75" stroke="url(#linuxGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>
