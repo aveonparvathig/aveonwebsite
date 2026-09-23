@@ -18,13 +18,13 @@ export default function GrievanceManagementPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-        <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-blue-600/20 blur-[120px]" />
-        <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-blue-500/15 blur-[120px]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white">
+        <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-primary-600/20 blur-[120px]" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-primary-500/15 blur-[120px]" />
 
         <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-20">
           <div>
-            <span className="inline-block rounded-full bg-blue-100 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-blue-700">
+            <span className="inline-block rounded-full bg-primary-100 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
               Product
             </span>
             <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
@@ -36,7 +36,7 @@ export default function GrievanceManagementPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact#demo"
-                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7.5 py-4 text-[15px] font-bold text-white shadow-[0_18px_40px_-14px_rgb(37_99_235_/_0.8)] transition-all hover:-translate-y-0.5 hover:bg-blue-700"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7.5 py-4 text-[15px] font-bold text-white shadow-[0_18px_40px_-14px_rgb(29_111_242_/_0.8)] transition-all hover:-translate-y-0.5 hover:bg-primary-600"
               >
                 Request Demo
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -45,7 +45,7 @@ export default function GrievanceManagementPage() {
               </Link>
               <Link
                 href="/products"
-                className="inline-flex items-center rounded-full border border-blue-600 bg-white px-7.5 py-4 text-[15px] font-bold text-blue-600 transition hover:border-blue-700 hover:text-blue-700"
+                className="inline-flex items-center rounded-full border border-primary-600 bg-white px-7.5 py-4 text-[15px] font-bold text-primary-600 transition hover:border-primary-700 hover:text-primary-700"
               >
                 All Products
               </Link>
@@ -102,7 +102,7 @@ export default function GrievanceManagementPage() {
                 desc: "Comprehensive dashboards showing grievance trends, resolution rates, and departmental performance.",
               },
             ].map((feature) => (
-              <div key={feature.title} className="rounded-lg border border-navy-900/10 p-6 hover:border-blue-600/30 hover:shadow-lg">
+              <div key={feature.title} className="rounded-lg border border-navy-900/10 p-6 hover:border-primary-600/30 hover:shadow-lg">
                 <div className="mb-3 text-3xl">{feature.icon}</div>
                 <h3 className="mb-2 font-bold text-navy-900">{feature.title}</h3>
                 <p className="text-sm text-navy-700">{feature.desc}</p>
@@ -113,7 +113,7 @@ export default function GrievanceManagementPage() {
       </section>
 
       {/* Workflow */}
-      <section className="bg-blue-50 py-16 sm:py-20 lg:py-24">
+      <section className="bg-primary-50 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
           <h2 className="mb-12 text-center text-[clamp(28px,4vw,40px)] font-extrabold text-navy-900">
             End-to-End Grievance Resolution Workflow
@@ -127,7 +127,7 @@ export default function GrievanceManagementPage() {
               { step: 5, title: "Follow-up", desc: "Satisfaction feedback and closure" },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-lg font-bold text-white">
                   {item.step}
                 </div>
                 <h3 className="mb-2 font-bold text-navy-900">{item.title}</h3>
@@ -169,8 +169,8 @@ export default function GrievanceManagementPage() {
             Measurable Impact
           </h2>
           <div className="grid gap-8 sm:grid-cols-3">
-            <div className="rounded-lg bg-gradient-to-br from-blue-50 to-blue-100/50 p-8">
-              <div className="text-4xl font-bold text-blue-600">↓ 60%</div>
+            <div className="rounded-lg bg-gradient-to-br from-primary-50 to-primary-100/50 p-8">
+              <div className="text-4xl font-bold text-primary-600">↓ 60%</div>
               <p className="mt-3 text-navy-700">Faster grievance resolution</p>
             </div>
             <div className="rounded-lg bg-gradient-to-br from-green-50 to-green-100/50 p-8">
@@ -186,7 +186,7 @@ export default function GrievanceManagementPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-blue-600 py-16 text-center text-white sm:py-20 lg:py-24">
+      <section className="bg-primary-600 py-16 text-center text-white sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[800px] px-4 sm:px-6">
           <h2 className="text-3xl font-bold">
             Create a Fair & Transparent Grievance System
@@ -196,7 +196,7 @@ export default function GrievanceManagementPage() {
           </p>
           <Link
             href="/contact#demo"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 font-bold text-blue-600 hover:bg-gray-100"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 font-bold text-primary-600 hover:bg-gray-100"
           >
             Request Demo
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

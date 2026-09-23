@@ -119,7 +119,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Controller of Examination (COE)",
-    summary: "Run the entire exam season — from question paper to final mark sheet — without a single spreadsheet.",
+    summary: "Run the entire exam season, from question paper to final mark sheet, without a single spreadsheet.",
     groups: [
       {
         label: "Administration & Fees",
@@ -294,7 +294,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Inventory & Asset Management",
-    summary: "Track every store item and asset — from purchase to write-off — across all departments.",
+    summary: "Track every store item and asset, from purchase to write-off, across all departments.",
     groups: [
       {
         label: "Inventory & Stores",
@@ -383,7 +383,7 @@ export const collegeErpFaqs: { question: string; answer: string }[] = [
   {
     question: "What is a College ERP?",
     answer:
-      "A College ERP is an integrated platform that runs a college's academic, administrative and operational processes in one place — from admission to graduation — replacing the dozens of disconnected tools most institutions juggle today.",
+      "A College ERP is an integrated platform that runs a college's academic, administrative and operational processes in one place, from admission to graduation, replacing the dozens of disconnected tools most institutions juggle today.",
   },
   {
     question: "What is the difference between College ERP and a Campus Management System?",
@@ -897,7 +897,7 @@ export default function CollegeERPContent() {
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
                 href="/contact#demo"
-                className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-700"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-600"
               >
                 Get a Personalized Demo →
               </Link>

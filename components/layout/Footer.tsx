@@ -42,7 +42,7 @@ export default function Footer({
           </div>
 
           <div>
-            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
+            <h3 className="text-[14.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
               Products
             </h3>
             <ul className="mt-4.5 flex flex-col gap-2.75 text-[14.5px]">
@@ -57,7 +57,7 @@ export default function Footer({
           </div>
 
           <div>
-            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
+            <h3 className="text-[14.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
               Company
             </h3>
             <ul className="mt-4.5 flex flex-col gap-2.75 text-[14.5px]">
@@ -97,7 +97,7 @@ export default function Footer({
           </div>
 
           <div>
-            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
+            <h3 className="text-[14.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
               Get in Touch
             </h3>
             <ul className="mt-4.5 flex flex-col gap-3 text-[14.5px] text-navy-700">
@@ -115,14 +115,14 @@ export default function Footer({
             </ul>
             <Link
               href="/contact#demo"
-              className="mt-5.5 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-primary-600 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-accent-500"
+              className="mt-5.5 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-br from-primary-600 to-primary-700 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-accent-500"
             >
               Book a Demo →
             </Link>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-3.5 border-t border-navy-900/12 pt-6 text-[13.5px] text-navy-600 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-3.5 border-t border-navy-900/12 pt-6 text-[14.5px] text-navy-600 sm:flex-row">
           <p>© {year} Aveon Infotech Private Limited. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="transition-colors hover:text-primary-600">

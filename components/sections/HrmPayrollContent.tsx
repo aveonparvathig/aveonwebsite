@@ -464,10 +464,10 @@ export default function HrmPayrollContent() {
           <div className="rounded-2xl border border-navy-200 bg-navy-50 p-8">
             <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">The Old Way</h3>
             <p className="mt-4 text-navy-700">
-              Employee files, attendance registers, leave records and payroll spreadsheets kept separately — nothing
-              talks to anything.
+              Employee files, attendance registers, leave records and payroll spreadsheets kept separately, with nothing
+              talking to anything.
             </p>
-            <p className="mt-4 font-semibold text-navy-900">= Manual, disconnected administration</p>
+            <p className="mt-4 font-semibold text-navy-900">Manual, disconnected administration</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-600">
               {["Re-keying attendance into payroll", "Manual leave & permission tracking", "Scattered employee records", "Payslips prepared by hand", "Little workforce visibility"].map((x) => (
                 <li key={x}>• {x}</li>
@@ -477,10 +477,10 @@ export default function HrmPayrollContent() {
           <div className="rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50 to-white p-8">
             <h3 className="text-sm font-bold uppercase tracking-widest text-primary-600">With Aveon HR &amp; Payroll</h3>
             <p className="mt-4 text-navy-700">
-              Recruitment, records, attendance, leave, payroll and appraisal all read from — and write to — one
+              Recruitment, records, attendance, leave, payroll and appraisal all read from and write to one
               employee record.
             </p>
-            <p className="mt-4 font-semibold text-primary-800">= One connected workforce platform</p>
+            <p className="mt-4 font-semibold text-primary-800">One connected workforce platform</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-700">
               {["Biometric & face-reader attendance", "Attendance flows straight to payroll", "Structured leave & permission workflows", "Salary structures, advances & payslips", "Centralized employee records"].map((x) => (
                 <li key={x} className="flex items-start gap-2">
@@ -524,7 +524,7 @@ export default function HrmPayrollContent() {
               Payroll platform.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#demo" className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-700">
+              <Link href="/contact#demo" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-600">
                 Get a Free Demo →
               </Link>
               <Link href="/contact" className="inline-flex items-center rounded-full border border-navy-200 bg-white px-7 py-3 text-sm font-semibold text-navy-800 transition hover:border-primary-400 hover:text-primary-600">

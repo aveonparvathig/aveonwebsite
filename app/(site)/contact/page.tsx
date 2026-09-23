@@ -158,7 +158,7 @@ export default function ContactPage() {
                   href={office.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center rounded-full bg-primary-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
+                  className="mt-5 inline-flex items-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-600 hover:shadow-md"
                 >
                   View Location
                   <svg

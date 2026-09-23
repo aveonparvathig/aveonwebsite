@@ -259,7 +259,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact#demo"
-                className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-700"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-600"
               >
                 Get a DEMO →
               </Link>
