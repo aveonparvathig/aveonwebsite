@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ContactForm from "@/components/forms/ContactForm";
 import DemoBookingForm from "@/components/forms/DemoBookingForm";
+import { ContactFormsProvider } from "@/components/forms/FormLockContext";
 import FAQ, { faqJsonLd } from "@/components/sections/FAQ";
 import { siteConfig } from "@/lib/constants";
 
@@ -157,7 +158,7 @@ export default function ContactPage() {
                   href={office.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center rounded-full bg-primary-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
+                  className="mt-5 inline-flex items-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-600 hover:shadow-md"
                 >
                   View Location
                   <svg
@@ -180,35 +181,37 @@ export default function ContactPage() {
         </div>
 
         {/* FORMS — EQUAL HEIGHT */}
-        <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-stretch">
-          <div id="demo" className="scroll-mt-28 flex flex-col">
-            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
-              Book a Demo
-            </h2>
+        <ContactFormsProvider>
+          <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-stretch">
+            <div id="demo" className="scroll-mt-28 flex flex-col">
+              <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
+                Book a Demo
+              </h2>
 
-            <p className="mt-2 text-navy-600">
-              See the product in action with a personalized walkthrough.
-            </p>
+              <p className="mt-2 text-navy-600">
+                See the product in action with a personalized walkthrough.
+              </p>
 
-            <div className="mt-6 flex-1 rounded-2xl border border-navy-100 bg-navy-50/50 p-6 sm:p-8">
-              <DemoBookingForm />
+              <div className="mt-6 flex-1 rounded-2xl border border-navy-100 bg-white p-6 shadow-card sm:p-8">
+                <DemoBookingForm />
+              </div>
+            </div>
+
+            <div className="flex flex-col">
+              <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
+                Send a Message
+              </h2>
+
+              <p className="mt-2 text-navy-600">
+                For everything else, including support, partnerships, and careers.
+              </p>
+
+              <div className="mt-6 flex-1 rounded-2xl border border-navy-100 bg-white p-6 shadow-card sm:p-8">
+                <ContactForm />
+              </div>
             </div>
           </div>
-
-          <div className="flex flex-col">
-            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
-              Send a Message
-            </h2>
-
-            <p className="mt-2 text-navy-600">
-              For everything else, including support, partnerships, and careers.
-            </p>
-
-            <div className="mt-6 flex-1 rounded-2xl border border-navy-100 bg-white p-6 shadow-card sm:p-8">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
+        </ContactFormsProvider>
       </section>
 
       <FAQ />

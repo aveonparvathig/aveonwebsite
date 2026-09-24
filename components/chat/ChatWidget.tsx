@@ -270,7 +270,7 @@ export default function ChatWidget() {
                   {/* Honeypot */}
                   <input tabIndex={-1} autoComplete="off" value={lead.website} onChange={(e) => setLead({ ...lead, website: e.target.value })} className="hidden" aria-hidden />
                   {leadError && <p className="text-xs text-red-500">{leadError}</p>}
-                  <button type="submit" disabled={leadSubmitting} className="rounded-full bg-primary-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-primary-700 disabled:opacity-60">
+                  <button type="submit" disabled={leadSubmitting} className="rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-primary-600 disabled:opacity-60">
                     {leadSubmitting ? "Sending…" : "Book my free demo →"}
                   </button>
                 </div>

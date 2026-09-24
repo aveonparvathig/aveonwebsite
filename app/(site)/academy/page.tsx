@@ -78,7 +78,7 @@ export default function AcademyPage() {
         <div className="mt-16 text-center">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-primary-600 px-8 py-3.5 text-sm font-semibold text-white hover:bg-primary-700"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-8 py-3.5 text-sm font-semibold text-white hover:bg-primary-600"
           >
             Enquire About Training →
           </Link>

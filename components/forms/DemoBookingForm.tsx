@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { demoBookingSchema, type DemoBookingInput } from "@/lib/validations";
 import { products } from "@/lib/data/products";
+import { useFormLock } from "@/components/forms/FormLockContext";
 
 const inputClass =
   "w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-navy-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100";
@@ -19,6 +20,12 @@ export default function DemoBookingForm() {
   } = useForm<DemoBookingInput>({
     resolver: zodResolver(demoBookingSchema),
   });
+
+  const clearForm = useCallback(() => {
+    reset();
+    setStatus("idle");
+  }, [reset]);
+  const { activate } = useFormLock("demo", clearForm);
 
   async function onSubmit(data: DemoBookingInput) {
     setStatus("submitting");
@@ -63,7 +70,7 @@ export default function DemoBookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={activate} noValidate autoComplete="off" className="space-y-4">
       {/* Honeypot */}
       <input
         type="text"
@@ -76,18 +83,18 @@ export default function DemoBookingForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Name *" className={inputClass} {...register("name")} />
+          <input placeholder="Name *" autoComplete="off" className={inputClass} {...register("name")} />
           {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
         </div>
         <div>
-          <input placeholder="Email *" type="email" className={inputClass} {...register("email")} />
+          <input placeholder="Email *" type="email" autoComplete="off" className={inputClass} {...register("email")} />
           {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Contact Number *" type="tel" className={inputClass} {...register("phone")} />
+          <input placeholder="Contact Number *" type="tel" autoComplete="off" className={inputClass} {...register("phone")} />
           {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone.message}</p>}
         </div>
         <div>
@@ -107,13 +114,13 @@ export default function DemoBookingForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Institute *" className={inputClass} {...register("institute")} />
+          <input placeholder="Institute *" autoComplete="off" className={inputClass} {...register("institute")} />
           {errors.institute && (
             <p className="mt-1 text-xs text-red-600">{errors.institute.message}</p>
           )}
         </div>
         <div>
-          <input placeholder="City / Country *" className={inputClass} {...register("city")} />
+          <input placeholder="City / Country *" autoComplete="off" className={inputClass} {...register("city")} />
           {errors.city && <p className="mt-1 text-xs text-red-600">{errors.city.message}</p>}
         </div>
       </div>

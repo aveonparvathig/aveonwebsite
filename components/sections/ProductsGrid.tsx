@@ -59,7 +59,7 @@ export default async function ProductsGrid() {
                 <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">
                   Most deployed
                 </span>
-                <span className="mt-4 block text-[clamp(24px,2.6vw,32px)] font-extrabold text-navy-900">
+                <span className="mt-4 block text-[20.5px] font-extrabold text-navy-900">
                   {featured.title}
                 </span>
                 <span className="mt-2.5 block text-[15px] leading-relaxed text-navy-700">
@@ -100,7 +100,7 @@ export default async function ProductsGrid() {
               </div>
 
               <h3 className="mt-5 text-[19.5px] font-extrabold text-navy-900">{product.title}</h3>
-              <p className="mt-2.5 flex-1 text-[14.5px] leading-relaxed text-navy-700">
+              <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-navy-700">
                 {product.description}
               </p>
 

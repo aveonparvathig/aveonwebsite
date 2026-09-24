@@ -148,7 +148,7 @@ export default function BenefitsUnifiedCampus() {
             </p>
             <Link
               href="/contact#demo"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-bold text-white hover:bg-primary-700"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-6 py-3 font-bold text-white hover:bg-primary-600"
             >
               Request Demo
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

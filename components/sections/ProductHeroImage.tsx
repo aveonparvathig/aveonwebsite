@@ -13,7 +13,7 @@ const productImages: Record<string, string> = {
   "lms-ai-chatbot": "/products/la.png",
   "hrm-payroll": "/products/hrm.png",
   "library-management": "/products/li.png",
-  "hostel-mess": "/products/hm.png",
+  "hostel-mess": "/products/hostel mess erp.png",
   "coe": "/products/c.png",
   "inventory-management": "/products/in.png",
 };

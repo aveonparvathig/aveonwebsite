@@ -22,7 +22,7 @@ export default function AboutSection() {
 
           <Link
             href="/about"
-            className="mt-7 inline-flex items-center gap-2.5 whitespace-nowrap rounded-full bg-primary-600 px-6.5 py-3.5 text-[14.5px] font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-700"
+            className="mt-7 inline-flex items-center gap-2.5 whitespace-nowrap rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-6.5 py-3.5 text-[14.5px] font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-600"
           >
             About Aveon
             <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

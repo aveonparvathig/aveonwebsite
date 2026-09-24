@@ -36,7 +36,7 @@ export default function StudioPage() {
         </p>
         <Link
           href="/"
-          className="mt-8 inline-block rounded-full bg-primary-600 px-7 py-3 text-sm font-semibold text-white hover:bg-primary-700"
+          className="mt-8 inline-block rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white hover:bg-primary-600"
         >
           Back to site
         </Link>
