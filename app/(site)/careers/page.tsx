@@ -6,12 +6,12 @@ import { siteConfig } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join Aveon Infotech — build education technology used by hundreds of institutions and over a million students.",
+    "Join Aveon Infotech: build education technology used by hundreds of institutions and over a million students.",
 };
 
 const perks = [
   { title: "Meaningful Work", text: "Software you ship reaches a million+ students and the educators who teach them." },
-  { title: "Learn Fast", text: "Small teams, real ownership, and exposure across the full product lifecycle." },
+  { title: "Learn Fast", text: "Small teams, real ownership and exposure across the full product lifecycle." },
   { title: "Grow With Us", text: "Structured mentoring and Aveon Academy training for every role." },
   { title: "Coimbatore Roots", text: "A stable, growing product company in one of India's friendliest tech cities." },
 ];
@@ -89,8 +89,8 @@ export default function CareersPage() {
           Don&apos;t see your role?{" "}
           <Link href="/contact" className="font-semibold text-primary-600 hover:text-primary-700">
             Send us your profile
-          </Link>{" "}
-          — we&apos;re always looking for good people.
+          </Link>:
+          we&apos;re always looking for good people.
         </p>
       </section>
     </>

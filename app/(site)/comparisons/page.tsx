@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Aveon vs MasterSoft vs Camu: Campus ERP Comparison | Aveon",
-  description: "Detailed comparison of campus ERP solutions: Aveon, MasterSoft, and Camu. Features, pricing, implementation, support, and suitability for different institution types.",
+  description: "Detailed comparison of campus ERP solutions: Aveon, MasterSoft and Camu. Features, pricing, implementation, support and suitability for different institution types.",
   keywords: [
     "Aveon vs MasterSoft",
     "campus ERP comparison",
@@ -63,7 +63,7 @@ export default function Comparisons() {
             Campus ERP Platform Comparison
           </h1>
           <p className="mx-auto max-w-[640px] text-lg text-navy-700">
-            Compare Aveon, MasterSoft, and Camu across features, pricing, and suitability for your institution.
+            Compare Aveon, MasterSoft and Camu across features, pricing and suitability for your institution.
           </p>
         </div>
 

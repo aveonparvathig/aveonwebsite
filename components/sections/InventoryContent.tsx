@@ -34,7 +34,7 @@ type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 const INV_DEEP: DeepModule[] = [
   {
     title: "Item Management",
-    summary: "One item, one record — better inventory visibility from the start.",
+    summary: "One item, one record: better inventory visibility from the start.",
     groups: [
       {
         items: ["Item information", "Item category & type", "Unit of measurement", "Item description", "Stock information", "Store information"],
@@ -53,7 +53,7 @@ const INV_DEEP: DeepModule[] = [
   },
   {
     title: "Store & Location Management",
-    summary: "Know what you have — and where it belongs, across stores and locations.",
+    summary: "Know what you have and where it belongs, across stores and locations.",
     groups: [
       {
         items: ["Institution", "Store", "Location", "Item", "Stock by location"],
@@ -71,7 +71,7 @@ const INV_DEEP: DeepModule[] = [
   },
   {
     title: "Purchase Management",
-    summary: "Bring procurement and inventory together — purchase, receive, record, manage.",
+    summary: "Bring procurement and inventory together: purchase, receive, record, manage.",
     groups: [
       {
         items: ["Purchase requests", "Purchase information", "Supplier & items", "Quantities", "Purchase records", "Received materials"],
@@ -89,7 +89,7 @@ const INV_DEEP: DeepModule[] = [
   },
   {
     title: "Stock Issue",
-    summary: "Every issue, every quantity, every destination — recorded.",
+    summary: "Every issue, every quantity, every destination recorded.",
     groups: [
       {
         items: ["Item issues & quantities", "Receiving department", "Store information", "Issue records", "Stock balance"],
@@ -98,7 +98,7 @@ const INV_DEEP: DeepModule[] = [
   },
   {
     title: "Stock Transfer",
-    summary: "Move inventory between stores, departments or locations — accurately.",
+    summary: "Move inventory between stores, departments or locations: accurately.",
     groups: [
       {
         items: ["Transfer requests", "Source & destination location", "Items & quantities", "Transfer records"],
@@ -134,7 +134,7 @@ const INV_DEEP: DeepModule[] = [
   },
   {
     title: "Reports & Analytics",
-    summary: "Turn stock data into useful information — what you have, and where it moved.",
+    summary: "Turn stock data into useful information: what you have and where it moved.",
     groups: [
       {
         items: [
@@ -240,7 +240,7 @@ function ConnectedInventoryGraphic() {
           .inv-ring, .inv-glow, .inv-flow, .inv-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every inventory function — Items, Categories, Stores, Suppliers, Purchases, Issues, Transfers and Reports — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every inventory function: Items, Categories, Stores, Suppliers, Purchases, Issues, Transfers and Reports on one platform.">
         <defs>
           <radialGradient id="inv-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -303,7 +303,7 @@ export default function InventoryContent() {
               </p>
               <p>
                 Aveon Inventory Management brings items, suppliers, purchases, receipts, issues, transfers and returns
-                into one centralized digital workflow — part of the wider Aveon ERP ecosystem.
+                into one centralized digital workflow, part of the wider Aveon ERP ecosystem.
               </p>
               <p className="font-semibold text-navy-800">Manage stock. Track movement. Improve visibility.</p>
             </div>
@@ -316,7 +316,7 @@ export default function InventoryContent() {
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete Inventory Management Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything you need to organise institutional inventory — grouped into four connected domains, from setup to
+            Everything you need to organise institutional inventory, grouped into four connected domains, from setup to
             reports.
           </p>
         </div>
@@ -343,7 +343,7 @@ export default function InventoryContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Modules in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares everything with the rest.
+              Open any module to see what&apos;s inside. Each one works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -451,7 +451,7 @@ export default function InventoryContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Every Inventory Stakeholder</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -476,7 +476,7 @@ export default function InventoryContent() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">Traditional Approach</h3>
             <p className="mt-4 text-navy-700">
               Purchase records, stock registers, issue registers, department records, transfer records and physical
-              verification — all kept separately.
+              verification all kept separately.
             </p>
             <p className="mt-4 font-semibold text-navy-900">= More registers, more searching</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-600">
@@ -489,7 +489,7 @@ export default function InventoryContent() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-primary-600">With Aveon Inventory</h3>
             <p className="mt-4 text-navy-700">
               Items, suppliers, purchases, stores, stock, issues, transfers, returns and reports all connect through one
-              system — inside the campus ERP.
+              system inside the campus ERP.
             </p>
             <p className="mt-4 font-semibold text-primary-800">= One connected inventory system</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-700">
@@ -531,7 +531,7 @@ export default function InventoryContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Know Your Stock. Track Every Movement. Manage with Confidence.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              Bring items, suppliers, purchases, stores and stock together — and build a more organised digital inventory
+              Bring items, suppliers, purchases, stores and stock together and build a more organised digital inventory
               inside the Aveon ERP.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

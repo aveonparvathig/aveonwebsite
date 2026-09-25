@@ -43,7 +43,7 @@ const LIB_DEEP: DeepModule[] = [
   },
   {
     title: "Accession Management",
-    summary: "Know what your library has — and where it belongs.",
+    summary: "Know what your library has and where it belongs.",
     groups: [
       {
         items: ["Accession records", "Book information", "Collection records", "Resource quantities", "Library inventory information"],
@@ -106,7 +106,7 @@ const LIB_DEEP: DeepModule[] = [
   },
   {
     title: "Patron Management",
-    summary: "Different users, structured access — better library administration.",
+    summary: "Different users, structured access: better library administration.",
     groups: [
       {
         label: "Patron categories organised by",
@@ -140,7 +140,7 @@ const LIB_DEEP: DeepModule[] = [
   },
   {
     title: "OPAC & Online Book Search",
-    summary: "Search less, discover more — find resources through the online catalogue.",
+    summary: "Search less, discover more: find resources through the online catalogue.",
     groups: [
       {
         items: ["Online Public Access Catalogue (OPAC)", "Online book search", "Digital resource discovery"],
@@ -251,7 +251,7 @@ function ConnectedLibraryGraphic() {
           .lib-ring, .lib-glow, .lib-flow, .lib-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every library function — Catalogue, Accession, Authors, Suppliers, Patrons, Circulation, Subscriptions and OPAC — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every library function: Catalogue, Accession, Authors, Suppliers, Patrons, Circulation, Subscriptions and OPAC on one platform.">
         <defs>
           <radialGradient id="lib-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -308,13 +308,13 @@ export default function LibraryContent() {
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
-                A library is more than a collection of books — it&apos;s where students discover knowledge, faculty
+                A library is more than a collection of books: it&apos;s where students discover knowledge, faculty
                 support learning and institutions preserve academic information. Managing it by hand only gets harder as
                 the collection grows.
               </p>
               <p>
                 Aveon Library Management brings cataloguing, accession, circulation, patron management, stock
-                verification, subscriptions and online book search into one connected system — part of the wider Aveon
+                verification, subscriptions and online book search into one connected system, part of the wider Aveon
                 Campus ERP.
               </p>
               <p className="font-semibold text-navy-800">Organize your library. Connect your resources. Simplify operations.</p>
@@ -328,7 +328,7 @@ export default function LibraryContent() {
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete Library Management Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything you need to run a modern library — grouped into four connected domains, from collection to discovery.
+            Everything you need to run a modern library, grouped into four connected domains, from collection to discovery.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -354,7 +354,7 @@ export default function LibraryContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Modules in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares everything with the rest.
+              Open any module to see what&apos;s inside. Each one works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -415,7 +415,7 @@ export default function LibraryContent() {
                 To Discovery.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                Aveon brings the whole library into one structured flow — from cataloguing a resource to a student
+                Aveon brings the whole library into one structured flow, from cataloguing a resource to a student
                 finding it online.
               </p>
             </div>
@@ -462,7 +462,7 @@ export default function LibraryContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Every Library Stakeholder</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -486,7 +486,7 @@ export default function LibraryContent() {
           <div className="rounded-2xl border border-navy-200 bg-navy-50 p-8">
             <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">Traditional Approach</h3>
             <p className="mt-4 text-navy-700">
-              Book registers, accession records, patron records, circulation rules, stock and subscription records — all
+              Book registers, accession records, patron records, circulation rules, stock and subscription records all
               kept separately, searched by hand.
             </p>
             <p className="mt-4 font-semibold text-navy-900">= More registers, more searching</p>
@@ -500,7 +500,7 @@ export default function LibraryContent() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-primary-600">With Aveon Library Management</h3>
             <p className="mt-4 text-navy-700">
               Catalogue, books, accession, stock, patrons, circulation rules, subscriptions and OPAC all connect through
-              one system — inside the campus ERP.
+              one system inside the campus ERP.
             </p>
             <p className="mt-4 font-semibold text-primary-800">= One connected digital library</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-700">
@@ -542,7 +542,7 @@ export default function LibraryContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Organize Knowledge. Simplify Management. Enable Discovery.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              Bring resources, patrons, rules, stock and discovery together — and build a smarter digital library inside
+              Bring resources, patrons, rules, stock and discovery together and build a smarter digital library inside
               the Aveon Campus ERP.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

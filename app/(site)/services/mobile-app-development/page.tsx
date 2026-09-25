@@ -52,7 +52,7 @@ export default function MobileAppDevelopmentPage() {
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
               Build powerful Android, iOS and cross-platform applications that connect your customers, employees and
-              business processes — from UI/UX design and development to API integration, AI, testing and launch.
+              business processes, from UI/UX design and development to API integration, AI, testing and launch.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link

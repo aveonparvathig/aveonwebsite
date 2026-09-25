@@ -34,7 +34,7 @@ type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 const UNI_DEEP: DeepModule[] = [
   {
     title: "Admission Management",
-    summary: "Turn every enquiry into an enrolled student — organised from first contact to conversion.",
+    summary: "Turn every enquiry into an enrolled student, organised from first contact to conversion.",
     groups: [
       {
         items: [
@@ -53,7 +53,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Student Information Management",
-    summary: "One student, one complete digital record — consistent across every department.",
+    summary: "One student, one complete digital record, consistent across every department.",
     groups: [
       {
         label: "Student Record",
@@ -73,7 +73,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Academic Management",
-    summary: "Bring academic planning and execution into one workflow — curriculum to performance.",
+    summary: "Bring academic planning and execution into one workflow, from curriculum to performance.",
     groups: [
       {
         items: [
@@ -91,7 +91,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "OBE, CBCS & Open Elective",
-    summary: "Connect curriculum, teaching and outcomes — with real credit-based flexibility.",
+    summary: "Connect curriculum, teaching and outcomes with real credit-based flexibility.",
     groups: [
       {
         label: "Outcome Based Education (OBE)",
@@ -105,7 +105,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Learning Management System",
-    summary: "Extend learning beyond the classroom — assignments, assessments and digital interaction.",
+    summary: "Extend learning beyond the classroom with assignments, assessments and digital interaction.",
     groups: [
       {
         items: ["Online assignments", "Feedback", "Online examinations", "Learning activities", "Assignment submission", "Digital learning interaction"],
@@ -114,7 +114,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Controller of Examination (COE)",
-    summary: "Run the entire examination lifecycle, planning to final mark sheet, in one workflow.",
+    summary: "Run the entire examination lifecycle: planning to final mark sheet in one workflow.",
     groups: [
       {
         label: "Administration & Configuration",
@@ -165,7 +165,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Library Management",
-    summary: "Manage knowledge resources digitally — catalogue, circulation and discovery.",
+    summary: "Manage knowledge resources digitally with catalogue, circulation and discovery.",
     groups: [
       {
         items: [
@@ -182,7 +182,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Hostel & Mess Management",
-    summary: "Manage campus living end to end — accommodation, attendance and full mess operations.",
+    summary: "Manage campus living end to end, including accommodation, attendance and full mess operations.",
     groups: [
       {
         label: "Hostel",
@@ -203,7 +203,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "HR & Payroll",
-    summary: "Manage the people behind your institution — from recruitment to payslips.",
+    summary: "Manage the people behind your institution, from recruitment to payslips.",
     groups: [
       {
         label: "HR Management",
@@ -217,7 +217,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Research & Academic Activities",
-    summary: "Build a stronger digital record of research — capture contributions as they happen.",
+    summary: "Build a stronger digital record of research and capture contributions as they happen.",
     groups: [
       {
         items: [
@@ -233,7 +233,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "NAAC & Institutional Data",
-    summary: "Build accreditation readiness into everyday operations — all year, not the last minute.",
+    summary: "Build accreditation readiness into everyday operations all year, not the last minute.",
     groups: [
       {
         label: "Department",
@@ -247,7 +247,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Placement & Alumni",
-    summary: "Connect students with opportunity — and stay connected beyond graduation.",
+    summary: "Connect students with opportunity and stay connected beyond graduation.",
     groups: [
       {
         items: [
@@ -262,7 +262,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Transport & Communication",
-    summary: "Keep the campus moving and informed — routes on time, the right message to the right people.",
+    summary: "Keep the campus moving and informed, with routes on time and the right message to the right people.",
     groups: [
       {
         label: "Transport",
@@ -276,7 +276,7 @@ const UNI_DEEP: DeepModule[] = [
   },
   {
     title: "Dashboards & Analytics",
-    summary: "Turn institutional data into decisions — see what's happening and what needs action.",
+    summary: "Turn institutional data into decisions and see what's happening and what needs action.",
     groups: [
       {
         items: [
@@ -307,7 +307,7 @@ const UNI_STAKEHOLDERS = [
   { role: "Administration", line: "Simplify everyday operations.", text: "Bring information and workflows together in one structured, connected environment." },
   { role: "Faculty", line: "Spend more time on education.", text: "Manage academic activities, attendance, lesson plans, marks and student interaction in one place." },
   { role: "Examination Teams", line: "Bring structure to exams.", text: "Run examination operations end to end through a connected COE workflow." },
-  { role: "Students", line: "Every service, digital.", text: "Attendance, timetable, marks, fees, assignments and examinations — on any device." },
+  { role: "Students", line: "Every service, digital.", text: "Attendance, timetable, marks, fees, assignments and examinations on any device." },
   { role: "Parents", line: "Stay informed.", text: "Receive relevant student and institutional communication, without chasing anyone." },
 ];
 
@@ -316,7 +316,7 @@ export const universityErpFaqs: { question: string; answer: string }[] = [
   {
     question: "What is University ERP software?",
     answer:
-      "University ERP software is an integrated platform that helps institutions manage academic, administrative and operational activities through one centralized digital system — replacing the disconnected tools most universities juggle today.",
+      "University ERP software is an integrated platform that helps institutions manage academic, administrative and operational activities through one centralized digital system, replacing the disconnected tools most universities juggle today.",
   },
   {
     question: "What is a University Management System?",
@@ -331,11 +331,11 @@ export const universityErpFaqs: { question: string; answer: string }[] = [
   {
     question: "Does Aveon have a Controller of Examination module?",
     answer:
-      "Yes — in depth. Aveon's COE covers examination fees, subject management, question papers, scheduling, online examinations, exam halls, seating, marks, moderation, results, revaluation, supplementary examinations and mark sheets.",
+      "Yes, in depth. Aveon's COE covers examination fees, subject management, question papers, scheduling, online examinations, exam halls, seating, marks, moderation, results, revaluation, supplementary examinations and mark sheets.",
   },
   {
     question: "Does Aveon support OBE?",
-    answer: "Yes. Aveon supports Outcome Based Education end to end — PEO, PO, PEO–PO mapping, CO, LO, CO–LO mapping and TLO.",
+    answer: "Yes. Aveon supports Outcome Based Education end to end, covering PEO, PO, PEO–PO mapping, CO, LO, CO–LO mapping and TLO.",
   },
   {
     question: "Does Aveon support CBCS?",
@@ -345,7 +345,7 @@ export const universityErpFaqs: { question: string; answer: string }[] = [
   {
     question: "Does Aveon support hostel management?",
     answer:
-      "Yes. Aveon manages hostel applications, buildings, rooms, beds, allocation, attendance, leave, permissions, gate passes and complaints — plus full mess operations.",
+      "Yes. Aveon manages hostel applications, buildings, rooms, beds, allocation, attendance, leave, permissions, gate passes and complaints, plus full mess operations.",
   },
   {
     question: "Does Aveon include HR and Payroll?",
@@ -393,7 +393,7 @@ function ConnectedUniversityGraphic() {
           .uni-ring, .uni-glow, .uni-flow, .uni-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every university function — Admissions, Academics, Examinations, Research, Placement, Hostel, Library and Fees — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every university function: Admissions, Academics, Examinations, Research, Placement, Hostel, Library and Fees on one platform.">
         <defs>
           <radialGradient id="uni-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -443,14 +443,14 @@ export default function UniversityERPContent() {
           </div>
           <div className="order-1 lg:order-2">
             <span className="inline-block rounded-full border border-primary-200 bg-primary-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-primary-600">
-              One Connected Platform
+              One Platform. Fully Connected.
             </span>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl">
               One University. Every Function. One Connected Platform.
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
-                A university doesn&apos;t run through one department — it runs through an interconnected network of
+                A university doesn&apos;t run through one department. It runs through an interconnected network of
                 schools, programmes, faculty, students, examinations, finance, libraries, hostels, research and
                 placement, all operating at once.
               </p>
@@ -470,7 +470,7 @@ export default function UniversityERPContent() {
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">University Management System Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything your university needs to run its digital operations — grouped into four connected domains,
+            Everything your university needs to run its digital operations, grouped into four connected domains,
             tied together by one student record.
           </p>
         </div>
@@ -497,7 +497,7 @@ export default function UniversityERPContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Modules in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares everything with the rest.
+              Open any module to see what&apos;s inside. Each one works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -558,7 +558,7 @@ export default function UniversityERPContent() {
                 One Connected University Journey.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                A student&apos;s journey crosses many departments. Aveon connects every major stage — from the first
+                A student&apos;s journey crosses many departments. Aveon connects every major stage from the first
                 enquiry to lifelong alumni.
               </p>
             </div>
@@ -605,7 +605,7 @@ export default function UniversityERPContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Every University Stakeholder</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -685,7 +685,7 @@ export default function UniversityERPContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">One University. One Platform. Everything Connected.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              Connect your students, faculty, departments, examinations, administration and data — on one University ERP
+              Connect your students, faculty, departments, examinations, administration and data on one University ERP
               built around the way universities actually work.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

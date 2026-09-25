@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "IQAC / NAAC / NBA Management System | Aveon",
-  description: "Comprehensive institutional quality assurance system. Manage IQAC compliance, NAAC accreditation (7 criteria), NBA accreditation, quality metrics, and stakeholder feedback.",
+  description: "Comprehensive institutional quality assurance system. Manage IQAC compliance, NAAC accreditation (7 criteria), NBA accreditation, quality metrics and stakeholder feedback.",
   keywords: [
     "IQAC management system",
     "NAAC accreditation software",
@@ -32,7 +32,7 @@ export default function IqacNaacNbaPage() {
               IQAC, NAAC & NBA Management System
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Unified platform for institutional quality assurance, accreditation compliance, and continuous improvement. Manage IQAC, NAAC (7 criteria), and NBA accreditation seamlessly.
+              Unified platform for institutional quality assurance, accreditation compliance and continuous improvement. Manage IQAC, NAAC (7 criteria) and NBA accreditation seamlessly.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -75,17 +75,17 @@ export default function IqacNaacNbaPage() {
               {
                 icon: "📋",
                 title: "IQAC Coordination",
-                desc: "Manage IQAC cell activities, meetings, action plans, and institutional quality monitoring seamlessly.",
+                desc: "Manage IQAC cell activities, meetings, action plans and institutional quality monitoring seamlessly.",
               },
               {
                 icon: "⭐",
                 title: "NAAC Accreditation",
-                desc: "Complete support for NAAC accreditation framework with all 7 criteria: curriculum, teaching, research, student support, infrastructure, governance, and innovation.",
+                desc: "Complete support for NAAC accreditation framework with all 7 criteria: curriculum, teaching, research, student support, infrastructure, governance and innovation.",
               },
               {
                 icon: "🏆",
                 title: "NBA Accreditation",
-                desc: "Specialized support for NBA accreditation of engineering, architecture, and technical programs.",
+                desc: "Specialized support for NBA accreditation of engineering, architecture and technical programs.",
               },
               {
                 icon: "📊",
@@ -95,7 +95,7 @@ export default function IqacNaacNbaPage() {
               {
                 icon: "💬",
                 title: "Stakeholder Feedback",
-                desc: "Collect and analyze feedback from students, faculty, staff, and industry through surveys.",
+                desc: "Collect and analyze feedback from students, faculty, staff and industry through surveys.",
               },
               {
                 icon: "📄",
@@ -201,7 +201,7 @@ export default function IqacNaacNbaPage() {
             Simplify Your Accreditation Journey
           </h2>
           <p className="mt-4 text-lg opacity-90">
-            Achieve institutional excellence with unified IQAC, NAAC, and NBA management.
+            Achieve institutional excellence with unified IQAC, NAAC and NBA management.
           </p>
           <Link
             href="/contact#demo"

@@ -1,49 +1,55 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useRef, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 
 type FormId = "demo" | "contact";
 
 interface FormLockContextValue {
-  activate: (form: FormId) => void;
-  registerReset: (form: FormId, resetFn: () => void) => void;
+  dirty: Record<FormId, boolean>;
+  setDirty: (form: FormId, value: boolean) => void;
+  registerClear: (form: FormId, clearFn: () => void) => void;
+  clear: (form: FormId) => void;
 }
 
 const FormLockContext = createContext<FormLockContextValue | null>(null);
 
 export function ContactFormsProvider({ children }: { children: ReactNode }) {
-  const activeFormRef = useRef<FormId | null>(null);
-  const resetFns = useRef<Partial<Record<FormId, () => void>>>({});
+  const [dirty, setDirtyState] = useState<Record<FormId, boolean>>({ demo: false, contact: false });
+  const clearFns = useRef<Partial<Record<FormId, () => void>>>({});
 
-  const registerReset = useCallback((form: FormId, resetFn: () => void) => {
-    resetFns.current[form] = resetFn;
+  const setDirty = useCallback((form: FormId, value: boolean) => {
+    setDirtyState((prev) => (prev[form] === value ? prev : { ...prev, [form]: value }));
   }, []);
 
-  const activate = useCallback((form: FormId) => {
-    const previous = activeFormRef.current;
-    if (previous && previous !== form) {
-      resetFns.current[previous]?.();
-    }
-    activeFormRef.current = form;
+  const registerClear = useCallback((form: FormId, clearFn: () => void) => {
+    clearFns.current[form] = clearFn;
   }, []);
+
+  const clear = useCallback((form: FormId) => clearFns.current[form]?.(), []);
 
   return (
-    <FormLockContext.Provider value={{ activate, registerReset }}>
+    <FormLockContext.Provider value={{ dirty, setDirty, registerClear, clear }}>
       {children}
     </FormLockContext.Provider>
   );
 }
 
-export function useFormLock(form: FormId, resetFn: () => void) {
+/** Only one form can hold details at a time: moving into a form clears the other one. */
+export function useFormLock(form: FormId, isDirty: boolean, clearSelf: () => void) {
   const ctx = useContext(FormLockContext);
   if (!ctx) {
     throw new Error("useFormLock must be used within a ContactFormsProvider");
   }
-  const { activate, registerReset } = ctx;
+  const { dirty, setDirty, registerClear, clear } = ctx;
+  const other: FormId = form === "demo" ? "contact" : "demo";
 
   useEffect(() => {
-    registerReset(form, resetFn);
-  }, [form, resetFn, registerReset]);
+    setDirty(form, isDirty);
+  }, [form, isDirty, setDirty]);
 
-  return { activate: useCallback(() => activate(form), [activate, form]) };
+  useEffect(() => {
+    registerClear(form, clearSelf);
+  }, [form, clearSelf, registerClear]);
+
+  return { isLocked: dirty[other], clearOther: () => clear(other) };
 }

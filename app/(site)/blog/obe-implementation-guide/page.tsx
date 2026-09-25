@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Complete Guide to Outcome-Based Education (OBE) Implementation | Aveon",
-  description: "Step-by-step guide to implementing Outcome-Based Education in your institution. Learn how to map learning outcomes, assess student performance, and achieve NAAC accreditation.",
+  description: "Step-by-step guide to implementing Outcome-Based Education in your institution. Learn how to map learning outcomes, assess student performance and achieve NAAC accreditation.",
   keywords: [
     "outcome-based education",
     "OBE implementation",
@@ -75,7 +75,7 @@ export default function OBEGuide() {
             <li><strong>Map Curriculum:</strong> Align courses with outcomes and identify gaps in coverage.</li>
             <li><strong>Assess Learning:</strong> Implement assessment methods to measure achievement against outcomes.</li>
             <li><strong>Analyze Data:</strong> Collect and analyze assessment data to understand student learning patterns.</li>
-            <li><strong>Close the Loop:</strong> Use insights to improve courses, teaching methods, and curriculum design.</li>
+            <li><strong>Close the Loop:</strong> Use insights to improve courses, teaching methods and curriculum design.</li>
             <li><strong>Report Findings:</strong> Document your OBE process for NAAC accreditation and institutional improvement.</li>
           </ol>
 
@@ -84,7 +84,7 @@ export default function OBEGuide() {
             Aveon's campus ERP platform includes built-in OBE framework tools:
           </p>
           <ul>
-            <li><strong>Outcome Mapping Module:</strong> Define and map program, course, and assessment outcomes</li>
+            <li><strong>Outcome Mapping Module:</strong> Define and map program, course and assessment outcomes</li>
             <li><strong>Assessment Management:</strong> Track student performance against defined outcomes</li>
             <li><strong>Analytics Dashboard:</strong> Visualize learning patterns and institutional effectiveness</li>
             <li><strong>NAAC Reporting:</strong> Automated data collection and compliance documentation</li>
@@ -94,7 +94,7 @@ export default function OBEGuide() {
           <h2>Common Challenges & Solutions</h2>
           <h3>Challenge: Defining Clear Outcomes</h3>
           <p>
-            <strong>Solution:</strong> Use action verbs (Bloom's Taxonomy) and ensure outcomes are specific, measurable, achievable, relevant, and time-bound (SMART).
+            <strong>Solution:</strong> Use action verbs (Bloom's Taxonomy) and ensure outcomes are specific, measurable, achievable, relevant and time-bound (SMART).
           </p>
 
           <h3>Challenge: Assessment Overload</h3>

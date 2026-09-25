@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "AI-Powered Campus ERP & LMS | University, College & School Management",
-  description: "Unified campus ERP & LMS for universities, colleges, and schools. AI-powered education software serving 5000+ institutions. Manage admissions, academics, fees, and operations on one platform. OBE compliant, NAAC/AICTE ready.",
+  description: "Unified campus ERP & LMS for universities, colleges and schools. AI-powered education software serving 5000+ institutions. Manage admissions, academics, fees and operations on one platform. OBE compliant, NAAC/AICTE ready.",
   keywords: [
     "AI-powered campus ERP",
     "university ERP system",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "AI-Powered Campus ERP & LMS for Universities & Colleges",
-    description: "Unified platform for education management. Manage students, academics, admissions, and operations with AI-powered analytics.",
+    description: "Unified platform for education management. Manage students, academics, admissions and operations with AI-powered analytics.",
     url: siteConfig.url,
   },
 };

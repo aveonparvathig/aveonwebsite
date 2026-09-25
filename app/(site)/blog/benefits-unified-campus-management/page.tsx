@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Benefits of Unified Campus Management System | Aveon Blog",
-  description: "Discover how unified campus management improves efficiency, data consistency, decision-making, and institutional effectiveness. Real benefits for universities and colleges.",
+  description: "Discover how unified campus management improves efficiency, data consistency, decision-making and institutional effectiveness. Real benefits for universities and colleges.",
   keywords: [
     "unified campus management",
     "campus management benefits",
@@ -39,7 +39,7 @@ export default function BenefitsUnifiedCampus() {
         <div className="prose prose-lg max-w-none text-navy-800 mt-12">
           <h2>The Hidden Cost of Fragmented Systems</h2>
           <p>
-            Many institutions operate with a patchwork of disconnected systems: one for admissions, another for academics, a separate system for finances, and yet another for HR. While this approach might seem to offer flexibility, it actually creates significant operational challenges.
+            Many institutions operate with a patchwork of disconnected systems: one for admissions, another for academics, a separate system for finances and yet another for HR. While this approach might seem to offer flexibility, it actually creates significant operational challenges.
           </p>
 
           <h2>Key Benefits of Unified Campus Management</h2>
@@ -130,13 +130,13 @@ export default function BenefitsUnifiedCampus() {
           <ul>
             <li>✓ Reduced data entry time from 40 hours/week to 8 hours/week</li>
             <li>✓ Improved admissions processing from 10 days to 2 days</li>
-            <li>✓ Achieved NAAC accreditation in first attempt</li>
+            <li>✓ Achieved NAAC accreditation in the first attempt</li>
             <li>✓ Increased student satisfaction scores by 35%</li>
           </ul>
 
           <h2>Conclusion</h2>
           <p>
-            Unified campus management isn't just an IT upgrade—it's a business transformation that improves operations, enhances decision-making, and delivers better student outcomes. The question isn't whether to unify your systems, but when to make the transition.
+            Unified campus management isn't just an IT upgrade: it's a business transformation that improves operations, enhances decision-making and delivers better student outcomes. The question isn't whether to unify your systems, but when to make the transition.
           </p>
 
           <div className="mt-12 rounded-lg bg-primary-50 p-8">

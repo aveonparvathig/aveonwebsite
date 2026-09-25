@@ -10,9 +10,9 @@ const OMS_NODES = ["Orders", "Customers", "Products", "Inventory", "Fulfilment",
 /** The order lifecycle, shown as a connected flow with icons and descriptions. */
 const OMS_FLOW = [
   { step: 1, title: "Order Capture", icon: "📋", description: "Order is captured via omnichannel sources" },
-  { step: 2, title: "Validation", icon: "🔍", description: "Data is validated; customer details, pricing." },
+  { step: 2, title: "Validation", icon: "🔍", description: "Data is validated: customer details, pricing." },
   { step: 3, title: "Confirmation", icon: "✓", description: "System confirms the order with customer." },
-  { step: 4, title: "Inventory Check", icon: "📦", description: "Order details sent to fulfillment process" },
+  { step: 4, title: "Inventory Check", icon: "📦", description: "Order details sent to the fulfilment process" },
   { step: 5, title: "Processing", icon: "⚙️", description: "Items are picked and sorted from warehouse." },
   { step: 6, title: "Packing", icon: "📬", description: "Items packed and prepared for shipment." },
   { step: 7, title: "Dispatch", icon: "🚚", description: "Package is tagged and shipped out." },
@@ -98,13 +98,13 @@ const OMS_DEEP: DeepModule[] = [
 /** Warehouse workflow — professional flow with icons and descriptions */
 const WAREHOUSE_FLOW_PROFESSIONAL = [
   { step: 1, title: "Order Capture", icon: "📋", description: "Order is captured via omnichannel sources" },
-  { step: 2, title: "Validation", icon: "🔍", description: "Data is validated; customer details, pricing." },
+  { step: 2, title: "Validation", icon: "🔍", description: "Data is validated: customer details, pricing." },
   { step: 3, title: "Confirmation", icon: "👍", description: "System confirms the order with details confirmed." },
-  { step: 4, title: "Inventory Check", icon: "📦", description: "Order details are present and sent to the fulfil process" },
-  { step: 5, title: "Processing", icon: "⚙", description: "Items are picked, sorted, and appropriate materials included." },
-  { step: 6, title: "Packing", icon: "📬", description: "Items are packed, sorted, and appropriate materials included." },
-  { step: 7, title: "Dispatch", icon: "🚚", description: "Package is tagged, carrier, and shipped out." },
-  { step: 8, title: "Delivery", icon: "🎯", description: "Package is tracked, in transit, and nearing final delivery." },
+  { step: 4, title: "Inventory Check", icon: "📦", description: "Order details are present and sent to the fulfilment process" },
+  { step: 5, title: "Processing", icon: "⚙", description: "Items are picked, sorted and appropriate materials included." },
+  { step: 6, title: "Packing", icon: "📬", description: "Items are packed, sorted and appropriate materials included." },
+  { step: 7, title: "Dispatch", icon: "🚚", description: "Package is tagged, carrier and shipped out." },
+  { step: 8, title: "Delivery", icon: "🎯", description: "Package is tracked, in transit and nearing final delivery." },
   { step: 9, title: "Completion", icon: "✓", description: "Order is successfully completed." }
 ];
 
@@ -222,7 +222,7 @@ function ConnectedOrderGraphic() {
           .oms-ring, .oms-glow, .oms-flow, .oms-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every order function — Orders, Customers, Products, Inventory, Fulfilment, Payments, Tracking and Returns — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every order function: Orders, Customers, Products, Inventory, Fulfilment, Payments, Tracking and Returns on one platform.">
         <defs>
           <radialGradient id="oms-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -283,7 +283,7 @@ export default function OrderManagementContent() {
                 complex as a business grows.
               </p>
               <p>
-                Aveon Order Management System brings the complete order lifecycle onto one connected platform — from
+                Aveon Order Management System brings the complete order lifecycle onto one connected platform, from
                 order creation and validation to inventory, fulfilment, delivery, returns and reporting.
               </p>
               <p className="font-semibold text-navy-800">One platform. Every order. Complete visibility.</p>
@@ -471,7 +471,7 @@ export default function OrderManagementContent() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete Order Management Tools</h2>
-            <p className="mt-3 text-lg text-navy-600">Twelve tools to manage orders, customers, products, inventory and fulfilment — in four connected domains.</p>
+            <p className="mt-3 text-lg text-navy-600">Twelve tools to manage orders, customers, products, inventory and fulfilment in four connected domains.</p>
           </div>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {OMS_GROUPS.map((g) => (
@@ -497,7 +497,7 @@ export default function OrderManagementContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Tools in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any tool to see what&apos;s inside. Each works on its own — and shares everything with the rest.
+              Open any tool to see what&apos;s inside. Each works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -617,7 +617,7 @@ export default function OrderManagementContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Multi-Channel, Connected & Intelligent</h2>
-          <p className="mt-3 text-lg text-navy-600">Bring every order into one platform, connect your business systems, and let AI handle the repetitive work.</p>
+          <p className="mt-3 text-lg text-navy-600">Bring every order into one platform, connect your business systems and let AI handle the repetitive work.</p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-3">
           <ChipGroup title="Order Channels" items={CHANNELS} />
@@ -687,7 +687,7 @@ export default function OrderManagementContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Capture Orders. Automate Processes. Deliver Better.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              Your order connects your customer, product, inventory, payment, operations and delivery — Aveon brings them
+              Your order connects your customer, product, inventory, payment, operations and delivery: Aveon brings them
               together on one platform.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

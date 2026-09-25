@@ -81,7 +81,7 @@ const STAIR_OFFSET = ["lg:mt-[72px]", "lg:mt-12", "lg:mt-6", "lg:mt-0"];
 /** Why choose Aveon. */
 const WHY: { title: string; text: string }[] = [
   { title: "Business-First Approach", text: "We understand your process before choosing the technology." },
-  { title: "Custom Architecture", text: "Software designed around your requirements — not a generic template." },
+  { title: "Custom Architecture", text: "Software designed around your requirements, not a generic template." },
   { title: "Modern Technology", text: "Appropriate web, mobile, cloud, AI and integration technologies." },
   { title: "Scalable Solutions", text: "A foundation that can grow with your business." },
   { title: "End-to-End Development", text: "From concept and design to deployment and ongoing support." },
@@ -152,7 +152,7 @@ function ConnectedSoftwareGraphic() {
           .csd-ring, .csd-glow, .csd-flow, .csd-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon builds across every technology — Web, Mobile, SaaS, Cloud, AI, APIs, Database and DevOps — around one business.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon builds across every technology: Web, Mobile, SaaS, Cloud, AI, APIs, Database and DevOps around one business.">
         <defs>
           <radialGradient id="csd-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -226,7 +226,7 @@ export default function CustomSoftwareContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Build Software That Fits Your Business</h2>
-          <p className="mt-3 text-lg text-navy-600">From idea to scalable digital product — across web, mobile, cloud and AI.</p>
+          <p className="mt-3 text-lg text-navy-600">From idea to scalable digital product across web, mobile, cloud and AI.</p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SOLUTIONS.map((s) => (
@@ -244,7 +244,7 @@ export default function CustomSoftwareContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Modern Technology Stack</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Technology chosen for the solution — based on scalability, performance, security and long-term
+              Technology chosen for the solution based on scalability, performance, security and long-term
               maintainability.
             </p>
           </div>
@@ -281,7 +281,7 @@ export default function CustomSoftwareContent() {
                 To Scalable Product.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                A clear, connected path — discover, design, develop, integrate, test, launch and support.
+                A clear, connected path: discover, design, develop, integrate, test, launch and support.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -343,7 +343,7 @@ export default function CustomSoftwareContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Your Offshore Team Should Feel Like Your Own</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Distance shouldn&apos;t create barriers — teams collaborate with your preferred tools and processes.
+              Distance shouldn&apos;t create barriers: teams collaborate with your preferred tools and processes.
             </p>
           </div>
 

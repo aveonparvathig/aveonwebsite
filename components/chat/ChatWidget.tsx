@@ -92,7 +92,7 @@ export default function ChatWidget() {
       });
       const data = await res.json();
       setMessages((prev) => prev.filter((m) => m.id !== typingId));
-      botSay(data.reply ?? "Sorry, I didn't catch that — could you rephrase?", data.quickReplies);
+      botSay(data.reply ?? "Sorry, I didn't catch that. Could you rephrase?", data.quickReplies);
     } catch {
       setMessages((prev) => prev.filter((m) => m.id !== typingId));
       botSay(`Sorry, I'm having trouble connecting. You can reach us at contact@aveoninfotech.com.`);
@@ -106,27 +106,27 @@ export default function ChatWidget() {
     push({ role: "user", text: qr.label.replace(/^[^\w]+/, "").trim() || qr.label });
 
     if (v === "__products") {
-      botSay("Here's what we build for campuses — tap any to learn more:", products.map((p) => ({ label: p.title, value: `prod:${p.slug}` })));
+      botSay("Here's what we build for campuses. Tap any to learn more:", products.map((p) => ({ label: p.title, value: `prod:${p.slug}` })));
       return;
     }
     if (v === "__services") {
-      botSay("Our software development services — tap any to learn more:", services.map((s) => ({ label: s.title, value: `svc:${s.slug}` })));
+      botSay("Our software development services: tap any to learn more.", services.map((s) => ({ label: s.title, value: `svc:${s.slug}` })));
       return;
     }
     if (v === "__demo") {
-      botSay("Great — let's set up your free demo. Pop your details in below and our team will reach out within one business day. 👇");
+      botSay("Great, let's set up your free demo. Pop your details in below and our team will reach out within one business day. 👇");
       setShowLead(true);
       return;
     }
     if (v === "__contact") {
-      botSay("You can reach our team at +91 87540 06483 or contact@aveoninfotech.com — or leave your details and we'll call you.", [{ label: "📅 Leave my details", value: "__demo" }]);
+      botSay("You can reach our team at +91 87540 06483 or contact@aveoninfotech.com, or leave your details and we'll call you.", [{ label: "📅 Leave my details", value: "__demo" }]);
       return;
     }
     if (v.startsWith("prod:")) {
       const p = products.find((x) => x.slug === v.slice(5));
       if (p) {
         setLead((l) => ({ ...l, interest: l.interest || p.title }));
-        botSay(`${p.title} — ${p.description}\n\nSee the full page at /products/${p.slug}. Want a personalized walkthrough?`, [
+        botSay(`${p.title}: ${p.description}\n\nSee the full page at /products/${p.slug}. Want a personalized walkthrough?`, [
           { label: "📅 Book a Demo", value: "__demo" },
           { label: "↩ Back to products", value: "__products" },
         ]);
@@ -137,7 +137,7 @@ export default function ChatWidget() {
       const s = services.find((x) => x.slug === v.slice(4));
       if (s) {
         setLead((l) => ({ ...l, interest: l.interest || s.title }));
-        botSay(`${s.title} — ${s.text} Shall we set up a quick chat with our team?`, [
+        botSay(`${s.title}: ${s.text} Shall we set up a quick chat with our team?`, [
           { label: "📅 Book a Demo", value: "__demo" },
           { label: "↩ Back to services", value: "__services" },
         ]);
@@ -165,12 +165,12 @@ export default function ChatWidget() {
       if (!res.ok) throw new Error();
       setShowLead(false);
       setLeadDone(true);
-      botSay(`Thanks, ${lead.name.split(" ")[0]}! 🎉 Your request is in — our team will reach out within one business day. Anything else I can help with?`, [
+      botSay(`Thanks, ${lead.name.split(" ")[0]}! 🎉 Your request is in. Our team will reach out within one business day. Anything else I can help with?`, [
         { label: "🎓 Products", value: "__products" },
         { label: "🛠 Services", value: "__services" },
       ]);
     } catch {
-      setLeadError("Couldn't submit right now — please try again, or email contact@aveoninfotech.com.");
+      setLeadError("Couldn't submit right now. Please try again, or email contact@aveoninfotech.com.");
     } finally {
       setLeadSubmitting(false);
     }
@@ -201,7 +201,7 @@ export default function ChatWidget() {
             <span className="min-w-0 flex-1">
               <span className="block text-sm font-bold leading-tight">Ava · Aveon Assistant</span>
               <span className="flex items-center gap-1.5 text-[11px] text-primary-50">
-                <span className="h-1.5 w-1.5 rounded-full bg-green-400" /> Online — replies in seconds
+                <span className="h-1.5 w-1.5 rounded-full bg-green-400" /> Online: replies in seconds
               </span>
             </span>
             <button type="button" onClick={() => setOpen(false)} aria-label="Close chat" className="flex h-8 w-8 items-center justify-center rounded-full text-white/90 transition hover:bg-white/15">

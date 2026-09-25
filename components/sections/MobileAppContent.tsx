@@ -57,7 +57,7 @@ type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 const MOB_DEEP: DeepModule[] = [
   {
     title: "Mobile UI/UX Design",
-    summary: "Design apps people want to use — less complexity, better experience.",
+    summary: "Design apps people want to use: less complexity, better experience.",
     groups: [
       {
         label: "Process",
@@ -80,7 +80,7 @@ const MOB_DEEP: DeepModule[] = [
   },
   {
     title: "E-Commerce Apps",
-    summary: "From product discovery to checkout — a complete mobile commerce experience.",
+    summary: "From product discovery to checkout: a complete mobile commerce experience.",
     groups: [
       {
         items: ["Product catalogue & search", "Categories", "Cart & wishlist", "Customer accounts & addresses", "Payment integration", "Order management & tracking", "Offers & notifications"],
@@ -125,7 +125,7 @@ const MOB_DEEP: DeepModule[] = [
   },
   {
     title: "Secure Development",
-    summary: "Security is not an add-on — it's part of the development process.",
+    summary: "Security is not an add-on: it's part of the development process.",
     groups: [
       {
         items: ["Secure authentication", "Role-based access", "API security", "Data protection", "Secure communication", "Session management", "Secure storage & access control"],
@@ -170,7 +170,7 @@ const FEATURES: { title: string; items: string[] }[] = [
 
 /** Why choose Aveon. */
 const WHY: { title: string; text: string }[] = [
-  { title: "Business-Focused", text: "We focus on the business problem behind the app — not just the technology." },
+  { title: "Business-Focused", text: "We focus on the business problem behind the app, not just the technology." },
   { title: "Custom Solutions", text: "Built around your requirements, not forced into a predefined template." },
   { title: "End-to-End", text: "From idea and UI/UX to development, testing and deployment." },
   { title: "Integration Expertise", text: "Connect your app with existing software, APIs and business systems." },
@@ -253,7 +253,7 @@ function ConnectedMobileGraphic() {
           .mob-ring, .mob-glow, .mob-flow, .mob-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every mobile capability — UI/UX, Android, iOS, Cross-Platform, APIs, Payments, AI and Security — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every mobile capability: UI/UX, Android, iOS, Cross-Platform, APIs, Payments, AI and Security on one platform.">
         <defs>
           <radialGradient id="mob-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -310,12 +310,12 @@ export default function MobileAppContent() {
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
-                A mobile app is no longer just another channel — it can be a complete platform for customer engagement,
+                A mobile app is no longer just another channel: it can be a complete platform for customer engagement,
                 business operations, service delivery, payments and automation.
               </p>
               <p>
                 From concept and UI/UX to development, API integration, testing, deployment and ongoing support, Aveon
-                takes your mobile product from idea to app store — for Android, iOS and cross-platform.
+                takes your mobile product from idea to app store for Android, iOS and cross-platform.
               </p>
               <p className="font-semibold text-navy-800">Imagine. Build. Launch. Grow.</p>
             </div>
@@ -327,7 +327,7 @@ export default function MobileAppContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">One Product. Every Platform.</h2>
-          <p className="mt-3 text-lg text-navy-600">Native Android and iOS, or a shared cross-platform build — chosen around your requirements.</p>
+          <p className="mt-3 text-lg text-navy-600">Native Android and iOS, or a shared cross-platform build: chosen around your requirements.</p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {PLATFORMS.map((p) => (
@@ -363,7 +363,7 @@ export default function MobileAppContent() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">What We Build</h2>
-            <p className="mt-3 text-lg text-navy-600">End-to-end mobile development — grouped into four connected domains.</p>
+            <p className="mt-3 text-lg text-navy-600">End-to-end mobile development grouped into four connected domains.</p>
           </div>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {MOB_GROUPS.map((g) => (
@@ -389,7 +389,7 @@ export default function MobileAppContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore Our Capabilities in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any capability to see what&apos;s inside — from design and integration to AI, security and support.
+              Open any capability to see what&apos;s inside: from design and integration to AI, security and support.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -450,7 +450,7 @@ export default function MobileAppContent() {
                 To Launch.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                A clear, connected path from your idea to the app store — plan, design, develop, test, launch and grow.
+                A clear, connected path from your idea to the app store: plan, design, develop, test, launch and grow.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">

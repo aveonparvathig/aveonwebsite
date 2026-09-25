@@ -6,7 +6,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Partners",
   description:
-    "Partner with Aveon Infotech — reseller, implementation and technology partnerships for education ERP.",
+    "Partner with Aveon Infotech: reseller, implementation and technology partnerships for education ERP.",
 };
 
 const models = [
@@ -20,7 +20,7 @@ const models = [
   },
   {
     title: "Technology Partners",
-    text: "Integrate your product with the Aveon platform payment gateways, biometric devices, SMS/WhatsApp and more.",
+    text: "Integrate your product with the Aveon platform: payment gateways, biometric devices, SMS/WhatsApp and more.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function PartnersPage() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-navy-600">
             Tell us about your organization and the partnership model you&apos;re
-            interested in our partnerships team will get back within two
+            interested in. Our partnerships team will get back within two
             business days.
           </p>
           <Link

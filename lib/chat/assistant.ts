@@ -23,9 +23,9 @@ const serviceRoute = (slug: string) =>
  * own content (testimonials, product taglines); do not add claims we can't back.
  */
 const DIFFERENTIATORS = [
-  "One connected platform, not a stack of disconnected systems — a single student/employee record from admission to alumni, so data is entered once and reporting is instant.",
+  "One connected platform, not a stack of disconnected systems: a single student/employee record from admission to alumni, so data is entered once and reporting is instant.",
   "Built for Indian campuses: OBE, CBCS, COE and NAAC/AICTE data are first-class, not bolt-ons.",
-  "Fast, low-pain rollout — teams typically train in about a week and go live, instead of the multi-year horror stories.",
+  "Fast, low-pain rollout: teams typically train in about a week and go live, instead of the multi-year horror stories.",
   "An implementation team that already knows campus workflows (admissions, internals, attendance, fees), based in Coimbatore.",
 ];
 
@@ -44,7 +44,7 @@ function catalogText(): string {
   const prod = products
     .map(
       (p) =>
-        `- ${p.title} (/products/${p.slug}) — ${p.tagline}. ${p.description}\n    Key modules: ${p.features.join("; ")}.`,
+        `- ${p.title} (/products/${p.slug}): ${p.tagline}. ${p.description}\n    Key modules: ${p.features.join("; ")}.`,
     )
     .join("\n");
   const svc = services
@@ -54,7 +54,7 @@ function catalogText(): string {
 }
 
 /** System prompt for the (optional) LLM brain — persona + knowledge + consultative-selling playbook. */
-export const SYSTEM_PROMPT = `You are "Ava", the friendly, sharp sales assistant for Aveon Infotech (${siteConfig.url}). Your goal is to help visitors find the right fit and move genuinely interested ones toward a free demo — by being useful, not pushy.
+export const SYSTEM_PROMPT = `You are "Ava", the friendly, sharp sales assistant for Aveon Infotech (${siteConfig.url}). Your goal is to help visitors find the right fit and move genuinely interested ones toward a free demo by being useful, not pushy.
 
 WHO AVEON IS
 Aveon Infotech builds education & campus ERP (University, College, School, HRM & Payroll, COE, Library, Hostel & Mess, Inventory) and delivers software services (AI process automation, mobile apps, custom software, order & warehouse management, offshore teams). Based in Coimbatore, Tamil Nadu. Contact: ${siteConfig.phone} · ${siteConfig.email}.
@@ -65,18 +65,18 @@ ${catalogText()}
 WHY INSTITUTIONS CHOOSE AVEON (lead with these outcomes, not feature lists)
 ${DIFFERENTIATORS.map((d) => `- ${d}`).join("\n")}
 
-PROOF YOU CAN CITE (real customer results — quote briefly and naturally, never fabricate new ones)
+PROOF YOU CAN CITE (real customer results: quote briefly and naturally, never fabricate new ones)
 ${proofText()}
 
-HOW TO SELL (consultative — helpful first)
-1. DISCOVER before you pitch. On a broad or first question, ask ONE sharp qualifying question (e.g. "Is this for a university, college or school?" / "What's the biggest headache today — exams, fees, admissions?"). Don't interrogate; one question at a time.
+HOW TO SELL (consultative: helpful first)
+1. DISCOVER before you pitch. On a broad or first question, ask ONE sharp qualifying question (e.g. "Is this for a university, college or school?" / "What's the biggest headache today: exams, fees, admissions?"). Don't interrogate; one question at a time.
 2. EXPLAIN with outcomes, not module dumps. Pattern: capability → the benefit it delivers → a proof point when one fits. Name 2-3 relevant modules, not the whole list.
 3. HANDLE objections calmly, using the reasons above:
    - Price → "It's tailored to your size and modules, so a short demo lets us scope it and share an exact quote." Never invent numbers.
    - "Rollout will be painful" → most teams train in about a week and go live; cite the one-week testimonial.
    - "We already have a system" → the win is ONE connected platform replacing disconnected tools, so data is entered once and NAAC/AICTE reporting is instant.
    - Data migration / trust → the implementation team already knows campus workflows and handles the move; offer to walk them through it on a call.
-4. ADVANCE every exchange toward a next step. When the visitor shows any buying intent (asks about a product, timelines, "how do I start", pricing, a demo), invite them warmly to book a free demo and tell them to tap the "Book a Demo" button to leave their details — the team reaches out within one business day.
+4. ADVANCE every exchange toward a next step. When the visitor shows any buying intent (asks about a product, timelines, "how do I start", pricing, a demo), invite them warmly to book a free demo and tell them to tap the "Book a Demo" button to leave their details: the team reaches out within one business day.
 
 STYLE & GUARDRAILS
 - Warm, confident, concise: 2-4 short sentences, never a wall of text. Mirror the visitor's own words.
@@ -104,46 +104,46 @@ export function scriptedReply(text: string): Reply {
   if (product) {
     const top = product.features.slice(0, 3).join(", ");
     return {
-      reply: `${product.title} is our ${product.tagline.toLowerCase()} — ${product.description} It brings ${top} into one connected platform, so data's entered once and reporting is instant. Full breakdown at /products/${product.slug}. Want a personalized walkthrough of it?`,
+      reply: `${product.title} is our ${product.tagline.toLowerCase()}: ${product.description} It brings ${top} into one connected platform, so data's entered once and reporting is instant. Full breakdown at /products/${product.slug}. Want a personalized walkthrough of it?`,
       quickReplies: DEMO_QR,
     };
   }
   const service = services.find((s) => q.includes(s.title.toLowerCase()) || matchKeywords(q, s.slug, s.title));
   if (service) {
     const link = SERVICE_PAGES.has(service.slug) ? ` See ${serviceRoute(service.slug)}.` : "";
-    return { reply: `${service.title} — ${service.text}${link} Shall we set up a quick chat to scope it for you?`, quickReplies: DEMO_QR };
+    return { reply: `${service.title}: ${service.text}${link} Shall we set up a quick chat to scope it for you?`, quickReplies: DEMO_QR };
   }
 
   // Intents
   if (/\b(price|pricing|cost|quote|how much|budget|expensive|afford)\b/.test(q)) {
     return {
-      reply: "Pricing is tailored to your institution — it depends on the modules, users and scope, so we don't quote a flat number. A short demo lets us scope it precisely and share an exact quote for your campus. Want me to set that up?",
+      reply: "Pricing is tailored to your institution: it depends on the modules, users and scope, so we don't quote a flat number. A short demo lets us scope it precisely and share an exact quote for your campus. Want me to set that up?",
       quickReplies: DEMO_QR,
     };
   }
   // Objection: rollout will be slow / painful.
   if (/\b(implement|rollout|roll out|migrat|how long|time to|onboard|training|go live|deploy)\b/.test(q)) {
     return {
-      reply: "Rollout is the part institutions worry about most — with us it's fast. Most teams train in about a week and go live, and our implementation team handles moving your existing data. Want to see a live campus setup in a demo?",
+      reply: "Rollout is the part institutions worry about most with us: it's fast. Most teams train in about a week and go live and our implementation team handles moving your existing data. Want to see a live campus setup in a demo?",
       quickReplies: DEMO_QR,
     };
   }
   // Objection: we already have a system / why change.
   if (/\b(already have|existing|current system|replace|why (should|change|switch)|different|better than|compet)\b/.test(q)) {
     return {
-      reply: "Totally fair. The real win is one connected platform replacing several disconnected tools — one student record from admission to alumni, entered once, with NAAC/AICTE reporting instant instead of stitched together. One university closed exams in 4 days that used to take 3 weeks. Want us to show the difference on your workflows?",
+      reply: "Totally fair. The real win is one connected platform replacing several disconnected tools: one student record from admission to alumni, entered once, with NAAC/AICTE reporting instant instead of stitched together. One university closed exams in 4 days that used to take 3 weeks. Want us to show the difference on your workflows?",
       quickReplies: DEMO_QR,
     };
   }
   if (/\b(demo|trial|book|schedule|meeting|call me|get started|start)\b/.test(q)) {
-    return { reply: "Love it — let's get you a demo. Tap the button below and drop your details; our team reaches out within one business day.", quickReplies: [{ label: "📅 Book a Demo", value: "__demo" }] };
+    return { reply: "Love it, let's get you a demo. Tap the button below and drop your details; our team reaches out within one business day.", quickReplies: [{ label: "📅 Book a Demo", value: "__demo" }] };
   }
   if (/\b(contact|phone|call|email|reach|sales|talk)\b/.test(q)) {
-    return { reply: `You can reach us at ${siteConfig.phone} or ${siteConfig.email} — or leave your details and we'll call you.`, quickReplies: [{ label: "📅 Leave my details", value: "__demo" }] };
+    return { reply: `You can reach us at ${siteConfig.phone} or ${siteConfig.email}, or leave your details and we'll call you.`, quickReplies: [{ label: "📅 Leave my details", value: "__demo" }] };
   }
   if (/\b(who|about|company|aveon|do you do|what do|trust|proof|clients|reviews|testimonial)\b/.test(q)) {
     return {
-      reply: "Aveon Infotech builds campus ERP for universities, colleges and schools — plus software services like AI automation, mobile apps and custom development. Campuses pick us to replace disconnected systems with one connected platform; one university now closes exams in 4 days instead of 3 weeks. What are you exploring?",
+      reply: "Aveon Infotech builds campus ERP for universities, colleges and schools, plus software services like AI automation, mobile apps and custom development. Campuses pick us to replace disconnected systems with one connected platform; one university now closes exams in 4 days instead of 3 weeks. What are you exploring?",
       quickReplies: [
         { label: "🎓 Products", value: "__products" },
         { label: "🛠 Services", value: "__services" },
@@ -164,7 +164,7 @@ export function scriptedReply(text: string): Reply {
 
   // Default
   return {
-    reply: "I can help with our campus ERP (University, College, School, HRM, COE, Library, Hostel, Inventory) and software services — or get you a demo. What would you like to explore?",
+    reply: "I can help with our campus ERP (University, College, School, HRM, COE, Library, Hostel, Inventory) and software services or get you a demo. What would you like to explore?",
     quickReplies: [
       { label: "🎓 Products", value: "__products" },
       { label: "🛠 Services", value: "__services" },

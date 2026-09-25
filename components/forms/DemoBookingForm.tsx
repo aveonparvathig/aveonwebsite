@@ -8,7 +8,7 @@ import { products } from "@/lib/data/products";
 import { useFormLock } from "@/components/forms/FormLockContext";
 
 const inputClass =
-  "w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-navy-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100";
+  "w-full rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3.5 text-sm text-navy-900 placeholder:text-navy-400 transition hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-100";
 
 export default function DemoBookingForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -16,16 +16,19 @@ export default function DemoBookingForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<DemoBookingInput>({
     resolver: zodResolver(demoBookingSchema),
   });
 
-  const clearForm = useCallback(() => {
+
+  const isDirty = Object.entries(watch()).some(([k, v]) => k !== "website" && typeof v === "string" && v.trim() !== "");
+  const clearSelf = useCallback(() => {
     reset();
     setStatus("idle");
   }, [reset]);
-  const { activate } = useFormLock("demo", clearForm);
+  const { isLocked, clearOther } = useFormLock("demo", isDirty, clearSelf);
 
   async function onSubmit(data: DemoBookingInput) {
     setStatus("submitting");
@@ -70,7 +73,9 @@ export default function DemoBookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={activate} noValidate autoComplete="off" className="space-y-4">
+    <div className="relative flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col">
+    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={() => isLocked && clearOther()} noValidate autoComplete="off" className="flex flex-1 flex-col justify-between gap-4">
       {/* Honeypot */}
       <input
         type="text"
@@ -139,5 +144,7 @@ export default function DemoBookingForm() {
         {status === "submitting" ? "Submitting…" : "Book My Demo"}
       </button>
     </form>
+      </div>
+    </div>
   );
 }

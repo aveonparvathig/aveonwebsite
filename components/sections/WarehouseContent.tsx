@@ -213,7 +213,7 @@ function ConnectedWarehouseGraphic() {
           .wms-ring, .wms-glow, .wms-flow, .wms-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every warehouse function — Receiving, Put-Away, Storage, Picking, Packing, Dispatch, Transfers and Returns — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every warehouse function: Receiving, Put-Away, Storage, Picking, Packing, Dispatch, Transfers and Returns on one platform.">
         <defs>
           <radialGradient id="wms-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -270,13 +270,13 @@ export default function WarehouseContent() {
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
-                As businesses grow, warehouse operations become more complex — managing inventory, locations, stock
+                As businesses grow, warehouse operations become more complex: managing inventory, locations, stock
                 movement, receiving, picking, packing and dispatch across multiple warehouses takes accuracy and
                 real-time visibility.
               </p>
               <p>
-                Aveon Warehouse Management System organises warehouse operations on one centralized platform — from
-                receiving goods to final dispatch — improving stock visibility and streamlining daily operations.
+                Aveon Warehouse Management System organises warehouse operations on one centralized platform, from
+                receiving goods to final dispatch, improving stock visibility and streamlining daily operations.
               </p>
               <p className="font-semibold text-navy-800">One warehouse. Every movement. Complete control.</p>
             </div>
@@ -410,7 +410,7 @@ export default function WarehouseContent() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete Warehouse Management Tools</h2>
-            <p className="mt-3 text-lg text-navy-600">Everything you need to run a warehouse — grouped into four connected domains.</p>
+            <p className="mt-3 text-lg text-navy-600">Everything you need to run a warehouse, grouped into four connected domains.</p>
           </div>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {WMS_GROUPS.map((g) => (
@@ -436,7 +436,7 @@ export default function WarehouseContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Tools in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any tool to see what&apos;s inside. Each works on its own — and shares everything with the rest.
+              Open any tool to see what&apos;s inside. Each works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -497,7 +497,7 @@ export default function WarehouseContent() {
                 To Outbound.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                Receive, store, pick, pack, dispatch and return — every movement follows one connected workflow.
+                Receive, store, pick, pack, dispatch and return: every movement follows one connected workflow.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -541,7 +541,7 @@ export default function WarehouseContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Multi-Warehouse, Connected & Intelligent</h2>
-          <p className="mt-3 text-lg text-navy-600">Manage multiple locations, connect your business systems, and let AI support the operation.</p>
+          <p className="mt-3 text-lg text-navy-600">Manage multiple locations, connect your business systems and let AI support the operation.</p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-3">
           <ChipGroup title="Multi-Warehouse" items={MULTI_WAREHOUSE} />
@@ -611,7 +611,7 @@ export default function WarehouseContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Receive. Store. Pick. Pack. Dispatch.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              One connected platform for modern warehouse operations — where orders become fulfilment and inventory
+              One connected platform for modern warehouse operations: where orders become fulfilment and inventory
               becomes availability.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

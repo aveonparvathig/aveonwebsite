@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <div className="space-y-6 leading-relaxed text-navy-700">
           <p>
             This website collects personal information only when you submit it
-            through our contact or demo booking forms — typically your name,
+            through our contact or demo booking forms: typically your name,
             email address, phone number and institution.
           </p>
           <p>
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
             .
           </p>
           <p className="text-sm text-navy-500">
-            Note: This is placeholder policy text for the new website build —
+            Note: This is placeholder policy text for the new website build:
             replace with your legal team&apos;s approved policy before launch.
           </p>
         </div>

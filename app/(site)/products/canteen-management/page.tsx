@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Canteen Management System | Aveon Campus ERP",
-  description: "Digital canteen and food service management platform. Online menu, orders, billing, inventory, vendor management, staff scheduling, and health compliance tracking.",
+  description: "Digital canteen and food service management platform. Online menu, orders, billing, inventory, vendor management, staff scheduling and health compliance tracking.",
   keywords: [
     "canteen management system",
     "food service management",
@@ -31,7 +31,7 @@ export default function CanteenManagementPage() {
               Canteen & Food Service Management
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Complete digital platform for canteen operations — menu management, online ordering, billing, inventory, vendor management, and health compliance, all integrated.
+              Complete digital platform for canteen operations: menu management, online ordering, billing, inventory, vendor management and health compliance, all integrated.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -74,7 +74,7 @@ export default function CanteenManagementPage() {
               {
                 icon: "🍽️",
                 title: "Digital Menu",
-                desc: "Create and publish daily menus with nutritional information, allergen details, and pricing.",
+                desc: "Create and publish daily menus with nutritional information, allergen details and pricing.",
               },
               {
                 icon: "📱",
@@ -89,12 +89,12 @@ export default function CanteenManagementPage() {
               {
                 icon: "📦",
                 title: "Inventory Management",
-                desc: "Track ingredients, stock levels, expiry dates, and auto-reorder alerts.",
+                desc: "Track ingredients, stock levels, expiry dates and auto-reorder alerts.",
               },
               {
                 icon: "👥",
                 title: "Vendor Management",
-                desc: "Manage supplier details, purchase orders, invoices, quality ratings, and delivery tracking.",
+                desc: "Manage supplier details, purchase orders, invoices, quality ratings and delivery tracking.",
               },
               {
                 icon: "⏱️",
@@ -120,12 +120,12 @@ export default function CanteenManagementPage() {
           </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: "🏥", title: "Food Safety", desc: "Track hygiene standards, food handler certifications, and health inspections." },
+              { icon: "🏥", title: "Food Safety", desc: "Track hygiene standards, food handler certifications and health inspections." },
               { icon: "🧼", title: "Cleanliness Audit", desc: "Daily checklists for kitchen and dining area cleanliness with photo documentation." },
               { icon: "⚠️", title: "Allergen Management", desc: "Maintain ingredient database with allergen information and track customer allergies." },
-              { icon: "🔍", title: "Quality Control", desc: "Record daily inspections, maintain equipment maintenance logs, and manage complaints." },
+              { icon: "🔍", title: "Quality Control", desc: "Record daily inspections, maintain equipment maintenance logs and manage complaints." },
               { icon: "📋", title: "Compliance Reports", desc: "Generate health department reports and maintain audit trails for compliance." },
-              { icon: "📊", title: "Analytics", desc: "Track food waste, meal preferences, and financial metrics for operational optimization." },
+              { icon: "📊", title: "Analytics", desc: "Track food waste, meal preferences and financial metrics for operational optimization." },
             ].map((item) => (
               <div key={item.title} className="rounded-lg bg-white p-6">
                 <div className="mb-3 text-3xl">{item.icon}</div>
@@ -222,7 +222,7 @@ export default function CanteenManagementPage() {
             Transform Your Canteen Operations
           </h2>
           <p className="mt-4 text-lg opacity-90">
-            Streamline food service, improve customer satisfaction, and reduce costs with digital canteen management.
+            Streamline food service, improve customer satisfaction and reduce costs with digital canteen management.
           </p>
           <Link
             href="/contact#demo"

@@ -52,7 +52,7 @@ export default function StudentRetentionPage() {
           </h2>
           <div className="grid gap-8 sm:grid-cols-4">
             {[
-              { number: "1", title: "Data Collection", desc: "Gather academic, behavioral, and engagement data" },
+              { number: "1", title: "Data Collection", desc: "Gather academic, behavioral and engagement data" },
               { number: "2", title: "AI Analysis", desc: "Machine learning models identify patterns" },
               { number: "3", title: "Risk Scoring", desc: "Calculate risk score for each student" },
               { number: "4", title: "Intervention", desc: "Alert advisors for targeted support" },

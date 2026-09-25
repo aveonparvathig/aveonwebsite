@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "AI in Higher Education: Transforming Campus Management | Aveon",
-  description: "Discover how AI is transforming higher education through predictive analytics, personalized learning, and automated campus operations. Real-world applications and ROI insights.",
+  description: "Discover how AI is transforming higher education through predictive analytics, personalized learning and automated campus operations. Real-world applications and ROI insights.",
   keywords: [
     "AI in education",
     "artificial intelligence campus",
@@ -29,7 +29,7 @@ export default function AIInHigherEd() {
             AI in Higher Education: Transforming Campus Management
           </h1>
           <p className="text-lg text-navy-700">
-            How artificial intelligence is reshaping education delivery, student support, and institutional operations.
+            How artificial intelligence is reshaping education delivery, student support and institutional operations.
           </p>
           <div className="mt-6 flex items-center gap-4 text-sm text-navy-600">
             <span>Published: March 2024</span>
@@ -41,7 +41,7 @@ export default function AIInHigherEd() {
         <div className="prose prose-lg max-w-none text-navy-800">
           <h2>The AI Revolution in Higher Education</h2>
           <p>
-            Artificial Intelligence is fundamentally transforming how institutions operate, how students learn, and how educators teach. From predictive analytics identifying at-risk students to AI-powered chatbots providing 24/7 support, the applications are limitless.
+            Artificial Intelligence is fundamentally transforming how institutions operate, how students learn and how educators teach. From predictive analytics identifying at-risk students to AI-powered chatbots providing 24/7 support, the applications are limitless.
           </p>
 
           <h2>Key AI Applications in Campus Management</h2>

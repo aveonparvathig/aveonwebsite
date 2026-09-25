@@ -52,7 +52,7 @@ export default function AiProcessAutomationPage() {
               Automate Work. Connect Processes. Let AI Drive Efficiency.
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Every business has repetitive work — emails, forms, documents, approvals, data entry and follow-ups. Aveon
+              Every business has repetitive work: emails, forms, documents, approvals, data entry and follow-ups. Aveon
               AI Process Automation turns these manual activities into intelligent, automated workflows across departments,
               systems and industries.
             </p>

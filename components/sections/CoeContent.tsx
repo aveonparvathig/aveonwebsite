@@ -34,7 +34,7 @@ type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 const COE_DEEP: DeepModule[] = [
   {
     title: "Student & Examination Management",
-    summary: "Start with accurate data — prepare the right students for the right examination.",
+    summary: "Start with accurate data: prepare the right students for the right examination.",
     groups: [
       {
         items: [
@@ -68,7 +68,7 @@ const COE_DEEP: DeepModule[] = [
   },
   {
     title: "Examination Scheduling",
-    summary: "One examination calendar — coordinated across programmes, batches and departments.",
+    summary: "One examination calendar coordinated across programmes, batches and departments.",
     groups: [
       {
         items: [
@@ -92,7 +92,7 @@ const COE_DEEP: DeepModule[] = [
   },
   {
     title: "Examination Hall Management",
-    summary: "Organise every hall and allocate every seat — automatically.",
+    summary: "Organise every hall and allocate every seat: automatically.",
     groups: [
       {
         items: [
@@ -126,7 +126,7 @@ const COE_DEEP: DeepModule[] = [
   },
   {
     title: "Revaluation & Supplementary",
-    summary: "Manage post-result processes — examinations don't end at publication.",
+    summary: "Manage post-result processes: examinations don't end at publication.",
     groups: [
       {
         items: ["Revaluation activities", "Supplementary examination", "Eligibility handling", "Additional result processing"],
@@ -144,7 +144,7 @@ const COE_DEEP: DeepModule[] = [
   },
   {
     title: "COE User Management",
-    summary: "Different users, appropriate access — role-based throughout.",
+    summary: "Different users, appropriate access, role-based throughout.",
     groups: [
       {
         items: ["Controller of Examination", "Students", "Evaluators", "Parents", "Role-based permissions"],
@@ -191,7 +191,7 @@ const COE_STAKEHOLDERS = [
   { role: "Evaluators", line: "Support the evaluation process.", text: "Manage relevant evaluation and marks activities through the examination system." },
   { role: "Students", line: "Stay informed.", text: "Access examination schedules, subjects, marks and results in one place." },
   { role: "Parents", line: "Follow examination progress.", text: "Access relevant examination information where configured." },
-  { role: "Management", line: "See the whole exam process.", text: "Dashboards on subjects, marks, results, fees and pending activities — decide with facts." },
+  { role: "Management", line: "See the whole exam process.", text: "Dashboards on subjects, marks, results, fees and pending activities: decide with facts." },
 ];
 
 /** FAQ — exported so the page can emit matching FAQPage JSON-LD (AEO). */
@@ -199,7 +199,7 @@ export const coeFaqs: { question: string; answer: string }[] = [
   {
     question: "What is COE software?",
     answer:
-      "COE software, or Controller of Examination software, is a specialized examination management system used by colleges and universities to manage examination activities — from student preparation and scheduling to evaluation and results.",
+      "COE software, or Controller of Examination software, is a specialized examination management system used by colleges and universities to manage examination activities from student preparation and scheduling to evaluation and results.",
   },
   {
     question: "What does Aveon COE software manage?",
@@ -217,7 +217,7 @@ export const coeFaqs: { question: string; answer: string }[] = [
   {
     question: "Can Aveon generate examination timetables?",
     answer:
-      "Yes. Aveon supports examination dates, programme and batch selection, theory and online examination timetables, department-wise and session-wise schedules, and individual student timetables.",
+      "Yes. Aveon supports examination dates, programme and batch selection, theory and online examination timetables, department-wise and session-wise schedules and individual student timetables.",
   },
   {
     question: "Does Aveon support online examinations?",
@@ -276,7 +276,7 @@ function ConnectedCoeGraphic() {
           .coe-ring, .coe-glow, .coe-flow, .coe-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every examination stage — Students, Subjects, Fees, Question Papers, Schedule, Halls, Evaluation and Results — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every examination stage: Students, Subjects, Fees, Question Papers, Schedule, Halls, Evaluation and Results on one platform.">
         <defs>
           <radialGradient id="coe-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -334,11 +334,11 @@ export default function CoeContent() {
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
                 The Controller of Examination is one of the most critical and tightly controlled functions in higher
-                education — every stage demands accuracy, confidentiality and coordination.
+                education: every stage demands accuracy, confidentiality and coordination.
               </p>
               <p>
-                Aveon COE brings the entire examination lifecycle onto one platform — from eligibility and fees to
-                question papers, scheduling, hall seating, evaluation, results, revaluation and mark sheets — so nothing
+                Aveon COE brings the entire examination lifecycle onto one platform, from eligibility and fees to
+                question papers, scheduling, hall seating, evaluation, results, revaluation and mark sheets, so nothing
                 slips between spreadsheets.
               </p>
               <p className="font-semibold text-navy-800">One examination. One workflow. Complete control.</p>
@@ -352,7 +352,7 @@ export default function CoeContent() {
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete COE Management Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything the examination department needs — grouped into four connected domains, from setup to mark sheets.
+            Everything the examination department needs, grouped into four connected domains, from setup to mark sheets.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -378,7 +378,7 @@ export default function CoeContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Modules in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares everything with the rest.
+              Open any module to see what&apos;s inside. Each one works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -439,8 +439,8 @@ export default function CoeContent() {
                 One Connected Workflow.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                Every exam crosses many hands. Aveon connects each stage — from student preparation to academic records
-                — into one controlled workflow.
+                Every exam crosses many hands. Aveon connects each stage, from student preparation to academic records,
+                into one controlled workflow.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -486,7 +486,7 @@ export default function CoeContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Every Examination Stakeholder</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -510,7 +510,7 @@ export default function CoeContent() {
           <div className="rounded-2xl border border-navy-200 bg-navy-50 p-8">
             <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">Traditional Approach</h3>
             <p className="mt-4 text-navy-700">
-              Student lists, subjects, fees, question papers, timetables, hall plans, seating and marks — each kept
+              Student lists, subjects, fees, question papers, timetables, hall plans, seating and marks each kept
               separately, coordinated by hand.
             </p>
             <p className="mt-4 font-semibold text-navy-900">= Multiple records, more effort</p>
@@ -566,7 +566,7 @@ export default function CoeContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Plan. Conduct. Evaluate. Publish.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              One connected COE platform for modern higher education — the whole examination lifecycle, from preparation
+              One connected COE platform for modern higher education: the whole examination lifecycle, from preparation
               to mark sheets, under complete control.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

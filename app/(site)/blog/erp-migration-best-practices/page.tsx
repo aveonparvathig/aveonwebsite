@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "ERP Migration Best Practices for Higher Education | Aveon",
-  description: "Complete guide to successful ERP migration in universities and colleges. Planning, data migration, change management, and implementation best practices.",
+  description: "Complete guide to successful ERP migration in universities and colleges. Planning, data migration, change management and implementation best practices.",
   keywords: [
     "ERP migration",
     "campus system migration",
@@ -39,7 +39,7 @@ export default function ERPMigrationGuide() {
         <div className="prose prose-lg max-w-none text-navy-800 mt-12">
           <h2>Why ERP Migration Matters</h2>
           <p>
-            A successful ERP migration can transform your institution's operations, but a failed one can disrupt admissions, academics, and student services. Proper planning and execution are critical.
+            A successful ERP migration can transform your institution's operations, but a failed one can disrupt admissions, academics and student services. Proper planning and execution are critical.
           </p>
 
           <h2>Pre-Migration Phase (Months 1-2)</h2>
@@ -127,7 +127,7 @@ export default function ERPMigrationGuide() {
 
           <p><strong>Executive Sponsorship:</strong> Leadership support is essential for resource allocation and change management.</p>
 
-          <p><strong>Clear Communication:</strong> Keep all stakeholders informed about plans, progress, and any issues.</p>
+          <p><strong>Clear Communication:</strong> Keep all stakeholders informed about plans, progress and any issues.</p>
 
           <p><strong>Adequate Training:</strong> Users need thorough training to gain confidence in the new system.</p>
 

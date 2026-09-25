@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Aveon Infotech",
   },
   description:
-    "Unified AI-powered campus ERP & LMS for universities, colleges, and schools. Manage admissions, academics, fees, and operations on one platform. OBE-compliant, NAAC/AICTE ready. Serving 5000+ institutions.",
+    "Unified AI-powered campus ERP & LMS for universities, colleges and schools. Manage admissions, academics, fees and operations on one platform. OBE-compliant, NAAC/AICTE ready. Serving 5000+ institutions.",
   keywords: [
     "AI-powered campus ERP",
     "university ERP",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "AI-Powered Campus ERP & LMS | Aveon Infotech",
     description:
-      "Unified platform for education management. AI-powered campus ERP for universities, colleges, and schools. NAAC/AICTE compliant.",
+      "Unified platform for education management. AI-powered campus ERP for universities, colleges and schools. NAAC/AICTE compliant.",
   },
   twitter: {
     card: "summary_large_image",

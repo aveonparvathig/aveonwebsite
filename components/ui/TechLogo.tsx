@@ -28,6 +28,18 @@ import {
   SiGit,
   SiLinux,
   SiFigma,
+  SiClaude,
+  SiExpress,
+  SiTailwindcss,
+  SiMiro,
+  SiFirebase,
+  SiGithub,
+  SiTensorflow,
+  SiGooglegemini,
+  SiMeta,
+  SiGoogleads,
+  SiGoogleanalytics,
+  SiWordpress,
 } from "@icons-pack/react-simple-icons";
 
 /** Official brand icon + brand color, for technologies with a recognizable logo mark. */
@@ -58,6 +70,18 @@ const BRAND_ICONS: Record<string, { Icon: React.ComponentType<{ size?: number; c
   "Git": { Icon: SiGit, color: "#F05032" },
   "Linux": { Icon: SiLinux, color: "#FCC624" },
   "Figma": { Icon: SiFigma, color: "#F24E1E" },
+  "Claude": { Icon: SiClaude, color: "#D97757" },
+  "Express": { Icon: SiExpress, color: "#000000" },
+  "Tailwind CSS": { Icon: SiTailwindcss, color: "#06B6D4" },
+  "Miro": { Icon: SiMiro, color: "#FFD02F" },
+  "Firebase": { Icon: SiFirebase, color: "#FFCA28" },
+  "GitHub": { Icon: SiGithub, color: "#181717" },
+  "TensorFlow": { Icon: SiTensorflow, color: "#FF6F00" },
+  "Gemini": { Icon: SiGooglegemini, color: "#8E75B2" },
+  "Meta Ads": { Icon: SiMeta, color: "#0081FB" },
+  "Google Ads": { Icon: SiGoogleads, color: "#4285F4" },
+  "Google Analytics": { Icon: SiGoogleanalytics, color: "#E37400" },
+  "WordPress": { Icon: SiWordpress, color: "#21759B" },
 };
 
 /** Local SVG fallback for technologies without an available brand icon (trademark-restricted or non-brand concepts). */
@@ -73,6 +97,11 @@ const TECH_LOGOS: Record<string, string> = {
   "Responsive Design": "Responsive",
   "Design Systems": "Design",
   "AI/ML": "AI",
+  "ChatGPT": "AI",
+  "Canva": "Canva",
+  "AI Tools": "AI",
+  "Machine Learning": "AI",
+  "Cloud": "GoogleCloud",
   "LLM Integration": "LLM",
   "Generative AI": "AI",
   "Computer Vision": "Vision",
@@ -114,5 +143,23 @@ export function TechLogo({ name }: { name: string }) {
       </div>
       <p className="text-xs font-semibold text-navy-700 text-center max-w-[60px]">{name}</p>
     </div>
+  );
+}
+
+/** Compact icon-only badge (name shown as a tooltip). */
+export function TechBadge({ name, large = false }: { name: string; large?: boolean }) {
+  const brand = BRAND_ICONS[name];
+  return (
+    <span
+      title={name}
+      aria-label={name}
+      className={`flex items-center justify-center rounded-xl border border-navy-100 bg-white shadow-sm ${large ? "h-11 w-11" : "h-9 w-9"}`}
+    >
+      {brand ? (
+        <brand.Icon size={large ? 24 : 20} color={brand.color} />
+      ) : (
+        <Image src={`/tech-logos/${TECH_LOGOS[name] || name}.svg`} alt={name} width={24} height={24} className={large ? "h-6 w-6 object-contain" : "h-5 w-5 object-contain"} />
+      )}
+    </span>
   );
 }
