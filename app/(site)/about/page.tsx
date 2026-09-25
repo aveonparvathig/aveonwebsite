@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "Education First",
-    text: "We build exclusively for educational institutions — every workflow, report and screen is designed around how campuses actually run.",
+    text: "We build exclusively for educational institutions: every workflow, report and screen is designed around how campuses actually run.",
   },
   {
     title: "Integrated by Design",
-    text: "One database, one login, nine products. Admissions data flows to accounts, attendance flows to exams — no re-entry, no silos.",
+    text: "One database, one login, nine products. Admissions data flows to accounts, attendance flows to exams: no re-entry, no silos.",
   },
   {
     title: "Partner, Not Vendor",
@@ -44,7 +44,7 @@ export default function AboutPage() {
               We Build the Operating System for Education
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Aveon Infotech is an education technology company from Coimbatore, India helping universities, colleges and schools run smarter campuses.
+              Aveon Infotech is an education technology company from Coimbatore, India, helping universities, colleges and schools run smarter campuses.
             </p>
           </div>
           <Image
@@ -74,7 +74,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Today our ERP platform powers universities, colleges and
-                schools across India managing academics, admissions,
+                schools across India, managing academics, admissions,
                 examinations, finance, hostels, libraries and people, all from
                 a single integrated system.
               </p>

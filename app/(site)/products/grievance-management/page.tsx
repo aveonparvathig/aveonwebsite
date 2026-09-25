@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Grievance Management System | Aveon Campus ERP",
-  description: "Online grievance and complaint management platform for institutions. Anonymous submissions, automatic routing, escalation, resolution tracking, and comprehensive reporting.",
+  description: "Online grievance and complaint management platform for institutions. Anonymous submissions, automatic routing, escalation, resolution tracking and comprehensive reporting.",
   keywords: [
     "grievance management system",
     "complaint management software",
@@ -31,7 +31,7 @@ export default function GrievanceManagementPage() {
               Grievance & Complaint Management
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Unified platform for managing grievances from students, staff, and others. Anonymous submissions, automatic routing, real-time tracking, and data-driven insights.
+              Unified platform for managing grievances from students, staff and others. Anonymous submissions, automatic routing, real-time tracking and data-driven insights.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -74,7 +74,7 @@ export default function GrievanceManagementPage() {
               {
                 icon: "📱",
                 title: "Multi-Channel Submission",
-                desc: "Accept grievances through web portal, mobile app, SMS, email, and QR codes for easy access.",
+                desc: "Accept grievances through web portal, mobile app, SMS, email and QR codes for easy access.",
               },
               {
                 icon: "🔒",
@@ -99,7 +99,7 @@ export default function GrievanceManagementPage() {
               {
                 icon: "📈",
                 title: "Analytics & Reports",
-                desc: "Comprehensive dashboards showing grievance trends, resolution rates, and departmental performance.",
+                desc: "Comprehensive dashboards showing grievance trends, resolution rates and departmental performance.",
               },
             ].map((feature) => (
               <div key={feature.title} className="rounded-lg border border-navy-900/10 p-6 hover:border-primary-600/30 hover:shadow-lg">
@@ -151,7 +151,7 @@ export default function GrievanceManagementPage() {
               { title: "Better Compliance", desc: "Meet accreditation requirements for grievance redressal mechanisms." },
               { title: "Data-Driven Insights", desc: "Identify systemic issues through grievance analytics and trends." },
               { title: "Reduced Burden", desc: "Eliminate manual tracking. Automated reminders and escalations." },
-              { title: "Institutional Integrity", desc: "Transparent, fair, and documented resolution process." },
+              { title: "Institutional Integrity", desc: "Transparent, fair and documented resolution process." },
             ].map((benefit) => (
               <div key={benefit.title} className="rounded-lg bg-navy-50 p-6">
                 <h3 className="mb-2 font-bold text-navy-900">{benefit.title}</h3>

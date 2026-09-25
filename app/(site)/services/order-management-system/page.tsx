@@ -51,7 +51,7 @@ export default function OrderManagementPage() {
               Smart Order Management for Modern Businesses.
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Bring the complete order lifecycle onto one connected platform — from order creation and validation to
+              Bring the complete order lifecycle onto one connected platform, from order creation and validation to
               inventory, fulfilment, delivery, returns and reporting, across every channel.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">

@@ -48,7 +48,7 @@ export default function NAACChecklist() {
           <h2>NAAC's 7 Assessment Criteria</h2>
 
           <h3>Criterion 1: Curricular Aspects</h3>
-          <p><strong>Focus:</strong> Curriculum design, delivery, and updates aligned with educational standards</p>
+          <p><strong>Focus:</strong> Curriculum design, delivery and updates aligned with educational standards</p>
           <p><strong>Key Requirements:</strong></p>
           <ul>
             <li>Outcome-Based Education (OBE) framework implementation</li>
@@ -59,7 +59,7 @@ export default function NAACChecklist() {
           </ul>
 
           <h3>Criterion 2: Teaching-Learning and Evaluation</h3>
-          <p><strong>Focus:</strong> Quality of teaching, learning resources, and evaluation methods</p>
+          <p><strong>Focus:</strong> Quality of teaching, learning resources and evaluation methods</p>
           <p><strong>Key Requirements:</strong></p>
           <ul>
             <li>Faculty qualifications and continuous development</li>
@@ -70,7 +70,7 @@ export default function NAACChecklist() {
           </ul>
 
           <h3>Criterion 3: Research, Innovations and Extension</h3>
-          <p><strong>Focus:</strong> Research activities, innovation, and community engagement</p>
+          <p><strong>Focus:</strong> Research activities, innovation and community engagement</p>
           <p><strong>Key Requirements:</strong></p>
           <ul>
             <li>Research publications and citations</li>
@@ -92,7 +92,7 @@ export default function NAACChecklist() {
           </ul>
 
           <h3>Criterion 5: Student Support and Progression</h3>
-          <p><strong>Focus:</strong> Student welfare, progression, and career development</p>
+          <p><strong>Focus:</strong> Student welfare, progression and career development</p>
           <p><strong>Key Requirements:</strong></p>
           <ul>
             <li>Student support services (counseling, mentoring)</li>
@@ -103,7 +103,7 @@ export default function NAACChecklist() {
           </ul>
 
           <h3>Criterion 6: Governance and Administration</h3>
-          <p><strong>Focus:</strong> Institutional governance, policies, and administration</p>
+          <p><strong>Focus:</strong> Institutional governance, policies and administration</p>
           <p><strong>Key Requirements:</strong></p>
           <ul>
             <li>Institutional autonomy and financial management</li>
@@ -114,7 +114,7 @@ export default function NAACChecklist() {
           </ul>
 
           <h3>Criterion 7: Institutional Values and Best Practices</h3>
-          <p><strong>Focus:</strong> Ethical values, diversity, and institutional excellence</p>
+          <p><strong>Focus:</strong> Ethical values, diversity and institutional excellence</p>
           <p><strong>Key Requirements:</strong></p>
           <ul>
             <li>Environmental consciousness and sustainability</li>
@@ -125,7 +125,7 @@ export default function NAACChecklist() {
           </ul>
 
           <h2>Critical Documentation to Prepare</h2>
-          <p>Before NAAC visit, ensure you have:</p>
+          <p>Before the NAAC visit, ensure you have:</p>
           <ul>
             <li>Self Study Report (SSR) with detailed criterion-wise data</li>
             <li>Academic audit reports for past 5 years</li>

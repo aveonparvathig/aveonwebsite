@@ -16,7 +16,7 @@ export default function AboutSection() {
 
           <p className="mt-4.5 max-w-[520px] text-[17px] leading-[1.72] text-navy-700">
             Aveon InfoTech delivers innovative technology solutions that simplify business
-            operations, improve efficiency, and help organizations grow. We build reliable
+            operations, improve efficiency and help organizations grow. We build reliable
             digital solutions that solve real-world challenges for modern organizations.
           </p>
 

@@ -54,7 +54,7 @@ const AI_DEEP: DeepModule[] = [
   },
   {
     title: "AI-Powered Workflow Automation",
-    summary: "Connect a process from beginning to end — less manual intervention, faster completion.",
+    summary: "Connect a process from beginning to end: less manual intervention, faster completion.",
     groups: [
       {
         items: [
@@ -121,7 +121,7 @@ const AI_DEEP: DeepModule[] = [
   },
   {
     title: "AI + Human Collaboration",
-    summary: "Automation doesn't replace people — it makes them more effective.",
+    summary: "Automation doesn't replace people: it makes them more effective.",
     groups: [
       {
         label: "AI handles",
@@ -135,7 +135,7 @@ const AI_DEEP: DeepModule[] = [
   },
 ];
 
-/** Industries served — a horizontal platform, not industry-specific. */
+/** Industries served — a horizontal platform not industry-specific. */
 const INDUSTRIES: { name: string; uses: string[] }[] = [
   { name: "Banking & Financial", uses: ["Document processing", "Customer onboarding", "Verification", "Approvals"] },
   { name: "Healthcare", uses: ["Patient documentation", "Claims processing", "Appointments", "Classification"] },
@@ -320,7 +320,7 @@ function ConnectedAiGraphic() {
           .ai-ring, .ai-glow, .ai-flow, .ai-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon AI connects every automation capability — Documents, Data, Approvals, Email, Workflows, Support, Systems and Oversight — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon AI connects every automation capability: Documents, Data, Approvals, Email, Workflows, Support, Systems and Oversight on one platform.">
         <defs>
           <radialGradient id="ai-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -377,13 +377,13 @@ export default function AiAutomationContent() {
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
-                Traditional automation follows predefined rules. AI-powered automation goes further — it can understand
+                Traditional automation follows predefined rules. AI-powered automation goes further: it can understand
                 information, analyze documents, classify requests, extract data, make workflow decisions and trigger the
                 next action based on your business logic.
               </p>
               <p>
                 From small businesses to large enterprises, Aveon automates processes across departments, systems and
-                industries — reducing repetitive work and freeing people for higher-value decisions.
+                industries, reducing repetitive work and freeing people for higher-value decisions.
               </p>
               <p className="font-semibold text-navy-800">AI that understands your process. Automation that gets work done.</p>
             </div>
@@ -577,7 +577,7 @@ export default function AiAutomationContent() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">What Aveon AI Automates</h2>
-            <p className="mt-3 text-lg text-navy-600">One AI automation platform — grouped into four connected capability domains.</p>
+            <p className="mt-3 text-lg text-navy-600">One AI automation platform grouped into four connected capability domains.</p>
           </div>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {AI_GROUPS.map((g) => (
@@ -603,7 +603,7 @@ export default function AiAutomationContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Capabilities in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any capability to see what&apos;s inside. Each works on its own — and connects into one intelligent
+              Open any capability to see what&apos;s inside. Each works on its own and connects into one intelligent
               workflow.
             </p>
           </div>
@@ -652,7 +652,7 @@ export default function AiAutomationContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Automate Processes Across Every Industry</h2>
-          <p className="mt-3 text-lg text-navy-600">A horizontal automation platform — not an industry-specific solution.</p>
+          <p className="mt-3 text-lg text-navy-600">A horizontal automation platform, not an industry-specific solution.</p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {INDUSTRIES.map((ind) => (
@@ -685,7 +685,7 @@ export default function AiAutomationContent() {
                 Decide. Automate.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                From input to intelligent action, Aveon connects every stage of the automation lifecycle — with people
+                From input to intelligent action, Aveon connects every stage of the automation lifecycle with people
                 in the loop where it matters.
               </p>
             </div>
@@ -730,7 +730,7 @@ export default function AiAutomationContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">AI for Speed. Humans for Judgment.</h2>
-          <p className="mt-3 text-lg text-navy-600">Automation doesn&apos;t replace people — it makes them more effective.</p>
+          <p className="mt-3 text-lg text-navy-600">Automation doesn&apos;t replace people: it makes them more effective.</p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50 to-white p-8">
@@ -760,7 +760,7 @@ export default function AiAutomationContent() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Process Automation for Every Department</h2>
-            <p className="mt-3 text-lg text-navy-600">Start with one repetitive process — then expand across the organisation.</p>
+            <p className="mt-3 text-lg text-navy-600">Start with one repetitive process, then expand across the organisation.</p>
           </div>
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {DEPARTMENTS.map((d) => (

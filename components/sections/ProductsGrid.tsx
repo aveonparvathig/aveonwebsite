@@ -44,7 +44,7 @@ export default async function ProductsGrid() {
           </h2>
           <p className="mt-4 text-[17px] leading-relaxed text-navy-700">
             Twelve integrated products covering academics, administration, finance and campus
-            life use them together or start with one.
+            life: use them together or start with one.
           </p>
         </div>
 

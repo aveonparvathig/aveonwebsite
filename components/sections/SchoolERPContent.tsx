@@ -34,7 +34,7 @@ type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 const SCHOOL_DEEP: DeepModule[] = [
   {
     title: "Admission Management",
-    summary: "Turn admission enquiries into enrollments — organised from first contact to registration.",
+    summary: "Turn admission enquiries into enrollments, organised from first contact to registration.",
     groups: [
       {
         items: [
@@ -50,7 +50,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Student Information Management",
-    summary: "One student, one complete digital record — organised and role-accessible.",
+    summary: "One student, one complete digital record, organised and role-accessible.",
     groups: [
       {
         items: [
@@ -66,7 +66,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Academic Management",
-    summary: "Plan, teach, monitor and improve — structured tools for everyday academics.",
+    summary: "Plan, teach, monitor and improve: structured tools for everyday academics.",
     groups: [
       {
         items: [
@@ -83,7 +83,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Timetable Management",
-    summary: "Build better timetables with less effort — classes, teachers and periods in sync.",
+    summary: "Build better timetables with less effort: classes, teachers and periods in sync.",
     groups: [
       {
         items: [
@@ -99,7 +99,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Attendance Management",
-    summary: "Make attendance a connected part of student management — and keep parents in the loop.",
+    summary: "Make attendance a connected part of student management and keep parents in the loop.",
     groups: [
       {
         items: [
@@ -114,7 +114,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Examination Management",
-    summary: "Manage exams from schedule to report card — one structured workflow.",
+    summary: "Manage exams from schedule to report card: one structured workflow.",
     groups: [
       {
         items: [
@@ -130,7 +130,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Fee Management",
-    summary: "Simple for admins, transparent for parents — fee collection in one place.",
+    summary: "Simple for admins, transparent for parents: fee collection in one place.",
     groups: [
       {
         items: [
@@ -145,7 +145,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Staff, HR & Payroll",
-    summary: "Manage the people behind your school — from records to payslips.",
+    summary: "Manage the people behind your school from records to payslips.",
     groups: [
       {
         label: "Staff Management",
@@ -159,7 +159,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Library Management",
-    summary: "Connect students with knowledge — catalogue, circulation and search.",
+    summary: "Connect students with knowledge: catalogue, circulation and search.",
     groups: [
       {
         items: [
@@ -175,7 +175,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Transport Management",
-    summary: "From route planning to daily operations — manage school transport digitally.",
+    summary: "From route planning to daily operations: manage school transport digitally.",
     groups: [
       {
         items: [
@@ -208,7 +208,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Student & Parent Portal",
-    summary: "Essential school information in one place — for students and families.",
+    summary: "Essential school information in one place for students and families.",
     groups: [
       {
         label: "Student Services",
@@ -222,7 +222,7 @@ const SCHOOL_DEEP: DeepModule[] = [
   },
   {
     title: "Dashboards & Reports",
-    summary: "Turn school data into decisions — see what's happening and what needs action.",
+    summary: "Turn school data into decisions: see what's happening and what needs action.",
     groups: [
       {
         items: [
@@ -248,11 +248,11 @@ const SCHOOL_JOURNEY: { label: string; range: string; steps: string[] }[] = [
 const STAIR_OFFSET = ["lg:mt-[72px]", "lg:mt-12", "lg:mt-6", "lg:mt-0"];
 
 const SCHOOL_STAKEHOLDERS = [
-  { role: "School Management", line: "See the school at a glance.", text: "Important information through dashboards, reports and centralized records — decide with facts." },
+  { role: "School Management", line: "See the school at a glance.", text: "Important information through dashboards, reports and centralized records: decide with facts." },
   { role: "Principal", line: "Lead with visibility.", text: "Monitor academics, students, attendance, fees, examinations, staff and daily operations." },
   { role: "Administration", line: "Simplify daily operations.", text: "Bring information and workflows together in one structured, connected environment." },
   { role: "Teachers", line: "More time teaching.", text: "Manage classes, attendance, academic activities, marks and student information in one place." },
-  { role: "Students", line: "School services, digital.", text: "Academic information, attendance, timetable, examinations and assignments — on any device." },
+  { role: "Students", line: "School services, digital.", text: "Academic information, attendance, timetable, examinations and assignments on any device." },
   { role: "Parents", line: "Stay connected.", text: "Timely updates on attendance, academics, examinations, fees and school communication." },
 ];
 
@@ -330,7 +330,7 @@ function ConnectedSchoolGraphic() {
           .sch-ring, .sch-glow, .sch-flow, .sch-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every school function — Admissions, Academics, Attendance, Exams, Fees, Transport, Library and Parents — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every school function: Admissions, Academics, Attendance, Exams, Fees, Transport, Library and Parents on one platform.">
         <defs>
           <radialGradient id="sch-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -391,8 +391,8 @@ export default function SchoolERPContent() {
                 fees, attendance, transport, communication and administration.
               </p>
               <p>
-                Aveon School ERP connects the essential functions on one integrated platform — from admission and
-                academics to attendance, examinations, fees, communication and administration — so your school stops
+                Aveon School ERP connects the essential functions on one integrated platform, from admission and
+                academics to attendance, examinations, fees, communication and administration, so your school stops
                 moving information between systems and starts running as one.
               </p>
               <p className="font-semibold text-navy-800">Manage smarter. Teach better. Connect everyone.</p>
@@ -406,7 +406,7 @@ export default function SchoolERPContent() {
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete School ERP Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything your school needs — grouped into four connected domains, tied together by one student record.
+            Everything your school needs, grouped into four connected domains, tied together by one student record.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -432,7 +432,7 @@ export default function SchoolERPContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Modules in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares everything with the rest.
+              Open any module to see what&apos;s inside. Each one works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -494,7 +494,7 @@ export default function SchoolERPContent() {
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
                 A student&apos;s school journey creates information across many departments. Aveon brings that journey
-                together — from the first enquiry to the next academic year.
+                together from the first enquiry to the next academic year.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -540,7 +540,7 @@ export default function SchoolERPContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Everyone in Your School</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -564,7 +564,7 @@ export default function SchoolERPContent() {
           <div className="rounded-2xl border border-navy-200 bg-navy-50 p-8">
             <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">Traditional School Management</h3>
             <p className="mt-4 text-navy-700">
-              Separate processes for admission, academics, attendance, examination, fees, library, transport and staff —
+              Separate processes for admission, academics, attendance, examination, fees, library, transport and staff,
               none of them connected.
             </p>
             <p className="mt-4 font-semibold text-navy-900">= Different processes, different information</p>
@@ -620,7 +620,7 @@ export default function SchoolERPContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">One School. One Platform. Everything Connected.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              Less paperwork, less repetition, better communication and clearer visibility — a smarter way to manage your
+              Less paperwork, less repetition, better communication and clearer visibility: a smarter way to manage your
               school, built around the way schools actually work.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

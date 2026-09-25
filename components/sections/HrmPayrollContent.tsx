@@ -34,7 +34,7 @@ type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 const HRM_DEEP: DeepModule[] = [
   {
     title: "Human Resource Management",
-    summary: "Build a complete digital employee record — one structured profile per staff member.",
+    summary: "Build a complete digital employee record: one structured profile per staff member.",
     groups: [
       {
         items: [
@@ -53,7 +53,7 @@ const HRM_DEEP: DeepModule[] = [
   },
   {
     title: "Online Recruitment",
-    summary: "Create a better hiring workflow — positions, interviews and candidates, digital.",
+    summary: "Create a better hiring workflow: positions, interviews and candidates, digital.",
     groups: [
       {
         items: ["Position creation", "Interview creation", "Interview configuration", "Online candidate registration"],
@@ -62,7 +62,7 @@ const HRM_DEEP: DeepModule[] = [
   },
   {
     title: "Leave & Permission",
-    summary: "Simplify leave administration — configurable policies with clean approvals.",
+    summary: "Simplify leave administration: configurable policies with clean approvals.",
     groups: [
       {
         label: "Leave",
@@ -81,14 +81,14 @@ const HRM_DEEP: DeepModule[] = [
   },
   {
     title: "Employee Attendance",
-    summary: "Track staff attendance your way — manual, biometric or face-reader recognition.",
+    summary: "Track staff attendance your way: manual, biometric or face-reader recognition.",
     groups: [
       {
         items: [
           "Face-reader (facial recognition) attendance",
           "Biometric attendance integration",
           "Manual employee attendance",
-          "My attendance — staff-wise view",
+          "My attendance: staff-wise view",
           "Attendance linked to payroll",
         ],
       },
@@ -96,7 +96,7 @@ const HRM_DEEP: DeepModule[] = [
   },
   {
     title: "Payroll Management",
-    summary: "From salary structure to payslip — accurate, consistent and connected to attendance.",
+    summary: "From salary structure to payslip: accurate, consistent and connected to attendance.",
     groups: [
       {
         items: [
@@ -148,7 +148,7 @@ const HRM_STAKEHOLDERS = [
   { role: "HR Department", line: "Less admin, more people.", text: "Employee profiles, recruitment, leave approvals, attendance and appraisal in one structured system." },
   { role: "Accounts & Payroll Team", line: "Accurate, on-time pay.", text: "Configure salary structures, allowances, deductions, advances and payroll with organised salary records." },
   { role: "Recruitment Team", line: "Organise your hiring.", text: "Position creation, interview setup and online candidate registration in one workflow." },
-  { role: "Department Heads", line: "Approve and track.", text: "Approve leave, permission and overtime, and view attendance for your team." },
+  { role: "Department Heads", line: "Approve and track.", text: "Approve leave, permission and overtime and view attendance for your team." },
   { role: "Faculty & Staff", line: "Your HR, connected.", text: "Access relevant HR activity such as attendance, leave and employee information by permission." },
 ];
 
@@ -172,7 +172,7 @@ export const hrmPayrollFaqs: { question: string; answer: string }[] = [
   {
     question: "Can employee attendance be managed in Aveon, including face recognition?",
     answer:
-      "Yes. Aveon supports staff-wise attendance and manual employee attendance, plus attendance through biometric integration and face-reader (facial recognition) devices — all linked to payroll.",
+      "Yes. Aveon supports staff-wise attendance and manual employee attendance, plus attendance through biometric integration and face-reader (facial recognition) devices, all linked to payroll.",
   },
   {
     question: "Does Aveon generate payslips?",
@@ -227,7 +227,7 @@ function ConnectedHrmGraphic() {
           .hrm-ring, .hrm-glow, .hrm-flow, .hrm-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every HR and payroll function — Recruitment, Onboarding, Attendance, Leave, Payroll, Compliance, Appraisal and Self-Service — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every HR and payroll function: Recruitment, Onboarding, Attendance, Leave, Payroll, Compliance, Appraisal and Self-Service on one platform.">
         <defs>
           <radialGradient id="hrm-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -284,14 +284,14 @@ export default function HrmPayrollContent() {
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
-                People are the foundation of every educational institution — faculty, administrative and non-teaching
+                People are the foundation of every educational institution: faculty, administrative and non-teaching
                 staff working together every day. Managing their records, attendance, leave, recruitment, appraisal and
                 payroll takes accuracy and a well-organized system.
               </p>
               <p>
-                Aveon HR Management &amp; Payroll brings the complete employee lifecycle onto one platform — from staff
+                Aveon HR Management &amp; Payroll brings the complete employee lifecycle onto one platform, from staff
                 profiles and recruitment to biometric and <span className="font-semibold text-navy-800">face-reader
-                attendance</span>, leave, overtime, salary processing, appraisal and payslip generation — in one
+                attendance</span>, leave, overtime, salary processing, appraisal and payslip generation, in one
                 connected workflow.
               </p>
               <p className="font-semibold text-navy-800">Centralized records. Integrated payroll. Attendance your way.</p>
@@ -305,7 +305,7 @@ export default function HrmPayrollContent() {
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete HR &amp; Payroll Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything you need to manage your workforce — grouped into four connected domains, tied together by one
+            Everything you need to manage your workforce, grouped into four connected domains, tied together by one
             employee record.
           </p>
         </div>
@@ -332,7 +332,7 @@ export default function HrmPayrollContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Modules in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares everything with the rest.
+              Open any module to see what&apos;s inside. Each one works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -394,7 +394,7 @@ export default function HrmPayrollContent() {
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
                 From the first interview to every payslip, Aveon connects each stage of an employee&apos;s time with
-                you — hiring, attendance, payroll and growth.
+                you: hiring, attendance, payroll and growth.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -440,7 +440,7 @@ export default function HrmPayrollContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Everyone in HR &amp; Payroll</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -520,7 +520,7 @@ export default function HrmPayrollContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">One System for Your Entire Workforce.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              From hire to payslip — recruitment, attendance, payroll, compliance and self-service on one connected HR &amp;
+              From hire to payslip: recruitment, attendance, payroll, compliance and self-service on one connected HR &amp;
               Payroll platform.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

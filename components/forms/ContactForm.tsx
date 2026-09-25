@@ -7,7 +7,7 @@ import { contactSchema, type ContactInput } from "@/lib/validations";
 import { useFormLock } from "@/components/forms/FormLockContext";
 
 const inputClass =
-  "w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-navy-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100";
+  "w-full rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3.5 text-sm text-navy-900 placeholder:text-navy-400 transition hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-100";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -15,6 +15,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<ContactInput>({
     resolver: zodResolver(contactSchema),
@@ -32,12 +33,14 @@ export default function ContactForm() {
     el.style.height = `${Math.min(el.scrollHeight, 260)}px`;
   }, []);
 
-  const clearForm = useCallback(() => {
+
+  const isDirty = Object.entries(watch()).some(([k, v]) => k !== "website" && typeof v === "string" && v.trim() !== "");
+  const clearSelf = useCallback(() => {
     reset();
     setStatus("idle");
     resetMessageHeight();
   }, [reset, resetMessageHeight]);
-  const { activate } = useFormLock("contact", clearForm);
+  const { isLocked, clearOther } = useFormLock("contact", isDirty, clearSelf);
 
   async function onSubmit(data: ContactInput) {
     setStatus("submitting");
@@ -63,7 +66,7 @@ export default function ContactForm() {
           Message sent!
         </h3>
         <p className="mt-2 text-sm text-navy-600">
-          Thanks for reaching out — we&apos;ll get back to you shortly.
+          Thanks for reaching out: we&apos;ll get back to you shortly.
         </p>
         <button
           type="button"
@@ -77,7 +80,9 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={activate} noValidate autoComplete="off" className="space-y-4">
+    <div className="relative flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col">
+    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={() => isLocked && clearOther()} noValidate autoComplete="off" className="flex flex-1 flex-col justify-between gap-4">
       <input
         type="text"
         tabIndex={-1}
@@ -112,7 +117,7 @@ export default function ContactForm() {
       <div>
         <textarea
           placeholder="Your message *"
-          rows={5}
+          rows={3}
           autoComplete="off"
           className={`${inputClass} resize-none overflow-y-auto transition-[height] duration-150`}
           {...messageField}
@@ -134,10 +139,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 disabled:opacity-60"
+        className="w-full rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 disabled:opacity-60"
       >
         {status === "submitting" ? "Sending…" : "Send Message"}
       </button>
     </form>
+      </div>
+    </div>
   );
 }

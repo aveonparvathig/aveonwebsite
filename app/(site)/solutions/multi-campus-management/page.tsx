@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Multi-Campus University Management System | Aveon ERP",
-  description: "Unified multi-campus university management platform. Centralized student records, admissions, academics, and operations across multiple campuses. Streamline administration for distributed institutions.",
+  description: "Unified multi-campus university management platform. Centralized student records, admissions, academics and operations across multiple campuses. Streamline administration for distributed institutions.",
   keywords: [
     "multi-campus university management",
     "distributed campus system",
@@ -25,7 +25,7 @@ export default function MultiCampusPage() {
     },
     {
       title: "Consistent Academic Management",
-      description: "Same academic processes, standards, and quality across all campuses.",
+      description: "Same academic processes, standards and quality across all campuses.",
     },
     {
       title: "Integrated Reporting",
@@ -33,7 +33,7 @@ export default function MultiCampusPage() {
     },
     {
       title: "Seamless Fee Management",
-      description: "Unified fee structure, collections, and accounting across all locations.",
+      description: "Unified fee structure, collections and accounting across all locations.",
     },
     {
       title: "Real-Time Visibility",
@@ -54,7 +54,7 @@ export default function MultiCampusPage() {
               Multi-Campus University Management
             </h1>
             <p className="mt-6 text-lg text-navy-700">
-              Unified platform for managing multiple campuses. Centralize student records, admissions, academics, and operations across distributed locations.
+              Unified platform for managing multiple campuses. Centralize student records, admissions, academics and operations across distributed locations.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

@@ -31,7 +31,7 @@ export default function TermsPage() {
             .
           </p>
           <p className="text-sm text-navy-500">
-            Note: This is placeholder terms text for the new website build —
+            Note: This is placeholder terms text for the new website build:
             replace with your legal team&apos;s approved terms before launch.
           </p>
         </div>

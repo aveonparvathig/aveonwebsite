@@ -39,7 +39,7 @@ const slides: {
       title: "Smart Administration.",
       highlight: "Total Control.",
       description:
-        "Unified campus management system for examinations, results, and academic records.",
+        "Unified campus management system for examinations, results and academic records.",
       caption: "CONTROLLER OF EXAMINATION",
     },
   ];

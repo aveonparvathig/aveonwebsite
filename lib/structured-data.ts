@@ -38,7 +38,7 @@ export function localBusinessJsonLd() {
     "@type": "LocalBusiness",
     name: siteConfig.name,
     image: `${siteConfig.url}/images/logo.svg`,
-    description: "AI-powered campus ERP and learning management system for universities, colleges, and schools.",
+    description: "AI-powered campus ERP and learning management system for universities, colleges and schools.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Coimbatore",

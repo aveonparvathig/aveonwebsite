@@ -39,7 +39,7 @@ type DeepModule = {
 const DEEP_MODULES: DeepModule[] = [
   {
     title: "Admission Management",
-    summary: "Turn every enquiry into an enrolled student — and see exactly where each applicant stands.",
+    summary: "Turn every enquiry into an enrolled student and see exactly where each applicant stands.",
     groups: [
       {
         items: [
@@ -61,7 +61,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Student Information Management",
-    summary: "One student, one record — academics, fees and history in a single profile that spans every year.",
+    summary: "One student, one record: academics, fees and history in a single profile that spans every year.",
     groups: [
       {
         items: [
@@ -79,7 +79,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Academic Management",
-    summary: "Bring order to the academic year — syllabus, timetables, lesson plans and performance in one place.",
+    summary: "Bring order to the academic year: syllabus, timetables, lesson plans and performance in one place.",
     groups: [
       {
         items: [
@@ -98,7 +98,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "OBE, CBCS & Open Elective",
-    summary: "Prove what students actually learn — map every course to outcomes, with real credit-based choice.",
+    summary: "Prove what students actually learn: map every course to outcomes, with real credit-based choice.",
     groups: [
       {
         label: "Outcome Based Education (OBE)",
@@ -119,7 +119,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Controller of Examination (COE)",
-    summary: "Run the entire exam season, from question paper to final mark sheet, without a single spreadsheet.",
+    summary: "Run the entire exam season from question paper to final mark sheet without a single spreadsheet.",
     groups: [
       {
         label: "Administration & Fees",
@@ -155,7 +155,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Fee Management",
-    summary: "Collect fees with less friction and full transparency — structures, receipts and online payment in one flow.",
+    summary: "Collect fees with less friction and full transparency: structures, receipts and online payment in one flow.",
     groups: [
       {
         items: [
@@ -171,7 +171,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Library Management",
-    summary: "Put your whole collection at students' fingertips — catalogue, circulation and OPAC search, fully digital.",
+    summary: "Put your whole collection at students' fingertips: catalogue, circulation and OPAC search, fully digital.",
     groups: [
       {
         items: [
@@ -188,7 +188,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Hostel & Mess Management",
-    summary: "From room application to mess billing — manage residential life end to end, beds and meals included.",
+    summary: "From room application to mess billing: manage residential life end to end, beds and meals included.",
     groups: [
       {
         label: "Hostel",
@@ -215,7 +215,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "HR & Payroll",
-    summary: "Manage the people who run your institution — from recruitment and appraisals to payslips.",
+    summary: "Manage the people who run your institution from recruitment and appraisals to payslips.",
     groups: [
       {
         label: "HR Management",
@@ -240,7 +240,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "NAAC & Institutional Data",
-    summary: "Stop scrambling before accreditation — capture NAAC data as it happens, all year, every year.",
+    summary: "Stop scrambling before accreditation: capture NAAC data as it happens, all year, every year.",
     groups: [
       {
         label: "Department",
@@ -294,7 +294,7 @@ const DEEP_MODULES: DeepModule[] = [
   },
   {
     title: "Inventory & Asset Management",
-    summary: "Track every store item and asset, from purchase to write-off, across all departments.",
+    summary: "Track every store item and asset from purchase to write-off across all departments.",
     groups: [
       {
         label: "Inventory & Stores",
@@ -349,32 +349,32 @@ const STAKEHOLDERS = [
   {
     role: "Management",
     line: "See it. Understand it. Lead it.",
-    text: "Live dashboards on admissions, fees, results and staff — so you lead with facts, not guesswork.",
+    text: "Live dashboards on admissions, fees, results and staff so you lead with facts, not guesswork.",
   },
   {
     role: "Principal",
     line: "Lead academics with confidence.",
-    text: "Track attendance, results, faculty performance and outcomes across every department — and act early where it matters.",
+    text: "Track attendance, results, faculty performance and outcomes across every department and act early where it matters.",
   },
   {
     role: "Administrators",
     line: "Less paperwork. Better control.",
-    text: "Centralize records and automate the daily grind — fewer files, fewer errors, tighter control.",
+    text: "Centralize records and automate the daily grind: fewer files, fewer errors, tighter control.",
   },
   {
     role: "Faculty",
     line: "Less admin. More education.",
-    text: "One login for attendance, lesson plans, marks and messaging — so teaching gets the hours it deserves.",
+    text: "One login for attendance, lesson plans, marks and messaging so teaching gets the hours it deserves.",
   },
   {
     role: "Students",
     line: "Campus services at their fingertips.",
-    text: "Attendance, timetable, marks, fees and assignments — everything they need, on any device.",
+    text: "Attendance, timetable, marks, fees and assignments: everything they need, on any device.",
   },
   {
     role: "Parents",
     line: "Stay connected to the journey.",
-    text: "Timely updates on attendance, results and campus news — they stay informed without chasing anyone.",
+    text: "Timely updates on attendance, results and campus news: they stay informed without chasing anyone.",
   },
 ];
 
@@ -393,17 +393,17 @@ export const collegeErpFaqs: { question: string; answer: string }[] = [
   {
     question: "What modules are included in Aveon College ERP?",
     answer:
-      "Aveon College ERP includes admission, student management, academics, attendance, OBE, CBCS, LMS, COE, fees, library, hostel & mess, HR & payroll, feedback, NAAC data, transport, placement, alumni, communication and dashboards — twenty modules on one platform.",
+      "Aveon College ERP includes admission, student management, academics, attendance, OBE, CBCS, LMS, COE, fees, library, hostel & mess, HR & payroll, feedback, NAAC data, transport, placement, alumni, communication and dashboards: twenty modules on one platform.",
   },
   {
     question: "Does Aveon College ERP include a COE system?",
     answer:
-      "Yes — and in depth. Aveon's Controller of Examination module covers examination fees, subject allocation, question papers, scheduling, online examinations, exam halls, seating arrangements, attendance, internal and external marks, moderation, results, revaluation, supplementary examinations and mark sheets.",
+      "Yes, and in depth. Aveon's Controller of Examination module covers examination fees, subject allocation, question papers, scheduling, online examinations, exam halls, seating arrangements, attendance, internal and external marks, moderation, results, revaluation, supplementary examinations and mark sheets.",
   },
   {
     question: "Does Aveon support OBE?",
     answer:
-      "Yes. Aveon supports Outcome Based Education end to end — PEO, PO, PEO–PO mapping, CO, LO, CO–LO mapping and TLO.",
+      "Yes. Aveon supports Outcome Based Education end to end: PEO, PO, PEO–PO mapping, CO, LO, CO–LO mapping and TLO.",
   },
   {
     question: "Does Aveon support CBCS and Open Electives?",
@@ -413,17 +413,17 @@ export const collegeErpFaqs: { question: string; answer: string }[] = [
   {
     question: "Does Aveon include Hostel and Mess Management?",
     answer:
-      "Yes. Aveon manages hostel applications, buildings, rooms, beds, allocation, attendance, leave, gate passes, permissions and complaints — plus full mess operations: billing, recipes, raw materials and purchases.",
+      "Yes. Aveon manages hostel applications, buildings, rooms, beds, allocation, attendance, leave, gate passes, permissions and complaints, plus full mess operations: billing, recipes, raw materials and purchases.",
   },
   {
     question: "Does Aveon provide HR and Payroll?",
     answer:
-      "Yes. Aveon covers the full employee lifecycle — staff records, recruitment, appraisals, attendance, leave, salary structures, allowances, deductions, salary processing, advances, payments and payslips.",
+      "Yes. Aveon covers the full employee lifecycle: staff records, recruitment, appraisals, attendance, leave, salary structures, allowances, deductions, salary processing, advances, payments and payslips.",
   },
   {
     question: "Can students access the system?",
     answer:
-      "Yes. Every student gets a secure login for marks, timetable, attendance, assignments, feedback, library circulation history and fee details — on web and mobile.",
+      "Yes. Every student gets a secure login for marks, timetable, attendance, assignments, feedback, library circulation history and fee details on web and mobile.",
   },
 ];
 
@@ -479,7 +479,7 @@ function ConnectedCampusGraphic() {
         viewBox={`0 0 ${size} ${size}`}
         className="h-auto w-full"
         role="img"
-        aria-label="Aveon connects every campus department — Admissions, Academics, Exams, Fees, Library, Hostel, HR and Placement — on one platform."
+        aria-label="Aveon connects every campus department: Admissions, Academics, Exams, Fees, Library, Hostel, HR and Placement on one platform."
       >
         <defs>
           <radialGradient id="cc-glow" cx="50%" cy="50%" r="50%">
@@ -590,12 +590,12 @@ export default function CollegeERPContent() {
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
                 A college doesn&apos;t run on departments. It runs on how well they talk to each
-                other — how fast information moves from admission to classroom, exam hall to mark
+                other: how fast information moves from admission to classroom, exam hall to mark
                 sheet, fee counter to management review.
               </p>
               <p>
                 Aveon College ERP connects all of it on one platform. Every department, every record
-                and every decision in a single system — so your team stops chasing information and
+                and every decision in a single system, so your team stops chasing information and
                 starts acting on it.
               </p>
               <p className="font-semibold text-navy-800">
@@ -613,7 +613,7 @@ export default function CollegeERPContent() {
             Complete College ERP Modules
           </h2>
           <p className="mt-3 text-lg text-navy-600">
-            Twenty modules covering every corner of campus life — tied together by one student record
+            Twenty modules covering every corner of campus life, tied together by one student record
             that follows the journey from enquiry to alumni.
           </p>
         </div>
@@ -640,7 +640,7 @@ export default function CollegeERPContent() {
               Explore the Modules in Detail
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares
+              Open any module to see what&apos;s inside. Each one works on its own and shares
               everything with the rest.
             </p>
           </div>
@@ -725,7 +725,7 @@ export default function CollegeERPContent() {
                 One Digital Journey.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                Every stage of a student&apos;s time with you — connected, recorded and visible, from
+                Every stage of a student&apos;s time with you, connected, recorded and visible, from
                 the first enquiry to the final degree.
               </p>
             </div>
@@ -783,8 +783,8 @@ export default function CollegeERPContent() {
               Built for Every Stakeholder
             </h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to
-              them, and nothing that doesn&apos;t.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to
+              them and nothing that doesn&apos;t.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -811,7 +811,7 @@ export default function CollegeERPContent() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">Before</h3>
             <p className="mt-4 text-navy-700">
               Separate tools for admissions, academics, fees, exams, HR, hostel, library and
-              placement — none of them talking to each other.
+              placement, none of them talking to each other.
             </p>
             <p className="mt-4 font-semibold text-navy-900">= Disconnected information</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-600">
@@ -831,8 +831,8 @@ export default function CollegeERPContent() {
               With Aveon
             </h3>
             <p className="mt-4 text-navy-700">
-              Admissions, academics, COE, fees, library, hostel, HR and placement all read from — and
-              write to — one live record.
+              Admissions, academics, COE, fees, library, hostel, HR and placement all read from and
+              write to one live record.
             </p>
             <p className="mt-4 font-semibold text-primary-800">= One connected campus</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-700">

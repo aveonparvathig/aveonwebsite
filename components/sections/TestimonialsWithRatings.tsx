@@ -25,7 +25,7 @@ export default function TestimonialsWithRatings() {
       role: "Director of Administration",
       institution: "Symbiosis International",
       rating: 4.5,
-      text: "Managing multiple campuses became seamless with Aveon. The unified platform for admissions, academics, and operations saved us significant operational costs.",
+      text: "Managing multiple campuses became seamless with Aveon. The unified platform for admissions, academics and operations saved us significant operational costs.",
       image: "👨‍💼",
     },
     {
@@ -33,7 +33,7 @@ export default function TestimonialsWithRatings() {
       role: "Registrar",
       institution: "FLAME University",
       rating: 5,
-      text: "Outstanding support team and product. AICTE compliance features are built-in, and the system handles our complex curriculum requirements effortlessly.",
+      text: "Outstanding support team and product. AICTE compliance features are built-in and the system handles our complex curriculum requirements effortlessly.",
       image: "👩‍🏫",
     },
     {
@@ -41,7 +41,7 @@ export default function TestimonialsWithRatings() {
       role: "Principal",
       institution: "Delhi Public School",
       rating: 4.5,
-      text: "Parent communication, fee management, and student information is now centralized. Both staff and parents appreciate the transparency and ease of use.",
+      text: "Parent communication, fee management and student information are now centralized. Both staff and parents appreciate the transparency and ease of use.",
       image: "👨‍🏫",
     },
     {
@@ -101,7 +101,7 @@ export default function TestimonialsWithRatings() {
             </span>
           </h2>
           <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-relaxed text-navy-700 sm:mt-6">
-            5000+ institutions rely on Aveon for unified campus management, OBE compliance, and institutional excellence.
+            5000+ institutions rely on Aveon for unified campus management, OBE compliance and institutional excellence.
           </p>
         </div>
 

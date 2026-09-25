@@ -5,25 +5,25 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the team behind Aveon Infotech — engineers, implementation specialists and support staff dedicated to education technology.",
+    "Meet the team behind Aveon Infotech: engineers, implementation specialists and support staff dedicated to education technology.",
 };
 
 const departments = [
   {
     title: "Engineering",
-    text: "Product engineers building and evolving the nine product Aveon platform.",
+    text: "Product engineers building and evolving the nine-product Aveon platform.",
   },
   {
     title: "Implementation",
-    text: "Specialists who handle data migration, configuration and go live for every campus.",
+    text: "Specialists who handle data migration, configuration and go-live for every campus.",
   },
   {
     title: "Customer Success",
-    text: "Dedicated support teams answering institutions through phone email and on-site visits.",
+    text: "Dedicated support teams answering institutions through phone, email and on-site visits.",
   },
   {
     title: "Aveon Academy",
-    text: "Trainers who upskill administrators faculty and staff on the platform.",
+    text: "Trainers who upskill administrators, faculty and staff on the platform.",
   },
 ];
 

@@ -3,7 +3,7 @@ import Image from "next/image";
 const faqs = [
   {
     q: "How long does implementation take?",
-    a: "Most single campus institutions go live in about 30 days: data migration in week one, configuration in week two, role-based training in week three, and a supervised go-live in week four. Multi-campus universities typically take 6–10 weeks.",
+    a: "Most single-campus institutions go live in about 30 days: data migration in week one, configuration in week two, role-based training in week three and a supervised go-live in week four. Multi-campus universities typically take 6–10 weeks.",
   },
   {
     q: "Can we start with one product and add more later?",
@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "Is our data migrated from existing software?",
-    a: "Yes our implementation team migrates student records, fee histories, staff data and library catalogues from your current software or spreadsheets as part of every rollout.",
+    a: "Yes, our implementation team migrates student records, fee histories, staff data and library catalogues from your current software or spreadsheets as part of every rollout.",
   },
   {
     q: "What support do we get after go-live?",

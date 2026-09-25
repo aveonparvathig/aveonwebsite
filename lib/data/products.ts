@@ -20,7 +20,7 @@ export const products: Product[] = [
     category: "erp",
     tagline: "University Management System",
     description:
-      "One platform for the entire university — admissions, academics, OBE, CBCS, COE, fees, library, hostel, HR, research, placement, NAAC and analytics, all connected.",
+      "One platform for the entire university: admissions, academics, OBE, CBCS, COE, fees, library, hostel, HR, research, placement, NAAC and analytics, all connected.",
     features: [
       "Admission to alumni, one student record",
       "Controller of Examination (COE) end-to-end",
@@ -37,7 +37,7 @@ export const products: Product[] = [
     category: "erp",
     tagline: "Campus Management System",
     description:
-      "One platform for your entire college — admissions, academics, OBE, CBCS, COE, fees, library, hostel, HR, placement, NAAC and analytics on a single connected campus.",
+      "One platform for your entire college: admissions, academics, OBE, CBCS, COE, fees, library, hostel, HR, placement, NAAC and analytics on a single connected campus.",
     features: [
       "Admission to graduation, one digital record",
       "Controller of Examination (COE) end-to-end",
@@ -54,7 +54,7 @@ export const products: Product[] = [
     category: "erp",
     tagline: "School Management System",
     description:
-      "One platform for the whole school — admissions, students, academics, attendance, examinations, fees, transport, communication, staff and parent services, all connected.",
+      "One platform for the whole school: admissions, students, academics, attendance, examinations, fees, transport, communication, staff and parent services, all connected.",
     features: [
       "Admission to next year, one student record",
       "Academics, timetable & attendance",
@@ -88,7 +88,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "HR & Payroll System",
     description:
-      "One HRMS for the whole employee lifecycle — recruitment, records, attendance, leave, payroll, statutory compliance, payslips and self-service, all connected.",
+      "One HRMS for the whole employee lifecycle: recruitment, records, attendance, leave, payroll, statutory compliance, payslips and self-service, all connected.",
     features: [
       "Recruitment & onboarding",
       "Employee records & self-service",
@@ -105,7 +105,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "Library Management System",
     description:
-      "One digital library — catalogue, accession, patrons, circulation rules, subscriptions, stock verification and OPAC online search, connected to the campus ERP.",
+      "One digital library: catalogue, accession, patrons, circulation rules, subscriptions, stock verification and OPAC online search, connected to the campus ERP.",
     features: [
       "Catalogue, accession & author management",
       "Supplier management & catalogue import",
@@ -122,7 +122,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "Hostel & Mess Management",
     description:
-      "One platform for residential life — hostel applications, rooms, beds, allocation, biometric attendance, leave, gate passes, complaints and full mess operations.",
+      "One platform for residential life: hostel applications, rooms, beds, allocation, biometric attendance, leave, gate passes, complaints and full mess operations.",
     features: [
       "Building, wing, room & bed allocation",
       "Biometric hostel attendance",
@@ -139,7 +139,7 @@ export const products: Product[] = [
     category: "erp",
     tagline: "Examination Management System",
     description:
-      "One connected COE platform for the whole examination lifecycle — fees, question papers, scheduling, hall seating, evaluation, results, revaluation and mark sheets.",
+      "One connected COE platform for the whole examination lifecycle: fees, question papers, scheduling, hall seating, evaluation, results, revaluation and mark sheets.",
     features: [
       "Exam scheduling & question papers",
       "Examination fees & fines",
@@ -156,7 +156,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "Inventory Management System",
     description:
-      "One digital inventory — items, categories, suppliers, stores, purchases, stock receipts, issues, transfers, returns and reports, connected to the campus ERP.",
+      "One digital inventory: items, categories, suppliers, stores, purchases, stock receipts, issues, transfers, returns and reports, connected to the campus ERP.",
     features: [
       "Item, category & store management",
       "Supplier & purchase records",
@@ -173,7 +173,7 @@ export const products: Product[] = [
     category: "management",
     tagline: "Institutional Quality Assurance & Accreditation",
     description:
-      "Comprehensive quality assurance system for institutional excellence, covering IQAC compliance, NAAC accreditation, NBA accreditation, quality metrics, feedback management, and accreditation reporting, all integrated.",
+      "Comprehensive quality assurance system for institutional excellence covering IQAC compliance, NAAC accreditation, NBA accreditation, quality metrics, feedback management and accreditation reporting, all integrated.",
     features: [
       "IQAC cell management & coordination",
       "NAAC accreditation (7 criteria framework)",

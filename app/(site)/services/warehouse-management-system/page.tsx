@@ -51,7 +51,7 @@ export default function WarehouseManagementPage() {
               Smart Warehouse Management for Modern Businesses.
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Organise warehouse operations on one centralized platform — from receiving and put-away to inventory,
+              Organise warehouse operations on one centralized platform, from receiving and put-away to inventory,
               picking, packing, dispatch, transfers and returns, across multiple warehouses.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">

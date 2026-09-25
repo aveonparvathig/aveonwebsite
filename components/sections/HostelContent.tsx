@@ -34,7 +34,7 @@ type DeepModule = { title: string; summary: string; groups: ModuleGroup[] };
 const HST_DEEP: DeepModule[] = [
   {
     title: "Hostel Application & Allocation",
-    summary: "From application to a made bed — manage accommodation end to end.",
+    summary: "From application to a made bed: manage accommodation end to end.",
     groups: [
       {
         items: [
@@ -49,7 +49,7 @@ const HST_DEEP: DeepModule[] = [
   },
   {
     title: "Hostel Attendance",
-    summary: "Know who's in — with manual and biometric attendance.",
+    summary: "Know who's in with manual and biometric attendance.",
     groups: [
       {
         items: ["Hostel attendance", "Biometric attendance", "Attendance records"],
@@ -58,7 +58,7 @@ const HST_DEEP: DeepModule[] = [
   },
   {
     title: "Leave, Permission & Gate Pass",
-    summary: "Structured student movement — leave, permission and outings.",
+    summary: "Structured student movement: leave, permission and outings.",
     groups: [
       {
         items: ["Leave application & approval", "Permission management", "Gate pass", "Outing permission"],
@@ -76,7 +76,7 @@ const HST_DEEP: DeepModule[] = [
   },
   {
     title: "Mess Member Management",
-    summary: "Know who is using the mess — accurate member information.",
+    summary: "Know who is using the mess: accurate member information.",
     groups: [
       {
         items: ["Mess members", "Student details", "Mess participation", "Member records"],
@@ -85,7 +85,7 @@ const HST_DEEP: DeepModule[] = [
   },
   {
     title: "Mess Attendance",
-    summary: "Track meal participation — and understand daily requirements.",
+    summary: "Track meal participation and understand daily requirements.",
     groups: [
       {
         items: ["Mess attendance", "Meal-related attendance records", "Member attendance"],
@@ -126,7 +126,7 @@ const HST_DEEP: DeepModule[] = [
   },
   {
     title: "Raw-Material Stock",
-    summary: "Know what you have — plan what you need.",
+    summary: "Know what you have: plan what you need.",
     groups: [
       {
         items: ["Raw-material stock", "Food inventory", "Stock information"],
@@ -263,7 +263,7 @@ function ConnectedHostelGraphic() {
           .hst-ring, .hst-glow, .hst-flow, .hst-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every hostel and mess function — Rooms, Beds, Allocation, Attendance, Leave, Gate Pass, Complaints and Mess — on one platform.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Aveon connects every hostel and mess function: Rooms, Beds, Allocation, Attendance, Leave, Gate Pass, Complaints and Mess on one platform.">
         <defs>
           <radialGradient id="hst-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -325,7 +325,7 @@ export default function HostelContent() {
                 activities.
               </p>
               <p>
-                Aveon Hostel &amp; Mess Management brings accommodation and dining onto one platform — part of the wider
+                Aveon Hostel &amp; Mess Management brings accommodation and dining onto one platform, part of the wider
                 Aveon Campus ERP, so hostel residents stay connected to their student, academic and fee records.
               </p>
               <p className="font-semibold text-navy-800">One connected residential management system.</p>
@@ -339,7 +339,7 @@ export default function HostelContent() {
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Complete Hostel &amp; Mess Modules</h2>
           <p className="mt-3 text-lg text-navy-600">
-            Everything residential life needs — grouped into four connected domains, from move-in to mess operations.
+            Everything residential life needs, grouped into four connected domains, from move-in to mess operations.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -365,7 +365,7 @@ export default function HostelContent() {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Explore the Modules in Detail</h2>
             <p className="mx-auto mt-3 max-w-2xl text-lg text-navy-600">
-              Open any module to see what&apos;s inside. Each one works on its own — and shares everything with the rest.
+              Open any module to see what&apos;s inside. Each one works on its own and shares everything with the rest.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
@@ -426,8 +426,8 @@ export default function HostelContent() {
                 To Residential Life.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                Aveon connects the whole residential journey — hostel move-in, daily life, and the mess that keeps it
-                running — into one workflow.
+                Aveon connects the whole residential journey: hostel move-in, daily life and the mess that keeps it
+                running, into one workflow.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -473,7 +473,7 @@ export default function HostelContent() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Built for Every Hostel Stakeholder</h2>
             <p className="mt-3 text-lg text-navy-600">
-              Web-based, mobile-ready and role-based — everyone signs in to exactly what matters to them.
+              Web-based, mobile-ready and role-based: everyone signs in to exactly what matters to them.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -498,7 +498,7 @@ export default function HostelContent() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-navy-500">Traditional Approach</h3>
             <p className="mt-4 text-navy-700">
               Hostel registers, room-allocation sheets, attendance registers, leave forms, gate-pass records, complaint
-              and mess registers — all kept separately.
+              and mess registers all kept separately.
             </p>
             <p className="mt-4 font-semibold text-navy-900">= Multiple records, manual coordination</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-600">
@@ -511,7 +511,7 @@ export default function HostelContent() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-primary-600">With Aveon Hostel &amp; Mess</h3>
             <p className="mt-4 text-navy-700">
               Students, hostels, rooms, beds, attendance, leave, permissions, mess, billing and stock all connect
-              through one system — inside the campus ERP.
+              through one system inside the campus ERP.
             </p>
             <p className="mt-4 font-semibold text-primary-800">= One connected residential management system</p>
             <ul className="mt-4 space-y-1.5 text-sm text-navy-700">
@@ -553,7 +553,7 @@ export default function HostelContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Manage Accommodation. Organize Dining. Connect Campus Life.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              One platform for complete hostel &amp; mess management — connected to the wider Aveon Campus ERP.
+              One platform for complete hostel &amp; mess management, connected to the wider Aveon Campus ERP.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link href="/contact#demo" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-600">

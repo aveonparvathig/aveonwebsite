@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Aveon Infotech — Education ERP Solutions";
+export const alt = "Aveon Infotech: Education ERP Solutions";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -57,7 +57,7 @@ export default function OpenGraphImage() {
           </span>
         </div>
         <div style={{ marginTop: 40, fontSize: 30, color: "#9fb2d6", display: "flex" }}>
-          University · College · School ERP — aveoninfotech.com
+          University · College · School ERP: aveoninfotech.com
         </div>
       </div>
     ),

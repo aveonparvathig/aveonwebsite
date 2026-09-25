@@ -94,7 +94,7 @@ export const offshoreFaqs: { question: string; answer: string }[] = [
   },
   {
     question: "How much does an Aveon offshore developer cost?",
-    answer: "Rates depend on the developer's technology, experience, engagement duration and working model. Aveon offers competitive, nominal offshore rates — contact us for a role-specific quotation.",
+    answer: "Rates depend on the developer's technology, experience, engagement duration and working model. Aveon offers competitive, nominal offshore rates: contact us for a role-specific quotation.",
   },
   {
     question: "Can I hire just one developer?",
@@ -181,7 +181,7 @@ function ConnectedTeamGraphic() {
           .off-ring, .off-glow, .off-flow, .off-node { animation: none !important; opacity: 1 !important; }
         }
       `}</style>
-      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Build a dedicated offshore team with Aveon — Developers, Designers, QA, DevOps, AI/ML, Cloud, Project Managers and Support.">
+      <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full" role="img" aria-label="Build a dedicated offshore team with Aveon: Developers, Designers, QA, DevOps, AI/ML, Cloud, Project Managers and Support.">
         <defs>
           <radialGradient id="off-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#d9e8ff" stopOpacity="0.9" />
@@ -243,7 +243,7 @@ export default function OffshoreContent() {
               </p>
               <p>
                 From software development and mobile apps to AI, cloud, DevOps, QA and support, Aveon provides
-                professionals who work as an extension of your team — without the infrastructure and overhead.
+                professionals who work as an extension of your team without the infrastructure and overhead.
               </p>
               <p className="font-semibold text-navy-800">Your team. Your technology. Your way of working.</p>
             </div>
@@ -255,7 +255,7 @@ export default function OffshoreContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Choose Your Engagement Model</h2>
-          <p className="mt-3 text-lg text-navy-600">Build a team around your actual requirements — from one developer to a complete product team.</p>
+          <p className="mt-3 text-lg text-navy-600">Build a team around your actual requirements, from one developer to a complete product team.</p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {MODELS.map((m) => (
@@ -340,7 +340,7 @@ export default function OffshoreContent() {
                 Team. Delivery.
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-600">
-                Simple, transparent and collaborative — from understanding your needs to scaling the team as they evolve.
+                Simple, transparent and collaborative, from understanding your needs to scaling the team as they evolve.
               </p>
             </div>
             <div className="flex items-baseline gap-3 text-navy-400">
@@ -384,7 +384,7 @@ export default function OffshoreContent() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Your Offshore Team Should Feel Like Your Own</h2>
-          <p className="mt-3 text-lg text-navy-600">Distance shouldn&apos;t create barriers — teams collaborate with your preferred tools and processes.</p>
+          <p className="mt-3 text-lg text-navy-600">Distance shouldn&apos;t create barriers: teams collaborate with your preferred tools and processes.</p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-2">
           <ChipGroup title="Collaboration Tools" items={TOOLS} />
@@ -468,7 +468,7 @@ export default function OffshoreContent() {
           <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
             <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Global Talent. Indian Advantage. Competitive Cost.</h3>
             <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              You don&apos;t always need a large organization to build great technology — just the right people, skills
+              You don&apos;t always need a large organization to build great technology: just the right people, skills
               and team structure. Let&apos;s build yours.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

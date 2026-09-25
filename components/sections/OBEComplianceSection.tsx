@@ -19,7 +19,7 @@ export default function OBEComplianceSection() {
     {
       title: "AICTE Compliance",
       description:
-        "Integrated AICTE requirements for curriculum, faculty management, and institutional data reporting.",
+        "Integrated AICTE requirements for curriculum, faculty management and institutional data reporting.",
       icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z",
     },
     {
@@ -54,7 +54,7 @@ export default function OBEComplianceSection() {
             </span>
           </h2>
           <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-relaxed text-navy-700 sm:mt-6">
-            Built-in OBE framework with NAAC, AICTE, and CBCS compliance. Track learning outcomes and institutional effectiveness with AI-powered analytics.
+            Built-in OBE framework with NAAC, AICTE and CBCS compliance. Track learning outcomes and institutional effectiveness with AI-powered analytics.
           </p>
         </div>
 

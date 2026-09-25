@@ -43,7 +43,7 @@ export default function ContactPage() {
               Let's Talk About Your Campus
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Questions, demos, partnerships we respond within one business day.
+              Questions, demos, partnerships: we respond within one business day.
             </p>
           </div>
           <Image
@@ -182,32 +182,44 @@ export default function ContactPage() {
 
         {/* FORMS — EQUAL HEIGHT */}
         <ContactFormsProvider>
-          <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-stretch">
-            <div id="demo" className="scroll-mt-28 flex flex-col">
-              <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
-                Book a Demo
-              </h2>
-
-              <p className="mt-2 text-navy-600">
-                See the product in action with a personalized walkthrough.
-              </p>
-
-              <div className="mt-6 flex-1 rounded-2xl border border-navy-100 bg-white p-6 shadow-card sm:p-8">
-                <DemoBookingForm />
+          <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:items-stretch">
+            <div id="demo" className="scroll-mt-28 h-full">
+              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-[0_30px_70px_-40px_rgb(16_26_51_/_0.4)]">
+                <div className="h-1.5 bg-gradient-to-r from-accent-500 to-accent-600" />
+                <div className="flex items-center gap-4 bg-gradient-to-br from-accent-50 to-white px-6 py-5 sm:px-8">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent-500 text-white shadow-[0_12px_24px_-12px_rgb(16_26_51_/_0.5)]">
+                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7} aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h2 className="text-xl font-extrabold text-navy-900 sm:text-2xl">Book a Demo</h2>
+                    <p className="mt-0.5 text-sm text-navy-600">See the product in action with a personalized walkthrough.</p>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <DemoBookingForm />
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col">
-              <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
-                Send a Message
-              </h2>
-
-              <p className="mt-2 text-navy-600">
-                For everything else, including support, partnerships, and careers.
-              </p>
-
-              <div className="mt-6 flex-1 rounded-2xl border border-navy-100 bg-white p-6 shadow-card sm:p-8">
-                <ContactForm />
+            <div className="h-full">
+              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-[0_30px_70px_-40px_rgb(16_26_51_/_0.4)]">
+                <div className="h-1.5 bg-gradient-to-r from-primary-500 to-primary-700" />
+                <div className="flex items-center gap-4 bg-gradient-to-br from-primary-50 to-white px-6 py-5 sm:px-8">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-[0_12px_24px_-12px_rgb(16_26_51_/_0.5)]">
+                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7} aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h2 className="text-xl font-extrabold text-navy-900 sm:text-2xl">Send a Message</h2>
+                    <p className="mt-0.5 text-sm text-navy-600">For everything else, including support, partnerships and careers.</p>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <ContactForm />
+                </div>
               </div>
             </div>
           </div>
