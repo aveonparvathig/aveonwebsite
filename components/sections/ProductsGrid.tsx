@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { products as fallbackProducts, type Product } from "@/lib/data/products";
+import { products as fallbackProducts, applyProductOverrides, type Product } from "@/lib/data/products";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productsQuery } from "@/lib/queries";
 import ProductIcon from "@/components/ui/ProductIcon";
@@ -24,10 +24,12 @@ export default async function ProductsGrid() {
   const missingProducts = fallbackProducts.filter(p => !sanityProductSlugs.has(p.slug));
   const allProducts = [...fetched, ...missingProducts];
 
-  const products = allProducts.map((p) => ({
-    ...p,
-    slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
-  }));
+  const products = allProducts.map((p) =>
+    applyProductOverrides({
+      ...p,
+      slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
+    }),
+  );
 
   const featured = products.find((p) => p.slug === FEATURED_SLUG) ?? products[0];
   const rest = products.filter((p) => p.slug !== featured?.slug);

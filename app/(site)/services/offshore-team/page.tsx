@@ -73,10 +73,10 @@ export default function OffshoreTeamPage() {
             </div>
           </div>
           <Image
-            src="/products/off.jpg"
+            src="/products/offshore-team.webp"
             alt="Offshore Development Team"
-            width={600}
-            height={400}
+            width={1070}
+            height={661}
             className="w-full rounded-2xl object-cover"
           />
         </div>

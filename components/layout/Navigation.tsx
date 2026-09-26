@@ -28,6 +28,13 @@ const Chevron = ({ open }: { open: boolean }) => (
   </svg>
 );
 
+/** Menu-only names; the products keep their regular titles everywhere else. */
+const menuLabels: Record<string, string> = {
+  "university-erp": "University Management System 3.0",
+  "college-erp": "College Management System 3.0",
+  "school-erp": "School Management System",
+};
+
 export default function Navigation({ products }: { products?: Product[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -55,7 +62,7 @@ export default function Navigation({ products }: { products?: Product[] }) {
       products
         .filter((p) => p.category === category)
         .map((p) => ({
-          label: p.title,
+          label: menuLabels[p.slug] ?? p.title,
           href: `/products/${p.slug}`,
           description: p.tagline,
         }));

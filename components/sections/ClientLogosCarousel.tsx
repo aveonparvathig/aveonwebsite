@@ -13,7 +13,6 @@ const logos: ClientLogo[] = [
   { name: "Sankara", src: "/products/client  logos/sankara.png" },
   { name: "Nandha", src: "/products/client  logos/nandha.png" },
   { name: "VMKVMCH", src: "/products/client  logos/VMKVMCH-logo2 1.png" },
-  { name: "Vethathiri", src: "/products/client  logos/vethathiri.png" },
   { name: "SRCS", src: "/products/client  logos/srcs.png" },
   { name: "Viveganandha Global Academy", src: "/products/client  logos/Viveganandha-Global-Academy.png" },
   { name: "SNR", src: "/products/client  logos/SNR.png 1.png" },

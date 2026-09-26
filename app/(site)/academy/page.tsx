@@ -52,13 +52,6 @@ const heroChips: { label: string; className: string }[] = [
   { label: "Career Ready", className: "bottom-5 right-3 sm:-right-3" },
 ];
 
-const values: { icon: IconName; title: string; text: string }[] = [
-  { icon: "briefcase", title: "Industry-Oriented", text: "Skills mapped to how software is built today." },
-  { icon: "code", title: "Hands-On Learning", text: "Write, run and ship code from the first week." },
-  { icon: "rocket", title: "Real Projects", text: "Build work that looks like a real product." },
-  { icon: "chart", title: "Career-Focused", text: "Grow a portfolio that speaks for you." },
-];
-
 const chain: { label: string; icon: IconName }[] = [
   { label: "Learn", icon: "book" },
   { label: "Build", icon: "code" },
@@ -102,14 +95,6 @@ const whyFeatures: { icon: IconName; title: string; text: string }[] = [
   { icon: "sparkles", title: "Modern Technology", text: "Current tools, frameworks and AI." },
 ];
 
-const journey = [
-  { tag: "Choose", title: "Choose Your Program", text: "Pick the path that fits your goals." },
-  { tag: "Learn", title: "Master Core Skills", text: "Build strong fundamentals step by step." },
-  { tag: "Build", title: "Complete Practical Projects", text: "Turn concepts into working software." },
-  { tag: "Refine", title: "Get Expert Feedback", text: "Improve with guidance from mentors." },
-  { tag: "Showcase", title: "Build Your Portfolio", text: "Present your work with confidence." },
-  { tag: "Grow", title: "Prepare for Your Career", text: "Step forward with industry-ready skills." },
-];
 
 const techStack = ["HTML5", "CSS3", "JavaScript", "React.js", "Node.js", "Python", "SQL", "Git", "Cloud", "AI", "Machine Learning", "Generative AI"];
 
@@ -338,23 +323,6 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      {/* KEY VALUES */}
-      <section className={`${container} -mt-2 py-10 lg:py-12`}>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((v) => (
-            <div key={v.title} className="flex items-start gap-3.5 rounded-2xl border border-navy-900/8 bg-white p-5 shadow-card">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 text-primary-600">
-                <Icon name={v.icon} />
-              </span>
-              <div>
-                <h3 className="text-[16px] font-extrabold text-navy-900">{v.title}</h3>
-                <p className="mt-1 text-[14px] leading-relaxed text-navy-600">{v.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* INTRODUCTION */}
       <section className={`${container} py-10 lg:py-14`}>
         <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 px-6 py-10 shadow-[0_40px_90px_-34px_rgb(29_111_242_/_0.7)] sm:px-10 lg:px-14 lg:py-12">
@@ -421,28 +389,28 @@ export default function AcademyPage() {
                 key={c.no}
                 className="group relative flex flex-col overflow-hidden rounded-[22px] border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary-600/30 hover:shadow-card-hover"
               >
-                <div className="relative bg-gradient-to-br from-primary-50 to-white px-6 pb-5 pt-5">
-                  <span aria-hidden className="pointer-events-none absolute right-4 top-1 select-none text-[68px] font-extrabold leading-none text-primary-100/80">
+                <div className="relative bg-gradient-to-br from-primary-50 to-white px-5 pb-3.5 pt-4">
+                  <span aria-hidden className="pointer-events-none absolute right-4 top-0 select-none text-[54px] font-extrabold leading-none text-primary-100/80">
                     {c.no}
                   </span>
-                  <span className="relative inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[12.5px] font-extrabold text-primary-700 shadow-sm">
+                  <span className="relative inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-[12px] font-extrabold text-primary-700 shadow-sm">
                     <Icon name="clock" className="h-4 w-4" />
                     {c.months} {c.unit}
                   </span>
-                  <h3 className="relative mt-4 min-h-[3.4rem] pr-10 text-[18.5px] font-extrabold leading-snug text-navy-900">{c.title}</h3>
+                  <h3 className="relative mt-3 min-h-[2.75rem] pr-10 text-[17px] font-extrabold leading-snug text-navy-900">{c.title}</h3>
                 </div>
 
-                <div className="flex flex-1 flex-col px-6 pb-6 pt-5">
-                  <div className="flex flex-wrap gap-2.5">
+                <div className="flex flex-1 flex-col px-5 pb-4 pt-3.5">
+                  <div className="flex flex-wrap gap-2">
                     {c.tech.map((tk) => (
                       <TechBadge key={tk} name={tk} large />
                     ))}
                   </div>
 
-                  <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.14em] text-navy-500">What you will learn</p>
-                  <ul className="mt-3 space-y-2.5">
+                  <p className="mt-4 text-[11px] font-extrabold uppercase tracking-[0.14em] text-navy-500">What you will learn</p>
+                  <ul className="mt-2.5 space-y-2">
                     {c.learn.map((l) => (
-                      <li key={l} className="flex items-start gap-2.5 text-[14.5px] font-semibold leading-snug text-navy-800">
+                      <li key={l} className="flex items-start gap-2.5 text-[14px] font-semibold leading-snug text-navy-800">
                         <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.6} aria-hidden>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
@@ -451,12 +419,12 @@ export default function AcademyPage() {
                     ))}
                   </ul>
 
-                  <div className="flex-1 pb-6" />
+                  <div className="flex-1 pb-4" />
                   {c.note && (
                     <p className="mt-4 rounded-lg bg-accent-50 px-3 py-2 text-[12px] font-semibold leading-snug text-accent-700">{c.note}</p>
                   )}
 
-                  <div className="mt-auto flex items-center justify-between border-t border-navy-900/8 pt-4">
+                  <div className="mt-auto flex items-center justify-between border-t border-navy-900/8 pt-3">
                     <span className="text-[12px] font-bold text-navy-500">Includes internship</span>
                     <Link href="/contact" className="inline-flex items-center gap-2 text-[14px] font-bold text-primary-600">
                       Enquire Now
@@ -550,29 +518,6 @@ export default function AcademyPage() {
               <p className="mt-1.5 text-[14.5px] leading-relaxed text-navy-600">{f.text}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* LEARNING JOURNEY */}
-      <section className="bg-gradient-to-b from-navy-50 to-white">
-        <div className={`${container} py-14 lg:py-18`}>
-          <SectionHead label="Learning Journey" title="Your Path From First Lesson to First Role" />
-          <ol className="relative mx-auto mt-12 max-w-[760px]">
-            <div aria-hidden className="absolute bottom-6 left-[27px] top-6 w-0.5 bg-gradient-to-b from-primary-200 via-primary-500 to-primary-200" />
-            {journey.map((s, i) => (
-              <li key={s.tag} className="relative flex gap-5 pb-6 last:pb-0">
-                <span className="relative z-10 flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700 text-white shadow-[0_14px_30px_-12px_rgb(29_111_242_/_0.7)] ring-4 ring-navy-50">
-                  <span className="text-[9px] font-extrabold uppercase tracking-wider opacity-80">Step</span>
-                  <span className="text-[16px] font-extrabold leading-none">{i + 1}</span>
-                </span>
-                <div className="flex-1 rounded-2xl border border-navy-900/8 bg-white px-5 py-4 shadow-card transition-all duration-300 hover:border-primary-600/30">
-                  <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-primary-600">{s.tag}</p>
-                  <h3 className="mt-1 text-[17px] font-extrabold text-navy-900">{s.title}</h3>
-                  <p className="mt-1 text-[14.5px] text-navy-600">{s.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 

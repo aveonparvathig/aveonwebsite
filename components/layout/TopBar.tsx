@@ -31,9 +31,6 @@ export default function TopBar() {
             </svg>
             {siteConfig.email}
           </a>
-          <span className="hidden text-[10.5px] font-semibold uppercase tracking-[0.16em] text-navy-400 lg:inline">
-            Coimbatore
-          </span>
         </div>
         <div className="flex items-center gap-2">
           {socialLinks.map((s) => (

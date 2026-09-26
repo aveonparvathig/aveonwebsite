@@ -73,10 +73,10 @@ export default function OrderManagementPage() {
             </div>
           </div>
           <Image
-            src="/products/order.jpg"
+            src="/products/order-team.webp"
             alt="Order Management System dashboard"
-            width={600}
-            height={400}
+            width={1672}
+            height={941}
             className="w-full rounded-2xl object-cover"
           />
         </div>

@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import ClientLogosCarousel from "@/components/sections/ClientLogosCarousel";
+import ClientTestimonials from "@/components/sections/ClientTestimonials";
 import AboutSection from "@/components/sections/AboutSection";
 import ProductsGrid from "@/components/sections/ProductsGrid";
 import OBEComplianceSection from "@/components/sections/OBEComplianceSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import TestimonialsWithRatings from "@/components/sections/TestimonialsWithRatings";
 import FAQ from "@/components/sections/FAQ";
 import CTASection from "@/components/sections/CTASection";
 import { siteConfig } from "@/lib/constants";
@@ -38,11 +38,11 @@ export default function HomePage() {
       <Hero />
       <Stats />
       <ClientLogosCarousel />
+      <ClientTestimonials />
       <AboutSection />
       <ProductsGrid />
       <OBEComplianceSection />
       <ServicesSection />
-      <TestimonialsWithRatings />
       <FAQ />
       <CTASection />
     </>

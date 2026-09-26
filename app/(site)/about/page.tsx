@@ -48,10 +48,10 @@ export default function AboutPage() {
             </p>
           </div>
           <Image
-            src="/products/erp1.jpg"
+            src="/products/erp-team.jpg"
             alt="Aveon Operating System for Education"
-            width={600}
-            height={400}
+            width={1268}
+            height={740}
             className="w-full rounded-2xl object-cover"
           />
         </div>

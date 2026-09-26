@@ -7,15 +7,15 @@ interface ProductHeroImageProps {
 
 // Map product slugs to their dashboard image filenames
 const productImages: Record<string, string> = {
-  "university-erp": "/products/uni.png",
-  "college-erp": "/products/clg.png",
-  "school-erp": "/products/s.png",
+  "university-erp": "/products/ums.webp",
+  "college-erp": "/products/cms.webp",
+  "school-erp": "/products/sms.webp",
   "lms-ai-chatbot": "/products/la.png",
-  "hrm-payroll": "/products/hrm.png",
+  "hrm-payroll": "/products/hrd.webp",
   "library-management": "/products/li.png",
   "hostel-mess": "/products/hostel mess erp.png",
   "coe": "/products/c.png",
-  "inventory-management": "/products/in.png",
+  "inventory-management": "/products/inventory-dashboard.webp",
 };
 
 export default function ProductHeroImage({ slug, title }: ProductHeroImageProps) {
