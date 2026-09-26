@@ -27,8 +27,11 @@ export default function CanteenManagementPage() {
             <span className="inline-block rounded-full bg-orange-100 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-orange-700">
               Product
             </span>
-            <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
-              Canteen & Food Service Management
+            <h1 className="mt-5">
+              <span className="block text-balance text-[28px] font-semibold leading-[1.12] tracking-tight text-navy-900 sm:text-[34px] xl:text-[40px]">
+                <span className="bg-gradient-to-br from-primary-600 to-primary-700 bg-clip-text font-extrabold text-transparent">Aveon</span> Canteen &amp; Food Service Management
+              </span>
+              <span aria-hidden className="mt-5 block h-1.5 w-20 rounded-full bg-gradient-to-r from-primary-600 to-accent-500" />
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
               Complete digital platform for canteen operations: menu management, online ordering, billing, inventory, vendor management and health compliance, all integrated.
@@ -52,10 +55,10 @@ export default function CanteenManagementPage() {
             </div>
           </div>
           <Image
-            src="/products/canteen.png"
+            src="/products/canteen-dashboard.webp"
             alt="Canteen and Food Service Management System"
-            width={600}
-            height={400}
+            width={1380}
+            height={1140}
             className="w-full rounded-2xl object-contain"
           />
         </div>

@@ -41,10 +41,10 @@ export default function ProductsPage() {
             </p>
           </div>
           <Image
-            src="/products/erp1.jpg"
+            src="/products/erp-team.jpg"
             alt="Aveon Products"
-            width={600}
-            height={400}
+            width={1268}
+            height={740}
             className="w-full rounded-2xl object-contain"
           />
         </div>

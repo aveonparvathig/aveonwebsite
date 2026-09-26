@@ -27,8 +27,11 @@ export default function GrievanceManagementPage() {
             <span className="inline-block rounded-full bg-primary-100 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
               Product
             </span>
-            <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
-              Grievance & Complaint Management
+            <h1 className="mt-5">
+              <span className="block text-balance text-[28px] font-semibold leading-[1.12] tracking-tight text-navy-900 sm:text-[34px] xl:text-[40px]">
+                <span className="bg-gradient-to-br from-primary-600 to-primary-700 bg-clip-text font-extrabold text-transparent">Aveon</span> Grievance &amp; Complaint Management
+              </span>
+              <span aria-hidden className="mt-5 block h-1.5 w-20 rounded-full bg-gradient-to-r from-primary-600 to-accent-500" />
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
               Unified platform for managing grievances from students, staff and others. Anonymous submissions, automatic routing, real-time tracking and data-driven insights.

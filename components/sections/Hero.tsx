@@ -11,7 +11,7 @@ const slides: {
   caption: string;
 }[] = [
     {
-      image: "/products/uerp.png",
+      image: "/products/ums.webp",
       title: "One Platform.",
       highlight: "Every Institution.",
       description:
@@ -19,15 +19,15 @@ const slides: {
       caption: "UNIVERSITY ERP",
     },
     {
-      image: "/products/college erp.png",
-      title: "Smarter Campus.",
-      highlight: "Better Management.",
+      image: "/products/cms.webp",
+      title: "12+ Systems Unified.",
+      highlight: "One Platform. More Than ERP.",
       description:
-        "Simplify academic and administrative operations with a powerful digital campus management solution.",
+        "Facing complexity with your ERP?\nAveon CMS 3.0 is the right alternative connecting your campus through one unified platform.",
       caption: "COLLEGE ERP",
     },
     {
-      image: "/products/hrm erp.png",
+      image: "/products/hrd.webp",
       title: "Connected Campus.",
       highlight: "Powerful Operations.",
       description:
@@ -35,12 +35,12 @@ const slides: {
       caption: "PAYROLL & FINANCE",
     },
     {
-      image: "/products/coe erp.png",
+      image: "/products/sms.webp",
       title: "Smart Administration.",
       highlight: "Total Control.",
       description:
-        "Unified campus management system for examinations, results and academic records.",
-      caption: "CONTROLLER OF EXAMINATION",
+        "Unified school management for admissions, attendance, examinations and parent communication.",
+      caption: "SCHOOL ERP",
     },
   ];
 
@@ -66,18 +66,18 @@ export default function Hero() {
               <span className="absolute inset-0 rounded-full bg-primary-600 animate-pulse-ring" />
               <span className="relative h-2.25 w-2.25 rounded-full bg-primary-600" />
             </span>
-            Total Campus Management Solution
+            Total Campus Management Solution 3.0
           </span>
 
           <h1 className="mt-5.5 max-w-[640px] text-[clamp(38px,5.4vw,68px)] font-extrabold leading-[1.18] text-navy-900 text-balance">
-            {slide.title}
+            <span className="text-[clamp(33px,calc(5.4vw-5px),63px)]">{slide.title}</span>
             <br />
             <span className="inline-block -rotate-[1.6deg] rounded-2xl bg-accent-500 px-3.5 text-white">
               {slide.highlight}
             </span>
           </h1>
 
-          <p className="mt-5.5 max-w-[520px] text-[clamp(16px,1.5vw,18.5px)] leading-relaxed text-navy-700">
+          <p className="mt-5.5 max-w-[520px] whitespace-pre-line text-[clamp(16px,1.5vw,18.5px)] leading-relaxed text-navy-700">
             {slide.description}
           </p>
 

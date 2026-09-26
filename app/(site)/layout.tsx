@@ -5,7 +5,7 @@ import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 import SpotlightController from "@/components/ui/SpotlightController";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productsQuery } from "@/lib/queries";
-import { products as fallbackProducts, type Product } from "@/lib/data/products";
+import { products as fallbackProducts, type Product, applyProductOverrides } from "@/lib/data/products";
 
 export default async function SiteLayout({
   children,
@@ -23,10 +23,12 @@ export default async function SiteLayout({
   const missingProducts = fallbackProducts.filter(p => !sanityProductSlugs.has(p.slug));
   const allProducts = [...fetchedProducts, ...missingProducts];
 
-  const products = allProducts.map((p) => ({
-    ...p,
-    slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
-  }));
+  const products = allProducts.map((p) =>
+    applyProductOverrides({
+      ...p,
+      slug: p.slug.replace(/\s+/g, "-").toLowerCase(),
+    }),
+  );
 
   return (
     <>
