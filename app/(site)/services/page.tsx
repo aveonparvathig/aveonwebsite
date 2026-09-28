@@ -40,10 +40,10 @@ export default function ServicesPage() {
             </Link>
           </div>
           <Image
-            src="/products/erp.webp"
+            src="/products/services-team.webp"
             alt="Software development services"
-            width={600}
-            height={400}
+            width={1192}
+            height={693}
             className="w-full rounded-2xl object-contain"
           />
         </div>

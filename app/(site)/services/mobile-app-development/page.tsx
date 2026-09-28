@@ -73,10 +73,10 @@ export default function MobileAppDevelopmentPage() {
             </div>
           </div>
           <Image
-            src="/products/mob.jpg"
+            src="/products/mobile-app-team.webp"
             alt="Mobile App Development"
-            width={600}
-            height={400}
+            width={1114}
+            height={731}
             className="w-full rounded-2xl object-cover"
           />
         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { products, getProduct, type Product } from "@/lib/data/products";
+import { products, getProduct, applyProductOverrides, type Product } from "@/lib/data/products";
 import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import ProductHeroImage from "@/components/sections/ProductHeroImage";
@@ -22,12 +22,20 @@ export function generateStaticParams() {
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
 
+/** Products whose hero heading reads "Aveon <name>" with a gradient brand word. */
+const brandedTitles: Record<string, string> = {
+  "university-erp": "University Management System",
+  "college-erp": "College Management System",
+  "school-erp": "School Management System",
+};
+
 async function loadProduct(slug: string): Promise<Product | undefined> {
-  return fetchOrFallback<Product | undefined>(
+  const product = await fetchOrFallback<Product | undefined>(
     productBySlugQuery,
     getProduct(slug),
     { slug },
   );
+  return product ? applyProductOverrides(product) : product;
 }
 
 /** Per-slug SEO overrides (title/description/keywords) for high-value pages. */
@@ -251,7 +259,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {product.tagline}
             </span>
             <h1 className="mt-5 text-4xl font-extrabold leading-tight text-navy-900 sm:text-5xl xl:text-6xl">
-              {product.title}
+              <>
+                <span className="block text-balance text-[28px] font-semibold leading-[1.12] tracking-tight text-navy-900 sm:text-[34px] xl:text-[40px]">
+                  <span className="bg-gradient-to-br from-primary-600 to-primary-700 bg-clip-text font-extrabold text-transparent">Aveon</span> {brandedTitles[product.slug] ?? product.title}
+                </span>
+                <span aria-hidden className="mt-5 block h-1.5 w-20 rounded-full bg-gradient-to-r from-primary-600 to-accent-500" />
+              </>
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-navy-600">
               {product.description}
@@ -274,11 +287,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
           {/* Right: product dashboard hero image */}
           <div className="relative w-full h-full">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-100/40 via-transparent to-accent-100/30 blur-2xl" />
-            <div className="relative w-full h-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
-              <ProductHeroImage slug={product.slug} title={product.title} />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-100/40 via-transparent to-accent-100/30 blur-2xl" />
+              <div className="relative w-full h-full overflow-hidden rounded-2xl border border-navy-100 shadow-2xl">
+                <ProductHeroImage slug={product.slug} title={product.title} />
+              </div>
             </div>
-          </div>
         </div>
       </section>
 

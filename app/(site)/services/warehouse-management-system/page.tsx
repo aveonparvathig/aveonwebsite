@@ -73,10 +73,10 @@ export default function WarehouseManagementPage() {
             </div>
           </div>
           <Image
-            src="/products/ware.jpg"
+            src="/products/warehouse-team.webp"
             alt="Warehouse Management System dashboard"
-            width={600}
-            height={400}
+            width={1168}
+            height={801}
             className="w-full rounded-2xl object-cover"
           />
         </div>

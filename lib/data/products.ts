@@ -220,6 +220,14 @@ export const products: Product[] = [
   },
 ];
 
+/** Wording fixes applied on top of CMS content, so they hold even when Sanity still has the old text. */
+export function applyProductOverrides<T extends { slug?: string; description?: string }>(product: T): T {
+  if (product?.slug === "university-erp" && product.description) {
+    return { ...product, description: product.description.replace(", placement,", ", Controller of Examinations,") };
+  }
+  return product;
+}
+
 export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
