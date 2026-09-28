@@ -43,10 +43,10 @@ export default function CareersPage() {
             </p>
           </div>
           <Image
-            src="/products/car.jpg"
+            src="/products/careers-hero.webp"
             alt="Careers at Aveon"
-            width={600}
-            height={400}
+            width={1140}
+            height={750}
             className="w-full rounded-2xl object-cover"
           />
         </div>

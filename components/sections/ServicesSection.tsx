@@ -21,10 +21,10 @@ export default function ServicesSection() {
             </p>
           </div>
           <Image
-            src="/products/home-services.webp"
+            src="/products/about-hero.webp"
             alt="Enterprise resource planning system dashboard"
-            width={1187}
-            height={803}
+            width={1076}
+            height={749}
             className="w-full animate-floaty"
           />
         </div>

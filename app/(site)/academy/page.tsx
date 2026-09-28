@@ -303,10 +303,10 @@ export default function AcademyPage() {
 
           <div className="relative">
             <Image
-              src="/products/acd.jpg"
+              src="/products/solutions-hero.webp"
               alt="Learners collaborating on a technology project at Aveon Academy"
-              width={600}
-              height={400}
+              width={1200}
+              height={896}
               priority
               className="w-full rounded-2xl object-cover shadow-[0_30px_70px_-30px_rgb(16_26_51_/_0.5)]"
             />
@@ -592,10 +592,10 @@ export default function AcademyPage() {
 
             <div className="rounded-[26px] bg-white p-3.5">
               <Image
-                src="/images/illo-monitor.avif"
+                src="/images/illo-online-class.png"
                 alt="Learners and mentors connecting on Aveon Academy"
-                width={1350}
-                height={900}
+                width={1088}
+                height={770}
                 className="w-full animate-floaty"
               />
             </div>

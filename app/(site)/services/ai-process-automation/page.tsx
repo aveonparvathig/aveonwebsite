@@ -75,10 +75,10 @@ export default function AiProcessAutomationPage() {
             </div>
           </div>
           <Image
-            src="/products/process.jpg"
+            src="/products/ai-automation-team.webp"
             alt="AI Process Automation dashboard"
-            width={600}
-            height={400}
+            width={1066}
+            height={675}
             className="w-full rounded-2xl object-cover"
           />
         </div>

@@ -44,10 +44,10 @@ export default function PartnersPage() {
             </p>
           </div>
           <Image
-            src="/products/part.jpg"
+            src="/products/partners-hero.webp"
             alt="Aveon Partners"
-            width={600}
-            height={400}
+            width={1220}
+            height={677}
             className="w-full rounded-2xl object-cover"
           />
         </div>

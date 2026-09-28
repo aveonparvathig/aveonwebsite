@@ -13,9 +13,9 @@ const slides: {
     {
       image: "/products/ums.webp",
       title: "One Platform.",
-      highlight: "Every Institution.",
+      highlight: "Your Entire Institution, Connected.",
       description:
-        "Connect and manage Schools, Colleges and Universities through one unified campus management platform.",
+        "Connect and manage Schools, Colleges and Universities, bringing Management, Staff, Students, Parents and Campus Services together in one unified platform.",
       caption: "UNIVERSITY ERP",
     },
     {
@@ -41,6 +41,14 @@ const slides: {
       description:
         "Unified school management for admissions, attendance, examinations and parent communication.",
       caption: "SCHOOL ERP",
+    },
+    {
+      image: "/products/ecosystem.webp",
+      title: "The Connected Campus",
+      highlight: "Starts Here.",
+      description:
+        "Unite management, staff, students, parents and campus services on one powerful platform.",
+      caption: "AVEON ECOSYSTEM",
     },
   ];
 
@@ -115,7 +123,7 @@ export default function Hero() {
         </div>
 
         {/* App-window frame with crossfading screenshots */}
-        <div className="relative min-h-[300px]">
+        <div className="relative mt-6 min-h-[300px] sm:mt-0">
           <div aria-hidden className="absolute inset-[6%_4%_10%_6%] rounded-[32px] bg-gradient-to-br from-primary-600/35 to-accent-500/25 blur-[36px]" />
 
           <div className="relative animate-floaty overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-[0_40px_90px_-30px_rgb(16_26_51_/_0.42)]">
@@ -141,7 +149,7 @@ export default function Hero() {
           </div>
 
           {/* Animated enrolment stat card */}
-          <div className="absolute -left-14 bottom-[-34px] z-[2] w-[206px] animate-floaty-slow rounded-[22px] border border-navy-900/7 bg-white px-4.5 py-4 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)]">
+          <div className="absolute left-0 bottom-[-22px] z-[2] w-[172px] animate-floaty-slow rounded-[22px] border border-navy-900/7 bg-white px-3.5 py-3.5 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)] sm:-left-14 sm:bottom-[-34px] sm:w-[206px] sm:px-4.5 sm:py-4">
             <div className="flex items-start justify-between gap-2.5">
               <span>
                 <span className="block text-[10.5px] font-extrabold uppercase tracking-[0.14em] text-[#8a97b4]">
@@ -209,9 +217,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="absolute -right-0.5 top-2 flex items-center gap-2.5 rounded-[18px] bg-navy-900 px-4 py-3 shadow-[0_24px_50px_-22px_rgb(16_26_51_/_0.6)]">
-            <span className="h-2.25 w-2.25 rounded-full bg-green-400" />
-            <span className="text-[12.5px] font-semibold text-white">One login · Twelve products</span>
+          <div className="absolute right-2 -top-4 flex items-center gap-2 rounded-2xl bg-navy-900 px-3 py-2 shadow-[0_24px_50px_-22px_rgb(16_26_51_/_0.6)] sm:-right-0.5 sm:top-2 sm:gap-2.5 sm:rounded-[18px] sm:px-4 sm:py-3">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-green-400 sm:h-2.25 sm:w-2.25" />
+            <span className="whitespace-nowrap text-[10.5px] font-semibold text-white sm:text-[12.5px]">One login · Twelve products</span>
           </div>
         </div>
       </div>

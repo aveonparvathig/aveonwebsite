@@ -177,12 +177,12 @@ export default function ClientTestimonials() {
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           <div className="rounded-2xl bg-gradient-to-br from-primary-50 to-primary-100/50 p-6 text-center">
-            <div className="text-2xl font-bold text-primary-600 sm:text-3xl">250+</div>
+            <div className="text-2xl font-bold text-primary-600 sm:text-3xl">240+</div>
             <p className="mt-2 text-sm font-medium text-navy-700">Institutions Served</p>
           </div>
           <div className="rounded-2xl bg-gradient-to-br from-accent-50 to-accent-100/50 p-6 text-center">
-            <div className="text-2xl font-bold text-accent-500 sm:text-3xl">5000+</div>
-            <p className="mt-2 text-sm font-medium text-navy-700">Active Users</p>
+            <div className="text-2xl font-bold text-accent-500 sm:text-3xl">99.9%</div>
+            <p className="mt-2 text-sm font-medium text-navy-700">Platform Uptime</p>
           </div>
           <div className="rounded-2xl bg-gradient-to-br from-green-50 to-green-100/50 p-6 text-center">
             <div className="text-2xl font-bold text-green-600 sm:text-3xl">4.8★</div>

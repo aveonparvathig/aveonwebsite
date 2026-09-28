@@ -41,10 +41,10 @@ export default function ProductsPage() {
             </p>
           </div>
           <Image
-            src="/products/erp-team.jpg"
+            src="/products/products-hero-team.webp"
             alt="Aveon Products"
-            width={1268}
-            height={740}
+            width={1408}
+            height={768}
             className="w-full rounded-2xl object-contain"
           />
         </div>

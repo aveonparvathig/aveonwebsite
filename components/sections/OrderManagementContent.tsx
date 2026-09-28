@@ -96,18 +96,6 @@ const OMS_DEEP: DeepModule[] = [
 ];
 
 /** Warehouse workflow — professional flow with icons and descriptions */
-const WAREHOUSE_FLOW_PROFESSIONAL = [
-  { step: 1, title: "Order Capture", icon: "📋", description: "Order is captured via omnichannel sources" },
-  { step: 2, title: "Validation", icon: "🔍", description: "Data is validated: customer details, pricing." },
-  { step: 3, title: "Confirmation", icon: "👍", description: "System confirms the order with details confirmed." },
-  { step: 4, title: "Inventory Check", icon: "📦", description: "Order details are present and sent to the fulfilment process" },
-  { step: 5, title: "Processing", icon: "⚙", description: "Items are picked, sorted and appropriate materials included." },
-  { step: 6, title: "Packing", icon: "📬", description: "Items are packed, sorted and appropriate materials included." },
-  { step: 7, title: "Dispatch", icon: "🚚", description: "Package is tagged, carrier and shipped out." },
-  { step: 8, title: "Delivery", icon: "🎯", description: "Package is tracked, in transit and nearing final delivery." },
-  { step: 9, title: "Completion", icon: "✓", description: "Order is successfully completed." }
-];
-
 /** Order workflow — 9 stages across 4 phases, rendered as a staircase. */
 const OMS_JOURNEY: { label: string; range: string; steps: string[] }[] = [
   { label: "Capture", range: "01–03", steps: ["Capture", "Validate", "Confirm"] },
@@ -536,78 +524,6 @@ export default function OrderManagementContent() {
                   </div>
                 </div>
               </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Warehouse Workflow — Professional Design with Icons ── */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 border-t border-navy-100 bg-white">
-        <div className="mx-auto max-w-5xl">
-          {/* Heading and subtitle */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">The Warehouse Workflow</h2>
-            <p className="mt-6 text-lg text-primary-600 font-medium">From inbound to outbound, every stage connected on one platform.</p>
-          </div>
-
-          {/* Desktop flow with circles and line */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              {/* Connecting line background */}
-              <div className="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary-300 via-primary-400 to-emerald-400" style={{ zIndex: 0 }} />
-
-              {/* Steps container */}
-              <div className="relative flex items-start justify-between gap-3 pb-12" style={{ zIndex: 1 }}>
-                {WAREHOUSE_FLOW_PROFESSIONAL.map((item) => (
-                  <div key={`warehouse-${item.step}`} className="flex flex-col items-center flex-1">
-                    {/* Circle with icon and number */}
-                    <div className={`relative w-24 h-24 rounded-full flex items-center justify-center font-bold text-2xl shadow-lg border-4 mb-6 transition-all ${
-                      item.step === 9
-                        ? 'bg-emerald-50 border-emerald-400 text-emerald-700'
-                        : 'bg-primary-50 border-primary-400 text-primary-700 hover:shadow-xl'
-                    }`}>
-                      <span>{item.icon}</span>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold">{item.step}</div>
-                    </div>
-
-                    {/* Title and description */}
-                    <div className="text-center">
-                      <h3 className="text-sm font-bold text-navy-900 mb-2">{item.title}</h3>
-                      <p className="text-xs text-navy-600 leading-relaxed max-w-[100px]">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile vertical flow */}
-          <div className="lg:hidden space-y-6">
-            {WAREHOUSE_FLOW_PROFESSIONAL.map((item, i) => (
-              <div key={`warehouse-mobile-${item.step}`}>
-                <div className="flex gap-4">
-                  {/* Circle with icon and number */}
-                  <div className="flex flex-col items-center flex-shrink-0">
-                    <div className={`relative w-20 h-20 rounded-full flex items-center justify-center font-bold text-lg shadow-md border-4 transition-all ${
-                      item.step === 9
-                        ? 'bg-emerald-50 border-emerald-400 text-emerald-700'
-                        : 'bg-primary-50 border-primary-400 text-primary-700'
-                    }`}>
-                      <span>{item.icon}</span>
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-xs font-bold">{item.step}</div>
-                    </div>
-                    {i < WAREHOUSE_FLOW_PROFESSIONAL.length - 1 && (
-                      <div className="w-1 h-8 bg-gradient-to-b from-primary-300 to-primary-200 mt-2" />
-                    )}
-                  </div>
-
-                  {/* Title and description */}
-                  <div className="flex-1 pt-2">
-                    <h3 className="font-bold text-navy-900">{item.title}</h3>
-                    <p className="text-sm text-navy-600 mt-1">{item.description}</p>
-                  </div>
-                </div>
-              </div>
             ))}
           </div>
         </div>

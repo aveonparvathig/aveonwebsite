@@ -56,10 +56,10 @@ export default async function BlogPage() {
             </p>
           </div>
           <Image
-            src="/products/blog.jpg"
+            src="/products/blog-hero.webp"
             alt="Aveon Blog"
-            width={600}
-            height={400}
+            width={1106}
+            height={694}
             className="w-full rounded-2xl object-cover"
           />
         </div>
