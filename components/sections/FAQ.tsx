@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: "Can we start with one product and add more later?",
-    a: "Yes. All nine products share one database and one login, so you can start with, say, College ERP and add COE, Library or HRM later without any data migration between them.",
+    a: "Yes. All fourteen products share one database and one login, so you can start with, say, College ERP and add COE, Library or HRM later without any data migration between them.",
   },
   {
     q: "Is our data migrated from existing software?",

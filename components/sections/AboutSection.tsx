@@ -3,7 +3,7 @@ import AboutIllustration from "@/components/sections/AboutIllustration";
 
 export default function AboutSection() {
   return (
-    <section className="mx-auto max-w-[1320px] px-4 py-12 sm:px-6 lg:px-10 lg:py-14">
+    <section className="mx-auto max-w-[1320px] px-4 pt-12 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pt-14 lg:pb-8">
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-15">
         <div>
           <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
@@ -18,6 +18,9 @@ export default function AboutSection() {
             Aveon InfoTech delivers innovative technology solutions that simplify business
             operations, improve efficiency and help organizations grow. We build reliable
             digital solutions that solve real-world challenges for modern organizations.
+          </p>
+          <p className="mt-3 max-w-[520px] text-[17px] leading-[1.72] text-navy-700">
+            Our software architecture and design are built to Atlanta, USA standards, bringing global engineering quality to every solution we build.
           </p>
 
           <Link

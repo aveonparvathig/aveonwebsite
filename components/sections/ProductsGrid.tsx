@@ -31,6 +31,12 @@ export default async function ProductsGrid() {
     }),
   );
 
+  // Always display in the sequence defined locally, regardless of whether a
+  // given product's data came from Sanity or the fallback list, so CMS drift
+  // never reorders the grid.
+  const orderIndex = new Map(fallbackProducts.map((p, i) => [p.slug, i]));
+  products.sort((a, b) => (orderIndex.get(a.slug) ?? 999) - (orderIndex.get(b.slug) ?? 999));
+
   const featured = products.find((p) => p.slug === FEATURED_SLUG) ?? products[0];
   const rest = products.filter((p) => p.slug !== featured?.slug);
 
@@ -45,7 +51,7 @@ export default async function ProductsGrid() {
             One Platform for Every Campus Need
           </h2>
           <p className="mt-4 text-[17px] leading-relaxed text-navy-700">
-            Twelve integrated products covering academics, administration, finance and campus
+            Fourteen integrated products covering academics, administration, finance and campus
             life: use them together or start with one.
           </p>
         </div>

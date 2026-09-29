@@ -219,7 +219,7 @@ export default function Hero() {
 
           <div className="absolute right-2 -top-4 flex items-center gap-2 rounded-2xl bg-navy-900 px-3 py-2 shadow-[0_24px_50px_-22px_rgb(16_26_51_/_0.6)] sm:-right-0.5 sm:top-2 sm:gap-2.5 sm:rounded-[18px] sm:px-4 sm:py-3">
             <span className="h-2 w-2 shrink-0 rounded-full bg-green-400 sm:h-2.25 sm:w-2.25" />
-            <span className="whitespace-nowrap text-[10.5px] font-semibold text-white sm:text-[12.5px]">One login · Twelve products</span>
+            <span className="whitespace-nowrap text-[10.5px] font-semibold text-white sm:text-[12.5px]">One login · Fourteen products</span>
           </div>
         </div>
       </div>

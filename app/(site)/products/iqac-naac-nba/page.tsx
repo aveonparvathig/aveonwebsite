@@ -15,14 +15,6 @@ export const metadata: Metadata = {
   ],
 };
 
-const nbaGroups = [
-  { name: "Engineering", levels: ["UG Tier I (WA)", "UG Tier II", "PG", "Diploma"] },
-  { name: "Management", levels: ["PG", "Postgraduate Diploma"] },
-  { name: "Pharmacy", levels: ["UG", "PG", "Diploma"] },
-];
-
-const nbaSingles = ["MCA", "Architecture", "Hospitality & Tourism Mgmt"];
-
 export default function IqacNaacNbaPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -97,158 +89,121 @@ export default function IqacNaacNbaPage() {
               Comprehensive Accreditation Management
             </h2>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: "📋",
-                title: "IQAC Coordination",
-                desc: "Manage IQAC cell activities, meetings, action plans and institutional quality monitoring seamlessly.",
+                tag: "Quality Cell",
+                title: "IQAC",
+                desc: "Manage IQAC cell activities, meetings, action plans and Annual Quality Assurance Reports (AQAR) seamlessly.",
+                href: "/products/iqac-naac-nba/iqac",
+                from: "from-rose-500",
+                to: "to-rose-700",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
               },
               {
-                icon: "⭐",
-                title: "NAAC Accreditation",
-                desc: "Complete support for NAAC accreditation framework with all 10 criteria: curriculum, teaching, research, student support, infrastructure, governance, values, finance, alumni and quality assurance.",
+                tag: "10 Criteria",
+                title: "NAAC",
+                desc: "Complete support for NAAC accreditation across all 10 criteria, from curriculum and teaching to governance and quality assurance.",
+                href: "/products/iqac-naac-nba/naac",
+                from: "from-purple-500",
+                to: "to-purple-700",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                  </svg>
+                ),
               },
               {
-                icon: "🏆",
-                title: "NBA Accreditation",
-                desc: "Specialized support for NBA accreditation of engineering, architecture and technical programs.",
+                tag: "17 Goals",
+                title: "UNSDG",
+                desc: "Map programmes, research and outreach to all 17 UN Sustainable Development Goals and report your contribution with ease.",
+                href: "/products/iqac-naac-nba/unsdg",
+                from: "from-emerald-500",
+                to: "to-emerald-700",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zM3.6 9h16.8M3.6 15h16.8M11.5 3a17 17 0 000 18M12.5 3a17 17 0 010 18" />
+                  </svg>
+                ),
               },
               {
-                icon: "📊",
-                title: "Quality Metrics",
-                desc: "Track 50+ quality indicators across all institutional dimensions with real-time dashboards.",
+                tag: "Ranking",
+                title: "NIRF",
+                desc: "Prepare and submit accurate NIRF data across teaching, research, outreach and perception with automated data collection.",
+                href: "/products/iqac-naac-nba/nirf",
+                from: "from-orange-500",
+                to: "to-orange-700",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.42 9.71 2.25 12 2.25c2.291 0 4.545.17 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35" />
+                  </svg>
+                ),
               },
               {
-                icon: "💬",
-                title: "Stakeholder Feedback",
-                desc: "Collect and analyze feedback from students, faculty, staff and industry through surveys.",
+                tag: "Accreditation",
+                title: "NBA",
+                desc: "Specialised support for NBA accreditation of engineering, management, pharmacy and other technical programmes.",
+                href: "/products/iqac-naac-nba/nba",
+                from: "from-primary-500",
+                to: "to-primary-700",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443" />
+                  </svg>
+                ),
               },
               {
-                icon: "📄",
-                title: "Accreditation Reports",
-                desc: "Auto-generate comprehensive accreditation reports with data validation and audit trails.",
+                tag: "Compliance",
+                title: "AICTE",
+                desc: "Stay compliant with AICTE approval requirements, mandatory disclosures and annual reporting, all from one dashboard.",
+                href: "/products/iqac-naac-nba/aicte",
+                from: "from-indigo-500",
+                to: "to-indigo-700",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                ),
               },
-            ].map((feature) => (
-              <div key={feature.title} className="rounded-lg border border-navy-900/10 p-6 hover:border-purple-600/30 hover:shadow-lg">
-                <div className="mb-3 text-3xl">{feature.icon}</div>
-                <h3 className="mb-2 font-bold text-navy-900">{feature.title}</h3>
-                <p className="text-sm text-navy-700">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* NAAC 10 Criteria */}
-      <section className="bg-purple-50 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <h2 className="mb-8 text-[clamp(28px,4vw,40px)] font-extrabold text-navy-900">
-            NAAC 10-Criteria Framework Support
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { num: "1", title: "Curriculum Design & Development", features: ["Academic programs", "Learning outcomes", "Industry alignment"] },
-              { num: "2", title: "Teaching-Learning & Evaluation", features: ["Faculty data", "Teaching methods", "Assessment records"] },
-              { num: "3", title: "Research, Innovations & Extension", features: ["Research projects", "Patents & publications", "Community engagement"] },
-              { num: "4", title: "Student Support & Progression", features: ["Scholarships", "Student activities", "Career guidance"] },
-              { num: "5", title: "Infrastructure & Learning Resources", features: ["Building details", "Equipment inventory", "Digital resources"] },
-              { num: "6", title: "Governance, Leadership & Management", features: ["Policies & procedures", "Admin data", "Staff details"] },
-              { num: "7", title: "Institutional Values & Social Responsibility", features: ["Community service", "Green initiatives", "Social programs"] },
-              { num: "8", title: "Financial Resources & Management", features: ["Budget planning", "Grants & funding", "Audit records"] },
-              { num: "9", title: "Alumni & Stakeholder Engagement", features: ["Alumni network", "Feedback surveys", "Employer connect"] },
-              { num: "10", title: "Internal Quality Assurance", features: ["IQAC meetings", "Best practices", "Continuous improvement"] },
-            ].map((criteria) => (
-              <div key={criteria.num} className="rounded-lg bg-white p-6">
-                <div className="mb-2 inline-block rounded-full bg-purple-600 px-3 py-1 text-sm font-bold text-white">
-                  Criterion {criteria.num}
+            ].map((feature) => {
+              const cardClass =
+                "group flex flex-col rounded-[26px] border border-navy-900/8 bg-white p-6.5 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover";
+              const content = (
+                <>
+                  <div className="flex items-start justify-between gap-3">
+                    <span className={`flex h-12.5 w-12.5 items-center justify-center rounded-[18px] bg-gradient-to-br ${feature.from} ${feature.to} text-white`}>
+                      {feature.icon}
+                    </span>
+                    <span className="rounded-full bg-navy-50 px-3 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.1em] text-navy-600">
+                      {feature.tag}
+                    </span>
+                  </div>
+                  <h3 className="mt-5 text-[19.5px] font-extrabold text-navy-900">{feature.title}</h3>
+                  <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-navy-700">{feature.desc}</p>
+                  {feature.href && (
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary-600">
+                      Learn more
+                      <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  )}
+                </>
+              );
+              return feature.href ? (
+                <Link key={feature.title} href={feature.href} className={cardClass}>
+                  {content}
+                </Link>
+              ) : (
+                <div key={feature.title} className={cardClass}>
+                  {content}
                 </div>
-                <h3 className="mt-3 mb-2 font-bold text-navy-900">{criteria.title}</h3>
-                <ul className="space-y-1 text-sm text-navy-700">
-                  {criteria.features.map((f) => (
-                    <li key={f}>• {f}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* NBA */}
-      <section className="bg-gradient-to-b from-white to-navy-50 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <div className="mx-auto mb-10 max-w-[760px] text-center">
-            <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
-              NBA
-            </span>
-            <h2 className="mt-4 text-[clamp(28px,4vw,44px)] font-extrabold leading-tight text-navy-900">
-              Ready for NBA Accreditation
-            </h2>
-            <p className="mt-4 text-[16.5px] leading-relaxed text-navy-700">
-              Prepare Self Assessment Reports and track Program Outcomes for every programme the National Board of Accreditation (NBA) covers.
-            </p>
-          </div>
-
-          <div className="mx-auto max-w-[1000px] overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-[0_26px_60px_-34px_rgb(29_111_242_/_0.4)]">
-            <Image
-              src="/products/nba-banner.png"
-              alt="National Board of Accreditation: Promoting international quality standards for technical education in India"
-              width={1180}
-              height={178}
-              className="h-auto w-full"
-            />
-            <div className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8 lg:grid-cols-3">
-              {nbaGroups.map((g) => (
-                <div key={g.name} className="overflow-hidden rounded-xl border border-navy-900/8">
-                  <div className="bg-navy-900 px-4 py-3 text-[15px] font-bold text-white">{g.name}</div>
-                  <ul className="space-y-2.5 px-4 py-4">
-                    {g.levels.map((l) => (
-                      <li key={l} className="flex items-center gap-2.5 text-[14.5px] font-medium text-navy-800">
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-500 text-white">
-                          <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} aria-hidden>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                          </svg>
-                        </span>
-                        {l}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-              {nbaSingles.map((n) => (
-                <div key={n} className="flex items-center rounded-xl bg-navy-900 px-4 py-3 text-[15px] font-bold text-white sm:min-h-[52px]">
-                  {n}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* UN SDG */}
-      <section className="py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <div className="mx-auto mb-10 max-w-[760px] text-center">
-            <span className="inline-block rounded-full bg-purple-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-purple-700">
-              UNSDG
-            </span>
-            <h2 className="mt-4 text-[clamp(28px,4vw,44px)] font-extrabold leading-tight text-navy-900">
-              Aligned with the UN Sustainable Development Goals
-            </h2>
-            <p className="mt-4 text-[16.5px] leading-relaxed text-navy-700">
-              Map your institution&apos;s programmes, research and outreach to all 17 UN Sustainable Development Goals and report your contribution with ease.
-            </p>
-          </div>
-
-          <div className="mx-auto max-w-[1000px] overflow-hidden rounded-2xl bg-white p-2 shadow-[0_26px_60px_-34px_rgb(88_28_135_/_0.4)] sm:p-3">
-            <Image
-              src="/products/unsdg-goals.png"
-              alt="The 17 United Nations Sustainable Development Goals"
-              width={1714}
-              height={854}
-              className="h-auto w-full rounded-xl"
-            />
+              );
+            })}
           </div>
         </div>
       </section>

@@ -226,31 +226,31 @@ export default function Navigation({ products }: { products?: Product[] }) {
             aria-hidden
           />
           <aside className="relative flex h-full w-[min(380px,90vw)] flex-col rounded-l-[28px] bg-white shadow-[-30px_0_70px_-20px_rgb(16_26_51_/_0.45)] [animation:drawerIn_260ms_cubic-bezier(0.22,0.61,0.36,1)]">
-            <div className="flex items-center justify-between border-b border-navy-900/8 px-5 py-4">
-              <Image src="/images/aveon-logo-dark.svg" alt="Aveon Infotech" width={140} height={29} className="h-7 w-auto" />
+            <div className="flex items-center justify-between border-b border-navy-900/8 px-5 py-3">
+              <Image src="/images/aveon-logo-dark.svg" alt="Aveon Infotech" width={140} height={29} className="h-6.5 w-auto" />
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu"
-                className="flex h-11 w-11 items-center justify-center rounded-2xl border border-navy-900/10 bg-navy-50 text-navy-900"
+                className="flex h-9.5 w-9.5 items-center justify-center rounded-2xl border border-navy-900/10 bg-navy-50 text-navy-900"
               >
-                <svg className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-4 pb-7 pt-3">
+            <div className="flex-1 overflow-y-auto px-4 pb-5 pt-2">
               {items.map((item) => {
                 const active = isActive(item);
                 const flat = item.groups?.flatMap((g) => g.items) ?? [];
                 return (
-                  <div key={item.label} className="mb-1.5">
+                  <div key={item.label} className="mb-0.5">
                     <div className={`flex items-center justify-between gap-2 rounded-2xl ${active ? "bg-primary-50" : ""}`}>
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className={`flex min-h-12 flex-1 items-center py-3.5 px-3.5 text-[16.5px] font-bold ${active ? "text-primary-600" : "text-navy-900"}`}
+                        className={`flex min-h-10 flex-1 items-center py-2.5 px-3.5 text-[15.5px] font-bold ${active ? "text-primary-600" : "text-navy-900"}`}
                       >
                         {item.label}
                       </Link>
@@ -259,7 +259,7 @@ export default function Navigation({ products }: { products?: Product[] }) {
                           type="button"
                           aria-label={`Toggle ${item.label} submenu`}
                           onClick={() => setExpanded(expanded === item.label ? null : item.label)}
-                          className="flex h-12 w-12 items-center justify-center rounded-2xl text-navy-600"
+                          className="flex h-10 w-10 items-center justify-center rounded-2xl text-navy-600"
                         >
                           <Chevron open={expanded === item.label} />
                         </button>
@@ -267,7 +267,7 @@ export default function Navigation({ products }: { products?: Product[] }) {
                     </div>
 
                     {expanded === item.label && flat.length > 0 && (
-                      <div className="animate-dropdown mb-2.5 mt-1.5 flex flex-col gap-0.5 rounded-3xl bg-navy-50 p-2">
+                      <div className="animate-dropdown mb-1.5 mt-1 flex flex-col gap-0.5 rounded-3xl bg-navy-50 p-1.5">
                         {flat.map((child) => {
                           const slug = child.href.split("/").pop() ?? "";
                           return (
@@ -275,18 +275,18 @@ export default function Navigation({ products }: { products?: Product[] }) {
                               key={`${child.href}-${child.label}`}
                               href={child.href}
                               onClick={() => setMobileOpen(false)}
-                              className="flex min-h-12 items-center gap-3 rounded-xl px-2.5 py-2.5 hover:bg-white"
+                              className="flex min-h-9 items-center gap-2.5 rounded-xl px-2.5 py-1.5 hover:bg-white"
                             >
-                              <span className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-xl bg-white p-1.5 text-primary-600">
+                              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white p-1.5 text-primary-600">
                                 {child.icon ? (
                                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d={child.icon} />
                                   </svg>
                                 ) : (
-                                  <ProductIcon slug={slug} className="h-4 w-4" />
+                                  <ProductIcon slug={slug} className="h-3.5 w-3.5" />
                                 )}
                               </span>
-                              <span className="text-[15px] font-semibold text-navy-800">{child.label}</span>
+                              <span className="text-[14px] font-semibold text-navy-800">{child.label}</span>
                             </Link>
                           );
                         })}
@@ -299,12 +299,12 @@ export default function Navigation({ products }: { products?: Product[] }) {
               <Link
                 href="/contact#demo"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent-500 px-5 text-[15px] font-bold text-white shadow-[0_14px_30px_-12px_rgb(249_115_22_/_0.8)]"
+                className="mt-3 flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-accent-500 px-5 text-[15px] font-bold text-white shadow-[0_14px_30px_-12px_rgb(249_115_22_/_0.8)]"
               >
                 Get a DEMO →
               </Link>
 
-              <div className="mt-6 flex flex-col gap-2 text-sm text-navy-600">
+              <div className="mt-4 flex flex-col gap-1 text-sm text-navy-600">
                 <a href={`tel:${"+918754006483"}`}>+91 87540 06483</a>
                 <a href="mailto:contact@aveoninfotech.com">contact@aveoninfotech.com</a>
               </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ProductIcon from "@/components/ui/ProductIcon";
 
 interface ProductHeroImageProps {
   slug: string;
@@ -16,6 +17,8 @@ const productImages: Record<string, string> = {
   "hostel-mess": "/products/hostel mess erp.png",
   "coe": "/products/c.png",
   "inventory-management": "/products/inventory-dashboard.webp",
+  "fees-management": "/products/fees.png",
+  "online-examination": "/products/online-examination.png",
 };
 
 export default function ProductHeroImage({ slug, title }: ProductHeroImageProps) {
@@ -23,8 +26,11 @@ export default function ProductHeroImage({ slug, title }: ProductHeroImageProps)
 
   if (!imagePath) {
     return (
-      <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-        <p className="text-center text-gray-500">Dashboard image not found</p>
+      <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-primary-50 to-primary-100 p-10">
+        <span className="flex h-20 w-20 items-center justify-center rounded-[22px] bg-white text-primary-600 shadow-[0_20px_40px_-18px_rgb(29_111_242_/_0.5)]">
+          <ProductIcon slug={slug} className="h-10 w-10" />
+        </span>
+        <p className="text-center text-lg font-bold text-navy-900">{title}</p>
       </div>
     );
   }
