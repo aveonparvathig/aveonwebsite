@@ -47,10 +47,10 @@ export default function ContactPage() {
             </p>
           </div>
           <Image
-            src="/products/contact-hero.webp"
+            src="/products/contact-hero2.webp"
             alt="Contact Aveon"
             width={2000}
-            height={1681}
+            height={1333}
             className="w-full rounded-2xl object-cover"
           />
         </div>
