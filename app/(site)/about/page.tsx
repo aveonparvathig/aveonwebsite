@@ -13,38 +13,20 @@ const apps = [
   {
     name: "Aveon Student App",
     text: "Attendance, timetable, fees, exams and results, all in one app for students and parents.",
-    from: "from-primary-500",
-    to: "to-primary-700",
     glow: "bg-primary-600/20",
-    icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443" />
-      </svg>
-    ),
+    icon: "/products/app-icon-student.png",
   },
   {
     name: "Aveon CMS App",
     text: "Attendance, academics, communication and administration for faculty and staff on the move.",
-    from: "from-violet-500",
-    to: "to-violet-700",
     glow: "bg-violet-600/20",
-    icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" />
-      </svg>
-    ),
+    icon: "/products/app-icon-cms.png",
   },
   {
     name: "Canteen App",
     text: "Digital ordering, prepaid wallet and menu management for campus canteens and cafeterias.",
-    from: "from-accent-500",
-    to: "to-accent-600",
     glow: "bg-accent-500/20",
-    icon: (
-      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
-      </svg>
-    ),
+    icon: "/products/app-icon-canteen.png",
   },
 ];
 
@@ -131,7 +113,7 @@ export default function AboutPage() {
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-primary-600/20 blur-[120px]" />
         <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-accent-500/15 blur-[120px]" />
 
-        <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-20">
+        <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 pt-14 pb-8 sm:px-6 sm:pb-10 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:pt-20 lg:pb-10">
           <div>
             <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
               About Us
@@ -156,7 +138,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pt-10 pb-20 sm:px-6 sm:pt-12 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-wider text-primary-600">
@@ -232,8 +214,8 @@ export default function AboutPage() {
               >
                 <span aria-hidden className={`pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full ${a.glow} blur-2xl`} />
 
-                <span className={`relative flex h-14 w-14 items-center justify-center rounded-[18px] bg-gradient-to-br ${a.from} ${a.to} text-white shadow-[0_14px_28px_-12px_rgb(16_26_51_/_0.45)]`}>
-                  {a.icon}
+                <span className="relative flex h-14 w-14 items-center justify-center rounded-[18px] bg-white shadow-[0_14px_28px_-12px_rgb(16_26_51_/_0.3)] ring-1 ring-navy-900/8">
+                  <Image src={a.icon} alt={`${a.name} icon`} width={40} height={40} className="h-9 w-9 object-contain" />
                 </span>
 
                 <h3 className="relative mt-5 text-[19px] font-extrabold text-navy-900">{a.name}</h3>

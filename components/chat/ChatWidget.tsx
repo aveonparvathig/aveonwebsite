@@ -185,7 +185,7 @@ export default function ChatWidget() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="animate-fade-in absolute bottom-16 right-0 mb-1 w-56 rounded-2xl rounded-br-sm border border-navy-100 bg-white p-3.5 text-left text-sm text-navy-700 shadow-[0_20px_50px_-20px_rgb(16_26_51_/_0.4)]"
+          className="animate-fade-in absolute bottom-16 right-0 mb-1 hidden w-56 rounded-2xl rounded-br-sm border border-navy-100 bg-white p-3.5 text-left text-sm text-navy-700 shadow-[0_20px_50px_-20px_rgb(16_26_51_/_0.4)] sm:block"
         >
           <span className="font-semibold text-navy-900">Need help choosing? 👋</span>
           <span className="mt-0.5 block text-navy-600">Ask me anything or book a quick demo.</span>

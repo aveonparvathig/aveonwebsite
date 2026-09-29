@@ -45,7 +45,7 @@ const bottomRowLogos = logos.slice(midpoint);
 
 export default function ClientLogosCarousel() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12">
       {/* Ambient glows */}
       <div aria-hidden className="pointer-events-none absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-primary-200/20 blur-[100px]" />
       <div aria-hidden className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-primary-100/15 blur-[120px]" />
