@@ -43,7 +43,7 @@ export default function OBEComplianceSection() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24">
+    <section className="relative pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
         {/* Header */}
         <div className="mb-12 text-center sm:mb-16">

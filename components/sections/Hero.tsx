@@ -11,6 +11,14 @@ const slides: {
   caption: string;
 }[] = [
     {
+      image: "/products/ecosystem.webp",
+      title: "The Connected Campus",
+      highlight: "Starts Here.",
+      description:
+        "Unite management, staff, students, parents and campus services on one powerful platform, for 100% paperless management.",
+      caption: "AVEON ECOSYSTEM",
+    },
+    {
       image: "/products/ums.webp",
       title: "One Platform.",
       highlight: "Your Entire Institution, Connected.",
@@ -42,14 +50,6 @@ const slides: {
         "Unified school management for admissions, attendance, examinations and parent communication.",
       caption: "SCHOOL ERP",
     },
-    {
-      image: "/products/ecosystem.webp",
-      title: "The Connected Campus",
-      highlight: "Starts Here.",
-      description:
-        "Unite management, staff, students, parents and campus services on one powerful platform.",
-      caption: "AVEON ECOSYSTEM",
-    },
   ];
 
 export default function Hero() {
@@ -67,7 +67,7 @@ export default function Hero() {
       <div aria-hidden className="pointer-events-none absolute -right-32 -top-44 h-[520px] w-[520px] rounded-full bg-primary-600/20 blur-[120px]" />
       <div aria-hidden className="pointer-events-none absolute -bottom-40 -left-36 h-[440px] w-[440px] rounded-full bg-accent-500/15 blur-[120px]" />
 
-      <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 pb-12 pt-8 sm:px-6 lg:grid-cols-2 lg:gap-13 lg:px-10 lg:pb-16 lg:pt-13">
+      <div className="relative mx-auto grid max-w-[1380px] items-center gap-8 px-4 pb-12 pt-8 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-13 lg:px-10 lg:pb-16 lg:pt-13">
         <div>
           <span className="inline-flex items-center gap-2.5 rounded-full border border-primary-600/20 bg-white py-2 pl-3 pr-4 text-[11.5px] font-extrabold uppercase tracking-[0.12em] text-primary-700 shadow-[0_8px_20px_-12px_rgb(29_111_242_/_0.5)]">
             <span className="relative flex h-2.25 w-2.25">
@@ -149,25 +149,25 @@ export default function Hero() {
           </div>
 
           {/* Animated enrolment stat card */}
-          <div className="absolute left-0 bottom-[-22px] z-[2] w-[172px] animate-floaty-slow rounded-[22px] border border-navy-900/7 bg-white px-3.5 py-3.5 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)] sm:-left-14 sm:bottom-[-34px] sm:w-[206px] sm:px-4.5 sm:py-4">
-            <div className="flex items-start justify-between gap-2.5">
+          <div className="absolute left-0 bottom-[-14px] z-[2] w-[118px] animate-floaty-slow rounded-[16px] border border-navy-900/7 bg-white px-2.5 py-2.5 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)] sm:-left-14 sm:bottom-[-34px] sm:w-[206px] sm:rounded-[22px] sm:px-4.5 sm:py-4">
+            <div className="flex items-start justify-between gap-1.5 sm:gap-2.5">
               <span>
-                <span className="block text-[10.5px] font-extrabold uppercase tracking-[0.14em] text-[#8a97b4]">
+                <span className="block text-[7.5px] font-extrabold uppercase tracking-[0.1em] text-[#8a97b4] sm:text-[10.5px] sm:tracking-[0.14em]">
                   Enrolment
                 </span>
-                <span className="mt-1 block animate-count-pulse text-[22px] font-extrabold tracking-[-0.02em] text-navy-900">
+                <span className="mt-0.5 block animate-count-pulse text-[14px] font-extrabold tracking-[-0.02em] text-navy-900 sm:mt-1 sm:text-[22px]">
                   1M+
                 </span>
               </span>
-              <span className="inline-flex items-center gap-0.5 rounded-full bg-[#ecfdf3] px-2 py-1 text-[11px] font-extrabold text-[#067647]">
-                <svg className="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <span className="inline-flex items-center gap-0.5 rounded-full bg-[#ecfdf3] px-1.5 py-0.5 text-[8px] font-extrabold text-[#067647] sm:px-2 sm:py-1 sm:text-[11px]">
+                <svg className="h-2 w-2 sm:h-2.5 sm:w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5V4.5M12 4.5L5.25 11.25M12 4.5l6.75 6.75" />
                 </svg>
                 18%
               </span>
             </div>
 
-            <svg viewBox="0 0 200 62" width="100%" height="52" className="mt-2.5 block overflow-visible" aria-hidden>
+            <svg viewBox="0 0 200 62" width="100%" height="30" className="mt-1.5 block overflow-visible sm:mt-2.5 sm:h-[52px]" aria-hidden>
               <defs>
                 <linearGradient id="heroSparkFill" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#1d6ff2" stopOpacity="0.26" />
@@ -199,7 +199,7 @@ export default function Hero() {
               />
             </svg>
 
-            <div className="mt-3 flex h-[34px] items-end gap-1.5">
+            <div className="mt-1.5 flex h-[20px] items-end gap-1 sm:mt-3 sm:h-[34px] sm:gap-1.5">
               {[
                 { h: "38%", bg: "bg-[#d9e8ff]", d: "0s" },
                 { h: "62%", bg: "bg-[#bcd7ff]", d: "0.12s" },

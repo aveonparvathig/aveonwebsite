@@ -371,7 +371,7 @@ export default function AcademyPage() {
 
       {/* PROGRAMS */}
       <section id="programs" className="scroll-mt-28 bg-gradient-to-b from-navy-50 to-white">
-        <div className={`${container} py-14 lg:py-18`}>
+        <div className={`${container} pt-9 pb-11 sm:pt-10 sm:pb-12 lg:pt-11 lg:pb-14`}>
           <SectionHead
             label="Our Courses"
             title="Explore Our Technology Programs"
@@ -458,7 +458,7 @@ export default function AcademyPage() {
       </section>
 
       {/* LEARN BY BUILDING */}
-      <section className={`${container} py-14 lg:py-18`}>
+      <section className={`${container} pt-9 pb-11 sm:pt-10 sm:pb-12 lg:pt-11 lg:pb-14`}>
         <SectionHead title="Don't Just Learn. Build." text="Turn concepts into practical experience through real-world projects." />
         <div className="relative mt-12">
           <div aria-hidden className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-0.5 bg-gradient-to-r from-primary-200 via-primary-500 to-primary-200 lg:block" />
@@ -478,7 +478,7 @@ export default function AcademyPage() {
 
       {/* REAL PROJECTS */}
       <section className="bg-navy-50">
-        <div className={`${container} py-14 lg:py-18`}>
+        <div className={`${container} pt-9 pb-11 sm:pt-10 sm:pb-12 lg:pt-11 lg:pb-14`}>
           <SectionHead label="Projects" title="Build Projects That Feel Like Real Products" />
           <div className="mt-11 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {projects.map(({ title, text, tags, Mock }) => (
@@ -508,7 +508,7 @@ export default function AcademyPage() {
       </section>
 
       {/* WHY AVEON ACADEMY */}
-      <section className={`${container} py-14 lg:py-18`}>
+      <section className={`${container} pt-9 pb-11 sm:pt-10 sm:pb-12 lg:pt-11 lg:pb-14`}>
         <SectionHead label="Why Aveon Academy" title="Why Learn With Aveon Academy?" />
         <div className="mt-11 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {whyFeatures.map((f) => (
@@ -522,7 +522,7 @@ export default function AcademyPage() {
       </section>
 
       {/* TECHNOLOGY */}
-      <section className={`${container} py-14 lg:py-18`}>
+      <section className={`${container} pt-9 pb-11 sm:pt-10 sm:pb-12 lg:pt-11 lg:pb-14`}>
         <SectionHead label="Technology" title="Learn With Modern Technology" />
         <div className="mx-auto mt-10 grid max-w-[1000px] grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4 lg:grid-cols-6">
           {techStack.map((t) => (
@@ -533,7 +533,7 @@ export default function AcademyPage() {
 
       {/* STUDENT TESTIMONIALS */}
       <section className="bg-gradient-to-b from-navy-50 to-white">
-        <div className={`${container} py-14 lg:py-18`}>
+        <div className={`${container} pt-9 pb-11 sm:pt-10 sm:pb-12 lg:pt-11 lg:pb-14`}>
           <SectionHead label="Student Voices" title="What Our Learners Say" />
           <div className="mt-11 grid gap-5 md:grid-cols-3">
             {testimonials.map((t) => (

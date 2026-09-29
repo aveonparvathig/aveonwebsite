@@ -159,7 +159,7 @@ function MarqueeRow({ items }: { items: ClientTestimonial[] }) {
 export default function ClientTestimonials() {
   return (
     <section className="bg-gradient-to-b from-white to-navy-50">
-      <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-6 lg:px-10 lg:py-18">
+      <div className="mx-auto max-w-[1320px] px-4 pt-8 pb-14 sm:px-6 sm:pt-10 lg:px-10 lg:pt-12 lg:pb-18">
         <div className="mx-auto max-w-[680px] text-center">
           <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
             Testimonials
