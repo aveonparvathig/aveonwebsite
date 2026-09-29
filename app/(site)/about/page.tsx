@@ -70,7 +70,7 @@ const values = [
   },
   {
     title: "Integrated by Design",
-    text: "One database, one login, nine products. Admissions data flows to accounts, attendance flows to exams: no re-entry, no silos.",
+    text: "One database, one login, fourteen products. Admissions data flows to accounts, attendance flows to exams: no re-entry, no silos.",
     from: "from-violet-500",
     to: "to-violet-700",
     glow: "bg-violet-600/20",
@@ -125,7 +125,7 @@ export default function AboutPage() {
               Aveon Infotech is an education technology company from Coimbatore, India, helping universities, colleges and schools run smarter campuses.
             </p>
             <p className="mt-3 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Built on US-based software technology, Aveon delivers secure, enterprise-grade systems to institutions across the country.
+              With software architecture and design built to Atlanta, USA standards, Aveon delivers secure, enterprise-grade systems to institutions across the country.
             </p>
           </div>
           <Image

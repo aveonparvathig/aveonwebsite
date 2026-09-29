@@ -1,4 +1,3 @@
-import Link from "next/link";
 
 /* ──────────────────────────────────────────────────────────────
    Data
@@ -883,31 +882,6 @@ export default function CollegeERPContent() {
                 <p className="mt-3 text-sm leading-relaxed text-navy-600">{faq.answer}</p>
               </details>
             ))}
-          </div>
-
-          {/* Closing line + inline CTA */}
-          <div className="mt-14 rounded-2xl bg-gradient-to-br from-primary-50 to-white p-8 text-center border border-primary-100">
-            <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">
-              Build Your Connected Digital Campus with Aveon
-            </h3>
-            <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              One platform for admissions, academics, COE, fees, library, hostel, HR, placements,
-              NAAC and analytics. See how it fits your campus in a 30-minute demo.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/contact#demo"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-600"
-              >
-                Get a Personalized Demo →
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full border border-navy-200 bg-white px-7 py-3 text-sm font-semibold text-navy-800 transition hover:border-primary-400 hover:text-primary-600"
-              >
-                Talk to an ERP Specialist
-              </Link>
-            </div>
           </div>
         </div>
       </section>

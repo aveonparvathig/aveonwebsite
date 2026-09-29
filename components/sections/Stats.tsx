@@ -1,6 +1,6 @@
 const stats = [
   { value: "240+", label: "Institutions Served" },
-  { value: "12", label: "Integrated Products" },
+  { value: "14", label: "Integrated Products" },
   { value: "17+", label: "Years of Experience" },
   { value: "1M+", label: "Students Managed" },
 ];

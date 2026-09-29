@@ -151,21 +151,38 @@ export const products: Product[] = [
     order: 8,
   },
   {
-    title: "Inventory Management",
-    slug: "inventory-management",
-    category: "management",
-    tagline: "Inventory Management System",
+    title: "Online Examination",
+    slug: "online-examination",
+    category: "erp",
+    tagline: "Online Examination System",
     description:
-      "One digital inventory: items, categories, suppliers, stores, purchases, stock receipts, issues, transfers, returns and reports, connected to the campus ERP.",
+      "One platform for secure online examinations: question banks, scheduling, proctoring, auto-evaluation, result processing and analytics, all connected to your campus ERP.",
     features: [
-      "Item, category & store management",
-      "Supplier & purchase records",
-      "Stock receipt, issue & transfer",
-      "Returns, adjustment & verification",
-      "Department-wise stock visibility",
-      "Inventory reports & analytics",
+      "Question bank & randomised test creation",
+      "Scheduled & on-demand online exams",
+      "Live & AI-assisted proctoring",
+      "Auto-evaluation & instant scoring",
+      "Result processing & mark sheets",
+      "Exam analytics & performance reports",
     ],
     order: 9,
+  },
+  {
+    title: "Fees Management",
+    slug: "fees-management",
+    category: "management",
+    tagline: "Fees & Accounts Management",
+    description:
+      "One digital platform for fee collection: fee structures, online payments, digital receipts, dues tracking, scholarships and financial reports, all connected to your campus ERP.",
+    features: [
+      "Fee structure & installment plans",
+      "Online payment gateway integration",
+      "Digital receipts & dues tracking",
+      "Scholarships, concessions & waivers",
+      "Refunds & fee adjustments",
+      "Financial reports & dashboards",
+    ],
+    order: 10,
   },
   {
     title: "IQAC / NAAC / NBA",
@@ -182,7 +199,7 @@ export const products: Product[] = [
       "Stakeholder feedback & surveys",
       "Accreditation reports & documentation",
     ],
-    order: 10,
+    order: 11,
   },
   {
     title: "Grievance Management",
@@ -199,7 +216,24 @@ export const products: Product[] = [
       "Resolution tracking & closure",
       "Reports, analytics & KPIs",
     ],
-    order: 11,
+    order: 12,
+  },
+  {
+    title: "Inventory Management",
+    slug: "inventory-management",
+    category: "management",
+    tagline: "Inventory Management System",
+    description:
+      "One digital inventory: items, categories, suppliers, stores, purchases, stock receipts, issues, transfers, returns and reports, connected to the campus ERP.",
+    features: [
+      "Item, category & store management",
+      "Supplier & purchase records",
+      "Stock receipt, issue & transfer",
+      "Returns, adjustment & verification",
+      "Department-wise stock visibility",
+      "Inventory reports & analytics",
+    ],
+    order: 13,
   },
   {
     title: "Canteen Management",
@@ -216,7 +250,7 @@ export const products: Product[] = [
       "Staff scheduling & attendance",
       "Health & hygiene compliance",
     ],
-    order: 12,
+    order: 14,
   },
 ];
 

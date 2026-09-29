@@ -251,7 +251,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div aria-hidden className="pointer-events-none absolute -top-24 left-1/3 h-80 w-80 rounded-full bg-primary-200/30 blur-[100px]" />
         <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-accent-200/20 blur-[80px]" />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-6 py-14 lg:grid-cols-2 lg:py-20 min-h-[550px] lg:min-h-[600px]">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-6 pt-14 pb-8 sm:pb-10 lg:grid-cols-2 lg:pt-20 lg:pb-10 min-h-[550px] lg:min-h-[600px]">
 
           {/* Left: text */}
           <div className="flex flex-col justify-center">
