@@ -38,10 +38,10 @@ export default function CTASection() {
 
           <div className="rounded-[26px] bg-white p-3.5">
             <Image
-              src="/images/illo-isometric.avif"
+              src="/images/illo-delivery.png"
               alt="Connected campus operations, end to end"
-              width={1350}
-              height={900}
+              width={1105}
+              height={749}
               className="w-full animate-floaty"
             />
           </div>

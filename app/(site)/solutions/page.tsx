@@ -16,7 +16,7 @@ const solutions = [
     slug: "university-erp",
     text: "Multi-campus, multi-department universities run academics, COE, finance and research administration on one platform.",
     productSlugs: ["university-erp", "coe", "hrm-payroll", "hostel-mess"],
-    image: "/products/uni1.jpg",
+    image: "/products/for-universities.webp",
     eyebrow: "Universities",
   },
   {
@@ -24,7 +24,7 @@ const solutions = [
     slug: "college-erp",
     text: "Arts, science, engineering and autonomous colleges manage the full student lifecycle with built-in compliance reporting.",
     productSlugs: ["college-erp", "coe", "library-management", "lms-ai-chatbot"],
-    image: "/products/clg.jpg",
+    image: "/products/for-colleges.webp",
     eyebrow: "Colleges",
   },
   {
@@ -32,7 +32,7 @@ const solutions = [
     slug: "school-erp",
     text: "K-12 schools connect classrooms, parents and administration with simple, reliable tools.",
     productSlugs: ["school-erp", "lms-ai-chatbot", "hrm-payroll"],
-    image: "/products/sch.jpg",
+    image: "/products/for-schools.webp",
     eyebrow: "Schools",
   },
   {
@@ -40,7 +40,7 @@ const solutions = [
     slug: "university-erp",
     text: "Trusts and groups running multiple institutions get consolidated dashboards and centralized control.",
     productSlugs: ["university-erp", "college-erp", "school-erp", "inventory-management"],
-    image: "/products/group.jpg",
+    image: "/products/for-group-institutions.webp",
     eyebrow: "Group Institutions",
   },
 ];
@@ -65,10 +65,10 @@ export default function SolutionsPage() {
             </p>
           </div>
           <Image
-            src="/products/ser.jpg"
+            src="/products/academy-hero.webp"
             alt="Campus solutions"
-            width={600}
-            height={400}
+            width={1219}
+            height={789}
             className="w-full rounded-2xl object-contain"
           />
         </div>

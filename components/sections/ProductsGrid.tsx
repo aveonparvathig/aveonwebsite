@@ -7,7 +7,7 @@ import ProductIcon from "@/components/ui/ProductIcon";
 
 const heroImages: Record<string, string> = {
   "university-erp": "/products/uerp.png",
-  "college-erp": "/products/college erp.png",
+  "college-erp": "/products/cms.webp",
 };
 
 // The wide "Most deployed" card at the top of the grid.

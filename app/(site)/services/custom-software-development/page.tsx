@@ -73,10 +73,10 @@ export default function CustomSoftwareDevelopmentPage() {
             </div>
           </div>
           <Image
-            src="/products/app.jpg"
+            src="/products/custom-software-team.webp"
             alt="Custom Software Development"
-            width={600}
-            height={400}
+            width={1248}
+            height={848}
             className="w-full rounded-2xl object-cover"
           />
         </div>

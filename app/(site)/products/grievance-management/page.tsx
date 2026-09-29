@@ -116,28 +116,90 @@ export default function GrievanceManagementPage() {
       </section>
 
       {/* Workflow */}
-      <section className="bg-primary-50 py-16 sm:py-20 lg:py-24">
+      <section className="bg-gradient-to-b from-primary-50 to-white py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <h2 className="mb-12 text-center text-[clamp(28px,4vw,40px)] font-extrabold text-navy-900">
-            End-to-End Grievance Resolution Workflow
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-5">
-            {[
-              { step: 1, title: "Submit", desc: "Grievant submits via portal, SMS, email, or QR" },
-              { step: 2, title: "Route", desc: "System auto-assigns to relevant department" },
-              { step: 3, title: "Acknowledge", desc: "Department acknowledges within 24-48 hours" },
-              { step: 4, title: "Resolve", desc: "Investigation and resolution by designated team" },
-              { step: 5, title: "Follow-up", desc: "Satisfaction feedback and closure" },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-lg font-bold text-white">
-                  {item.step}
-                </div>
-                <h3 className="mb-2 font-bold text-navy-900">{item.title}</h3>
-                <p className="text-xs text-navy-700">{item.desc}</p>
-              </div>
-            ))}
+          <div className="mx-auto mb-14 max-w-[720px] text-center">
+            <span className="inline-block rounded-full bg-white px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700 shadow-sm">
+              How It Works
+            </span>
+            <h2 className="mt-4 text-[clamp(28px,4vw,40px)] font-extrabold leading-tight text-navy-900">
+              End-to-End Grievance Resolution Workflow
+            </h2>
           </div>
+
+          {(() => {
+            const steps = [
+              {
+                step: 1,
+                title: "Submit",
+                desc: "Grievant submits via portal, SMS, email, or QR",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                  </svg>
+                ),
+              },
+              {
+                step: 2,
+                title: "Route",
+                desc: "System auto-assigns to relevant department",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                  </svg>
+                ),
+              },
+              {
+                step: 3,
+                title: "Acknowledge",
+                desc: "Department acknowledges within 24-48 hours",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>
+                ),
+              },
+              {
+                step: 4,
+                title: "Resolve",
+                desc: "Investigation and resolution by designated team",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+              {
+                step: 5,
+                title: "Follow-up",
+                desc: "Satisfaction feedback and closure",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                  </svg>
+                ),
+              },
+            ];
+            return (
+              <div className="relative">
+                <div aria-hidden className="absolute left-0 right-0 top-8 hidden h-0.5 bg-gradient-to-r from-primary-200 via-primary-400 to-primary-200 sm:block" />
+                <div className="relative grid gap-8 sm:grid-cols-5 sm:gap-4">
+                  {steps.map((item) => (
+                    <div key={item.step} className="relative text-center">
+                      <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full border-4 border-primary-50 bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-[0_16px_32px_-14px_rgb(29_111_242_/_0.6)]">
+                        {item.icon}
+                        <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-accent-500 text-[11px] font-extrabold text-white ring-2 ring-white">
+                          {item.step}
+                        </span>
+                      </div>
+                      <h3 className="mt-4 mb-1.5 font-bold text-navy-900">{item.title}</h3>
+                      <p className="text-xs leading-relaxed text-navy-700">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 

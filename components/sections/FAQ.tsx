@@ -46,10 +46,10 @@ export default function FAQ() {
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
         <div className="flex items-center justify-center">
           <Image
-            src="/products/faq.jpg"
+            src="/products/faq-hero.webp"
             alt="Support team answering institution questions"
-            width={710}
-            height={473}
+            width={1158}
+            height={727}
             className="w-full rounded-2xl object-contain"
           />
         </div>

@@ -195,26 +195,81 @@ export default function CanteenManagementPage() {
       </section>
 
       {/* Sample Workflow */}
-      <section className="bg-navy-50 py-16 sm:py-20 lg:py-24">
+      <section className="bg-gradient-to-b from-orange-50 to-white py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
-          <h2 className="mb-12 text-center text-[clamp(28px,4vw,40px)] font-extrabold text-navy-900">
-            Daily Workflow in Action
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { time: "Morning", task: "Manager publishes daily menu with prices and nutritional info" },
-              { time: "Mid-morning", task: "Students/staff browse menu and place orders via app" },
-              { time: "Before lunch", task: "Kitchen receives order list and starts preparation" },
-              { time: "Lunch time", task: "Orders collected, payments processed, feedback recorded" },
-            ].map((item) => (
-              <div key={item.time} className="rounded-lg bg-white p-6">
-                <div className="mb-3 rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 w-fit">
-                  {item.time}
-                </div>
-                <p className="text-sm font-bold text-navy-900">{item.task}</p>
-              </div>
-            ))}
+          <div className="mx-auto mb-14 max-w-[720px] text-center">
+            <span className="inline-block rounded-full bg-white px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-orange-700 shadow-sm">
+              How It Works
+            </span>
+            <h2 className="mt-4 text-[clamp(28px,4vw,40px)] font-extrabold leading-tight text-navy-900">
+              Daily Workflow in Action
+            </h2>
           </div>
+
+          {(() => {
+            const steps = [
+              {
+                time: "Morning",
+                task: "Manager publishes daily menu with prices and nutritional info",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                  </svg>
+                ),
+              },
+              {
+                time: "Mid-morning",
+                task: "Students/staff browse menu and place orders via app",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v3m0 0v3m0-3h3m-3 0h-3" />
+                  </svg>
+                ),
+              },
+              {
+                time: "Before lunch",
+                task: "Kitchen receives order list and starts preparation",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+              {
+                time: "Lunch time",
+                task: "Orders collected, payments processed, feedback recorded",
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                  </svg>
+                ),
+              },
+            ];
+            return (
+              <div className="relative">
+                <div aria-hidden className="absolute left-0 right-0 top-8 hidden h-0.5 bg-gradient-to-r from-orange-200 via-orange-400 to-orange-200 lg:block" />
+                <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {steps.map((item, i) => (
+                    <div
+                      key={item.time}
+                      className="group relative flex flex-col rounded-[22px] border border-navy-900/8 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover lg:items-center lg:text-center"
+                    >
+                      <div className="relative flex h-14 w-14 items-center justify-center rounded-full border-4 border-orange-50 bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-[0_14px_28px_-12px_rgb(234_88_12_/_0.55)]">
+                        {item.icon}
+                        <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-navy-900 text-[11px] font-extrabold text-white ring-2 ring-white">
+                          {i + 1}
+                        </span>
+                      </div>
+                      <div className="mt-4 rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700">
+                        {item.time}
+                      </div>
+                      <p className="mt-3 text-sm font-bold leading-relaxed text-navy-900">{item.task}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
