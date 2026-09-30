@@ -179,7 +179,13 @@ export default function ChatWidget() {
   const lastQuickReplies = !showLead ? messages[messages.length - 1]?.quickReplies : undefined;
 
   return (
-    <div className="fixed bottom-5 right-5 z-[80] print:hidden">
+    <div
+      className="fixed z-[80] print:hidden"
+      style={{
+        bottom: "max(1.25rem, calc(env(safe-area-inset-bottom) + 0.5rem))",
+        right: "max(1.25rem, calc(env(safe-area-inset-right) + 0.5rem))",
+      }}
+    >
       {/* Teaser */}
       {teaser && !open && (
         <button
@@ -257,11 +263,11 @@ export default function ChatWidget() {
             {showLead && !leadDone && (
               <form onSubmit={submitLead} className="rounded-2xl border border-navy-100 bg-white p-3.5 shadow-sm">
                 <div className="grid gap-2.5">
-                  <input required value={lead.name} onChange={(e) => setLead({ ...lead, name: e.target.value })} placeholder="Your name*" className="rounded-lg border border-navy-200 px-3 py-2 text-sm outline-none focus:border-primary-400" />
-                  <input required type="email" value={lead.email} onChange={(e) => setLead({ ...lead, email: e.target.value })} placeholder="Email*" className="rounded-lg border border-navy-200 px-3 py-2 text-sm outline-none focus:border-primary-400" />
-                  <input value={lead.phone} onChange={(e) => setLead({ ...lead, phone: e.target.value })} placeholder="Phone (optional)" className="rounded-lg border border-navy-200 px-3 py-2 text-sm outline-none focus:border-primary-400" />
-                  <input value={lead.company} onChange={(e) => setLead({ ...lead, company: e.target.value })} placeholder="Institution / Company" className="rounded-lg border border-navy-200 px-3 py-2 text-sm outline-none focus:border-primary-400" />
-                  <select value={lead.interest} onChange={(e) => setLead({ ...lead, interest: e.target.value })} className="rounded-lg border border-navy-200 px-3 py-2 text-sm text-navy-700 outline-none focus:border-primary-400">
+                  <input required value={lead.name} onChange={(e) => setLead({ ...lead, name: e.target.value })} placeholder="Your name*" className="rounded-lg border border-navy-200 px-3 py-2 text-base sm:text-sm outline-none focus:border-primary-400" />
+                  <input required type="email" value={lead.email} onChange={(e) => setLead({ ...lead, email: e.target.value })} placeholder="Email*" className="rounded-lg border border-navy-200 px-3 py-2 text-base sm:text-sm outline-none focus:border-primary-400" />
+                  <input value={lead.phone} onChange={(e) => setLead({ ...lead, phone: e.target.value })} placeholder="Phone (optional)" className="rounded-lg border border-navy-200 px-3 py-2 text-base sm:text-sm outline-none focus:border-primary-400" />
+                  <input value={lead.company} onChange={(e) => setLead({ ...lead, company: e.target.value })} placeholder="Institution / Company" className="rounded-lg border border-navy-200 px-3 py-2 text-base sm:text-sm outline-none focus:border-primary-400" />
+                  <select value={lead.interest} onChange={(e) => setLead({ ...lead, interest: e.target.value })} className="rounded-lg border border-navy-200 px-3 py-2 text-base sm:text-sm text-navy-700 outline-none focus:border-primary-400">
                     <option value="">Interested in… (optional)</option>
                     {INTEREST_OPTIONS.map((o) => (
                       <option key={o} value={o}>{o}</option>
@@ -292,7 +298,7 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message…"
-                className="min-w-0 flex-1 rounded-full border border-navy-200 px-4 py-2.5 text-sm outline-none focus:border-primary-400"
+                className="min-w-0 flex-1 rounded-full border border-navy-200 px-4 py-2.5 text-base sm:text-sm outline-none focus:border-primary-400"
               />
               <button type="submit" disabled={!input.trim() || sending} aria-label="Send" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-600 text-white transition hover:bg-primary-700 disabled:opacity-50">
                 <svg className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

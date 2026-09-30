@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function StudentRetentionPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-dvh bg-white">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-green-50 to-white py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">

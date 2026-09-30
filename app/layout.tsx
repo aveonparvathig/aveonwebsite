@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -50,6 +50,17 @@ export const metadata: Metadata = {
       "Unified AI-powered campus management platform serving 5000+ institutions.",
   },
   robots: { index: true, follow: true },
+};
+
+// Explicit viewport config: keeps Next's default responsive meta tag, adds
+// viewportFit "cover" so env(safe-area-inset-*) resolves on notched/rounded
+// iPhones (fixed header, chat widget, mobile nav drawer all rely on it).
+// Zoom is intentionally left enabled (no maximumScale/userScalable) for accessibility.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#1d6ff2",
 };
 
 export default function RootLayout({

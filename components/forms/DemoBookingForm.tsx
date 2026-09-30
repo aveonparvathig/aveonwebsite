@@ -7,8 +7,9 @@ import { demoBookingSchema, type DemoBookingInput } from "@/lib/validations";
 import { products } from "@/lib/data/products";
 import { useFormLock } from "@/components/forms/FormLockContext";
 
+// text-base on mobile prevents iOS Safari's auto-zoom-on-focus (triggered below 16px); sm: restores the original size on larger screens.
 const inputClass =
-  "w-full rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3.5 text-sm text-navy-900 placeholder:text-navy-400 transition hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-100";
+  "w-full rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3.5 text-base sm:text-sm text-navy-900 placeholder:text-navy-400 transition hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-100";
 
 export default function DemoBookingForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ERPMigrationGuide() {
   return (
-    <article className="min-h-screen bg-white py-16 sm:py-20 lg:py-24">
+    <article className="min-h-dvh bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-8">
         <Link
           href="/blog"
