@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactInput } from "@/lib/validations";
@@ -17,10 +17,18 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<ContactInput>({
     resolver: zodResolver(contactSchema),
   });
+
+  // Pre-fill the subject when arriving via a link like /contact?subject=Application:%20Role
+  // (read on mount rather than via useSearchParams so this component doesn't need a Suspense boundary).
+  useEffect(() => {
+    const subject = new URLSearchParams(window.location.search).get("subject");
+    if (subject) setValue("subject", subject);
+  }, [setValue]);
 
   const messageRef = useRef<HTMLTextAreaElement | null>(null);
   const { ref: registerMessageRef, ...messageField } = register("message");

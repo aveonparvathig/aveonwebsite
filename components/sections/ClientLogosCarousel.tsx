@@ -62,44 +62,48 @@ export default function ClientLogosCarousel() {
         </div>
 
         {/* Dual Row Scrolling Carousel */}
-        <div className="space-y-6">
+        <div className="space-y-7">
           {/* Top Row - Scroll Right to Left */}
-          <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)]">
-            <div className="flex w-max animate-marquee items-center gap-6 group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+          <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_100px,#000_calc(100%-100px),transparent)] sm:[mask-image:linear-gradient(90deg,transparent,#000_140px,#000_calc(100%-140px),transparent)]">
+            <div className="flex w-max animate-marquee items-center gap-6 [will-change:transform] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
               {[...topRowLogos, ...topRowLogos].map((logo, i) => (
                 <div
                   key={`top-${i}`}
-                  className="flex shrink-0 items-center justify-center rounded-[20px] bg-white p-6 shadow-lg transition-transform duration-300 hover:shadow-xl hover:scale-105"
-                  style={{ width: "160px", height: "120px" }}
+                  className="animate-card-float shrink-0 motion-reduce:animate-none"
+                  style={{ width: "160px", height: "120px", animationDelay: `${-(i % 9) * 0.42}s` }}
                 >
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    width={120}
-                    height={100}
-                    className="h-auto w-auto max-h-20 max-w-full object-contain"
-                  />
+                  <div className="flex h-full w-full items-center justify-center rounded-[20px] bg-white p-6 shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:scale-105">
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={120}
+                      height={100}
+                      className="h-auto w-auto max-h-20 max-w-full object-contain grayscale-[15%] transition-all duration-300 hover:grayscale-0"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Bottom Row - Scroll Left to Right */}
-          <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)]">
-            <div className="flex w-max animate-marquee-reverse items-center gap-6 group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+          <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_100px,#000_calc(100%-100px),transparent)] sm:[mask-image:linear-gradient(90deg,transparent,#000_140px,#000_calc(100%-140px),transparent)]">
+            <div className="flex w-max animate-marquee-reverse items-center gap-6 [will-change:transform] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
               {[...bottomRowLogos, ...bottomRowLogos].map((logo, i) => (
                 <div
                   key={`bottom-${i}`}
-                  className="flex shrink-0 items-center justify-center rounded-[20px] bg-white p-6 shadow-lg transition-transform duration-300 hover:shadow-xl hover:scale-105"
-                  style={{ width: "160px", height: "120px" }}
+                  className="animate-card-float shrink-0 motion-reduce:animate-none"
+                  style={{ width: "160px", height: "120px", animationDelay: `${-(i % 9) * 0.35}s` }}
                 >
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    width={120}
-                    height={100}
-                    className="h-auto w-auto max-h-20 max-w-full object-contain"
-                  />
+                  <div className="flex h-full w-full items-center justify-center rounded-[20px] bg-white p-6 shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:scale-105">
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={120}
+                      height={100}
+                      className="h-auto w-auto max-h-20 max-w-full object-contain grayscale-[15%] transition-all duration-300 hover:grayscale-0"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -111,28 +115,42 @@ export default function ClientLogosCarousel() {
       <style jsx>{`
         @keyframes marquee {
           0% {
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translate3d(-50%, 0, 0);
           }
         }
 
         @keyframes marquee-reverse {
           0% {
-            transform: translateX(-50%);
+            transform: translate3d(-50%, 0, 0);
           }
           100% {
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
           }
         }
 
         .animate-marquee {
-          animation: marquee 40s linear infinite;
+          animation: marquee 34s linear infinite;
         }
 
         .animate-marquee-reverse {
-          animation: marquee-reverse 40s linear infinite;
+          animation: marquee-reverse 34s linear infinite;
+        }
+
+        @keyframes cardFloat {
+          0%,
+          100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-7px) rotate(-0.6deg);
+          }
+        }
+
+        .animate-card-float {
+          animation: cardFloat 3.8s ease-in-out infinite;
         }
       `}</style>
     </section>
