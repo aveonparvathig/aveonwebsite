@@ -75,12 +75,12 @@ export default function CareersPage() {
                   {job.dept} · {job.type}
                 </p>
               </div>
-              <a
-                href={`mailto:${siteConfig.email}?subject=Application: ${encodeURIComponent(job.role)}`}
+              <Link
+                href={`/contact?subject=${encodeURIComponent(`Application: ${job.role}`)}`}
                 className="inline-flex w-fit items-center gap-2 rounded-full border border-primary-200 px-6 py-2.5 text-sm font-semibold text-primary-600 hover:bg-primary-50"
               >
                 Apply Now →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

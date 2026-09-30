@@ -465,21 +465,6 @@ export default function OffshoreContent() {
             ))}
           </div>
 
-          <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
-            <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Global Talent. Indian Advantage. Competitive Cost.</h3>
-            <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              You don&apos;t always need a large organization to build great technology: just the right people, skills
-              and team structure. Let&apos;s build yours.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#demo" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-600">
-                Build Your Team →
-              </Link>
-              <Link href="/contact" className="inline-flex items-center rounded-full border border-navy-200 bg-white px-7 py-3 text-sm font-semibold text-navy-800 transition hover:border-primary-400 hover:text-primary-600">
-                Request Team Pricing
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
     </>
