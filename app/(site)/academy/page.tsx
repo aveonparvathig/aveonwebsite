@@ -63,13 +63,13 @@ const chain: { label: string; icon: IconName }[] = [
 const courses: { no: string; title: string; tech: string[]; months: string; unit: string; note?: string; learn: string[] }[] = [
   { no: "01", title: "Fullstack Web Application (MERN)", tech: ["MongoDB", "Express", "React.js", "Node.js"], months: "6", unit: "Months", learn: ["MERN Stack Development", "Python Programming", "AI Tools", "ML Basics"] },
   { no: "02", title: "Full Stack Web Application (MEAN)", tech: ["MongoDB", "Express", "Angular", "Node.js"], months: "6", unit: "Months", learn: ["MEAN Stack Development", "JavaScript (TypeScript)", "AI Tools", "ML Basics"] },
-  { no: "03", title: "AI Full Stack Web Application", tech: ["Python", "React.js", "ChatGPT", "TensorFlow"], months: "6", unit: "Months", learn: ["MERN Stack", "Python", "AI Tools", "ML Basics"] },
+  { no: "03", title: "Backend Development", tech: [".NET", "C#", "SQL", "Cloud"], months: "4", unit: "Months", learn: ["ASP.NET Core APIs", "SQL Database Design", "Authentication & Security", "Cloud Deployment"] },
   { no: "04", title: "Front-End Development", tech: ["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS"], months: "3", unit: "Months", learn: ["HTML5, CSS3", "JavaScript", "Responsive Web Design", "UI/UX Principles", "Figma to Web"] },
   { no: "05", title: "Digital Marketing Specialist", tech: ["Meta Ads", "Google Ads", "Google Analytics", "Canva", "ChatGPT"], months: "3", unit: "Months", learn: ["Content Creation", "Lead and Ads", "Social Media", "AI in Marketing"] },
   { no: "06", title: "Software Innovation Development with AI", tech: ["Figma", "Miro", "ChatGPT", "Firebase", "GitHub"], months: "2", unit: "Months", note: "Basic knowledge on software is required", learn: ["Problem Solving", "Innovation Planning", "AI Tools", "MVP Development"] },
   { no: "07", title: "Website Development", tech: ["HTML5", "CSS3", "JavaScript", "WordPress"], months: "2", unit: "Months", learn: ["HTML5 & CSS3", "JavaScript", "Responsive Design", "Website Deployment"] },
-  { no: "08", title: "AI Prompting Short Course", tech: ["ChatGPT", "Gemini", "Claude"], months: "10", unit: "Days", learn: ["Prompt Engineering Basics", "ChatGPT & AI Tools", "AI Productivity", "Real-world Prompting"] },
-  { no: "09", title: "AI Prompting Professional Course", tech: ["ChatGPT", "Gemini", "Claude"], months: "1", unit: "Month", learn: ["Advanced Prompt Engineering", "AI Tools & Workflows", "Automation with AI", "Real-world Projects"] },
+  { no: "08", title: "AI Prompting Essentials", tech: ["LLM Integration", "ChatGPT", "Gemini", "Claude"], months: "10", unit: "Days", learn: ["Prompt Engineering Basics", "Everyday AI Productivity", "Getting Better Answers from ChatGPT & Gemini", "Quick-Start AI Habits"] },
+  { no: "09", title: "AI Prompting Professional Course", tech: ["ChatGPT", "Gemini", "Claude", "GitHub"], months: "1", unit: "Month", note: "Best suited for working professionals and teams", learn: ["Advanced Prompt Engineering", "Building Multi-Step AI Workflows", "Automating Repetitive Tasks with AI", "AI for Real Business Projects"] },
 ];
 
 const pride: { icon: IconName; value: string; label: string }[] = [
@@ -77,13 +77,6 @@ const pride: { icon: IconName; value: string; label: string }[] = [
   { icon: "briefcase", value: "50+", label: "Industry Projects" },
   { icon: "users", value: "100%", label: "Internship for Every Student" },
   { icon: "check", value: "Expert", label: "Industry Mentors" },
-];
-
-const buildSteps = [
-  { no: "01", title: "Learn", text: "Understand the fundamentals." },
-  { no: "02", title: "Build", text: "Apply your knowledge." },
-  { no: "03", title: "Solve", text: "Work on real-world problems." },
-  { no: "04", title: "Showcase", text: "Build your portfolio." },
 ];
 
 const whyFeatures: { icon: IconName; title: string; text: string }[] = [
@@ -323,6 +316,24 @@ export default function AcademyPage() {
         </div>
       </section>
 
+      {/* OUR PRIDE */}
+      <section className={`${container} pt-9 pb-2 sm:pt-10 lg:pt-11`}>
+        <p className="text-center text-[13px] font-extrabold uppercase tracking-[0.14em] text-navy-500">Our students. Our pride.</p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {pride.map((p) => (
+            <div key={p.label} className="flex items-center gap-4 rounded-2xl border border-navy-900/8 bg-white p-5 shadow-card">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 text-primary-600">
+                <Icon name={p.icon} className="h-6 w-6" />
+              </span>
+              <div>
+                <p className="text-[24px] font-extrabold leading-none text-primary-600">{p.value}</p>
+                <p className="mt-1 text-[13px] font-semibold leading-snug text-navy-700">{p.label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* INTRODUCTION */}
       <section className={`${container} py-10 lg:py-14`}>
         <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 px-6 py-10 shadow-[0_40px_90px_-34px_rgb(29_111_242_/_0.7)] sm:px-10 lg:px-14 lg:py-12">
@@ -437,42 +448,6 @@ export default function AcademyPage() {
               </article>
             ))}
           </div>
-
-          <div className="mt-14">
-            <p className="text-center text-[13px] font-extrabold uppercase tracking-[0.14em] text-navy-500">Our students. Our pride.</p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {pride.map((p) => (
-                <div key={p.label} className="flex items-center gap-4 rounded-2xl border border-navy-900/8 bg-white p-5">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 text-primary-600">
-                    <Icon name={p.icon} className="h-6 w-6" />
-                  </span>
-                  <div>
-                    <p className="text-[24px] font-extrabold leading-none text-primary-600">{p.value}</p>
-                    <p className="mt-1 text-[13px] font-semibold leading-snug text-navy-700">{p.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* LEARN BY BUILDING */}
-      <section className={`${container} pt-9 pb-11 sm:pt-10 sm:pb-12 lg:pt-11 lg:pb-14`}>
-        <SectionHead title="Don't Just Learn. Build." text="Turn concepts into practical experience through real-world projects." />
-        <div className="relative mt-12">
-          <div aria-hidden className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-0.5 bg-gradient-to-r from-primary-200 via-primary-500 to-primary-200 lg:block" />
-          <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {buildSteps.map((s) => (
-              <li key={s.no} className="relative text-center">
-                <span className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700 text-[16px] font-extrabold text-white shadow-[0_14px_30px_-12px_rgb(29_111_242_/_0.7)] ring-4 ring-white">
-                  {s.no}
-                </span>
-                <h3 className="mt-4 text-[17px] font-extrabold uppercase tracking-wide text-navy-900">{s.title}</h3>
-                <p className="mt-1.5 text-[14.5px] leading-relaxed text-navy-600">{s.text}</p>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 

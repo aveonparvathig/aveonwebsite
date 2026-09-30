@@ -55,7 +55,7 @@ export default function Comparisons() {
   ];
 
   return (
-    <div className="min-h-screen bg-white py-16 sm:py-20 lg:py-24">
+    <div className="min-h-dvh bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
         {/* Header */}
         <div className="mb-12 text-center">

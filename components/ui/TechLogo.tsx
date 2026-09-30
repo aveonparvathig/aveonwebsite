@@ -97,7 +97,7 @@ const TECH_LOGOS: Record<string, string> = {
   "Responsive Design": "Responsive",
   "Design Systems": "Design",
   "AI/ML": "AI",
-  "ChatGPT": "AI",
+  "ChatGPT": "ChatGPT",
   "Canva": "Canva",
   "AI Tools": "AI",
   "Machine Learning": "AI",

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function IqacNaacNbaPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-dvh bg-white">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-purple-50 to-white">
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-purple-600/20 blur-[120px]" />

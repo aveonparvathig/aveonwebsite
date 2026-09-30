@@ -226,7 +226,10 @@ export default function Navigation({ products }: { products?: Product[] }) {
             aria-hidden
           />
           <aside className="relative flex h-full w-[min(380px,90vw)] flex-col rounded-l-[28px] bg-white shadow-[-30px_0_70px_-20px_rgb(16_26_51_/_0.45)] [animation:drawerIn_260ms_cubic-bezier(0.22,0.61,0.36,1)]">
-            <div className="flex items-center justify-between border-b border-navy-900/8 px-5 py-3">
+            <div
+              className="flex items-center justify-between border-b border-navy-900/8 px-5 py-3"
+              style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
+            >
               <Image src="/images/aveon-logo-dark.svg" alt="Aveon Infotech" width={140} height={29} className="h-6.5 w-auto" />
               <button
                 type="button"
@@ -240,7 +243,10 @@ export default function Navigation({ products }: { products?: Product[] }) {
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-4 pb-5 pt-2">
+            <div
+              className="flex-1 overflow-y-auto px-4 pb-5 pt-2"
+              style={{ paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))" }}
+            >
               {items.map((item) => {
                 const active = isActive(item);
                 const flat = item.groups?.flatMap((g) => g.items) ?? [];
