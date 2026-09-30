@@ -397,21 +397,6 @@ export default function CustomSoftwareContent() {
             ))}
           </div>
 
-          <div className="mt-14 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 to-white p-8 text-center">
-            <h3 className="text-xl font-bold text-navy-900 sm:text-2xl">Build Software That Works the Way You Work.</h3>
-            <p className="mx-auto mt-3 max-w-xl text-navy-600">
-              Your business shouldn&apos;t have to change to fit your software. Let&apos;s build the solution that fits
-              yours.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#demo" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgb(29_111_242_/_0.4)] transition hover:bg-primary-600">
-                Start Your Project →
-              </Link>
-              <Link href="/contact" className="inline-flex items-center rounded-full border border-navy-200 bg-white px-7 py-3 text-sm font-semibold text-navy-800 transition hover:border-primary-400 hover:text-primary-600">
-                Request a Free Consultation
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
     </>
