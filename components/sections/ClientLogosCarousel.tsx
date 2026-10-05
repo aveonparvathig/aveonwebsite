@@ -69,18 +69,16 @@ export default function ClientLogosCarousel() {
               {[...topRowLogos, ...topRowLogos].map((logo, i) => (
                 <div
                   key={`top-${i}`}
-                  className="animate-card-float shrink-0 motion-reduce:animate-none"
-                  style={{ width: "160px", height: "120px", animationDelay: `${-(i % 9) * 0.42}s` }}
+                  className="flex shrink-0 items-center justify-center rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-colors hover:border-primary-200"
+                  style={{ width: "160px", height: "120px" }}
                 >
-                  <div className="flex h-full w-full items-center justify-center rounded-[20px] bg-white p-6 shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:scale-105">
-                    <Image
-                      src={logo.src}
-                      alt={logo.name}
-                      width={120}
-                      height={100}
-                      className="h-auto w-auto max-h-20 max-w-full object-contain grayscale-[15%] transition-all duration-300 hover:grayscale-0"
-                    />
-                  </div>
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={120}
+                    height={100}
+                    className="h-auto w-auto max-h-20 max-w-full object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -92,18 +90,16 @@ export default function ClientLogosCarousel() {
               {[...bottomRowLogos, ...bottomRowLogos].map((logo, i) => (
                 <div
                   key={`bottom-${i}`}
-                  className="animate-card-float shrink-0 motion-reduce:animate-none"
-                  style={{ width: "160px", height: "120px", animationDelay: `${-(i % 9) * 0.35}s` }}
+                  className="flex shrink-0 items-center justify-center rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-colors hover:border-primary-200"
+                  style={{ width: "160px", height: "120px" }}
                 >
-                  <div className="flex h-full w-full items-center justify-center rounded-[20px] bg-white p-6 shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:scale-105">
-                    <Image
-                      src={logo.src}
-                      alt={logo.name}
-                      width={120}
-                      height={100}
-                      className="h-auto w-auto max-h-20 max-w-full object-contain grayscale-[15%] transition-all duration-300 hover:grayscale-0"
-                    />
-                  </div>
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={120}
+                    height={100}
+                    className="h-auto w-auto max-h-20 max-w-full object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -137,20 +133,6 @@ export default function ClientLogosCarousel() {
 
         .animate-marquee-reverse {
           animation: marquee-reverse 34s linear infinite;
-        }
-
-        @keyframes cardFloat {
-          0%,
-          100% {
-            transform: translateY(0) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-7px) rotate(-0.6deg);
-          }
-        }
-
-        .animate-card-float {
-          animation: cardFloat 3.8s ease-in-out infinite;
         }
       `}</style>
     </section>
