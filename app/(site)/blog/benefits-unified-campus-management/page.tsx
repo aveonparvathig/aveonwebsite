@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Benefits of Unified Campus Management System | Aveon Blog",
+  title: "Unified Campus Management | ERP Benefits",
   description: "Discover how unified campus management improves efficiency, data consistency, decision-making and institutional effectiveness. Real benefits for universities and colleges.",
   keywords: [
     "unified campus management",

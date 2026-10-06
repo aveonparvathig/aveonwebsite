@@ -4,7 +4,7 @@ import ProductsGrid from "@/components/sections/ProductsGrid";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Campus ERP Products | University, College & School Solutions | Aveon",
+  title: "College ERP Products | Education Management Systems",
   description:
     "Explore Aveon's 14 integrated campus ERP products: University ERP, College ERP, School ERP, LMS with AI Chatbot, IQAC/NAAC, Grievance Management, Canteen Management and more. OBE-compliant, NAAC-ready solutions.",
   keywords: [

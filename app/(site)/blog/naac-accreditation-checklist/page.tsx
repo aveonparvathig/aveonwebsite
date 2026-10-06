@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "NAAC Accreditation Checklist: Complete Compliance Guide | Aveon",
+  title: "NAAC Accreditation Checklist | Compliance",
   description: "Comprehensive NAAC accreditation checklist covering all 7 criteria. Prepare your institution for NAAC assessment with this step-by-step guide and required documentation.",
   keywords: [
     "NAAC accreditation",

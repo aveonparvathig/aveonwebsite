@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Aveon vs MasterSoft vs Camu: Campus ERP Comparison | Aveon",
+  title: "Campus ERP Comparison | Aveon vs Competitors",
   description: "Detailed comparison of campus ERP solutions: Aveon, MasterSoft and Camu. Features, pricing, implementation, support and suitability for different institution types.",
   keywords: [
     "Aveon vs MasterSoft",

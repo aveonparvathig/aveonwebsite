@@ -5,7 +5,7 @@ import { services } from "@/lib/data/services";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Software Development Services",
+  title: "Software Development Services | Enterprise Solutions",
   description:
     "Process automation, mobile app development, custom software, order and warehouse management systems and offshore teams from Aveon Infotech.",
 };

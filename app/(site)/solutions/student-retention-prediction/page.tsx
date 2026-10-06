@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI-Powered Student Retention Prediction System | Aveon",
+  title: "Student Retention Prediction | AI Analytics",
   description: "Predict at-risk students before they drop out. AI-powered analytics identify struggling students early for targeted interventions. Improve retention and graduation rates.",
   keywords: [
     "student retention prediction",

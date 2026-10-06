@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "NIRF Ranking Support | Aveon",
+  title: "NIRF Rankings | Institutional Assessment",
   description:
     "Prepare and submit accurate NIRF data across Teaching, Research, Graduation Outcomes, Outreach and Perception with automated data collection.",
 };

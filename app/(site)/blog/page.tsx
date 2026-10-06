@@ -6,7 +6,7 @@ import { postsQuery } from "@/lib/queries";
 import { posts as fallbackPosts } from "@/lib/data/posts";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog | Education Technology Insights",
   description:
     "News, product updates and insights on education technology from the Aveon Infotech team.",
 };

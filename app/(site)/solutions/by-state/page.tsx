@@ -3,7 +3,7 @@ import Link from "next/link";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "College ERP Solutions by State | Higher Education Software | Aveon",
+  title: "College ERP by State | Higher Education Software",
   description:
     "State-specific college ERP solutions for 28 Indian states. Higher education software serving 200+ institutions. NAAC-compliant. Anna University, JNTU, VTU approved across Tamil Nadu, Telangana, Karnataka, Maharashtra, Delhi and more.",
   keywords: [

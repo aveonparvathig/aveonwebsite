@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI in Higher Education: Transforming Campus Management | Aveon",
+  title: "AI in Higher Education | Campus Management",
   description: "Discover how AI is transforming higher education through predictive analytics, personalized learning and automated campus operations. Real-world applications and ROI insights.",
   keywords: [
     "AI in education",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "NAAC 10-Criteria Framework Support | Aveon",
+  title: "NAAC Accreditation Software | Compliance Tool",
   description:
     "Complete support for NAAC accreditation across all 10 criteria: curriculum, teaching, research, student support, infrastructure, governance, values, finance, alumni and quality assurance.",
 };

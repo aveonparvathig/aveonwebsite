@@ -4,7 +4,7 @@ import Image from "next/image";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Careers at Aveon | EdTech Job Opportunities",
   description:
     "Join Aveon Infotech: build education technology used by hundreds of institutions and over a million students.",
 };

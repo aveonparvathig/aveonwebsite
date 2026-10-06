@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Multi-Campus University Management System | Aveon ERP",
+  title: "Multi-Campus Management | Unified Platform",
   description: "Unified multi-campus university management platform. Centralized student records, admissions, academics and operations across multiple campuses. Streamline administration for distributed institutions.",
   keywords: [
     "multi-campus university management",

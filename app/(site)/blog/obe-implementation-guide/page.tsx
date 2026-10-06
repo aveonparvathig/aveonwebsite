@@ -3,7 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Complete Guide to Outcome-Based Education (OBE) Implementation | Aveon",
+  title: "OBE Implementation Guide | Learning Outcomes",
   description: "Step-by-step guide to implementing Outcome-Based Education in your institution. Learn how to map learning outcomes, assess student performance and achieve NAAC accreditation.",
   keywords: [
     "outcome-based education",

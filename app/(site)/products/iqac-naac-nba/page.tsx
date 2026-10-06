@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "IQAC / NAAC / NBA Management System | Aveon",
+  title: "IQAC NAAC NBA Software | Accreditation Management",
   description: "Comprehensive institutional quality assurance system. Manage IQAC compliance, NAAC accreditation (10 criteria), NBA accreditation, quality metrics and stakeholder feedback.",
   keywords: [
     "IQAC management system",

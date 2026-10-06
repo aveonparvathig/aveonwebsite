@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Canteen Management System | Aveon Campus ERP",
+  title: "Canteen Management Software | Campus Dining",
   description: "Digital canteen and food service management platform. Online menu, orders, billing, inventory, vendor management, staff scheduling and health compliance tracking.",
   keywords: [
     "canteen management system",

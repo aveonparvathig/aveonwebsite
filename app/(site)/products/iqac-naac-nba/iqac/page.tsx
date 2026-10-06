@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Internal Quality Assurance Cell (IQAC) | Aveon",
+  title: "IQAC Software | Quality Assurance Management",
   description:
     "Coordinate IQAC meetings, action plans and Annual Quality Assurance Reports (AQAR), all tracked in one place and ready for NAAC review.",
 };
