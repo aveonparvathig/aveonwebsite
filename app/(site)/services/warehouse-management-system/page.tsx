@@ -6,20 +6,21 @@ import CTASection from "@/components/sections/CTASection";
 import WarehouseContent, { warehouseFaqs } from "@/components/sections/WarehouseContent";
 
 export const metadata: Metadata = {
-  title: "Warehouse Management System | WMS Software",
+  title: "Warehouse Management System | WMS Software | Aveon",
   description:
-    "Aveon Warehouse Management System helps businesses manage receiving, put-away, inventory, picking, packing, dispatch, transfers, returns and warehouse operations through one connected platform.",
+    "Warehouse management software delivering real-time inventory tracking, automated picking/packing, and multi-warehouse operations. 40% efficiency gain. Cloud-based WMS.",
   keywords: [
     "Warehouse Management System",
     "Warehouse Management Software",
     "WMS Software",
+    "Warehouse Automation Software",
+    "Inventory Management System",
     "Warehouse ERP Software",
-    "Inventory Warehouse Management",
-    "Order Fulfilment Software",
     "Multi-Warehouse Management System",
-    "Warehouse Operations Software",
+    "Cloud Warehouse Management",
     "AI Warehouse Automation",
-    "Digital Warehouse Management",
+    "Order Fulfilment Software",
+    "RFID Warehouse System",
   ],
 };
 

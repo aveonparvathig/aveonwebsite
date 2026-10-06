@@ -6,18 +6,19 @@ import CTASection from "@/components/sections/CTASection";
 import OffshoreContent, { offshoreFaqs } from "@/components/sections/OffshoreContent";
 
 export const metadata: Metadata = {
-  title: "Offshore Development Team | Dedicated Developers from India",
+  title: "Offshore Development Team | Dedicated Developers India | Aveon",
   description:
-    "Build a dedicated offshore development team with Aveon. Access developers, designers, QA, DevOps and AI specialists from India at competitive rates with flexible engagement models.",
+    "Dedicated offshore development team from India. Full-stack developers, QA, DevOps, and AI specialists. 40-60% cost savings. Flexible team augmentation and staff augmentation services.",
   keywords: [
     "Offshore Development Team",
     "Offshore Development Company",
-    "Offshore Software Development",
     "Dedicated Development Team",
+    "Team Augmentation",
+    "Staff Augmentation Services",
     "Offshore Developers India",
     "Dedicated Developers India",
+    "Dedicated Development Team Hire",
     "Remote Development Team",
-    "Offshore Development Center",
     "Offshore IT Outsourcing",
     "AI Development Team India",
   ],

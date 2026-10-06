@@ -6,21 +6,21 @@ import CTASection from "@/components/sections/CTASection";
 import AiAutomationContent, { aiAutomationFaqs } from "@/components/sections/AiAutomationContent";
 
 export const metadata: Metadata = {
-  title: "AI Process Automation Software | Business Workflow Automation",
+  title: "AI Process Automation Software | Workflow Automation | Aveon",
   description:
-    "Aveon AI Process Automation helps businesses automate repetitive workflows, documents, approvals, data processing and customer processes across industries using AI-powered automation.",
+    "AI-powered process automation software reducing manual work by 80%. Automate workflows, document processing, approvals, and data tasks. 5x faster processing. 40-60% cost savings.",
   keywords: [
     "AI Process Automation",
     "AI Workflow Automation",
     "Business Process Automation",
     "Intelligent Process Automation",
-    "AI Automation Software",
     "Workflow Automation Software",
+    "Workflow Optimization",
     "Document Process Automation",
+    "Intelligent Automation",
+    "Data Processing Automation",
     "Enterprise Process Automation",
     "Robotic Process Automation",
-    "AI Business Automation",
-    "Cross-Industry Automation",
   ],
 };
 

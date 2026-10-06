@@ -7,19 +7,21 @@ import CustomSoftwareContent from "@/components/sections/CustomSoftwareContent";
 import { customSoftwareFaqs } from "@/lib/data/custom-software-faqs";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development Company",
+  title: "Custom Software Development Company | Aveon Infotech",
   description:
-    "Aveon Infotech provides custom software development using modern web, mobile, cloud and AI technologies to build scalable business and enterprise applications.",
+    "Custom software development company delivering enterprise applications, SaaS platforms, and web solutions. 40+ technologies. 6-phase development. ROI-focused. Scale from MVP to enterprise.",
   keywords: [
     "Custom Software Development",
     "Custom Software Development Company",
     "Enterprise Software Development",
+    "Enterprise Software Development Services",
     "SaaS Development",
     "Web Application Development",
     "Business Software Development",
     "Software Modernization",
-    "API Integration Services",
+    "MVP Development",
     "AI Software Development",
+    "Software Development Services",
   ],
 };
 

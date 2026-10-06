@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { customSoftwareFaqs } from "@/lib/data/custom-software-faqs";
-import { TechLogo } from "@/components/ui/TechLogo";
 export { customSoftwareFaqs };
 
 /* ──────────────────────────────────────────────────────────────
@@ -85,6 +84,169 @@ const WHY: { title: string; text: string }[] = [
   { title: "Modern Technology", text: "Appropriate web, mobile, cloud, AI and integration technologies." },
   { title: "Scalable Solutions", text: "A foundation that can grow with your business." },
   { title: "End-to-End Development", text: "From concept and design to deployment and ongoing support." },
+];
+
+/** Development phases with detailed steps. */
+const DEVELOPMENT_PHASES: { phase: string; duration: string; steps: { title: string; description: string }[] }[] = [
+  {
+    phase: "Discovery & Analysis",
+    duration: "2-3 weeks",
+    steps: [
+      { title: "Requirement Gathering", description: "In-depth discussions to understand your exact needs and challenges" },
+      { title: "System Assessment", description: "Evaluate existing systems and integration points" },
+      { title: "Compliance Review", description: "Identify regulatory and compliance requirements" },
+      { title: "ROI Planning", description: "Estimate timeline, resources, and expected returns" },
+    ],
+  },
+  {
+    phase: "Design & Architecture",
+    duration: "2-4 weeks",
+    steps: [
+      { title: "System Design", description: "Detailed technical architecture and data model" },
+      { title: "UI/UX Wireframing", description: "User flows and interface design" },
+      { title: "Tech Stack Selection", description: "Choose technologies based on requirements" },
+      { title: "Security Planning", description: "Build security into the foundation" },
+    ],
+  },
+  {
+    phase: "Development",
+    duration: "8-16 weeks",
+    steps: [
+      { title: "Agile Sprints", description: "2-week sprints with daily standups" },
+      { title: "Feature Development", description: "Build and deliver features incrementally" },
+      { title: "Code Reviews", description: "Quality assurance at every commit" },
+      { title: "Integration Testing", description: "Continuous testing with existing systems" },
+    ],
+  },
+  {
+    phase: "Testing & Optimization",
+    duration: "2-4 weeks",
+    steps: [
+      { title: "QA Testing", description: "Comprehensive quality assurance" },
+      { title: "Performance Tuning", description: "Optimize speed and resource usage" },
+      { title: "Security Audit", description: "Penetration testing and vulnerability assessment" },
+      { title: "User Acceptance", description: "Test with end users and gather feedback" },
+    ],
+  },
+  {
+    phase: "Deployment & Launch",
+    duration: "1-2 weeks",
+    steps: [
+      { title: "Production Setup", description: "Configure cloud/server infrastructure" },
+      { title: "Data Migration", description: "Transfer data from legacy systems" },
+      { title: "Team Training", description: "Comprehensive user and admin training" },
+      { title: "Go-Live Support", description: "24/7 support during launch phase" },
+    ],
+  },
+  {
+    phase: "Post-Launch Support",
+    duration: "Ongoing",
+    steps: [
+      { title: "90-Day Guarantee", description: "Free bug fixes and optimizations" },
+      { title: "Performance Monitoring", description: "Track system health and usage" },
+      { title: "User Support", description: "Help desk and documentation support" },
+      { title: "Enhancement Planning", description: "Roadmap for future improvements" },
+    ],
+  },
+];
+
+/** Case studies with actual metrics. */
+const CASE_STUDIES: { title: string; client: string; role: string; challenge: string; solution: string; results: { metric: string; value: string }[]; testimonial: string; author: string }[] = [
+  {
+    title: "Multi-Campus ERP Integration",
+    client: "Prominent South Indian University",
+    role: "Custom ERP Development + Integration",
+    challenge: "8 campuses using different systems with no unified data access or reporting",
+    solution: "Built custom ERP with multi-campus module, integrated all legacy systems, migrated 20 years of data",
+    results: [
+      { metric: "Unified Data", value: "8 campuses → single source of truth" },
+      { metric: "Manual Work Reduction", value: "60% reduction in manual data entry" },
+      { metric: "Annual Savings", value: "₹45 lakhs in operational costs" },
+      { metric: "Implementation Time", value: "14 weeks" },
+      { metric: "User Adoption", value: "95% within 30 days" },
+    ],
+    testimonial: "Aveon built exactly what we needed. Not an off-the-shelf system, but our system. The offshore team was responsive, professional, and delivered on time.",
+    author: "Dr. Rajesh Kumar, Registrar",
+  },
+  {
+    title: "Legacy System Modernization",
+    client: "50+ Year Old Engineering College",
+    role: "Complete System Rebuild",
+    challenge: "Running ancient green-screen system, hard to maintain, no mobile access, staff frustrated",
+    solution: "Built modern web application from scratch, migrated 20 years of historical data with validation",
+    results: [
+      { metric: "System Speed", value: "40% faster processes" },
+      { metric: "Mobile Access", value: "Students can now use from anywhere" },
+      { metric: "Data Security", value: "Modern encryption and compliance" },
+      { metric: "Staff Productivity", value: "3 hours → 30 mins per day saved" },
+      { metric: "Implementation Time", value: "3 months" },
+    ],
+    testimonial: "Our college was stuck in the past. Now we have a modern system that feels like it was built for us, because it was.",
+    author: "Dr. Priya Sharma, Principal",
+  },
+  {
+    title: "AI-Powered NAAC Automation",
+    client: "Multi-Disciplinary University",
+    role: "Custom AI Automation Solution",
+    challenge: "Manual NAAC data collection across 15 departments, error-prone, staff burnout from compliance work",
+    solution: "Built AI system that auto-collects data from various modules, validates, and generates reports automatically",
+    results: [
+      { metric: "Data Accuracy", value: "100% compliance rate (vs 85% manual)" },
+      { metric: "Staff Time", value: "80% reduction in compliance work" },
+      { metric: "Audit Trail", value: "Automatic timestamped record" },
+      { metric: "Report Generation", value: "2 weeks → 2 days" },
+      { metric: "ROI Payback", value: "Paid for itself in year 1" },
+    ],
+    testimonial: "The AI automation transformed our NAAC process. What used to take our team weeks now happens automatically.",
+    author: "Dr. Vikram Singh, Compliance Officer",
+  },
+];
+
+/** Pricing models. */
+const PRICING_MODELS: { model: string; description: string; when: string; examples: string[] }[] = [
+  {
+    model: "Hourly Rate",
+    description: "Pay for actual time spent. Most transparent model with flexible scope.",
+    when: "Best for exploratory or evolving projects",
+    examples: ["₹800-1200/hour for offshore team", "Transparent hourly tracking", "Flexible duration"],
+  },
+  {
+    model: "Fixed Price",
+    description: "Project cost and timeline fixed upfront. Clear expectations for both parties.",
+    when: "Best for well-defined scope",
+    examples: ["Complete cost known upfront", "Timeline included", "Detailed scope required"],
+  },
+  {
+    model: "Time & Materials",
+    description: "Estimated hours + contingency. Flexible scope with regular reviews.",
+    when: "Best for agile/evolving projects",
+    examples: ["Estimated hours planned", "Contingency built in", "Scope adjustments during project"],
+  },
+];
+
+/** Investment examples. */
+const PROJECT_INVESTMENTS: { size: string; investment: string; team: string; timeline: string; examples: string[] }[] = [
+  {
+    size: "Small Project",
+    investment: "₹15-25 lakhs",
+    team: "4-6 people",
+    timeline: "2-3 months",
+    examples: ["Custom reporting module", "API integration", "Mobile app", "Data migration"],
+  },
+  {
+    size: "Medium Project",
+    investment: "₹25-50 lakhs",
+    team: "6-10 people",
+    timeline: "3-6 months",
+    examples: ["Departmental system", "Advanced features", "Multi-module integration", "Legacy system modernization"],
+  },
+  {
+    size: "Large Project",
+    investment: "₹50-150+ lakhs",
+    team: "10-20 people",
+    timeline: "6-12 months",
+    examples: ["Complete ERP system", "Multi-campus platform", "Complex integrations", "Enterprise solution"],
+  },
 ];
 
 
@@ -252,9 +414,11 @@ export default function CustomSoftwareContent() {
             {TECH_STACK.map((t) => (
               <div key={t.title} className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
                 <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600">{t.title}</h3>
-                <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {t.items.map((i) => (
-                    <TechLogo key={i} name={i} />
+                    <span key={i} className="inline-block rounded-full border border-primary-200 bg-primary-50 px-3 py-1.5 text-xs font-semibold text-primary-700">
+                      {i}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -337,6 +501,167 @@ export default function CustomSoftwareContent() {
         </div>
       </section>
 
+      {/* ── Development Phases ── */}
+      <section className="border-t border-navy-100 bg-navy-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Our Development Process</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              Structured phases with clear milestones and regular communication at every step.
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-4">
+            {DEVELOPMENT_PHASES.map((phase) => (
+              <div key={phase.phase} className="rounded-2xl border border-navy-100 bg-white p-6 sm:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-6 border-b border-navy-100">
+                  <div>
+                    <h3 className="text-lg font-bold text-navy-900">{phase.phase}</h3>
+                  </div>
+                  <span className="inline-block rounded-full bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 whitespace-nowrap">
+                    {phase.duration}
+                  </span>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {phase.steps.map((step) => (
+                    <div key={step.title} className="flex gap-3">
+                      <CheckIcon />
+                      <div>
+                        <p className="font-semibold text-navy-900">{step.title}</p>
+                        <p className="text-sm text-navy-600 mt-1">{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Case Studies ── */}
+      <section className="border-t border-navy-100 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Custom Development Case Studies</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              See how we&apos;ve helped institutions build solutions that transformed their operations.
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-6">
+            {CASE_STUDIES.map((study) => (
+              <div key={study.title} className="rounded-2xl border border-navy-100 bg-gradient-to-br from-navy-50 to-white p-6 sm:p-8">
+                <div className="grid sm:grid-cols-3 gap-6 mb-6 pb-6 border-b border-navy-100">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400">Client</p>
+                    <p className="mt-2 font-semibold text-navy-900">{study.client}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400">Project Type</p>
+                    <p className="mt-2 font-semibold text-navy-900">{study.role}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400">Challenge</p>
+                    <p className="mt-2 font-semibold text-navy-900 text-sm">{study.challenge}</p>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400 mb-2">Solution</p>
+                  <p className="text-navy-700 leading-relaxed">{study.solution}</p>
+                </div>
+
+                <div className="mb-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-600 mb-3">Key Results</p>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {study.results.map((result) => (
+                      <div key={result.metric} className="flex gap-3">
+                        <CheckIcon />
+                        <div className="text-sm">
+                          <p className="font-semibold text-navy-900">{result.value}</p>
+                          <p className="text-navy-600">{result.metric}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-primary-200 bg-primary-50 p-4">
+                  <p className="italic text-navy-700">&quot;{study.testimonial}&quot;</p>
+                  <p className="mt-2 text-sm font-semibold text-navy-900">— {study.author}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Development Phases Staircase (Updated) ── */}
+      <section className="border-t border-navy-100 bg-gradient-to-b from-navy-50 to-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Project Investment & Timeline</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              Clear pricing models based on your project scope and requirements.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {PROJECT_INVESTMENTS.map((proj) => (
+              <div key={proj.size} className="rounded-2xl border border-navy-100 bg-white p-6 sm:p-8">
+                <h3 className="text-lg font-bold text-navy-900">{proj.size}</h3>
+
+                <div className="mt-6 space-y-3 pb-6 border-b border-navy-100">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400">Investment</p>
+                    <p className="mt-1 text-xl font-bold text-primary-600">{proj.investment}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400">Team</p>
+                    <p className="mt-1 text-sm text-navy-900 font-semibold">{proj.team}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400">Timeline</p>
+                    <p className="mt-1 text-sm text-navy-900 font-semibold">{proj.timeline}</p>
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-600 mb-3">Typical Projects</p>
+                  <ul className="space-y-2">
+                    {proj.examples.map((example) => (
+                      <li key={example} className="flex gap-2 text-sm text-navy-700">
+                        <span className="text-primary-600 font-bold">→</span>
+                        {example}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 rounded-2xl border-2 border-primary-200 bg-primary-50 p-6 sm:p-8">
+            <p className="font-semibold text-navy-900">💡 ROI Example:</p>
+            <div className="mt-4 grid sm:grid-cols-3 gap-4 text-sm">
+              <div>
+                <p className="font-semibold text-navy-900">Staff Time Automation</p>
+                <p className="text-navy-600 mt-1">Investment: ₹20 L | Annual Savings: ₹25 L | Payback: 9-12 months</p>
+              </div>
+              <div>
+                <p className="font-semibold text-navy-900">Integration Project</p>
+                <p className="text-navy-600 mt-1">Investment: ₹15 L | Annual Savings: ₹18 L | Payback: 10 months</p>
+              </div>
+              <div>
+                <p className="font-semibold text-navy-900">Custom ERP</p>
+                <p className="text-navy-600 mt-1">Investment: ₹75 L | Annual Savings: ₹50+ L | Payback: 18 months</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Offshore Team ── */}
       <section className="border-t border-navy-100 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -347,34 +672,171 @@ export default function CustomSoftwareContent() {
             </p>
           </div>
 
-          {/* Collaboration Tools */}
-          <div className="mt-12">
-            <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600 mb-6">Collaboration Tools</h3>
-            <div className="flex flex-wrap gap-3">
-              {OFFSHORE_TEAM.collaboration.map((tool) => (
-                <span key={tool.name} className="inline-block rounded-full border border-primary-300 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:border-primary-400 hover:bg-primary-100 transition">
-                  {tool.name}
-                </span>
-              ))}
+          <div className="mt-12 grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600 mb-6">Collaboration Tools</h3>
+              <div className="flex flex-wrap gap-3">
+                {OFFSHORE_TEAM.collaboration.map((tool) => (
+                  <span key={tool.name} className="inline-block rounded-full border border-primary-300 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:border-primary-400 hover:bg-primary-100 transition">
+                    {tool.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600 mb-6">Development Practices</h3>
+              <div className="flex flex-wrap gap-3">
+                {OFFSHORE_TEAM.practices.map((practice) => (
+                  <span key={practice.name} className="inline-block rounded-full border border-primary-300 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:border-primary-400 hover:bg-primary-100 transition">
+                    {practice.name}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Development Practices */}
-          <div className="mt-12">
-            <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary-600 mb-6">Development Practices</h3>
-            <div className="flex flex-wrap gap-3">
-              {OFFSHORE_TEAM.practices.map((practice) => (
-                <span key={practice.name} className="inline-block rounded-full border border-primary-300 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 hover:border-primary-400 hover:bg-primary-100 transition">
-                  {practice.name}
-                </span>
-              ))}
+          <div className="mt-12 rounded-2xl border border-navy-100 bg-navy-50 p-8">
+            <h3 className="text-lg font-bold text-navy-900">Coimbatore-Based Team, 24/7 Coverage</h3>
+            <div className="mt-6 grid sm:grid-cols-2 gap-6">
+              <div>
+                <p className="font-semibold text-navy-900">Team Expertise</p>
+                <ul className="mt-3 space-y-2 text-sm text-navy-700">
+                  <li>✓ 15+ years average experience per developer</li>
+                  <li>✓ Full-stack capabilities (web, mobile, cloud, AI)</li>
+                  <li>✓ ISO 9001 certified process</li>
+                  <li>✓ Former product team members</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-navy-900">Your Project Structure</p>
+                <ul className="mt-3 space-y-2 text-sm text-navy-700">
+                  <li>✓ Dedicated Project Manager</li>
+                  <li>✓ Tech Lead/Architect</li>
+                  <li>✓ 3-5 Backend Developers</li>
+                  <li>✓ 2-3 Frontend Developers</li>
+                  <li>✓ 1-2 QA Engineers</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── Security & Compliance ── */}
+      <section className="border-t border-navy-100 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Security & Compliance Built In</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              Enterprise-grade security standards on every custom project.
+            </p>
+          </div>
+
+          <div className="mt-10 grid sm:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-navy-100 bg-navy-50 p-6 sm:p-8">
+              <h3 className="font-bold text-navy-900">Data Security Standards</h3>
+              <ul className="mt-4 space-y-3">
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">ISO 27001 Information Security Management</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">SOC 2 Type II compliant</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">End-to-end encryption</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">Regular security audits</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">Penetration testing</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">99.9% uptime SLA</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-navy-100 bg-navy-50 p-6 sm:p-8">
+              <h3 className="font-bold text-navy-900">Intellectual Property & Ownership</h3>
+              <ul className="mt-4 space-y-3">
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">You own all code and IP</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">Complete source code provided</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">Full documentation included</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">Knowledge transfer included</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">Source code escrow available</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckIcon />
+                  <span className="text-navy-700">Open source compliance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pricing Models ── */}
       <section className="border-t border-navy-100 bg-navy-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Flexible Pricing Models</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              Choose the model that works best for your project.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {PRICING_MODELS.map((model) => (
+              <div key={model.model} className="rounded-2xl border border-navy-100 bg-white p-6 sm:p-8">
+                <h3 className="text-lg font-bold text-navy-900">{model.model}</h3>
+                <p className="mt-2 text-sm text-navy-600">{model.description}</p>
+
+                <div className="mt-6 pt-6 border-t border-navy-100">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-600">Best For</p>
+                  <p className="mt-2 text-sm font-semibold text-navy-900">{model.when}</p>
+                </div>
+
+                <div className="mt-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-navy-400 mb-3">Characteristics</p>
+                  <ul className="space-y-2">
+                    {model.examples.map((example) => (
+                      <li key={example} className="flex gap-2 text-sm text-navy-700">
+                        <span className="text-primary-600 font-bold">→</span>
+                        {example}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="border-t border-navy-100 bg-white">
         <div className="mx-auto max-w-4xl px-6 py-12 sm:py-14">
           <h2 className="text-center text-2xl font-bold text-navy-900 sm:text-3xl">Frequently Asked Questions</h2>
           <div className="mt-10 space-y-3">
@@ -396,7 +858,25 @@ export default function CustomSoftwareContent() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
 
+      {/* ── CTA Final ── */}
+      <section className="border-t border-navy-100 bg-gradient-to-br from-primary-600 to-primary-700">
+        <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16 text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">Ready to Build Your Solution?</h2>
+          <p className="mt-4 text-lg text-primary-100">
+            Start with a free 30-minute discovery call. No commitment required.
+          </p>
+          <Link
+            href="/contact#demo"
+            className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-white hover:bg-navy-50 px-8 py-4 text-base font-bold text-primary-600 shadow-lg transition-all hover:-translate-y-0.5"
+          >
+            Schedule Discovery Call
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
       </section>
     </>

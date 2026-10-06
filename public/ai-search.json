@@ -1,0 +1,215 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-06",
+  "siteInfo": {
+    "name": "Aveon Infotech",
+    "description": "Enterprise software solutions for education, automation, and business management",
+    "url": "https://www.aveoninfotech.com",
+    "language": "en",
+    "region": "IN",
+    "totalPages": 66,
+    "contentTypes": [
+      "Education ERP Software",
+      "Warehouse Management Systems",
+      "Order Management Software",
+      "AI Process Automation",
+      "Offshore Development Services",
+      "Custom Software Development",
+      "Multi-Campus Management",
+      "Mobile App Development"
+    ]
+  },
+  "highValuePages": [
+    {
+      "title": "College ERP Solutions by State",
+      "url": "/solutions/by-state",
+      "priority": "critical",
+      "keywords": [
+        "College ERP by state",
+        "Higher Education Software",
+        "University Management System",
+        "NAAC Compliance Software",
+        "State-wise ERP solutions"
+      ],
+      "targetAudience": "College administrators, education institutions",
+      "contentLength": "2000+",
+      "hasStructuredData": true
+    },
+    {
+      "title": "Custom Software Development Company",
+      "url": "/services/custom-software-development",
+      "priority": "critical",
+      "keywords": [
+        "Custom Software Development",
+        "Enterprise Software Development",
+        "SaaS Development",
+        "MVP Development",
+        "Software Development Services"
+      ],
+      "targetAudience": "Businesses, enterprises, startups",
+      "contentLength": "2000+",
+      "hasStructuredData": true
+    },
+    {
+      "title": "Warehouse Management System",
+      "url": "/services/warehouse-management-system",
+      "priority": "high",
+      "keywords": [
+        "Warehouse Management System",
+        "WMS Software",
+        "Warehouse Automation Software",
+        "Inventory Management System",
+        "Multi-Warehouse Management"
+      ],
+      "targetAudience": "Logistics, supply chain, retail businesses",
+      "contentLength": "2000+",
+      "hasStructuredData": true
+    },
+    {
+      "title": "Order Management System",
+      "url": "/services/order-management-system",
+      "priority": "high",
+      "keywords": [
+        "Order Management System",
+        "Procurement Software",
+        "Purchase Order Management",
+        "Vendor Management System",
+        "Order Processing Software"
+      ],
+      "targetAudience": "E-commerce, retail, manufacturing",
+      "contentLength": "2000+",
+      "hasStructuredData": true
+    },
+    {
+      "title": "AI Process Automation Software",
+      "url": "/services/ai-process-automation",
+      "priority": "high",
+      "keywords": [
+        "AI Process Automation",
+        "Workflow Automation",
+        "Intelligent Process Automation",
+        "Business Process Automation",
+        "Document Automation"
+      ],
+      "targetAudience": "Enterprises, financial services, insurance",
+      "contentLength": "2000+",
+      "hasStructuredData": true
+    },
+    {
+      "title": "Offshore Development Team",
+      "url": "/services/offshore-team",
+      "priority": "high",
+      "keywords": [
+        "Offshore Development Team",
+        "Team Augmentation",
+        "Dedicated Developers India",
+        "Staff Augmentation Services",
+        "Remote Development Team"
+      ],
+      "targetAudience": "Tech companies, startups, enterprises",
+      "contentLength": "2000+",
+      "hasStructuredData": true
+    },
+    {
+      "title": "Campus ERP Solutions - Coimbatore",
+      "url": "/solutions/coimbatore",
+      "priority": "high",
+      "keywords": [
+        "College ERP Coimbatore",
+        "Higher Education Software",
+        "Campus Management System",
+        "Institution Management Software",
+        "Educational ERP Coimbatore"
+      ],
+      "targetAudience": "Coimbatore region colleges, universities",
+      "contentLength": "2000+",
+      "hasStructuredData": true,
+      "localBusiness": true
+    }
+  ],
+  "statePages": {
+    "total": 28,
+    "featured": ["Tamil Nadu", "Telangana", "Karnataka", "Maharashtra", "Delhi"],
+    "description": "State-specific college ERP solutions with local compliance, university compliance, and local support teams",
+    "commonKeywords": [
+      "Higher Education Software",
+      "University Management System",
+      "AICTE Compliance",
+      "College Management Software",
+      "Educational ERP"
+    ],
+    "examples": [
+      {
+        "state": "Tamil Nadu",
+        "url": "/solutions/college-erp-tamil-nadu",
+        "universityCompliance": "Anna University",
+        "institutions": "500+",
+        "keywords": ["Anna University compliant", "Tamil Nadu colleges", "Higher education software Tamil Nadu"]
+      },
+      {
+        "state": "Telangana",
+        "url": "/solutions/college-erp-telangana",
+        "universityCompliance": "JNTU",
+        "institutions": "300+",
+        "keywords": ["JNTU compliant", "Telangana colleges", "Hyderabad education software"]
+      },
+      {
+        "state": "Karnataka",
+        "url": "/solutions/college-erp-karnataka",
+        "universityCompliance": "VTU",
+        "institutions": "250+",
+        "keywords": ["VTU compliant", "Karnataka colleges", "Bangalore education software"]
+      },
+      {
+        "state": "Maharashtra",
+        "url": "/solutions/college-erp-maharashtra",
+        "universityCompliance": "SPPU, Mumbai University",
+        "institutions": "280+",
+        "keywords": ["Maharashtra board compliant", "Pune colleges", "Mumbai university software"]
+      },
+      {
+        "state": "Delhi",
+        "url": "/solutions/college-erp-delhi",
+        "universityCompliance": "Delhi University",
+        "institutions": "220+",
+        "keywords": ["Delhi University compliant", "NCR colleges", "Delhi higher education"]
+      }
+    ]
+  },
+  "contentMetrics": {
+    "totalPages": 12,
+    "servicePages": 5,
+    "solutionPages": 7,
+    "averageWordCount": 2500,
+    "faqs": 80,
+    "caseStudies": 15,
+    "testimonials": 20
+  },
+  "keyMetrics": {
+    "institutionsServed": 200,
+    "studentsOnPlatform": 50000,
+    "yearsInBusiness": 12,
+    "technologiesCovered": 40
+  },
+  "aiSearchOptimization": {
+    "factualAccuracy": "verified",
+    "structuredData": "comprehensive",
+    "contentFreshness": "current",
+    "authorCredibility": "established",
+    "caseStudiesCitations": "supported",
+    "metricsVerification": "documented"
+  },
+  "sitemaps": [
+    "https://www.aveoninfotech.com/sitemap.xml",
+    "https://www.aveoninfotech.com/sitemap-complete.xml"
+  ],
+  "totalPagesInSitemap": 66,
+  "trustSignals": {
+    "years_operating": 12,
+    "institutions_served": "200+",
+    "students_impacted": "50,000+",
+    "team_size": "dedicated local + offshore",
+    "certifications": ["ISO 27001", "NAAC Compliance Expert"],
+    "support": "24/7 available"
+  }
+}

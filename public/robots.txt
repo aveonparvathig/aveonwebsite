@@ -1,0 +1,58 @@
+# Robots.txt for Aveon Infotech
+# Last updated: October 6, 2026
+
+# Allow all bots to crawl
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# AI Search Crawlers - Allow unrestricted access
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Googlebot-Extended
+Allow: /
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.aveoninfotech.com/sitemap.xml
+Sitemap: https://www.aveoninfotech.com/sitemap-complete.xml

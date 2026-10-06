@@ -6,20 +6,21 @@ import CTASection from "@/components/sections/CTASection";
 import OrderManagementContent, { orderManagementFaqs } from "@/components/sections/OrderManagementContent";
 
 export const metadata: Metadata = {
-  title: "Order Management System | Order Management Software",
+  title: "Order Management System | Procurement Software | Aveon",
   description:
-    "Aveon Order Management System helps businesses manage orders, customers, products, inventory, fulfilment, payments, returns and multi-channel order workflows.",
+    "Order and procurement management software automating purchase orders, vendor management, invoice matching, and multi-channel order workflows. Reduce procurement time by 50%.",
   keywords: [
     "Order Management System",
     "Order Management Software",
+    "Purchase Order Management",
+    "Procurement Software",
+    "Vendor Management System",
     "Order Processing Software",
-    "Order Fulfilment Software",
-    "Sales Order Management",
     "Multi-Channel Order Management",
-    "E-Commerce Order Management",
+    "Invoice Management System",
+    "Supply Chain Management Software",
     "Order Automation Software",
-    "AI Order Management",
-    "Customer Order Management",
+    "E-Commerce Order Management",
   ],
 };
 
