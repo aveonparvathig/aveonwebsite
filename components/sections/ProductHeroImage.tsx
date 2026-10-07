@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroImage, ResponsiveImage } from "@/components/ui/OptimizedImage";
 import ProductIcon from "@/components/ui/ProductIcon";
 
 interface ProductHeroImageProps {
@@ -36,9 +37,12 @@ export default function ProductHeroImage({ slug, title }: ProductHeroImageProps)
   }
 
   return (
-    <img
+    <HeroImage
       src={imagePath}
       alt={`${title} dashboard`}
+      width={600}
+      height={500}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 50vw"
       className="w-full h-full object-contain"
     />
   );

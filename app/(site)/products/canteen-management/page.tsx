@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 
 export const metadata: Metadata = {
   title: "Canteen Management Software - Aveon",
@@ -54,11 +55,12 @@ export default function CanteenManagementPage() {
               </Link>
             </div>
           </div>
-          <Image
+          <HeroImage
             src="/products/canteen-dashboard.webp"
             alt="Canteen and Food Service Management System"
             width={1380}
             height={1140}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-contain"
           />
         </div>

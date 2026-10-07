@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 
 export const metadata: Metadata = {
   title: "Grievance Management System - Aveon",
@@ -54,11 +55,12 @@ export default function GrievanceManagementPage() {
               </Link>
             </div>
           </div>
-          <Image
+          <HeroImage
             src="/products/grievance(1).png"
             alt="Grievance and Complaint Management System"
             width={600}
             height={400}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-contain"
           />
         </div>
