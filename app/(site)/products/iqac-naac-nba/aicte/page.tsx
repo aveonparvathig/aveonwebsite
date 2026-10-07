@@ -3,9 +3,8 @@ import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "AICTE Compliance Software | Regulatory Tool",
-  description:
-    "Stay compliant with AICTE approval requirements, mandatory disclosures and annual reporting, all from one dashboard.",
+  title: "AICTE Compliance Software - Aveon",
+  description: "Stay compliant with AICTE approval requirements, mandatory disclosures and annual reporting.",
 };
 
 const compliance = [

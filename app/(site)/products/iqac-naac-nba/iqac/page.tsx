@@ -3,9 +3,8 @@ import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "IQAC Software | Quality Assurance Management",
-  description:
-    "Coordinate IQAC meetings, action plans and Annual Quality Assurance Reports (AQAR), all tracked in one place and ready for NAAC review.",
+  title: "IQAC Software - Quality Assurance Platform",
+  description: "Coordinate IQAC meetings, action plans and Annual Quality Assurance Reports (AQAR) for NAAC review.",
 };
 
 const activities = [

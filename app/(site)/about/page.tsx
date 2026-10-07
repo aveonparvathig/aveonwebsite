@@ -4,9 +4,8 @@ import Stats from "@/components/sections/Stats";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "About Aveon | Education Software Company",
-  description:
-    "Aveon Infotech is an education technology company building ERP solutions for universities, colleges and schools.",
+  title: "About Aveon Infotech - Campus ERP Leaders",
+  description: "Learn about Aveon Infotech, trusted by 5000+ educational institutions for campus ERP & LMS solutions since 2010.",
 };
 
 const apps = [

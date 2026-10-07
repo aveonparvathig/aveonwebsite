@@ -3,6 +3,7 @@ import Image from "next/image";
 import { navigation, siteConfig } from "@/lib/constants";
 import { products as fallbackProducts, type Product } from "@/lib/data/products";
 import SocialIcon from "@/components/ui/SocialIcons";
+import { getEncodedEmail } from "@/lib/email-encoder";
 
 export default function Footer({
   products = fallbackProducts,
@@ -13,6 +14,7 @@ export default function Footer({
   const company = navigation.filter((n) =>
     ["Services", "Solutions", "Contact"].includes(n.label),
   );
+  const encodedEmail = getEncodedEmail(siteConfig.email);
 
   return (
     <footer className="border-t border-navy-900/8 bg-navy-50">
@@ -107,9 +109,7 @@ export default function Footer({
                 </a>
               </li>
               <li>
-                <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-primary-600">
-                  {siteConfig.email}
-                </a>
+                <a href={encodedEmail.href} className="transition-colors hover:text-primary-600" dangerouslySetInnerHTML={{ __html: encodedEmail.encoded }} />
               </li>
               <li>{siteConfig.address}</li>
             </ul>

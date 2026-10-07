@@ -1,5 +1,6 @@
 import { siteConfig } from "@/lib/constants";
 import SocialIcon from "@/components/ui/SocialIcons";
+import { getEncodedEmail } from "@/lib/email-encoder";
 
 const socialLinks = [
   { label: "LinkedIn", href: siteConfig.social.linkedin, icon: "linkedin" },
@@ -9,6 +10,8 @@ const socialLinks = [
 ];
 
 export default function TopBar() {
+  const encodedEmail = getEncodedEmail(siteConfig.email);
+
   return (
     <div className="border-b border-navy-900/5 bg-primary-50 text-[12.5px] text-navy-800">
       <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-10">
@@ -23,14 +26,12 @@ export default function TopBar() {
             {siteConfig.phone}
           </a>
           <a
-            href={`mailto:${siteConfig.email}`}
+            href={encodedEmail.href}
             className="hidden items-center gap-2 font-medium text-primary-700 transition-colors hover:text-accent-500 sm:flex"
-          >
-            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-            </svg>
-            {siteConfig.email}
-          </a>
+            dangerouslySetInnerHTML={{
+              __html: `<svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg> ${encodedEmail.encoded}`,
+            }}
+          />
         </div>
         <div className="flex items-center gap-2">
           {socialLinks.map((s) => (

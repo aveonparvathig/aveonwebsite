@@ -7,9 +7,8 @@ import FAQ, { faqJsonLd } from "@/components/sections/FAQ";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Aveon | Support & Demo Booking",
-  description:
-    "Get in touch with Aveon Infotech to book a demo, ask about our ERP products, or talk to our team.",
+  title: "Contact Aveon - Campus ERP Support",
+  description: "Get in touch with Aveon's team. Call +91 87540 06483 or use our contact form. We're here to help your institution.",
 };
 
 const offices = [

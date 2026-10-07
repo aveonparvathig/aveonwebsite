@@ -12,8 +12,8 @@ import CTASection from "@/components/sections/CTASection";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Campus ERP & LMS | Universities, Colleges & Schools | Aveon",
-  description: "Unified campus ERP & LMS for universities, colleges and schools. AI-powered education software serving 5000+ institutions. Manage admissions, academics, fees and operations on one platform. OBE compliant, NAAC/AICTE ready.",
+  title: "Campus ERP & LMS for Universities & Colleges",
+  description: "AI-powered campus ERP & LMS for 5000+ institutions. Manage admissions, academics, fees and operations on one platform. OBE-compliant, NAAC/AICTE ready.",
   keywords: [
     "AI-powered campus ERP",
     "university ERP system",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     "education ERP India",
   ],
   openGraph: {
-    title: "Campus ERP & LMS for Universities, Colleges & Schools",
-    description: "Unified platform for education management. Manage students, academics, admissions and operations with AI-powered analytics.",
+    title: "Campus ERP & LMS for Universities & Colleges",
+    description: "AI-powered campus management platform serving 5000+ institutions.",
     url: siteConfig.url,
   },
 };

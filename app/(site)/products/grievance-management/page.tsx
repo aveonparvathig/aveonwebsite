@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Grievance Management System | Complaint Portal",
-  description: "Online grievance and complaint management platform for institutions. Anonymous submissions, automatic routing, escalation, resolution tracking and comprehensive reporting.",
+  title: "Grievance Management System - Aveon",
+  description: "Online grievance and complaint management. Anonymous submissions, automatic routing, escalation tracking and reporting.",
   keywords: [
     "grievance management system",
     "complaint management software",

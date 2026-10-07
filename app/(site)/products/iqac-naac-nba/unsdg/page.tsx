@@ -4,9 +4,8 @@ import Image from "next/image";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Sustainable Development Goals | UNSDG Tracker",
-  description:
-    "Map your institution's programmes, research and outreach to all 17 UN Sustainable Development Goals and report your contribution with ease.",
+  title: "UN Sustainable Development Goals Tracker",
+  description: "Map your institution's programmes and research to all 17 UN Sustainable Development Goals.",
 };
 
 const goals = [

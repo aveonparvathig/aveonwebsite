@@ -4,9 +4,8 @@ import Image from "next/image";
 import { TechLogo, TechBadge } from "@/components/ui/TechLogo";
 
 export const metadata: Metadata = {
-  title: "Aveon Academy | Tech Training Programs",
-  description:
-    "Aveon Academy offers industry-oriented technology programs: full-stack development, AI/ML, digital marketing, software innovation and prompt engineering.",
+  title: "Campus ERP Training & Academy",
+  description: "Aveon Academy: Industry-oriented training programs for campus ERP, full-stack development, AI/ML, and software innovation.",
 };
 
 /* ── Icons (24px outline paths) ─────────────────────────────── */

@@ -5,9 +5,8 @@ import CTASection from "@/components/sections/CTASection";
 import { products } from "@/lib/data/products";
 
 export const metadata: Metadata = {
-  title: "Education ERP Solutions | Campus Management",
-  description:
-    "Complete campus solutions for universities, colleges and schools, from admissions to alumni, powered by the Aveon platform.",
+  title: "Campus ERP Solutions by Institution Type",
+  description: "Tailored campus ERP solutions for universities, colleges, schools and autonomous institutions. NAAC/AICTE compliant.",
 };
 
 const solutions = [

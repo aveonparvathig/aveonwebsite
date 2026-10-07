@@ -17,6 +17,9 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: siteConfig.url,
+  },
   title: {
     default: "AI-Powered Campus ERP & LMS | Aveon Infotech",
     template: "%s | Aveon Infotech",

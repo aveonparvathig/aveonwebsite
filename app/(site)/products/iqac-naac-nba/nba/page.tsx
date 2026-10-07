@@ -4,9 +4,8 @@ import Image from "next/image";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "NBA Accreditation | Program Assessment Tool",
-  description:
-    "Prepare Self Assessment Reports and track Program Outcomes for every programme the National Board of Accreditation (NBA) covers.",
+  title: "NBA Accreditation - Program Assessment",
+  description: "Prepare Self Assessment Reports and track Program Outcomes for every NBA-accredited programme.",
 };
 
 const nbaGroups = [
