@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { demoBookingSchema, type DemoBookingInput } from "@/lib/validations";
 import { products } from "@/lib/data/products";
 import { useFormLock } from "@/components/forms/FormLockContext";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { EventType } from "@/lib/analytics";
 
 // text-base on mobile prevents iOS Safari's auto-zoom-on-focus (triggered below 16px); sm: restores the original size on larger screens.
 const inputClass =
@@ -13,6 +15,8 @@ const inputClass =
 
 export default function DemoBookingForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const { trackEvent, trackLead } = useAnalytics();
+
   const {
     register,
     handleSubmit,
@@ -23,16 +27,34 @@ export default function DemoBookingForm() {
     resolver: zodResolver(demoBookingSchema),
   });
 
-
-  const isDirty = Object.entries(watch()).some(([k, v]) => k !== "website" && typeof v === "string" && v.trim() !== "");
+  const watchedData = watch();
+  const isDirty = Object.entries(watchedData).some(([k, v]) => k !== "website" && typeof v === "string" && v.trim() !== "");
   const clearSelf = useCallback(() => {
     reset();
     setStatus("idle");
   }, [reset]);
   const { isLocked, clearOther } = useFormLock("demo", isDirty, clearSelf);
 
+  // Track form start (first interaction)
+  const handleFormFocus = useCallback(() => {
+    if (status === "idle" && isDirty === false) {
+      trackEvent(EventType.FORM_START, {
+        form_name: "demo_booking",
+      });
+    }
+    isLocked && clearOther();
+  }, [status, isDirty, isLocked, clearOther, trackEvent]);
+
   async function onSubmit(data: DemoBookingInput) {
     setStatus("submitting");
+
+    // Track form submission attempt
+    trackEvent(EventType.FORM_SUBMIT, {
+      form_name: "demo_booking",
+      product: data.product,
+      institute_type: "unknown",
+    });
+
     try {
       const res = await fetch("/api/demo-booking", {
         method: "POST",
@@ -40,10 +62,38 @@ export default function DemoBookingForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error(await res.text());
+
       setStatus("success");
+
+      // Track successful lead capture
+      trackLead({
+        leadType: "form",
+        source: "demo_booking_form",
+        value: 50,
+        properties: {
+          product: data.product,
+          city: data.city,
+          institute: data.institute,
+        },
+      });
+
+      // Track demo request event
+      trackEvent(EventType.DEMO_REQUEST, {
+        form_name: "demo_booking",
+        product: data.product,
+        institute_name: data.institute,
+        city: data.city,
+      });
+
       reset();
-    } catch {
+    } catch (error) {
       setStatus("error");
+
+      // Track form error
+      trackEvent(EventType.FORM_ERROR, {
+        form_name: "demo_booking",
+        error_message: error instanceof Error ? error.message : "Unknown error",
+      });
     }
   }
 
@@ -76,7 +126,7 @@ export default function DemoBookingForm() {
   return (
     <div className="relative flex flex-1 flex-col">
       <div className="flex flex-1 flex-col">
-    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={() => isLocked && clearOther()} noValidate autoComplete="off" className="flex flex-1 flex-col justify-between gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={handleFormFocus} noValidate autoComplete="off" className="flex flex-1 flex-col justify-between gap-4">
       {/* Honeypot */}
       <input
         type="text"

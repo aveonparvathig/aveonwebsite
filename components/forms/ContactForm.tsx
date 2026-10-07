@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactInput } from "@/lib/validations";
 import { useFormLock } from "@/components/forms/FormLockContext";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { EventType } from "@/lib/analytics";
 
 // text-base on mobile prevents iOS Safari's auto-zoom-on-focus (triggered below 16px); sm: restores the original size on larger screens.
 const inputClass =
@@ -12,6 +14,8 @@ const inputClass =
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const { trackEvent, trackLead } = useAnalytics();
+
   const {
     register,
     handleSubmit,
@@ -42,8 +46,8 @@ export default function ContactForm() {
     el.style.height = `${Math.min(el.scrollHeight, 260)}px`;
   }, []);
 
-
-  const isDirty = Object.entries(watch()).some(([k, v]) => k !== "website" && typeof v === "string" && v.trim() !== "");
+  const watchedData = watch();
+  const isDirty = Object.entries(watchedData).some(([k, v]) => k !== "website" && typeof v === "string" && v.trim() !== "");
   const clearSelf = useCallback(() => {
     reset();
     setStatus("idle");
@@ -51,8 +55,25 @@ export default function ContactForm() {
   }, [reset, resetMessageHeight]);
   const { isLocked, clearOther } = useFormLock("contact", isDirty, clearSelf);
 
+  // Track form start (first interaction)
+  const handleFormFocus = useCallback(() => {
+    if (status === "idle" && isDirty === false) {
+      trackEvent(EventType.FORM_START, {
+        form_name: "contact_form",
+      });
+    }
+    isLocked && clearOther();
+  }, [status, isDirty, isLocked, clearOther, trackEvent]);
+
   async function onSubmit(data: ContactInput) {
     setStatus("submitting");
+
+    // Track form submission attempt
+    trackEvent(EventType.FORM_SUBMIT, {
+      form_name: "contact_form",
+      subject: data.subject,
+    });
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -61,10 +82,34 @@ export default function ContactForm() {
       });
       if (!res.ok) throw new Error(await res.text());
       setStatus("success");
+
+      // Track successful lead capture
+      trackLead({
+        leadType: "form",
+        source: "contact_form",
+        value: 20,
+        properties: {
+          subject: data.subject,
+          message_length: data.message.length,
+        },
+      });
+
+      // Track contact click event
+      trackEvent(EventType.CONTACT_CLICK, {
+        form_name: "contact_form",
+        subject: data.subject,
+      });
+
       reset();
       resetMessageHeight();
-    } catch {
+    } catch (error) {
       setStatus("error");
+
+      // Track form error
+      trackEvent(EventType.FORM_ERROR, {
+        form_name: "contact_form",
+        error_message: error instanceof Error ? error.message : "Unknown error",
+      });
     }
   }
 
@@ -91,7 +136,7 @@ export default function ContactForm() {
   return (
     <div className="relative flex flex-1 flex-col">
       <div className="flex flex-1 flex-col">
-    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={() => isLocked && clearOther()} noValidate autoComplete="off" className="flex flex-1 flex-col justify-between gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={handleFormFocus} noValidate autoComplete="off" className="flex flex-1 flex-col justify-between gap-4">
       <input
         type="text"
         tabIndex={-1}
