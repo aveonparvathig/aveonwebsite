@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
 // Real clients. Confirm each person has approved their quote before this goes live.
 type ClientTestimonial = {
@@ -96,12 +97,12 @@ function TestimonialCard({ t }: { t: ClientTestimonial }) {
         <span aria-hidden className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-500/80" />
         <span aria-hidden className="pointer-events-none absolute -bottom-10 -left-8 h-24 w-24 rounded-full bg-white/10" />
         {t.photo ? (
-          <Image
+          <OptimizedImage
             src={t.photo}
             alt={t.name}
             width={160}
             height={160}
-            loading="eager"
+            quality={80}
             className="h-20 w-20 rounded-full object-cover object-top ring-4 ring-white/80 shadow-[0_12px_28px_-10px_rgb(0_0_0_/_0.45)]"
           />
         ) : (

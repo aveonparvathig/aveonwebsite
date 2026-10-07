@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage, ResponsiveImage } from "@/components/ui/OptimizedImage";
 import { products as fallbackProducts, applyProductOverrides, type Product } from "@/lib/data/products";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productsQuery } from "@/lib/queries";
@@ -81,11 +82,12 @@ export default async function ProductsGrid() {
                 </span>
               </span>
               <span className="min-w-0 flex-1 basis-65 overflow-hidden rounded-[20px] border border-primary-600/18 bg-[#f4f8ff]">
-                <Image
+                <HeroImage
                   src={heroImages[featured.slug] ?? "/products/cms.png"}
                   alt={`${featured.title} dashboard`}
                   width={400}
                   height={480}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-full object-cover"
                 />
               </span>

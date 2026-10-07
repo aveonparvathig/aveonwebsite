@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { HeroImage, OptimizedImage } from "@/components/ui/OptimizedImage";
 
 const slides: {
   image: string;
@@ -137,11 +138,15 @@ export default function Hero() {
             </div>
             <div className="relative aspect-[640/440] w-full bg-[#f4f8ff] overflow-hidden">
               {slides.map((s, i) => (
-                <img
+                <OptimizedImage
                   key={s.image}
                   src={s.image}
                   alt={s.caption}
-                  aria-hidden={i !== current}
+                  width={640}
+                  height={440}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 50vw"
+                  priority={i === 0}
+                  lazy={i !== 0}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[800ms] ${i === current ? "opacity-100" : "opacity-0"}`}
                 />
               ))}

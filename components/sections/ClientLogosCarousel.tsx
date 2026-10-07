@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
 interface ClientLogo {
   name: string;
@@ -72,11 +73,12 @@ export default function ClientLogosCarousel() {
                   className="flex shrink-0 items-center justify-center rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-colors hover:border-primary-200"
                   style={{ width: "160px", height: "120px" }}
                 >
-                  <Image
+                  <OptimizedImage
                     src={logo.src}
                     alt={logo.name}
                     width={120}
                     height={100}
+                    quality={75}
                     className="h-auto w-auto max-h-20 max-w-full object-contain"
                   />
                 </div>
@@ -93,11 +95,12 @@ export default function ClientLogosCarousel() {
                   className="flex shrink-0 items-center justify-center rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-colors hover:border-primary-200"
                   style={{ width: "160px", height: "120px" }}
                 >
-                  <Image
+                  <OptimizedImage
                     src={logo.src}
                     alt={logo.name}
                     width={120}
                     height={100}
+                    quality={75}
                     className="h-auto w-auto max-h-20 max-w-full object-contain"
                   />
                 </div>
