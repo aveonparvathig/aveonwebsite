@@ -5,6 +5,7 @@ import { HeroImage } from "@/components/ui/OptimizedImage";
 import { fetchOrFallback } from "@/lib/sanity";
 import { postsQuery } from "@/lib/queries";
 import { posts as fallbackPosts } from "@/lib/data/posts";
+import { staticPosts } from "@/lib/data/static-posts";
 
 export const metadata: Metadata = {
   title: "Campus ERP Blog & Resources",
@@ -35,7 +36,10 @@ function formatDate(iso: string) {
 }
 
 export default async function BlogPage() {
-  const items = await fetchOrFallback<PostPreview[]>(postsQuery, fallbackPosts);
+  const cmsItems = await fetchOrFallback<PostPreview[]>(postsQuery, fallbackPosts);
+  const items: PostPreview[] = [...cmsItems, ...staticPosts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
 
   return (
     <>

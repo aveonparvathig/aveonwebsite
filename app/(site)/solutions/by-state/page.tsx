@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
+import { STATES_DATA } from "@/lib/data/states";
 
 export const metadata: Metadata = {
   title: "College ERP by State | Higher Education Software",
@@ -121,6 +122,16 @@ export default function ByStatePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {ALL_STATES.map((state) => {
               const slug = state.toLowerCase().replace(/\s+/g, "-");
+              if (!(slug in STATES_DATA)) {
+                return (
+                  <span
+                    key={state}
+                    className="rounded-lg border border-navy-100 bg-navy-50 px-4 py-3 font-medium text-navy-500"
+                  >
+                    {state}
+                  </span>
+                );
+              }
               return (
                 <Link
                   key={state}

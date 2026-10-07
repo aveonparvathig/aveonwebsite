@@ -3,74 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
+import { STATES_DATA, stateSlugs } from "@/lib/data/states";
 
-// State data mapping
-const STATES_DATA: Record<string, { name: string; count: string; description: string; universities: string[] }> = {
-  "tamil-nadu": {
-    name: "Tamil Nadu",
-    count: "500+",
-    description: "Serving colleges and universities across Tamil Nadu with Anna University compliance",
-    universities: ["Anna University", "Madras University", "Bharathiar University", "Periyar University"],
-  },
-  "telangana": {
-    name: "Telangana",
-    count: "300+",
-    description: "JNTU-compliant solutions for Telangana educational institutions",
-    universities: ["JNTU Hyderabad", "Osmania University", "University of Hyderabad"],
-  },
-  "karnataka": {
-    name: "Karnataka",
-    count: "250+",
-    description: "VTU-compliant ERP solutions for Karnataka colleges and universities",
-    universities: ["Visvesvaraya Technical University", "Bangalore University", "University of Mysore"],
-  },
-  "maharashtra": {
-    name: "Maharashtra",
-    count: "280+",
-    description: "Serving Maharashtra institutions with state board compliance",
-    universities: ["University of Mumbai", "Savitribai Phule Pune University", "Nagpur University"],
-  },
-  "delhi": {
-    name: "Delhi NCR",
-    count: "220+",
-    description: "Delhi University-compliant solutions for Delhi and NCR institutions",
-    universities: ["Delhi University", "Jamia Millia Islamia", "GGSIPU"],
-  },
-  "haryana": {
-    name: "Haryana",
-    count: "180+",
-    description: "Haryana education board compliant solutions",
-    universities: ["Kurukshetra University", "GJUS&T Hisar"],
-  },
-  "punjab": {
-    name: "Punjab",
-    count: "160+",
-    description: "Punjab-based institution solutions with local compliance",
-    universities: ["Punjab University", "Guru Nanak Dev University"],
-  },
-  "west-bengal": {
-    name: "West Bengal",
-    count: "150+",
-    description: "West Bengal education board compliant ERP",
-    universities: ["University of Calcutta", "Jadavpur University", "University of Burdwan"],
-  },
-  "rajasthan": {
-    name: "Rajasthan",
-    count: "140+",
-    description: "Rajasthan university compliant solutions",
-    universities: ["Rajasthan University", "University of Rajasthan"],
-  },
-  "guadalajara": {
-    name: "Guadalajara",
-    count: "130+",
-    description: "Gujarat education solutions with local compliance",
-    universities: ["Gujarat University", "Maharaja Sayajirao University"],
-  },
-};
+// Next.js only treats a whole segment as dynamic, so the "college-erp-" prefix
+// is parsed here to keep the /solutions/college-erp-<state> URLs.
+const PREFIX = "college-erp-";
 
-export async function generateMetadata({ params }: { params: { state: string } }): Promise<Metadata> {
-  const state = STATES_DATA[params.state];
-  if (!state) return notFound();
+type StatePageProps = { params: Promise<{ slug: string }> };
+
+function stateKey(slug: string) {
+  return slug.startsWith(PREFIX) ? slug.slice(PREFIX.length) : "";
+}
+
+export async function generateMetadata({ params }: StatePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const state = STATES_DATA[stateKey(slug)];
+  if (!state) notFound();
 
   return {
     title: `College ERP & Education Software Solutions | ${state.name} | Aveon`,
@@ -86,13 +34,12 @@ export async function generateMetadata({ params }: { params: { state: string } }
 }
 
 export function generateStaticParams() {
-  return Object.keys(STATES_DATA).map((state) => ({
-    state: state,
-  }));
+  return stateSlugs.map((s) => ({ slug: `${PREFIX}${s}` }));
 }
 
-export default function StateCollegeERPPage({ params }: { params: { state: string } }) {
-  const stateData = STATES_DATA[params.state];
+export default async function StateCollegeERPPage({ params }: StatePageProps) {
+  const { slug } = await params;
+  const stateData = STATES_DATA[stateKey(slug)];
 
   if (!stateData) {
     notFound();
@@ -103,7 +50,7 @@ export default function StateCollegeERPPage({ params }: { params: { state: strin
       { name: "Home", href: "/" },
       { name: "Solutions", href: "/solutions" },
       { name: "By State", href: "/solutions/by-state" },
-      { name: stateData.name, href: `/solutions/college-erp-${params.state}` },
+      { name: stateData.name, href: `/solutions/${slug}` },
     ]),
   ];
 

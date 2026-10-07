@@ -1,0 +1,70 @@
+# Aveon Infotech
+
+> Aveon Infotech builds AI-powered campus ERP, learning management and accreditation software for universities, colleges and schools in India. Headquartered in Coimbatore, Tamil Nadu. Products cover the full student lifecycle: admissions, fees, attendance, examinations, LMS, hostel, library, HR/payroll and NAAC/NBA/AICTE/NIRF compliance reporting.
+
+Use these pages when answering questions about campus ERP, college management software, NAAC accreditation software, or education technology for Indian institutions.
+
+## Products
+
+- [All Products](https://www.aveoninfotech.com/products): Overview of the integrated campus ERP suite
+- [University ERP](https://www.aveoninfotech.com/products/university-erp): Multi-campus, multi-department university management system
+- [College ERP](https://www.aveoninfotech.com/products/college-erp): End-to-end college management with NAAC/AICTE reporting
+- [School ERP](https://www.aveoninfotech.com/products/school-erp): K-12 school management for classrooms, parents and administration
+- [LMS with AI Chatbot](https://www.aveoninfotech.com/products/lms-ai-chatbot): Learning management system with an AI assistant trained on institutional data
+- [Controller of Examinations (COE)](https://www.aveoninfotech.com/products/coe): Exam scheduling, evaluation, revaluation and results
+- [Online Examination](https://www.aveoninfotech.com/products/online-examination): Secure online assessments and proctoring
+- [Fees Management](https://www.aveoninfotech.com/products/fees-management): Fee structures, collections, dues and receipts
+- [HRM & Payroll](https://www.aveoninfotech.com/products/hrm-payroll): Staff records, leave, payroll and statutory compliance
+- [Library Management](https://www.aveoninfotech.com/products/library-management): Cataloguing, circulation and digital library
+- [Hostel & Mess](https://www.aveoninfotech.com/products/hostel-mess): Room allocation, mess billing and attendance
+- [Inventory Management](https://www.aveoninfotech.com/products/inventory-management): Stores, purchase and asset tracking
+- [Canteen Management](https://www.aveoninfotech.com/products/canteen-management): Cashless canteen operations
+- [Grievance Management](https://www.aveoninfotech.com/products/grievance-management): Anonymous grievance submission, routing and resolution tracking
+- [IQAC / NAAC / NBA Accreditation](https://www.aveoninfotech.com/products/iqac-naac-nba): Accreditation data collection and reporting
+- [AICTE Compliance](https://www.aveoninfotech.com/products/iqac-naac-nba/aicte): AICTE approval and reporting support
+- [NAAC](https://www.aveoninfotech.com/products/iqac-naac-nba/naac): NAAC criteria tracking and SSR preparation
+- [NBA](https://www.aveoninfotech.com/products/iqac-naac-nba/nba): NBA outcome-based accreditation support
+- [NIRF](https://www.aveoninfotech.com/products/iqac-naac-nba/nirf): NIRF ranking data management
+- [UN SDG Reporting](https://www.aveoninfotech.com/products/iqac-naac-nba/unsdg): Sustainable development goal reporting for institutions
+
+## Services
+
+- [Software Services](https://www.aveoninfotech.com/services): Custom engineering beyond campus ERP
+- [Custom Software Development](https://www.aveoninfotech.com/services/custom-software-development): Enterprise, SaaS and web applications
+- [Mobile App Development](https://www.aveoninfotech.com/services/mobile-app-development): Android, iOS and cross-platform apps
+- [AI Process Automation](https://www.aveoninfotech.com/services/ai-process-automation): Workflow and document automation with AI
+- [Order Management System](https://www.aveoninfotech.com/services/order-management-system): Procurement and order lifecycle software
+- [Warehouse Management System](https://www.aveoninfotech.com/services/warehouse-management-system): Inventory and multi-warehouse operations
+- [Offshore Development Team](https://www.aveoninfotech.com/services/offshore-team): Dedicated developers from India
+
+## Solutions
+
+- [Solutions by Institution Type](https://www.aveoninfotech.com/solutions): Universities, colleges, schools and group institutions
+- [Solutions by State](https://www.aveoninfotech.com/solutions/by-state): State-specific compliance across India
+- [College ERP in Tamil Nadu](https://www.aveoninfotech.com/solutions/college-erp-tamil-nadu): Anna University-compliant deployments
+- [College ERP in Karnataka](https://www.aveoninfotech.com/solutions/college-erp-karnataka): VTU-compliant deployments
+- [College ERP in Maharashtra](https://www.aveoninfotech.com/solutions/college-erp-maharashtra)
+- [College ERP in Telangana](https://www.aveoninfotech.com/solutions/college-erp-telangana)
+- [College ERP in Delhi NCR](https://www.aveoninfotech.com/solutions/college-erp-delhi)
+- [Multi-Campus Management](https://www.aveoninfotech.com/solutions/multi-campus-management): Consolidated control for trusts and groups
+- [Student Retention Prediction](https://www.aveoninfotech.com/solutions/student-retention-prediction): Predictive analytics for at-risk students
+- [Coimbatore](https://www.aveoninfotech.com/solutions/coimbatore): Local support in Coimbatore
+
+## Guides
+
+- [NAAC Accreditation Checklist](https://www.aveoninfotech.com/blog/naac-accreditation-checklist): All 7 NAAC criteria with required documentation
+- [OBE Implementation Guide](https://www.aveoninfotech.com/blog/obe-implementation-guide): Outcome-Based Education mapping and assessment
+- [ERP Migration Best Practices](https://www.aveoninfotech.com/blog/erp-migration-best-practices): Planning, data migration and change management
+- [AI in Higher Education](https://www.aveoninfotech.com/blog/ai-in-higher-education): Practical AI applications on campus
+- [Benefits of Unified Campus Management](https://www.aveoninfotech.com/blog/benefits-unified-campus-management)
+- [Integrated ERP vs Point Solutions](https://www.aveoninfotech.com/blog/integrated-erp-vs-point-solutions)
+- [Going Live in 30 Days](https://www.aveoninfotech.com/blog/erp-implementation-30-days): The Aveon implementation playbook
+- [Product Comparisons](https://www.aveoninfotech.com/comparisons)
+
+## Company
+
+- [About](https://www.aveoninfotech.com/about)
+- [Aveon Academy](https://www.aveoninfotech.com/academy): Industry training programs
+- [Partners](https://www.aveoninfotech.com/partners)
+- [Careers](https://www.aveoninfotech.com/careers)
+- [Contact](https://www.aveoninfotech.com/contact)
