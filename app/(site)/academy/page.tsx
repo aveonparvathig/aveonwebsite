@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import { TechLogo, TechBadge } from "@/components/ui/TechLogo";
 
 export const metadata: Metadata = {
@@ -294,12 +295,12 @@ export default function AcademyPage() {
           </div>
 
           <div className="relative">
-            <Image
+            <HeroImage
               src="/products/solutions-hero.webp"
               alt="Learners collaborating on a technology project at Aveon Academy"
               width={1200}
               height={896}
-              priority
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
               className="w-full rounded-2xl object-cover shadow-[0_30px_70px_-30px_rgb(16_26_51_/_0.5)]"
             />
             {heroChips.map((c) => (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import { fetchOrFallback } from "@/lib/sanity";
 import { postsQuery } from "@/lib/queries";
 import { posts as fallbackPosts } from "@/lib/data/posts";
@@ -54,11 +55,12 @@ export default async function BlogPage() {
               News, product updates and practical insights on running educational institutions.
             </p>
           </div>
-          <Image
+          <HeroImage
             src="/products/blog-hero.webp"
             alt="Aveon Blog"
             width={1106}
             height={694}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-cover"
           />
         </div>

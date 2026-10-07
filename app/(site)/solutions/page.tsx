@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import CTASection from "@/components/sections/CTASection";
 import { products } from "@/lib/data/products";
 
@@ -63,11 +64,12 @@ export default function SolutionsPage() {
               The same integrated platform, configured for how your institution works.
             </p>
           </div>
-          <Image
+          <HeroImage
             src="/products/academy-hero.webp"
             alt="Campus solutions"
             width={1219}
             height={789}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-contain"
           />
         </div>

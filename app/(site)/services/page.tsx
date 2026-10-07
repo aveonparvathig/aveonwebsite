@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import { services } from "@/lib/data/services";
 import CTASection from "@/components/sections/CTASection";
 
@@ -38,11 +39,12 @@ export default function ServicesPage() {
               </svg>
             </Link>
           </div>
-          <Image
+          <HeroImage
             src="/products/custom-software-team.webp"
             alt="Software development services"
             width={1248}
             height={848}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-contain"
           />
         </div>
