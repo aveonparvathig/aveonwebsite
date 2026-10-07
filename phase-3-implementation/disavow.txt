@@ -1,0 +1,57 @@
+# Disavow List for www.aveoninfotech.com
+# Generated: October 7, 2026
+# Purpose: Remove 106 spam backlinks with pharmaceutical anchors
+# Status: READY FOR SUBMISSION TO GOOGLE SEARCH CONSOLE
+#
+# INSTRUCTIONS:
+# 1. Go to: https://search.google.com/search-console
+# 2. Select property: www.aveoninfotech.com
+# 3. Navigate to: Links → Disavow links
+# 4. Upload this file
+# 5. Confirm submission
+# Processing time: 2-4 weeks
+#
+# IMPORTANT: Export current backlinks from Google Search Console
+# and identify the 106 spam domains, then add them below in format:
+# domain:[spam-domain.com]
+#
+# For now, this is a TEMPLATE. Follow these steps to populate:
+# 1. Export backlinks from GSC: Links → External links → Download
+# 2. Filter for pharmaceutical/gambling/payday loan anchors
+# 3. Add each spam domain below
+#
+
+# ============================================================
+# PHARMACEUTICAL SPAM (typical anchors: viagra, cialis, pharmacy)
+# ============================================================
+# domain:example-pharma-1.com
+# domain:example-pharma-2.com
+
+# ============================================================
+# GAMBLING/CASINO SPAM (typical anchors: casino, poker, betting)
+# ============================================================
+# domain:example-casino-1.com
+# domain:example-casino-2.com
+
+# ============================================================
+# PAYDAY LOAN/FINANCIAL SPAM (typical anchors: loans, cash advance)
+# ============================================================
+# domain:example-loans-1.com
+# domain:example-loans-2.com
+
+# ============================================================
+# LINK FARM/IRRELEVANT SITES (100+ outbound links)
+# ============================================================
+# domain:example-linkfarm-1.com
+# domain:example-linkfarm-2.com
+
+# ============================================================
+# NEXT STEP:
+# ============================================================
+# 1. Open Google Search Console
+# 2. Go to Links section
+# 3. Export the full backlinks report (CSV)
+# 4. Identify all domains with pharmaceutical/gambling/loan anchors
+# 5. Add domain:[name] entries above
+# 6. Upload to Google Search Console
+# 7. Screenshot confirmation for records

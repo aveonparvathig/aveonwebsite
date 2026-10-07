@@ -1,0 +1,26 @@
+Date,Contact_Name,Email,Organization,Link_Source_URL,Domain_Authority,Link_Type,Anchor_Text,Relevance_Score,Quality_Rating,Status,Date_Indexed,Notes
+10/7/2026,Example Contact,contact@example.com,Example University,https://example.edu/resources,75,follow,"campus ERP solutions",education,95,submitted,TBD,Initial outreach - pending response
+,,,,,,,,,,,
+,
+# COLUMN DEFINITIONS:
+# Date: Date email sent or link identified
+# Contact_Name: Name of person contacted
+# Email: Email address of contact
+# Organization: University/Publication/Directory name
+# Link_Source_URL: Where the link will appear (or has appeared)
+# Domain_Authority: DA of source (from Ahrefs/SEMrush)
+# Link_Type: follow or nofollow
+# Anchor_Text: The text used for the link
+# Relevance_Score: 1-10 (10=highly relevant to education/ERP)
+# Quality_Rating: 1-100 (based on DA, relevance, placement)
+# Status: pending/live/dead/rejected/processing
+# Date_Indexed: When Google indexed the link
+# Notes: Any additional context
+#
+# TRACKING CHECKLIST:
+# - Monitor for "live" status (when link goes active)
+# - Check Google Search Console weekly for new links
+# - Verify links are indexed in Ahrefs/SEMrush (1-2 weeks)
+# - Track response rate and follow-up schedule
+# - Calculate quality score: (DA × Relevance × Link_Type) / 10
+#   where Link_Type = 1.0 for follow, 0.5 for nofollow
