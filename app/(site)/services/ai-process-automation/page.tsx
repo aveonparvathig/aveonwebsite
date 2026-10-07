@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import AiAutomationContent, { aiAutomationFaqs } from "@/components/sections/AiAutomationContent";
@@ -74,11 +75,12 @@ export default function AiProcessAutomationPage() {
               </Link>
             </div>
           </div>
-          <Image
+          <HeroImage
             src="/products/ai-automation-team.webp"
             alt="AI Process Automation dashboard"
             width={1066}
             height={675}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-cover"
           />
         </div>

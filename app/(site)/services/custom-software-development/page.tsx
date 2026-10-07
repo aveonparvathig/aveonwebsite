@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import CustomSoftwareContent from "@/components/sections/CustomSoftwareContent";
@@ -74,11 +75,12 @@ export default function CustomSoftwareDevelopmentPage() {
               </Link>
             </div>
           </div>
-          <Image
+          <HeroImage
             src="/products/custom-software-team.webp"
             alt="Custom Software Development"
             width={1248}
             height={848}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-cover"
           />
         </div>

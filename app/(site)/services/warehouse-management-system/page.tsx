@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import WarehouseContent, { warehouseFaqs } from "@/components/sections/WarehouseContent";
@@ -73,11 +74,12 @@ export default function WarehouseManagementPage() {
               </Link>
             </div>
           </div>
-          <Image
+          <HeroImage
             src="/products/warehouse-team3.webp"
             alt="Warehouse Management System dashboard"
             width={1076}
             height={736}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-cover"
           />
         </div>

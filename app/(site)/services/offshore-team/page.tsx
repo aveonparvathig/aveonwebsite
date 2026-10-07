@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroImage } from "@/components/ui/OptimizedImage";
 import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import OffshoreContent, { offshoreFaqs } from "@/components/sections/OffshoreContent";
@@ -73,11 +74,12 @@ export default function OffshoreTeamPage() {
               </Link>
             </div>
           </div>
-          <Image
+          <HeroImage
             src="/products/offshore-team.webp"
             alt="Offshore Development Team"
             width={1070}
             height={661}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 50vw"
             className="w-full rounded-2xl object-cover"
           />
         </div>
