@@ -53,7 +53,7 @@ export enum EventType {
   QUALIFIED_LEAD = "qualified_lead",
 }
 
-export const eventConfig = {
+export const eventConfig: Record<string, { label: string; category: string; value: number }> = {
   [EventType.DEMO_REQUEST]: {
     label: "Demo Request",
     category: "Lead Generation",
@@ -76,6 +76,6 @@ export const eventConfig = {
   },
 };
 
-export function getEventValue(eventType: EventType): number {
-  return eventConfig[eventType]?.value || 0;
+export function getEventValue(eventType: EventType | string): number {
+  return (eventConfig[eventType] as any)?.value || 0;
 }

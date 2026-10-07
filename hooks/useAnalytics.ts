@@ -10,9 +10,10 @@ export function useAnalytics() {
 
       try {
         // Track in Google Analytics 4 via gtag
-        if (window.gtag) {
+        const gtag = (window as any).gtag;
+        if (gtag) {
           const eventValue = getEventValue(eventName as EventType);
-          window.gtag("event", eventName, {
+          gtag("event", eventName, {
             value: eventValue,
             currency: "INR",
             ...properties,
@@ -32,8 +33,9 @@ export function useAnalytics() {
     if (typeof window === "undefined") return;
 
     try {
-      if (window.gtag) {
-        window.gtag("event", "page_view", {
+      const gtag = (window as any).gtag;
+      if (gtag) {
+        gtag("event", "page_view", {
           page_title: pageName,
           page_location: pageLocation || window.location.href,
           page_path: window.location.pathname,
