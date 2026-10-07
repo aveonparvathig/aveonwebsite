@@ -3,7 +3,7 @@ import PageHero from "@/components/sections/PageHero";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Team | Aveon Infotech | EdTech Experts",
+  title: "Our Team | EdTech Experts",
   description:
     "Meet the team behind Aveon Infotech: engineers, implementation specialists and support staff dedicated to education technology.",
 };

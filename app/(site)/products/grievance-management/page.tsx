@@ -4,7 +4,7 @@ import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
 
 export const metadata: Metadata = {
-  title: "Grievance Management System - Aveon",
+  title: "Grievance Management System",
   description: "Online grievance and complaint management. Anonymous submissions, automatic routing, escalation tracking and reporting.",
   keywords: [
     "grievance management system",

@@ -3,7 +3,7 @@ import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Aveon Legal",
+  title: "Terms of Service",
   description: "Terms governing the use of the Aveon Infotech website.",
 };
 

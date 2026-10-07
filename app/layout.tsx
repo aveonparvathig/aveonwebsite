@@ -17,8 +17,10 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  // "./" resolves against each page's own pathname, so every route gets a
+  // self-referencing canonical instead of all pointing at the homepage.
   alternates: {
-    canonical: siteConfig.url,
+    canonical: "./",
   },
   title: {
     default: "AI-Powered Campus ERP & LMS | Aveon Infotech",
@@ -77,9 +79,11 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
       <head>
         {/* Google Analytics 4 */}
+        {/* Loaders are deferred to idle so ~300KB of tag JS doesn't compete
+            with the LCP image; dataLayer queues events until they arrive. */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="ga-init"
@@ -99,7 +103,7 @@ export default function RootLayout({
         {/* Google Tag Manager */}
         <Script
           id="gtm-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

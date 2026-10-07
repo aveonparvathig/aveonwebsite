@@ -7,7 +7,7 @@ import CTASection from "@/components/sections/CTASection";
 import AiAutomationContent, { aiAutomationFaqs } from "@/components/sections/AiAutomationContent";
 
 export const metadata: Metadata = {
-  title: "AI Process Automation Software | Workflow Automation | Aveon",
+  title: "AI Process Automation Software",
   description:
     "AI-powered process automation software reducing manual work by 80%. Automate workflows, document processing, approvals, and data tasks. 5x faster processing. 40-60% cost savings.",
   keywords: [

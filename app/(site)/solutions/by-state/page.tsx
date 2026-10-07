@@ -4,7 +4,7 @@ import { breadcrumbJsonLd } from "@/lib/structured-data";
 import { STATES_DATA } from "@/lib/data/states";
 
 export const metadata: Metadata = {
-  title: "College ERP by State | Higher Education Software",
+  title: "College ERP Solutions by State in India",
   description:
     "State-specific college ERP solutions for 28 Indian states. Higher education software serving 200+ institutions. NAAC-compliant. Anna University, JNTU, VTU approved across Tamil Nadu, Telangana, Karnataka, Maharashtra, Delhi and more.",
   keywords: [

@@ -4,7 +4,7 @@ import Image from "next/image";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Partnership Opportunities | Aveon Infotech",
+  title: "Partnership Opportunities",
   description:
     "Partner with Aveon Infotech: reseller, implementation and technology partnerships for education ERP.",
 };

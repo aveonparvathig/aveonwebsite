@@ -7,7 +7,7 @@ import CTASection from "@/components/sections/CTASection";
 import OffshoreContent, { offshoreFaqs } from "@/components/sections/OffshoreContent";
 
 export const metadata: Metadata = {
-  title: "Offshore Development Team | Dedicated Developers India | Aveon",
+  title: "Offshore Development Team in India",
   description:
     "Dedicated offshore development team from India. Full-stack developers, QA, DevOps, and AI specialists. 40-60% cost savings. Flexible team augmentation and staff augmentation services.",
   keywords: [

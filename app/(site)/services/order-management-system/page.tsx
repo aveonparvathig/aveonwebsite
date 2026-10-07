@@ -7,7 +7,7 @@ import CTASection from "@/components/sections/CTASection";
 import OrderManagementContent, { orderManagementFaqs } from "@/components/sections/OrderManagementContent";
 
 export const metadata: Metadata = {
-  title: "Order Management System | Procurement Software | Aveon",
+  title: "Order Management & Procurement Software",
   description:
     "Order and procurement management software automating purchase orders, vendor management, invoice matching, and multi-channel order workflows. Reduce procurement time by 50%.",
   keywords: [

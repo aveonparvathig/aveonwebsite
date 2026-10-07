@@ -4,7 +4,7 @@ import Stats from "@/components/sections/Stats";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "About Aveon Infotech - Campus ERP Leaders",
+  title: "About Us | Campus ERP Leaders Since 2010",
   description: "Learn about Aveon Infotech, trusted by 5000+ educational institutions for campus ERP & LMS solutions since 2010.",
 };
 

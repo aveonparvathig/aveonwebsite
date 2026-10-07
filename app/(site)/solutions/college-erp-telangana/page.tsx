@@ -4,7 +4,7 @@ import { breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Telangana College ERP | JNTU Compliant Solution",
+  title: "College ERP Software in Telangana",
   description:
     "Higher education software for Telangana colleges and universities. JNTU-compliant ERP serving 300+ institutions. NAAC-approved. Hyderabad-based support team.",
   keywords: [

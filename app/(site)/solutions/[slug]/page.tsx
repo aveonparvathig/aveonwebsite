@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: StatePageProps): Promise<Meta
   if (!state) notFound();
 
   return {
-    title: `College ERP & Education Software Solutions | ${state.name} | Aveon`,
+    title: `College ERP Software in ${state.name}`,
     description: `${state.description}. Serving ${state.count} institutions. NAAC-compliant. Local support team.`,
     keywords: [
       `College ERP ${state.name}`,

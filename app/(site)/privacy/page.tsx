@@ -3,7 +3,7 @@ import PageHero from "@/components/sections/PageHero";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Aveon Data Protection",
+  title: "Privacy Policy",
   description: "How Aveon Infotech collects, uses and protects your information.",
 };
 

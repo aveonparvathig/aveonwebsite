@@ -7,7 +7,7 @@ import CTASection from "@/components/sections/CTASection";
 import WarehouseContent, { warehouseFaqs } from "@/components/sections/WarehouseContent";
 
 export const metadata: Metadata = {
-  title: "Warehouse Management System | WMS Software | Aveon",
+  title: "Warehouse Management System | WMS Software",
   description:
     "Warehouse management software delivering real-time inventory tracking, automated picking/packing, and multi-warehouse operations. 40% efficiency gain. Cloud-based WMS.",
   keywords: [

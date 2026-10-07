@@ -4,7 +4,7 @@ import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
 
 export const metadata: Metadata = {
-  title: "Canteen Management Software - Aveon",
+  title: "Canteen Management Software for Campuses",
   description: "Digital canteen management: Online ordering, billing, inventory, vendor management and health compliance tracking.",
   keywords: [
     "canteen management system",

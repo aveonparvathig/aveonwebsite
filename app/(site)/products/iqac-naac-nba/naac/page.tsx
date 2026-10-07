@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "NAAC Accreditation Software - Aveon",
+  title: "NAAC Accreditation Software",
   description: "Complete support for NAAC accreditation across all 10 criteria: curriculum, teaching, research, infrastructure, and more.",
 };
 

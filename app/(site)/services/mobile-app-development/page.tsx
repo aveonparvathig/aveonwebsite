@@ -7,7 +7,7 @@ import CTASection from "@/components/sections/CTASection";
 import MobileAppContent, { mobileAppFaqs } from "@/components/sections/MobileAppContent";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development | iOS & Android Solutions",
+  title: "Mobile App Development | iOS & Android",
   description:
     "Aveon Infotech provides custom mobile app development for Android, iOS and cross-platform applications, including UI/UX design, API integration, AI, testing, deployment and support.",
   keywords: [

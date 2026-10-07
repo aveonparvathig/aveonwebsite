@@ -4,7 +4,7 @@ import ProductsGrid from "@/components/sections/ProductsGrid";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Campus ERP Products - Aveon Infotech",
+  title: "Campus ERP Products & Modules",
   description: "Explore our complete suite of campus management solutions: Student Information System, LMS, HR/Payroll, Admissions & more.",
   keywords: [
     "university ERP",

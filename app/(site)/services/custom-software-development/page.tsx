@@ -8,7 +8,7 @@ import CustomSoftwareContent from "@/components/sections/CustomSoftwareContent";
 import { customSoftwareFaqs } from "@/lib/data/custom-software-faqs";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development | Enterprise Solutions",
+  title: "Custom Software Development Services",
   description:
     "Custom software development company delivering enterprise applications, SaaS platforms, and web solutions. 40+ technologies. 6-phase development. ROI-focused. Scale from MVP to enterprise.",
   keywords: [

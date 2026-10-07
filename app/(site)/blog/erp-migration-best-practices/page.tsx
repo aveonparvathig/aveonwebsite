@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "ERP Migration Best Practices | Implementation",
+  title: "ERP Migration Best Practices for Campuses",
   description: "Complete guide to successful ERP migration in universities and colleges. Planning, data migration, change management and implementation best practices.",
   keywords: [
     "ERP migration",
