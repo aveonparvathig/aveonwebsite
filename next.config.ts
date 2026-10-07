@@ -24,9 +24,6 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000, // 1 year for immutable images
   },
 
-  // Enable SWC minification for smaller bundles
-  swcMinify: true,
-
   // Optimize package imports
   experimental: {
     optimizePackageImports: ["@heroicons/react", "@radix-ui/*"],
@@ -84,7 +81,6 @@ const nextConfig: NextConfig = {
 
   // Optimize builds
   productionBrowserSourceMaps: false,
-  compress: true,
 };
 
 export default nextConfig;
