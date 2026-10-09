@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
 interface ClientLogo {
@@ -44,6 +43,62 @@ const midpoint = Math.ceil(logos.length / 2);
 const topRowLogos = logos.slice(0, midpoint);
 const bottomRowLogos = logos.slice(midpoint);
 
+// Spacing lives inside each item (padding, not flex gap) so the duplicated track is exactly 2x one set
+// and the -50% loop lands with no jump.
+function LogoRow({
+  logos,
+  rowKey,
+  durationSeconds,
+  moveRight = false,
+}: {
+  logos: ClientLogo[];
+  rowKey: string;
+  durationSeconds: number;
+  moveRight?: boolean;
+}) {
+  return (
+    <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)] sm:[mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)]">
+      <div
+        className="flex w-max animate-marquee items-center py-2 [will-change:transform] group-hover:[animation-play-state:paused] group-active:[animation-play-state:paused] motion-reduce:animate-none"
+        style={{ "--marquee-duration": `${durationSeconds}s`, animationDirection: moveRight ? "reverse" : "normal" } as React.CSSProperties}
+      >
+        {[...logos, ...logos].map((logo, i) => (
+          <div
+            key={`${rowKey}-${i}`}
+            aria-hidden={i >= logos.length}
+            className="flex h-20 w-[180px] shrink-0 items-center justify-center px-4 sm:h-24 sm:w-[230px] sm:px-6 lg:h-28 lg:w-[260px] lg:px-8"
+          >
+            <OptimizedImage
+              src={logo.src}
+              alt={i >= logos.length ? "" : logo.name}
+              width={240}
+              height={120}
+              quality={80}
+              containerClassName="flex items-center justify-center"
+              className="h-auto w-auto max-h-16 max-w-[148px] object-contain mix-blend-multiply transition-transform duration-300 hover:scale-110 sm:max-h-20 sm:max-w-[182px] lg:max-h-24 lg:max-w-[196px]"
+            />
+          </div>
+        ))}
+      </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+
+        .animate-marquee {
+          animation: marquee var(--marquee-duration, 45s) linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
+
 export default function ClientLogosCarousel() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12">
@@ -62,82 +117,12 @@ export default function ClientLogosCarousel() {
           </h2>
         </div>
 
-        {/* Dual Row Scrolling Carousel */}
-        <div className="space-y-7">
-          {/* Top Row - Scroll Right to Left */}
-          <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_100px,#000_calc(100%-100px),transparent)] sm:[mask-image:linear-gradient(90deg,transparent,#000_140px,#000_calc(100%-140px),transparent)]">
-            <div className="flex w-max animate-marquee items-center gap-6 [will-change:transform] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
-              {[...topRowLogos, ...topRowLogos].map((logo, i) => (
-                <div
-                  key={`top-${i}`}
-                  className="flex shrink-0 items-center justify-center rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-colors hover:border-primary-200"
-                  style={{ width: "160px", height: "120px" }}
-                >
-                  <OptimizedImage
-                    src={logo.src}
-                    alt={logo.name}
-                    width={120}
-                    height={100}
-                    quality={75}
-                    className="h-auto w-auto max-h-20 max-w-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom Row - Scroll Left to Right */}
-          <div className="group relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_100px,#000_calc(100%-100px),transparent)] sm:[mask-image:linear-gradient(90deg,transparent,#000_140px,#000_calc(100%-140px),transparent)]">
-            <div className="flex w-max animate-marquee-reverse items-center gap-6 [will-change:transform] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
-              {[...bottomRowLogos, ...bottomRowLogos].map((logo, i) => (
-                <div
-                  key={`bottom-${i}`}
-                  className="flex shrink-0 items-center justify-center rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-colors hover:border-primary-200"
-                  style={{ width: "160px", height: "120px" }}
-                >
-                  <OptimizedImage
-                    src={logo.src}
-                    alt={logo.name}
-                    width={120}
-                    height={100}
-                    quality={75}
-                    className="h-auto w-auto max-h-20 max-w-full object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Dual-row logo carousel: top row glides right to left, bottom row left to right; hover or touch-hold pauses */}
+        <div className="space-y-4 sm:space-y-6">
+          <LogoRow logos={topRowLogos} rowKey="top" durationSeconds={58} />
+          <LogoRow logos={bottomRowLogos} rowKey="bottom" durationSeconds={68} moveRight />
         </div>
       </div>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translate3d(0, 0, 0);
-          }
-          100% {
-            transform: translate3d(-50%, 0, 0);
-          }
-        }
-
-        @keyframes marquee-reverse {
-          0% {
-            transform: translate3d(-50%, 0, 0);
-          }
-          100% {
-            transform: translate3d(0, 0, 0);
-          }
-        }
-
-        .animate-marquee {
-          animation: marquee 34s linear infinite;
-        }
-
-        .animate-marquee-reverse {
-          animation: marquee-reverse 34s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }
