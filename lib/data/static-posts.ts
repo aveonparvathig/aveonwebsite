@@ -14,6 +14,17 @@ export const EDITORIAL_AUTHOR = "Aveon Editorial Team";
 /** Long-form guides that live as their own routes under app/(site)/blog/. */
 export const staticPosts: StaticPost[] = [
   {
+    title: "NIRF Ranking Parameters Explained: Weightages and the Data Behind Them",
+    slug: "nirf-ranking-parameters-explained",
+    excerpt:
+      "How NIRF scores institutions: the five parameters and their weightages by category, the sub-parameters, the data each one needs, and a 12-month plan to improve the inputs you control.",
+    author: EDITORIAL_AUTHOR,
+    publishedAt: "2026-11-03",
+    dateModified: "2026-11-03",
+    readingTime: "11 min read",
+    category: "insights",
+  },
+  {
     title: "What Is a Campus ERP? A Complete Guide for Indian Institutions",
     slug: "what-is-campus-erp",
     excerpt:
@@ -28,33 +39,33 @@ export const staticPosts: StaticPost[] = [
     title: "AI in Higher Education: Transforming Campus Management",
     slug: "ai-in-higher-education",
     excerpt:
-      "How AI is transforming higher education through predictive analytics, personalized learning and automated campus operations.",
+      "Where AI actually works on an Indian campus today: at-risk prediction, student-query chatbots, exam and admin automation, learning analytics, and the data and governance it depends on.",
     author: EDITORIAL_AUTHOR,
     publishedAt: "2024-03-01",
-    dateModified: "2024-03-01",
-    readingTime: "10 min read",
+    dateModified: "2026-11-03",
+    readingTime: "11 min read",
     category: "insights",
   },
   {
     title: "The Benefits of Unified Campus Management",
     slug: "benefits-unified-campus-management",
     excerpt:
-      "How unified campus management improves efficiency, data consistency, decision-making and institutional effectiveness.",
+      "The business case for one campus database: where fragmented systems cost money, what changes office by office, how to measure the return, and how to make the case to a governing body.",
     author: EDITORIAL_AUTHOR,
     publishedAt: "2024-03-01",
-    dateModified: "2024-03-01",
-    readingTime: "8 min read",
+    dateModified: "2026-11-03",
+    readingTime: "10 min read",
     category: "insights",
   },
   {
     title: "ERP Migration Best Practices for Universities and Colleges",
     slug: "erp-migration-best-practices",
     excerpt:
-      "Planning, data migration, change management and implementation best practices for a successful campus ERP migration.",
+      "A phase-by-phase playbook for moving a college or university to a new campus ERP: data audit and cleansing, migration mapping, parallel runs, cut-over timing, training and the first 90 days.",
     author: EDITORIAL_AUTHOR,
     publishedAt: "2024-03-01",
-    dateModified: "2024-03-01",
-    readingTime: "10 min read",
+    dateModified: "2026-11-03",
+    readingTime: "12 min read",
     category: "insights",
   },
   {
