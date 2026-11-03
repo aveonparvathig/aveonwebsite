@@ -108,7 +108,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="mt-8.5 flex items-center gap-2.5">
+          <div className="mt-8.5 flex items-center gap-1">
             {slides.map((s, i) => (
               <button
                 key={i}
@@ -116,9 +116,12 @@ export default function Hero() {
                 onClick={() => setCurrent(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === current ? "true" : undefined}
-                className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-primary-600" : "w-2 bg-navy-200 hover:bg-primary-400"
-                  }`}
-              />
+                className={`group flex h-6 items-center justify-center transition-all duration-300 ${i === current ? "w-10" : "w-6"}`}
+              >
+                <span
+                  className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-primary-600" : "w-2 bg-navy-200 group-hover:bg-primary-400"}`}
+                />
+              </button>
             ))}
           </div>
         </div>
@@ -132,7 +135,7 @@ export default function Hero() {
               <span className="h-2.25 w-2.25 rounded-full bg-[#ff5f57]" />
               <span className="h-2.25 w-2.25 rounded-full bg-[#febc2e]" />
               <span className="h-2.25 w-2.25 rounded-full bg-[#28c840]" />
-              <span className="ml-3 text-[11.5px] font-bold tracking-[0.05em] text-[#8a97b4]">
+              <span className="ml-3 text-[11.5px] font-bold tracking-[0.05em] text-[#4f5f7f]">
                 {slide.caption}
               </span>
             </div>
@@ -157,7 +160,7 @@ export default function Hero() {
           <div className="absolute left-0 bottom-[-14px] z-[2] w-[118px] animate-floaty-slow rounded-[16px] border border-navy-900/7 bg-white px-2.5 py-2.5 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)] sm:-left-14 sm:bottom-[-34px] sm:w-[206px] sm:rounded-[22px] sm:px-4.5 sm:py-4">
             <div className="flex items-start justify-between gap-1.5 sm:gap-2.5">
               <span>
-                <span className="block text-[7.5px] font-extrabold uppercase tracking-[0.1em] text-[#8a97b4] sm:text-[10.5px] sm:tracking-[0.14em]">
+                <span className="block text-[7.5px] font-extrabold uppercase tracking-[0.1em] text-[#4f5f7f] sm:text-[10.5px] sm:tracking-[0.14em]">
                   Enrolment
                 </span>
                 <span className="mt-0.5 block animate-count-pulse text-[14px] font-extrabold tracking-[-0.02em] text-navy-900 sm:mt-1 sm:text-[22px]">

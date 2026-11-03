@@ -135,7 +135,7 @@ export default function Navigation({ products }: { products?: Product[] }) {
         <div className="flex items-center gap-2.5 xl:hidden">
           <Link
             href="/contact#demo"
-            className="inline-flex min-h-11 items-center rounded-full bg-accent-500 px-4 text-[13px] font-bold text-white shadow-[0_10px_22px_-10px_rgb(249_115_22_/_0.8)]"
+            className="inline-flex min-h-11 items-center rounded-full bg-accent-700 px-4 text-[13px] font-bold text-white shadow-[0_10px_22px_-10px_rgb(194_65_12_/_0.8)]"
           >
             Demo
           </Link>
