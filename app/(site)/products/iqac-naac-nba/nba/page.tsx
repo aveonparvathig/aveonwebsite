@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/components/sections/CTASection";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "NBA Accreditation - Program Assessment",
@@ -172,6 +173,7 @@ export default function NbaPage() {
         </div>
       </section>
 
+      <RelatedGuides slugs={["nba-accreditation-guide", "obe-implementation-guide", "aicte-approval-compliance-checklist"]} />
       <CTASection />
     </>
   );

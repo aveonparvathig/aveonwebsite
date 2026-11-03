@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "AICTE Compliance Software",
@@ -124,6 +125,7 @@ export default function AictePage() {
         </div>
       </section>
 
+      <RelatedGuides slugs={["aicte-approval-compliance-checklist", "nba-accreditation-guide", "naac-accreditation-checklist"]} />
       <CTASection />
     </>
   );

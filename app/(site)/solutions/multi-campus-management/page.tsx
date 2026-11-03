@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "Multi-Campus Management | Unified Platform",
@@ -141,6 +142,8 @@ export default function MultiCampusPage() {
           </div>
         </div>
       </section>
+
+      <RelatedGuides slugs={["multi-campus-management-guide", "what-is-campus-erp", "erp-migration-best-practices"]} />
 
       {/* CTA */}
       <section className="py-16 sm:py-20 lg:py-24">

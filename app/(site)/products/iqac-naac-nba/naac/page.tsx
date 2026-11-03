@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/sections/CTASection";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "NAAC Accreditation Software",
@@ -70,6 +71,7 @@ export default function NaacPage() {
         </div>
       </section>
 
+      <RelatedGuides slugs={["naac-accreditation-checklist", "obe-implementation-guide", "nirf-ranking-parameters-explained"]} />
       <CTASection />
     </>
   );

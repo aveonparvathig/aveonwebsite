@@ -14,6 +14,17 @@ export const EDITORIAL_AUTHOR = "Aveon Editorial Team";
 /** Long-form guides that live as their own routes under app/(site)/blog/. */
 export const staticPosts: StaticPost[] = [
   {
+    title: "Multi-Campus Management: Running Several Institutions on One Platform",
+    slug: "multi-campus-management-guide",
+    excerpt:
+      "A guide for education trusts and groups: the three operating models, what to centralise and what to keep local, the data architecture that makes consolidation work, compliance at scale, a rollout sequence and the KPIs a group dashboard should show.",
+    author: EDITORIAL_AUTHOR,
+    publishedAt: "2026-11-03",
+    dateModified: "2026-11-03",
+    readingTime: "11 min read",
+    category: "insights",
+  },
+  {
     title: "NBA Accreditation Guide: Criteria, SAR Process and Evidence for Engineering Programmes",
     slug: "nba-accreditation-guide",
     excerpt:
