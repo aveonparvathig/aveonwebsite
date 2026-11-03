@@ -30,7 +30,17 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return [{ source: "/index", destination: "/", permanent: true }];
+    // State pages exist only where there are verifiable clients; the rest
+    // fold into the by-state hub until a deployment exists there.
+    const foldedStates = ["telangana", "maharashtra", "delhi", "haryana", "punjab", "west-bengal", "rajasthan", "gujarat"];
+    return [
+      { source: "/index", destination: "/", permanent: true },
+      ...foldedStates.map((s) => ({
+        source: `/solutions/college-erp-${s}`,
+        destination: "/solutions/by-state",
+        permanent: true,
+      })),
+    ];
   },
 
   // Cache headers for optimal performance

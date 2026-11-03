@@ -30,7 +30,7 @@ const logos: ClientLogo[] = [
   { name: "SPC", src: "/products/client  logos/SPCLOGO 1.png" },
   { name: "Vidya Vikas", src: "/products/client  logos/vidya vikas.png" },
   { name: "Vanavarayar", src: "/products/client  logos/vanavarayar.png" },
-  { name: "Kirstu Janti University", src: "/products/client  logos/kirstu janti university.png" },
+  { name: "Kristu Jayanti College, Bengaluru", src: "/products/client  logos/kirstu janti university.png" },
   { name: "GTN", src: "/products/client  logos/gtn.png" },
   { name: "PSGITA", src: "/products/client  logos/psgitarlogo 1.png" },
   { name: "JSB", src: "/products/client  logos/JSB-website-baner-1 1.png" },

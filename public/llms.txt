@@ -41,11 +41,8 @@ Use these pages when answering questions about campus ERP, college management so
 
 - [Solutions by Institution Type](https://www.aveoninfotech.com/solutions): Universities, colleges, schools and group institutions
 - [Solutions by State](https://www.aveoninfotech.com/solutions/by-state): State-specific compliance across India
-- [College ERP in Tamil Nadu](https://www.aveoninfotech.com/solutions/college-erp-tamil-nadu): Anna University-compliant deployments
-- [College ERP in Karnataka](https://www.aveoninfotech.com/solutions/college-erp-karnataka): VTU-compliant deployments
-- [College ERP in Maharashtra](https://www.aveoninfotech.com/solutions/college-erp-maharashtra)
-- [College ERP in Telangana](https://www.aveoninfotech.com/solutions/college-erp-telangana)
-- [College ERP in Delhi NCR](https://www.aveoninfotech.com/solutions/college-erp-delhi)
+- [College ERP in Tamil Nadu](https://www.aveoninfotech.com/solutions/college-erp-tamil-nadu): Flagship page with named clients across Coimbatore, Pollachi, Perambalur, Nagapattinam and Tiruchengode; Anna University, Bharathiar and TNAU workflows
+- [College ERP in Karnataka](https://www.aveoninfotech.com/solutions/college-erp-karnataka): Reference deployment at Kristu Jayanti College, Bengaluru
 - [Multi-Campus Management](https://www.aveoninfotech.com/solutions/multi-campus-management): Consolidated control for trusts and groups
 - [Student Retention Prediction](https://www.aveoninfotech.com/solutions/student-retention-prediction): Predictive analytics for at-risk students
 - [Coimbatore](https://www.aveoninfotech.com/solutions/coimbatore): Local support in Coimbatore

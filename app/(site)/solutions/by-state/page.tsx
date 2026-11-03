@@ -22,11 +22,8 @@ export const metadata: Metadata = {
 };
 
 const FEATURED_STATES = [
-  { name: "Tamil Nadu", slug: "tamil-nadu" },
-  { name: "Telangana", slug: "telangana" },
-  { name: "Karnataka", slug: "karnataka" },
-  { name: "Maharashtra", slug: "maharashtra" },
-  { name: "Delhi NCR", slug: "delhi" },
+  { name: "Tamil Nadu", slug: "tamil-nadu", note: "Headquarters and most of our institutions: Coimbatore, Pollachi, Erode, Salem, Perambalur, Nagapattinam" },
+  { name: "Karnataka", slug: "karnataka", note: "Reference deployment at Kristu Jayanti College, Bengaluru" },
 ];
 
 const ALL_STATES = [
@@ -96,8 +93,13 @@ export default function ByStatePage() {
       {/* Featured States */}
       <section className="border-b border-navy-100 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-navy-900 mb-8">Featured States</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <h2 className="text-2xl font-bold text-navy-900 mb-3">Where Aveon operates today</h2>
+          <p className="mb-8 max-w-[760px] text-navy-600">
+            We publish a detailed page only for states where we have named client institutions. For every other state,
+            the platform configures the affiliating university as a setting and our team implements on campus from
+            Coimbatore; contact us and we will put you in touch with a comparable institution.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
             {FEATURED_STATES.map((state) => (
               <Link
                 key={state.slug}
@@ -105,7 +107,7 @@ export default function ByStatePage() {
                 className="rounded-2xl border-2 border-primary-200 bg-gradient-to-br from-primary-50 to-white p-6 hover:border-primary-400 hover:shadow-lg transition"
               >
                 <p className="text-xl font-bold text-navy-900">{state.name}</p>
-                <p className="mt-2 text-sm text-navy-600">State-specific compliance</p>
+                <p className="mt-2 text-sm text-navy-600">{state.note}</p>
                 <p className="mt-4 text-primary-600 font-semibold flex items-center gap-2">
                   Explore →
                 </p>
