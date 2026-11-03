@@ -1,6 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const faqs = [
+const faqs: { q: string; a: string; link?: { href: string; label: string } }[] = [
+  {
+    q: "What is a campus ERP?",
+    a: "A campus ERP is one integrated system that runs an institution's academic and administrative operations on a single database: admissions, student records, timetables, attendance, examinations, fees, hostel, library, HR and payroll, and accreditation reporting. Data is entered once and every office works from the same record.",
+    link: { href: "/blog/what-is-campus-erp", label: "Read the complete guide" },
+  },
   {
     q: "How long does implementation take?",
     a: "Most single-campus institutions go live in about 30 days: data migration in week one, configuration in week two, role-based training in week three and a supervised go-live in week four. Multi-campus universities typically take 6–10 weeks.",
@@ -67,7 +73,17 @@ export default function FAQ() {
                   </svg>
                 </span>
               </summary>
-              <p className="px-6 pb-5.5 text-[15px] leading-[1.74] text-navy-700">{f.a}</p>
+              <p className="px-6 pb-5.5 text-[15px] leading-[1.74] text-navy-700">
+                {f.a}
+                {f.link && (
+                  <>
+                    {" "}
+                    <Link href={f.link.href} className="font-semibold text-primary-600 hover:text-primary-700">
+                      {f.link.label} →
+                    </Link>
+                  </>
+                )}
+              </p>
             </details>
           ))}
         </div>

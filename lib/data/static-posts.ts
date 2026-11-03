@@ -14,6 +14,17 @@ export const EDITORIAL_AUTHOR = "Aveon Editorial Team";
 /** Long-form guides that live as their own routes under app/(site)/blog/. */
 export const staticPosts: StaticPost[] = [
   {
+    title: "What Is a Campus ERP? A Complete Guide for Indian Institutions",
+    slug: "what-is-campus-erp",
+    excerpt:
+      "What a campus ERP does, how it differs from an SIS or LMS, the modules it includes, how it is priced in India, and ten questions to ask before choosing one.",
+    author: EDITORIAL_AUTHOR,
+    publishedAt: "2026-11-03",
+    dateModified: "2026-11-03",
+    readingTime: "12 min read",
+    category: "insights",
+  },
+  {
     title: "AI in Higher Education: Transforming Campus Management",
     slug: "ai-in-higher-education",
     excerpt:
