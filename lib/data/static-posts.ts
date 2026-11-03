@@ -14,6 +14,17 @@ export const EDITORIAL_AUTHOR = "Aveon Editorial Team";
 /** Long-form guides that live as their own routes under app/(site)/blog/. */
 export const staticPosts: StaticPost[] = [
   {
+    title: "AICTE Approval and Compliance Checklist for Technical Institutions",
+    slug: "aicte-approval-compliance-checklist",
+    excerpt:
+      "How AICTE approval works: the annual Extension of Approval cycle, the norms the Approval Process Handbook checks, mandatory disclosures, statutory committees, data submissions, the documents to keep ready and the deficiencies that cost institutions.",
+    author: EDITORIAL_AUTHOR,
+    publishedAt: "2026-11-03",
+    dateModified: "2026-11-03",
+    readingTime: "11 min read",
+    category: "insights",
+  },
+  {
     title: "NIRF Ranking Parameters Explained: Weightages and the Data Behind Them",
     slug: "nirf-ranking-parameters-explained",
     excerpt:

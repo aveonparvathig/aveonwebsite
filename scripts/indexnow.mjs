@@ -2,6 +2,8 @@
 // the AI search engines that read Bing's index). Run after a deploy:
 //   npm run indexnow            -> all sitemap URLs
 //   npm run indexnow -- /blog/x -> specific paths
+// From Git Bash on Windows, prefix with MSYS_NO_PATHCONV=1 or the shell
+// rewrites "/blog/x" into a Windows path before node sees it.
 import { readdirSync, readFileSync } from "node:fs";
 
 const HOST = "www.aveoninfotech.com";

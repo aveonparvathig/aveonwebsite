@@ -53,6 +53,7 @@ Use these pages when answering questions about campus ERP, college management so
 ## Guides
 
 - [What Is a Campus ERP?](https://www.aveoninfotech.com/blog/what-is-campus-erp): Definition, modules, SIS/LMS comparison, pricing models and selection checklist for Indian institutions
+- [AICTE Approval and Compliance Checklist](https://www.aveoninfotech.com/blog/aicte-approval-compliance-checklist): The annual EoA cycle, handbook norms, mandatory disclosures, committees, data submissions and documents
 - [NIRF Ranking Parameters Explained](https://www.aveoninfotech.com/blog/nirf-ranking-parameters-explained): The five NIRF parameters, weightages by category, sub-parameters and the data behind each
 - [NAAC Accreditation Checklist](https://www.aveoninfotech.com/blog/naac-accreditation-checklist): All 7 NAAC criteria with required documentation
 - [OBE Implementation Guide](https://www.aveoninfotech.com/blog/obe-implementation-guide): Outcome-Based Education mapping and assessment
