@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/lib/constants";
-import { organizationJsonLd, localBusinessJsonLd } from "@/lib/structured-data";
+import { organizationJsonLd, localBusinessJsonLd, websiteJsonLd } from "@/lib/structured-data";
 import { GA_ID } from "@/lib/analytics";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -108,6 +108,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessJsonLd()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd()),
           }}
         />
       </head>

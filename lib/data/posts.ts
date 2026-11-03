@@ -16,7 +16,7 @@ export const posts: Post[] = [
     slug: "integrated-erp-vs-point-solutions",
     excerpt:
       "Most institutions run five to ten disconnected tools. Here's what that really costs and what changes when everything shares one database.",
-    author: "Aveon Team",
+    author: "Aveon Editorial Team",
     publishedAt: "2026-07-21",
     category: "insights",
     paragraphs: [
@@ -31,7 +31,7 @@ export const posts: Post[] = [
     slug: "ai-chatbot-for-students",
     excerpt:
       "Our LMS ships with an AI chatbot trained on your institution's own content. Here's how campuses are using it.",
-    author: "Aveon Team",
+    author: "Aveon Editorial Team",
     publishedAt: "2026-06-10",
     category: "updates",
     paragraphs: [
@@ -45,7 +45,7 @@ export const posts: Post[] = [
     slug: "erp-implementation-30-days",
     excerpt:
       "ERP has a reputation for year-long rollouts. Our playbook gets campuses live in weeks: here's the process.",
-    author: "Aveon Team",
+    author: "Aveon Editorial Team",
     publishedAt: "2026-05-02",
     category: "news",
     paragraphs: [

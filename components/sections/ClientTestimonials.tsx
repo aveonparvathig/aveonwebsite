@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/constants";
 import Image from "next/image";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
@@ -182,12 +183,12 @@ export default function ClientTestimonials() {
             <p className="mt-2 text-sm font-medium text-navy-700">Institutions Served</p>
           </div>
           <div className="rounded-2xl bg-gradient-to-br from-accent-50 to-accent-100/50 p-6 text-center">
-            <div className="text-2xl font-bold text-accent-500 sm:text-3xl">99.8%</div>
-            <p className="mt-2 text-sm font-medium text-navy-700">Platform Uptime</p>
+            <div className="text-2xl font-bold text-accent-500 sm:text-3xl">{siteConfig.stats.products}</div>
+            <p className="mt-2 text-sm font-medium text-navy-700">Integrated Products</p>
           </div>
           <div className="rounded-2xl bg-gradient-to-br from-green-50 to-green-100/50 p-6 text-center">
-            <div className="text-2xl font-bold text-green-600 sm:text-3xl">4.8★</div>
-            <p className="mt-2 text-sm font-medium text-navy-700">Average Rating</p>
+            <div className="text-2xl font-bold text-green-600 sm:text-3xl">{siteConfig.stats.yearsExperience}</div>
+            <p className="mt-2 text-sm font-medium text-navy-700">Years, Since {siteConfig.stats.foundedYear}</p>
           </div>
         </div>
       </div>

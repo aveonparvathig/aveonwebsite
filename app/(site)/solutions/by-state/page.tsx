@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 };
 
 const FEATURED_STATES = [
-  { name: "Tamil Nadu", count: "500+", slug: "tamil-nadu" },
-  { name: "Telangana", count: "300+", slug: "telangana" },
-  { name: "Karnataka", count: "250+", slug: "karnataka" },
-  { name: "Maharashtra", count: "280+", slug: "maharashtra" },
-  { name: "Delhi NCR", count: "220+", slug: "delhi" },
+  { name: "Tamil Nadu", slug: "tamil-nadu" },
+  { name: "Telangana", slug: "telangana" },
+  { name: "Karnataka", slug: "karnataka" },
+  { name: "Maharashtra", slug: "maharashtra" },
+  { name: "Delhi NCR", slug: "delhi" },
 ];
 
 const ALL_STATES = [
@@ -105,7 +105,7 @@ export default function ByStatePage() {
                 className="rounded-2xl border-2 border-primary-200 bg-gradient-to-br from-primary-50 to-white p-6 hover:border-primary-400 hover:shadow-lg transition"
               >
                 <p className="text-xl font-bold text-navy-900">{state.name}</p>
-                <p className="mt-2 text-sm text-navy-600">{state.count} institutions</p>
+                <p className="mt-2 text-sm text-navy-600">State-specific compliance</p>
                 <p className="mt-4 text-primary-600 font-semibold flex items-center gap-2">
                   Explore →
                 </p>

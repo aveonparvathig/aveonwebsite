@@ -8,7 +8,10 @@ export function organizationJsonLd() {
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/logo.svg`,
+    description:
+      "AI-powered campus ERP, learning management and accreditation software for universities, colleges and schools in India.",
+    foundingDate: String(siteConfig.stats.foundedYear),
+    logo: { "@type": "ImageObject", url: `${siteConfig.url}/images/logo.svg` },
     email: siteConfig.email,
     telephone: siteConfig.phone,
     address: {
@@ -63,20 +66,35 @@ export function productJsonLd(product: Product, imagePath?: string) {
     url: `${siteConfig.url}/products/${product.slug}`,
     ...(imagePath ? { image: `${siteConfig.url}${encodeURI(imagePath)}` } : {}),
     featureList: product.features,
-    provider: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    provider: organizationRef,
   };
 }
 
-const publisher = {
+// Inline name/url plus @id, so validators that don't merge the page graph
+// still see a complete Organization while graph-aware ones link it.
+const organizationRef = {
   "@type": "Organization",
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
+};
+
+const publisher = {
+  ...organizationRef,
   logo: { "@type": "ImageObject", url: `${siteConfig.url}/images/logo.svg` },
 };
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    inLanguage: "en-IN",
+  };
+}
 
 export function articleJsonLd(post: {
   title: string;
@@ -115,7 +133,7 @@ export function serviceJsonLd(service: {
     serviceType: service.serviceType,
     description: service.description,
     url: `${siteConfig.url}/services/${service.slug}`,
-    provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+    provider: organizationRef,
     areaServed: { "@type": "Country", name: "India" },
   };
 }

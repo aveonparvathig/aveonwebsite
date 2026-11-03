@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import { STATES_DATA, stateSlugs } from "@/lib/data/states";
+import { siteConfig } from "@/lib/constants";
 
 // Next.js only treats a whole segment as dynamic, so the "college-erp-" prefix
 // is parsed here to keep the /solutions/college-erp-<state> URLs.
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: StatePageProps): Promise<Meta
 
   return {
     title: `College ERP Software in ${state.name}`,
-    description: `${state.description}. Serving ${state.count} institutions. NAAC-compliant. Local support team.`,
+    description: `${state.description}. Part of ${siteConfig.stats.institutions} institutions served across India. NAAC-ready. Local support team.`,
     keywords: [
       `College ERP ${state.name}`,
       `Education software ${state.name}`,
@@ -72,7 +73,7 @@ export default async function StateCollegeERPPage({ params }: StatePageProps) {
               College ERP Solutions for {stateData.name}
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              {stateData.description}. Trusted by {stateData.count} institutions. NAAC-compliant. Local support team available.
+              {stateData.description}. Part of {siteConfig.stats.institutions} institutions served across India. NAAC-ready. Local support team available.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
@@ -110,7 +111,7 @@ export default async function StateCollegeERPPage({ params }: StatePageProps) {
             <div className="rounded-2xl border border-navy-100 bg-navy-50 p-8">
               <p className="font-bold text-lg text-navy-900">Proven Track Record</p>
               <p className="mt-3 text-navy-600">
-                Trusted by {stateData.count} institutions across {stateData.name}.
+                Part of {siteConfig.stats.institutions} institutions served across India, including {stateData.name}.
               </p>
             </div>
             <div className="rounded-2xl border border-navy-100 bg-navy-50 p-8">
@@ -169,8 +170,8 @@ export default async function StateCollegeERPPage({ params }: StatePageProps) {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-5xl font-bold text-primary-600">{stateData.count}</p>
-              <p className="mt-2 text-navy-700 font-semibold">Institutions</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.institutions}</p>
+              <p className="mt-2 text-navy-700 font-semibold">Institutions across India</p>
             </div>
             <div>
               <p className="text-5xl font-bold text-primary-600">1M+</p>
