@@ -65,10 +65,15 @@ for (const host of hosts) {
   row.aveonLink = /aveoninfotech\.com/i.test(b.html);
 
   if (g.ok) {
-    const sizeDelta = Math.abs(g.html.length - b.html.length);
-    const titleDiff = title(g.html) !== row.title;
-    if (titleDiff || sizeDelta > 5000 || Math.abs(links(g.html) - row.links) > 10) {
-      row.flags.push(`CLOAKING? googlebot title="${title(g.html)}" links=${links(g.html)} vs browser links=${row.links}`);
+    if (g.status !== b.status && (g.status === 403 || g.status === 503 || g.status === 429)) {
+      row.flags.push(`BLOCKS CRAWLERS (googlebot ${g.status}, browser ${b.status}) — WAF/bot rule; search engines cannot index this host`);
+    } else {
+      const sizeDelta = Math.abs(g.html.length - b.html.length);
+      const titleDiff = title(g.html) !== row.title;
+      const moreLinksForBots = links(g.html) - row.links > 10;
+      if ((titleDiff && sizeDelta > 2000) || moreLinksForBots) {
+        row.flags.push(`SPAM CLOAKING: googlebot title="${title(g.html)}" links=${links(g.html)} vs browser links=${row.links} — likely compromised server`);
+      }
     }
   }
   if (/IIS Windows Server|Apache2 Ubuntu Default|Welcome to nginx/i.test(row.title)) row.flags.push("DEFAULT SERVER PAGE (app not bound)");
