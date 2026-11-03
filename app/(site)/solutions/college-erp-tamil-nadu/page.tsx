@@ -135,7 +135,7 @@ export default function TamilNaduPage() {
           <h2 className="text-3xl font-bold text-navy-900">Tamil Nadu institutions running on Aveon</h2>
           <p className="mt-3 max-w-[760px] text-navy-600">
             Engineering, arts and science, and agricultural colleges, affiliated and autonomous, across the state. The
-            institutions below are named with their permission; the logo strip shows more.
+            institutions below also appear on our client wall and in our testimonials; the logo strip shows more.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regions.map((r) => (
