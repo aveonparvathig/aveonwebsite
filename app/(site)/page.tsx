@@ -12,6 +12,9 @@ import CTASection from "@/components/sections/CTASection";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
+  // The layout's relative "./" canonical resolves to "/index" for the root
+  // page, so the homepage must pin its canonical explicitly.
+  alternates: { canonical: "/" },
   title: "Campus ERP & LMS for Universities & Colleges",
   description: "AI-powered campus ERP & LMS for 5000+ institutions. Manage admissions, academics, fees and operations on one platform. OBE-compliant, NAAC/AICTE ready.",
   keywords: [

@@ -29,6 +29,10 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@heroicons/react", "@radix-ui/*"],
   },
 
+  async redirects() {
+    return [{ source: "/index", destination: "/", permanent: true }];
+  },
+
   // Cache headers for optimal performance
   async headers() {
     return [
@@ -47,8 +51,10 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Image files only; the bare pattern also matched the product HTML pages.
       {
-        source: "/products/:path*",
+        source:
+          "/products/:file(.*\\.webp|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg|.*\\.avif)",
         headers: [
           {
             key: "Cache-Control",

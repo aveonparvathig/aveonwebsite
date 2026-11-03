@@ -31,13 +31,16 @@ export function OptimizedImage({
   containerClassName = "",
   ...props
 }: OptimizedImageProps) {
-  const loading = priority ? "eager" : lazy ? "lazy" : "eager";
+  // next/image only emits fetchpriority="high" for priority images when
+  // `loading` is left unset, so it is passed only for non-priority images.
+  const loading = priority ? undefined : lazy ? "lazy" : "eager";
 
   return (
     <div className={containerClassName}>
       <Image
         alt={alt}
         priority={priority}
+        fetchPriority={priority ? "high" : undefined}
         loading={loading}
         quality={85} // Balanced quality/size (default is 75)
         className={className}
