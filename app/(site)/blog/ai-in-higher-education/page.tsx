@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getStaticPost } from "@/lib/data/static-posts";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import ArticleMeta from "@/components/blog/ArticleMeta";
+import AuthorBox from "@/components/blog/AuthorBox";
+
+const post = getStaticPost("ai-in-higher-education")!;
 
 export const metadata: Metadata = {
   title: "AI in Higher Education | Campus Management",
+  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   description: "Discover how AI is transforming higher education through predictive analytics, personalized learning and automated campus operations. Real-world applications and ROI insights.",
   keywords: [
     "AI in education",
@@ -15,8 +22,18 @@ export const metadata: Metadata = {
 };
 
 export default function AIInHigherEd() {
+  const jsonLd = [
+    articleJsonLd(post),
+    breadcrumbJsonLd([
+      { name: "Home", href: "/" },
+      { name: "Blog", href: "/blog" },
+      { name: post.title, href: `/blog/${post.slug}` },
+    ]),
+  ];
+
   return (
     <article className="min-h-dvh bg-white py-16 sm:py-20 lg:py-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <Link
@@ -31,11 +48,7 @@ export default function AIInHigherEd() {
           <p className="text-lg text-navy-700">
             How artificial intelligence is reshaping education delivery, student support and institutional operations.
           </p>
-          <div className="mt-6 flex items-center gap-4 text-sm text-navy-600">
-            <span>Published: March 2024</span>
-            <span>•</span>
-            <span>10 min read</span>
-          </div>
+          <ArticleMeta post={post} />
         </div>
 
         <div className="prose prose-lg max-w-none text-navy-800">
@@ -167,6 +180,7 @@ export default function AIInHigherEd() {
             </Link>
           </div>
         </div>
+        <AuthorBox />
       </div>
     </article>
   );

@@ -121,11 +121,11 @@ export default function MaharashtraPage() {
               <p className="mt-2 text-navy-700 font-semibold">Institutions</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">50K+</p>
+              <p className="text-5xl font-bold text-primary-600">1M+</p>
               <p className="mt-2 text-navy-700 font-semibold">Students Served</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">12+</p>
+              <p className="text-5xl font-bold text-primary-600">16+</p>
               <p className="mt-2 text-navy-700 font-semibold">Years Experience</p>
             </div>
           </div>

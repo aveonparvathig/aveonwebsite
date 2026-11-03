@@ -6,7 +6,7 @@ import CTASection from "@/components/sections/CTASection";
 import { fetchOrFallback } from "@/lib/sanity";
 import { postBySlugQuery } from "@/lib/queries";
 import { posts, getPost, type Post } from "@/lib/data/posts";
-import { siteConfig } from "@/lib/constants";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 
 type SanityPost = Omit<Post, "paragraphs"> & {
   paragraphs?: string[];
@@ -49,16 +49,21 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
   const post = await loadPost(slug);
   if (!post) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    author: { "@type": "Organization", name: post.author },
-    publisher: { "@type": "Organization", name: siteConfig.name },
-    datePublished: post.publishedAt,
-    mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
-  };
+  const jsonLd = [
+    articleJsonLd({
+      title: post.title,
+      excerpt: post.excerpt,
+      slug: post.slug,
+      publishedAt: post.publishedAt,
+      dateModified: post.publishedAt,
+      author: post.author,
+    }),
+    breadcrumbJsonLd([
+      { name: "Home", href: "/" },
+      { name: "Blog", href: "/blog" },
+      { name: post.title, href: `/blog/${post.slug}` },
+    ]),
+  ];
 
   return (
     <>

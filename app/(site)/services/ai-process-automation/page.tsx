@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
-import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import { faqJsonLd, breadcrumbJsonLd, serviceJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import AiAutomationContent, { aiAutomationFaqs } from "@/components/sections/AiAutomationContent";
 
@@ -32,6 +32,12 @@ export default function AiProcessAutomationPage() {
       { name: "Services", href: "/services" },
       { name: "AI Process Automation", href: "/services/ai-process-automation" },
     ]),
+    serviceJsonLd({
+      name: "AI Process Automation",
+      slug: "ai-process-automation",
+      serviceType: "Business process automation",
+      description: metadata.description as string,
+    }),
     faqJsonLd(aiAutomationFaqs),
   ];
 

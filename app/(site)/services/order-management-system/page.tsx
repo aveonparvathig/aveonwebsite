@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
-import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import { faqJsonLd, breadcrumbJsonLd, serviceJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import OrderManagementContent, { orderManagementFaqs } from "@/components/sections/OrderManagementContent";
 
@@ -32,6 +32,12 @@ export default function OrderManagementPage() {
       { name: "Services", href: "/services" },
       { name: "Order Management System", href: "/services/order-management-system" },
     ]),
+    serviceJsonLd({
+      name: "Order Management System",
+      slug: "order-management-system",
+      serviceType: "Order and procurement management software",
+      description: metadata.description as string,
+    }),
     faqJsonLd(orderManagementFaqs),
   ];
 

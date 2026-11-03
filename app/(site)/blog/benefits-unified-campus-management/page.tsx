@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getStaticPost } from "@/lib/data/static-posts";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import ArticleMeta from "@/components/blog/ArticleMeta";
+import AuthorBox from "@/components/blog/AuthorBox";
+
+const post = getStaticPost("benefits-unified-campus-management")!;
 
 export const metadata: Metadata = {
   title: "Unified Campus Management | ERP Benefits",
+  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   description: "Discover how unified campus management improves efficiency, data consistency, decision-making and institutional effectiveness. Real benefits for universities and colleges.",
   keywords: [
     "unified campus management",
@@ -13,8 +20,18 @@ export const metadata: Metadata = {
 };
 
 export default function BenefitsUnifiedCampus() {
+  const jsonLd = [
+    articleJsonLd(post),
+    breadcrumbJsonLd([
+      { name: "Home", href: "/" },
+      { name: "Blog", href: "/blog" },
+      { name: post.title, href: `/blog/${post.slug}` },
+    ]),
+  ];
+
   return (
     <article className="min-h-dvh bg-white py-16 sm:py-20 lg:py-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-8">
         <Link
           href="/blog"
@@ -29,11 +46,7 @@ export default function BenefitsUnifiedCampus() {
         <p className="text-lg text-navy-700">
           Why integrated systems outperform disconnected point solutions.
         </p>
-        <div className="mt-6 flex items-center gap-4 text-sm text-navy-600">
-          <span>Published: March 2024</span>
-          <span>•</span>
-          <span>8 min read</span>
-        </div>
+        <ArticleMeta post={post} />
 
         {/* Content */}
         <div className="prose prose-lg max-w-none text-navy-800 mt-12">
@@ -157,6 +170,7 @@ export default function BenefitsUnifiedCampus() {
             </Link>
           </div>
         </div>
+        <AuthorBox />
       </div>
     </article>
   );

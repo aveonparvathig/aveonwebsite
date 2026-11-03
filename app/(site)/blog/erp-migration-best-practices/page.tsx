@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getStaticPost } from "@/lib/data/static-posts";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import ArticleMeta from "@/components/blog/ArticleMeta";
+import AuthorBox from "@/components/blog/AuthorBox";
+
+const post = getStaticPost("erp-migration-best-practices")!;
 
 export const metadata: Metadata = {
   title: "ERP Migration Best Practices for Campuses",
+  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   description: "Complete guide to successful ERP migration in universities and colleges. Planning, data migration, change management and implementation best practices.",
   keywords: [
     "ERP migration",
@@ -14,8 +21,18 @@ export const metadata: Metadata = {
 };
 
 export default function ERPMigrationGuide() {
+  const jsonLd = [
+    articleJsonLd(post),
+    breadcrumbJsonLd([
+      { name: "Home", href: "/" },
+      { name: "Blog", href: "/blog" },
+      { name: post.title, href: `/blog/${post.slug}` },
+    ]),
+  ];
+
   return (
     <article className="min-h-dvh bg-white py-16 sm:py-20 lg:py-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-8">
         <Link
           href="/blog"
@@ -30,11 +47,7 @@ export default function ERPMigrationGuide() {
         <p className="text-lg text-navy-700">
           Successfully migrate to a new campus management system without disrupting operations.
         </p>
-        <div className="mt-6 flex items-center gap-4 text-sm text-navy-600">
-          <span>Published: March 2024</span>
-          <span>•</span>
-          <span>10 min read</span>
-        </div>
+        <ArticleMeta post={post} />
 
         <div className="prose prose-lg max-w-none text-navy-800 mt-12">
           <h2>Why ERP Migration Matters</h2>
@@ -175,6 +188,7 @@ export default function ERPMigrationGuide() {
             </Link>
           </div>
         </div>
+        <AuthorBox />
       </div>
     </article>
   );

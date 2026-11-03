@@ -6,7 +6,7 @@ import { STATES_DATA } from "@/lib/data/states";
 export const metadata: Metadata = {
   title: "College ERP Solutions by State in India",
   description:
-    "State-specific college ERP solutions for 28 Indian states. Higher education software serving 200+ institutions. NAAC-compliant. Anna University, JNTU, VTU approved across Tamil Nadu, Telangana, Karnataka, Maharashtra, Delhi and more.",
+    "State-specific college ERP for institutions across India. NAAC-ready software built for Anna University, JNTU and VTU affiliated colleges in Tamil Nadu, Telangana, Karnataka, Maharashtra, Delhi and more.",
   keywords: [
     "College ERP Solutions by State",
     "Higher Education Software India",
@@ -218,19 +218,19 @@ export default function ByStatePage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-5xl font-bold text-primary-600">28</p>
-              <p className="mt-2 text-navy-700 font-semibold">States Covered</p>
+              <p className="text-5xl font-bold text-primary-600">{Object.keys(STATES_DATA).length}</p>
+              <p className="mt-2 text-navy-700 font-semibold">State Pages</p>
             </div>
             <div>
               <p className="text-5xl font-bold text-primary-600">200+</p>
               <p className="mt-2 text-navy-700 font-semibold">Institutions</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">50K+</p>
+              <p className="text-5xl font-bold text-primary-600">1M+</p>
               <p className="mt-2 text-navy-700 font-semibold">Students</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">12+</p>
+              <p className="text-5xl font-bold text-primary-600">16+</p>
               <p className="mt-2 text-navy-700 font-semibold">Years Experience</p>
             </div>
           </div>

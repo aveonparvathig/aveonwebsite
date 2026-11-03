@@ -8,7 +8,7 @@ interface ProductHeroImageProps {
 }
 
 // Map product slugs to their dashboard image filenames
-const productImages: Record<string, string> = {
+export const productImages: Record<string, string> = {
   "university-erp": "/products/ums.webp",
   "college-erp": "/products/cms.webp",
   "school-erp": "/products/sms.webp",

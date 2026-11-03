@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Stats from "@/components/sections/Stats";
 import CTASection from "@/components/sections/CTASection";
+import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Us | Campus ERP Leaders Since 2010",
-  description: "Learn about Aveon Infotech, trusted by 5000+ educational institutions for campus ERP & LMS solutions since 2010.",
+  title: `About Us | Campus ERP Leaders Since ${siteConfig.stats.foundedYear}`,
+  description: `Learn about Aveon Infotech, trusted by ${siteConfig.stats.institutions} educational institutions for campus ERP & LMS solutions since ${siteConfig.stats.foundedYear}.`,
 };
 
 const apps = [
@@ -124,7 +125,7 @@ export default function AboutPage() {
               Aveon Infotech is an education technology company from Coimbatore, India, helping universities, colleges and schools run smarter campuses.
             </p>
             <p className="mt-3 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              With software architecture and design built to Atlanta, USA standards, Aveon delivers secure, enterprise-grade systems to institutions across the country.
+              Since {siteConfig.stats.foundedYear}, Aveon has delivered secure, enterprise-grade systems to institutions across the country.
             </p>
           </div>
           <Image
@@ -159,7 +160,7 @@ export default function AboutPage() {
                 a single integrated system.
               </p>
               <p>
-                With 240+ institutions and over a million students on the
+                With {siteConfig.stats.institutions} institutions and over a million students on the
                 platform, we remain focused on one thing: software that lets
                 educators spend less time on administration and more time on
                 education.

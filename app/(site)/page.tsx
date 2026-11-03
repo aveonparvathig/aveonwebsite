@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   // page, so the homepage must pin its canonical explicitly.
   alternates: { canonical: "/" },
   title: "Campus ERP & LMS for Universities & Colleges",
-  description: "AI-powered campus ERP & LMS for 5000+ institutions. Manage admissions, academics, fees and operations on one platform. OBE-compliant, NAAC/AICTE ready.",
+  description: `AI-powered campus ERP & LMS for ${siteConfig.stats.institutions} institutions. Manage admissions, academics, fees and operations on one platform. OBE-compliant, NAAC/AICTE ready.`,
   keywords: [
     "AI-powered campus ERP",
     "university ERP system",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Campus ERP & LMS for Universities & Colleges",
-    description: "AI-powered campus management platform serving 5000+ institutions.",
+    description: `AI-powered campus management platform serving ${siteConfig.stats.institutions} institutions.`,
     url: siteConfig.url,
   },
 };

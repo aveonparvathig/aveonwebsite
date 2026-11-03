@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
-import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import { faqJsonLd, breadcrumbJsonLd, serviceJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import OffshoreContent, { offshoreFaqs } from "@/components/sections/OffshoreContent";
 
@@ -32,6 +32,12 @@ export default function OffshoreTeamPage() {
       { name: "Services", href: "/services" },
       { name: "Offshore Development Team", href: "/services/offshore-team" },
     ]),
+    serviceJsonLd({
+      name: "Offshore Development Team",
+      slug: "offshore-team",
+      serviceType: "Dedicated software development team",
+      description: metadata.description as string,
+    }),
     faqJsonLd(offshoreFaqs),
   ];
 

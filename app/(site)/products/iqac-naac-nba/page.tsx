@@ -109,7 +109,7 @@ export default function IqacNaacNbaPage() {
               {
                 tag: "10 Criteria",
                 title: "NAAC",
-                desc: "Complete support for NAAC accreditation across all 10 criteria, from curriculum and teaching to governance and quality assurance.",
+                desc: "Complete support for NAAC accreditation across all seven criteria, from curricular aspects and teaching-learning to governance and institutional values.",
                 href: "/products/iqac-naac-nba/naac",
                 from: "from-purple-500",
                 to: "to-purple-700",

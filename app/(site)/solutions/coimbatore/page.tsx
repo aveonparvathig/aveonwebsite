@@ -7,7 +7,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "College ERP Coimbatore | Higher Education",
   description:
-    "Higher education software for Coimbatore colleges and universities. Local ERP solutions serving 200+ Tamil Nadu institutions. NAAC-compliant. Anna University approved. On-site support team.",
+    "Higher education software for Coimbatore colleges and universities. NAAC-ready campus ERP built for Anna University-affiliated institutions, with an on-site support team.",
   keywords: [
     "College ERP Coimbatore",
     "Higher Education Software Coimbatore",
@@ -28,35 +28,6 @@ export default function CoimbatoreePage() {
       { name: "Solutions", href: "/solutions" },
       { name: "Coimbatore", href: "/solutions/coimbatore" },
     ]),
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Aveon Infotech Pvt Ltd",
-      "image": "https://aveon.io/logo.png",
-      "description": "Campus ERP and Education Software Solutions for Colleges and Universities in Coimbatore",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Coimbatore, Tamil Nadu",
-        "addressLocality": "Coimbatore",
-        "addressRegion": "Tamil Nadu",
-        "postalCode": "641000",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91 87540 06483",
-      "url": "https://aveon.io/solutions/coimbatore",
-      "priceRange": "$$$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "200"
-      }
-    }
   ];
 
   return (
@@ -115,7 +86,7 @@ export default function CoimbatoreePage() {
           <div className="max-w-2xl mb-12">
             <h2 className="text-3xl font-bold text-navy-900 sm:text-4xl">Why Coimbatore Institutions Choose Aveon</h2>
             <p className="mt-4 text-lg text-navy-600">
-              Based in Coimbatore. Serving the region for 12+ years. Deep understanding of local needs.
+              Based in Coimbatore. Serving the region since 2010. Deep understanding of local needs.
             </p>
           </div>
 
@@ -179,7 +150,7 @@ export default function CoimbatoreePage() {
           <div className="max-w-2xl mb-12">
             <h2 className="text-3xl font-bold text-navy-900 sm:text-4xl">Our Solutions</h2>
             <p className="mt-4 text-lg text-navy-600">
-              All 12 products available locally. Customizable for your institution.
+              All 14 products available locally. Customizable for your institution.
             </p>
           </div>
 

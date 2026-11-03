@@ -1,8 +1,10 @@
+import { siteConfig } from "@/lib/constants";
+
 const stats = [
-  { value: "240+", label: "Institutions Served" },
-  { value: "14", label: "Integrated Products" },
-  { value: "17+", label: "Years of Experience" },
-  { value: "1M+", label: "Students Managed" },
+  { value: siteConfig.stats.institutions, label: "Institutions Served" },
+  { value: String(siteConfig.stats.products), label: "Integrated Products" },
+  { value: siteConfig.stats.yearsExperience, label: "Years of Experience" },
+  { value: siteConfig.stats.students, label: "Students Managed" },
 ];
 
 /** Elevated blue strip — sits under the hero, overlapping the section above. */

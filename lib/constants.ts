@@ -13,6 +13,14 @@ export const siteConfig = {
     twitter: "https://x.com/aveoninfotech",
     facebook: "https://www.facebook.com/aveoninfotech/",
   },
+  // Single source for every public claim; keep copy and metadata in sync here.
+  stats: {
+    institutions: "200+",
+    students: "1M+",
+    foundedYear: 2010,
+    yearsExperience: `${new Date().getFullYear() - 2010}+`,
+    products: products.length,
+  },
 };
 
 export type NavChild = {

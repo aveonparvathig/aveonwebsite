@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
-import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import { faqJsonLd, breadcrumbJsonLd, serviceJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import WarehouseContent, { warehouseFaqs } from "@/components/sections/WarehouseContent";
 
@@ -32,6 +32,12 @@ export default function WarehouseManagementPage() {
       { name: "Services", href: "/services" },
       { name: "Warehouse Management System", href: "/services/warehouse-management-system" },
     ]),
+    serviceJsonLd({
+      name: "Warehouse Management System",
+      slug: "warehouse-management-system",
+      serviceType: "Warehouse management software",
+      description: metadata.description as string,
+    }),
     faqJsonLd(warehouseFaqs),
   ];
 

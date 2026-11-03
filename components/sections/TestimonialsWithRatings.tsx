@@ -101,7 +101,7 @@ export default function TestimonialsWithRatings() {
             </span>
           </h2>
           <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-relaxed text-navy-700 sm:mt-6">
-            5000+ institutions rely on Aveon for unified campus management, OBE compliance and institutional excellence.
+            200+ institutions rely on Aveon for unified campus management, OBE compliance and institutional excellence.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export default function TestimonialsWithRatings() {
           </div>
           <div className="rounded-2xl bg-gradient-to-br from-accent-50 to-accent-100/50 p-6 text-center">
             <div className="text-2xl font-bold text-accent-500 sm:text-3xl">
-              5000+
+              200+
             </div>
             <p className="mt-2 text-sm font-medium text-navy-700">
               Active Users

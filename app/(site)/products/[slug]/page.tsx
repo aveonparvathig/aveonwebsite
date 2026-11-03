@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { products, getProduct, applyProductOverrides, type Product } from "@/lib/data/products";
 import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
-import ProductHeroImage from "@/components/sections/ProductHeroImage";
+import ProductHeroImage, { productImages } from "@/components/sections/ProductHeroImage";
 import UniversityERPContent, { universityErpFaqs } from "@/components/sections/UniversityERPContent";
 import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
 import SchoolERPContent, { schoolErpFaqs } from "@/components/sections/SchoolERPContent";
@@ -222,7 +222,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const hasRichContent = richContentSlugs.has(product.slug);
 
   const jsonLd = [
-    productJsonLd(product),
+    productJsonLd(product, productImages[product.slug]),
     breadcrumbJsonLd([
       { name: "Home", href: "/" },
       { name: "Products", href: "/products" },

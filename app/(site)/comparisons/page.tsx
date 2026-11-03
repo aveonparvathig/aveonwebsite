@@ -151,8 +151,8 @@ export default function Comparisons() {
               <li>✓ Best-in-class for Indian education standards</li>
               <li>✓ Comprehensive school support (K-12)</li>
               <li>✓ Strong AICTE compliance</li>
-              <li>✓ 12+ years industry experience</li>
-              <li>✓ 5000+ satisfied institutions</li>
+              <li>✓ 16+ years industry experience, since 2010</li>
+              <li>✓ 200+ satisfied institutions</li>
               <li>✓ Coimbatore-based, India-focused</li>
             </ul>
           </div>

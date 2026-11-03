@@ -15,12 +15,12 @@ export default function AboutSection() {
           </h2>
 
           <p className="mt-4.5 max-w-[520px] text-[17px] leading-[1.72] text-navy-700">
-            Aveon InfoTech delivers innovative technology solutions that simplify business
+            Aveon Infotech delivers innovative technology solutions that simplify business
             operations, improve efficiency and help organizations grow. We build reliable
             digital solutions that solve real-world challenges for modern organizations.
           </p>
           <p className="mt-3 max-w-[520px] text-[17px] leading-[1.72] text-navy-700">
-            Our software architecture and design are built to Atlanta, USA standards, bringing global engineering quality to every solution we build.
+            Our platforms are engineered to enterprise security and reliability standards, bringing consistent quality to every solution we build.
           </p>
 
           <Link

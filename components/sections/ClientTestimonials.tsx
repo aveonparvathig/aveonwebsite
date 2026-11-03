@@ -178,7 +178,7 @@ export default function ClientTestimonials() {
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           <div className="rounded-2xl bg-gradient-to-br from-primary-50 to-primary-100/50 p-6 text-center">
-            <div className="text-2xl font-bold text-primary-600 sm:text-3xl">240+</div>
+            <div className="text-2xl font-bold text-primary-600 sm:text-3xl">200+</div>
             <p className="mt-2 text-sm font-medium text-navy-700">Institutions Served</p>
           </div>
           <div className="rounded-2xl bg-gradient-to-br from-accent-50 to-accent-100/50 p-6 text-center">

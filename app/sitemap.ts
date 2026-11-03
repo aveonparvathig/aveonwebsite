@@ -65,6 +65,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceRoutes.map((p) => entry(p, 0.8)),
     ...solutionRoutes.map((p) => entry(p, 0.7)),
     ...posts.map((p) => entry(`/blog/${p.slug}`, 0.6, "monthly", new Date(p.publishedAt))),
-    ...staticPosts.map((p) => entry(`/blog/${p.slug}`, 0.6, "monthly", new Date(p.publishedAt))),
+    ...staticPosts.map((p) => entry(`/blog/${p.slug}`, 0.6, "monthly", new Date(p.dateModified))),
   ];
 }

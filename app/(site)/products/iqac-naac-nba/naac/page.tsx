@@ -4,20 +4,18 @@ import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
   title: "NAAC Accreditation Software",
-  description: "Complete support for NAAC accreditation across all 10 criteria: curriculum, teaching, research, infrastructure, and more.",
+  description: "Complete support for NAAC accreditation across all seven criteria: curricular aspects, teaching-learning, research, infrastructure, student support, governance and institutional values.",
 };
 
+// NAAC's seven assessment criteria (Revised Accreditation Framework).
 const criteria = [
-  { num: "1", title: "Curriculum Design & Development", features: ["Academic programs", "Learning outcomes", "Industry alignment"] },
-  { num: "2", title: "Teaching-Learning & Evaluation", features: ["Faculty data", "Teaching methods", "Assessment records"] },
-  { num: "3", title: "Research, Innovations & Extension", features: ["Research projects", "Patents & publications", "Community engagement"] },
-  { num: "4", title: "Student Support & Progression", features: ["Scholarships", "Student activities", "Career guidance"] },
-  { num: "5", title: "Infrastructure & Learning Resources", features: ["Building details", "Equipment inventory", "Digital resources"] },
-  { num: "6", title: "Governance, Leadership & Management", features: ["Policies & procedures", "Admin data", "Staff details"] },
-  { num: "7", title: "Institutional Values & Social Responsibility", features: ["Community service", "Green initiatives", "Social programs"] },
-  { num: "8", title: "Financial Resources & Management", features: ["Budget planning", "Grants & funding", "Audit records"] },
-  { num: "9", title: "Alumni & Stakeholder Engagement", features: ["Alumni network", "Feedback surveys", "Employer connect"] },
-  { num: "10", title: "Internal Quality Assurance", features: ["IQAC meetings", "Best practices", "Continuous improvement"] },
+  { num: "1", title: "Curricular Aspects", features: ["Academic programs", "Learning outcomes & OBE mapping", "Curriculum feedback & revision"] },
+  { num: "2", title: "Teaching-Learning & Evaluation", features: ["Faculty profiles & workload", "Student-centric teaching methods", "Assessment & results records"] },
+  { num: "3", title: "Research, Innovations & Extension", features: ["Research projects & grants", "Patents & publications", "Extension & community engagement"] },
+  { num: "4", title: "Infrastructure & Learning Resources", features: ["Physical & ICT infrastructure", "Library & digital resources", "Equipment & maintenance records"] },
+  { num: "5", title: "Student Support & Progression", features: ["Scholarships & support schemes", "Placement & progression data", "Alumni engagement"] },
+  { num: "6", title: "Governance, Leadership & Management", features: ["Policies & strategic plans", "Financial management & audits", "IQAC meetings & quality initiatives"] },
+  { num: "7", title: "Institutional Values & Best Practices", features: ["Gender equity & inclusion", "Green campus initiatives", "Best practices & distinctiveness"] },
 ];
 
 export default function NaacPage() {
@@ -43,15 +41,15 @@ export default function NaacPage() {
             NAAC
           </span>
           <h1 className="mt-5 max-w-[820px] text-[clamp(32px,4.6vw,54px)] font-extrabold leading-[1.08] text-navy-900">
-            NAAC 10-Criteria Framework Support
+            NAAC Seven-Criteria Framework Support
           </h1>
           <p className="mt-5 max-w-[680px] text-[17px] leading-relaxed text-navy-700">
-            Complete support for NAAC accreditation across all 10 criteria, from curriculum and teaching to governance and quality assurance, all tracked in one place.
+            Complete support for NAAC accreditation across all seven criteria, from curricular aspects and teaching-learning to governance and institutional values, all tracked in one place.
           </p>
         </div>
       </section>
 
-      {/* NAAC 10 Criteria */}
+      {/* NAAC criteria */}
       <section className="bg-purple-50 pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-12 lg:pb-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
           <div className="grid gap-4 sm:grid-cols-2">
