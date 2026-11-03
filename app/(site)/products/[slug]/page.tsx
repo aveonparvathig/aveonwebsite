@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { products, getProduct, applyProductOverrides, type Product } from "@/lib/data/products";
 import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 import ProductHeroImage, { productImages } from "@/components/sections/ProductHeroImage";
 import UniversityERPContent, { universityErpFaqs } from "@/components/sections/UniversityERPContent";
 import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
@@ -37,6 +38,16 @@ async function loadProduct(slug: string): Promise<Product | undefined> {
   );
   return product ? applyProductOverrides(product) : product;
 }
+
+const defaultGuides = ["what-is-campus-erp", "benefits-unified-campus-management", "erp-migration-best-practices"];
+const guidesBySlug: Record<string, string[]> = {
+  "college-erp": ["what-is-campus-erp", "obe-implementation-guide", "naac-accreditation-checklist"],
+  "university-erp": ["what-is-campus-erp", "multi-campus-management-guide", "nirf-ranking-parameters-explained"],
+  "lms-ai-chatbot": ["ai-in-higher-education", "obe-implementation-guide", "what-is-campus-erp"],
+  coe: ["obe-implementation-guide", "nba-accreditation-guide", "naac-accreditation-checklist"],
+  "online-examination": ["obe-implementation-guide", "ai-in-higher-education", "what-is-campus-erp"],
+  "iqac-naac-nba": ["naac-accreditation-checklist", "nba-accreditation-guide", "aicte-approval-compliance-checklist"],
+};
 
 /** Per-slug SEO overrides (title/description/keywords) for high-value pages. */
 const seoOverrides: Record<string, Metadata> = {
@@ -345,6 +356,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </section>
 
+      <RelatedGuides slugs={guidesBySlug[product.slug] ?? defaultGuides} />
       <CTASection />
     </>
   );

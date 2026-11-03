@@ -1,5 +1,4 @@
 export const GA_ID = "G-LGVGNJ0SGN";
-export const GTM_ID = "GTM-MCSK995";
 
 export interface EventProperties {
   [key: string]: string | number | boolean | undefined;

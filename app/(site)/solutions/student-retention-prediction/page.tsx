@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "Student Retention Prediction | AI Analytics",
@@ -116,6 +117,8 @@ export default function StudentRetentionPage() {
           </div>
         </div>
       </section>
+
+      <RelatedGuides slugs={["ai-in-higher-education", "what-is-campus-erp", "benefits-unified-campus-management"]} />
 
       {/* CTA */}
       <section className="bg-green-600 py-16 text-center text-white sm:py-20 lg:py-24">
