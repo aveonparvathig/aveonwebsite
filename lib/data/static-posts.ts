@@ -14,6 +14,17 @@ export const EDITORIAL_AUTHOR = "Aveon Editorial Team";
 /** Long-form guides that live as their own routes under app/(site)/blog/. */
 export const staticPosts: StaticPost[] = [
   {
+    title: "NBA Accreditation Guide: Criteria, SAR Process and Evidence for Engineering Programmes",
+    slug: "nba-accreditation-guide",
+    excerpt:
+      "How NBA programme accreditation works: Tier I and Tier II, the Washington Accord, eligibility, the twelve Programme Outcomes, the ten SAR criteria and the evidence each needs, the visit and outcomes, and a 12-month plan.",
+    author: EDITORIAL_AUTHOR,
+    publishedAt: "2026-11-03",
+    dateModified: "2026-11-03",
+    readingTime: "12 min read",
+    category: "insights",
+  },
+  {
     title: "AICTE Approval and Compliance Checklist for Technical Institutions",
     slug: "aicte-approval-compliance-checklist",
     excerpt:
