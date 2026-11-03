@@ -54,7 +54,6 @@ export const metadata: Metadata = {
     title: "AI-Powered Campus ERP & LMS | Aveon Infotech",
     description: `Unified AI-powered campus management platform serving ${siteConfig.stats.institutions} institutions.`,
   },
-  robots: { index: true, follow: true },
 };
 
 // Explicit viewport config: keeps Next's default responsive meta tag, adds
