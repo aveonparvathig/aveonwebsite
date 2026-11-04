@@ -26,9 +26,9 @@ const clientTestimonials: ClientTestimonial[] = [
   {
     college: "Coimbatore Institute of Engineering and Technology (CIET)",
     location: "Coimbatore, Tamil Nadu",
-    name: "Dr. K. Manikanda Subramanian",
-    role: "Principal",
-    photo: "/testimonials/dr-manikanda-subramanian.jpg",
+    name: "Dr. K. A. Chinnaraju",
+    role: "Director",
+    // No approved photo yet; the card renders initials until one is supplied.
     quote:
       "Admissions, attendance and fee collection now sit on a single platform. My office team spends less time on paperwork, and I can see how the whole institution is doing whenever I need to.",
   },
