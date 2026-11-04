@@ -20,6 +20,18 @@ Source: live Google India results for *college erp software*, *college erp* and 
 
 Academia and Camu (national brands) rank on brand and "campus management system", not on "college erp"; their pages barely use the phrase.
 
+### Vendors added at the user's request (fetched 4 Nov 2026)
+
+| Site | Page type | Words | Title (chars) | H1 | Schema | Uses "college erp" |
+|---|---|---|---|---|---|---|
+| camudigitalcampus.com (Camu) | Homepage | 975 | Campus Management System \| Camu (31) | Campus Management System to Unified SIS & LMS | none | 2 times; targets "campus management system" |
+| rovan.in (Rovan Software Solutions) | Homepage | 281 | Education ERP - ROVAN (21) | none | WebPage, Organization | 0 times; targets "education ERP" |
+| digiicampus.com (Digii, formerly CollPoll) | Homepage | 2,556 | Home \| Digii (12) | 14 H1s, all event/news headlines | Organization, Article | 0 times; brand and "digital twin" positioning, no keyword targeting |
+
+None of the three is on page one for "college erp" or "college erp software" in India today, and none of their pages is built for the phrase: Camu targets "campus management system", Rovan targets "education ERP" with a 281-word homepage, and Digii's homepage has no keyword focus at all (the title is "Home | Digii"). They compete with Aveon on brand strength, sales reach and client logos, not on this keyword. For the SERP itself the opponents remain MasterSoft, Edumerge, Linways, VAPS, EduPlus, Embase, Softloom and collegesoftware.in.
+
+Keyword lesson from the three: "campus management system" (Camu) and "education ERP" (Rovan) are adjacent phrases Aveon's site already uses on the homepage and university page; no change needed. Digii's weakness, a homepage with 14 H1 tags and no target phrase, is the pattern Aveon should keep avoiding.
+
 ## 2. Keyword usage on page one vs Aveon (occurrences in body text)
 
 | Phrase | iitms | linways | eduplus | softloom | embase | collegesoftware | **Aveon** |
