@@ -34,8 +34,9 @@ export const siteConfig = {
   stats: {
     institutions: "200+",
     students: "1M+",
-    foundedYear: 2010,
-    yearsExperience: `${new Date().getFullYear() - 2010}+`,
+    // Matches the Google Business Profile opening date (6 March 2012), user decision 4 Nov 2026.
+    foundedYear: 2012,
+    yearsExperience: `${new Date().getFullYear() - 2012}+`,
     products: products.length,
   },
 };

@@ -32,7 +32,7 @@ const criteria = [
     good: "Affiliating-university exam patterns, CBCS, arrears and revaluation, reservation categories and scholarship schemes handled as configuration.",
     ask: "Configure our university's internal-mark rule and revaluation window in the demo.",
     flag: "'We will customise that' for standard Indian workflows.",
-    aveon: "Built in Coimbatore for Indian institutions since 2010; Anna University, VTU, JNTU and state-board patterns ship as configuration.",
+    aveon: "Built in Coimbatore for Indian institutions since 2012; Anna University, VTU, JNTU and state-board patterns ship as configuration.",
   },
   {
     name: "OBE attainment",
