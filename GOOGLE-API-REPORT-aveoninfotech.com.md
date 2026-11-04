@@ -107,9 +107,9 @@ Canonical check: Google and user canonicals agree on all 55 indexed pages (the h
 
 Rich results detected: Breadcrumbs on 27 pages; "Review snippets" named "Aveon Infotech" on 41 pages with no issues. The site no longer emits any Review or AggregateRating markup (removed 3 Nov), so this is Google's stored copy from an earlier crawl; re-run the inspection in two weeks to confirm it clears.
 
-## 8. Still pending
+## 8. GA4 (resolved 4 Nov 2026)
 
-- GA4 organic report: add `claude-seo@aveon-seo.iam.gserviceaccount.com` as Viewer in Analytics → Admin → Property access management, and put the numeric property ID in the config as `"properties/NNNNNNNNN"`.
+The legacy property (G-LGVGNJ0SGN, `properties/375544871`) lives in an Analytics account that nobody at Aveon administers (two years of change history show only the Editor-level gmail account), so API access could not be granted there. Resolution: a new Analytics account **Aveon Infotech** and property **Aveon Infotech Website** (`properties/562311676`, tag **G-BCYJTG1JHE**) owned by ranjith1089@gmail.com, with the service account as Viewer. The site now sends every hit to both tags (commit e66c643, verified live), so the legacy reports continue while the new property builds history. GA4 API access works (tier 2); the organic-traffic and landing-page reports will have meaningful data from early December.
 
 ## 9. Priority list from this report
 
