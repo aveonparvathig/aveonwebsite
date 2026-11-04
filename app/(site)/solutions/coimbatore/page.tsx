@@ -139,7 +139,7 @@ export default function CoimbatoreePage() {
           <div className="mt-12 rounded-2xl border-2 border-primary-200 bg-primary-50 p-8">
             <p className="font-bold text-navy-900 mb-4">Featured Coimbatore Success:</p>
             <p className="text-navy-700 leading-relaxed">
-              "Aveon's system has transformed how we manage our campus. From student admissions to examination scheduling, everything is now automated. Our compliance process, which used to take weeks, now happens in days. The support team is always available and understands our specific needs. Highly recommended!" — Dr. Priya Sharma, Principal, Coimbatore College of Engineering
+              "Aveon's system has transformed how we manage our campus. From student admissions to examination scheduling, everything is now automated. Our compliance process, which used to take weeks, now happens in days. The support team is always available and understands our specific needs. Highly recommended!" — Dr. K. A. Chinnaraju, Director, Coimbatore Institute of Engineering and Technology (CIET)
             </p>
           </div>
         </div>
