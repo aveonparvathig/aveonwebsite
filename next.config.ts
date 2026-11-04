@@ -53,6 +53,8 @@ const nextConfig: NextConfig = {
       coe: "/products/coe",
       "hostel-mess": "/products/hostel-mess",
       library: "/products/library-management",
+      "library-management": "/products/library-management",
+      academy: "/academy",
       lms: "/products/lms-ai-chatbot",
       fees: "/products/fees-management",
     };
@@ -64,6 +66,8 @@ const nextConfig: NextConfig = {
     ]);
     return [
       { source: "/index", destination: "/", permanent: true },
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/ppolicy.html", destination: "/privacy", permanent: true },
       ...legacyRedirects,
       // Anything else under the old Joomla root, including index.php?option=com_k2 item lists.
       { source: "/aveon/:path*", destination: "/", permanent: true },
