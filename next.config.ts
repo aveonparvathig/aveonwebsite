@@ -38,6 +38,8 @@ const nextConfig: NextConfig = {
       index: "/",
       "our-company": "/about",
       "about-us": "/about",
+      "our-team": "/about/team",
+      "Learning-management-and-ai-chatbot": "/products/lms-ai-chatbot",
       careers: "/careers",
       partners: "/partners",
       contact: "/contact",
