@@ -33,8 +33,41 @@ const nextConfig: NextConfig = {
     // State pages exist only where there are verifiable clients; the rest
     // fold into the by-state hub until a deployment exists there.
     const foldedStates = ["telangana", "maharashtra", "delhi", "haryana", "punjab", "west-bengal", "rajasthan", "gujarat"];
+    // URLs from the pre-2026 PHP/Joomla site that Google still crawls.
+    const legacyPages: Record<string, string> = {
+      index: "/",
+      "our-company": "/about",
+      "about-us": "/about",
+      careers: "/careers",
+      partners: "/partners",
+      contact: "/contact",
+      "contact-us": "/contact",
+      "our-solutions": "/solutions",
+      services: "/services",
+      products: "/products",
+      "university-erp": "/products/university-erp",
+      "college-erp": "/products/college-erp",
+      "school-erp": "/products/school-erp",
+      "hrm-payroll": "/products/hrm-payroll",
+      inventory: "/products/inventory-management",
+      coe: "/products/coe",
+      "hostel-mess": "/products/hostel-mess",
+      library: "/products/library-management",
+      lms: "/products/lms-ai-chatbot",
+      fees: "/products/fees-management",
+    };
+    const legacyRedirects = Object.entries(legacyPages).flatMap(([name, destination]) => [
+      { source: `/${name}.php`, destination, permanent: true },
+      { source: `/aveon/${name}.php`, destination, permanent: true },
+      { source: `/aveon/index.php/component/users/${name}.php`, destination, permanent: true },
+      { source: `/aveon/index.php/component/users//${name}.php`, destination, permanent: true },
+    ]);
     return [
       { source: "/index", destination: "/", permanent: true },
+      ...legacyRedirects,
+      // Anything else under the old Joomla root, including index.php?option=com_k2 item lists.
+      { source: "/aveon/:path*", destination: "/", permanent: true },
+      { source: "/:name.php", destination: "/", permanent: true },
       ...foldedStates.map((s) => ({
         source: `/solutions/college-erp-${s}`,
         destination: "/solutions/by-state",
