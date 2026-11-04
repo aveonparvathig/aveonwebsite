@@ -1,4 +1,8 @@
 export const GA_ID = "G-LGVGNJ0SGN";
+// Second GA4 property owned by Aveon (new "Aveon Infotech" Analytics account).
+// Both receive every hit; the legacy property keeps its history while this one builds its own.
+export const GA_SECONDARY_ID = "G-BCYJTG1JHE";
+export const GA_IDS = [GA_ID, GA_SECONDARY_ID].filter(Boolean);
 
 export interface EventProperties {
   [key: string]: string | number | boolean | undefined;

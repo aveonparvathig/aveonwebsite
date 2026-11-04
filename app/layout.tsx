@@ -6,7 +6,7 @@ import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/lib/constants";
 import { organizationJsonLd, localBusinessJsonLd, websiteJsonLd } from "@/lib/structured-data";
-import { GA_ID } from "@/lib/analytics";
+import { GA_ID, GA_IDS } from "@/lib/analytics";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -90,9 +90,9 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${GA_ID}', {
-                page_path: window.location.pathname,
-              });
+              ${GA_IDS.map(
+                (id) => `gtag('config', '${id}', { page_path: window.location.pathname });`,
+              ).join("\n              ")}
             `,
           }}
         />
