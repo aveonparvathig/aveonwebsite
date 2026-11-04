@@ -1,5 +1,16 @@
 # Google Business Profile — optimisation pack (4 Nov 2026)
 
+## 0. Applied on 4 Nov 2026 (all pending Google review, usually under one day)
+- Description replaced with §2.1 text (619 chars).
+- Secondary categories added: Computer consultant, Educational consultant.
+- Website set to the UTM-tagged URL in §2.3.
+- Service areas added: India, Karnataka, Tamil Nadu.
+- Services: removed Application development, Big data consulting, Business to Business, Cloud services, Data centre management, IT consulting, Software development outsourcing. Kept Enterprise software development, Mobile app development, Software development. "Aveon College Management System (From ₹550)" renamed to "College ERP" with no price. Added the 14 custom services from §2.5; descriptions written for College ERP, University ERP, School ERP, LMS with AI Chatbot and the accreditation entry. The other nine still need descriptions (copy from §2.5).
+- Google Post 1 (NAAC checklist) published with a Learn more button to the guide (UTM campaign gbp-post). Previous post was two years old; keep the monthly cadence with §2.7.
+- Not possible from the in-search editor: social profile links (X). Google detects these automatically; LinkedIn, Instagram and Facebook already show.
+- Founding year: Google's 6 March 2012 kept; site changed to 2012 (commit b0656aa).
+
+
 Profile: **Aveon Infotech Private Limited** · Software company · 4.2★ (54 reviews) · 819 interactions · profile strength "incomplete".
 Managed from the user's Google account (search "Aveon Infotech Private Limited" → *Your business on Google*).
 
