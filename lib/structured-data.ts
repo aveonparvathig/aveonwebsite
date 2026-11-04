@@ -12,15 +12,10 @@ export function organizationJsonLd() {
       "AI-powered campus ERP, learning management and accreditation software for universities, colleges and schools in India.",
     foundingDate: String(siteConfig.stats.foundedYear),
     logo: { "@type": "ImageObject", url: `${siteConfig.url}/images/logo.svg` },
+    legalName: siteConfig.location.legalName,
     email: siteConfig.email,
     telephone: siteConfig.phone,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Coimbatore",
-      addressRegion: "Tamil Nadu",
-      postalCode: "641001",
-      addressCountry: "IN",
-    },
+    address: postalAddress(),
     sameAs: Object.values(siteConfig.social),
     knowsAbout: [
       "Campus Management",
@@ -41,17 +36,30 @@ export function localBusinessJsonLd() {
     image: `${siteConfig.url}/images/logo.svg`,
     description: "AI-powered campus ERP and learning management system for universities, colleges and schools.",
     parentOrganization: { "@id": `${siteConfig.url}/#organization` },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Coimbatore",
-      addressRegion: "Tamil Nadu",
-      postalCode: "641001",
-      addressCountry: "IN",
+    address: postalAddress(),
+    hasMap: siteConfig.location.mapUrl,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: siteConfig.location.hours.days,
+      opens: siteConfig.location.hours.opens,
+      closes: siteConfig.location.hours.closes,
     },
     telephone: siteConfig.phone,
     email: siteConfig.email,
     url: siteConfig.url,
     areaServed: { "@type": "Country", name: "India" },
+  };
+}
+
+function postalAddress() {
+  const l = siteConfig.location;
+  return {
+    "@type": "PostalAddress",
+    streetAddress: l.streetAddress,
+    addressLocality: l.locality,
+    addressRegion: l.region,
+    postalCode: l.postalCode,
+    addressCountry: l.country,
   };
 }
 

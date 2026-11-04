@@ -16,8 +16,8 @@ const offices = [
     label: "INDIA OFFICE",
     title: "Coimbatore, India",
     address: siteConfig.address,
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Aveon+Infotech,Coimbatore,Tamil+Nadu,India",
+    hours: siteConfig.location.hours.label,
+    mapUrl: siteConfig.location.mapUrl,
   },
 ];
 
@@ -151,6 +151,7 @@ export default function ContactPage() {
                 <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-navy-600">
                   {office.address}
                 </p>
+                <p className="mt-2 text-xs font-semibold text-navy-600">{office.hours}</p>
 
                 {/* Map CTA */}
                 <a

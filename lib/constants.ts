@@ -6,7 +6,24 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.aveoninfotech.com",
   phone: "+91 87540 06483",
   email: "contact@aveoninfotech.com",
-  address: "Coimbatore, Tamil Nadu, India",
+  // Must match the Google Business Profile exactly (NAP consistency).
+  address: "33, Kathir Avenue, Andal Veedi 3rd Street, Hope College, Coimbatore, Tamil Nadu 641004, India",
+  location: {
+    legalName: "Aveon Infotech Private Limited",
+    streetAddress: "33, Kathir Avenue, Andal Veedi 3rd Street, Hope College",
+    locality: "Coimbatore",
+    region: "Tamil Nadu",
+    postalCode: "641004",
+    country: "IN",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Aveon+Infotech+Private+Limited+Kathir+Avenue+Hope+College+Coimbatore",
+    hours: {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:30",
+      closes: "18:30",
+      label: "Mon–Sat, 8:30 AM–6:30 PM IST",
+    },
+  },
   social: {
     linkedin: "https://www.linkedin.com/company/aveon-infotech/",
     instagram: "https://www.instagram.com/aveoninfotech/",

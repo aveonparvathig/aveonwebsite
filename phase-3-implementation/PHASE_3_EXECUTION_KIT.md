@@ -35,9 +35,10 @@ Use the NAP block and 250-word description from Section 2.
 
 ### 2.1 NAP block — use this everywhere, character for character
 ```
-Aveon Infotech
-Coimbatore, Tamil Nadu 641001, India
+Aveon Infotech Private Limited
+#33, Kathir Avenue, Andal Veedi 3rd Street, Hope College, Coimbatore, Tamil Nadu 641004, India
 +91 87540 06483
+Hours: Mon–Sat 8:30 AM–6:30 PM IST (matches the Google Business Profile exactly)
 contact@aveoninfotech.com
 https://www.aveoninfotech.com
 Founded 2010 · 14 integrated products · 200+ institutions · 1M+ students

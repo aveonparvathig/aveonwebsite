@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { faqJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
+import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "College ERP Coimbatore | Higher Education",
@@ -223,12 +224,22 @@ export default function CoimbatoreePage() {
           <div className="mt-10 rounded-2xl border-2 border-primary-200 bg-primary-50 p-8">
             <div className="grid sm:grid-cols-2 gap-8">
               <div>
-                <p className="font-bold text-navy-900">Aveon Infotech Pvt Ltd</p>
-                <p className="mt-2 text-navy-700">Coimbatore, Tamil Nadu</p>
+                <p className="font-bold text-navy-900">{siteConfig.location.legalName}</p>
+                <p className="mt-2 text-navy-700">{siteConfig.address}</p>
                 <p className="mt-4 font-semibold text-navy-900">Phone</p>
-                <p className="text-primary-600">+91 87540 06483</p>
+                <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-primary-600">
+                  {siteConfig.phone}
+                </a>
                 <p className="mt-4 font-semibold text-navy-900">Hours</p>
-                <p className="text-navy-700">Mon-Fri: 9AM-6PM IST</p>
+                <p className="text-navy-700">{siteConfig.location.hours.label}</p>
+                <a
+                  href={siteConfig.location.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-sm font-semibold text-primary-600 hover:underline"
+                >
+                  Open in Google Maps
+                </a>
               </div>
               <div>
                 <p className="font-semibold text-navy-900 mb-3">Get in Touch</p>

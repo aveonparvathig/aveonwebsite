@@ -30,8 +30,8 @@
 
 #### 1. Google Business Profile Optimization
 ```
-Business Name: Aveon Infotech
-Address: [Complete Address], Coimbatore, Tamil Nadu 641001
+Business Name: Aveon Infotech Private Limited (profile already exists and is verified)
+Address: #33, Kathir Avenue, Andal Veedi 3rd Street, Hope College, Coimbatore, Tamil Nadu 641004
 Phone: +91 87540 06483
 Website: aveoninfotech.com
 Service Area: Pan-India (especially Tamil Nadu, Telangana, Karnataka)
@@ -318,8 +318,8 @@ Each state needs:
 5. Facebook Business Page
 
 ### NAP Consistency
-- **Name:** Aveon Infotech
-- **Address:** Coimbatore, Tamil Nadu 641001, India
+- **Name:** Aveon Infotech Private Limited
+- **Address:** #33, Kathir Avenue, Andal Veedi 3rd Street, Hope College, Coimbatore, Tamil Nadu 641004, India
 - **Phone:** +91 87540 06483
 - **Website:** aveoninfotech.com
 
