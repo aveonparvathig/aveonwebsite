@@ -151,7 +151,11 @@ export default function CoimbatoreePage() {
           <div className="max-w-2xl mb-12">
             <h2 className="text-3xl font-bold text-navy-900 sm:text-4xl">Our Solutions</h2>
             <p className="mt-4 text-lg text-navy-600">
-              All 14 products available locally. Customizable for your institution.
+              All 14 products available locally. Customizable for your institution. Start with our{" "}
+              <Link href="/products/college-erp" className="font-semibold text-primary-600 hover:underline">
+                college ERP software
+              </Link>{" "}
+              for affiliated and autonomous colleges.
             </p>
           </div>
 

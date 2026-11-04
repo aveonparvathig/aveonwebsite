@@ -122,7 +122,12 @@ export default function KarnatakaPage() {
                 a supervised go-live, scheduled away from admissions and university exams. After go-live, support runs
                 by phone and email through a named contact, with on-site visits for examination and admission seasons.
                 We are candid that Karnataka is a newer market for us than Tamil Nadu; the reference deployment above
-                is open to a conversation with prospective colleges.
+                is open to a conversation with prospective colleges. The platform itself is described module by
+                module on the{" "}
+                <Link href="/products/college-erp" className="font-semibold text-primary-600">
+                  college ERP software
+                </Link>{" "}
+                page.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

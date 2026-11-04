@@ -26,7 +26,8 @@ type ProductPageProps = { params: Promise<{ slug: string }> };
 /** Products whose hero heading reads "Aveon <name>" with a gradient brand word. */
 const brandedTitles: Record<string, string> = {
   "university-erp": "University Management System",
-  "college-erp": "College Management System",
+  // Keyword-first H1: page one for "college erp software" is held by pages that say it in the H1.
+  "college-erp": "College ERP Software for Affiliated and Autonomous Colleges",
   "school-erp": "School Management System",
 };
 
@@ -178,12 +179,15 @@ const seoOverrides: Record<string, Metadata> = {
     ],
   },
   "college-erp": {
-    title: "College ERP & Campus Management Software",
+    title: "College ERP Software for Colleges in India",
     description:
-      "Manage your complete college digitally with Aveon College ERP. Admissions, academics, OBE, CBCS, COE, fees, library, hostel, HR, placement, NAAC, communication and analytics.",
+      "College ERP software and college management software for affiliated and autonomous colleges in India: admissions, OBE, COE, fees, hostel, HR and NAAC reporting on one platform. Live at 200+ institutions.",
     keywords: [
       "College ERP Software",
       "College Management Software",
+      "College ERP Software in India",
+      "College ERP for Affiliated Colleges",
+      "College ERP for Autonomous Colleges",
       "Campus Management System",
       "Higher Education ERP",
       "Academic Management System",

@@ -351,7 +351,7 @@ export default function WhatIsCampusErp() {
           <h2>Next steps</h2>
           <p>
             If you are evaluating a campus ERP for a college, start with the{" "}
-            <Link href="/products/college-erp">College ERP</Link> overview; for a multi-campus university, the{" "}
+            <Link href="/products/college-erp">college ERP software</Link> page; for a multi-campus university, the{" "}
             <Link href="/products/university-erp">University ERP</Link> page; and for a trust running several
             institutions, <Link href="/solutions/multi-campus-management">multi-campus management</Link>. For a
             side-by-side view of Aveon against other approaches, see <Link href="/comparisons">comparisons</Link>.

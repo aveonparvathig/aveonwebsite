@@ -278,7 +278,7 @@ export default function BenefitsUnifiedCampus() {
               <Link href="/blog/integrated-erp-vs-point-solutions">Why integrated ERP beats point solutions</Link>
             </li>
             <li>
-              <Link href="/products/college-erp">Aveon College ERP</Link>
+              <Link href="/products/college-erp">Aveon college ERP software</Link>
             </li>
           </ul>
 

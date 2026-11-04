@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 /* ──────────────────────────────────────────────────────────────
    Data
@@ -424,6 +425,77 @@ export const collegeErpFaqs: { question: string; answer: string }[] = [
     answer:
       "Yes. Every student gets a secure login for marks, timetable, attendance, assignments, feedback, library circulation history and fee details on web and mobile.",
   },
+  {
+    question: "Is Aveon college ERP software suitable for affiliated colleges?",
+    answer:
+      "Yes. Affiliated colleges get the university-facing workflows out of the box: nominal rolls and internal-mark uploads in the affiliating university's format, exam fee cycles that follow the university calendar, and attendance condonation reports. Anna University, Bharathiar University, Tamil Nadu Agricultural University and Bengaluru North University patterns are live at current clients.",
+  },
+  {
+    question: "Does it work for autonomous colleges?",
+    answer:
+      "Yes. Autonomous colleges run their own Controller of Examinations on Aveon: question paper generation and approval, hall seating, central valuation, moderation, revaluation, supplementary examinations, grade conversion and consolidated mark sheets, with CBCS and OBE mapping built in.",
+  },
+  {
+    question: "How is Aveon college ERP software priced?",
+    answer:
+      "Pricing is an annual licence sized by student strength and the modules you switch on, with implementation, data migration and training quoted once up front. There is no per-user fee for students, parents or faculty, so adding logins never increases the bill. Request a quote and we will price it against your current student count.",
+  },
+  {
+    question: "How long does implementation take?",
+    answer:
+      "A single-campus college typically goes live in about 30 working days: week one for master data and configuration, week two for data migration, week three for staff training, week four for parallel run and sign-off. Autonomous colleges with a full COE rollout usually plan one additional month ahead of their first exam cycle.",
+  },
+  {
+    question: "What is the best college ERP software in India?",
+    answer:
+      "The right choice depends on your affiliation, size and compliance needs rather than on a single ranking. Shortlist vendors that already support your affiliating university's formats, cover COE and NAAC data in one system, and can show live institutions like yours. Aveon runs at 200+ institutions across Tamil Nadu and Karnataka; our vendor scorecard lists the twelve criteria to compare any college ERP software on.",
+  },
+];
+
+/** Affiliation and autonomy workflows — the angle page-one results for "college erp" are built around. */
+const COLLEGE_TYPES = [
+  {
+    title: "Affiliated colleges",
+    intro:
+      "Colleges under a state or central university spend most of their admin hours producing what the university asks for. Aveon generates it from the same records faculty already maintain.",
+    items: [
+      "Nominal rolls and internal-mark uploads in the affiliating university's format",
+      "Exam fee collection that follows the university's cycle and late-fee rules",
+      "Attendance shortage and condonation reports before each semester exam",
+      "Regulation-wise syllabus, credits and elective rules per batch",
+      "Live patterns: Anna University, Bharathiar University, TNAU and Bengaluru North University",
+    ],
+  },
+  {
+    title: "Autonomous colleges",
+    intro:
+      "Autonomy means running your own examinations. Aveon's Controller of Examinations module is the same one universities use, scaled to a single campus.",
+    items: [
+      "Question bank, paper generation and multi-level approval",
+      "Hall seating, invigilation duty and attendance capture",
+      "Central valuation, moderation, revaluation and supplementary exams",
+      "Grade conversion, consolidated mark sheets and course completion certificates",
+      "CBCS, open electives and OBE attainment reports for NAAC and NBA",
+    ],
+  },
+  {
+    title: "Deemed universities and groups",
+    intro:
+      "Multiple colleges under one trust share one platform with separate academic calendars, fee books and dashboards per institution.",
+    items: [
+      "Institution-wise configuration on one database",
+      "Consolidated management dashboards across campuses",
+      "Shared HR, payroll and inventory with per-campus controls",
+      "Group-level NAAC, NIRF and AICTE data in one place",
+    ],
+  },
+];
+
+const IMPLEMENTATION_STEPS = [
+  { week: "Week 1", title: "Configure", text: "Departments, programmes, regulations, fee heads and user roles set up with your admin team." },
+  { week: "Week 2", title: "Migrate", text: "Student, staff, fee and library data imported from spreadsheets or your previous software and verified by you." },
+  { week: "Week 3", title: "Train", text: "Role-wise training for office, faculty, COE and hostel staff; student and parent logins issued." },
+  { week: "Week 4", title: "Go live", text: "Parallel run on one live process, sign-off, then the whole campus switches over." },
 ];
 
 /* ──────────────────────────────────────────────────────────────
@@ -593,9 +665,10 @@ export default function CollegeERPContent() {
                 sheet, fee counter to management review.
               </p>
               <p>
-                Aveon College ERP connects all of it on one platform. Every department, every record
-                and every decision in a single system, so your team stops chasing information and
-                starts acting on it.
+                Aveon College ERP software connects all of it on one platform. Every department,
+                every record and every decision in a single system, so your team stops chasing
+                information and starts acting on it. It is college management software built in
+                India for Indian colleges: affiliated, autonomous and deemed.
               </p>
               <p className="font-semibold text-navy-800">
                 Plan better. Operate smarter. Communicate faster. Decide with confidence.
@@ -770,6 +843,92 @@ export default function CollegeERPContent() {
             <span className="shrink-0">First enquiry</span>
             <span className="h-px flex-1 bg-navy-200" />
             <span className="shrink-0">Final degree</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Affiliated, autonomous and deemed ── */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
+            College ERP Software for Affiliated, Autonomous and Deemed Colleges
+          </h2>
+          <p className="mt-3 text-lg text-navy-600">
+            The affiliation model decides which workflows matter most. Aveon ships all three and
+            configures the one you need; see the{" "}
+            <Link href="/solutions/college-erp-tamil-nadu" className="font-semibold text-primary-600 hover:underline">
+              Tamil Nadu college ERP page
+            </Link>{" "}
+            for named institutions on each pattern.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {COLLEGE_TYPES.map((t) => (
+            <div key={t.title} className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
+              <h3 className="text-lg font-bold text-primary-700">{t.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy-600">{t.intro}</p>
+              <ul className="mt-4 space-y-1.5">
+                {t.items.map((x) => (
+                  <li key={x} className="flex items-start gap-2 text-sm text-navy-700">
+                    <CheckIcon />
+                    <span>{x}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Pricing model and implementation ── */}
+      <section className="border-y border-navy-100 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">How Aveon college ERP pricing works</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              No published price list fits every college, so here is the model instead.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {[
+                "An annual licence sized by student strength and the modules you switch on; add modules later without re-licensing.",
+                "Implementation, data migration and training are quoted once, up front, with no recurring services fee.",
+                "No per-user charges: students, parents, faculty and management logins are unlimited.",
+                "Cloud hosting or your own on-premise server; the application is the same either way.",
+                "Support, updates and statutory changes (university formats, NAAC templates) are included in the licence.",
+              ].map((x) => (
+                <li key={x} className="flex items-start gap-2 text-navy-700">
+                  <CheckIcon />
+                  <span>{x}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/contact#demo"
+              className="mt-7 inline-flex items-center rounded-full bg-gradient-to-br from-primary-600 to-primary-700 px-6 py-3 text-sm font-semibold text-white hover:to-primary-600"
+            >
+              Get a quote for your student strength →
+            </Link>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Implementation in about 30 working days</h2>
+            <p className="mt-3 text-lg text-navy-600">
+              The same four-week plan we follow at every college, detailed in our{" "}
+              <Link href="/blog/erp-implementation-30-days" className="font-semibold text-primary-600 hover:underline">
+                30-day implementation playbook
+              </Link>
+              .
+            </p>
+            <ol className="mt-6 space-y-4">
+              {IMPLEMENTATION_STEPS.map((s) => (
+                <li key={s.week} className="flex gap-4 rounded-2xl border border-navy-100 bg-navy-50 p-4">
+                  <span className="w-16 shrink-0 text-xs font-bold uppercase tracking-wider text-primary-600">{s.week}</span>
+                  <div>
+                    <p className="font-semibold text-navy-900">{s.title}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-navy-600">{s.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>

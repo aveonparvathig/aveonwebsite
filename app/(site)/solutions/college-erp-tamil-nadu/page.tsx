@@ -219,7 +219,11 @@ export default function TamilNaduPage() {
                 <Link href="/blog/erp-migration-best-practices" className="font-semibold text-primary-600">
                   migration playbook
                 </Link>
-                .
+                , and the module-by-module detail is on the{" "}
+                <Link href="/products/college-erp" className="font-semibold text-primary-600">
+                  college ERP software
+                </Link>{" "}
+                page.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

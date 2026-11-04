@@ -307,7 +307,7 @@ export default function Comparisons() {
               <Link href="/blog/erp-migration-best-practices">ERP migration best practices</Link>
             </li>
             <li>
-              <Link href="/products/college-erp">Aveon College ERP</Link> ·{" "}
+              <Link href="/products/college-erp">Aveon college ERP software</Link> ·{" "}
               <Link href="/products/university-erp">University ERP</Link> ·{" "}
               <Link href="/products/school-erp">School ERP</Link>
             </li>

@@ -292,7 +292,7 @@ export default function NbaGuide() {
             enter, the Criterion 7 register is a report of actions logged against gaps, and faculty, placement and
             facilities data are the same records used for AICTE and NIRF. Aveon's OBE and accreditation modules are
             built around that chain; see the <Link href="/products/iqac-naac-nba/nba">NBA accreditation</Link> page
-            and the <Link href="/products/college-erp">College ERP</Link> overview.
+            and the <Link href="/products/college-erp">college ERP software</Link> overview.
           </p>
 
           <h2>Sources and further reading</h2>

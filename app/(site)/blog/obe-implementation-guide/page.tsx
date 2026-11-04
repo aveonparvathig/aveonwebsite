@@ -277,7 +277,7 @@ export default function OBEGuide() {
             OBE module stores PEOs, POs, PSOs and COs; lets teachers tag questions as they create assessments; computes
             CO, PO and PSO attainment automatically from marks already in the examination system; captures indirect
             survey data; and produces the attainment reports and action-taken records that NAAC and NBA ask for. See the{" "}
-            <Link href="/products/college-erp">College ERP</Link> page for the OBE and CBCS workflow.
+            <Link href="/products/college-erp">college ERP software</Link> page for the OBE and CBCS workflow.
           </p>
 
           <h2>Sources and further reading</h2>
