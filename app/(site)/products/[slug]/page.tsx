@@ -14,6 +14,8 @@ import CoeContent, { coeFaqs } from "@/components/sections/CoeContent";
 import LibraryContent, { libraryFaqs } from "@/components/sections/LibraryContent";
 import HostelContent, { hostelFaqs } from "@/components/sections/HostelContent";
 import InventoryContent, { inventoryFaqs } from "@/components/sections/InventoryContent";
+import CanteenContent, { canteenFaqs } from "@/components/sections/CanteenContent";
+import GrievanceContent, { grievanceFaqs } from "@/components/sections/GrievanceContent";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -28,7 +30,8 @@ const brandedTitles: Record<string, string> = {
   "university-erp": "University Management System",
   // Keyword-first H1: page one for "college erp software" is held by pages that say it in the H1.
   "college-erp": "College ERP Software for Affiliated and Autonomous Colleges",
-  "school-erp": "School Management System",
+  "school-erp": "School Management Software",
+  "coe": "Controller of Examination & Examination Management Software",
 };
 
 async function loadProduct(slug: string): Promise<Product | undefined> {
@@ -104,17 +107,17 @@ const seoOverrides: Record<string, Metadata> = {
     ],
   },
   "coe": {
-    title: "Controller of Examination (COE) Software",
+    title: "Examination Management System & COE Software",
     description:
-      "Aveon COE Software helps colleges and universities manage examinations, fees, question papers, timetables, hall seating, evaluation, results, revaluation and mark sheets on one platform.",
+      "Examination management system and Controller of Examination (COE) software for colleges and universities: question papers, timetables, hall seating, evaluation, moderation, results, revaluation and mark sheets on one platform.",
     keywords: [
+      "Examination Management System",
       "Controller of Examination Software",
       "COE Software",
-      "Examination Management System",
       "University Examination Software",
       "College Examination Management System",
+      "Exam Automation Software",
       "COE Management System",
-      "Online Examination Software",
       "University Result Management System",
       "Examination Scheduling Software",
       "Question Paper Management System",
@@ -141,21 +144,21 @@ const seoOverrides: Record<string, Metadata> = {
     ],
   },
   "school-erp": {
-    title: "School ERP & Management Software",
+    title: "School Management Software & School ERP in India",
     description:
-      "Aveon School ERP is an integrated school management system for admissions, student records, academics, attendance, fees, examinations, transport, communication, staff and parent services.",
+      "School management software and school ERP for CBSE, state-board and matriculation schools in India: admissions, attendance, fees, examinations, report cards, transport and a parent app on one platform.",
     keywords: [
-      "School ERP Software",
       "School Management Software",
-      "School ERP System",
+      "School Management Software India",
+      "School ERP Software",
       "School Management System",
-      "School Administration Software",
-      "Student Management System",
       "School Fee Management Software",
+      "Student Management System",
+      "School Administration Software",
       "School Attendance Management Software",
       "School Examination Management System",
-      "School Transport Management Software",
-      "Education ERP Software",
+      "CBSE School Management Software",
+      "Parent App for Schools",
       "Digital School Management System",
     ],
   },
@@ -200,6 +203,40 @@ const seoOverrides: Record<string, Metadata> = {
       "College Placement Management Software",
     ],
   },
+  "canteen-management": {
+    title: "Canteen Management System for Colleges & Campuses",
+    description:
+      "Canteen management system for colleges, universities and campuses: cashless ID-card and RFID payments, digital menu and ordering, GST billing, stock and vendor management, and mess integration on one platform.",
+    keywords: [
+      "Canteen Management System",
+      "Canteen Management Software",
+      "Cashless Canteen System",
+      "Cafeteria Management Software",
+      "College Canteen Management Software",
+      "RFID Canteen Management System",
+      "Canteen Billing Software",
+      "Campus Canteen Management",
+      "Canteen Inventory Management System",
+      "Smart Canteen Software",
+    ],
+  },
+  "grievance-management": {
+    title: "Grievance Management System for Colleges & Universities",
+    description:
+      "Student grievance redressal software for colleges and universities: an online grievance cell for registration, tracking, escalation and time-bound resolution that meets the UGC grievance-redressal mandate, with anti-ragging and anonymous complaints.",
+    keywords: [
+      "Grievance Management System",
+      "College Grievance Management System",
+      "Student Grievance Redressal Software",
+      "Grievance Management Software",
+      "Online Grievance System for Colleges",
+      "Student Grievance Management System",
+      "UGC Grievance Redressal Cell Software",
+      "Anti-Ragging Complaint System",
+      "Grievance Tracking Software",
+      "Campus Grievance Redressal System",
+    ],
+  },
 };
 
 export async function generateMetadata({
@@ -233,6 +270,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
     "library-management",
     "hostel-mess",
     "inventory-management",
+    "canteen-management",
+    "grievance-management",
   ]);
   const hasRichContent = richContentSlugs.has(product.slug);
 
@@ -251,6 +290,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ...(product.slug === "library-management" ? [faqJsonLd(libraryFaqs)] : []),
     ...(product.slug === "hostel-mess" ? [faqJsonLd(hostelFaqs)] : []),
     ...(product.slug === "inventory-management" ? [faqJsonLd(inventoryFaqs)] : []),
+    ...(product.slug === "canteen-management" ? [faqJsonLd(canteenFaqs)] : []),
+    ...(product.slug === "grievance-management" ? [faqJsonLd(grievanceFaqs)] : []),
   ];
 
   return (
@@ -318,6 +359,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {product.slug === "library-management" && <LibraryContent />}
       {product.slug === "hostel-mess" && <HostelContent />}
       {product.slug === "inventory-management" && <InventoryContent />}
+      {product.slug === "canteen-management" && <CanteenContent />}
+      {product.slug === "grievance-management" && <GrievanceContent />}
 
       {/* ── Key Features (only for products without a bespoke content page) ── */}
       {!hasRichContent && (
