@@ -68,6 +68,11 @@ export default function Footer({
                   About Us
                 </Link>
               </li>
+              <li>
+                <Link href="/pricing" className="text-navy-700 transition-colors hover:text-primary-600">
+                  Pricing
+                </Link>
+              </li>
               {company.map((n) => (
                 <li key={n.href}>
                   <Link href={n.href} className="text-navy-700 transition-colors hover:text-primary-600">
