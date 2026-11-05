@@ -82,6 +82,15 @@ const WHY: { title: string; text: string }[] = [
   { title: "Long-Term Partnership", text: "An ongoing technology relationship, not a one-time transaction." },
 ];
 
+const US_ADVANTAGES: { title: string; text: string }[] = [
+  { title: "40-60% lower cost", text: "Build a full product team in India for a fraction of US in-house salaries, with no recruiting, infrastructure or benefits overhead." },
+  { title: "Daily US-hours overlap", text: "Teams keep a committed overlap window with US Eastern and Pacific hours for stand-ups, reviews and real-time collaboration." },
+  { title: "Overnight delivery cycle", text: "The India time difference means work continues after your day ends, so progress is ready when your morning starts." },
+  { title: "IP & NDA protection", text: "Clear contracts, NDAs and assigned intellectual-property ownership so your code and data stay yours." },
+  { title: "Senior, English-fluent engineers", text: "Full-stack developers, QA, DevOps and AI specialists who communicate directly in English and work in your tools." },
+  { title: "Scale up or down fast", text: "Start with one developer or a full squad and adjust the team as your roadmap changes, without re-hiring." },
+];
+
 /** FAQ — exported so the page can emit matching FAQPage JSON-LD (AEO). */
 export const offshoreFaqs: { question: string; answer: string }[] = [
   {
@@ -251,8 +260,28 @@ export default function OffshoreContent() {
         </div>
       </section>
 
-      {/* ── Engagement models ── */}
+      {/* ── Why US companies offshore to India ── */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Why US Companies Build Offshore Teams in India</h2>
+          <p className="mt-3 text-lg text-navy-600">
+            US startups and enterprises partner with offshore development teams in India to ship faster and control
+            costs. Here is what you get with Aveon.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {US_ADVANTAGES.map((a) => (
+            <div key={a.title} className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
+              <h3 className="text-lg font-bold text-primary-700">{a.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy-600">{a.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Engagement models ── */}
+      <section className="border-t border-navy-100 bg-navy-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Choose Your Engagement Model</h2>
           <p className="mt-3 text-lg text-navy-600">Build a team around your actual requirements, from one developer to a complete product team.</p>
@@ -273,6 +302,7 @@ export default function OffshoreContent() {
               </ul>
             </div>
           ))}
+        </div>
         </div>
       </section>
 

@@ -69,18 +69,23 @@ All five `/services/*` pages are **invisible for their category terms** — they
 | GST-compliant / Tally-integrated WMS | compliance | low | medium-high | body/FAQ |
 | multi-warehouse inventory management | commercial | medium | low-medium | secondary |
 
-## 5. Offshore Team → `/services/offshore-team`
+## 5. Offshore Team → `/services/offshore-team` (US-market reposition, 5 Nov 2026)
 
-- **Competitors (SERP, India):** Your Team in India, WeblineIndia, Flatworld Solutions, plus Clutch/DesignRush directories of ODC and staff-augmentation firms. Clear commercial-intent modifiers exist.
-- **Read:** strongest bottom-funnel modifiers of the five: "hire dedicated development team India", "offshore development center (ODC)", "staff augmentation". Title now leads with "Hire"; H1 kept ("Build Your Dedicated Offshore Team with Aveon.").
+- **Decision (user, 5 Nov 2026):** target the **US buyer** (keep India as the delivery location). Aveon has US past experience (GETReach AI, OCTOPI, SSENSE) — a real differentiator vs the India-vendor pages that lack named US proof. The named clients are **held off the public page for now** pending the user's confirmation of wording/permission; the US positioning and keywords shipped without them.
+- **Competitors (SERP, US-buyer intent):** The Scalers, Uplers, Your Team in India, WeblineIndia, Infomaze, Supersourcing — all selling India delivery to US/UK buyers; nearshore (LatAm) rivals (Revelo, Howdy, ParallelStaff) compete on time-zone. The winning pages lead on cost (sources cite 40–70% vs US rates), time-zone framing (India ~9.5–14h from US, sold as "overnight delivery / near-continuous development"), IP/NDA protection, and engagement models.
+- **Shipped:** title → "Offshore Development Team in India for US Companies"; H1 → "Your Offshore Development Team in India, Built for US Companies."; hero reworked for US startups/enterprises (overlap + 40-60% cost); new "Why US Companies Build Offshore Teams in India" section (cost, US-hours overlap, overnight cycle, IP/NDA, English-fluent seniors, scale). Keywords added for US-buyer intent.
 
 | Keyword | Intent | Demand | Winnability | Target |
 |---|---|---|---|---|
-| hire dedicated development team India | commercial, bottom-funnel | medium | medium | this page |
-| offshore development center India / ODC | commercial | low-medium | medium | this page |
+| offshore development team for US companies | commercial, US-buyer | medium | medium | this page |
+| hire offshore developers for US companies / USA | commercial, bottom-funnel | medium | medium | this page |
+| hire Indian developers for US companies | commercial | medium | medium | this page |
+| offshore software development for startups | commercial | medium | medium | this page |
+| software development outsourcing to India | commercial | medium-high | low-medium | this page |
+| hire dedicated development team India / ODC | commercial, bottom-funnel | medium | medium | this page |
 | staff augmentation company India | commercial | medium | low-medium | this page |
-| hire remote developers India | commercial | medium | low-medium | this page |
-| offshore software development company Coimbatore | commercial, local | low | medium | this page |
+
+**Pending (user):** confirm how to project the US past clients — GETReach AI, OCTOPI, SSENSE — on the page (names-only strip, logos with permission, or case-study cards with real project details). Nothing about these engagements was invented.
 
 ## Changes shipped (5 Nov 2026)
 

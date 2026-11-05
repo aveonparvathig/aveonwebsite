@@ -7,12 +7,18 @@ import CTASection from "@/components/sections/CTASection";
 import OffshoreContent, { offshoreFaqs } from "@/components/sections/OffshoreContent";
 
 export const metadata: Metadata = {
-  title: "Hire Offshore Development Team in India",
+  title: "Offshore Development Team in India for US Companies",
   description:
-    "Hire a dedicated offshore development team from India: full-stack developers, QA, DevOps and AI specialists. 40-60% cost savings. Offshore development centre, team augmentation and staff augmentation from Coimbatore.",
+    "US companies hire dedicated offshore development teams in India with Aveon: full-stack developers, QA, DevOps and AI specialists. 40-60% cost savings, daily US-hours overlap and overnight delivery. Offshore development centre, team augmentation and staff augmentation from Coimbatore.",
   keywords: [
     "Offshore Development Team",
     "Offshore Development Company",
+    "Offshore Development Team for US Companies",
+    "Hire Offshore Developers for US Companies",
+    "Hire Indian Developers for US Companies",
+    "Hire Offshore Developers USA",
+    "Offshore Software Development for Startups",
+    "Software Development Outsourcing to India",
     "Hire Offshore Development Team India",
     "Hire Dedicated Development Team India",
     "Dedicated Development Team",
@@ -59,14 +65,15 @@ export default function OffshoreTeamPage() {
         <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-20">
           <div>
             <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
-              Offshore Development Team
+              Offshore Development Team · India
             </span>
             <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
-              Build Your Dedicated Offshore Team with Aveon.
+              Your Offshore Development Team in India, Built for US Companies.
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Access skilled technology professionals from India (developers, designers, QA, DevOps and AI specialists)
-              through a flexible, cost-effective engagement model that works as an extension of your team.
+              US startups and enterprises build dedicated offshore teams with Aveon (developers, designers, QA, DevOps
+              and AI specialists) that work as an extension of your own, with daily overlap in US hours and 40-60% lower
+              development costs.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link
