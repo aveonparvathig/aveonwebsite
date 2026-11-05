@@ -36,7 +36,7 @@ export default function IqacNaacNbaPage() {
               <span aria-hidden className="mt-5 block h-1.5 w-20 rounded-full bg-gradient-to-r from-primary-600 to-accent-500" />
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
-              Unified platform for institutional quality assurance, accreditation compliance and continuous improvement. Manage IQAC, NAAC (10&nbsp;criteria), NBA, NIRF, AICTE and UNSDG.
+              Unified platform for institutional quality assurance, accreditation compliance and continuous improvement. Manage IQAC, NAAC (7&nbsp;criteria), NBA, NIRF, AICTE and UNSDG.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -107,7 +107,7 @@ export default function IqacNaacNbaPage() {
                 ),
               },
               {
-                tag: "10 Criteria",
+                tag: "7 Criteria",
                 title: "NAAC",
                 desc: "Complete support for NAAC accreditation across all seven criteria, from curricular aspects and teaching-learning to governance and institutional values.",
                 href: "/products/iqac-naac-nba/naac",

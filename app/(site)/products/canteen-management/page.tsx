@@ -2,22 +2,60 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
+import { faqJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Canteen Management Software for Campuses",
-  description: "Digital canteen management: Online ordering, billing, inventory, vendor management and health compliance tracking.",
+  title: "Canteen Management System for Colleges & Campuses",
+  description:
+    "Canteen management system for colleges, universities and campuses: cashless ID-card and RFID payments, digital menu and ordering, GST billing, stock and vendor management, and hostel-mess integration on one platform.",
   keywords: [
-    "canteen management system",
-    "food service management",
-    "mess management software",
-    "cafeteria management",
-    "online canteen portal",
+    "Canteen Management System",
+    "Canteen Management Software",
+    "Cashless Canteen System",
+    "Cafeteria Management Software",
+    "College Canteen Management Software",
+    "RFID Canteen Management System",
+    "Canteen Billing Software",
+    "Campus Canteen Management",
+    "Canteen Inventory Management System",
   ],
 };
+
+const canteenFaqs = [
+  {
+    question: "What is a canteen management system?",
+    answer:
+      "A canteen management system is software that runs a campus canteen or cafeteria end to end: digital menus, ordering, cashless payment, GST billing, inventory, vendor management and reporting. Aveon's canteen management system replaces cash, registers and spreadsheets with one connected platform that links to the student record and hostel mess.",
+  },
+  {
+    question: "How does cashless canteen payment work?",
+    answer:
+      "Students and staff pay by tapping the same ID card or RFID tag they use on campus against a prepaid wallet. Parents top the wallet up online, institutions can set daily or per-item spending limits, and every transaction produces an instant GST receipt, so there is no cash to handle and no drawer to reconcile at close.",
+  },
+  {
+    question: "Does it support a multi-vendor food court?",
+    answer:
+      "Yes. Each outlet gets its own menu, pricing, timings and stock, while the institution sees consolidated sales and vendor-wise settlement. Pre-order and scheduled pickup reduce the peak-hour rush across every counter.",
+  },
+  {
+    question: "Can the canteen connect to the hostel mess?",
+    answer:
+      "Yes. For residential campuses the canteen links to the hostel mess so meal plans, mess attendance and cycle-based billing stay in sync with the student record, and mess dues post straight to the fee ledger.",
+  },
+  {
+    question: "Does the canteen software handle GST billing and inventory?",
+    answer:
+      "Yes. It issues GST-compliant receipts, tracks raw-material stock with reorder alerts, costs each dish from its recipe, and manages vendors and suppliers, giving accounts a clean daily close and a full audit trail.",
+  },
+];
 
 export default function CanteenManagementPage() {
   return (
     <div className="min-h-dvh bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(canteenFaqs)) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white">
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-orange-600/20 blur-[120px]" />
@@ -30,7 +68,7 @@ export default function CanteenManagementPage() {
             </span>
             <h1 className="mt-5">
               <span className="block text-balance text-[28px] font-semibold leading-[1.12] tracking-tight text-navy-900 sm:text-[34px] xl:text-[40px]">
-                <span className="bg-gradient-to-br from-primary-600 to-primary-700 bg-clip-text font-extrabold text-transparent">Aveon</span> Canteen &amp; Food Service Management
+                <span className="bg-gradient-to-br from-primary-600 to-primary-700 bg-clip-text font-extrabold text-transparent">Aveon</span> Canteen Management System
               </span>
               <span aria-hidden className="mt-5 block h-1.5 w-20 rounded-full bg-gradient-to-r from-primary-600 to-accent-500" />
             </h1>
@@ -293,6 +331,35 @@ export default function CanteenManagementPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </Link>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t border-navy-100 bg-white">
+        <div className="mx-auto max-w-4xl px-6 py-12 sm:py-14">
+          <h2 className="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
+            Canteen Management System: FAQs
+          </h2>
+          <div className="mt-10 space-y-3">
+            {canteenFaqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-navy-100 bg-navy-50 p-6 shadow-card [&_summary::-webkit-details-marker]:hidden"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-4">
+                  <h3 className="text-base font-semibold text-navy-900 group-open:text-orange-700">
+                    {faq.question}
+                  </h3>
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-500 transition group-open:rotate-180 group-open:border-orange-600 group-open:bg-orange-600 group-open:text-white">
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-navy-600">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
     </div>

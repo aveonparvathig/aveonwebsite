@@ -14,8 +14,6 @@ import CoeContent, { coeFaqs } from "@/components/sections/CoeContent";
 import LibraryContent, { libraryFaqs } from "@/components/sections/LibraryContent";
 import HostelContent, { hostelFaqs } from "@/components/sections/HostelContent";
 import InventoryContent, { inventoryFaqs } from "@/components/sections/InventoryContent";
-import CanteenContent, { canteenFaqs } from "@/components/sections/CanteenContent";
-import GrievanceContent, { grievanceFaqs } from "@/components/sections/GrievanceContent";
 import { fetchOrFallback } from "@/lib/sanity";
 import { productBySlugQuery } from "@/lib/queries";
 
@@ -32,6 +30,7 @@ const brandedTitles: Record<string, string> = {
   "college-erp": "College ERP Software for Affiliated and Autonomous Colleges",
   "school-erp": "School Management Software",
   "coe": "Controller of Examination & Examination Management Software",
+  "online-examination": "Online Examination Software for Colleges",
 };
 
 async function loadProduct(slug: string): Promise<Product | undefined> {
@@ -203,38 +202,21 @@ const seoOverrides: Record<string, Metadata> = {
       "College Placement Management Software",
     ],
   },
-  "canteen-management": {
-    title: "Canteen Management System for Colleges & Campuses",
+  "online-examination": {
+    title: "Online Examination Software for Colleges & Universities",
     description:
-      "Canteen management system for colleges, universities and campuses: cashless ID-card and RFID payments, digital menu and ordering, GST billing, stock and vendor management, and mess integration on one platform.",
+      "Online examination software for colleges, universities and schools: question banks, randomised papers, scheduled and on-demand online exams, AI-assisted proctoring, auto-evaluation and instant results, connected to your campus ERP.",
     keywords: [
-      "Canteen Management System",
-      "Canteen Management Software",
-      "Cashless Canteen System",
-      "Cafeteria Management Software",
-      "College Canteen Management Software",
-      "RFID Canteen Management System",
-      "Canteen Billing Software",
-      "Campus Canteen Management",
-      "Canteen Inventory Management System",
-      "Smart Canteen Software",
-    ],
-  },
-  "grievance-management": {
-    title: "Grievance Management System for Colleges & Universities",
-    description:
-      "Student grievance redressal software for colleges and universities: an online grievance cell for registration, tracking, escalation and time-bound resolution that meets the UGC grievance-redressal mandate, with anti-ragging and anonymous complaints.",
-    keywords: [
-      "Grievance Management System",
-      "College Grievance Management System",
-      "Student Grievance Redressal Software",
-      "Grievance Management Software",
-      "Online Grievance System for Colleges",
-      "Student Grievance Management System",
-      "UGC Grievance Redressal Cell Software",
-      "Anti-Ragging Complaint System",
-      "Grievance Tracking Software",
-      "Campus Grievance Redressal System",
+      "Online Examination Software",
+      "Online Exam Software",
+      "Online Examination System",
+      "Online Examination Software for Colleges",
+      "Online Test Software",
+      "Online Proctoring Software",
+      "Online Assessment Software",
+      "Secure Online Exam Software",
+      "Online Examination Platform for Colleges",
+      "AI Proctoring Software",
     ],
   },
 };
@@ -270,8 +252,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     "library-management",
     "hostel-mess",
     "inventory-management",
-    "canteen-management",
-    "grievance-management",
   ]);
   const hasRichContent = richContentSlugs.has(product.slug);
 
@@ -290,8 +270,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ...(product.slug === "library-management" ? [faqJsonLd(libraryFaqs)] : []),
     ...(product.slug === "hostel-mess" ? [faqJsonLd(hostelFaqs)] : []),
     ...(product.slug === "inventory-management" ? [faqJsonLd(inventoryFaqs)] : []),
-    ...(product.slug === "canteen-management" ? [faqJsonLd(canteenFaqs)] : []),
-    ...(product.slug === "grievance-management" ? [faqJsonLd(grievanceFaqs)] : []),
   ];
 
   return (
@@ -359,8 +337,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {product.slug === "library-management" && <LibraryContent />}
       {product.slug === "hostel-mess" && <HostelContent />}
       {product.slug === "inventory-management" && <InventoryContent />}
-      {product.slug === "canteen-management" && <CanteenContent />}
-      {product.slug === "grievance-management" && <GrievanceContent />}
 
       {/* ── Key Features (only for products without a bespoke content page) ── */}
       {!hasRichContent && (

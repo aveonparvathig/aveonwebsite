@@ -10,8 +10,8 @@ Sources: Search Console Search Analytics API (7 Oct – 1 Nov 2026, web, India-w
 | Controller of Examination / exams | 52 impr, brand-led | "controller of examination software" is a low-volume job-title query; lead the cluster on "examination management system" and "online examination software". |
 | NAAC | 10 impr (blog ranks 5–7) | Low commercial volume, informational demand owned by the blog. Deepen the product page for "naac accreditation software" + AEO. |
 | NBA | 4 impr | Thin. "NBA" is ambiguous (basketball) — always use the full phrase "NBA accreditation software". |
-| Canteen management | 105 impr, pos 48–52 | Real demand, page is thin (generic grid). Depth is the whole gap. |
-| Grievance management | 13 impr, pos 32–51 | Winnable: weak SERP (govt/academic/project). Education-focused. |
+| Canteen management | 105 impr, pos 48–52 | Dedicated rich static page already exists; it only lacked the keyword in its title/H1 and an FAQ. |
+| Grievance management | 13 impr, pos 32–51 | Winnable: weak SERP (govt/academic/project). Rich static page retuned to education-focused keywords + FAQ. |
 | Software development | 11 impr, "…coimbatore" on homepage | Local-pack SERP; Aveon is in Coimbatore with a GBP. Local play. |
 
 Decisions taken with the user (5 Nov 2026): software development → **local push**; grievance → **education-focused** (no ticket/helpdesk market).
@@ -74,7 +74,7 @@ Decisions taken with the user (5 Nov 2026): software development → **local pus
 
 - **GSC**: "canteen management system" 62 impr pos 52, "canteen management software" 15 impr pos 48, "canteen management" pos 66, "canteen inventory management system software" pos 37, "ecanteen" pos 50 — all on /products/canteen-management. 105 impressions, all stuck on page 5.
 - **Autocomplete**: `canteen management software` → …free download, …open source, **cafeteria management software**, …system; `cashless canteen system` → cashless catering for schools. Factory/tata-steel/project noise.
-- Read: the page is thin (generic 6-item grid, no FAQ). Demand is proven at 105 impressions; **depth alone should move it from page 5 toward page 1–2.**
+- Read: the page (a dedicated static route, `app/(site)/products/canteen-management/page.tsx`) is already content-rich but its title/H1 led with "food service" rather than the searched phrase "canteen management system", and it had no FAQ. Retuned the title/H1 to the phrase and added an FAQ; demand is proven at 105 impressions, so this should move it from page 5 toward page 1–2.
 
 | Keyword | Intent | Demand | Target |
 |---|---|---|---|
@@ -115,9 +115,9 @@ Decisions taken with the user (5 Nov 2026): software development → **local pus
 
 ## Priority (impact × effort)
 
-1. Canteen — promote thin→rich (proven 105 impr at pos 52; depth = the gap).
+1. Canteen — retune the existing rich static page's title/H1 to "canteen management system" + FAQ (proven 105 impr at pos 52).
 2. School — retune title/H1 to "school management software" (pos 193, rich component already there).
-3. Grievance — promote thin→rich, education-focused (winnable SERP).
+3. Grievance — retune the existing rich static page to education-focused keywords + FAQ (winnable SERP).
 4. Software development — fix /services hub + local signals (Aveon is in Coimbatore).
 5. Exams — COE keyword H1 + online-examination retune + cross-link.
 6. NAAC / NBA — deepen + FAQ + fix the 7-vs-10 criteria bug (modest commercial ROI, helps AEO).

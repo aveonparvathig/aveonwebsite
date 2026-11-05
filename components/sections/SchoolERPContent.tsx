@@ -288,6 +288,57 @@ export const schoolErpFaqs: { question: string; answer: string }[] = [
     answer:
       "Yes. Aveon includes employee attendance, leave, salary structures, allowances, deductions, salary calculation, advances, payments and payslips.",
   },
+  {
+    question: "Is Aveon school management software suitable for CBSE and state-board schools?",
+    answer:
+      "Yes. Aveon school management software is configured to your board, so report cards, grading and mandatory records follow CBSE, state-board or matriculation formats, and the academic calendar and examination pattern match how your school actually runs.",
+  },
+  {
+    question: "Does the school management software have a parent app?",
+    answer:
+      "Yes. Parents get a mobile app for attendance, marks, fee dues and school communication, and can pay fees online. Teachers get their own app for attendance, marks and messaging, so information reaches home the same day.",
+  },
+  {
+    question: "How much does school management software cost in India?",
+    answer:
+      "Aveon is priced as an annual licence sized by student strength and the modules you switch on, with implementation, data migration and training quoted once up front. There is no per-user charge for parents, students or teachers. Request a quote against your current student count and we will price it for your school.",
+  },
+  {
+    question: "What is the best school ERP software for my school?",
+    answer:
+      "The right school ERP is the one that fits your board, size and fee structure and that you can see running at schools like yours. Shortlist software that covers admissions, fees, examinations and a parent app in one system, supports your board's report formats, and offers local implementation. Aveon runs across schools and colleges in Tamil Nadu and Karnataka with on-site support.",
+  },
+];
+
+/** School types — the buyer-segment angle, mirroring the college page. */
+const SCHOOL_TYPES: { title: string; items: string[] }[] = [
+  {
+    title: "CBSE & ICSE schools",
+    items: [
+      "CBSE/ICSE report-card and grading formats",
+      "Continuous assessment and term records",
+      "Online admission and TC/certificate management",
+      "Parent app with fees, attendance and circulars",
+    ],
+  },
+  {
+    title: "State-board & matriculation schools",
+    items: [
+      "State-board mark and report formats",
+      "Government reporting and student data exports",
+      "Fee concessions, scholarships and RTE records",
+      "Regional-language communication to parents",
+    ],
+  },
+  {
+    title: "Group & franchise schools",
+    items: [
+      "Multiple branches on one platform",
+      "Branch-wise fees, academics and dashboards",
+      "Consolidated management view across schools",
+      "Shared HR, payroll and transport controls",
+    ],
+  },
 ];
 
 /* ──────────────────────────────────────────────────────────────
@@ -530,6 +581,34 @@ export default function SchoolERPContent() {
             <span className="h-px flex-1 bg-navy-200" />
             <span className="shrink-0">Next academic year</span>
           </div>
+        </div>
+      </section>
+
+      {/* ── School types ── */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
+            School Management Software for Every Board
+          </h2>
+          <p className="mt-3 text-lg text-navy-600">
+            CBSE, ICSE, state-board or matriculation, single branch or a group: the platform is
+            configured to how your school is run and what its board expects.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {SCHOOL_TYPES.map((t) => (
+            <div key={t.title} className="rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
+              <h3 className="text-lg font-bold text-primary-700">{t.title}</h3>
+              <ul className="mt-4 space-y-1.5">
+                {t.items.map((x) => (
+                  <li key={x} className="flex items-start gap-2 text-sm text-navy-700">
+                    <CheckIcon />
+                    <span>{x}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 

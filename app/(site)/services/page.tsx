@@ -4,15 +4,56 @@ import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
 import { services } from "@/lib/data/services";
 import CTASection from "@/components/sections/CTASection";
+import { faqJsonLd } from "@/lib/structured-data";
+import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Campus ERP Services & Implementation",
-  description: "Aveon provides implementation, training, support & customization services for campus ERP deployment at your institution.",
+  title: "Software Development Company in Coimbatore | Aveon",
+  description:
+    "Aveon is a software development company in Coimbatore building custom software, mobile apps, AI process automation and dedicated offshore teams. Based in Coimbatore since " +
+    `${siteConfig.stats.foundedYear}, serving clients across India and abroad.`,
+  keywords: [
+    "Software Development Company in Coimbatore",
+    "Custom Software Development",
+    "Software Development Services in Coimbatore",
+    "Custom Software Development Company",
+    "Mobile App Development Company Coimbatore",
+    "Software Company in Coimbatore",
+    "Offshore Software Development India",
+    "Custom Software Development Services",
+  ],
 };
+
+const servicesFaqs = [
+  {
+    question: "What does Aveon's software development company in Coimbatore do?",
+    answer:
+      "Aveon is a Coimbatore-based software development company. Alongside our campus ERP products, our engineering team builds custom software, Android and iOS mobile apps, AI process automation, and order and warehouse management systems, and provides dedicated offshore development teams that work as an extension of yours.",
+  },
+  {
+    question: "Do you work with clients outside Coimbatore?",
+    answer:
+      "Yes. We are based in Coimbatore, Tamil Nadu and deliver to clients across India and overseas. Local clients get on-site meetings; remote clients work with us over video, shared tooling and a named project lead.",
+  },
+  {
+    question: "How much does custom software development cost in India?",
+    answer:
+      "Cost depends on scope, integrations and timeline rather than a fixed price list. Aveon offers fixed-scope, time-and-material and dedicated-team models, with implementation and a clear estimate quoted after a short requirement study. See the custom software development page for the pricing models and representative timelines.",
+  },
+  {
+    question: "Which technologies do you build with?",
+    answer:
+      "Modern web and mobile stacks for web applications, SaaS products, mobile apps and integrations, chosen to fit the project and to stay maintainable by your team. Details are on the custom software development page.",
+  },
+];
 
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(servicesFaqs)) }}
+      />
       <section className="relative overflow-hidden border-b border-navy-900/8 bg-gradient-to-b from-[#f4f8ff] to-white">
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-primary-600/20 blur-[120px]" />
         <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-accent-500/15 blur-[120px]" />
@@ -20,14 +61,15 @@ export default function ServicesPage() {
         <div className="relative mx-auto grid max-w-[1320px] items-center gap-8 px-4 pt-14 pb-8 sm:px-6 sm:pb-10 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:pt-20 lg:pb-10">
           <div>
             <span className="inline-block rounded-full bg-accent-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">
-              Software Development
+              Software Development Company · Coimbatore
             </span>
             <h1 className="mt-5 max-w-[800px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
               Software Built Around the Way You Work
             </h1>
             <p className="mt-5 max-w-[600px] text-[17.5px] leading-[1.7] text-navy-700">
-              Beyond campus ERP, our engineering team builds automation, apps and business
-              systems for organisations of every kind.
+              Aveon is a software development company in Coimbatore. Beyond campus ERP, our
+              engineering team builds custom software, mobile apps, AI automation and dedicated
+              offshore teams for organisations across India and abroad.
             </p>
             <Link
               href="/contact#demo"
@@ -131,6 +173,70 @@ export default function ServicesPage() {
                 </Link>
               )}
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Local — Coimbatore */}
+      <section className="border-y border-navy-100 bg-navy-50">
+        <div className="mx-auto grid max-w-[1320px] gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:px-10">
+          <div>
+            <h2 className="text-3xl font-bold text-navy-900">
+              A Software Development Company Based in Coimbatore
+            </h2>
+            <p className="mt-4 text-[16px] leading-relaxed text-navy-700">
+              Aveon has built software from Coimbatore since {siteConfig.stats.foundedYear}. Local
+              clients get face-to-face requirement studies and on-site go-lives; clients elsewhere in
+              India and overseas work with a dedicated project lead over video and shared tooling. The
+              same team that runs campus ERP at 200+ institutions builds custom web and mobile
+              applications, AI automation and offshore engineering squads.
+            </p>
+            <Link
+              href="/contact#demo"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-accent-600"
+            >
+              Talk to our Coimbatore team →
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { v: siteConfig.stats.yearsExperience, l: `Years building software, since ${siteConfig.stats.foundedYear}` },
+              { v: siteConfig.stats.institutions, l: "Institutions and clients served" },
+              { v: "Coimbatore", l: "Head office, Tamil Nadu" },
+              { v: "India + abroad", l: "Delivery coverage" },
+            ].map((s) => (
+              <div key={s.l} className="rounded-2xl border border-navy-100 bg-white p-6 text-center">
+                <p className="text-2xl font-bold text-primary-600">{s.v}</p>
+                <p className="mt-2 text-sm font-semibold text-navy-700">{s.l}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-4xl px-6 py-12 sm:py-14">
+        <h2 className="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
+          Software Development in Coimbatore: FAQs
+        </h2>
+        <div className="mt-10 space-y-3">
+          {servicesFaqs.map((faq) => (
+            <details
+              key={faq.question}
+              className="group rounded-2xl border border-navy-100 bg-navy-50 p-6 shadow-card [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary className="flex cursor-pointer items-center justify-between gap-4">
+                <h3 className="text-base font-semibold text-navy-900 group-open:text-primary-700">
+                  {faq.question}
+                </h3>
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-500 transition group-open:rotate-180 group-open:border-primary-600 group-open:bg-primary-600 group-open:text-white">
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </span>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-navy-600">{faq.answer}</p>
+            </details>
           ))}
         </div>
       </section>

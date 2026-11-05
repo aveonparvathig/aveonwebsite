@@ -2,22 +2,60 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
+import { faqJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Grievance Management System",
-  description: "Online grievance and complaint management. Anonymous submissions, automatic routing, escalation tracking and reporting.",
+  title: "Grievance Management System for Colleges & Universities",
+  description:
+    "Student grievance redressal software for colleges and universities: an online grievance cell for registration, tracking, escalation and time-bound resolution that meets the UGC grievance-redressal mandate, with anti-ragging and anonymous complaints.",
   keywords: [
-    "grievance management system",
-    "complaint management software",
-    "online grievance portal",
-    "grievance redressal system",
-    "institutional grievance management",
+    "Grievance Management System",
+    "College Grievance Management System",
+    "Student Grievance Redressal Software",
+    "Grievance Management Software",
+    "Online Grievance System for Colleges",
+    "Student Grievance Management System",
+    "UGC Grievance Redressal Cell Software",
+    "Anti-Ragging Complaint System",
+    "Grievance Tracking Software",
   ],
 };
+
+const grievanceFaqs = [
+  {
+    question: "What is a college grievance management system?",
+    answer:
+      "A college grievance management system is software that lets students raise grievances online and lets the institution register, route, track, escalate and resolve them within a defined time limit. Aveon's student grievance redressal software gives colleges and universities a single online grievance cell covering academic, administrative, hostel, fee, harassment and anti-ragging complaints.",
+  },
+  {
+    question: "Does it meet the UGC grievance redressal requirement?",
+    answer:
+      "Yes. The UGC (Redressal of Grievances of Students) Regulations require every higher-education institution to operate an online grievance mechanism with a Grievance Redressal Committee and time-bound disposal. Aveon provides the online portal, committee workspace, SLA clock, escalation to the next authority and the audit trail needed to demonstrate compliance.",
+  },
+  {
+    question: "Can students submit grievances anonymously?",
+    answer:
+      "Yes. Students can file named or anonymous grievances from the student portal, mobile app, SMS or email, with attachments. Anonymous handling and confidentiality encourage students to report issues, including ragging and harassment, early.",
+  },
+  {
+    question: "How does escalation and tracking work?",
+    answer:
+      "Each grievance is auto-assigned to the right officer or committee with a service-level deadline. The student receives a reference number and sees live status; if the deadline passes, the case escalates automatically to the next authority. Every action is time-stamped in an audit trail.",
+  },
+  {
+    question: "Does it include an anti-ragging complaint channel?",
+    answer:
+      "Yes. A dedicated, confidential channel captures ragging and safety complaints and routes them to the anti-ragging committee for priority, time-bound action, separate from routine academic or administrative grievances.",
+  },
+];
 
 export default function GrievanceManagementPage() {
   return (
     <div className="min-h-dvh bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(grievanceFaqs)) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white">
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-primary-600/20 blur-[120px]" />
@@ -30,7 +68,7 @@ export default function GrievanceManagementPage() {
             </span>
             <h1 className="mt-5">
               <span className="block text-balance text-[28px] font-semibold leading-[1.12] tracking-tight text-navy-900 sm:text-[34px] xl:text-[40px]">
-                <span className="bg-gradient-to-br from-primary-600 to-primary-700 bg-clip-text font-extrabold text-transparent">Aveon</span> Grievance &amp; Complaint Management
+                <span className="bg-gradient-to-br from-primary-600 to-primary-700 bg-clip-text font-extrabold text-transparent">Aveon</span> Grievance Management System for Colleges
               </span>
               <span aria-hidden className="mt-5 block h-1.5 w-20 rounded-full bg-gradient-to-r from-primary-600 to-accent-500" />
             </h1>
@@ -270,6 +308,35 @@ export default function GrievanceManagementPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </Link>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t border-navy-100 bg-navy-50">
+        <div className="mx-auto max-w-4xl px-6 py-12 sm:py-14">
+          <h2 className="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
+            Grievance Management System: FAQs
+          </h2>
+          <div className="mt-10 space-y-3">
+            {grievanceFaqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-navy-100 bg-white p-6 shadow-card [&_summary::-webkit-details-marker]:hidden"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-4">
+                  <h3 className="text-base font-semibold text-navy-900 group-open:text-primary-700">
+                    {faq.question}
+                  </h3>
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-500 transition group-open:rotate-180 group-open:border-primary-600 group-open:bg-primary-600 group-open:text-white">
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-navy-600">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
     </div>

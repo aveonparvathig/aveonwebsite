@@ -367,7 +367,7 @@ export default function CustomSoftwareContent() {
               Custom Software Development
             </span>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl">
-              Software Built Around Your Business.
+              Custom Software Development, From Idea to Go-Live
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-600">
               <p>
