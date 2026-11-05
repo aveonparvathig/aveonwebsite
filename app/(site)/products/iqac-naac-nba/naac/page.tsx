@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     "NAAC Criteria Software",
     "Quality Assurance Software for Colleges",
     "IQAC Management System",
+    "IQAC Export Software",
+    "IQAC Data Collection Software",
   ],
 };
 
@@ -39,10 +41,27 @@ const naacFaqs = [
       "The IQAC gets a single workspace: metric owners across departments, deadlines, document uploads and a live view of how complete each criterion is. Quality initiatives, meetings and best practices are recorded continuously rather than compiled at the last minute.",
   },
   {
+    question: "What activities does the IQAC module capture for NAAC?",
+    answer:
+      "Departments log the evidence NAAC asks for as it happens: MOUs and linkages, conferences, workshops and seminars, M.Phil and Ph.D guidance, consultancy, extension activities, staff research projects and grants, and Board of Studies records. Each is tagged by academic year, department and type, and can be exported with its supporting attachments for any date range to assemble the SSR, AQAR or DVV response.",
+  },
+  {
     question: "Is NAAC support part of the campus ERP?",
     answer:
       "Yes. Because admissions, examinations, research, student support and governance already run on Aveon, much of the NAAC evidence is generated automatically from day-to-day operations instead of being entered a second time for accreditation.",
   },
+];
+
+// Activity records the IQAC module logs year-round across departments, each
+// tagged to the NAAC criterion it supports (mirrors the live IQAC form types).
+const iqacActivities = [
+  { name: "MOUs & Linkages", criterion: "Criterion 3" },
+  { name: "Conferences, Workshops & Seminars", criterion: "Criterion 3" },
+  { name: "M.Phil & Ph.D Guidance", criterion: "Criteria 2 & 3" },
+  { name: "Consultancy", criterion: "Criterion 3" },
+  { name: "Extension Activities", criterion: "Criterion 3" },
+  { name: "Staff Research Projects & Grants", criterion: "Criterion 3" },
+  { name: "Board of Studies (BoS)", criterion: "Criterion 1" },
 ];
 
 // NAAC's seven assessment criteria (Revised Accreditation Framework).
@@ -119,6 +138,40 @@ export default function NaacPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* IQAC data capture & export */}
+      <section className="border-t border-navy-100 bg-white">
+        <div className="mx-auto max-w-[1320px] px-4 py-14 sm:px-6 lg:px-10">
+          <div className="max-w-[760px]">
+            <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
+              Year-Round IQAC Data Capture, One-Click Export
+            </h2>
+            <p className="mt-3 text-[16px] leading-relaxed text-navy-700">
+              The hardest NAAC evidence to reconstruct is the research, extension and collaboration
+              record. Aveon lets departments log each activity as it happens, tagged by academic year,
+              department, type and form type, so the IQAC exports exactly the records it needs instead
+              of chasing documents across departments weeks before a visit.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {iqacActivities.map((a) => (
+              <div
+                key={a.name}
+                className="flex items-center justify-between gap-3 rounded-xl border border-navy-100 bg-white p-4 shadow-card"
+              >
+                <span className="text-sm font-semibold text-navy-900">{a.name}</span>
+                <span className="shrink-0 rounded-full bg-purple-100 px-2.5 py-0.5 text-[11px] font-bold text-purple-700">
+                  {a.criterion}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm leading-relaxed text-navy-600">
+            Records export by academic year, department, activity type and form type, and the supporting
+            attachments download for any date range, ready to attach to the SSR, AQAR or DVV response.
+          </p>
         </div>
       </section>
 
