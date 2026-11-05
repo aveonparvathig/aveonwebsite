@@ -45,6 +45,7 @@ export const leadSchema = defineType({
           { title: "Contact form", value: "contact_form" },
           { title: "Chatbot (Ava)", value: "chatbot" },
           { title: "Lead magnet", value: "magnet" },
+          { title: "Newsletter", value: "newsletter" },
           { title: "Other", value: "other" },
         ],
       },

@@ -30,5 +30,15 @@ export const demoBookingSchema = z.object({
   website: z.string().max(0).optional().or(z.literal("")),
 });
 
+export const subscribeSchema = z.object({
+  email: z.string().email("Please enter a valid email"),
+  name: z.string().max(120).optional().or(z.literal("")),
+  /** Where the signup happened, e.g. "newsletter" or a lead-magnet slug. */
+  source: z.string().max(60).optional(),
+  /** Honeypot — must stay empty. */
+  website: z.string().max(0).optional().or(z.literal("")),
+});
+
 export type ContactInput = z.infer<typeof contactSchema>;
 export type DemoBookingInput = z.infer<typeof demoBookingSchema>;
+export type SubscribeInput = z.infer<typeof subscribeSchema>;

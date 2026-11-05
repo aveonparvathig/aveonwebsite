@@ -12,7 +12,7 @@ export interface LeadInput {
   institution?: string;
   city?: string;
   message?: string;
-  source: "demo_form" | "contact_form" | "chatbot" | "magnet" | "other";
+  source: "demo_form" | "contact_form" | "chatbot" | "magnet" | "newsletter" | "other";
   /** Subject line for the notification email. */
   notifySubject: string;
 }

@@ -4,6 +4,7 @@ import { navigation, siteConfig } from "@/lib/constants";
 import { products as fallbackProducts, type Product } from "@/lib/data/products";
 import SocialIcon from "@/components/ui/SocialIcons";
 import { getEncodedEmail } from "@/lib/email-encoder";
+import { NewsletterSignup } from "@/components/forms/NewsletterSignup";
 
 export default function Footer({
   products = fallbackProducts,
@@ -127,7 +128,20 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-3.5 border-t border-navy-900/12 pt-6 text-[14.5px] text-navy-600 sm:flex-row">
+        {/* Newsletter / list building */}
+        <div className="mt-12 grid items-center gap-5 rounded-2xl border border-navy-900/8 bg-white px-6 py-7 shadow-sm sm:px-8 lg:grid-cols-[1fr_auto] lg:gap-10">
+          <div>
+            <h3 className="text-lg font-extrabold text-navy-900">Campus ERP insights, once a month</h3>
+            <p className="mt-1.5 text-sm text-navy-600">
+              Practical notes on admissions, examinations, NAAC/NBA readiness and running a paperless campus. No spam.
+            </p>
+          </div>
+          <div className="lg:justify-self-end">
+            <NewsletterSignup source="newsletter" buttonLabel="Subscribe" />
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-between gap-3.5 border-t border-navy-900/12 pt-6 text-[14.5px] text-navy-600 sm:flex-row">
           <p>© {year} Aveon Infotech Private Limited. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="transition-colors hover:text-primary-600">
