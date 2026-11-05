@@ -7,19 +7,25 @@ import CTASection from "@/components/sections/CTASection";
 import OffshoreContent, { offshoreFaqs } from "@/components/sections/OffshoreContent";
 
 export const metadata: Metadata = {
-  title: "Offshore Development Team in India",
+  title: "Hire Offshore Development Team in India",
   description:
-    "Dedicated offshore development team from India. Full-stack developers, QA, DevOps, and AI specialists. 40-60% cost savings. Flexible team augmentation and staff augmentation services.",
+    "Hire a dedicated offshore development team from India: full-stack developers, QA, DevOps and AI specialists. 40-60% cost savings. Offshore development centre, team augmentation and staff augmentation from Coimbatore.",
   keywords: [
     "Offshore Development Team",
     "Offshore Development Company",
+    "Hire Offshore Development Team India",
+    "Hire Dedicated Development Team India",
     "Dedicated Development Team",
+    "Offshore Development Center India",
+    "ODC India",
     "Team Augmentation",
+    "Staff Augmentation Company India",
     "Staff Augmentation Services",
     "Offshore Developers India",
     "Dedicated Developers India",
-    "Dedicated Development Team Hire",
+    "Hire Remote Developers India",
     "Remote Development Team",
+    "Offshore Software Development Company Coimbatore",
     "Offshore IT Outsourcing",
     "AI Development Team India",
   ],

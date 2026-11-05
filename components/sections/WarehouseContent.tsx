@@ -118,7 +118,7 @@ const INDUSTRIES: { name: string; text: string }[] = [
   { name: "Retail & E-Commerce", text: "High-volume receiving, storage, picking, packing and dispatch." },
   { name: "Manufacturing", text: "Connect raw materials, finished goods and warehouse operations." },
   { name: "Wholesale & Distribution", text: "Manage stock across warehouses and customer fulfilment." },
-  { name: "Logistics", text: "Organise warehouse and shipment-related operations." },
+  { name: "Logistics & 3PL", text: "Warehouse, transport and shipment operations for logistics and third-party logistics providers." },
   { name: "Healthcare", text: "Manage applicable medical supplies and inventory workflows." },
   { name: "Food & FMCG", text: "Manage products and warehouse movements to requirements." },
   { name: "Automotive", text: "Manage parts, components and warehouse inventory." },

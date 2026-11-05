@@ -7,12 +7,16 @@ import CTASection from "@/components/sections/CTASection";
 import MobileAppContent, { mobileAppFaqs } from "@/components/sections/MobileAppContent";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development | iOS & Android",
+  title: "Mobile App Development Company in Coimbatore | iOS & Android",
   description:
-    "Aveon Infotech provides custom mobile app development for Android, iOS and cross-platform applications, including UI/UX design, API integration, AI, testing, deployment and support.",
+    "Mobile app development company in Coimbatore, India building custom Android, iOS and cross-platform apps: UI/UX design, API integration, AI, testing, deployment and support.",
   keywords: [
     "Mobile App Development",
     "Mobile App Development Company",
+    "Mobile App Development Company in Coimbatore",
+    "Mobile App Development Company in India",
+    "Android App Development Company in Coimbatore",
+    "iOS App Development Company in India",
     "Android App Development",
     "iOS App Development",
     "Cross Platform App Development",
@@ -20,6 +24,7 @@ export const metadata: Metadata = {
     "Enterprise Mobile App Development",
     "Mobile App Design",
     "Mobile App Development Services",
+    "Mobile App Development Cost in India",
     "AI Mobile App Development",
   ],
 };

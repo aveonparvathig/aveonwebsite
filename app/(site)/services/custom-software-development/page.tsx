@@ -8,12 +8,16 @@ import CustomSoftwareContent from "@/components/sections/CustomSoftwareContent";
 import { customSoftwareFaqs } from "@/lib/data/custom-software-faqs";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development Services",
+  title: "Custom Software Development Company in Coimbatore",
   description:
-    "Custom software development company delivering enterprise applications, SaaS platforms, and web solutions. 40+ technologies. 6-phase development. ROI-focused. Scale from MVP to enterprise.",
+    "Custom software development company in Coimbatore, India delivering enterprise applications, SaaS platforms and web solutions. 40+ technologies, 6-phase delivery, ROI-focused. Scale from MVP to enterprise.",
   keywords: [
     "Custom Software Development",
     "Custom Software Development Company",
+    "Custom Software Development Company in Coimbatore",
+    "Software Development Company in Coimbatore",
+    "Software Development Company in India",
+    "Custom Software Development Company in India",
     "Enterprise Software Development",
     "Enterprise Software Development Services",
     "SaaS Development",
@@ -23,6 +27,8 @@ export const metadata: Metadata = {
     "MVP Development",
     "AI Software Development",
     "Software Development Services",
+    "Custom Software Development Cost in India",
+    "Software Development Services in Coimbatore",
   ],
 };
 
@@ -57,11 +63,12 @@ export default function CustomSoftwareDevelopmentPage() {
               Custom Software Development
             </span>
             <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
-              Software Built Around Your Business.
+              Custom Software Development, Built Around Your Business.
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
               When off-the-shelf software isn&apos;t enough, we build custom web, mobile, SaaS, enterprise and AI-powered
-              applications designed around the way your business actually works.
+              applications designed around the way your business actually works, delivered from our Coimbatore
+              development centre to clients across India and beyond.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link

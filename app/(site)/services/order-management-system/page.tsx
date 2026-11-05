@@ -7,17 +7,22 @@ import CTASection from "@/components/sections/CTASection";
 import OrderManagementContent, { orderManagementFaqs } from "@/components/sections/OrderManagementContent";
 
 export const metadata: Metadata = {
-  title: "Order Management & Procurement Software",
+  title: "Order Management System Software in India",
   description:
-    "Order and procurement management software automating purchase orders, vendor management, invoice matching, and multi-channel order workflows. Reduce procurement time by 50%.",
+    "Order management system software for distributors, manufacturers and retailers in India. Automates purchase orders, vendor management, invoice matching and multi-channel order workflows. Reduce procurement time by 50%.",
   keywords: [
     "Order Management System",
     "Order Management Software",
+    "Order Management Software India",
+    "Order Management System for Distributors",
+    "Order Management Software for Manufacturers",
     "Purchase Order Management",
     "Procurement Software",
     "Vendor Management System",
     "Order Processing Software",
     "Multi-Channel Order Management",
+    "GST Order Management Software",
+    "Tally Integrated Order Management",
     "Invoice Management System",
     "Supply Chain Management Software",
     "Order Automation Software",
@@ -56,11 +61,14 @@ export default function OrderManagementPage() {
               Order Management System
             </span>
             <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
-              Smart Order Management for Modern Businesses.
+              Order Management System for Growing Businesses.
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
               Bring the complete order lifecycle onto one connected platform, from order creation and validation to
               inventory, fulfilment, delivery, returns and reporting, across every channel.
+            </p>
+            <p className="mt-4 max-w-[620px] text-[14px] leading-[1.6] text-navy-500">
+              Trusted by businesses in Coimbatore, including logistics operator Excel Logistics.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link

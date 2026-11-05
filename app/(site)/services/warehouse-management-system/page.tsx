@@ -7,17 +7,24 @@ import CTASection from "@/components/sections/CTASection";
 import WarehouseContent, { warehouseFaqs } from "@/components/sections/WarehouseContent";
 
 export const metadata: Metadata = {
-  title: "Warehouse Management System | WMS Software",
+  title: "Warehouse Management System (WMS) Software in India",
   description:
-    "Warehouse management software delivering real-time inventory tracking, automated picking/packing, and multi-warehouse operations. 40% efficiency gain. Cloud-based WMS.",
+    "Warehouse management software for logistics, distribution and manufacturing in India: real-time inventory tracking, automated picking/packing and multi-warehouse operations. 40% efficiency gain. Cloud-based WMS.",
   keywords: [
     "Warehouse Management System",
     "Warehouse Management Software",
+    "Warehouse Management Software India",
     "WMS Software",
+    "WMS Software for Logistics Companies",
+    "3PL Warehouse Management Software",
+    "Warehouse Management Software for Distributors",
     "Warehouse Automation Software",
     "Inventory Management System",
     "Warehouse ERP Software",
     "Multi-Warehouse Management System",
+    "Multi-Warehouse Inventory Management",
+    "GST Compliant Warehouse Software",
+    "Tally Integrated Warehouse Software",
     "Cloud Warehouse Management",
     "AI Warehouse Automation",
     "Order Fulfilment Software",
@@ -56,11 +63,15 @@ export default function WarehouseManagementPage() {
               Warehouse Management System
             </span>
             <h1 className="mt-5 max-w-[880px] text-[clamp(34px,5vw,62px)] font-extrabold leading-[1.04] text-navy-900">
-              Smart Warehouse Management for Modern Businesses.
+              Warehouse Management System (WMS) for Growing Operations.
             </h1>
             <p className="mt-5 max-w-[620px] text-[17.5px] leading-[1.7] text-navy-700">
               Organise warehouse operations on one centralized platform, from receiving and put-away to inventory,
               picking, packing, dispatch, transfers and returns, across multiple warehouses.
+            </p>
+            <p className="mt-4 max-w-[620px] text-[14px] leading-[1.6] text-navy-500">
+              Built for logistics, distribution and manufacturing teams, trusted by Coimbatore logistics operator
+              Excel Logistics.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link

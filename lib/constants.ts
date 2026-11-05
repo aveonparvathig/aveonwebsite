@@ -78,6 +78,16 @@ const byCategory = (category: string) =>
       description: p.tagline,
     }));
 
+/** Distinguishing one-liners for the Services mega-menu (keyed by service slug). */
+const serviceMenuDescription: Record<string, string> = {
+  "process-automation": "Workflow Automation",
+  "mobile-app-development": "iOS & Android Apps",
+  "custom-software-development": "Bespoke Development",
+  "order-management-system": "Orders & Procurement",
+  "warehouse-management-system": "Inventory & Logistics",
+  "offshore-team": "Dedicated Dev Teams",
+};
+
 export const navigation: NavItem[] = [
   {
     label: "Home",
@@ -111,7 +121,7 @@ export const navigation: NavItem[] = [
         items: services.slice(0, 3).map((s) => ({
           label: s.title,
           href: s.slug === "process-automation" ? "/services/ai-process-automation" : `/services/${s.slug}`,
-          description: "Software Development",
+          description: serviceMenuDescription[s.slug] ?? "Software Development",
           icon: s.icon,
         })),
       },
@@ -120,7 +130,7 @@ export const navigation: NavItem[] = [
         items: services.slice(3).map((s) => ({
           label: s.title,
           href: s.slug === "process-automation" ? "/services/ai-process-automation" : `/services/${s.slug}`,
-          description: "Software Development",
+          description: serviceMenuDescription[s.slug] ?? "Software Development",
           icon: s.icon,
         })),
       },
