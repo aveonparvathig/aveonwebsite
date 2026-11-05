@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { generateAiReply, scriptedReply, type ChatMessage } from "@/lib/chat/assistant";
-import { sendNotification } from "@/lib/email";
+import { saveLead } from "@/lib/leads";
 
 const MAX_MSG_LEN = 1000;
 const MAX_HISTORY = 24;
@@ -28,18 +28,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Please share a valid name and email." }, { status: 422 });
     }
 
-    try {
-      await sendNotification(`[Chatbot] New lead: ${name}`, {
-        Name: name,
-        Email: email,
-        Phone: (data.phone ?? "").trim() || "—",
-        "Interested in": (data.interest ?? "").trim() || "—",
-        "Institution / Company": (data.company ?? "").trim() || "—",
-        Message: (data.message ?? "").trim() || "—",
-        Source: "AI chat widget",
-      });
-    } catch (err) {
-      console.error("Chatbot lead email failed:", err);
+    const { ok } = await saveLead({
+      name,
+      email,
+      phone: (data.phone ?? "").trim() || undefined,
+      interest: (data.interest ?? "").trim() || undefined,
+      institution: (data.company ?? "").trim() || undefined,
+      message: (data.message ?? "").trim() || undefined,
+      source: "chatbot",
+      notifySubject: `[Chatbot] New lead: ${name}`,
+    });
+
+    if (!ok) {
       return NextResponse.json({ error: "Couldn't submit right now. Please try again." }, { status: 502 });
     }
     return NextResponse.json({ ok: true });

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import { CTALink } from "@/components/ui/CTALink";
 
 export default function CTASection() {
   return (
@@ -18,21 +18,25 @@ export default function CTASection() {
               the modules that matter to your campus.
             </p>
             <div className="mt-7.5 flex flex-wrap gap-3.5">
-              <Link
+              <CTALink
                 href="/contact#demo"
+                trackingLabel="cta_band_get_demo"
+                trackingType="demo"
                 className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full bg-white px-8 py-4 text-[15px] font-bold text-primary-700 transition-transform hover:-translate-y-0.5"
               >
                 Get a DEMO
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
-              </Link>
-              <Link
+              </CTALink>
+              <CTALink
                 href="/contact"
+                trackingLabel="cta_band_talk_to_sales"
+                trackingType="contact"
                 className="inline-flex items-center whitespace-nowrap rounded-full border border-white/50 px-8 py-4 text-[15px] font-bold text-white transition-colors hover:bg-white/15"
               >
                 Talk to Sales
-              </Link>
+              </CTALink>
             </div>
           </div>
 

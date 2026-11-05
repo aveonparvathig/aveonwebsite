@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/validations";
-import { sendNotification } from "@/lib/email";
+import { saveLead } from "@/lib/leads";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -24,16 +24,18 @@ export async function POST(request: Request) {
   }
 
   const { name, email, phone, subject, message } = parsed.data;
-  try {
-    await sendNotification(`[Website] Contact: ${subject}`, {
-      Name: name,
-      Email: email,
-      Phone: phone,
-      Subject: subject,
-      Message: message,
-    });
-  } catch (err) {
-    console.error("Contact form email failed:", err);
+
+  const { ok } = await saveLead({
+    name,
+    email,
+    phone,
+    interest: subject,
+    message,
+    source: "contact_form",
+    notifySubject: `[Website] Contact: ${subject}`,
+  });
+
+  if (!ok) {
     return NextResponse.json(
       { error: "Failed to send message. Please try again later." },
       { status: 502 },

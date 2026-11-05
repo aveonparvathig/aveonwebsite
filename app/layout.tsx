@@ -7,6 +7,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/constants";
 import { organizationJsonLd, localBusinessJsonLd, websiteJsonLd } from "@/lib/structured-data";
 import { GA_ID, GA_IDS } from "@/lib/analytics";
+import { Pixels } from "@/components/analytics/Pixels";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -96,6 +97,10 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Paid-channel tags (Google Ads + Meta Pixel) — each gated by its env var */}
+        <Pixels />
+
 
         {/* Structured Data */}
         <script

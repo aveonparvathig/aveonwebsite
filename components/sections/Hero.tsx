@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { CTALink } from "@/components/ui/CTALink";
 import { HeroImage, OptimizedImage } from "@/components/ui/OptimizedImage";
 
 const slides: {
@@ -91,21 +91,25 @@ export default function Hero() {
           </p>
 
           <div className="mt-8.5 flex flex-wrap gap-3.5">
-            <Link
+            <CTALink
               href="/contact#demo"
+              trackingLabel="hero_book_demo"
+              trackingType="demo"
               className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full bg-gradient-to-br from-primary-600 to-primary-700 hover:to-primary-600 px-7.5 py-4 text-[15px] font-bold text-white shadow-[0_18px_40px_-14px_rgb(29_111_242_/_0.85)] transition-all hover:-translate-y-0.5 hover:bg-primary-600"
             >
               Book a Demo
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
-            </Link>
-            <Link
+            </CTALink>
+            <CTALink
               href="/products"
+              trackingLabel="hero_explore_products"
+              trackingType="learn_more"
               className="inline-flex items-center whitespace-nowrap rounded-full border border-navy-900/12 bg-white px-7.5 py-4 text-[15px] font-bold text-navy-900 transition-all hover:-translate-y-0.5 hover:border-primary-600 hover:text-primary-600"
             >
               Explore Products
-            </Link>
+            </CTALink>
           </div>
 
           <div className="mt-8.5 flex items-center gap-1">

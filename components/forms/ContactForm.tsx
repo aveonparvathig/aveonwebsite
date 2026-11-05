@@ -7,6 +7,7 @@ import { contactSchema, type ContactInput } from "@/lib/validations";
 import { useFormLock } from "@/components/forms/FormLockContext";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { EventType } from "@/lib/analytics";
+import { trackConversion } from "@/lib/analytics-conversions";
 
 // text-base on mobile prevents iOS Safari's auto-zoom-on-focus (triggered below 16px); sm: restores the original size on larger screens.
 const inputClass =
@@ -99,6 +100,9 @@ export default function ContactForm() {
         form_name: "contact_form",
         subject: data.subject,
       });
+
+      // Fire paid-channel conversion (Google Ads + Meta)
+      trackConversion("contact_lead", 20);
 
       reset();
       resetMessageHeight();

@@ -8,6 +8,7 @@ import { products } from "@/lib/data/products";
 import { useFormLock } from "@/components/forms/FormLockContext";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { EventType } from "@/lib/analytics";
+import { trackConversion } from "@/lib/analytics-conversions";
 
 // text-base on mobile prevents iOS Safari's auto-zoom-on-focus (triggered below 16px); sm: restores the original size on larger screens.
 const inputClass =
@@ -84,6 +85,9 @@ export default function DemoBookingForm() {
         institute_name: data.institute,
         city: data.city,
       });
+
+      // Fire paid-channel conversion (Google Ads + Meta)
+      trackConversion("demo_lead", 50);
 
       reset();
     } catch (error) {

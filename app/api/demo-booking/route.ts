@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { demoBookingSchema } from "@/lib/validations";
-import { sendNotification } from "@/lib/email";
+import { saveLead } from "@/lib/leads";
 import { getProduct } from "@/lib/data/products";
 
 export async function POST(request: Request) {
@@ -24,17 +24,20 @@ export async function POST(request: Request) {
   }
 
   const { name, email, phone, product, institute, city } = parsed.data;
-  try {
-    await sendNotification(`[Website] Demo request: ${getProduct(product)?.title ?? product}`, {
-      Name: name,
-      Email: email,
-      Phone: phone,
-      Product: getProduct(product)?.title ?? product,
-      Institute: institute,
-      "City / Country": city,
-    });
-  } catch (err) {
-    console.error("Demo booking email failed:", err);
+  const productTitle = getProduct(product)?.title ?? product;
+
+  const { ok } = await saveLead({
+    name,
+    email,
+    phone,
+    interest: productTitle,
+    institution: institute,
+    city,
+    source: "demo_form",
+    notifySubject: `[Website] Demo request: ${productTitle}`,
+  });
+
+  if (!ok) {
     return NextResponse.json(
       { error: "Failed to submit request. Please try again later." },
       { status: 502 },

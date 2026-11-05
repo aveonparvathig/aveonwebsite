@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { products } from "@/lib/data/products";
 import { services } from "@/lib/data/services";
+import { siteConfig } from "@/lib/constants";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { trackConversion } from "@/lib/analytics-conversions";
 
 type QuickReply = { label: string; value: string };
 type Msg = { id: number; role: "user" | "bot"; text: string; quickReplies?: QuickReply[]; typing?: boolean };
@@ -15,6 +18,7 @@ const GREETING: Msg = {
     { label: "🎓 Products", value: "__products" },
     { label: "🛠 Services", value: "__services" },
     { label: "📅 Book a Demo", value: "__demo" },
+    { label: "💬 WhatsApp", value: "__whatsapp" },
   ],
 };
 
@@ -27,8 +31,18 @@ const INTEREST_OPTIONS = [
 let uid = 1;
 
 export default function ChatWidget() {
+  const { trackChatbotInteraction, trackLead } = useAnalytics();
   const [open, setOpen] = useState(false);
   const [teaser, setTeaser] = useState(false);
+
+  function openChat() {
+    setOpen(true);
+    trackChatbotInteraction("open");
+  }
+  function closeChat() {
+    setOpen(false);
+    trackChatbotInteraction("close");
+  }
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
@@ -74,6 +88,7 @@ export default function ChatWidget() {
     const trimmed = text.trim();
     if (!trimmed || sending) return;
     push({ role: "user", text: trimmed });
+    trackChatbotInteraction("message");
     setInput("");
     setSending(true);
     const typingId = uid++;
@@ -103,6 +118,17 @@ export default function ChatWidget() {
 
   function handleQuickReply(qr: QuickReply) {
     const v = qr.value;
+
+    if (v === "__whatsapp") {
+      trackChatbotInteraction("message", { channel: "whatsapp" });
+      window.open(
+        `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hi Aveon, I'd like to know more about your campus ERP.")}`,
+        "_blank",
+        "noopener,noreferrer",
+      );
+      return;
+    }
+
     push({ role: "user", text: qr.label.replace(/^[^\w]+/, "").trim() || qr.label });
 
     if (v === "__products") {
@@ -163,6 +189,8 @@ export default function ChatWidget() {
         body: JSON.stringify({ action: "lead", data: lead }),
       });
       if (!res.ok) throw new Error();
+      trackLead({ leadType: "chatbot", source: "chatbot", value: 30, properties: { interest: lead.interest || "unknown" } });
+      trackConversion("chatbot_lead");
       setShowLead(false);
       setLeadDone(true);
       botSay(`Thanks, ${lead.name.split(" ")[0]}! 🎉 Your request is in. Our team will reach out within one business day. Anything else I can help with?`, [
@@ -190,7 +218,7 @@ export default function ChatWidget() {
       {teaser && !open && (
         <button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={openChat}
           className="animate-fade-in absolute bottom-16 right-0 mb-1 hidden w-56 rounded-2xl rounded-br-sm border border-navy-100 bg-white p-3.5 text-left text-sm text-navy-700 shadow-[0_20px_50px_-20px_rgb(16_26_51_/_0.4)] sm:block"
         >
           <span className="font-semibold text-navy-900">Need help choosing? 👋</span>
@@ -210,7 +238,7 @@ export default function ChatWidget() {
                 <span className="h-1.5 w-1.5 rounded-full bg-green-400" /> Online: replies in seconds
               </span>
             </span>
-            <button type="button" onClick={() => setOpen(false)} aria-label="Close chat" className="flex h-8 w-8 items-center justify-center rounded-full text-white/90 transition hover:bg-white/15">
+            <button type="button" onClick={closeChat} aria-label="Close chat" className="flex h-8 w-8 items-center justify-center rounded-full text-white/90 transition hover:bg-white/15">
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
@@ -313,7 +341,7 @@ export default function ChatWidget() {
       {/* Bubble */}
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => (open ? closeChat() : openChat())}
         aria-label={open ? "Close chat" : "Open chat"}
         className="ml-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-600 text-white shadow-[0_18px_40px_-12px_rgb(29_111_242_/_0.7)] transition hover:scale-105 hover:bg-primary-700"
       >

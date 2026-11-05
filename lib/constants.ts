@@ -5,6 +5,8 @@ export const siteConfig = {
   name: "Aveon Infotech",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.aveoninfotech.com",
   phone: "+91 87540 06483",
+  // Digits only, international format — for wa.me links.
+  whatsapp: "918754006483",
   email: "contact@aveoninfotech.com",
   // Must match the Google Business Profile exactly (NAP consistency).
   address: "33, Kathir Avenue, Andal Veedi 3rd Street, Hope College, Coimbatore, Tamil Nadu 641004, India",

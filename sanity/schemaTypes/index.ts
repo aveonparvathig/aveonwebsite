@@ -4,6 +4,7 @@ import { testimonialSchema } from "./testimonial";
 import { solutionSchema } from "./solution";
 import { siteSettingsSchema } from "./siteSettings";
 import { customerSchema } from "./customer";
+import { leadSchema } from "./lead";
 
 export const schemaTypes = [
   productSchema,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   solutionSchema,
   siteSettingsSchema,
   customerSchema,
+  leadSchema,
 ];
