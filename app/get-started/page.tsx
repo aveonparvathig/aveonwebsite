@@ -5,6 +5,7 @@ import { ContactFormsProvider } from "@/components/forms/FormLockContext";
 import ClientLogosCarousel from "@/components/sections/ClientLogosCarousel";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { BookingsLink } from "@/components/ui/BookingsLink";
+import { ViewContentTracker } from "@/components/analytics/ViewContentTracker";
 import { siteConfig } from "@/lib/constants";
 
 // Paid-ad landing page: kept out of the (site) layout so there's no global nav,
@@ -44,6 +45,7 @@ const tel = siteConfig.phone.replace(/\s/g, "");
 export default function GetStartedPage() {
   return (
     <main className="flex min-h-full flex-col bg-white">
+      <ViewContentTracker name="get_started" />
       {/* Minimal top bar — logo + direct contact only, no nav */}
       <header className="border-b border-navy-900/8 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-[1180px] items-center justify-between px-4 py-3.5 sm:px-6">

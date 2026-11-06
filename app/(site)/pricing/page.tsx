@@ -4,6 +4,7 @@ import PageHero from "@/components/sections/PageHero";
 import DemoBookingForm from "@/components/forms/DemoBookingForm";
 import { ContactFormsProvider } from "@/components/forms/FormLockContext";
 import { PricingViewTracker } from "@/components/analytics/PricingViewTracker";
+import { ViewContentTracker } from "@/components/analytics/ViewContentTracker";
 import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
 
@@ -120,6 +121,7 @@ export default function PricingPage() {
   return (
     <>
       <PricingViewTracker />
+      <ViewContentTracker name="pricing" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}

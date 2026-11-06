@@ -43,6 +43,12 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
 - [ ] **Launch the campaign** using `GOOGLE_ADS_STARTER_KIT.md` (structure, keywords, negatives, ads, budget).
       Start with ad groups **A (College ERP)** + **D (Pricing)** at the ₹25k tier.
 
+### Ads launch sequence (do in this order)
+1. **Tracking first** (above) — Google Ads conversion + Meta Pixel env vars set & verified. Ads are blind without it.
+2. **Google Search** — primary, ~70–80% of budget, from `GOOGLE_ADS_STARTER_KIT.md`. Runs day 1.
+3. **Meta retargeting** — ~20–30% of budget, from `META_RETARGETING_KIT.md`. **Start ~1–2 weeks after Google**, once the Pixel audience is >1,000. The site already fires PageView + ViewContent (`/pricing`, `/get-started`) + Lead for the audiences.
+   - Shift budget weekly toward whichever channel has the lower cost-per-lead.
+
 ---
 
 ## Tier 2 — Reviews & referrals 🟡

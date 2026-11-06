@@ -35,3 +35,21 @@ export function trackConversion(type: ConversionType, value = 0): void {
     console.error("[conversions] failed:", err);
   }
 }
+
+/**
+ * Fires the Meta Pixel `ViewContent` event for a high-intent page (pricing,
+ * the paid landing page). This builds a hotter retargeting audience and gives
+ * Meta a stronger optimisation signal than a bare PageView. No-op when the
+ * Pixel isn't configured.
+ */
+export function trackViewContent(name: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq;
+    if (fbq && META_PIXEL_ID) {
+      fbq("track", "ViewContent", { content_name: name });
+    }
+  } catch (err) {
+    console.error("[conversions] ViewContent failed:", err);
+  }
+}
