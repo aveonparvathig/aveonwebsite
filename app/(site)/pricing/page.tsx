@@ -4,6 +4,7 @@ import PageHero from "@/components/sections/PageHero";
 import DemoBookingForm from "@/components/forms/DemoBookingForm";
 import { ContactFormsProvider } from "@/components/forms/FormLockContext";
 import { PricingViewTracker } from "@/components/analytics/PricingViewTracker";
+import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -258,6 +259,9 @@ export default function PricingPage() {
               <a href={`tel:${tel}`} className="font-semibold text-primary-600">{siteConfig.phone}</a>
               {" · "}Mon–Sat, 8:30 AM–6:30 PM IST
             </p>
+            <div className="mt-3">
+              <BookingsLink />
+            </div>
           </div>
           <div className="rounded-2xl border border-navy-900/8 bg-white p-6 shadow-sm sm:p-7">
             <ContactFormsProvider>

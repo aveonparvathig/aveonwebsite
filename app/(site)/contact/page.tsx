@@ -4,6 +4,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import DemoBookingForm from "@/components/forms/DemoBookingForm";
 import { ContactFormsProvider } from "@/components/forms/FormLockContext";
 import FAQ, { faqJsonLd } from "@/components/sections/FAQ";
+import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -199,6 +200,9 @@ export default function ContactPage() {
                 </div>
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
                   <DemoBookingForm />
+                  <div className="mt-4 text-center">
+                    <BookingsLink />
+                  </div>
                 </div>
               </div>
             </div>

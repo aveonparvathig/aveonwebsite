@@ -4,6 +4,7 @@ import DemoBookingForm from "@/components/forms/DemoBookingForm";
 import { ContactFormsProvider } from "@/components/forms/FormLockContext";
 import ClientLogosCarousel from "@/components/sections/ClientLogosCarousel";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
 
 // Paid-ad landing page: kept out of the (site) layout so there's no global nav,
@@ -153,6 +154,9 @@ export default function GetStartedPage() {
                   </a>{" "}
                   or message us on WhatsApp.
                 </p>
+                <div className="mt-3 text-center">
+                  <BookingsLink />
+                </div>
               </div>
             </div>
           </div>
