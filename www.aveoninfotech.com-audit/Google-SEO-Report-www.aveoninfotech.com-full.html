@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 22mm 18mm 25mm 18mm;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 9pt;
+      color: #6b7280;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-left {
+      content: "Confidential";
+      font-size: 7pt;
+      color: #d6d3cc;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-right {
+      content: "www.aveoninfotech.com Google SEO Report";
+      font-size: 8pt;
+      color: #cbd5e1;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+  }
+
+  @page :first {
+    margin: 0;
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+  }
+
+  @page toc {
+    @bottom-center {
+      content: counter(page);
+      font-size: 9pt;
+      color: #6b7280;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Times New Roman', 'DejaVu Serif', Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: white;
+  }
+
+  /* ─── Title Page (Clean White) ─── */
+  .title-page {
+    page: first;
+    width: 210mm;
+    height: 297mm;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1a1a2e;
+    position: relative;
+    padding: 50mm 30mm 40mm 30mm;
+    border-top: 6mm solid #1e3a5f;
+  }
+
+  .title-page .badge {
+    background: #f7f6f3;
+    border: 1px solid #d6d3cc;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 9pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15mm;
+    color: #1e3a5f;
+  }
+
+  .title-page h1 {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 5mm;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: #1a1a2e;
+  }
+
+  .title-page .subtitle {
+    font-size: 13pt;
+    color: #6b7280;
+    margin-bottom: 12mm;
+    font-weight: 300;
+  }
+
+  .title-page .url {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-bottom: 15mm;
+    padding: 4mm 8mm;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    background: #faf9f7;
+  }
+
+  .title-page .score-box {
+    background: #faf9f7;
+    border: 2px solid #d6d3cc;
+    border-radius: 12px;
+    padding: 6mm 12mm;
+    margin-bottom: 15mm;
+  }
+
+  .title-page .score-number {
+    font-size: 42pt;
+    font-weight: bold;
+    color: #1e3a5f;
+    line-height: 1;
+  }
+
+  .title-page .score-label {
+    font-size: 10pt;
+    color: #6b7280;
+    margin-top: 2mm;
+  }
+
+  .title-page .meta {
+    font-size: 9pt;
+    color: #6b7280;
+    margin-top: 8mm;
+    padding-top: 5mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+  .title-page .meta span {
+    margin: 0 8px;
+  }
+
+  /* ─── Table of Contents ─── */
+  .toc-page {
+    page: toc;
+    page-break-before: always;
+  }
+
+  .toc-page h2 {
+    font-size: 18pt;
+    color: #1e3a5f;
+    margin-bottom: 8mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid #1e3a5f;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .toc-list li {
+    padding: 2mm 0;
+    border-bottom: 1px solid #f1f5f9;
+    overflow: hidden;
+  }
+
+  .toc-list li.toc-section {
+    font-weight: bold;
+    font-size: 11pt;
+    padding-top: 4mm;
+    color: #0f172a;
+  }
+
+  .toc-list li.toc-sub {
+    padding-left: 8mm;
+    font-size: 9.5pt;
+    color: #475569;
+  }
+
+  .toc-score {
+    display: inline-block;
+    float: right;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: white;
+  }
+
+  .score-good { background: #2d6a4f; }
+  .score-warn { background: #d4740e; }
+  .score-bad { background: #c53030; }
+
+  /* ─── Section Styles ─── */
+  div.section {
+    page-break-before: always;
+  }
+
+  .section-header {
+    background: #faf9f7;
+    border-left: 4px solid #1e3a5f;
+    padding: 5mm 6mm;
+    margin-bottom: 6mm;
+    page-break-after: avoid;
+  }
+
+  .section-header h2 {
+    font-size: 16pt;
+    color: #0f172a;
+    margin-bottom: 1mm;
+  }
+
+  .section-header .section-score {
+    font-size: 12pt;
+    font-weight: bold;
+    float: right;
+    margin-top: -6mm;
+  }
+
+  h3 {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid #d6d3cc;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 10.5pt;
+    color: #334155;
+    margin-top: 4mm;
+    margin-bottom: 2mm;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin-bottom: 3mm;
+    color: #334155;
+  }
+
+  .highlight {
+    background: #fef3c7;
+    border-left: 3px solid #d4740e;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .critical-box {
+    background: #fef2f2;
+    border-left: 3px solid #c53030;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .success-box {
+    background: #f0fdf4;
+    border-left: 3px solid #2d6a4f;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0 6mm 0;
+    font-size: 9pt;
+  }
+
+  thead th {
+    background: #f7f6f3;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 3mm 4mm;
+    text-align: left;
+    border-bottom: 2px solid #d6d3cc;
+    font-size: 9pt;
+  }
+
+  tbody td {
+    padding: 2.5mm 3mm;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fdfcfa;
+  }
+
+  .status-pass {
+    color: #2d6a4f;
+    font-weight: bold;
+  }
+
+  .status-fail {
+    color: #c53030;
+    font-weight: bold;
+  }
+
+  .status-warn {
+    color: #d4740e;
+    font-weight: bold;
+  }
+
+  .status-partial {
+    color: #4a5568;
+    font-weight: bold;
+  }
+
+  /* ─── Charts ─── */
+  .chart-container {
+    text-align: center;
+    margin: 4mm 0;
+  }
+
+  .chart-container img {
+    max-width: 100%;
+    max-height: 120mm;
+    height: auto;
+  }
+
+  .chart-caption {
+    font-size: 8.5pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 2mm;
+    text-align: center;
+  }
+
+  .chart-half {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .chart-half img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ─── Two column layout ─── */
+  .two-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .two-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 2mm;
+  }
+
+  .four-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .four-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 1.5mm;
+  }
+
+  /* ─── Metric Cards ─── */
+  .metric-card {
+    background: #faf9f7;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    padding: 2.5mm 3mm;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .metric-card .value {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .metric-card .label {
+    font-size: 7.5pt;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1mm;
+  }
+
+  /* ─── Action Plan ─── */
+  .action-item {
+    background: #faf9f7;
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    border-left: 3px solid #cbd5e1;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .action-item.critical {
+    border-left-color: #c53030;
+    background: #fdf2f2;
+  }
+
+  .action-item.high {
+    border-left-color: #d4740e;
+    background: #fdf8ef;
+  }
+
+  .action-item.medium {
+    border-left-color: #1e3a5f;
+    background: #f0f4f8;
+  }
+
+  .action-item.low {
+    border-left-color: #94a3b8;
+  }
+
+  .action-item h4 {
+    margin-top: 0;
+    margin-bottom: 1.5mm;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .action-item .effort {
+    font-size: 8.5pt;
+    color: #64748b;
+    float: right;
+  }
+
+  .priority-tag {
+    display: inline-block;
+    padding: 0.5mm 3mm;
+    border-radius: 3px;
+    font-size: 8pt;
+    font-weight: bold;
+    color: white;
+    margin-right: 2mm;
+    vertical-align: middle;
+  }
+
+  .priority-critical { background: #c53030; }
+  .priority-high { background: #d4740e; }
+  .priority-medium { background: #1e3a5f; }
+  .priority-low { background: #94a3b8; }
+
+  /* ─── Code blocks ─── */
+  .code-block {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 3mm 4mm;
+    border-radius: 4px;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 8pt;
+    line-height: 1.6;
+    margin: 3mm 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid #d6d3cc;
+    margin: 5mm 0;
+  }
+
+  /* ─── Roadmap ─── */
+  .roadmap-phase {
+    background: #faf9f7;
+    border-radius: 6px;
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+    border: 1px solid #d6d3cc;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .roadmap-phase h4 {
+    margin-top: 0;
+    border-bottom: none;
+    color: #1e3a5f;
+  }
+
+  .roadmap-phase ul {
+    margin: 2mm 0 0 5mm;
+    padding: 0;
+  }
+
+  .roadmap-phase li {
+    margin-bottom: 1.5mm;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+
+  /* ─── Lists ─── */
+  ul {
+    margin-left: 5mm;
+    margin-bottom: 3mm;
+  }
+
+  li {
+    margin-bottom: 1.5mm;
+  }
+
+  /* ─── Data freshness ─── */
+  .data-freshness {
+    font-size: 8pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ======================================================= TITLE PAGE === -->
+<div class="title-page">
+  <div class="badge">Full SEO Audit Report</div>
+  <h1>www.aveoninfotech.com</h1>
+  <div class="subtitle">Prepared by Claude SEO</div>
+  <div class="score-box">
+    <div class="score-number">84<span style="font-size: 20pt; color: #94a3b8;">/100</span></div>
+    <div class="score-label">SEO Health Score</div>
+  </div>
+  <div class="meta">
+    <span>November 06, 2026</span>
+    <span>Full Audit</span>
+  </div>
+</div>
+
+
+<!-- ======================================================= TABLE OF CONTENTS === -->
+<div class="toc-page">
+  <h2>Table of Contents</h2>
+  <ul class="toc-list">
+    <li class="toc-section"><span>1. Executive Summary</span></li>
+    <li class="toc-sub"><span>Key Metrics, Critical Issues &amp; Quick Wins</span></li>
+    <li class="toc-section"><span>2. Audit Categories</span></li>
+    <li class="toc-sub"><span>What Works</span></li>
+    <li class="toc-sub"><span>Findings by Severity</span></li>
+    <li class="toc-section"><span>3. Action Plan</span></li>
+    <li class="toc-sub"><span>Phased Roadmap</span></li>
+    <li class="toc-section"><span>4. Data Sources &amp; Methodology</span></li>
+  </ul>
+</div>
+
+
+<!-- ======================================================= 1. EXECUTIVE SUMMARY === -->
+<div class="section">
+  <div class="section-header">
+    <h2>1. Executive Summary</h2>
+  </div>
+
+  <p>This report presents a comprehensive SEO audit of <strong>www.aveoninfotech.com</strong> for a <strong>B2B SaaS — Education / Campus ERP &amp; LMS (with local-business HQ in Coimbatore, India)</strong> site, generated on November 06, 2026. Findings combine technical, content, schema, performance, visual, and search-readiness evidence as available.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="metric-card">
+        <div class="value" style="color: #d4740e;">84/100</div>
+        <div class="label">SEO Health Score</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="critical-box">
+    <strong>Critical Issues Found:</strong>
+    <ol>
+      <li>Near-zero off-site authority: only 2 referring hosts in Common Crawl; domain PageRank rank ~52 millionth — the single biggest growth blocker.</li>
+      <li>98% of clicks are branded (&#x27;aveon&#x27;, &#x27;aveon infotech&#x27;, &#x27;aveon erp&#x27;); non-branded impressions convert ZERO clicks.</li>
+      <li>Non-branded category terms (college erp software, campus management system) sit on page 2+ or barely register.</li>
+      <li>Technical SEO, schema and Core Web Vitals (field) are genuinely excellent — the site is well-built but commercially invisible for non-brand demand.</li>
+      <li>Several thin pages (/partners 124w, /academy 232w, /solutions/by-state 225w) and Organization-only blog authorship weaken E-E-A-T.</li>
+    </ol>
+  </div>
+
+  <div class="success-box">
+    <strong>Quick Wins:</strong>
+    <ol>
+      <li>Add a named Person author (with bio + credentials) to blog Article schema for E-E-A-T.</li>
+      <li>Add Content-Security-Policy header (all other security headers already present).</li>
+      <li>Enrich the thin pages (/partners, /academy, /solutions/by-state) above ~500 words.</li>
+      <li>Publish llms.txt and consider Content-Signal lines (optional AI-search hygiene).</li>
+      <li>Add FAQ + SoftwareApplication/breadcrumb schema to solutions and NAAC/NBA sub-pages that currently lack them.</li>
+    </ol>
+  </div>
+
+</div>
+
+<!-- ======================================================= 2. AUDIT CATEGORIES === -->
+<div class="section">
+  <div class="section-header">
+    <h2>2. Audit Categories</h2>
+  </div>
+
+  <h3>2.1 Technical SEO</h3>
+  <p><strong>Score:</strong> <span class="status-pass">90/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>robots.txt clean: Allow /, blocks only /api/ and /studio/, declares deliberate groups for all major AI crawlers.</li>
+    <li>Valid sitemap.xml with 59 URLs, submitted to GSC, 0 warnings / 0 errors.</li>
+    <li>Legacy .php URLs 308-redirect to new Next.js routes (e.g. /college-erp.php -&gt; /products/college-erp).</li>
+    <li>Security headers present: HSTS (2yr), X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy.</li>
+    <li>Server-rendered HTML (2,000+ words without JS); canonicals self-referential and matching Google&#x27;s chosen canonical.</li>
+    <li>Key pages &#x27;Submitted and indexed&#x27; in GSC with breadcrumb rich results passing.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Legacy .php URLs still out-ranking their new targets <span class="status-warn">Medium</span></h4>
+    <p>/college-erp.php pulls 1,479 impressions at pos 4.7 while its 308 target /products/college-erp gets 427 impressions at pos 6.9. Redirects are correct; Google simply hasn&#x27;t finished consolidating equity to the new URLs.</p>
+    <p><strong>Recommendation:</strong> Keep the 308s, resubmit new URLs via the Indexing API, and ensure every internal link points to the new path. Monitor until legacy URLs drop from the index.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No Content-Security-Policy header <span class="status-warn">Low</span></h4>
+    <p>All other recommended security headers are present; CSP is the one gap.</p>
+    <p><strong>Recommendation:</strong> Add a CSP header (report-only first) via Vercel/next.config headers().</p>
+  </div>
+  <div class="action-item medium">
+    <h4>App subdomains appear in search (messtoken.aveoninfotech.com) <span class="status-warn">Low</span></h4>
+    <p>Client/app subdomains surface in GSC results for client-portal login queries; harmless but dilutes brand SERP.</p>
+    <p><strong>Recommendation:</strong> Confirm app subdomains are noindex where appropriate and not competing with marketing pages.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.2 Content Quality</h3>
+  <p><strong>Score:</strong> <span class="status-warn">72/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Money pages are substantial: /products/college-erp ~2,593 words, /products/university-erp ~1,973 words, /comparisons ~1,500 words.</li>
+    <li>12 topical blog guides (NAAC, NBA, AICTE, NIRF, OBE, ERP migration) targeting real buyer questions.</li>
+    <li>FAQ content present and marked up on product, contact and accreditation pages.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Blog authorship is Organization, not a credentialed Person <span class="status-warn">Medium</span></h4>
+    <p>Article schema uses author @type Organization. For E-E-A-T in a YMYL-adjacent B2B niche, named experts with bios and credentials are far stronger.</p>
+    <p><strong>Recommendation:</strong> Add Person author entities with bio, role and sameAs (LinkedIn) to each guide; show author boxes on-page.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Thin pages <span class="status-warn">Medium</span></h4>
+    <p>/partners ~124 words, /academy ~232 words, /solutions/by-state ~225 words, /solutions/coimbatore ~351 words. Thin pages dilute quality signals and rarely rank.</p>
+    <p><strong>Recommendation:</strong> Expand each past ~500-700 words with unique, useful content; make /solutions/by-state a real hub with descriptive link context.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Blog content batch-published same date <span class="status-warn">Low</span></h4>
+    <p>Multiple guides share datePublished = dateModified = 2026-11-03, a scaled-content pattern.</p>
+    <p><strong>Recommendation:</strong> Stagger updates, add original data/screenshots/case detail so pages read as genuinely maintained.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.3 On-Page SEO</h3>
+  <p><strong>Score:</strong> <span class="status-pass">85/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Unique, keyword-aligned titles and meta descriptions per page; homepage title &#x27;Campus ERP &amp; LMS for Universities &amp; Colleges | Aveon Infotech&#x27;.</li>
+    <li>Clear heading hierarchy and descriptive internal linking between related products.</li>
+    <li>og:/twitter: tags and theme-color present; canonical correct.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Legacy meta keywords tag in use <span class="status-warn">Low</span></h4>
+    <p>A long meta keywords tag is present (deprecated, ignored by Google; harmless but signals dated SEO).</p>
+    <p><strong>Recommendation:</strong> Remove meta keywords; redirect effort to body copy and internal anchors.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Non-branded intent under-served by internal anchors <span class="status-warn">Medium</span></h4>
+    <p>Category head terms (college erp software, campus management system) rank page 2+. Internal anchor text and hub structure under-reinforce these.</p>
+    <p><strong>Recommendation:</strong> Build a topic-cluster internal-link model: product pages as money pages, blog guides linking up with exact-match/partial anchors.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.4 Schema / Structured Data</h3>
+  <p><strong>Score:</strong> <span class="status-pass">95/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Sitewide Organization + LocalBusiness + WebSite JSON-LD, valid and consistent.</li>
+    <li>Product pages carry SoftwareApplication + FAQPage + BreadcrumbList.</li>
+    <li>Blog carries Article + WebPage + BreadcrumbList with dates.</li>
+    <li>GSC rich-results verdict PASS (breadcrumbs detected).</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Schema uneven across page types <span class="status-warn">Low</span></h4>
+    <p>/solutions/* pages lack FAQ/SoftwareApplication; /products/iqac-naac-nba/naac has FAQ but no BreadcrumbList.</p>
+    <p><strong>Recommendation:</strong> Standardise: Breadcrumb on every deep page, FAQ where Q&amp;A exists, SoftwareApplication on every product/solution page.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No aggregateRating / review schema despite real GBP reviews <span class="status-warn">Medium</span></h4>
+    <p>Business has 4.2 stars / 54 Google reviews but no Review/AggregateRating markup is exposed.</p>
+    <p><strong>Recommendation:</strong> Add AggregateRating (sourced legitimately) to Organization/SoftwareApplication to earn review rich results.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.5 Performance (Core Web Vitals)</h3>
+  <p><strong>Score:</strong> <span class="status-pass">88/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Field (CrUX) origin passes: LCP p75 2,181 ms (fast), CLS 0.03 (fast), TTFB 750 ms (fast).</li>
+    <li>Lighthouse mobile: Performance 85, Accessibility 96, Best-Practices 100, SEO 100.</li>
+    <li>Total page weight a reasonable 942 KiB; CLS essentially zero.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>INP borderline (origin p75 266 ms) <span class="status-warn">Medium</span></h4>
+    <p>Interaction to Next Paint is &#x27;needs improvement&#x27; (good &lt; 200 ms). Likely hydration/unused JS.</p>
+    <p><strong>Recommendation:</strong> Reduce unused JavaScript (~450 ms flagged), defer non-critical scripts, trim third-party JS.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Lab LCP 4.3s vs field 2.18s <span class="status-warn">Low</span></h4>
+    <p>Lab is stricter than real-user data; LCP image preload is already in place.</p>
+    <p><strong>Recommendation:</strong> Monitor; keep LCP image prioritised. No urgent action since field passes.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.6 AI Search Readiness (GEO)</h3>
+  <p><strong>Score:</strong> <span class="status-pass">80/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>robots.txt explicitly welcomes GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, etc.</li>
+    <li>Server-rendered content readable by non-JS fetchers; rich entity schema aids extraction.</li>
+    <li>FAQ/Q&amp;A structure supports passage-level citation.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>No off-site brand authority for AI engines to cite <span class="status-warn">High</span></h4>
+    <p>AI answer engines favour entities with third-party corroboration. With ~2 referring hosts and branded-only presence, the brand lacks the external footprint needed for non-branded AI citations.</p>
+    <p><strong>Recommendation:</strong> Earn directory listings, review-site profiles (G2/Capterra/SoftwareSuggest), guest articles and press — the same lever that fixes organic authority.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No llms.txt / Content-Signal / Markdown delivery <span class="status-warn">Low</span></h4>
+    <p>Optional AI-discovery hygiene not implemented (none are ranking factors today).</p>
+    <p><strong>Recommendation:</strong> Publish /llms.txt summarising key pages; optionally add Content-Signal lines to robots groups.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.7 Off-Site Authority &amp; Backlinks</h3>
+  <p><strong>Score:</strong> <span class="status-fail">35/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Domain is present in Common Crawl and in the ranking graph (not sandboxed/penalised).</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Near-zero backlink profile <span class="status-warn">Critical</span></h4>
+    <p>Only 2 referring hosts in the Common Crawl web graph; domain PageRank rank ~51,994,670 (harmonic-centrality rank ~10.9M). This is the primary reason non-branded commercial terms do not rank and traffic is 98% branded.</p>
+    <p><strong>Recommendation:</strong> Launch a sustained link/citation program: software review sites (G2, Capterra, SoftwareSuggest, TrustRadius), Indian edtech directories, client case-study backlinks, HARO/press, and partner co-marketing. Target 20-30 quality referring domains over 2-3 months.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No measurable authority flow to new URLs <span class="status-warn">High</span></h4>
+    <p>Equity from legacy .php pages and any historical links isn&#x27;t translating into non-branded rankings.</p>
+    <p><strong>Recommendation:</strong> Pair link-building with the internal topic-cluster model so new authority concentrates on money pages.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.8 Local SEO</h3>
+  <p><strong>Score:</strong> <span class="status-pass">82/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>LocalBusiness schema sitewide with exact NAP (Coimbatore, 641004), hours, geo and map link.</li>
+    <li>Google Business Profile exists (4.2 stars, 54 reviews); dedicated /solutions/coimbatore and state pages.</li>
+    <li>NAP in schema mirrors the GBP record.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Review equity not surfaced on-site <span class="status-warn">Medium</span></h4>
+    <p>54 real Google reviews aren&#x27;t reflected in on-page content or schema.</p>
+    <p><strong>Recommendation:</strong> Add a reviews/testimonials section and legitimate AggregateRating; link to the GBP.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Local landing pages thin / templated <span class="status-warn">Medium</span></h4>
+    <p>/solutions/coimbatore (351w) and state pages risk being templated. Local citations beyond GBP are limited.</p>
+    <p><strong>Recommendation:</strong> Add locally specific proof (named institutions, local case studies) and build India edtech citations.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.9 Images</h3>
+  <p><strong>Score:</strong> <span class="status-pass">88/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>100% alt-text coverage on sampled pages (0 of 81 homepage images missing alt).</li>
+    <li>Next.js image pipeline serves WebP with responsive srcset and fetchpriority on LCP image.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Alt text keyword quality not audited at scale <span class="status-warn">Low</span></h4>
+    <p>Coverage is complete; descriptive quality should be spot-checked.</p>
+    <p><strong>Recommendation:</strong> Ensure alt text is descriptive (not keyword-stuffed) and OG images are page-specific.</p>
+  </div>
+  <hr class="divider">
+</div>
+
+<!-- ======================================================= 3. ACTION PLAN === -->
+<div class="section">
+  <div class="section-header">
+    <h2>3. Action Plan</h2>
+  </div>
+
+  <div class="roadmap-phase">
+    <h4>Phase 1: Critical — Build Off-Site Authority <span class="effort">Weeks 1-4 (start now, runs ongoing)</span></h4>
+    <ul>
+      <li>Claim/complete G2, Capterra, SoftwareSuggest, TrustRadius profiles (do-follow + citation value).</li>
+      <li>List in Indian edtech / SaaS directories and local Coimbatore business directories (consistent NAP).</li>
+      <li>Turn existing clients into case-study backlinks (link from their sites / press).</li>
+      <li>Pitch 3-5 guest articles / expert quotes (HARO-style) in Indian education &amp; edtech media.</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 2: High-Impact On-Page &amp; E-E-A-T <span class="effort">Weeks 2-3</span></h4>
+    <ul>
+      <li>Add named Person authors with bios + sameAs to all blog Article schema and on-page author boxes.</li>
+      <li>Expand thin pages (/partners, /academy, /solutions/by-state, /solutions/coimbatore) past ~500-700 words.</li>
+      <li>Add legitimate AggregateRating/Review schema reflecting the 54 Google reviews; add a testimonials section.</li>
+      <li>Build the topic-cluster internal-link model concentrating anchors on non-branded money terms.</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 3: Content &amp; Schema Depth <span class="effort">Month 2</span></h4>
+    <ul>
+      <li>Standardise schema: Breadcrumb on every deep page, FAQ + SoftwareApplication on solutions &amp; accreditation sub-pages.</li>
+      <li>Publish comparison/alternatives pages targeting competitor terms (e.g. &#x27;X alternative&#x27;, &#x27;best college ERP software India&#x27;).</li>
+      <li>Add original data/screenshots/client proof to the batch-published guides so they read as maintained.</li>
+      <li>Publish /llms.txt; optionally add Content-Signal lines.</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 4: Performance &amp; Monitoring <span class="effort">Ongoing</span></h4>
+    <ul>
+      <li>Reduce unused JS to pull INP under 200 ms (field).</li>
+      <li>Add Content-Security-Policy header (report-only first).</li>
+      <li>Monitor legacy .php -&gt; new URL consolidation in GSC; resubmit via Indexing API.</li>
+      <li>Track non-branded clicks/impressions and referring-domain count monthly as the north-star KPIs.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================================================= DATA SOURCES & METHODOLOGY === -->
+<div class="section" style="text-align: center; padding-top: 15mm;">
+  <hr class="divider">
+  <h3 style="text-align: left;">Data Sources &amp; Methodology</h3>
+  <table>
+    <thead>
+      <tr><th>Source</th><th>Description</th><th>Update Frequency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PageSpeed Insights API</td>
+          <td>Lighthouse lab audit (mobile emulation, Moto G Power, slow 4G)</td>
+          <td>Real-time</td></tr>
+      <tr><td>Chrome UX Report (CrUX)</td>
+          <td>28-day rolling field data from real Chrome users</td>
+          <td>Daily ~04:00 UTC</td></tr>
+      <tr><td>CrUX History API</td>
+          <td>25-week p75 trend data per metric</td>
+          <td>Weekly</td></tr>
+      <tr><td>Google Search Console</td>
+          <td>Search Analytics (clicks, impressions, CTR, position)</td>
+          <td>2-3 day lag</td></tr>
+      <tr><td>URL Inspection API</td>
+          <td>Per-URL index status, coverage state, crawl info</td>
+          <td>Real-time (2,000/day)</td></tr>
+    </tbody>
+  </table>
+  <p style="color: #94a3b8; font-size: 9pt; margin-top: 5mm;">
+    Report generated by Claude SEO (Google SEO Intelligence Skill), November 06, 2026<br>
+    Methodology based on Google Web Vitals thresholds, Search Console documentation, and Lighthouse scoring algorithms.
+  </p>
+</div>
+
+</body>
+</html>

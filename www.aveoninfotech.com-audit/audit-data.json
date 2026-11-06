@@ -1,0 +1,176 @@
+{
+  "summary": {
+    "health_score": 84,
+    "business_type": "B2B SaaS — Education / Campus ERP & LMS (with local-business HQ in Coimbatore, India)",
+    "audit_date": "2026-11-06",
+    "pages_in_sitemap": 59,
+    "data_sources": ["Google Search Console (full)", "GA4", "PageSpeed Insights v5", "CrUX field data", "Common Crawl web graph", "live crawl"],
+    "top_findings": [
+      "Near-zero off-site authority: only 2 referring hosts in Common Crawl; domain PageRank rank ~52 millionth — the single biggest growth blocker.",
+      "98% of clicks are branded ('aveon', 'aveon infotech', 'aveon erp'); non-branded impressions convert ZERO clicks.",
+      "Non-branded category terms (college erp software, campus management system) sit on page 2+ or barely register.",
+      "Technical SEO, schema and Core Web Vitals (field) are genuinely excellent — the site is well-built but commercially invisible for non-brand demand.",
+      "Several thin pages (/partners 124w, /academy 232w, /solutions/by-state 225w) and Organization-only blog authorship weaken E-E-A-T."
+    ],
+    "quick_wins": [
+      "Add a named Person author (with bio + credentials) to blog Article schema for E-E-A-T.",
+      "Add Content-Security-Policy header (all other security headers already present).",
+      "Enrich the thin pages (/partners, /academy, /solutions/by-state) above ~500 words.",
+      "Publish llms.txt and consider Content-Signal lines (optional AI-search hygiene).",
+      "Add FAQ + SoftwareApplication/breadcrumb schema to solutions and NAAC/NBA sub-pages that currently lack them."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 90,
+      "what_works": [
+        "robots.txt clean: Allow /, blocks only /api/ and /studio/, declares deliberate groups for all major AI crawlers.",
+        "Valid sitemap.xml with 59 URLs, submitted to GSC, 0 warnings / 0 errors.",
+        "Legacy .php URLs 308-redirect to new Next.js routes (e.g. /college-erp.php -> /products/college-erp).",
+        "Security headers present: HSTS (2yr), X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy.",
+        "Server-rendered HTML (2,000+ words without JS); canonicals self-referential and matching Google's chosen canonical.",
+        "Key pages 'Submitted and indexed' in GSC with breadcrumb rich results passing."
+      ],
+      "findings": [
+        {"title": "Legacy .php URLs still out-ranking their new targets", "severity": "Medium", "description": "/college-erp.php pulls 1,479 impressions at pos 4.7 while its 308 target /products/college-erp gets 427 impressions at pos 6.9. Redirects are correct; Google simply hasn't finished consolidating equity to the new URLs.", "recommendation": "Keep the 308s, resubmit new URLs via the Indexing API, and ensure every internal link points to the new path. Monitor until legacy URLs drop from the index."},
+        {"title": "Content-Security-Policy (report-only added 2026-11-06)", "severity": "Low", "description": "A Content-Security-Policy-Report-Only header was added in next.config.ts (non-breaking; keeps static rendering). Not yet enforcing.", "recommendation": "Configure a report-to endpoint, review violations, then rename the header to Content-Security-Policy to enforce."},
+        {"title": "App subdomains appear in search (messtoken.aveoninfotech.com)", "severity": "Low", "description": "Client/app subdomains surface in GSC results for client-portal login queries; harmless but dilutes brand SERP.", "recommendation": "Confirm app subdomains are noindex where appropriate and not competing with marketing pages."}
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 72,
+      "what_works": [
+        "Money pages are substantial: /products/college-erp ~2,593 words, /products/university-erp ~1,973 words, /comparisons ~1,500 words.",
+        "12 topical blog guides (NAAC, NBA, AICTE, NIRF, OBE, ERP migration) targeting real buyer questions.",
+        "FAQ content present and marked up on product, contact and accreditation pages."
+      ],
+      "findings": [
+        {"title": "Blog authorship is Organization, not a credentialed Person", "severity": "Medium", "description": "Article schema uses author @type Organization. For E-E-A-T in a YMYL-adjacent B2B niche, named experts with bios and credentials are far stronger.", "recommendation": "Add Person author entities with bio, role and sameAs (LinkedIn) to each guide; show author boxes on-page."},
+        {"title": "Thin pages (partially fixed 2026-11-06)", "severity": "Medium", "description": "/partners was genuinely thin (~124 words) and was expanded with per-model detail, why-partner, a process section and an FAQ (plus FAQ/breadcrumb schema). Correction: automated counts for /academy, /solutions/by-state and /solutions/coimbatore were understated by the renderer; on source review /academy and /solutions/by-state are substantial, not thin.", "recommendation": "Partners done. Optionally add named local institutions to /solutions/coimbatore later."},
+        {"title": "Blog content batch-published same date", "severity": "Low", "description": "Multiple guides share datePublished = dateModified = 2026-11-03, a scaled-content pattern.", "recommendation": "Stagger updates, add original data/screenshots/case detail so pages read as genuinely maintained."}
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 85,
+      "what_works": [
+        "Unique, keyword-aligned titles and meta descriptions per page; homepage title 'Campus ERP & LMS for Universities & Colleges | Aveon Infotech'.",
+        "Clear heading hierarchy and descriptive internal linking between related products.",
+        "og:/twitter: tags and theme-color present; canonical correct."
+      ],
+      "findings": [
+        {"title": "Legacy meta keywords tag in use", "severity": "Low", "description": "A long meta keywords tag is present (deprecated, ignored by Google; harmless but signals dated SEO).", "recommendation": "Remove meta keywords; redirect effort to body copy and internal anchors."},
+        {"title": "Non-branded intent under-served by internal anchors", "severity": "Medium", "description": "Category head terms (college erp software, campus management system) rank page 2+. Internal anchor text and hub structure under-reinforce these.", "recommendation": "Build a topic-cluster internal-link model: product pages as money pages, blog guides linking up with exact-match/partial anchors."}
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 95,
+      "what_works": [
+        "Sitewide Organization + LocalBusiness + WebSite JSON-LD, valid and consistent.",
+        "Product pages carry SoftwareApplication + FAQPage + BreadcrumbList.",
+        "Blog carries Article + WebPage + BreadcrumbList with dates.",
+        "GSC rich-results verdict PASS (breadcrumbs detected)."
+      ],
+      "findings": [
+        {"title": "Schema uneven across page types", "severity": "Low", "description": "/solutions/* pages lack FAQ/SoftwareApplication; /products/iqac-naac-nba/naac has FAQ but no BreadcrumbList.", "recommendation": "Standardise: Breadcrumb on every deep page, FAQ where Q&A exists, SoftwareApplication on every product/solution page."},
+        {"title": "No aggregateRating / review schema despite real GBP reviews", "severity": "Medium", "description": "Business has 4.2 stars / 54 Google reviews but no Review/AggregateRating markup is exposed.", "recommendation": "Add AggregateRating (sourced legitimately) to Organization/SoftwareApplication to earn review rich results."}
+      ]
+    },
+    {
+      "name": "Performance (Core Web Vitals)",
+      "score": 88,
+      "what_works": [
+        "Field (CrUX) origin passes: LCP p75 2,181 ms (fast), CLS 0.03 (fast), TTFB 750 ms (fast).",
+        "Lighthouse mobile: Performance 85, Accessibility 96, Best-Practices 100, SEO 100.",
+        "Total page weight a reasonable 942 KiB; CLS essentially zero."
+      ],
+      "findings": [
+        {"title": "INP borderline (origin p75 266 ms)", "severity": "Medium", "description": "Interaction to Next Paint is 'needs improvement' (good < 200 ms). Likely hydration/unused JS.", "recommendation": "Reduce unused JavaScript (~450 ms flagged), defer non-critical scripts, trim third-party JS."},
+        {"title": "Lab LCP 4.3s vs field 2.18s", "severity": "Low", "description": "Lab is stricter than real-user data; LCP image preload is already in place.", "recommendation": "Monitor; keep LCP image prioritised. No urgent action since field passes."}
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 80,
+      "what_works": [
+        "robots.txt explicitly welcomes GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, etc.",
+        "Server-rendered content readable by non-JS fetchers; rich entity schema aids extraction.",
+        "FAQ/Q&A structure supports passage-level citation."
+      ],
+      "findings": [
+        {"title": "No off-site brand authority for AI engines to cite", "severity": "High", "description": "AI answer engines favour entities with third-party corroboration. With ~2 referring hosts and branded-only presence, the brand lacks the external footprint needed for non-branded AI citations.", "recommendation": "Earn directory listings, review-site profiles (G2/Capterra/SoftwareSuggest), guest articles and press — the same lever that fixes organic authority."},
+        {"title": "No llms.txt / Content-Signal / Markdown delivery", "severity": "Low", "description": "Optional AI-discovery hygiene not implemented (none are ranking factors today).", "recommendation": "Publish /llms.txt summarising key pages; optionally add Content-Signal lines to robots groups."}
+      ]
+    },
+    {
+      "name": "Off-Site Authority & Backlinks",
+      "score": 35,
+      "what_works": [
+        "Domain is present in Common Crawl and in the ranking graph (not sandboxed/penalised)."
+      ],
+      "findings": [
+        {"title": "Near-zero backlink profile", "severity": "Critical", "description": "Only 2 referring hosts in the Common Crawl web graph; domain PageRank rank ~51,994,670 (harmonic-centrality rank ~10.9M). This is the primary reason non-branded commercial terms do not rank and traffic is 98% branded.", "recommendation": "Launch a sustained link/citation program: software review sites (G2, Capterra, SoftwareSuggest, TrustRadius), Indian edtech directories, client case-study backlinks, HARO/press, and partner co-marketing. Target 20-30 quality referring domains over 2-3 months."},
+        {"title": "No measurable authority flow to new URLs", "severity": "High", "description": "Equity from legacy .php pages and any historical links isn't translating into non-branded rankings.", "recommendation": "Pair link-building with the internal topic-cluster model so new authority concentrates on money pages."}
+      ]
+    },
+    {
+      "name": "Local SEO",
+      "score": 82,
+      "what_works": [
+        "LocalBusiness schema sitewide with exact NAP (Coimbatore, 641004), hours, geo and map link.",
+        "Google Business Profile exists (4.2 stars, 54 reviews); dedicated /solutions/coimbatore and state pages.",
+        "NAP in schema mirrors the GBP record."
+      ],
+      "findings": [
+        {"title": "Review equity not surfaced on-site", "severity": "Medium", "description": "54 real Google reviews aren't reflected in on-page content or schema.", "recommendation": "Add a reviews/testimonials section and legitimate AggregateRating; link to the GBP."},
+        {"title": "Local landing pages thin / templated", "severity": "Medium", "description": "/solutions/coimbatore (351w) and state pages risk being templated. Local citations beyond GBP are limited.", "recommendation": "Add locally specific proof (named institutions, local case studies) and build India edtech citations."}
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 88,
+      "what_works": [
+        "100% alt-text coverage on sampled pages (0 of 81 homepage images missing alt).",
+        "Next.js image pipeline serves WebP with responsive srcset and fetchpriority on LCP image."
+      ],
+      "findings": [
+        {"title": "Alt text keyword quality not audited at scale", "severity": "Low", "description": "Coverage is complete; descriptive quality should be spot-checked.", "recommendation": "Ensure alt text is descriptive (not keyword-stuffed) and OG images are page-specific."}
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {"name": "Phase 1: Critical — Build Off-Site Authority", "timeframe": "Weeks 1-4 (start now, runs ongoing)", "items": [
+        "Claim/complete G2, Capterra, SoftwareSuggest, TrustRadius profiles (do-follow + citation value).",
+        "List in Indian edtech / SaaS directories and local Coimbatore business directories (consistent NAP).",
+        "Turn existing clients into case-study backlinks (link from their sites / press).",
+        "Pitch 3-5 guest articles / expert quotes (HARO-style) in Indian education & edtech media."
+      ]},
+      {"name": "Phase 2: High-Impact On-Page & E-E-A-T", "timeframe": "Weeks 2-3", "items": [
+        "Add named Person authors with bios + sameAs to all blog Article schema and on-page author boxes.",
+        "Expand thin pages (/partners, /academy, /solutions/by-state, /solutions/coimbatore) past ~500-700 words.",
+        "Add legitimate AggregateRating/Review schema reflecting the 54 Google reviews; add a testimonials section.",
+        "Build the topic-cluster internal-link model concentrating anchors on non-branded money terms."
+      ]},
+      {"name": "Phase 3: Content & Schema Depth", "timeframe": "Month 2", "items": [
+        "Standardise schema: Breadcrumb on every deep page, FAQ + SoftwareApplication on solutions & accreditation sub-pages.",
+        "Publish comparison/alternatives pages targeting competitor terms (e.g. 'X alternative', 'best college ERP software India').",
+        "Add original data/screenshots/client proof to the batch-published guides so they read as maintained.",
+        "Publish /llms.txt; optionally add Content-Signal lines."
+      ]},
+      {"name": "Phase 4: Performance & Monitoring", "timeframe": "Ongoing", "items": [
+        "Reduce unused JS to pull INP under 200 ms (field).",
+        "Add Content-Security-Policy header (report-only first).",
+        "Monitor legacy .php -> new URL consolidation in GSC; resubmit via Indexing API.",
+        "Track non-branded clicks/impressions and referring-domain count monthly as the north-star KPIs."
+      ]}
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

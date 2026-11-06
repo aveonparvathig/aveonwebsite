@@ -1,5 +1,30 @@
 import type { NextConfig } from "next";
 
+// Report-only Content-Security-Policy. It never blocks: browsers only log
+// violations to the console, so we can observe what real traffic needs before
+// switching the header name to "Content-Security-Policy" to enforce it.
+// A nonce-based enforcing CSP would force every page into dynamic rendering
+// (see node_modules/next/dist/docs/01-app/02-guides/content-security-policy.md),
+// which would sacrifice this site's static rendering and strong Core Web Vitals.
+// 'unsafe-inline' is kept because the pages ship inline JSON-LD and Next's inline
+// bootstrap; the third-party hosts below are the analytics origins the app loads.
+const cspReportOnly = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://cdn.sanity.io https://www.googletagmanager.com https://www.facebook.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.sanity.io",
+  "frame-src 'self' https://www.google.com https://www.youtube.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  // NB: add "upgrade-insecure-requests" here when switching this to the
+  // enforcing "Content-Security-Policy" header — it is ignored (and warns) in a
+  // report-only policy, and the site is already HTTPS-only via HSTS.
+].join("; ");
+
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
@@ -8,6 +33,7 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=()",
   },
+  { key: "Content-Security-Policy-Report-Only", value: cspReportOnly },
 ];
 
 const nextConfig: NextConfig = {
