@@ -110,7 +110,7 @@ export default function ClientLogosCarousel() {
       <div className="relative mx-auto max-w-full px-4 sm:px-6 lg:px-10">
         {/* Header */}
         <div className="mb-12 text-center">
-          <p className="text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-primary-500">
+          <p className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-primary-500">
             Trusted by Institutions Across the Country
           </p>
           <h2 className="mt-4 text-[clamp(28px,4vw,42px)] font-extrabold text-navy-900">

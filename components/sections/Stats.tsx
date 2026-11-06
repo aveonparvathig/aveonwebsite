@@ -16,7 +16,7 @@ export default function Stats() {
           {stats.map((s) => (
             <div key={s.label} className="border-b border-r border-white/10 px-2.5 py-3.5 text-center sm:border-b-0 sm:px-6 sm:py-7">
               <p className="text-[17px] font-extrabold text-white sm:text-[clamp(28px,3.4vw,40px)]">{s.value}</p>
-              <p className="mt-1 text-[7.5px] font-bold uppercase leading-tight tracking-[0.06em] text-white sm:mt-2 sm:text-[11.5px] sm:tracking-[0.14em]">
+              <p className="mt-1 text-[12px] font-bold uppercase leading-tight tracking-[0.04em] text-white sm:mt-2 sm:text-[12.5px] sm:tracking-[0.14em]">
                 {s.label}
               </p>
             </div>

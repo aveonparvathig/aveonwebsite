@@ -70,7 +70,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-[1380px] items-center gap-8 px-4 pb-12 pt-8 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-13 lg:px-10 lg:pb-16 lg:pt-13">
         <div>
-          <span className="inline-flex items-center gap-2.5 rounded-full border border-primary-600/20 bg-white py-2 pl-3 pr-4 text-[11.5px] font-extrabold uppercase tracking-[0.12em] text-primary-700 shadow-[0_8px_20px_-12px_rgb(29_111_242_/_0.5)]">
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-primary-600/20 bg-white py-2 pl-3 pr-4 text-[12px] font-extrabold uppercase tracking-[0.1em] text-primary-700 shadow-[0_8px_20px_-12px_rgb(29_111_242_/_0.5)]">
             <span className="relative flex h-2.25 w-2.25">
               <span className="absolute inset-0 rounded-full bg-primary-600 animate-pulse-ring" />
               <span className="relative h-2.25 w-2.25 rounded-full bg-primary-600" />
@@ -120,7 +120,7 @@ export default function Hero() {
                 onClick={() => setCurrent(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === current ? "true" : undefined}
-                className={`group flex h-6 items-center justify-center transition-all duration-300 ${i === current ? "w-10" : "w-6"}`}
+                className={`group flex h-11 items-center justify-center transition-all duration-300 ${i === current ? "w-10" : "w-6"}`}
               >
                 <span
                   className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-primary-600" : "w-2 bg-navy-200 group-hover:bg-primary-400"}`}
@@ -139,7 +139,7 @@ export default function Hero() {
               <span className="h-2.25 w-2.25 rounded-full bg-[#ff5f57]" />
               <span className="h-2.25 w-2.25 rounded-full bg-[#febc2e]" />
               <span className="h-2.25 w-2.25 rounded-full bg-[#28c840]" />
-              <span className="ml-3 text-[11.5px] font-bold tracking-[0.05em] text-[#4f5f7f]">
+              <span className="ml-3 text-[12px] font-bold tracking-[0.05em] text-[#4f5f7f]">
                 {slide.caption}
               </span>
             </div>
@@ -160,8 +160,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Animated enrolment stat card */}
-          <div className="absolute left-0 bottom-[-14px] z-[2] w-[118px] animate-floaty-slow rounded-[16px] border border-navy-900/7 bg-white px-2.5 py-2.5 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)] sm:-left-14 sm:bottom-[-34px] sm:w-[206px] sm:rounded-[22px] sm:px-4.5 sm:py-4">
+          {/* Animated enrolment stat card — decorative illustration (real stats live in the Stats strip below) */}
+          <div aria-hidden className="absolute left-0 bottom-[-14px] z-[2] w-[118px] animate-floaty-slow rounded-[16px] border border-navy-900/7 bg-white px-2.5 py-2.5 shadow-[0_28px_58px_-20px_rgb(16_26_51_/_0.42)] sm:-left-14 sm:bottom-[-34px] sm:w-[206px] sm:rounded-[22px] sm:px-4.5 sm:py-4">
             <div className="flex items-start justify-between gap-1.5 sm:gap-2.5">
               <span>
                 <span className="block text-[7.5px] font-extrabold uppercase tracking-[0.1em] text-[#4f5f7f] sm:text-[10.5px] sm:tracking-[0.14em]">
@@ -231,7 +231,7 @@ export default function Hero() {
 
           <div className="absolute right-2 -top-4 flex items-center gap-2 rounded-2xl bg-navy-900 px-3 py-2 shadow-[0_24px_50px_-22px_rgb(16_26_51_/_0.6)] sm:-right-0.5 sm:top-2 sm:gap-2.5 sm:rounded-[18px] sm:px-4 sm:py-3">
             <span className="h-2 w-2 shrink-0 rounded-full bg-green-400 sm:h-2.25 sm:w-2.25" />
-            <span className="whitespace-nowrap text-[10.5px] font-semibold text-white sm:text-[12.5px]">One login · Fourteen products</span>
+            <span className="whitespace-nowrap text-[12px] font-semibold text-white sm:text-[12.5px]">One login · Fourteen products</span>
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function Footer({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={key}
-                  className="flex h-9.5 w-9.5 items-center justify-center rounded-full border border-navy-900/10 bg-white text-navy-700 transition-colors hover:border-primary-600 hover:bg-primary-600 hover:text-white"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-900/10 bg-white text-navy-700 transition-colors hover:border-primary-600 hover:bg-primary-600 hover:text-white"
                 >
                   <SocialIcon name={key} />
                 </a>
@@ -48,10 +48,10 @@ export default function Footer({
             <h3 className="text-[14.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
               Products
             </h3>
-            <ul className="mt-4.5 flex flex-col gap-2.75 text-[14.5px]">
+            <ul className="mt-3.5 flex flex-col gap-0.5 text-[14.5px]">
               {products.map((p) => (
                 <li key={p.slug}>
-                  <Link href={`/products/${p.slug}`} className="text-navy-700 transition-colors hover:text-primary-600">
+                  <Link href={`/products/${p.slug}`} className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                     {p.title}
                   </Link>
                 </li>
@@ -63,41 +63,41 @@ export default function Footer({
             <h3 className="text-[14.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
               Company
             </h3>
-            <ul className="mt-4.5 flex flex-col gap-2.75 text-[14.5px]">
+            <ul className="mt-3.5 flex flex-col gap-0.5 text-[14.5px]">
               <li>
-                <Link href="/about" className="text-navy-700 transition-colors hover:text-primary-600">
+                <Link href="/about" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-navy-700 transition-colors hover:text-primary-600">
+                <Link href="/pricing" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                   Pricing
                 </Link>
               </li>
               {company.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="text-navy-700 transition-colors hover:text-primary-600">
+                  <Link href={n.href} className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                     {n.label === "Services" ? "Software Services" : n.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/blog" className="text-navy-700 transition-colors hover:text-primary-600">
+                <Link href="/blog" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-navy-700 transition-colors hover:text-primary-600">
+                <Link href="/careers" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="/partners" className="text-navy-700 transition-colors hover:text-primary-600">
+                <Link href="/partners" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                   Partners
                 </Link>
               </li>
               <li>
-                <Link href="/academy" className="text-navy-700 transition-colors hover:text-primary-600">
+                <Link href="/academy" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                   Aveon Academy
                 </Link>
               </li>
@@ -108,14 +108,14 @@ export default function Footer({
             <h3 className="text-[14.5px] font-extrabold uppercase tracking-[0.2em] text-accent-700">
               Get in Touch
             </h3>
-            <ul className="mt-4.5 flex flex-col gap-3 text-[14.5px] text-navy-700">
+            <ul className="mt-3.5 flex flex-col gap-1 text-[14.5px] text-navy-700">
               <li>
-                <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-primary-600">
+                <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="inline-block py-1.5 transition-colors hover:text-primary-600">
                   {siteConfig.phone}
                 </a>
               </li>
               <li>
-                <a href={encodedEmail.href} className="transition-colors hover:text-primary-600" dangerouslySetInnerHTML={{ __html: encodedEmail.encoded }} />
+                <a href={encodedEmail.href} className="inline-block py-1.5 transition-colors hover:text-primary-600" dangerouslySetInnerHTML={{ __html: encodedEmail.encoded }} />
               </li>
               <li>{siteConfig.address}</li>
             </ul>
@@ -144,10 +144,10 @@ export default function Footer({
         <div className="mt-10 flex flex-col items-center justify-between gap-3.5 border-t border-navy-900/12 pt-6 text-[14.5px] text-navy-600 sm:flex-row">
           <p>© {year} Aveon Infotech Private Limited. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="transition-colors hover:text-primary-600">
+            <Link href="/privacy" className="inline-block py-1.5 transition-colors hover:text-primary-600">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="transition-colors hover:text-primary-600">
+            <Link href="/terms" className="inline-block py-1.5 transition-colors hover:text-primary-600">
               Terms of Service
             </Link>
           </div>

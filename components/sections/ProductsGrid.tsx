@@ -45,7 +45,7 @@ export default async function ProductsGrid() {
     <section className="bg-gradient-to-b from-navy-50 to-white">
       <div className="mx-auto max-w-[1320px] px-4 pt-12 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pt-14 lg:pb-8">
         <div className="mx-auto max-w-[660px] text-center">
-          <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
+          <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.12em] text-primary-700">
             Our Products
           </span>
           <h2 className="mt-5 text-[clamp(28px,3.8vw,46px)] font-extrabold leading-tight text-navy-900">
@@ -65,7 +65,7 @@ export default async function ProductsGrid() {
               className="spotlight-card group flex flex-wrap items-center gap-6.5 rounded-[28px] border border-primary-600/18 bg-gradient-to-br from-primary-50 to-[#dce9ff] p-7.5 shadow-[0_20px_50px_-26px_rgb(29_111_242_/_0.4)] transition-transform duration-300 hover:-translate-y-1.5 sm:col-span-2"
             >
               <span className="min-w-0 flex-1 basis-60">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.1em] text-accent-700">
                   Most deployed
                 </span>
                 <span className="mt-4 block text-[20.5px] font-extrabold text-navy-900">
@@ -104,7 +104,7 @@ export default async function ProductsGrid() {
                 <span className="flex h-12.5 w-12.5 items-center justify-center rounded-[18px] bg-gradient-to-br from-primary-50 to-primary-100 text-primary-600">
                   <ProductIcon slug={product.slug} className="h-6 w-6" />
                 </span>
-                <span className="rounded-full bg-navy-50 px-3 py-1.5 text-[10.5px] font-extrabold uppercase tracking-[0.1em] text-navy-600">
+                <span className="rounded-full bg-navy-50 px-3 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.08em] text-navy-600">
                   {product.tagline}
                 </span>
               </div>

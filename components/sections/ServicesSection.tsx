@@ -9,7 +9,7 @@ export default function ServicesSection() {
       <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-6 lg:px-10 lg:py-14">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
-            <span className="inline-block rounded-full bg-accent-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-accent-700">
+            <span className="inline-block rounded-full bg-accent-50 px-3.5 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.12em] text-accent-700">
               Software Development
             </span>
             <h2 className="mt-5 max-w-[620px] text-[clamp(28px,3.8vw,44px)] font-extrabold leading-tight text-navy-900">

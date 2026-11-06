@@ -115,9 +115,9 @@ function TestimonialCard({ t }: { t: ClientTestimonial }) {
         )}
         <span className="mt-3 block text-[16px] font-extrabold leading-tight text-white">{t.name}</span>
         {t.role && <span className="mt-0.5 block text-[13px] font-semibold text-primary-50">{t.role}</span>}
-        {t.degree && <span className="mt-0.5 block text-[11px] font-medium text-primary-100">{t.degree}</span>}
+        {t.degree && <span className="mt-0.5 block text-[12px] font-medium text-primary-100">{t.degree}</span>}
         <span className="mt-1 block text-[12px] font-semibold leading-snug text-white/90">{t.college}</span>
-        <span className="mt-1 inline-flex items-center gap-1 text-[11px] font-medium text-primary-100">
+        <span className="mt-1 inline-flex items-center gap-1 text-[12px] font-medium text-primary-100">
           <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
@@ -163,7 +163,7 @@ export default function ClientTestimonials() {
     <section className="bg-gradient-to-b from-white to-navy-50">
       <div className="mx-auto max-w-[1320px] px-4 pt-8 pb-14 sm:px-6 sm:pt-10 lg:px-10 lg:pt-12 lg:pb-18">
         <div className="mx-auto max-w-[680px] text-center">
-          <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[11.5px] font-extrabold uppercase tracking-[0.14em] text-primary-700">
+          <span className="inline-block rounded-full bg-primary-50 px-3.5 py-1.5 text-[12px] font-extrabold uppercase tracking-[0.12em] text-primary-700">
             Testimonials
           </span>
           <h2 className="mt-4 text-[clamp(28px,3.8vw,44px)] font-extrabold leading-tight text-navy-900">
