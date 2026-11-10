@@ -65,17 +65,31 @@ const RED_FLAGS = [
   "Accreditation reports exported to spreadsheets and finished by hand.",
 ];
 
+// Update MODIFIED whenever the guide's content changes.
+const PUBLISHED = "2026-11-05";
+const MODIFIED = "2026-11-10";
+
 function articleJsonLd() {
+  const url = `${siteConfig.url}/resources/${SLUG}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "College ERP Buyer's Guide — How to Choose the Right System",
-    author: { "@type": "Organization", name: "Aveon Editorial Team" },
+    headline: "College ERP Buyer's Guide: How to Choose",
+    description: metadata.description,
+    image: `${siteConfig.url}/opengraph-image`,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { "@type": "Organization", name: "Aveon Editorial Team", url: `${siteConfig.url}/about` },
+    // Same @id and name as the site-wide Organization node, so the two merge.
     publisher: {
       "@type": "Organization",
-      name: siteConfig.location.legalName,
+      "@id": `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/images/logo.svg` },
     },
-    mainEntityOfPage: `${siteConfig.url}/resources/${SLUG}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
   };
 }
 

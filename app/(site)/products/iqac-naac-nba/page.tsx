@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroImage } from "@/components/ui/OptimizedImage";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { productJsonLd } from "@/lib/structured-data";
+import { getProduct } from "@/lib/data/products";
+
+// No offers or ratings: pricing is quote-based and there are no third-party reviews to cite.
+const product = getProduct("iqac-naac-nba");
 
 export const metadata: Metadata = {
   title: "IQAC NAAC NBA Accreditation Software",
@@ -19,6 +25,13 @@ export const metadata: Metadata = {
 export default function IqacNaacNbaPage() {
   return (
     <div className="min-h-dvh bg-white">
+      <BreadcrumbSchema trail={[{ name: "Products", href: "/products" }, { name: "IQAC, NAAC & NBA", href: "/products/iqac-naac-nba" }]} />
+      {product && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(product)) }}
+        />
+      )}
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-purple-50 to-white">
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-purple-600/20 blur-[120px]" />

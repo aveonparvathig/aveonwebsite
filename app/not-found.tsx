@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+
+// Without this the 404 inherits the default (homepage) title.
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  description: "The page you are looking for does not exist or has moved.",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

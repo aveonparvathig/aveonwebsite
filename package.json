@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "sitemap:dates": "node scripts/sitemap-dates.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.7.1",

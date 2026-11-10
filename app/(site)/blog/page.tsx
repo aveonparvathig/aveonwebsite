@@ -5,6 +5,7 @@ import { fetchOrFallback } from "@/lib/sanity";
 import { postsQuery } from "@/lib/queries";
 import { posts as fallbackPosts } from "@/lib/data/posts";
 import { staticPosts, getStaticPost } from "@/lib/data/static-posts";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Campus ERP Blog & Resources",
@@ -68,6 +69,7 @@ export default async function BlogPage() {
 
   return (
     <>
+      <BreadcrumbSchema trail={[{ name: "Blog", href: "/blog" }]} />
       <section className="relative overflow-hidden border-b border-navy-900/8 bg-gradient-to-b from-[#f4f8ff] to-white">
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-primary-600/20 blur-[120px]" />
         <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-accent-500/15 blur-[120px]" />

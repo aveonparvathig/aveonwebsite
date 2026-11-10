@@ -7,6 +7,7 @@ import { PricingViewTracker } from "@/components/analytics/PricingViewTracker";
 import { ViewContentTracker } from "@/components/analytics/ViewContentTracker";
 import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "College ERP Pricing in India: How It Works",
@@ -120,6 +121,7 @@ const tel = siteConfig.phone.replace(/\s/g, "");
 export default function PricingPage() {
   return (
     <>
+      <BreadcrumbSchema trail={[{ name: "Pricing", href: "/pricing" }]} />
       <PricingViewTracker />
       <ViewContentTracker name="pricing" />
       <script

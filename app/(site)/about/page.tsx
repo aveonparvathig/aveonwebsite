@@ -3,6 +3,7 @@ import Image from "next/image";
 import Stats from "@/components/sections/Stats";
 import CTASection from "@/components/sections/CTASection";
 import { siteConfig } from "@/lib/constants";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: `About Us | Campus ERP Leaders Since ${siteConfig.stats.foundedYear}`,
@@ -109,6 +110,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema trail={[{ name: "About", href: "/about" }]} />
       <section className="relative overflow-hidden border-b border-navy-900/8 bg-gradient-to-b from-[#f4f8ff] to-white">
         <div aria-hidden className="pointer-events-none absolute -right-28 -top-40 h-[480px] w-[480px] rounded-full bg-primary-600/20 blur-[120px]" />
         <div aria-hidden className="pointer-events-none absolute -bottom-48 -left-32 h-[420px] w-[420px] rounded-full bg-accent-500/15 blur-[120px]" />

@@ -6,6 +6,7 @@ import { ContactFormsProvider } from "@/components/forms/FormLockContext";
 import FAQ, { faqJsonLd } from "@/components/sections/FAQ";
 import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Contact Aveon - Campus ERP Support",
@@ -25,6 +26,7 @@ const offices = [
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema trail={[{ name: "Contact", href: "/contact" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
@@ -51,6 +53,10 @@ export default function ContactPage() {
             alt="Contact Aveon"
             width={2000}
             height={1333}
+            // Above the fold and the likely LCP element: fetch it immediately.
+            loading="eager"
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="w-full rounded-2xl object-cover"
           />
         </div>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/constants";
 import PageHero from "@/components/sections/PageHero";
 import CTASection from "@/components/sections/CTASection";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Our Team | EdTech Experts",
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
 const departments = [
   {
     title: "Engineering",
-    text: "Product engineers building and evolving the nine-product Aveon platform.",
+    text: `Product engineers building and evolving the ${siteConfig.stats.products}-product Aveon platform.`,
   },
   {
     title: "Implementation",
@@ -30,6 +32,7 @@ const departments = [
 export default function TeamPage() {
   return (
     <>
+      <BreadcrumbSchema trail={[{ name: "About", href: "/about" }, { name: "Team", href: "/about/team" }]} />
       <PageHero
         eyebrow="Our Team"
         title="The People Behind the Platform"
