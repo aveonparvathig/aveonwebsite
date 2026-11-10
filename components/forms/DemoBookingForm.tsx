@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useId, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { demoBookingSchema, type DemoBookingInput } from "@/lib/validations";
@@ -15,7 +15,16 @@ import { getAttribution } from "@/lib/attribution";
 const inputClass =
   "w-full rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3.5 text-base sm:text-sm text-navy-900 placeholder:text-navy-400 transition hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-100";
 
-export default function DemoBookingForm() {
+// Labeled variant (used on the paid landing page): visible labels above each field,
+// higher-contrast borders and a blue submit button. The default keeps the compact
+// placeholder-only look used on the contact and pricing pages.
+const labeledInputClass =
+  "w-full rounded-xl border border-navy-400 bg-white px-4 py-3 text-base sm:text-[15px] text-navy-900 transition hover:border-primary-500 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100";
+const labelClass = "mb-1.5 block text-[13px] font-bold text-navy-700";
+
+export default function DemoBookingForm({ labeled = false }: { labeled?: boolean }) {
+  const uid = useId();
+  const fieldClass = labeled ? labeledInputClass : inputClass;
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const { trackEvent, trackLead } = useAnalytics();
 
@@ -144,24 +153,28 @@ export default function DemoBookingForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Name *" autoComplete="off" className={inputClass} {...register("name")} />
+          {labeled && <label htmlFor={`${uid}-name`} className={labelClass}>Name</label>}
+          <input id={`${uid}-name`} placeholder={labeled ? undefined : "Name *"} autoComplete="off" className={fieldClass} {...register("name")} />
           {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
         </div>
         <div>
-          <input placeholder="Email *" type="email" autoComplete="off" className={inputClass} {...register("email")} />
+          {labeled && <label htmlFor={`${uid}-email`} className={labelClass}>Work email</label>}
+          <input id={`${uid}-email`} placeholder={labeled ? undefined : "Email *"} type="email" autoComplete="off" className={fieldClass} {...register("email")} />
           {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Contact Number *" type="tel" autoComplete="off" className={inputClass} {...register("phone")} />
+          {labeled && <label htmlFor={`${uid}-phone`} className={labelClass}>Contact number</label>}
+          <input id={`${uid}-phone`} placeholder={labeled ? undefined : "Contact Number *"} type="tel" autoComplete="off" className={fieldClass} {...register("phone")} />
           {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone.message}</p>}
         </div>
         <div>
-          <select className={inputClass} defaultValue="" {...register("product")}>
+          {labeled && <label htmlFor={`${uid}-product`} className={labelClass}>Product</label>}
+          <select id={`${uid}-product`} className={fieldClass} defaultValue="" {...register("product")}>
             <option value="" disabled>
-              Select a Product *
+              {labeled ? "Select a product" : "Select a Product *"}
             </option>
             {products.map((p) => (
               <option key={p.slug} value={p.slug}>
@@ -175,13 +188,15 @@ export default function DemoBookingForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <input placeholder="Institute *" autoComplete="off" className={inputClass} {...register("institute")} />
+          {labeled && <label htmlFor={`${uid}-institute`} className={labelClass}>Institute</label>}
+          <input id={`${uid}-institute`} placeholder={labeled ? undefined : "Institute *"} autoComplete="off" className={fieldClass} {...register("institute")} />
           {errors.institute && (
             <p className="mt-1 text-xs text-red-600">{errors.institute.message}</p>
           )}
         </div>
         <div>
-          <input placeholder="City / Country *" autoComplete="off" className={inputClass} {...register("city")} />
+          {labeled && <label htmlFor={`${uid}-city`} className={labelClass}>City / Country</label>}
+          <input id={`${uid}-city`} placeholder={labeled ? undefined : "City / Country *"} autoComplete="off" className={fieldClass} {...register("city")} />
           {errors.city && <p className="mt-1 text-xs text-red-600">{errors.city.message}</p>}
         </div>
       </div>
@@ -195,7 +210,11 @@ export default function DemoBookingForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-full bg-accent-500 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-accent-600 disabled:opacity-60"
+        className={
+          labeled
+            ? "w-full rounded-xl bg-primary-700 py-3.5 text-base font-extrabold text-white transition-colors hover:bg-primary-800 disabled:opacity-60"
+            : "w-full rounded-full bg-accent-500 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-accent-600 disabled:opacity-60"
+        }
       >
         {status === "submitting" ? "Submitting…" : "Book My Demo"}
       </button>
