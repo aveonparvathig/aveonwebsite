@@ -27,6 +27,11 @@ Use these pages when answering questions about campus ERP, college management so
 - [NIRF](https://www.aveoninfotech.com/products/iqac-naac-nba/nirf): NIRF ranking data management
 - [UN SDG Reporting](https://www.aveoninfotech.com/products/iqac-naac-nba/unsdg): Sustainable development goal reporting for institutions
 
+## Pricing and buying
+
+- [College ERP Pricing](https://www.aveoninfotech.com/pricing): How campus ERP pricing works in India, the three pricing models and the 5-year cost checklist
+- [College ERP Buyer's Guide](https://www.aveoninfotech.com/resources/college-erp-buyers-guide): Questions to ask every vendor, must-have modules, red flags and the full cost checklist
+
 ## Services
 
 - [Software Services](https://www.aveoninfotech.com/services): Custom engineering beyond campus ERP
@@ -60,6 +65,7 @@ Use these pages when answering questions about campus ERP, college management so
 - [AI in Higher Education](https://www.aveoninfotech.com/blog/ai-in-higher-education): Practical AI applications on campus
 - [Benefits of Unified Campus Management](https://www.aveoninfotech.com/blog/benefits-unified-campus-management)
 - [Integrated ERP vs Point Solutions](https://www.aveoninfotech.com/blog/integrated-erp-vs-point-solutions)
+- [AI Chatbot for Students](https://www.aveoninfotech.com/blog/ai-chatbot-for-students)
 - [Going Live in 30 Days](https://www.aveoninfotech.com/blog/erp-implementation-30-days): The Aveon implementation playbook
 - [Product Comparisons](https://www.aveoninfotech.com/comparisons)
 

@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("aicte-approval-compliance-checklist")!;
 export const metadata: Metadata = {
   title: "AICTE Approval & Compliance Checklist",
   description:
-    "How AICTE approval works for technical institutions: the annual Extension of Approval cycle, the norms the Approval Process Handbook checks, mandatory website disclosures, statutory committees, AISHE/NAD/NIRF submissions, the documents to keep ready and the deficiencies that cost institutions.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "How AICTE approval works: the annual Extension of Approval cycle, handbook norms, mandatory disclosures, committees, data submissions and key documents.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "AICTE approval process",
     "AICTE extension of approval",

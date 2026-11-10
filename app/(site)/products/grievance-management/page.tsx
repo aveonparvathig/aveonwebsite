@@ -5,9 +5,9 @@ import { HeroImage } from "@/components/ui/OptimizedImage";
 import { faqJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Grievance Management System for Colleges & Universities",
+  title: "Grievance Management System for Colleges",
   description:
-    "Student grievance redressal software for colleges and universities: an online grievance cell for registration, tracking, escalation and time-bound resolution that meets the UGC grievance-redressal mandate, with anti-ragging and anonymous complaints.",
+    "Student grievance redressal software for colleges and universities: online registration, tracking, escalation and time-bound resolution to the UGC mandate.",
   keywords: [
     "Grievance Management System",
     "College Grievance Management System",

@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("obe-implementation-guide")!;
 export const metadata: Metadata = {
   title: "OBE Implementation Guide for Institutions",
   description:
-    "Step-by-step Outcome-Based Education guide for Indian colleges: the PEO, PO, PSO and CO hierarchy, Bloom's taxonomy verbs, CO-PO mapping, attainment calculation, a 10-step rollout plan and how OBE feeds NAAC and NBA accreditation.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "Step-by-step OBE guide for Indian colleges: PEO, PO, PSO and CO hierarchy, Bloom's verbs, CO-PO mapping, attainment calculation and a 10-step rollout.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "outcome-based education",
     "OBE implementation",

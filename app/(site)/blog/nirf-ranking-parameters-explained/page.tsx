@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("nirf-ranking-parameters-explained")!;
 export const metadata: Metadata = {
   title: "NIRF Ranking Parameters Explained | Weightages",
   description:
-    "How NIRF scores institutions: the five parameters (TLR, RP, GO, OI, PR), their weightages for universities, engineering and colleges, the sub-parameters, the data each needs, and a 12-month plan to improve the inputs you control.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "How NIRF scores institutions: the five parameters (TLR, RP, GO, OI, PR), their weightages by category, the data each needs and how to improve your inputs.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "NIRF ranking parameters",
     "NIRF weightage",

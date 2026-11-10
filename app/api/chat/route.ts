@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { generateAiReply, scriptedReply, type ChatMessage } from "@/lib/chat/assistant";
 import { saveLead } from "@/lib/leads";
+import { attributionSchema } from "@/lib/validations";
 
 const MAX_MSG_LEN = 1000;
 const MAX_HISTORY = 24;
@@ -36,6 +37,7 @@ export async function POST(request: Request) {
       institution: (data.company ?? "").trim() || undefined,
       message: (data.message ?? "").trim() || undefined,
       source: "chatbot",
+      attribution: attributionSchema.safeParse((body as { attribution?: unknown }).attribution).data,
       notifySubject: `[Chatbot] New lead: ${name}`,
     });
 

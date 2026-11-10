@@ -7,9 +7,9 @@ import { siteConfig } from "@/lib/constants";
 const SLUG = "college-erp-buyers-guide";
 
 export const metadata: Metadata = {
-  title: "College ERP Buyer's Guide — How to Choose the Right System",
+  title: "College ERP Buyer's Guide: How to Choose",
   description:
-    "A practical buyer's guide to choosing a college ERP in India: the questions to ask every vendor, the must-have modules, the red flags, and the full cost checklist.",
+    "A practical guide to choosing a college ERP in India: the questions to ask every vendor, must-have modules, red flags and the full cost checklist.",
   alternates: { canonical: `/resources/${SLUG}` },
 };
 

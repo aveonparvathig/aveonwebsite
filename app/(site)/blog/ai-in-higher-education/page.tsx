@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("ai-in-higher-education")!;
 export const metadata: Metadata = {
   title: "AI in Higher Education | Campus Management",
   description:
-    "Where AI actually works on an Indian campus today: at-risk student prediction, chatbots that answer from live ERP data, exam and admin automation, learning analytics, and the data, privacy and governance it depends on.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "Where AI works on an Indian campus today: at-risk student prediction, chatbots on live ERP data, exam and admin automation, and the governance it needs.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "AI in education",
     "AI in higher education India",

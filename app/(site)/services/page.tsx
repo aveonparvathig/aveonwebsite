@@ -8,10 +8,9 @@ import { faqJsonLd } from "@/lib/structured-data";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Software Development Company in Coimbatore | Aveon",
+  title: "Software Development Company in Coimbatore",
   description:
-    "Aveon is a software development company in Coimbatore building custom software, mobile apps, AI process automation and dedicated offshore teams. Based in Coimbatore since " +
-    `${siteConfig.stats.foundedYear}, serving clients across India and abroad.`,
+    `Software development company in Coimbatore: custom software, mobile apps, AI process automation and dedicated offshore teams. Building since ${siteConfig.stats.foundedYear}.`,
   keywords: [
     "Software Development Company in Coimbatore",
     "Custom Software Development",

@@ -7,7 +7,7 @@ import { faqJsonLd } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "NAAC Accreditation Software | SSR, AQAR & DVV",
   description:
-    "NAAC accreditation software that captures evidence across all seven criteria year-round and prepares your SSR, AQAR and DVV data. IQAC workspace, criterion-wise metrics and quality dashboards on one platform.",
+    "NAAC accreditation software that captures evidence across all seven criteria year-round and prepares your SSR, AQAR and DVV data from one IQAC workspace.",
   keywords: [
     "NAAC Accreditation Software",
     "NAAC Software",

@@ -9,7 +9,7 @@ import WarehouseContent, { warehouseFaqs } from "@/components/sections/Warehouse
 export const metadata: Metadata = {
   title: "Warehouse Management System (WMS) Software in India",
   description:
-    "Warehouse management software for logistics, distribution and manufacturing in India: real-time inventory tracking, automated picking/packing and multi-warehouse operations. 40% efficiency gain. Cloud-based WMS.",
+    "Warehouse management software for logistics, distribution and manufacturing in India: real-time inventory, picking and packing, and multi-warehouse control.",
   keywords: [
     "Warehouse Management System",
     "Warehouse Management Software",

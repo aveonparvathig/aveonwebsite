@@ -1,5 +1,6 @@
 import { sendNotification, sendAutoReply } from "./email";
 import { postLeadToM365 } from "./microsoft-leads";
+import { ATTRIBUTION_FIELDS, type Attribution } from "./attribution";
 
 /**
  * A single inbound lead, normalized across the demo form, contact form and chatbot.
@@ -13,6 +14,8 @@ export interface LeadInput {
   city?: string;
   message?: string;
   source: "demo_form" | "contact_form" | "chatbot" | "magnet" | "newsletter" | "other";
+  /** Ad-click ids and campaign tags captured in the browser, when present. */
+  attribution?: Attribution;
   /** Subject line for the notification email. */
   notifySubject: string;
 }
@@ -25,6 +28,16 @@ export function scoreLead(lead: LeadInput): number {
   if (lead.institution) score += 25;
   if (lead.interest) score += 25;
   return Math.min(score, 100);
+}
+
+/** Email rows for whichever attribution fields the lead carries (none for a direct visit). */
+function attributionRows(attribution?: Attribution): Record<string, string> {
+  const rows: Record<string, string> = {};
+  for (const field of ATTRIBUTION_FIELDS) {
+    const value = attribution?.[field];
+    if (value) rows[`Ad: ${field}`] = value;
+  }
+  return rows;
 }
 
 /**
@@ -56,6 +69,7 @@ export async function saveLead(
       Message: lead.message || "—",
       Source: lead.source,
       "Lead score": String(leadScore),
+      ...attributionRows(lead.attribution),
     }).catch((err) => {
       console.error("[LEAD] notification email failed:", err);
       return { delivered: false };

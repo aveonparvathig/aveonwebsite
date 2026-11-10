@@ -36,6 +36,7 @@ export async function postLeadToM365(
         message: lead.message ?? "",
         source: lead.source,
         leadScore,
+        attribution: lead.attribution ?? {},
         receivedAt: new Date().toISOString(),
       }),
     });

@@ -8,6 +8,7 @@ import { useFormLock } from "@/components/forms/FormLockContext";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { EventType } from "@/lib/analytics";
 import { trackConversion } from "@/lib/analytics-conversions";
+import { getAttribution } from "@/lib/attribution";
 
 // text-base on mobile prevents iOS Safari's auto-zoom-on-focus (triggered below 16px); sm: restores the original size on larger screens.
 const inputClass =
@@ -79,7 +80,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error(await res.text());
       setStatus("success");

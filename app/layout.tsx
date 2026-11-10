@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/constants";
 import { organizationJsonLd, localBusinessJsonLd, websiteJsonLd } from "@/lib/structured-data";
 import { GA_ID, GA_IDS } from "@/lib/analytics";
 import { Pixels } from "@/components/analytics/Pixels";
+import { LeadSignals } from "@/components/analytics/LeadSignals";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -41,19 +42,17 @@ export const metadata: Metadata = {
     "HRM & Payroll",
     "Aveon Infotech",
   ],
+  // No title/description/url here on purpose: a fixed value would be inherited
+  // by every page, so each page's share card would describe the homepage.
+  // Next fills og:title/og:description (and the Twitter equivalents) from the
+  // page's own title and description. The image comes from app/opengraph-image.
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "AI-Powered Campus ERP & LMS | Aveon Infotech",
-    description:
-      "Unified platform for education management. AI-powered campus ERP for universities, colleges and schools. NAAC/AICTE compliant.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI-Powered Campus ERP & LMS | Aveon Infotech",
-    description: `Unified AI-powered campus management platform serving ${siteConfig.stats.institutions} institutions.`,
   },
 };
 
@@ -124,6 +123,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         {children}
+        <LeadSignals />
         <Analytics />
         <SpeedInsights />
       </body>

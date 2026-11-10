@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const { name, email, phone, subject, message } = parsed.data;
+  const { name, email, phone, subject, message, attribution } = parsed.data;
 
   const { ok } = await saveLead({
     name,
@@ -32,6 +32,7 @@ export async function POST(request: Request) {
     interest: subject,
     message,
     source: "contact_form",
+    attribution,
     notifySubject: `[Website] Contact: ${subject}`,
   });
 

@@ -9,7 +9,7 @@ import { staticPosts, getStaticPost } from "@/lib/data/static-posts";
 export const metadata: Metadata = {
   title: "Campus ERP Blog & Resources",
   description:
-    "Practical guides for Indian institutions: NAAC, NBA, AICTE and NIRF compliance, Outcome-Based Education, choosing and migrating to a campus ERP, multi-campus management and AI on campus.",
+    "Practical guides for Indian institutions: NAAC, NBA, AICTE and NIRF compliance, OBE, choosing and migrating to a campus ERP, and AI on campus.",
 };
 
 const categoryLabels: Record<string, string> = {

@@ -7,7 +7,7 @@ import { breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Partnership Opportunities",
   description:
-    "Partner with Aveon Infotech: reseller, implementation and technology partnerships for education ERP. Sales enablement, certification and co-marketing for partners across India.",
+    "Partner with Aveon Infotech: reseller, implementation and technology partnerships for education ERP, with sales enablement and certification.",
 };
 
 const models = [

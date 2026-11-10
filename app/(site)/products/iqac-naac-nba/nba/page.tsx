@@ -8,7 +8,7 @@ import { faqJsonLd } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "NBA Accreditation Software | OBE, CO-PO & SAR",
   description:
-    "NBA accreditation software for outcome-based education: Program Outcomes and Course Outcomes mapping, automatic CO-PO attainment, and Self Assessment Report (SAR) preparation for every NBA programme.",
+    "NBA accreditation software for outcome-based education: PO and CO mapping, automatic CO-PO attainment and Self Assessment Report (SAR) preparation.",
   keywords: [
     "NBA Accreditation Software",
     "OBE Software",

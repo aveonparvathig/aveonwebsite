@@ -7,9 +7,9 @@ import CTASection from "@/components/sections/CTASection";
 import MobileAppContent, { mobileAppFaqs } from "@/components/sections/MobileAppContent";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development Company in Coimbatore | iOS & Android",
+  title: "Mobile App Development Company in Coimbatore",
   description:
-    "Mobile app development company in Coimbatore, India building custom Android, iOS and cross-platform apps: UI/UX design, API integration, AI, testing, deployment and support.",
+    "Mobile app development company in Coimbatore building Android, iOS and cross-platform apps: UI/UX design, API integration, testing, launch and support.",
   keywords: [
     "Mobile App Development",
     "Mobile App Development Company",

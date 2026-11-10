@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "College ERP Coimbatore | Higher Education",
   description:
-    "Higher education software for Coimbatore colleges and universities. NAAC-ready campus ERP built for Anna University-affiliated institutions, with an on-site support team.",
+    "Campus ERP for Coimbatore colleges and universities: NAAC-ready, built for Anna University-affiliated institutions, with an on-site support team.",
   keywords: [
     "College ERP Coimbatore",
     "Higher Education Software Coimbatore",

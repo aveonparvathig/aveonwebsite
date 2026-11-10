@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("what-is-campus-erp")!;
 export const metadata: Metadata = {
   title: "What Is a Campus ERP? Guide for Indian Colleges",
   description:
-    "A campus ERP is one integrated system for admissions, academics, exams, fees, hostel, library, HR and accreditation. Learn the modules, how it differs from an SIS or LMS, pricing models in India, and how to choose one.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "A campus ERP is one integrated system for admissions, academics, exams, fees, hostel, library, HR and accreditation. Modules, pricing and how to choose.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "what is campus ERP",
     "campus management system",

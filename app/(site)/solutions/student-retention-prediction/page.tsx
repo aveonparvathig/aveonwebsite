@@ -4,7 +4,7 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "Student Retention Prediction | AI Analytics",
-  description: "Predict at-risk students before they drop out. AI-powered analytics identify struggling students early for targeted interventions. Improve retention and graduation rates.",
+  description: "Predict at-risk students before they drop out. AI analytics flag struggling students early so you can intervene and improve retention and graduation.",
   keywords: [
     "student retention prediction",
     "at-risk student identification",

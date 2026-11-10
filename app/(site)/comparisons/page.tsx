@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Compare Campus ERP Vendors | Scorecard",
   description:
-    "A weighted 12-criterion scorecard for comparing campus ERP vendors in India: integration, academic fit, OBE, accreditation, implementation, data ownership, hosting, support and five-year cost. With Aveon's answers to each.",
+    "A weighted 12-criterion scorecard for comparing campus ERP vendors in India, from integration and OBE to support and five-year cost, with Aveon's answers.",
   keywords: [
     "campus ERP comparison",
     "how to choose college ERP",

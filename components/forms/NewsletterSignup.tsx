@@ -3,6 +3,8 @@
 import { useState, type FormEvent } from "react";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { EventType } from "@/lib/analytics";
+import { trackConversion } from "@/lib/analytics-conversions";
+import { getAttribution } from "@/lib/attribution";
 
 interface NewsletterSignupProps {
   /** "newsletter" for the footer, or a magnet slug for a gated resource. */
@@ -41,13 +43,15 @@ export function NewsletterSignup({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source, website }),
+        body: JSON.stringify({ email, source, website, attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
       trackLead({ leadType: "email", source, value: 10 });
       if (source !== "newsletter") {
         trackEvent(EventType.RESOURCE_DOWNLOAD, { resource: source });
+        // A guide download is a real (if early) lead; a plain newsletter signup is not.
+        trackConversion("magnet_lead", 10);
       }
       setEmail("");
     } catch {

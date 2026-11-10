@@ -15,7 +15,10 @@
 - `NEXT_PUBLIC_META_PIXEL_ID` set on Vercel + redeployed (see `GO_LIVE_CHECKLIST.md`). The site then fires:
   - **`PageView`** on every page (builds the "all visitors" audience)
   - **`ViewContent`** on `/pricing` and `/get-started` (builds the "hot" audience)
-  - **`Lead`** on every demo/contact/chatbot submit (optimisation + lookalike seed + exclusion)
+  - **`Lead`** on every demo/contact/chatbot submit and buyer's-guide download (optimisation + lookalike seed + exclusion)
+  - **`Contact`** on every tap on a phone number or WhatsApp button
+- **Verify the domain** in Meta Business Settings → Brand safety → Domains (DNS TXT record at GoDaddy) before
+  running conversion campaigns; without it Meta limits which events you can optimise for.
 - Verify with the **Meta Pixel Helper** extension: load the site → see `PageView`; open `/pricing` → see `ViewContent`; submit the demo form → see `Lead`.
 
 ---
@@ -31,6 +34,11 @@
 4. **Lookalike 1% – India** — from the **Lead** source audience, India, 1%.
 
 > Audiences need ~1,000+ people to serve well — another reason to launch Google first and wait.
+>
+> **Revised 10 Nov 2026 — use 180 days, not 30, to start.** At current traffic a 30-day visitor audience is
+> unlikely to reach 1,000 people, so Meta will under-deliver or not serve at all. Build audiences 1 and 2 with
+> a **180-day** window (the maximum), check the estimated size in Ads Manager, and only tighten to 30 days once
+> the 180-day audience is comfortably above ~5,000.
 
 ---
 
@@ -40,7 +48,7 @@
 
 **Ad set 1 — Warm retargeting** (launch this first)
 - **Audience:** *All visitors – 30 days*, **Exclude:** *Leads – 180 days* (don't pay to chase people who already converted).
-- **Optimise for:** Lead (conversion event = `Lead`). If too few conversions at first, optimise for Landing Page Views for ~1 week, then switch.
+- **Optimise for:** **Landing Page Views** to begin with. Meta needs roughly 50 optimisation events per ad set per week to leave its learning phase, and this site will not produce 50 `Lead` events a week from retargeting alone. Switch to `Lead` only once weekly leads from Meta get near that number; until then `Lead` is still recorded and reported, it just isn't the optimisation target.
 - **Placements:** Advantage+ (automatic).
 - **Budget:** ₹150–250/day.
 
@@ -71,7 +79,7 @@ Meta limits: Primary text shown ~125 chars before "…", Headline ~40 chars.
 - **Card headlines:** Automate admissions · One-click exam results · NAAC reports from live data
 - Each card → `/get-started`.
 
-> Images: reuse the site's product screenshots / client-logo strip / the OG image. Keep text on images < 20% for best delivery.
+> Images: reuse the site's product screenshots / client-logo strip / the OG image. Keep on-image text short and readable on a phone (Meta dropped its old "under 20% text" rule in 2020, so there is no hard limit).
 
 ---
 

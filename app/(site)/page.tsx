@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
@@ -28,11 +29,7 @@ export const metadata: Metadata = {
     "learning management system",
     "education ERP India",
   ],
-  openGraph: {
-    title: "Campus ERP & LMS for Universities & Colleges",
-    description: `AI-powered campus management platform serving ${siteConfig.stats.institutions} institutions.`,
-    url: siteConfig.url,
-  },
+  openGraph: { ...baseOpenGraph, url: siteConfig.url },
 };
 
 export default function HomePage() {

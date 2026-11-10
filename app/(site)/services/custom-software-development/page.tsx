@@ -10,7 +10,7 @@ import { customSoftwareFaqs } from "@/lib/data/custom-software-faqs";
 export const metadata: Metadata = {
   title: "Custom Software Development Company in Coimbatore",
   description:
-    "Custom software development company in Coimbatore, India delivering enterprise applications, SaaS platforms and web solutions. 40+ technologies, 6-phase delivery, ROI-focused. Scale from MVP to enterprise.",
+    "Custom software development company in Coimbatore, India, building enterprise applications, SaaS platforms and web solutions from MVP to enterprise scale.",
   keywords: [
     "Custom Software Development",
     "Custom Software Development Company",

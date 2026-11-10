@@ -5,17 +5,23 @@ import { posts } from "@/lib/data/posts";
 import { staticPosts } from "@/lib/data/static-posts";
 import { stateSlugs } from "@/lib/data/states";
 
-const buildDate = new Date();
-
 type Entry = MetadataRoute.Sitemap[number];
 
+// lastModified is set only where a real edit date exists (blog posts). Stamping
+// every URL with the build time made all 59 dates change on each deploy, which
+// teaches crawlers to ignore the field; no date is better than a false one.
 function entry(
   path: string,
   priority: number,
   changeFrequency: Entry["changeFrequency"] = "monthly",
-  lastModified: Date = buildDate,
+  lastModified?: Date,
 ): Entry {
-  return { url: `${siteConfig.url}${path}`, lastModified, changeFrequency, priority };
+  return {
+    url: `${siteConfig.url}${path}`,
+    ...(lastModified ? { lastModified } : {}),
+    changeFrequency,
+    priority,
+  };
 }
 
 const hubRoutes = ["/products", "/services", "/solutions"];
@@ -30,6 +36,9 @@ const staticRoutes = [
   "/comparisons",
   "/contact",
 ];
+
+// Indexable commercial pages that sit outside the hubs above.
+const commercialRoutes = ["/pricing", "/resources/college-erp-buyers-guide"];
 
 const legalRoutes = ["/privacy", "/terms"];
 
@@ -58,6 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     entry("", 1, "weekly"),
     ...hubRoutes.map((p) => entry(p, 0.9, "weekly")),
+    ...commercialRoutes.map((p) => entry(p, 0.8)),
     ...staticRoutes.map((p) => entry(p, 0.7)),
     ...legalRoutes.map((p) => entry(p, 0.3, "yearly")),
     ...products.map((p) => entry(`/products/${p.slug}`, 0.8)),

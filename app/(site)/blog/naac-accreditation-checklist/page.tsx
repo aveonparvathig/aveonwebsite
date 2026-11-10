@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("naac-accreditation-checklist")!;
 export const metadata: Metadata = {
   title: "NAAC Accreditation Checklist | Compliance",
   description:
-    "NAAC accreditation checklist for Indian colleges: the seven criteria and their weightages, the IIQA, SSR, DVV and peer-team process, grading bands, a 12-month preparation timeline and the documents to keep ready.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "NAAC accreditation checklist for Indian colleges: the seven criteria and weightages, the IIQA, SSR, DVV and peer-team process, timeline and documents.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "NAAC accreditation",
     "NAAC checklist",

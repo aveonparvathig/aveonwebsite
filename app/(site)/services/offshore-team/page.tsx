@@ -9,7 +9,7 @@ import OffshoreContent, { offshoreFaqs } from "@/components/sections/OffshoreCon
 export const metadata: Metadata = {
   title: "Offshore Development Team in India for US Companies",
   description:
-    "US companies hire dedicated offshore development teams in India with Aveon: full-stack developers, QA, DevOps and AI specialists. 40-60% cost savings, daily US-hours overlap and overnight delivery. Offshore development centre, team augmentation and staff augmentation from Coimbatore.",
+    "Dedicated offshore development teams in India for US companies: developers, QA, DevOps and AI specialists, with 40-60% savings and daily US-hours overlap.",
   keywords: [
     "Offshore Development Team",
     "Offshore Development Company",

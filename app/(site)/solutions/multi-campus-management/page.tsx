@@ -4,7 +4,7 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 
 export const metadata: Metadata = {
   title: "Multi-Campus Management | Unified Platform",
-  description: "Unified multi-campus university management platform. Centralized student records, admissions, academics and operations across multiple campuses. Streamline administration for distributed institutions.",
+  description: "Multi-campus management platform: centralised student records, admissions, academics and operations across every campus of a trust or university.",
   keywords: [
     "multi-campus university management",
     "distributed campus system",

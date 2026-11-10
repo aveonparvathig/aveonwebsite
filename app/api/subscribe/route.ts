@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   // Honeypot filled → silently accept.
   if (parsed.data.website) return NextResponse.json({ ok: true });
 
-  const { email, name, source } = parsed.data;
+  const { email, name, source, attribution } = parsed.data;
   const isMagnet = Boolean(source && source !== "newsletter");
 
   const { ok } = await saveLead({
@@ -34,6 +34,7 @@ export async function POST(request: Request) {
     email,
     interest: isMagnet ? source : "Newsletter",
     source: isMagnet ? "magnet" : "newsletter",
+    attribution,
     notifySubject: isMagnet
       ? `[Website] Lead magnet: ${source}`
       : "[Website] Newsletter signup",

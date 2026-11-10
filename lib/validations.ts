@@ -1,5 +1,18 @@
 import { z } from "zod";
 import { products } from "./data/products";
+import { ATTRIBUTION_FIELDS, ATTRIBUTION_MAX_LEN, type AttributionField } from "./attribution";
+
+/**
+ * Ad-click attribution sent along with a lead (see lib/attribution.ts). Every
+ * field is optional and length-capped; unknown keys are stripped.
+ */
+export const attributionSchema = z
+  .object(
+    Object.fromEntries(
+      ATTRIBUTION_FIELDS.map((f) => [f, z.string().max(ATTRIBUTION_MAX_LEN).optional()]),
+    ) as Record<AttributionField, z.ZodOptional<z.ZodString>>,
+  )
+  .optional();
 
 export const contactSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -12,6 +25,7 @@ export const contactSchema = z.object({
   message: z.string().min(10, "Please tell us a bit more (min 10 characters)"),
   /** Honeypot — must stay empty. */
   website: z.string().max(0).optional().or(z.literal("")),
+  attribution: attributionSchema,
 });
 
 export const demoBookingSchema = z.object({
@@ -28,6 +42,7 @@ export const demoBookingSchema = z.object({
   institute: z.string().min(2, "Please enter your institute name"),
   city: z.string().min(2, "Please enter your city / country"),
   website: z.string().max(0).optional().or(z.literal("")),
+  attribution: attributionSchema,
 });
 
 export const subscribeSchema = z.object({
@@ -37,6 +52,7 @@ export const subscribeSchema = z.object({
   source: z.string().max(60).optional(),
   /** Honeypot — must stay empty. */
   website: z.string().max(0).optional().or(z.literal("")),
+  attribution: attributionSchema,
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;

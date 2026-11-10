@@ -9,9 +9,9 @@ import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "College ERP Pricing in India — How Aveon Pricing Works",
+  title: "College ERP Pricing in India: How It Works",
   description:
-    "How campus ERP pricing works in India: what drives the cost, the three pricing models, the full 5-year cost checklist, and how to get a transparent quote for your institution.",
+    "How campus ERP pricing works in India: what drives the cost, the three pricing models, the 5-year cost checklist and how to get a transparent quote.",
   alternates: { canonical: "/pricing" },
 };
 

@@ -33,7 +33,7 @@ One **Search** campaign, India geo, four ad groups by intent:
 
 Start with **A and D only** if budget is at the ₹25k end (highest intent, best CPL); add B and C as budget allows.
 
-**Settings:** Search Network only (no Display/Search Partners at launch) · Location: India (Tamil Nadu + Karnataka boosted, or start TN-only) · Language: English + Tamil · Bidding: **Maximise Conversions** once ~15–20 conversions exist; until then **Manual CPC** with a ₹40–70 cap to control spend · Ad schedule: Mon–Sat 8:30–18:30 IST weighted (office hours = faster callback).
+**Settings:** Search Network only (no Display/Search Partners at launch) · Location: India (Tamil Nadu + Karnataka boosted, or start TN-only) — under *Location options* choose **"Presence: people in or regularly in your targeted locations"**, not the default "Presence or interest" (the default also shows ads to people outside India who merely search about India) · Language: English + Tamil · Bidding: **Maximise Conversions** once ~15–20 conversions exist; until then **Manual CPC** with a ₹40–70 cap to control spend · Ad schedule: Mon–Sat 8:30–18:30 IST weighted (office hours = faster callback).
 
 ---
 
@@ -72,7 +72,21 @@ login           result          student login    sign in
 job             jobs            salary          internship
 pdf             ppt             notes           syllabus
 school fees     mba             course          admission 2026
+full form       meaning         what is         definition
+training        tutorial        certification   class
+tally           sap             odoo            oracle
 ```
+The last three rows (added 10 Nov 2026) cut definition-seekers ("erp full form"), people looking for ERP
+*training*, and searches for general-business ERP brands that are not college software.
+
+> **Bid cap:** the ₹40–70 Manual CPC cap below is a planning guess. Before launch, check each keyword's
+> "top of page bid (low/high range)" in Keyword Planner and set the cap inside that range — a cap below the
+> low range means the ads simply won't show.
+
+### Brand campaign (separate, ~₹50–100/day)
+A second small Search campaign on exact/phrase `aveon infotech`, `aveon erp`, `aveon campus erp`, landing on
+the homepage. It is cheap, stops competitors bidding on the name, and keeps brand clicks out of the main
+campaign's numbers so the cost-per-lead there reflects new demand only.
 These kill the student / portal-login / project-download traffic that dominates current impressions.
 
 ---
@@ -185,6 +199,15 @@ Per-student or per-module pricing. Start small, scale later. Get a quote in a da
 4. Redeploy. `components/analytics/Pixels.tsx` registers the tag and `lib/analytics-conversions.ts`
    fires the conversion on every demo/contact/chatbot lead — no extra tag manager needed.
 5. (Optional retargeting) set `NEXT_PUBLIC_META_PIXEL_ID` to also build a Meta audience from the same leads.
+6. **Calls & WhatsApp:** create a second conversion action *Contact* (mark it **Secondary**) and set
+   `NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL=<label>`. Every tap on a phone number or WhatsApp button reports to it.
+7. **Which keyword produced the customer:** every lead email now lists the ad click id (`Ad: gclid`) and
+   campaign tags the visitor arrived with. When a lead becomes a customer, upload that gclid under
+   Google Ads → Conversions → **Uploads** (an "offline conversion") so bidding learns from real sales, not
+   just form fills. Turn on **auto-tagging** in the account (Admin → Account settings) so the gclid is added.
+
+What each lead type sends: demo ₹50 · chatbot ₹30 · contact ₹20 · buyer's-guide download ₹10 (all to the lead
+label). A plain newsletter signup sends nothing.
 
 Verify in Google Ads → Conversions → "Diagnostics" within 24h of the first test lead.
 

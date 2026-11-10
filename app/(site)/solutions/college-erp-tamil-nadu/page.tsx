@@ -9,7 +9,7 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 export const metadata: Metadata = {
   title: "College ERP Software in Tamil Nadu",
   description:
-    "Campus ERP built in Coimbatore for Tamil Nadu colleges: Anna University, Bharathiar and TNAU workflows, autonomous-college examinations, TN scholarship and fee-committee reporting, NAAC and AICTE evidence. Named clients across Coimbatore, Pollachi, Erode, Salem and beyond.",
+    "Campus ERP built in Coimbatore for Tamil Nadu colleges: Anna University, Bharathiar and TNAU workflows, autonomous-college exams, NAAC and AICTE evidence.",
   keywords: [
     "College ERP Tamil Nadu",
     "Anna University affiliated college ERP",

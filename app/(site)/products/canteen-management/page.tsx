@@ -7,7 +7,7 @@ import { faqJsonLd } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "Canteen Management System for Colleges & Campuses",
   description:
-    "Canteen management system for colleges, universities and campuses: cashless ID-card and RFID payments, digital menu and ordering, GST billing, stock and vendor management, and hostel-mess integration on one platform.",
+    "Canteen management system for colleges and campuses: cashless ID-card and RFID payments, digital ordering, GST billing, stock and vendor management.",
   keywords: [
     "Canteen Management System",
     "Canteen Management Software",

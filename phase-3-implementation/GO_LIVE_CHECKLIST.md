@@ -12,14 +12,10 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
 
 ## Tier 0 — Stop losing leads (do this first) 🔴
 
-- [ ] **Create a Sanity Editor token.** sanity.io/manage → your project (`jc3ht4hv`) → **API → Tokens →
-      Add token → Editor**. Copy it.
-  - Why: the current token is **read-only**, so leads can't be written to Studio (verified: `403 permission
-    "create" required`). Until this is set, leads survive only in email + server logs.
-  - [ ] Set on Vercel: `SANITY_API_WRITE_TOKEN=<token>` → redeploy.
-  - [ ] **Verify:** submit the demo form on the live site → a **Lead** appears in Sanity Studio (`/studio`).
+> Updated 10 Nov 2026: the Sanity lead inbox was removed (leads are email-only), so the old
+> "Sanity Editor token" step is gone. Lead email was verified delivering on 6 Nov 2026.
 
-- [ ] **Turn on lead emails (Resend).** resend.com → create an API key.
+- [x] **Turn on lead emails (Resend).** resend.com → create an API key.
   - [ ] Set `RESEND_API_KEY=<key>`.
   - [ ] Add & verify your domain in Resend (Domains → Add → add the DNS records), then set
         `RESEND_FROM="Aveon <hello@aveoninfotech.com>"`. Until the domain is verified, email only reaches the
@@ -35,6 +31,13 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
       form* → value ₹50, count *One*. Copy the **Conversion ID** (`AW-…`) and **label**.
   - [ ] Set `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXX` and `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL=<label>` → redeploy.
   - [ ] **Verify:** submit a test lead → Google Ads → Conversions → **Diagnostics** shows it within ~24h.
+  - [ ] **Calls & WhatsApp (optional but recommended).** Create a second conversion action *Contact* (category
+        *Contact*, count *One*, mark it **Secondary**) → set `NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL=<label>` → redeploy.
+        Every tap on a phone number or WhatsApp button then reports to it. Promote it to Primary only once
+        you've confirmed those calls are real buyers.
+  - [ ] **Check the lead email shows the ad click.** Open the site with `?gclid=TEST123&utm_source=google` on the
+        end of the URL, submit the demo form → the notification email lists `Ad: gclid`, `Ad: utm_source` and
+        `Ad: landing_page`. Keep these with the lead: they let you tell Google which keywords produced customers.
 - [ ] **Meta Pixel (retargeting).** business.facebook.com → Events Manager → create a Pixel → copy the ID.
   - [ ] Set `NEXT_PUBLIC_META_PIXEL_ID=<id>` → redeploy.
   - [ ] **Verify:** Meta's *Pixel Helper* browser extension shows PageView + a Lead event on form submit.
@@ -72,7 +75,7 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
 
 ## Set-and-forget verification (after Tier 0–1)
 
-- [ ] Submit each form once on the live site; confirm: lead in Studio, notification email, auto-reply,
+- [ ] Submit each form once on the live site; confirm: notification email, auto-reply,
       GA4 DebugView shows the event, Google Ads/Meta register the conversion.
 - [ ] Watch the first week of GA4 + Google Ads; use the kit's weekly optimisation checklist.
 
@@ -82,9 +85,9 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
 
 | Var | Unlocks | Tier |
 |---|---|---|
-| `SANITY_API_WRITE_TOKEN` | Leads persist to Studio | 0 |
 | `RESEND_API_KEY` + `RESEND_FROM` | Lead emails + auto-reply | 0 |
 | `NEXT_PUBLIC_GOOGLE_ADS_ID` + `_LEAD_LABEL` | Google Ads conversions | 1 |
+| `NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL` | Phone / WhatsApp click conversions | 1 |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Meta retargeting | 1 |
 | `NEXT_PUBLIC_GBP_REVIEW_URL` | `/review` → review form | 2 |
 

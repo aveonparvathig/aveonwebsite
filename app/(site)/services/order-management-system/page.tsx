@@ -9,7 +9,7 @@ import OrderManagementContent, { orderManagementFaqs } from "@/components/sectio
 export const metadata: Metadata = {
   title: "Order Management System Software in India",
   description:
-    "Order management system software for distributors, manufacturers and retailers in India. Automates purchase orders, vendor management, invoice matching and multi-channel order workflows. Reduce procurement time by 50%.",
+    "Order management system software for distributors, manufacturers and retailers in India: purchase orders, vendors, invoice matching and order workflows.",
   keywords: [
     "Order Management System",
     "Order Management Software",

@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("nba-accreditation-guide")!;
 export const metadata: Metadata = {
   title: "NBA Accreditation Guide | SAR & Process",
   description:
-    "How NBA programme accreditation works for engineering colleges: Tier I vs Tier II, the Washington Accord, eligibility, the twelve Programme Outcomes, the ten SAR criteria and the evidence each needs, the evaluation visit, 6-year and 3-year outcomes, and a 12-month preparation plan.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "How NBA accreditation works for engineering colleges: Tier I vs II, the twelve Programme Outcomes, the ten SAR criteria, the visit and a 12-month plan.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "NBA accreditation",
     "NBA SAR criteria",

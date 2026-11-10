@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("erp-migration-best-practices")!;
 export const metadata: Metadata = {
   title: "ERP Migration Best Practices for Campuses",
   description:
-    "A phase-by-phase playbook for migrating a college or university to a new campus ERP: data audit, cleansing and mapping, parallel runs, cut-over timing, role-based training, go-live and the first 90 days.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "A phase-by-phase playbook for migrating a college to a new campus ERP: data audit, cleansing, mapping, parallel runs, cut-over, training and go-live.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "ERP migration",
     "campus ERP data migration",

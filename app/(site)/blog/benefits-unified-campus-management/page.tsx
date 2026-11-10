@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("benefits-unified-campus-management")!;
 export const metadata: Metadata = {
   title: "Unified Campus Management | ERP Benefits",
   description:
-    "The business case for running a college or university on one campus database: where fragmented systems cost money, what changes office by office, how to measure the return, and how to present it to a governing body.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "The business case for running a college on one campus database: what fragmented systems cost, what changes, and how to measure and present the return.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "unified campus management",
     "campus management benefits",

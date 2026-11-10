@@ -1,3 +1,4 @@
+import { baseOpenGraph } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPost } from "@/lib/data/static-posts";
@@ -10,8 +11,8 @@ const post = getStaticPost("multi-campus-management-guide")!;
 export const metadata: Metadata = {
   title: "Multi-Campus Management Guide for Trusts",
   description:
-    "How education trusts and groups run several colleges and schools on one platform: the three operating models, what to centralise and what to keep local, the data architecture that makes consolidation work, compliance at scale, a rollout sequence and the KPIs a group dashboard should show.",
-  openGraph: { type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
+    "How education trusts run several colleges and schools on one platform: operating models, what to centralise, data architecture, compliance and rollout.",
+  openGraph: { ...baseOpenGraph, type: "article", publishedTime: post.publishedAt, modifiedTime: post.dateModified },
   keywords: [
     "multi-campus management",
     "education trust ERP",

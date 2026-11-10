@@ -6,6 +6,7 @@ import { services } from "@/lib/data/services";
 import { siteConfig } from "@/lib/constants";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { trackConversion } from "@/lib/analytics-conversions";
+import { getAttribution } from "@/lib/attribution";
 
 type QuickReply = { label: string; value: string };
 type Msg = { id: number; role: "user" | "bot"; text: string; quickReplies?: QuickReply[]; typing?: boolean };
@@ -186,11 +187,11 @@ export default function ChatWidget() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ action: "lead", data: lead }),
+        body: JSON.stringify({ action: "lead", data: lead, attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error();
       trackLead({ leadType: "chatbot", source: "chatbot", value: 30, properties: { interest: lead.interest || "unknown" } });
-      trackConversion("chatbot_lead");
+      trackConversion("chatbot_lead", 30);
       setShowLead(false);
       setLeadDone(true);
       botSay(`Thanks, ${lead.name.split(" ")[0]}! 🎉 Your request is in. Our team will reach out within one business day. Anything else I can help with?`, [

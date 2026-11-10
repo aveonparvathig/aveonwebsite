@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const { name, email, phone, product, institute, city } = parsed.data;
+  const { name, email, phone, product, institute, city, attribution } = parsed.data;
   const productTitle = getProduct(product)?.title ?? product;
 
   const { ok } = await saveLead({
@@ -34,6 +34,7 @@ export async function POST(request: Request) {
     institution: institute,
     city,
     source: "demo_form",
+    attribution,
     notifySubject: `[Website] Demo request: ${productTitle}`,
   });
 

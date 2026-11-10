@@ -54,10 +54,20 @@ const guidesBySlug: Record<string, string[]> = {
 
 /** Per-slug SEO overrides (title/description/keywords) for high-value pages. */
 const seoOverrides: Record<string, Metadata> = {
+  // Description-only overrides: the product copy (local or CMS) runs past the
+  // ~160 characters Google shows, so the meta description gets a shorter cut.
+  "lms-ai-chatbot": {
+    description:
+      "Learning management system with an AI chatbot: courses, learning resources, assessments and instant student assistance in one digital environment.",
+  },
+  "fees-management": {
+    description:
+      "Fee management software for campuses: fee structures, online payments, digital receipts, dues tracking, scholarships and financial reports in one place.",
+  },
   "inventory-management": {
     title: "Inventory Management System for Campuses",
     description:
-      "Aveon Inventory Management System helps educational institutions organize items, suppliers, stores, purchases, stock receipts, issues, transfers, returns and inventory reports through an integrated ERP platform.",
+      "Inventory management for educational institutions: items, suppliers, stores, purchases, stock receipts, issues, transfers, returns and inventory reports.",
     keywords: [
       "Inventory Management System",
       "Inventory Management Software",
@@ -74,7 +84,7 @@ const seoOverrides: Record<string, Metadata> = {
   "hostel-mess": {
     title: "Hostel & Mess Management System",
     description:
-      "Aveon Hostel & Mess Management System helps colleges and universities manage hostel applications, rooms, beds, attendance, leave, permissions, gate passes, mess, billing, menus, stock and purchases.",
+      "Hostel and mess management for colleges and universities: applications, rooms, attendance, leave, gate passes, mess billing, menus, stock and purchases.",
     keywords: [
       "Hostel Management System",
       "Hostel & Mess Management Software",
@@ -91,7 +101,7 @@ const seoOverrides: Record<string, Metadata> = {
   "library-management": {
     title: "Library Management System Software",
     description:
-      "Aveon Library Management System helps schools, colleges and universities manage catalogues, books, accession, patrons, circulation rules, subscriptions, stock verification and OPAC online book search.",
+      "Library management system for schools, colleges and universities: catalogues, accession, circulation, subscriptions, stock verification and OPAC search.",
     keywords: [
       "Library Management System",
       "Library Management Software",
@@ -108,7 +118,7 @@ const seoOverrides: Record<string, Metadata> = {
   "coe": {
     title: "Examination Management System & COE Software",
     description:
-      "Examination management system and Controller of Examination (COE) software for colleges and universities: question papers, timetables, hall seating, evaluation, moderation, results, revaluation and mark sheets on one platform.",
+      "Examination management and COE software for colleges and universities: question papers, timetables, hall seating, evaluation, results and mark sheets.",
     keywords: [
       "Examination Management System",
       "Controller of Examination Software",
@@ -126,7 +136,7 @@ const seoOverrides: Record<string, Metadata> = {
   "hrm-payroll": {
     title: "HR Management & Payroll Software",
     description:
-      "Aveon HR Management & Payroll Software helps educational institutions manage employee profiles, recruitment, leave, attendance (biometric & face reader), overtime, salary calculation, payroll, appraisal and payslips through one integrated ERP platform.",
+      "HR and payroll software for educational institutions: recruitment, leave, biometric attendance, salary calculation, payroll, appraisal and payslips.",
     keywords: [
       "HR Management & Payroll Software",
       "Human Resource Management Software",
@@ -145,7 +155,7 @@ const seoOverrides: Record<string, Metadata> = {
   "school-erp": {
     title: "School Management Software & School ERP in India",
     description:
-      "School management software and school ERP for CBSE, state-board and matriculation schools in India: admissions, attendance, fees, examinations, report cards, transport and a parent app on one platform.",
+      "School management software for CBSE, state-board and matriculation schools: admissions, attendance, fees, exams, report cards, transport and a parent app.",
     keywords: [
       "School Management Software",
       "School Management Software India",
@@ -164,7 +174,7 @@ const seoOverrides: Record<string, Metadata> = {
   "university-erp": {
     title: "University ERP & Management System",
     description:
-      "Aveon University Management System connects admissions, academics, students, examinations, fees, library, hostel, HR, research, placement and administration on one digital platform.",
+      "University management system connecting admissions, academics, examinations, fees, library, hostel, HR, research and placement on one platform.",
     keywords: [
       "University Management System",
       "University ERP Software",
@@ -183,7 +193,7 @@ const seoOverrides: Record<string, Metadata> = {
   "college-erp": {
     title: "College ERP Software for Colleges in India",
     description:
-      "College ERP software and college management software for affiliated and autonomous colleges in India: admissions, OBE, COE, fees, hostel, HR and NAAC reporting on one platform. Live at 200+ institutions.",
+      "College ERP software for affiliated and autonomous colleges in India: admissions, OBE, COE, fees, hostel, HR and NAAC reporting on one platform.",
     keywords: [
       "College ERP Software",
       "College Management Software",
@@ -203,9 +213,9 @@ const seoOverrides: Record<string, Metadata> = {
     ],
   },
   "online-examination": {
-    title: "Online Examination Software for Colleges & Universities",
+    title: "Online Examination Software for Colleges",
     description:
-      "Online examination software for colleges, universities and schools: question banks, randomised papers, scheduled and on-demand online exams, AI-assisted proctoring, auto-evaluation and instant results, connected to your campus ERP.",
+      "Online examination software for colleges and universities: question banks, randomised papers, AI-assisted proctoring, auto-evaluation and instant results.",
     keywords: [
       "Online Examination Software",
       "Online Exam Software",

@@ -8,7 +8,7 @@ import RelatedGuides from "@/components/blog/RelatedGuides";
 export const metadata: Metadata = {
   title: "College ERP Software in Karnataka",
   description:
-    "Campus ERP for Karnataka colleges: autonomous-college examinations, Bengaluru North and City University and VTU workflows, NAAC and NBA evidence. Running at Kristu Jayanti College, Bengaluru, with implementation from Coimbatore.",
+    "Campus ERP for Karnataka colleges: autonomous-college examinations, Bengaluru and VTU workflows, NAAC and NBA evidence. Running at Kristu Jayanti College.",
   keywords: [
     "College ERP Karnataka",
     "College management software Bengaluru",

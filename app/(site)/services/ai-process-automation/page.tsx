@@ -9,7 +9,7 @@ import AiAutomationContent, { aiAutomationFaqs } from "@/components/sections/AiA
 export const metadata: Metadata = {
   title: "AI Process Automation Software",
   description:
-    "AI-powered process automation software reducing manual work by 80%. Automate workflows, document processing, approvals, and data tasks. 5x faster processing. 40-60% cost savings.",
+    "AI process automation software for workflows, document processing, approvals and data tasks. Cut manual work, speed up processing and lower costs.",
   keywords: [
     "AI Process Automation",
     "AI Workflow Automation",

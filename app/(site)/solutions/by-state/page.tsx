@@ -6,7 +6,7 @@ import { STATES_DATA } from "@/lib/data/states";
 export const metadata: Metadata = {
   title: "College ERP Solutions by State in India",
   description:
-    "State-specific college ERP for institutions across India. NAAC-ready software built for Anna University, JNTU and VTU affiliated colleges in Tamil Nadu, Telangana, Karnataka, Maharashtra, Delhi and more.",
+    "College ERP by state in India. Live pages for Tamil Nadu and Karnataka, with university-specific examination, compliance and NAAC reporting workflows.",
   keywords: [
     "College ERP Solutions by State",
     "Higher Education Software India",
