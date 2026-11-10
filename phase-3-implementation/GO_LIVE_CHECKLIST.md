@@ -27,9 +27,16 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
 
 ## Tier 1 — Turn on the paid channel 🟠
 
-- [ ] **Create the Google Ads conversion action.** Google Ads → **Goals → Conversions → New** → *Submit lead
-      form* → value ₹50, count *One*. Copy the **Conversion ID** (`AW-…`) and **label**.
-  - [ ] Set `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXX` and `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL=<label>` → redeploy.
+- [x] **Create the Google Ads conversion action.** Done 6 Nov 2026 in account 206-043-2215: action
+      **Demo/Lead** (*Submit lead form*, Primary, count *One*). Conversion ID `AW-457432174`; copy the label
+      from Goals → Conversions → Demo/Lead → *See event snippet* (the part after the `/` in `send_to`).
+  - [ ] Set `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-457432174` and `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL=<label>` → redeploy.
+        **Not done as of 10 Nov 2026:** the live site serves only the two GA4 ids, and Google Ads shows the
+        *Submit lead form* goal as "Needs attention". Do not enable any campaign until this is fixed —
+        check in PowerShell (prints `True` once the tag is live):
+        `(Invoke-WebRequest https://www.aveoninfotech.com/get-started).Content -match 'AW-457432174'`
+  - [ ] **Campaign goal:** every campaign uses *campaign-specific goals → Submit lead form* only. The account
+        defaults include Page view / Engagement / Get directions as primary actions.
   - [ ] **Verify:** submit a test lead → Google Ads → Conversions → **Diagnostics** shows it within ~24h.
   - [ ] **Calls & WhatsApp (optional but recommended).** Create a second conversion action *Contact* (category
         *Contact*, count *One*, mark it **Secondary**) → set `NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL=<label>` → redeploy.
@@ -43,8 +50,16 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
   - [ ] **Verify:** Meta's *Pixel Helper* browser extension shows PageView + a Lead event on form submit.
 - [ ] **Mark GA4 conversions.** GA4 (both properties) → Admin → **Events** → toggle `demo_request`,
       `form_submit`, `chatbot_lead_capture`, `qualified_lead` as **key events/conversions**.
-- [ ] **Launch the campaign** using `GOOGLE_ADS_STARTER_KIT.md` (structure, keywords, negatives, ads, budget).
-      Start with ad groups **A (College ERP)** + **D (Pricing)** at the ₹25k tier.
+- [x] **Build the campaign.** Done 10 Nov 2026: *Search - Campus ERP - India* (ID 24457638856), **Paused**,
+      five ad groups (A, B, E, F, N), 33 keywords, 50 negatives, ₹1,000/day, ₹70 max CPC, starts 11 Nov.
+      Details and the differences from the kit copy are in `GOOGLE_ADS_STARTER_KIT.md` → "As built in the account".
+  - [ ] **Enable it** (Campaigns → grey pause dot → Enable) — only after the Google Ads tag is live on the site
+        (first item in this tier) and the ads show *Eligible* / *Approved* instead of *Under review*.
+  - [ ] Complete Google's **"Confirm that it's you"** prompt (it can be skipped only until 24 Nov 2026) and the
+        *Protect your account* notice.
+  - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the
+        account is a personal name, so ads currently run with a placeholder name taken from the URL.
+  - [ ] Add sitelinks, callouts, structured snippets and the call asset from the kit.
 
 ### Ads launch sequence (do in this order)
 1. **Tracking first** (above) — Google Ads conversion + Meta Pixel env vars set & verified. Ads are blind without it.

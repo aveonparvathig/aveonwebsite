@@ -30,8 +30,58 @@ One **Search** campaign, India geo, four ad groups by intent:
 | B — University / Campus | "university erp", "campus management system" | `/get-started` |
 | C — Regional (TN / Coimbatore / KA) | localized buyer searches | `/solutions/college-erp-tamil-nadu`, `/solutions/coimbatore`, `/solutions/college-erp-karnataka` |
 | D — Pricing intent | "college erp price/cost" | `/pricing` |
+| E — Admissions | "admission management software" | `/products/college-erp` |
+| F — Fees | "fee management software", "online fee collection software" | `/products/fees-management` |
+| N — NAAC | "naac software", "iqac software" | `/products/iqac-naac-nba/naac` |
 
 Start with **A and D only** if budget is at the ₹25k end (highest intent, best CPL); add B and C as budget allows.
+
+> **11 Nov 2026 launch set (user's keyword themes):** A (college ERP + college management), B (campus
+> management), E (admissions), F (fees), N (NAAC) in one Search campaign at ~₹1,000/day. Five ad groups on
+> that budget is thin: if clicks are scarce in week 1, pause E first (the most student-heavy theme).
+> **Never add the bare themes as broad match** — "admission", "fee collection" and "NAAC" on their own match
+> students checking admission dates, paying fees and looking up a college's grade. Always use the buyer
+> wording below ("…software", "…system") in phrase or exact match.
+>
+> **Campaign goal:** set the campaign to **campaign-specific goals → Submit lead form only**. The account
+> defaults also include Page view, Engagement and Get directions as primary actions; left on "account
+> goals", bidding would treat a page view as a conversion.
+>
+> **Do not reuse the three old Smart campaigns** in the account ("College ERP System", "Online Examination
+> software", "Simplify Hostel Management"). Smart campaigns have no match types or proper negatives.
+
+### As built in the account — 10 Nov 2026
+
+Campaign **"Search - Campus ERP - India"** (ID 24457638856) exists in account 206-043-2215 and is **Paused**.
+
+| Setting | Value in the account |
+|---|---|
+| Type / goal | Search · Leads · campaign-specific goal *Submit lead forms* only |
+| Networks | Google Search only (Search partners and Display off) |
+| Location | India, *Presence* only |
+| Languages | All languages (the new campaign flow has no language picker; keywords are English) |
+| Budget / bidding | ₹1,000/day · Maximise clicks with a **₹70 max CPC limit** |
+| Dates / schedule | Starts 11 Nov 2026 · Mon–Sat 08:30–18:30 |
+| AI Max, broad match, auto-created assets | All off |
+| Ad groups | A - College ERP (8 kw) · B - Campus Management (8) · E - Admissions (6) · F - Fees (5) · N - NAAC (6) — 33 keywords, exact/phrase only, one RSA each |
+| Negatives | The 50 terms in section 3, campaign level |
+
+Differences from the copy in this kit, and why:
+- **Bidding is Maximise clicks + ₹70 cap, not Manual CPC.** The campaign wizard no longer offers Manual CPC; the
+  cap gives the same spend control. Switch to Manual CPC under Settings → Bidding if you prefer.
+- **"NBA" is not in any ad text** (e.g. "NAAC & NBA Ready ERP" became "NAAC Ready College ERP"). The wizard
+  flagged the first ad with no reason given; "NBA" is also a heavily protected sports trademark, so it was
+  removed as a precaution. This was not proven to be the cause — re-add it to one ad later and watch the status.
+- **"~30 days" became "about 30 days" and the "—" dash was removed** (non-standard symbols are a common
+  reason for ad disapproval).
+- **The three unconfirmed feature headlines are not live**: "Auto Receipts & Reminders", "Merit Lists in One
+  Click", "Criterion-Wise Data Capture" (and "merit lists" in the admissions description). Add them once
+  confirmed the product does them.
+- Ad group B also carries the phrase keywords "campus management system" and "campus management software".
+
+**Not done yet:** sitelinks, callouts, structured snippets and the call asset (section 4); the bid cap has not
+been checked against Keyword Planner's top-of-page range; ad group C (regional), D (pricing) and the brand
+campaign are not built.
 
 **Settings:** Search Network only (no Display/Search Partners at launch) · Location: India (Tamil Nadu + Karnataka boosted, or start TN-only) — under *Location options* choose **"Presence: people in or regularly in your targeted locations"**, not the default "Presence or interest" (the default also shows ads to people outside India who merely search about India) · Language: English + Tamil · Bidding: **Maximise Conversions** once ~15–20 conversions exist; until then **Manual CPC** with a ₹40–70 cap to control spend · Ad schedule: Mon–Sat 8:30–18:30 IST weighted (office hours = faster callback).
 
@@ -63,6 +113,24 @@ Start with **A and D only** if budget is at the ₹25k end (highest intent, best
 "college erp price"           "college erp cost"
 "college management software price"        "campus erp pricing"
 ```
+**Ad group E — Admissions**
+```
+[admission management software]            "admission management software"
+"college admission software"               "online admission system for colleges"
+"admission automation software"            "college admission management system"
+```
+**Ad group F — Fees**
+```
+[fee management software]                  "college fee management software"
+"online fee collection software"           "fee collection system for colleges"
+"fees management system for colleges"
+```
+**Ad group N — NAAC**
+```
+[naac software]                            "naac accreditation software"
+[iqac software]                            "naac ssr software"
+"aqar software"                            "naac documentation software"
+```
 
 ### Negative keywords (campaign-level — add before launch)
 ```
@@ -75,7 +143,16 @@ school fees     mba             course          admission 2026
 full form       meaning         what is         definition
 training        tutorial        certification   class
 tally           sap             odoo            oracle
+apply           last date       counselling     cutoff
+"admission form"  "fee structure"  "fees structure"  "pay fees"
+grade           ranking         "accredited colleges"  "list of"
+"peer team"     2027
 ```
+The last four rows (added 10 Nov 2026 with ad groups E, F and N) remove students applying for admission
+or paying fees and people looking up a college's NAAC grade. Deliberately **not** negative: `receipt`,
+`fee payment`, `criteria`, `form` on its own — buyers search "fee receipt software", "online fee payment
+software for colleges" and "naac criteria wise software". Watch the search-terms report in week 1 and add
+what actually shows up.
 The last three rows (added 10 Nov 2026) cut definition-seekers ("erp full form"), people looking for ERP
 *training*, and searches for general-business ERP brands that are not college software.
 
@@ -177,6 +254,72 @@ See exactly what drives college ERP cost and get a transparent, itemised quote. 
 Per-student or per-module pricing. Start small, scale later. Get a quote in a day.        (82)
 ```
 > Lands on `/pricing`, which explains the model, the 5-year cost checklist and captures the lead.
+
+### Ad group E — Admissions
+**Headlines**
+```
+Admission Management Software (29)
+Online Admission System       (23)
+Automate College Admissions   (27)
+Enquiry to Enrolment, Online  (28)
+Online Forms & Fee Payment    (26)
+Merit Lists in One Click      (24)
+Trusted by 200+ Institutions  (28)
+Go Live in About 30 Days      (24)
+Book a Free Demo              (16)
+Aveon Campus ERP              (16)
+```
+**Descriptions**
+```
+Online applications, merit lists, fee payment and enrolment on one platform. Free demo.   (87)
+Replace paper admission registers. Track every enquiry to enrolment. Book a demo.         (81)
+Part of Aveon College ERP: admissions flow into academics, exams and fees. No re-entry.   (87)
+```
+
+### Ad group F — Fees
+**Headlines**
+```
+Fee Management Software       (23)
+College Fee Collection System (29)
+Online Fee Collection         (21)
+Auto Receipts & Reminders     (25)
+Track Dues in Real Time       (23)
+Fee Reports in One Click      (24)
+Built for Indian Colleges     (25)
+Trusted by 200+ Institutions  (28)
+Book a Free Demo              (16)
+Aveon Campus ERP              (16)
+```
+**Descriptions**
+```
+Collect, track and reconcile college fees on one platform. Book a free demo.              (76)
+Fee heads, concessions, dues and receipts in one system. Linked to student records.       (83)
+Trusted by 200+ institutions and 1M+ students across India. Get a transparent quote.      (84)
+```
+
+### Ad group N — NAAC
+**Headlines**
+```
+NAAC Accreditation Software   (27)
+IQAC & NAAC Software          (20)
+SSR & AQAR Data in One Place  (28)
+NAAC Reports From Live Data   (27)
+Criterion-Wise Data Capture   (27)
+NAAC, NBA & NIRF Reporting    (26)
+Stop Compiling NAAC by Hand   (27)
+Trusted by 200+ Institutions  (28)
+Book a Free Demo              (16)
+Aveon Campus ERP              (16)
+```
+**Descriptions**
+```
+Capture NAAC data all year, not just before the audit. SSR and AQAR ready. Free demo.     (85)
+IQAC, NAAC, NBA and NIRF reporting from the same campus data. Book a walkthrough.         (81)
+Part of Aveon Campus ERP, trusted by 200+ institutions. See it on your own data.          (80)
+```
+> **Confirm before these run:** "Auto Receipts & Reminders", "Merit Lists in One Click" and
+> "Criterion-Wise Data Capture" describe product features I have not seen demonstrated. Remove any headline
+> the product does not actually do — an ad promise the demo cannot keep costs the lead.
 
 ### Assets / extensions (add all — they lift CTR for free)
 - **Sitelinks:** Products · Pricing · Comparisons · Coimbatore / Tamil Nadu
