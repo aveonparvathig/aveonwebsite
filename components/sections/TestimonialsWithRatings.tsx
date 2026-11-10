@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { siteConfig } from "@/lib/constants";
 
 export default function TestimonialsWithRatings() {
   const testimonials = [
@@ -90,7 +91,7 @@ export default function TestimonialsWithRatings() {
               ))}
             </div>
             <span className="text-sm font-bold text-navy-900">
-              4.8 out of 5 stars • 250+ Institutions
+              4.8 out of 5 stars • {siteConfig.stats.institutions} Institutions
             </span>
           </div>
 
@@ -101,7 +102,7 @@ export default function TestimonialsWithRatings() {
             </span>
           </h2>
           <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-relaxed text-navy-700 sm:mt-6">
-            200+ institutions rely on Aveon for unified campus management, OBE compliance and institutional excellence.
+            {siteConfig.stats.institutions} institutions rely on Aveon for unified campus management, OBE compliance and institutional excellence.
           </p>
         </div>
 
@@ -144,7 +145,7 @@ export default function TestimonialsWithRatings() {
         <div className="mt-12 grid gap-6 sm:grid-cols-3 sm:mt-16">
           <div className="rounded-2xl bg-gradient-to-br from-primary-50 to-primary-100/50 p-6 text-center">
             <div className="text-2xl font-bold text-primary-600 sm:text-3xl">
-              250+
+              {siteConfig.stats.institutions}
             </div>
             <p className="mt-2 text-sm font-medium text-navy-700">
               Institutions Served
