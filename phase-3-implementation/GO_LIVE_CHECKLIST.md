@@ -53,8 +53,11 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
 - [x] **Build the campaign.** Done 10 Nov 2026: *Search - Campus ERP - India* (ID 24457638856), **Paused**,
       five ad groups (A, B, E, F, N), 33 keywords, 50 negatives, ₹1,000/day, ₹70 max CPC, starts 11 Nov.
       Details and the differences from the kit copy are in `GOOGLE_ADS_STARTER_KIT.md` → "As built in the account".
-  - [ ] **Enable it** (Campaigns → grey pause dot → Enable) — only after the Google Ads tag is live on the site
-        (first item in this tier) and the ads show *Eligible* / *Approved* instead of *Under review*.
+  - [x] **Enable it.** Enabled 11 Nov 2026 at the owner's request: campaign status *Eligible (Learning)*, all
+        five ads *Eligible*. The three old Smart campaigns stay paused.
+        **Enabled without the Google Ads tag on the site** — Google Ads reports clicks and cost but zero
+        conversions until the env vars in the first item of this tier are set. Leads still arrive by email
+        with `Ad: gclid` attached, so count leads from the inbox until then.
   - [ ] Complete Google's **"Confirm that it's you"** prompt (it can be skipped only until 24 Nov 2026) and the
         *Protect your account* notice.
   - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the
