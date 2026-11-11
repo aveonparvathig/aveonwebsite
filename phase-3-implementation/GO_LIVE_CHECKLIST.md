@@ -30,10 +30,10 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
 - [x] **Create the Google Ads conversion action.** Done 6 Nov 2026 in account 206-043-2215: action
       **Demo/Lead** (*Submit lead form*, Primary, count *One*). Conversion ID `AW-457432174`; copy the label
       from Goals → Conversions → Demo/Lead → *See event snippet* (the part after the `/` in `send_to`).
-  - [ ] Set `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-457432174` and `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL=<label>` → redeploy.
-        **Not done as of 10 Nov 2026:** the live site serves only the two GA4 ids, and Google Ads shows the
-        *Submit lead form* goal as "Needs attention". Do not enable any campaign until this is fixed —
-        check in PowerShell (prints `True` once the tag is live):
+  - [x] Set `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-457432174` and `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL=<label>` → redeploy.
+        Both added to Vercel (Production) on 11 Nov 2026; the label was copied from the Demo/Lead event
+        snippet. A redeploy from the Vercel dashboard asks for an emailed code, so a push to `main` is the
+        easy way to rebuild. Check in PowerShell (prints `True` once the tag is live):
         `(Invoke-WebRequest https://www.aveoninfotech.com/get-started).Content -match 'AW-457432174'`
   - [ ] **Campaign goal:** every campaign uses *campaign-specific goals → Submit lead form* only. The account
         defaults include Page view / Engagement / Get directions as primary actions.
@@ -55,9 +55,9 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
       Details and the differences from the kit copy are in `GOOGLE_ADS_STARTER_KIT.md` → "As built in the account".
   - [x] **Enable it.** Enabled 11 Nov 2026 at the owner's request: campaign status *Eligible (Learning)*, all
         five ads *Eligible*. The three old Smart campaigns stay paused.
-        **Enabled without the Google Ads tag on the site** — Google Ads reports clicks and cost but zero
-        conversions until the env vars in the first item of this tier are set. Leads still arrive by email
-        with `Ad: gclid` attached, so count leads from the inbox until then.
+        It ran for its first minutes without the Google Ads tag on the site; the tag env vars were added
+        the same morning (first item of this tier). Every lead email also carries `Ad: gclid`, so the
+        inbox is the cross-check for the conversion count.
   - [ ] Complete Google's **"Confirm that it's you"** prompt (it can be skipped only until 24 Nov 2026) and the
         *Protect your account* notice.
   - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the
