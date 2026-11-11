@@ -58,6 +58,13 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
         It ran for its first minutes without the Google Ads tag on the site; the tag env vars were added
         the same morning (first item of this tier). Every lead email also carries `Ad: gclid`, so the
         inbox is the cross-check for the conversion count.
+  - [x] **Add funds.** The account is **Prepay**; ads do not serve at a ₹0.00 balance even though every
+        status reads "Eligible" (this cost the first two hours on 11 Nov 2026). ₹5,000 was added by UPI on
+        11 Nov and credited in full within about 20 minutes; Google's *Ad preview and diagnosis* then
+        reported "Your ad is showing" for [college erp software].
+  - [ ] **Keep the balance topped up.** At ₹1,000 a day, ₹5,000 lasts about five days. Add funds again
+        before it runs out (Billing → Summary → *Add funds*), or ads stop without any warning in the
+        campaign view.
   - [ ] Complete Google's **"Confirm that it's you"** prompt (it can be skipped only until 24 Nov 2026) and the
         *Protect your account* notice.
   - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the

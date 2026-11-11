@@ -79,6 +79,25 @@ Differences from the copy in this kit, and why:
   confirmed the product does them.
 - Ad group B also carries the phrase keywords "campus management system" and "campus management software".
 
+**Ad group H - Hostel, added 11 Nov 2026 at the owner's request** (lands on `/products/hostel-mess`):
+```
+[hostel management system]    "hostel management system"
+[hostel management]           [hostel management software]
+"hostel management software"
+```
+Headlines: Hostel Management System · Hostel Management Software · Hostel & Mess Management · Room & Bed
+Allocation · Biometric Hostel Attendance · Leave & Gate Pass Tracking · Mess Billing & Menus · Built for
+College Hostels · Trusted by 200+ Institutions · Book a Free Demo · Aveon Campus ERP.
+Descriptions: "Rooms, beds, attendance, leave, gate passes and complaints on one platform. Free demo." ·
+"Hostel applications, allocation and biometric attendance, plus full mess operations." · "Part of Aveon
+Campus ERP, trusted by 200+ institutions. Book a walkthrough." (Features taken from the site's Hostel & Mess
+product entry.)
+
+**School searches are kept, by the owner's decision (11 Nov 2026).** In the first hour about 10 of 23 search
+terms were school-related ("school erp software", "school management system" …), matched as close variants
+of the campus/education keywords. Do **not** add `school` as a negative. They currently land on college
+pages; a School ERP ad group with its own landing page is the next step if school leads are wanted.
+
 **Assets added 11 Nov 2026 (campaign level):**
 
 | Sitelink | Description lines | Lands on |
