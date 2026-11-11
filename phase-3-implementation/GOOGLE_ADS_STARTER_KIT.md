@@ -79,9 +79,23 @@ Differences from the copy in this kit, and why:
   confirmed the product does them.
 - Ad group B also carries the phrase keywords "campus management system" and "campus management software".
 
-**Not done yet:** sitelinks, callouts, structured snippets and the call asset (section 4); the bid cap has not
-been checked against Keyword Planner's top-of-page range; ad group C (regional), D (pricing) and the brand
-campaign are not built.
+**Assets added 11 Nov 2026 (campaign level):**
+
+| Sitelink | Description lines | Lands on |
+|---|---|---|
+| All ERP Products | Admissions, exams, fees and more · Fourteen modules on one platform | `/products` |
+| How ERP Pricing Works | Per-student or per-module pricing · Get a transparent, itemised quote | `/pricing` |
+| Compare College ERPs | See how Aveon compares · Side-by-side ERP comparisons | `/comparisons` |
+| Coimbatore ERP Team | Coimbatore based since 2012 · Trusted by 200+ institutions | `/solutions/coimbatore` |
+| ERP Buyer's Guide | 7 questions to ask every vendor · Free checklist and cost guide | `/resources/college-erp-buyers-guide` |
+| Tamil Nadu College ERP | Built for Tamil Nadu colleges · Affiliated or autonomous | `/solutions/college-erp-tamil-nadu` |
+
+Callouts: 200+ Institutions · 1M+ Students · NAAC Reporting Built In · Go Live in About 30 Days ·
+One Login, 14 Modules · Coimbatore Based. ("NAAC & NBA Ready", "~30-Day Go-Live" and "Cloud or On-Premise"
+from section 4 were reworded or left out for the same reasons as the ad copy above.)
+
+**Not done yet:** structured snippets and the call asset (section 4); the bid cap has not been checked against
+Keyword Planner's top-of-page range; ad group C (regional), D (pricing) and the brand campaign are not built.
 
 **Settings:** Search Network only (no Display/Search Partners at launch) · Location: India (Tamil Nadu + Karnataka boosted, or start TN-only) — under *Location options* choose **"Presence: people in or regularly in your targeted locations"**, not the default "Presence or interest" (the default also shows ads to people outside India who merely search about India) · Language: English + Tamil · Bidding: **Maximise Conversions** once ~15–20 conversions exist; until then **Manual CPC** with a ₹40–70 cap to control spend · Ad schedule: Mon–Sat 8:30–18:30 IST weighted (office hours = faster callback).
 

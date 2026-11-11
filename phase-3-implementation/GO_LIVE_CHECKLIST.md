@@ -62,7 +62,8 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
         *Protect your account* notice.
   - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the
         account is a personal name, so ads currently run with a placeholder name taken from the URL.
-  - [ ] Add sitelinks, callouts, structured snippets and the call asset from the kit.
+  - [x] Add sitelinks and callouts — six of each added at campaign level on 11 Nov 2026 (listed in the kit).
+  - [ ] Add structured snippets and the call asset from the kit.
 
 ### Ads launch sequence (do in this order)
 1. **Tracking first** (above) — Google Ads conversion + Meta Pixel env vars set & verified. Ads are blind without it.
