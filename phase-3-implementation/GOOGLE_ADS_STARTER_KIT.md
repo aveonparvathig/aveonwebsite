@@ -93,10 +93,40 @@ Descriptions: "Rooms, beds, attendance, leave, gate passes and complaints on one
 Campus ERP, trusted by 200+ institutions. Book a walkthrough." (Features taken from the site's Hostel & Mess
 product entry.)
 
-**School searches are kept, by the owner's decision (11 Nov 2026).** In the first hour about 10 of 23 search
-terms were school-related ("school erp software", "school management system" …), matched as close variants
-of the campus/education keywords. Do **not** add `school` as a negative. They currently land on college
-pages; a School ERP ad group with its own landing page is the next step if school leads are wanted.
+**School searches are kept, by the owner's decision (11 Nov 2026)** — and since 12 Nov they have their own
+ad group. Do **not** add `school` as a campaign-level negative.
+
+### Changes made 12 Nov 2026, after the day-one analysis
+
+Day one (11 Nov, ~12:00–16:10): 207 impressions, 23 clicks, ₹56 average CPC, ₹1,286 spend, 0 leads. Of the
+click spend with a visible search term, 55% went to college/campus buyers, 28% to likely students and
+fee-payers ("student erp" ×3 on `[college erp software]`, "coffee app for fee collection"), 17% to school
+searches landing on a college page. Best keywords by intent and cost: `[college erp]` and
+`[college management system]`. NAAC and Admissions keywords had no impressions yet.
+
+1. **Twelve more campaign-level negatives** (62 in total): `[student erp]`, `portal`, `payer`, `coffee`,
+   `means`, and the vendor/institution names `edumitra`, `edusys`, `genesis`, `tachy`, `mudu`, `vidyalaya`,
+   `alameen`.
+2. **Max CPC limit lowered from ₹70 to ₹50.** Clicks were available at ₹44–46 while the average was ₹56.
+   Raise it again if impressions fall sharply.
+3. **Ad group S - School ERP** (lands on `/products/school-erp`):
+   ```
+   [school erp software]          "school erp software"
+   [school management software]   "school management software"
+   [school management system]     "school management system"
+   [school erp]
+   ```
+   Headlines: School ERP Software · School Management Software · School Management System · One Platform for
+   Your School · Admissions, Fees & Exams · Attendance & Report Cards · Parent Portal & Communication ·
+   Transport & Library Modules · Trusted by 200+ Institutions · Book a Free Demo · Aveon School ERP.
+   Descriptions: "Admissions, academics, attendance, exams, fees and transport on one platform. Free demo." ·
+   "One student record from admission to next year. Report cards, fees and parent portal." · "Part of Aveon
+   Campus ERP, trusted by 200+ institutions. Book a walkthrough."
+4. **`school` and `schools` added as ad-group negatives on A - College ERP and B - Campus Management**, so
+   school searches are served by the school ad instead of a college ad.
+
+Still open from the analysis: tighten the Fees keywords, add headlines to the NAAC ad (strength "Poor"),
+count calls and WhatsApp taps as conversions, and review mobile vs computer after about 100 clicks.
 
 **Assets added 11 Nov 2026 (campaign level):**
 

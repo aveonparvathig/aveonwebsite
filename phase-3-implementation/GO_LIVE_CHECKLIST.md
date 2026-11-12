@@ -62,9 +62,15 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
         status reads "Eligible" (this cost the first two hours on 11 Nov 2026). ₹5,000 was added by UPI on
         11 Nov and credited in full within about 20 minutes; Google's *Ad preview and diagnosis* then
         reported "Your ad is showing" for [college erp software].
-  - [ ] **Keep the balance topped up.** At ₹1,000 a day, ₹5,000 lasts about five days. Add funds again
-        before it runs out (Billing → Summary → *Add funds*), or ads stop without any warning in the
-        campaign view.
+  - [ ] **Keep the balance topped up.** GST (18%) is deducted from the balance on top of ad spend, so
+        ₹1,000 of ads costs ₹1,180, and Google may spend up to double the daily budget on a busy day
+        (day one: ₹1,286 of ads = ₹1,517.50 off the balance). Owner's decision, 11 Nov 2026: **₹1,000 a day
+        plus GST is acceptable**; the budget stays at ₹1,000. Plan on roughly ₹36,000 a month including GST,
+        and add funds before the balance runs out (Billing → Summary → *Add funds*) — ads stop without any
+        warning in the campaign view.
+  - [x] **Old Smart campaigns paused again** (11 Nov 2026, owner's decision). *College ERP System*,
+        *Simplify Hostel Management* and *Online Examination software* became active when the funds
+        arrived, which raised the account to ₹1,526 a day. Check they are still paused after every top-up.
   - [ ] Complete Google's **"Confirm that it's you"** prompt (it can be skipped only until 24 Nov 2026) and the
         *Protect your account* notice.
   - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the
