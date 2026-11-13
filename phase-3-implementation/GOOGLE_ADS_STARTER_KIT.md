@@ -221,6 +221,63 @@ Keyword Planner's top-of-page range; ad group C (regional), D (pricing) and the 
 
 **Settings:** Search Network only (no Display/Search Partners at launch) · Location: India (Tamil Nadu + Karnataka boosted, or start TN-only) — under *Location options* choose **"Presence: people in or regularly in your targeted locations"**, not the default "Presence or interest" (the default also shows ads to people outside India who merely search about India) · Language: English + Tamil · Bidding: **Maximise Conversions** once ~15–20 conversions exist; until then **Manual CPC** with a ₹40–70 cap to control spend · Ad schedule: Mon–Sat 8:30–18:30 IST weighted (office hours = faster callback).
 
+### Day and hour analysis — 13 Nov 2026
+
+Owner's question: pause on weekends, change the hours, or lower the weekend budget?
+
+**Days so far** (both campaigns share Mon–Sat 08:30–18:30; Sunday is off):
+
+| Day | Impr. | Clicks | Cost | Avg. CPC | Leads |
+|---|---|---|---|---|---|
+| Wed 11 Nov | 207 | 23 | ₹1,286.02 | ₹55.91 | 0 |
+| Thu 12 Nov | 540 | 56 | ₹1,074.13 | ₹19.18 | 0 |
+| Fri 13 Nov | 612 | 60 | ₹1,142.13 | ₹19.04 | 1 |
+
+Wednesday ran only about two hours (funds arrived 11:45, old ₹70 cap). No Monday, Tuesday or Saturday has
+run yet, so the ads cannot rank the days.
+
+**Hours, Thursday + Friday** (the two full days):
+
+| Hour | Impr. | Clicks | CTR | Cost | Avg. CPC |
+|---|---|---|---|---|---|
+| 08:30–09:00 | 53 | 11 | 20.8% | ₹193 | ₹17.55 |
+| 09:00 | 68 | 6 | 8.8% | ₹112 | ₹18.70 |
+| 10:00 | 104 | 12 | 11.5% | ₹217 | ₹18.09 (the one lead) |
+| 11:00 | 146 | 14 | 9.6% | ₹291 | ₹20.75 |
+| 12:00 | 156 | 16 | 10.3% | ₹326 | ₹20.38 |
+| 13:00 | 154 | 16 | 10.4% | ₹311 | ₹19.45 |
+| 14:00 | 134 | 13 | 9.7% | ₹252 | ₹19.37 |
+| 15:00 | 111 | 7 | 6.3% | ₹122 | ₹17.44 |
+| 16:00 | 150 | 16 | 10.7% | ₹310 | ₹19.37 |
+| 17:00 | 64 | 4 | 6.3% | ₹65 | ₹16.30 |
+| 18:00–18:30 | 12 | 1 | 8.3% | ₹17 | ₹17.03 |
+
+Cost per click is flat (₹16–21), so no hour is worth cutting. Busiest block 11:00–14:00; little traffic
+after 17:00 but it costs about ₹40 a day. Read it again in Campaigns → Segment → Time → *Hour of the day*
+(set Segment back to *None* afterwards).
+
+**Weekend demand, organic proxy** (Search Console, India, 11 Aug – 10 Nov 2026, queries containing
+erp / software / management system; impressions per day): Mon 43.9 · Tue 36.2 · Wed 38.6 · Thu 31.6 ·
+Fri 25.5 · **Sat 18.3** (52% of the weekday average of 35.2) · Sun 22.5. Monday and Tuesday are the
+strongest days and the ads have not run on either yet.
+
+**Budget pacing rule (Google, since 1 June 2026):** a campaign paces toward **30.4 × its daily budget per
+month whatever days the ad schedule switches off**, with at most 2 × the daily budget on one day
+([help page](https://support.google.com/google-ads/answer/16913225)). So ₹600 + ₹400 a day means about
+₹30,400 a month of ads (₹35,900 with GST) with or without Saturdays. This is why Thursday and Friday ran
+over ₹1,000. **Switching off a day, or shortening one, does not save money; it moves the same money to
+the remaining days.** Only a lower daily budget reduces the monthly spend.
+
+**Recommendation:** Mon–Fri 08:30–18:30 unchanged; Sunday stays off (office closed); Saturday as a half
+day, 08:30–13:30, so less of the month's money goes into the day with half the demand. Review on
+Mon 30 Nov after three Saturdays: pause Saturday if it has 40+ clicks and no lead, call or WhatsApp tap
+while weekdays produce leads; make it a full day again if its cost per lead matches weekdays. Hour-level
+bid adjustments wait for 15+ leads.
+
+**Status, 13 Nov evening:** the owner approved the Saturday half day, but it is **not saved in the
+account yet**. The approval was given on a "saves about ₹500 per Saturday" estimate that the pacing rule
+above makes wrong, so it went back to the owner. Both campaigns still run Saturdays 08:30–18:30.
+
 ---
 
 ## 3. Keywords (start tight — phrase & exact only, no broad)

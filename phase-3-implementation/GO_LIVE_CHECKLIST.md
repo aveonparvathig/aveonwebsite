@@ -81,6 +81,13 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
   - [ ] **Split the campaign** so College ERP has its own budget (owner's priority, 12 Nov 2026). Needs a
         pasted copy of the campaign in Google Ads; the EU political ads question in that dialog is the
         owner's to answer.
+  - [ ] **Saturday schedule** (analysis 13 Nov 2026, kit → "Day and hour analysis"). Saturday has about
+        half the search demand of a weekday. Proposed: Saturday 08:30–13:30 on both campaigns, Mon–Fri
+        unchanged, Sunday off. Not saved yet. Note that Google paces a campaign to 30.4 × its daily
+        budget per month whatever days are switched off, so a shorter week moves money to the other days;
+        it does not reduce the monthly bill. Only a lower daily budget does that.
+  - [ ] **Review days and hours on Mon 30 Nov 2026** (after Saturdays 14, 21 and 28 Nov, and two full
+        Mon–Fri weeks): Campaigns → Segment → Time → *Day of the week* and *Hour of the day*.
   - [ ] Complete Google's **"Confirm that it's you"** prompt (it can be skipped only until 24 Nov 2026) and the
         *Protect your account* notice.
   - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the
