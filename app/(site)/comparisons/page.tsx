@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 import { siteConfig } from "@/lib/constants";
+import { comparisons } from "@/lib/data/comparisons";
 
 export const metadata: Metadata = {
   title: "Compare Campus ERP Vendors | Scorecard",
@@ -130,7 +131,7 @@ const tcoRows = [
 const faqs = [
   {
     q: "Which campus ERP vendors are commonly shortlisted in India?",
-    a: "Institutions evaluating a campus ERP in India typically look at Aveon, MasterSoft, Camu, Creatrix Campus, Jupsoft, iCloudEMS, Academia ERP and Fedena, among others. The scorecard above applies to all of them; the useful comparison is each vendor's answers to the same questions in a live demo on your own data, not a feature checklist.",
+    a: "Institutions evaluating a campus ERP in India typically look at Aveon, MasterSoft, Camu, Creatrix Campus, Jupsoft, iCloudEMS, Academia ERP, UniversityERP (Expedien), Proctur and Fedena, among others. The scorecard above applies to all of them; the useful comparison is each vendor's answers to the same questions in a live demo on your own data, not a feature checklist.",
   },
   {
     q: "Why not compare features in a tick-box table?",
@@ -164,6 +165,23 @@ export default function Comparisons() {
             A weighted scorecard you can apply to any vendor, the question that exposes each criterion in a demo, and
             Aveon's answer to every one.
           </p>
+        </div>
+
+        <div className="mx-auto mb-12 max-w-[800px] rounded-lg border border-navy-900/10 p-6">
+          <h2 className="mb-3 text-xl font-bold text-navy-900">Head-to-head comparisons</h2>
+          <p className="mb-4 text-navy-700">
+            Aveon compared with specific vendors, using facts from each vendor&apos;s own website and including where
+            they are the better fit.
+          </p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {comparisons.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/comparisons/${c.slug}`} className="font-semibold text-primary-600 hover:underline">
+                  Aveon vs {c.vendor}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="prose prose-lg mx-auto max-w-[800px] text-navy-800">

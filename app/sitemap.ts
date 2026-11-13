@@ -4,6 +4,7 @@ import { products } from "@/lib/data/products";
 import { posts } from "@/lib/data/posts";
 import { staticPosts } from "@/lib/data/static-posts";
 import { stateSlugs } from "@/lib/data/states";
+import { comparisons } from "@/lib/data/comparisons";
 import pageDates from "@/lib/data/page-dates.json";
 
 type Entry = MetadataRoute.Sitemap[number];
@@ -87,6 +88,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...accreditationRoutes.map((p) => entry(p, 0.7)),
     ...serviceRoutes.map((p) => entry(p, 0.8)),
     ...solutionRoutes.map((p) => entry(p, 0.7)),
+    // Reviewed date = the day the competitor's site was last re-read.
+    ...comparisons.map((c) => entry(`/comparisons/${c.slug}`, 0.7, "monthly", new Date(c.reviewed))),
     ...posts.map((p) => entry(`/blog/${p.slug}`, 0.6, "monthly", new Date(p.publishedAt))),
     ...staticPosts.map((p) => entry(`/blog/${p.slug}`, 0.6, "monthly", new Date(p.dateModified))),
   ];
