@@ -8,10 +8,12 @@
 
 export const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID; // e.g. "AW-123456789"
 export const GOOGLE_ADS_LEAD_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL; // conversion label
-// Optional second conversion action for phone/WhatsApp clicks. Kept separate
-// from the lead label so a tap-to-call is never counted as a submitted lead
-// (set it as a *secondary* conversion in Google Ads until call quality is known).
-export const GOOGLE_ADS_CONTACT_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL;
+// Second conversion action for phone/WhatsApp taps ("Call or WhatsApp tap",
+// Contact goal, created 13 Nov 2026). Kept separate from the lead label so a
+// tap-to-call is never counted as a submitted lead. The label is public (it
+// ships in page HTML), so it defaults here; the env var can still override it.
+export const GOOGLE_ADS_CONTACT_LABEL =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL || "O6O3CN-v5bcdEO64j9oB";
 export const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 export type ConversionType = "demo_lead" | "contact_lead" | "chatbot_lead" | "magnet_lead";

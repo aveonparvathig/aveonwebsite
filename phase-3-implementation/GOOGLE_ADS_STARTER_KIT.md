@@ -172,6 +172,35 @@ the campaign), a stronger offer than "free demo" (which of no setup fee, free da
 training or a "starts at" price are true), and a *Contact* conversion action so calls and WhatsApp taps are
 counted. Judge the new pages after about 100 clicks: the target is 3 to 5 leads per 100 clicks.
 
+### Changes made 13 Nov 2026 (evening), owner said "apply fixes 1–3"
+
+Why: on 13 Nov alone, S - School ERP took 418 impressions / 41 clicks / ₹769 while A - College ERP got
+30 impressions / 1 click. Maximise clicks on a shared budget was starving the college keywords.
+
+1. **Campaign split.** The campaign was copied (Edit → Copy/Paste, EU political ads answered "No").
+   | Campaign | ID | Budget | Max CPC cap | Ad groups enabled | Ad groups paused |
+   |---|---|---|---|---|---|
+   | Search - College & University ERP - India (the original, renamed) | 24457638856 | ₹600/day | ₹65 | A, B, E, N | S, H, F |
+   | Search - School, Hostel & Fees - India (the copy) | 24457300776 | ₹400/day | ₹50 | S, H, F | A, B, E, N |
+   Total stays ₹1,000/day. Both keep the 70 campaign negatives, the schedule and the sitelinks/callouts.
+   The copy's ads went through review again ("Pending" at 18:25) and its bid strategy restarts learning;
+   the original keeps its history. Paused ad groups are kept, not removed, so the split can be undone.
+2. **Calls and WhatsApp taps now count.** New conversion action **"Call or WhatsApp tap"** (Contact goal,
+   website, manual code, count One, value ₹50, primary; label `O6O3CN-v5bcdEO64j9oB`). The site already
+   fires it on any `tel:` or `wa.me` tap (`components/analytics/LeadSignals.tsx`); the label now defaults
+   in `lib/analytics-conversions.ts`. Both campaigns' goals are now *Contacts + Submit lead forms*.
+   Enhanced conversions was left **off** (turning it on accepts Google's data-processing terms — owner's call).
+   **Call asset** added at account level: 087540 06483 (shows only within the Mon–Sat 08:30–18:30 schedule).
+3. **Offer.** The owner confirmed two claims as true: an itemised quote within one working day of the
+   scoping call, and free on-campus training. Added at account level as callouts *Itemised Quote in 24 Hrs*
+   and *Free On-Campus Training*, and as campaign-level headline assets *Itemised Quote in 24 Hours* and
+   *Free On-Campus Training* on both campaigns (headline assets avoid editing the RSAs and losing their
+   stats). "Free data migration" and "No setup fee" were **not** confirmed — do not use them.
+
+Check after ~4 days: College campaign impressions per day (was 20–37), cost per lead per campaign, and
+whether contact taps are real enquiries (if WhatsApp taps rarely become conversations, lower the value or
+make the action secondary).
+
 **Assets added 11 Nov 2026 (campaign level):**
 
 | Sitelink | Description lines | Lands on |
