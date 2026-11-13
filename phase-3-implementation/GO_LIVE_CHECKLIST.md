@@ -71,6 +71,16 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
   - [x] **Old Smart campaigns paused again** (11 Nov 2026, owner's decision). *College ERP System*,
         *Simplify Hostel Management* and *Online Examination software* became active when the funds
         arrived, which raised the account to ₹1,526 a day. Check they are still paused after every top-up.
+  - [x] **Every clicked ad lands on a page with the enquiry form** (13 Nov 2026). School, Hostel and Fees
+        ads now go to `/get-started/school-erp`, `/get-started/hostel-mess` and
+        `/get-started/fees-management`. The landing form needs only name, contact number and institute
+        (email and city optional), and phones get a fixed Call / WhatsApp / Book demo bar. First lead was
+        recorded in Google Ads the same day. Details in the kit → "Changes made 13 Nov 2026".
+  - [ ] **Leads without an email:** the short form allows it, so those visitors get no auto-reply. Call
+        them back on the number in the notification email.
+  - [ ] **Split the campaign** so College ERP has its own budget (owner's priority, 12 Nov 2026). Needs a
+        pasted copy of the campaign in Google Ads; the EU political ads question in that dialog is the
+        owner's to answer.
   - [ ] Complete Google's **"Confirm that it's you"** prompt (it can be skipped only until 24 Nov 2026) and the
         *Protect your account* notice.
   - [ ] Set the **business name** on the ads (Ads → edit → Business name). The verified advertiser name on the

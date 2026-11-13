@@ -128,6 +128,50 @@ searches landing on a college page. Best keywords by intent and cost: `[college 
 Still open from the analysis: tighten the Fees keywords, add headlines to the NAAC ad (strength "Poor"),
 count calls and WhatsApp taps as conversions, and review mobile vs computer after about 100 clicks.
 
+### Changes made 13 Nov 2026, after three days
+
+Three days (11–13 Nov, the 13th partial): 1,134 impressions, 119 clicks, ₹26 average CPC, ₹3,131 spend
+(₹3,695 with GST), **1 lead** — recorded on 13 Nov from `[school management system]`. By ad group:
+S - School ERP 54 clicks / ₹1,007 / 1 lead · H - Hostel 25 / ₹501 · B - Campus Management 20 / ₹683 ·
+A - College ERP 18 / ₹828 · F - Fees 2 / ₹112 · N - NAAC and E - Admissions no clicks.
+
+Auction insights (data from 11 Nov only): Aveon was at the top of the page 79% of the time and in first
+position 55%, ahead of every competitor (Inkwelly, Bloombyte, Edrix, eduerp.ai, Academia: 0–26% first
+position). Impression share was 15%. The loss was after the click, not in the auction:
+
+- 81 of 119 clicks landed on product pages that had no enquiry form (School, Hostel, Fees).
+- `"education erp software"` took 12 clicks and ₹290 with no lead, mostly portal and competitor-name
+  searches (hitam erp, camu erp, erp jct, vidyacube, eduerp).
+- After day one, College ERP got only 20–37 impressions a day: Maximise clicks spends the shared budget
+  on the cheapest clicks, which are school and hostel searches at about ₹19.
+
+What was changed (owner approved "apply fixes"):
+
+1. **Every ad now lands on a page with the form.** New pages reuse the `/get-started` layout with the
+   headline, proof points and the form's product matched to the ad. Final URLs changed in place; the ad
+   text and display paths are unchanged.
+
+   | Ad group | Final URL before | Final URL now |
+   |---|---|---|
+   | S - School ERP | `/products/school-erp` | `/get-started/school-erp` |
+   | H - Hostel | `/products/hostel-mess` | `/get-started/hostel-mess` |
+   | F - Fees | `/products/fees-management` | `/get-started/fees-management` |
+
+   A and B already land on `/get-started`. E - Admissions and N - NAAC still land on product pages; they
+   have had no clicks. To add a page for another ad, add an entry to `components/landing/variants.ts`.
+2. **Shorter form on the landing pages.** Name, contact number and institute are required; the product is
+   preselected from the page; work email and city are optional. A lead without an email gets no auto-reply,
+   so call it back. The forms on `/contact` and `/pricing` still require every field.
+3. **Fixed Call / WhatsApp / Book demo bar** on phones and small tablets, on all four landing pages.
+4. **Eight more campaign-level negatives** (70 at campaign level): `hitam`, `camu`, `jct`, `vidyacube`,
+   `eduerp`, `goschool`, `"click 2 my school"`, `"click to my school"`.
+5. **`"education erp software"` changed from phrase to exact match** in B - Campus Management.
+
+Not done, waiting on the owner: the College ERP / School & Hostel campaign split (needs a pasted copy of
+the campaign), a stronger offer than "free demo" (which of no setup fee, free data migration, on-site
+training or a "starts at" price are true), and a *Contact* conversion action so calls and WhatsApp taps are
+counted. Judge the new pages after about 100 clicks: the target is 3 to 5 leads per 100 clicks.
+
 **Assets added 11 Nov 2026 (campaign level):**
 
 | Sitelink | Description lines | Lands on |
