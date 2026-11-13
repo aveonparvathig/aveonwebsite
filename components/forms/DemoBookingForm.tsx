@@ -1,9 +1,13 @@
 "use client";
 
 import { useCallback, useId, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { demoBookingSchema, type DemoBookingInput } from "@/lib/validations";
+import {
+  demoBookingSchema,
+  demoBookingShortSchema,
+  type DemoBookingShortInput,
+} from "@/lib/validations";
 import { products } from "@/lib/data/products";
 import { useFormLock } from "@/components/forms/FormLockContext";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -22,7 +26,23 @@ const labeledInputClass =
   "w-full rounded-xl border border-navy-400 bg-white px-4 py-3 text-base sm:text-[15px] text-navy-900 transition hover:border-primary-500 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-100";
 const labelClass = "mb-1.5 block text-[13px] font-bold text-navy-700";
 
-export default function DemoBookingForm({ labeled = false }: { labeled?: boolean }) {
+interface DemoBookingFormProps {
+  /** Visible labels above each field (paid landing pages). */
+  labeled?: boolean;
+  /**
+   * Short variant for ad traffic: email and city become optional and move to
+   * the last row. Name, phone, product and institute stay required.
+   */
+  short?: boolean;
+  /** Product slug to preselect, so a visitor from a product ad need not choose. */
+  defaultProduct?: string;
+}
+
+export default function DemoBookingForm({
+  labeled = false,
+  short = false,
+  defaultProduct = "",
+}: DemoBookingFormProps) {
   const uid = useId();
   const fieldClass = labeled ? labeledInputClass : inputClass;
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -34,12 +54,24 @@ export default function DemoBookingForm({ labeled = false }: { labeled?: boolean
     reset,
     watch,
     formState: { errors },
-  } = useForm<DemoBookingInput>({
-    resolver: zodResolver(demoBookingSchema),
+  } = useForm<DemoBookingShortInput>({
+    // The full schema only tightens email and city, so its resolver fits the
+    // short form's field types.
+    resolver: (short
+      ? zodResolver(demoBookingShortSchema)
+      : zodResolver(demoBookingSchema)) as Resolver<DemoBookingShortInput>,
+    defaultValues: { product: defaultProduct },
   });
 
   const watchedData = watch();
-  const isDirty = Object.entries(watchedData).some(([k, v]) => k !== "website" && typeof v === "string" && v.trim() !== "");
+  // A preselected product is not the visitor's input, so it doesn't count as dirty.
+  const isDirty = Object.entries(watchedData).some(
+    ([k, v]) =>
+      k !== "website" &&
+      typeof v === "string" &&
+      v.trim() !== "" &&
+      !(k === "product" && v === defaultProduct),
+  );
   const clearSelf = useCallback(() => {
     reset();
     setStatus("idle");
@@ -56,7 +88,7 @@ export default function DemoBookingForm({ labeled = false }: { labeled?: boolean
     isLocked && clearOther();
   }, [status, isDirty, isLocked, clearOther, trackEvent]);
 
-  async function onSubmit(data: DemoBookingInput) {
+  async function onSubmit(data: DemoBookingShortInput) {
     setStatus("submitting");
 
     // Track form submission attempt
@@ -137,6 +169,61 @@ export default function DemoBookingForm({ labeled = false }: { labeled?: boolean
     );
   }
 
+  const optional = short ? " (optional)" : "";
+  const star = short ? "" : " *";
+
+  const nameField = (
+    <div>
+      {labeled && <label htmlFor={`${uid}-name`} className={labelClass}>Name</label>}
+      <input id={`${uid}-name`} placeholder={labeled ? undefined : "Name *"} autoComplete="off" className={fieldClass} {...register("name")} />
+      {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
+    </div>
+  );
+  const emailField = (
+    <div>
+      {labeled && <label htmlFor={`${uid}-email`} className={labelClass}>Work email{optional}</label>}
+      <input id={`${uid}-email`} placeholder={labeled ? undefined : `Email${star}`} type="email" autoComplete="off" className={fieldClass} {...register("email")} />
+      {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
+    </div>
+  );
+  const phoneField = (
+    <div>
+      {labeled && <label htmlFor={`${uid}-phone`} className={labelClass}>Contact number</label>}
+      <input id={`${uid}-phone`} placeholder={labeled ? undefined : "Contact Number *"} type="tel" autoComplete="off" className={fieldClass} {...register("phone")} />
+      {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone.message}</p>}
+    </div>
+  );
+  const productField = (
+    <div>
+      {labeled && <label htmlFor={`${uid}-product`} className={labelClass}>Product</label>}
+      <select id={`${uid}-product`} className={fieldClass} {...register("product")}>
+        <option value="" disabled>
+          {labeled ? "Select a product" : "Select a Product *"}
+        </option>
+        {products.map((p) => (
+          <option key={p.slug} value={p.slug}>
+            {p.title}
+          </option>
+        ))}
+      </select>
+      {errors.product && <p className="mt-1 text-xs text-red-600">{errors.product.message}</p>}
+    </div>
+  );
+  const instituteField = (
+    <div>
+      {labeled && <label htmlFor={`${uid}-institute`} className={labelClass}>Institute</label>}
+      <input id={`${uid}-institute`} placeholder={labeled ? undefined : "Institute *"} autoComplete="off" className={fieldClass} {...register("institute")} />
+      {errors.institute && <p className="mt-1 text-xs text-red-600">{errors.institute.message}</p>}
+    </div>
+  );
+  const cityField = (
+    <div>
+      {labeled && <label htmlFor={`${uid}-city`} className={labelClass}>City / Country{optional}</label>}
+      <input id={`${uid}-city`} placeholder={labeled ? undefined : `City / Country${star}`} autoComplete="off" className={fieldClass} {...register("city")} />
+      {errors.city && <p className="mt-1 text-xs text-red-600">{errors.city.message}</p>}
+    </div>
+  );
+
   return (
     <div className="relative flex flex-1 flex-col">
       <div className="flex flex-1 flex-col">
@@ -152,53 +239,18 @@ export default function DemoBookingForm({ labeled = false }: { labeled?: boolean
       />
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          {labeled && <label htmlFor={`${uid}-name`} className={labelClass}>Name</label>}
-          <input id={`${uid}-name`} placeholder={labeled ? undefined : "Name *"} autoComplete="off" className={fieldClass} {...register("name")} />
-          {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>}
-        </div>
-        <div>
-          {labeled && <label htmlFor={`${uid}-email`} className={labelClass}>Work email</label>}
-          <input id={`${uid}-email`} placeholder={labeled ? undefined : "Email *"} type="email" autoComplete="off" className={fieldClass} {...register("email")} />
-          {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
-        </div>
+        {nameField}
+        {short ? phoneField : emailField}
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          {labeled && <label htmlFor={`${uid}-phone`} className={labelClass}>Contact number</label>}
-          <input id={`${uid}-phone`} placeholder={labeled ? undefined : "Contact Number *"} type="tel" autoComplete="off" className={fieldClass} {...register("phone")} />
-          {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone.message}</p>}
-        </div>
-        <div>
-          {labeled && <label htmlFor={`${uid}-product`} className={labelClass}>Product</label>}
-          <select id={`${uid}-product`} className={fieldClass} defaultValue="" {...register("product")}>
-            <option value="" disabled>
-              {labeled ? "Select a product" : "Select a Product *"}
-            </option>
-            {products.map((p) => (
-              <option key={p.slug} value={p.slug}>
-                {p.title}
-              </option>
-            ))}
-          </select>
-          {errors.product && <p className="mt-1 text-xs text-red-600">{errors.product.message}</p>}
-        </div>
+        {short ? instituteField : phoneField}
+        {productField}
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          {labeled && <label htmlFor={`${uid}-institute`} className={labelClass}>Institute</label>}
-          <input id={`${uid}-institute`} placeholder={labeled ? undefined : "Institute *"} autoComplete="off" className={fieldClass} {...register("institute")} />
-          {errors.institute && (
-            <p className="mt-1 text-xs text-red-600">{errors.institute.message}</p>
-          )}
-        </div>
-        <div>
-          {labeled && <label htmlFor={`${uid}-city`} className={labelClass}>City / Country</label>}
-          <input id={`${uid}-city`} placeholder={labeled ? undefined : "City / Country *"} autoComplete="off" className={fieldClass} {...register("city")} />
-          {errors.city && <p className="mt-1 text-xs text-red-600">{errors.city.message}</p>}
-        </div>
+        {short ? emailField : instituteField}
+        {cityField}
       </div>
 
       {status === "error" && (

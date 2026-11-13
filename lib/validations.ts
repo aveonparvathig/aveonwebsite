@@ -28,9 +28,8 @@ export const contactSchema = z.object({
   attribution: attributionSchema,
 });
 
-export const demoBookingSchema = z.object({
+const demoBookingBase = {
   name: z.string().min(2, "Please enter your name"),
-  email: z.string().email("Please enter a valid email"),
   phone: z
     .string()
     .min(7, "Please enter a valid phone number")
@@ -40,9 +39,26 @@ export const demoBookingSchema = z.object({
     { message: "Please select a product" },
   ),
   institute: z.string().min(2, "Please enter your institute name"),
-  city: z.string().min(2, "Please enter your city / country"),
   website: z.string().max(0).optional().or(z.literal("")),
   attribution: attributionSchema,
+};
+
+/** Full demo form (contact and pricing pages): every field required. */
+export const demoBookingSchema = z.object({
+  ...demoBookingBase,
+  email: z.string().email("Please enter a valid email"),
+  city: z.string().min(2, "Please enter your city / country"),
+});
+
+/**
+ * Short demo form (paid-ad landing pages): name, phone, product and institute
+ * are required; email and city are optional. The API validates against this
+ * one, since it accepts everything the full form sends.
+ */
+export const demoBookingShortSchema = z.object({
+  ...demoBookingBase,
+  email: z.union([z.literal(""), z.string().email("Please enter a valid email")]).optional(),
+  city: z.string().max(120).optional(),
 });
 
 export const subscribeSchema = z.object({
@@ -57,4 +73,5 @@ export const subscribeSchema = z.object({
 
 export type ContactInput = z.infer<typeof contactSchema>;
 export type DemoBookingInput = z.infer<typeof demoBookingSchema>;
+export type DemoBookingShortInput = z.infer<typeof demoBookingShortSchema>;
 export type SubscribeInput = z.infer<typeof subscribeSchema>;

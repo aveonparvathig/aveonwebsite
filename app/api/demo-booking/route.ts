@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { demoBookingSchema } from "@/lib/validations";
+import { demoBookingShortSchema } from "@/lib/validations";
 import { saveLead } from "@/lib/leads";
 import { getProduct } from "@/lib/data/products";
 
@@ -11,7 +11,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
-  const parsed = demoBookingSchema.safeParse(body);
+  // The short schema is the superset: the full form (contact, pricing) sends
+  // email and city, the ad landing pages may leave them out.
+  const parsed = demoBookingShortSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json(
       { error: "Validation failed", issues: parsed.error.flatten().fieldErrors },
@@ -28,11 +30,11 @@ export async function POST(request: Request) {
 
   const { ok } = await saveLead({
     name,
-    email,
+    email: email?.trim() || undefined,
     phone,
     interest: productTitle,
     institution: institute,
-    city,
+    city: city?.trim() || undefined,
     source: "demo_form",
     attribution,
     notifySubject: `[Website] Demo request: ${productTitle}`,
