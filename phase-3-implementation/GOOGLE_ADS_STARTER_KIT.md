@@ -61,7 +61,7 @@ Campaign **"Search - Campus ERP - India"** (ID 24457638856) exists in account 20
 | Location | India, *Presence* only |
 | Languages | All languages (the new campaign flow has no language picker; keywords are English) |
 | Budget / bidding | ₹1,000/day · Maximise clicks with a **₹70 max CPC limit** |
-| Dates / schedule | Starts 11 Nov 2026 · Mon–Sat 08:30–18:30 |
+| Dates / schedule | Starts 11 Nov 2026 · Mon–Sat 08:30–18:30 (Saturday ends 13:30 since 13 Nov 2026) |
 | AI Max, broad match, auto-created assets | All off |
 | Ad groups | A - College ERP (8 kw) · B - Campus Management (8) · E - Admissions (6) · F - Fees (5) · N - NAAC (6) — 33 keywords, exact/phrase only, one RSA each |
 | Negatives | The 50 terms in section 3, campaign level |
@@ -274,9 +274,9 @@ Mon 30 Nov after three Saturdays: pause Saturday if it has 40+ clicks and no lea
 while weekdays produce leads; make it a full day again if its cost per lead matches weekdays. Hour-level
 bid adjustments wait for 15+ leads.
 
-**Status, 13 Nov evening:** the owner approved the Saturday half day, but it is **not saved in the
-account yet**. The approval was given on a "saves about ₹500 per Saturday" estimate that the pacing rule
-above makes wrong, so it went back to the owner. Both campaigns still run Saturdays 08:30–18:30.
+**Status, 13 Nov evening: applied.** The owner confirmed the Saturday half day after being told it will
+not lower the monthly bill. Both campaigns now run **Mon–Fri 08:30–18:30, Saturday 08:30–13:30, Sunday
+off** (checked in each campaign's Ad schedule table after saving). First Saturday is 14 Nov.
 
 ---
 
