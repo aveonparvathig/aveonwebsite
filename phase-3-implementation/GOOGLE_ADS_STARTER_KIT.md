@@ -307,6 +307,24 @@ clicks cost about ₹25 (₹46 before).
   `schoollog`, `ordinal`, `valai`, `mponline` (broad); `"campus one"`, `"students erp"` (phrase).
   Names will keep appearing, so the open job is to find which keyword matches "name + erp" searches and
   tighten it. Read every page of the search terms report, not only the first.
+- **Cause found and fixed (evening):** with the Keyword column on the search terms report, the leak was
+  the **phrase-match keywords**. Google treats "any name + erp" as a close variant of a phrase such as
+  "campus erp software". That day phrase keywords took 31 clicks (₹779) of which 23 were junk (74%);
+  exact keywords took 8 clicks with 1 junk. Both enquiries so far came from a search typed exactly like
+  a keyword. Change made in the College campaign only (owner approved):
+  - Added as exact match: `[college management software]`, `[erp for colleges]`, `[college erp india]`
+    (ad group A); `[campus erp software]`, `[campus management software]` (ad group B).
+  - Paused (not removed, history kept): the phrase versions of those five, plus
+    `"campus management system"` and `"college erp software"`, whose exact twins already existed.
+  - Left running: `"university management software"` and `"higher education erp"` (phrase, clean so far),
+    all exact keywords, the Admissions and NAAC ad groups, the whole School campaign.
+  - Done by *Edit → Change match types* with **"Keep original keywords and create duplicate keywords"**
+    ticked, then *Edit → Pause*. The plain match-type change removes the old keyword; the dialog also
+    defaults to Broad match, so set Exact before applying.
+  - Expect fewer College clicks at a higher cost per click. **Review Thu 19 Nov:** keep if junk is under
+    10% and enquiries continue; if clicks fall below about 8 a day, add exact keywords from the clean
+    searches seen (`[university management system]`, `[college management]`,
+    `[institute management system]`, `[erp for college management]`).
 - **Website:** from 16 Nov every Book a Demo and Contact button on the main site opens the enquiry form
   in a popup on the same page (`components/forms/LeadDialogHost.tsx`). The ad landing pages under
   `/get-started` are unchanged; they already show the form at the top.
