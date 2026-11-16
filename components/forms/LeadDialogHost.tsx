@@ -13,7 +13,7 @@ const LeadDialog = dynamic(loadDialog, { ssr: false });
 function contactLink(event: Event): HTMLAnchorElement | null {
   const target = event.target as Element | null;
   const link = target?.closest?.("a[href]") as HTMLAnchorElement | null;
-  if (!link) return null;
+  if (!link || link.dataset.leadPopup === "off") return null;
   return /^\/contact(?:[?#]|$)/.test(link.getAttribute("href") ?? "") ? link : null;
 }
 
@@ -26,7 +26,8 @@ function contactLink(event: Event): HTMLAnchorElement | null {
  * The links stay real links, so crawlers, new-tab clicks and visitors without
  * JavaScript still reach the contact page, and a link added on a new page needs
  * no wiring. On the contact page itself the forms are already there, so clicks
- * are left alone.
+ * are left alone. Links marked data-lead-popup="off" (the menu and footer
+ * "Contact" items) always go to the contact page.
  */
 export default function LeadDialogHost() {
   const pathname = usePathname();

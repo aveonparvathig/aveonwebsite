@@ -107,6 +107,7 @@ export default function Navigation({ products }: { products?: Product[] }) {
               <Link
                 key={item.label}
                 href={item.href}
+                data-lead-popup="off"
                 onMouseEnter={() => setOpenMenu(item.groups ? item.label : null)}
                 className={`flex items-center gap-1 px-3.5 py-2 text-sm font-medium transition-all rounded-lg ${
                   active
@@ -256,6 +257,7 @@ export default function Navigation({ products }: { products?: Product[] }) {
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
+                        data-lead-popup="off"
                         className={`flex min-h-10 flex-1 items-center py-2.5 px-3.5 text-[15.5px] font-bold ${active ? "text-primary-600" : "text-navy-900"}`}
                       >
                         {item.label}

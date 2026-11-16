@@ -96,7 +96,7 @@ export default function Footer({
               </li>
               {company.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
+                  <Link href={n.href} data-lead-popup="off" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                     {n.label === "Services" ? "Software Services" : n.label}
                   </Link>
                 </li>
