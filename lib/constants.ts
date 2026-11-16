@@ -32,6 +32,10 @@ export const siteConfig = {
     twitter: "https://x.com/aveoninfotech",
     facebook: "https://www.facebook.com/aveoninfotech/",
   },
+  // Review and directory profiles: listed in schema sameAs, not shown as social icons.
+  profiles: {
+    g2: "https://www.g2.com/sellers/aveon-infotech",
+  },
   // Single source for every public claim; keep copy and metadata in sync here.
   stats: {
     institutions: "200+",

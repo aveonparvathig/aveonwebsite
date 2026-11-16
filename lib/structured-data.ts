@@ -16,7 +16,7 @@ export function organizationJsonLd() {
     email: siteConfig.email,
     telephone: siteConfig.phone,
     address: postalAddress(),
-    sameAs: Object.values(siteConfig.social),
+    sameAs: [...Object.values(siteConfig.social), ...Object.values(siteConfig.profiles)],
     knowsAbout: [
       "Campus Management",
       "Education ERP",

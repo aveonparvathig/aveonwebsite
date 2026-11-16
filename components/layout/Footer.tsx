@@ -42,6 +42,14 @@ export default function Footer({
                 </a>
               ))}
             </div>
+            <a
+              href={siteConfig.profiles.g2}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3.5 inline-block text-[13.5px] font-semibold text-navy-700 underline-offset-4 transition-colors hover:text-primary-600 hover:underline"
+            >
+              Review Aveon on G2 →
+            </a>
           </div>
 
           <div>
