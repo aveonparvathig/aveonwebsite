@@ -14,7 +14,12 @@ import { getAttribution } from "@/lib/attribution";
 const inputClass =
   "w-full rounded-xl border border-navy-200 bg-navy-50/50 px-4 py-3.5 text-base sm:text-sm text-navy-900 placeholder:text-navy-400 transition hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-100";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  /** Subject to prefill when the form opens in the popup, where the page URL carries no `?subject=`. */
+  defaultSubject?: string;
+}
+
+export default function ContactForm({ defaultSubject }: ContactFormProps = {}) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const { trackEvent, trackLead } = useAnalytics();
 
@@ -32,9 +37,9 @@ export default function ContactForm() {
   // Pre-fill the subject when arriving via a link like /contact?subject=Application:%20Role
   // (read on mount rather than via useSearchParams so this component doesn't need a Suspense boundary).
   useEffect(() => {
-    const subject = new URLSearchParams(window.location.search).get("subject");
+    const subject = defaultSubject ?? new URLSearchParams(window.location.search).get("subject");
     if (subject) setValue("subject", subject);
-  }, [setValue]);
+  }, [setValue, defaultSubject]);
 
   const messageRef = useRef<HTMLTextAreaElement | null>(null);
   const { ref: registerMessageRef, ...messageField } = register("message");

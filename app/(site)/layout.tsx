@@ -1,6 +1,7 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import LazyChatWidget from "@/components/chat/LazyChatWidget";
+import LeadDialogHost from "@/components/forms/LeadDialogHost";
 import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 import SpotlightController from "@/components/ui/SpotlightController";
 import { fetchOrFallback } from "@/lib/sanity";
@@ -36,6 +37,7 @@ export default async function SiteLayout({
       <main className="flex-1">{children}</main>
       <Footer products={products} />
       <LazyChatWidget />
+      <LeadDialogHost />
       <ScrollToTopButton />
       <SpotlightController />
     </>

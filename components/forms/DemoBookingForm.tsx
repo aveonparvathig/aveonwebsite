@@ -170,7 +170,8 @@ export default function DemoBookingForm({
   }
 
   const optional = short ? " (optional)" : "";
-  const star = short ? "" : " *";
+  // Placeholder suffix for the two fields that are optional in the short form.
+  const star = short ? " (optional)" : " *";
 
   const nameField = (
     <div>
