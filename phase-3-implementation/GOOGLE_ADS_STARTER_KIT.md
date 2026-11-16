@@ -299,6 +299,14 @@ clicks cost about ₹25 (₹46 before).
 - **First phone or WhatsApp tap recorded** (15:19 check): the *Call or WhatsApp tap* conversion fired on
   the School ERP ad from the search "school management software". Day to 15:19: 63 clicks, ₹1,556.59,
   one form enquiry and one tap.
+- **Login and vendor-name leak in the College campaign** (16:19 check, full search-term list read for the
+  first time): about 21 of its 40 clicks that day, roughly ₹545 of ₹1,021, were searches for another
+  college's ERP login or another vendor's product ("zeal erp", "niu erp", "erp invertis", "icampus erp",
+  "erp schoollog" and similar). **Thirteen more negatives added to both campaigns** (owner approved, 96
+  campaign negatives each): `zeal`, `invertis`, `niu`, `uuerp`, `smartprof`, `eduplus`, `icampus`,
+  `schoollog`, `ordinal`, `valai`, `mponline` (broad); `"campus one"`, `"students erp"` (phrase).
+  Names will keep appearing, so the open job is to find which keyword matches "name + erp" searches and
+  tighten it. Read every page of the search terms report, not only the first.
 - **Website:** from 16 Nov every Book a Demo and Contact button on the main site opens the enquiry form
   in a popup on the same page (`components/forms/LeadDialogHost.tsx`). The ad landing pages under
   `/get-started` are unchanged; they already show the form at the top.
