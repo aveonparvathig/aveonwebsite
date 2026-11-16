@@ -325,6 +325,12 @@ clicks cost about ₹25 (₹46 before).
     10% and enquiries continue; if clicks fall below about 8 a day, add exact keywords from the clean
     searches seen (`[university management system]`, `[college management]`,
     `[institute management system]`, `[erp for college management]`).
+- **Budget rule changed to a hard cap (17:40, owner's instruction "daily ₹1,000 + GST, follow strictly;
+  no Sunday; weekly max ₹7,000").** The day had reached ₹1,892 because Google treats a daily budget as an
+  average and may spend up to twice it. Budgets are now **College ₹300 a day + School ₹200 a day = ₹500**,
+  so the most Google can spend in one day is ₹1,000 and in a Mon–Sat week ₹6,000. A normal day should
+  spend about ₹500–600; the month paces to about ₹15,200 of ads (₹17,900 with GST), half of before.
+  Do not raise the budgets above ₹500 in total without the owner's yes. Sunday was already off.
 - **Website:** from 16 Nov every Book a Demo and Contact button on the main site opens the enquiry form
   in a popup on the same page (`components/forms/LeadDialogHost.tsx`). The ad landing pages under
   `/get-started` are unchanged; they already show the form at the top.

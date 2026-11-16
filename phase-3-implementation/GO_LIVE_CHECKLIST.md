@@ -68,6 +68,11 @@ just stays dormant until its env var exists. Work top-down: Tier 0 first (it's t
         plus GST is acceptable**; the budget stays at ₹1,000. Plan on roughly ₹36,000 a month including GST,
         and add funds before the balance runs out (Billing → Summary → *Add funds*) — ads stop without any
         warning in the campaign view.
+  - [x] **Hard daily cap** (16 Nov 2026, owner's rule: never more than ₹1,000 of ads in a day, weekly
+        max ₹7,000, no Sunday). A Google daily budget is an average and can be doubled on a single day
+        (16 Nov reached ₹1,892), so the two campaigns are set to ₹300 + ₹200 = **₹500 a day**; ₹1,000 is
+        then the ceiling. Expect about ₹500–600 on a normal day and roughly ₹18,000 a month with GST.
+        This replaces the "₹36,000 a month" figure above. Raise the budgets only on the owner's say.
   - [x] **Old Smart campaigns paused again** (11 Nov 2026, owner's decision). *College ERP System*,
         *Simplify Hostel Management* and *Online Examination software* became active when the funds
         arrived, which raised the account to ₹1,526 a day. Check they are still paused after every top-up.
