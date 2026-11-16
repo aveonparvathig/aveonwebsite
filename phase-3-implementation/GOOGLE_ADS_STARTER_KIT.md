@@ -294,6 +294,11 @@ clicks cost about ₹25 (₹46 before).
   `"au erp"`, `"hume mchenry"`, `"attendance check"` (phrase). They came from six junk search terms that
   cost about ₹197 on 16 Nov: competitor and college portal logins, the government EMIS portal, a student
   attendance check.
+- **Two more negatives the same afternoon** (owner approved, 83 campaign negatives each): `entab` (broad,
+  a competitor's product) and `"my school erp"` (phrase, a school's own ERP login).
+- **First phone or WhatsApp tap recorded** (15:19 check): the *Call or WhatsApp tap* conversion fired on
+  the School ERP ad from the search "school management software". Day to 15:19: 63 clicks, ₹1,556.59,
+  one form enquiry and one tap.
 - **Website:** from 16 Nov every Book a Demo and Contact button on the main site opens the enquiry form
   in a popup on the same page (`components/forms/LeadDialogHost.tsx`). The ad landing pages under
   `/get-started` are unchanged; they already show the form at the top.
