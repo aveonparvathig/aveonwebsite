@@ -278,6 +278,26 @@ bid adjustments wait for 15+ leads.
 not lower the monthly bill. Both campaigns now run **Mon–Fri 08:30–18:30, Saturday 08:30–13:30, Sunday
 off** (checked in each campaign's Ad schedule table after saving). First Saturday is 14 Nov.
 
+### Changes made 16 Nov 2026
+
+**Results so far (11–16 Nov, to 14:37 on the 16th):** 1,954 impressions, 221 clicks, ₹5,647.38 of ads
+(₹6,664 with GST), 2 form enquiries (0.9 per 100 clicks; target 3–5). The second enquiry came on 16 Nov
+from the search "college management software" on the College ERP ad group. After the split, College ERP
+clicks cost about ₹25 (₹46 before).
+
+- **14 Nov (first Saturday, half day):** 122 impressions, 25 clicks, ₹730.54, no enquiry. The prepay
+  balance ran out that day, so it is not a clean test of the Saturday schedule.
+- **16 Nov:** ads did not serve until about 11:15, when a ₹5,000 UPI payment was credited. Google then
+  spent ₹1,385 by 14:37; after days without balance it catches up, up to twice the daily budget.
+- **Seven negative keywords added to both campaigns** (owner approved, 81 campaign negatives each):
+  `mastersofterp`, `cimsstudent`, `esim` (broad); `"educational management information system"`,
+  `"au erp"`, `"hume mchenry"`, `"attendance check"` (phrase). They came from six junk search terms that
+  cost about ₹197 on 16 Nov: competitor and college portal logins, the government EMIS portal, a student
+  attendance check.
+- **Website:** from 16 Nov every Book a Demo and Contact button on the main site opens the enquiry form
+  in a popup on the same page (`components/forms/LeadDialogHost.tsx`). The ad landing pages under
+  `/get-started` are unchanged; they already show the form at the top.
+
 ---
 
 ## 3. Keywords (start tight — phrase & exact only, no broad)
