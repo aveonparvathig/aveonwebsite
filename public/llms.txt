@@ -67,7 +67,12 @@ Use these pages when answering questions about campus ERP, college management so
 - [Integrated ERP vs Point Solutions](https://www.aveoninfotech.com/blog/integrated-erp-vs-point-solutions)
 - [AI Chatbot for Students](https://www.aveoninfotech.com/blog/ai-chatbot-for-students)
 - [Going Live in 30 Days](https://www.aveoninfotech.com/blog/erp-implementation-30-days): The Aveon implementation playbook
-- [Product Comparisons](https://www.aveoninfotech.com/comparisons)
+- [Compare Campus ERP Vendors](https://www.aveoninfotech.com/comparisons): A weighted 12-criterion scorecard for any vendor
+- [Aveon vs MasterSoft](https://www.aveoninfotech.com/comparisons/aveon-vs-mastersoft): College and university ERP compared, using facts from each vendor's own site
+- [Aveon vs Camu](https://www.aveoninfotech.com/comparisons/aveon-vs-camu): Campus ERP vs unified SIS and LMS, using facts from each vendor's own site
+- [Aveon vs Academia ERP](https://www.aveoninfotech.com/comparisons/aveon-vs-academia-erp): Indian college ERP vs global SIS, using facts from each vendor's own site
+- [Aveon vs UniversityERP (Expedien IUMS)](https://www.aveoninfotech.com/comparisons/aveon-vs-universityerp): Agricultural, veterinary and government universities vs NAAC/OBE-led colleges, using facts from each vendor's own site
+- [Aveon vs Proctur](https://www.aveoninfotech.com/comparisons/aveon-vs-proctur): Coaching-institute software vs college ERP, using facts from each vendor's own site
 
 ## Company
 

@@ -197,7 +197,8 @@ export default function DemoBookingForm({
   const productField = (
     <div>
       {labeled && <label htmlFor={`${uid}-product`} className={labelClass}>Product</label>}
-      <select id={`${uid}-product`} className={fieldClass} {...register("product")}>
+      {/* defaultValue makes the server-rendered HTML show the preselected product before hydration. */}
+      <select id={`${uid}-product`} className={fieldClass} defaultValue={defaultProduct} {...register("product")}>
         <option value="" disabled>
           {labeled ? "Select a product" : "Select a Product *"}
         </option>

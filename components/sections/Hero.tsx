@@ -29,7 +29,7 @@ const slides: {
     },
     {
       image: "/products/cms.webp",
-      title: "12+ Systems Unified.",
+      title: "14 Systems Unified.",
       highlight: "One Platform. More Than ERP.",
       description:
         "Facing complexity with your ERP?\nAveon CMS 3.0 is the right alternative connecting your campus through one unified platform.",

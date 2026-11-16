@@ -23,7 +23,7 @@ export const posts: Post[] = [
       "Walk into a typical college office and count the software: one tool for admissions, another for fees, a third for attendance, spreadsheets for exams and a WhatsApp group holding it all together. Each tool works but none of them talk to each other.",
       "The cost shows up as re-entry: the same student's data typed into four systems, with four chances for error. It shows up at reporting time, when NAAC or AICTE asks for numbers that live in three places. And it shows up for parents and students, who juggle multiple logins for one campus.",
       "An integrated ERP changes the economics. Admission data flows to accounts, attendance flows to exam eligibility, payroll reads the same leave records the HR office maintains. One login, one database, one source of truth.",
-      "That is the platform we build at Aveon: nine products that behave like one, because they are one.",
+      "That is the platform we build at Aveon: fourteen products that behave like one, because they are one.",
     ],
   },
   {

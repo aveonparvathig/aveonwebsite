@@ -1,64 +1,33 @@
-# Action Plan — www.aveoninfotech.com
+# Action Plan — www.aveoninfotech.com (16 Nov 2026)
 
-Ordered by priority. The health score is 84, but **off-site authority is the real bottleneck** — Phase 1 is where the growth is.
+Owner key: **[C]** = can be done in code here · **[U]** = needs the owner (accounts, facts, consent)
 
----
+## Critical — this week
+1. **[U] Start building off-site authority.** Claim and complete G2, Capterra/GetApp, SoftwareSuggest and Techjockey listings; ask 5–10 happy clients for reviews there. Create a Wikidata item. Target 20–30 referring domains by Feb 2027.
+2. **[U] Check the Google Ads prepay balance** — paid sessions fell to 1 on Sat 15 Nov.
 
-## 🔴 CRITICAL — fix immediately
+## High — within 1 week
+3. **[U→C] Confirm or remove doubtful claims:** the Symbiosis case study on `/solutions/multi-campus-management`; the "ISO 9001 certified process" line on `/services/custom-software-development`; the "1 March 2024" publish dates on five guides (if the guides weren't live in 2024, change to their real dates).
+4. **[C] Fix contradictory stats** on `/solutions/by-state` (16+ years, 12 modules, 24/7, regional teams), `/solutions/coimbatore` (12+ years, 50,000+ students) and `/blog/integrated-erp-vs-point-solutions` ("nine products") — read from `siteConfig.stats`.
+5. **[C] Delete** `public/ai-search.json`, `public/ai-search-instructions.txt`, `public/ai-crawl-metadata.json`.
+6. **[C] Get the comparison pages discovered:** add them to `llms.txt`; link them from `/pricing`, the college/university product pages and the footer; then **[C/U]** resubmit the sitemap in GSC and request indexing (start with aveon-vs-mastersoft).
+7. **[C] Fix orphans and the broken image:** link `/resources/college-erp-buyers-guide`, `/solutions/coimbatore`, `/about/team`; fix `app/(site)/solutions/coimbatore/page.tsx:75` (missing `/products/college-erp-team.webp`).
+8. **[U] Mark GA4 key events** (`demo_request`, `form_submit`, `phone_click`, `whatsapp_click`) and fix campaign tagging so paid sessions stop showing "(organic)".
+9. **[C] Ad landing pages:** per-variant proof (no college logo wall on School/Hostel), a lighter second offer ("Get a price estimate" / brochure on WhatsApp), one line on how pricing works, a product visual, and a `/get-started/naac` variant. Use only the two offers the owner confirmed.
 
-### 1. Build off-site authority (the #1 lever)
-*Why: 2 referring hosts, PageRank rank ~52M, 98% branded traffic, zero non-branded clicks. Nothing else moves non-branded rankings until this does.*
-- Claim & complete **G2, Capterra, SoftwareSuggest, TrustRadius** profiles (do-follow links + buyer-intent citations).
-- List in **Indian edtech / SaaS directories** and Coimbatore local directories with *consistent NAP*.
-- Convert existing clients into **case-study backlinks** (link from their sites, joint press releases).
-- Pitch **3–5 guest articles / expert quotes** in Indian education & edtech media (HARO-style).
-- **KPI:** 20–30 quality referring domains within 2–3 months.
+## Medium — within 1 month
+10. **[C] Retarget `/products` at "campus management system"** (H1, explainer, product chooser, CollectionPage/ItemList schema).
+11. **[C] NAAC page:** H1 with "software", SoftwareApplication + breadcrumb schema; **[U]** cleaned SSR/AQAR screenshots.
+12. **[C] Schema:** BreadcrumbList + SoftwareApplication on every product page; Service entity on `/solutions/coimbatore`; `datePublished` on comparison pages; **[U]** GBP URL and lat/long for LocalBusiness `geo`/`sameAs`/`hasMap`.
+13. **[C] Titles:** use `title.absolute` for the five comparison pages and the other titles over 60 characters; put "alternative" into comparison titles.
+14. **[C] Expand thin pages:** three old blog posts (132–196 words), fees-management / online-examination / lms-ai-chatbot (~250 words), `/solutions/coimbatore`.
+15. **[C] INP under 200 ms:** reduce client JS on the homepage and college-erp page, defer third-party scripts.
+16. **[C] `/contact` form:** associate labels with the five inputs.
+17. **[C] Homepage:** one plain sentence on who Aveon is (education ERP, Coimbatore, since 2012, 200+ institutions); one wording for go-live time everywhere.
+18. **[U] Citations:** confirm/create Justdial, Sulekha, Clutch, GoodFirms with exact GBP NAP; add street and phone on IndiaMART.
 
-> Blockers from prior work (per project memory): off-site/link work and case-study consent are gated on the user. This phase is mostly off-platform and needs a decision to resource it.
-
----
-
-## 🟠 HIGH — within 1 week
-
-### 2. Strengthen E-E-A-T
-- Add named **Person** authors (bio, role, `sameAs` LinkedIn) to every blog `Article` schema **and** visible author boxes on-page.
-- Add legitimate **`AggregateRating` / `Review`** schema reflecting the 4.2★ / 54 Google reviews; add an on-site testimonials section.
-
-### 3. Concentrate authority with internal linking
-- Build a **topic-cluster model**: product pages = money pages; blog guides link up with exact/partial-match anchors on non-branded terms (college erp software, campus management system, university erp system).
-
----
-
-## 🟡 MEDIUM — within 1 month
-
-### 4. Fix thin content
-- ✅ **Done (2026-11-06):** `/partners` expanded with per-model detail, why-partner, process and FAQ (+ FAQ/breadcrumb schema).
-- *Correction:* `/academy` and `/solutions/by-state` were flagged by an unreliable automated count but are actually substantial — no action needed. `/solutions/coimbatore` is short but acceptable; optionally add named local institutions later.
-
-### 5. Standardise schema
-- Breadcrumb on **every** deep page; FAQ + SoftwareApplication on `/solutions/*` and the NAAC/NBA/AICTE sub-pages that currently lack them.
-
-### 6. Content depth & competitor capture
-- Add original data / screenshots / client proof to the batch-published guides.
-- Publish **comparison / alternatives pages** ("best college ERP software in India", "X alternative") to capture competitor-term demand.
-
-### 7. INP performance
-- Reduce unused JavaScript (~450 ms flagged) and defer non-critical scripts to pull **INP under 200 ms** in the field.
-
----
-
-## 🟢 LOW — backlog
-
-- Add a **Content-Security-Policy** header (report-only first) — the one missing security header.
-- Remove the deprecated `meta keywords` tag.
-- Publish **`/llms.txt`**; optionally add `Content-Signal` lines to robots groups.
-- Confirm app subdomains (`messtoken.*`) are `noindex` where appropriate.
-- Monitor legacy `.php → new URL` consolidation in GSC; resubmit new URLs via the Indexing API.
-
----
-
-## North-star KPIs to track monthly
-1. **Referring domains** (target: +20–30 in 90 days) — the leading indicator.
-2. **Non-branded clicks & impressions** in GSC (currently ~0 non-branded clicks).
-3. **Non-branded average position** for the money terms.
-4. Organic sessions in GA4 (currently ~43 / 28 days, almost all branded).
+## Low — backlog
+19. **[C]** Enforce a nonce-based CSP; noindex `messtoken.aveoninfotech.com` (infra); fix 404 page canonical/robots; drop meta keywords; descriptive client-logo alt text; clean image filenames; eager-load hero images on /about, /careers, /partners, /products; more OG images.
+20. **[U]** Add a free Moz key and verify Bing Webmaster for real backlink data; re-run this audit in ~4 weeks.
+21. **[C]** Re-baseline drift for `/products/college-erp` and `/services` after two weeks of GSC data.
+22. **[U]** Named author with bio for the guides (raises E-E-A-T).

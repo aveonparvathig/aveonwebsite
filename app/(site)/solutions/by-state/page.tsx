@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "@/lib/constants";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 import { STATES_DATA } from "@/lib/data/states";
 
@@ -174,7 +175,7 @@ export default function ByStatePage() {
             <div className="rounded-2xl border border-navy-100 bg-navy-50 p-8">
               <p className="font-bold text-lg text-navy-900 mb-3">Local Support</p>
               <p className="text-navy-700">
-                Regional teams familiar with local institutions, workflows, and specific challenges.
+                Implementation by our Coimbatore team, on campus for go-live, with a named support contact afterwards.
               </p>
             </div>
           </div>
@@ -192,10 +193,10 @@ export default function ByStatePage() {
             <div>
               <h3 className="font-bold text-navy-900 mb-4">Platform & Features</h3>
               <ul className="space-y-2 text-navy-700">
-                <li>✓ 12 integrated product modules</li>
+                <li>✓ {siteConfig.stats.products} integrated products on one database</li>
                 <li>✓ Student information system</li>
                 <li>✓ Examination management</li>
-                <li>✓ Warehouse & inventory</li>
+                <li>✓ Inventory & stores</li>
                 <li>✓ HR & payroll systems</li>
                 <li>✓ Custom integrations</li>
               </ul>
@@ -205,8 +206,8 @@ export default function ByStatePage() {
               <ul className="space-y-2 text-navy-700">
                 <li>✓ NAAC/AICTE compliance</li>
                 <li>✓ State board compliance</li>
-                <li>✓ Local implementation team</li>
-                <li>✓ 24/7 technical support</li>
+                <li>✓ On-campus implementation and go-live</li>
+                <li>✓ Dedicated support contact by phone and email</li>
                 <li>✓ Training & documentation</li>
                 <li>✓ Ongoing optimization</li>
               </ul>
@@ -224,15 +225,15 @@ export default function ByStatePage() {
               <p className="mt-2 text-navy-700 font-semibold">State Pages</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">200+</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.institutions}</p>
               <p className="mt-2 text-navy-700 font-semibold">Institutions</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">1M+</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.students}</p>
               <p className="mt-2 text-navy-700 font-semibold">Students</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">16+</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.yearsExperience}</p>
               <p className="mt-2 text-navy-700 font-semibold">Years Experience</p>
             </div>
           </div>

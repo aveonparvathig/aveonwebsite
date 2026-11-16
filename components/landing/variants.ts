@@ -33,6 +33,8 @@ export type LandingVariant = {
   showTestimonial: boolean;
   closingTitle: string;
   whatsappMessage: string;
+  /** Prefilled WhatsApp text for the lighter "get pricing" option under the form. */
+  pricingMessage: string;
 };
 
 const FAQ_COST = {
@@ -45,9 +47,15 @@ const FAQ_NEXT = {
   a: "Our team responds within one business day to fix a time for a 30-minute walkthrough.",
 };
 
+/** Pricing as stated on /pricing; the 24-hour quote was confirmed by the owner on 13 Nov 2026. */
+const FAQ_PRICE = {
+  q: "How is it priced?",
+  a: "By the number of students and the modules you switch on, on the cloud or on-premise. After a short scoping call we send an itemised quote within 24 hours.",
+};
+
 const GO_LIVE_GENERIC = {
   title: "Go live with your team trained",
-  text: "Data migration, configuration, staff training and a supervised go-live.",
+  text: "Data migration, configuration, free on-campus staff training and a supervised go-live.",
 };
 
 export const collegeVariant: LandingVariant = {
@@ -101,10 +109,11 @@ export const collegeVariant: LandingVariant = {
   ],
   goLiveStep: {
     title: "Go live in about 30 days",
-    text: "Data migration, configuration, staff training and a supervised go-live for a single campus.",
+    text: "Data migration, configuration, free on-campus staff training and a supervised go-live for a single campus.",
   },
   faqs: [
     FAQ_COST,
+    FAQ_PRICE,
     {
       q: "How long does implementation take?",
       a: "About 30 days for a single campus, including data migration, configuration and staff training.",
@@ -121,6 +130,7 @@ export const collegeVariant: LandingVariant = {
   showTestimonial: true,
   closingTitle: "Ready to see it on your campus?",
   whatsappMessage: "Hi Aveon, I'd like to know more about your campus ERP.",
+  pricingMessage: "Hi Aveon, please share pricing for your College ERP. Our institution and student count:",
 };
 
 const schoolVariant: LandingVariant = {
@@ -175,6 +185,7 @@ const schoolVariant: LandingVariant = {
   goLiveStep: GO_LIVE_GENERIC,
   faqs: [
     FAQ_COST,
+    FAQ_PRICE,
     {
       q: "Is this the college ERP with a new name?",
       a: "No. School ERP is its own product, built for schools: admissions, attendance, examinations, report cards, fees, transport and a parent portal.",
@@ -188,6 +199,7 @@ const schoolVariant: LandingVariant = {
   showTestimonial: false,
   closingTitle: "Ready to see it for your school?",
   whatsappMessage: "Hi Aveon, I'd like a demo of your School ERP.",
+  pricingMessage: "Hi Aveon, please share pricing for your School ERP. Our school and student count:",
 };
 
 const hostelVariant: LandingVariant = {
@@ -242,6 +254,7 @@ const hostelVariant: LandingVariant = {
   goLiveStep: GO_LIVE_GENERIC,
   faqs: [
     FAQ_COST,
+    FAQ_PRICE,
     {
       q: "Does it cover the mess as well?",
       a: "Yes. Mess members, menus, attendance, billing, stock, recipes and purchases are part of the same product.",
@@ -255,6 +268,7 @@ const hostelVariant: LandingVariant = {
   showTestimonial: true,
   closingTitle: "Ready to see it for your hostel?",
   whatsappMessage: "Hi Aveon, I'd like a demo of your Hostel & Mess management system.",
+  pricingMessage: "Hi Aveon, please share pricing for your Hostel & Mess system. Our institution and number of residents:",
 };
 
 const feesVariant: LandingVariant = {
@@ -309,6 +323,7 @@ const feesVariant: LandingVariant = {
   goLiveStep: GO_LIVE_GENERIC,
   faqs: [
     FAQ_COST,
+    FAQ_PRICE,
     {
       q: "Does it take online payments?",
       a: "Yes. It integrates with an online payment gateway and issues digital receipts.",
@@ -322,10 +337,80 @@ const feesVariant: LandingVariant = {
   showTestimonial: true,
   closingTitle: "Ready to see it in action?",
   whatsappMessage: "Hi Aveon, I'd like a demo of your Fees Management software.",
+  pricingMessage: "Hi Aveon, please share pricing for your Fees Management software. Our institution and student count:",
 };
 
 /** Variants served at /get-started/<path>. The college page is /get-started itself. */
-export const productVariants: LandingVariant[] = [schoolVariant, hostelVariant, feesVariant];
+const naacVariant: LandingVariant = {
+  path: "naac",
+  product: "iqac-naac-nba",
+  trackingName: "get_started_naac",
+  metaTitle: "Book a Free NAAC Software Demo | Aveon Infotech",
+  metaDescription:
+    "See Aveon's IQAC, NAAC and NBA software in action: criterion-wise data, SSR and AQAR documentation, outcome-based education and accreditation reports. Book a free demo.",
+  headlineLead: "NAAC and NBA accreditation software for",
+  headlineHighlight: "IQAC teams preparing SSR & AQAR",
+  intro:
+    "See how Aveon keeps IQAC, NAAC and NBA data in one system, so accreditation reports come from the records your departments already keep, in a 30-minute walkthrough.",
+  heroPoints: [
+    "NAAC's seven criteria and NBA for engineering programmes",
+    "IQAC activities captured through the year, exported when you need them",
+    "Outcome-based education and feedback in the same system",
+  ],
+  reasonsTitle: "Built around how an IQAC actually works",
+  reasons: [
+    {
+      title: "IQAC cell in one place",
+      text: "IQAC meetings, activities and coordination managed in one system.",
+    },
+    {
+      title: "NAAC's seven criteria",
+      text: "Data organised by the NAAC criteria framework, with accreditation documentation alongside.",
+    },
+    {
+      title: "NBA for engineering",
+      text: "NBA accreditation support for engineering programmes, with outcome-based education built in.",
+    },
+    {
+      title: "Feedback and benchmarks",
+      text: "Stakeholder feedback, surveys, quality indicators and benchmarking for your reports.",
+    },
+  ],
+  modulesEyebrow: "One system for accreditation",
+  modulesTitle: "Capture it once during the year. Report it when the cycle comes.",
+  modulesText:
+    "Replace year-end spreadsheet hunts with one accreditation system connected to your campus ERP. Start with this module and add others later without migrating data between them.",
+  modules: [
+    "IQAC cell",
+    "NAAC criteria",
+    "NBA accreditation",
+    "Outcome-based education",
+    "Feedback & surveys",
+    "Quality indicators",
+    "Accreditation reports",
+    "Documentation",
+  ],
+  goLiveStep: GO_LIVE_GENERIC,
+  faqs: [
+    FAQ_COST,
+    FAQ_PRICE,
+    {
+      q: "Does it cover NBA as well as NAAC?",
+      a: "Yes. It covers IQAC, NAAC accreditation across the seven criteria, and NBA accreditation for engineering programmes.",
+    },
+    {
+      q: "Can we use only the accreditation module?",
+      a: "Yes. Begin with one module and add others later without migrating data between them.",
+    },
+    FAQ_NEXT,
+  ],
+  showTestimonial: true,
+  closingTitle: "Ready to see it before your next cycle?",
+  whatsappMessage: "Hi Aveon, I'd like a demo of your IQAC / NAAC / NBA software.",
+  pricingMessage: "Hi Aveon, please share pricing for your IQAC / NAAC / NBA software. Our institution and student count:",
+};
+
+export const productVariants: LandingVariant[] = [schoolVariant, hostelVariant, feesVariant, naacVariant];
 
 export function getProductVariant(path: string): LandingVariant | undefined {
   return productVariants.find((v) => v.path === path);

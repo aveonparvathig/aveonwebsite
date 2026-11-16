@@ -8,6 +8,7 @@ import { ViewContentTracker } from "@/components/analytics/ViewContentTracker";
 import { BookingsLink } from "@/components/ui/BookingsLink";
 import { siteConfig } from "@/lib/constants";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import CompareVendorsLinks from "@/components/sections/CompareVendorsLinks";
 
 export const metadata: Metadata = {
   title: "College ERP Pricing in India: How It Works",
@@ -226,6 +227,8 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
+
+      <CompareVendorsLinks />
 
       {/* Pricing FAQ */}
       <section className="mx-auto max-w-[900px] px-4 py-14 sm:px-6 lg:px-10">

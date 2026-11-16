@@ -74,7 +74,7 @@ export const staticPosts: StaticPost[] = [
     excerpt:
       "Where AI actually works on an Indian campus today: at-risk prediction, student-query chatbots, exam and admin automation, learning analytics, and the data and governance it depends on.",
     author: EDITORIAL_AUTHOR,
-    publishedAt: "2024-03-01",
+    publishedAt: "2026-09-10",
     dateModified: "2026-11-03",
     readingTime: "11 min read",
     category: "insights",
@@ -85,7 +85,7 @@ export const staticPosts: StaticPost[] = [
     excerpt:
       "The business case for one campus database: where fragmented systems cost money, what changes office by office, how to measure the return, and how to make the case to a governing body.",
     author: EDITORIAL_AUTHOR,
-    publishedAt: "2024-03-01",
+    publishedAt: "2026-09-10",
     dateModified: "2026-11-03",
     readingTime: "10 min read",
     category: "insights",
@@ -96,7 +96,7 @@ export const staticPosts: StaticPost[] = [
     excerpt:
       "A phase-by-phase playbook for moving a college or university to a new campus ERP: data audit and cleansing, migration mapping, parallel runs, cut-over timing, training and the first 90 days.",
     author: EDITORIAL_AUTHOR,
-    publishedAt: "2024-03-01",
+    publishedAt: "2026-09-10",
     dateModified: "2026-11-03",
     readingTime: "12 min read",
     category: "insights",
@@ -107,7 +107,7 @@ export const staticPosts: StaticPost[] = [
     excerpt:
       "Step-by-step NAAC accreditation checklist covering all seven criteria, the SSR and DVV process, and the documentation your institution needs.",
     author: EDITORIAL_AUTHOR,
-    publishedAt: "2024-03-01",
+    publishedAt: "2026-09-10",
     dateModified: "2026-11-03",
     readingTime: "12 min read",
     category: "insights",
@@ -118,7 +118,7 @@ export const staticPosts: StaticPost[] = [
     excerpt:
       "How to map learning outcomes, assess student performance and align Outcome-Based Education with NAAC and NBA accreditation.",
     author: EDITORIAL_AUTHOR,
-    publishedAt: "2024-03-01",
+    publishedAt: "2026-09-10",
     dateModified: "2026-11-03",
     readingTime: "11 min read",
     category: "insights",

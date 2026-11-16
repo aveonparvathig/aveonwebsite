@@ -77,6 +77,7 @@ export default function LandingPage({ variant }: { variant: LandingVariant }) {
   ];
 
   const whatsappHref = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(variant.whatsappMessage)}`;
+  const pricingHref = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(variant.pricingMessage)}`;
 
   return (
     // Bottom padding on small screens keeps the fixed contact bar off the footer.
@@ -190,6 +191,13 @@ export default function LandingPage({ variant }: { variant: LandingVariant }) {
                 <div className="mt-3 text-center">
                   <BookingsLink />
                 </div>
+                <p className="mt-4 rounded-lg bg-primary-50 px-4 py-3 text-center text-sm text-navy-700">
+                  Not ready for a demo?{" "}
+                  <a href={pricingHref} target="_blank" rel="noopener" className="font-bold text-primary-700 hover:text-navy-900">
+                    Ask for pricing on WhatsApp
+                  </a>
+                  . Itemised quote within 24 hours of a short scoping call.
+                </p>
               </div>
             </div>
           </div>

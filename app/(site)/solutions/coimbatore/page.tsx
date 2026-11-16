@@ -72,10 +72,10 @@ export default function CoimbatoreePage() {
             </div>
           </div>
           <Image
-            src="/products/college-erp-team.webp"
-            alt="Coimbatore Education ERP Solutions"
-            width={1248}
-            height={848}
+            src="/products/erp-team.jpg"
+            alt="Aveon's campus ERP team in Coimbatore"
+            width={1268}
+            height={740}
             className="w-full rounded-2xl object-cover"
           />
         </div>
@@ -123,16 +123,16 @@ export default function CoimbatoreePage() {
 
           <div className="grid sm:grid-cols-3 gap-8">
             <div className="text-center">
-              <p className="text-5xl font-bold text-primary-600">200+</p>
-              <p className="mt-2 text-navy-700 font-semibold">Institutions Across Tamil Nadu</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.institutions}</p>
+              <p className="mt-2 text-navy-700 font-semibold">Institutions Across India</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-bold text-primary-600">50,000+</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.students}</p>
               <p className="mt-2 text-navy-700 font-semibold">Students on Our Platform</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-bold text-primary-600">12+</p>
-              <p className="mt-2 text-navy-700 font-semibold">Years Serving Coimbatore</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.yearsExperience}</p>
+              <p className="mt-2 text-navy-700 font-semibold">Years Based in Coimbatore</p>
             </div>
           </div>
 

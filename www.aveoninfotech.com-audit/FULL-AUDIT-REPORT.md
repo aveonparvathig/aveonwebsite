@@ -1,174 +1,98 @@
 # Full SEO Audit — www.aveoninfotech.com
 
-**Date:** 2026-11-06
-**Business type:** B2B SaaS — Education / Campus ERP & LMS (brick-and-mortar HQ in Coimbatore, India)
-**Pages in sitemap:** 59
-**Data sources:** Google Search Console (full access), GA4, PageSpeed Insights v5, CrUX field data, Common Crawl web graph, live crawl
+**Date:** 16 Nov 2026 · **Previous audit:** 6 Nov 2026 (84/100)
+**Business type:** B2B SaaS, education / campus ERP; office in Coimbatore, sells across India (hybrid local)
+**Scope:** all 66 sitemap URLs (6 Nov sampled 59), plus redirects, landing pages and drift baselines
+**Data sources:** live crawl and render, Google Search Console, GA4, PageSpeed Insights, CrUX, Lighthouse 13.6, Common Crawl web graph, competitor and directory sites
+**Specialist findings:** `findings/` (technical, content, schema, performance, google, geo-ai, agentic, local, sxo, backlinks)
 
 ---
 
-## Executive Summary
+## Executive summary
 
-### Overall SEO Health Score: **84 / 100**
+### SEO Health Score: **81 / 100** (6 Nov: 84)
 
-> **Read this score carefully.** It is high because the site is genuinely well-built — clean technical SEO, comprehensive schema, and Core Web Vitals that *pass in the field*. But the score is weighted toward on-page/technical health, and it **understates the one problem that actually caps growth: the site has almost no off-site authority.** Aveon ranks for its own name and little else.
+| Category | Weight | Score | 6 Nov |
+|---|---|---|---|
+| Technical SEO | 22% | 93 | 90 |
+| Content quality | 23% | 70 | 72 |
+| On-page SEO | 20% | 78 | 85 |
+| Schema / structured data | 10% | 84 | 95 |
+| Performance (Core Web Vitals) | 10% | 86 | 88 |
+| AI search readiness (GEO 71, agent readiness 92) | 10% | 77 | 80 |
+| Images | 5% | 82 | 88 |
 
-**The core story in one line:** *A technically excellent site that is commercially invisible for non-branded demand because nobody links to it.*
+**The three-point drop is mostly method, not regression.** This audit read every one of the 66 pages instead of a sample, and scored schema coverage, AI-search authority and on-page titles more strictly. On a like-for-like basis the site is level or slightly better: the technical score rose, the homepage lab LCP fell from 4.3 s to 1.1 s, and five new high-quality comparison pages went live. What the full crawl did surface is a set of **old pages carrying claims that contradict the confirmed facts** — the most important on-site finding of this audit.
 
-### Evidence from real Google data (last 28 days)
-- **98% of all clicks are branded** — "aveon infotech", "aveon", "aveon erp", "aveon student erp".
-- Non-branded queries generate ~51% of impressions but **zero clicks** — because they rank page 2+ or match the wrong intent (many are *competitors' client-portal logins*, e.g. "snmv erp login", "ciet cms login").
-- Only **2 referring hosts** link to the domain in Common Crawl; domain PageRank rank is ~52 millionth.
-- GA4 organic: ~43 sessions / 28 days — tiny, and almost entirely brand-driven.
+Separate from the health score: **Search Experience (SXO) 54/100** and **Local 74/100**. Backlinks: **insufficient data for a score** (free tier only), but the profile is unchanged at 2 referring hosts.
 
-### Top 5 critical issues
-1. **Near-zero backlink profile** (2 referring hosts) — the dominant growth blocker. *[Critical]*
-2. **Traffic is 98% branded**; non-branded commercial terms don't convert impressions to clicks. *[High]*
-3. **No off-site authority for AI answer engines to cite** — same root cause as #1. *[High]*
-4. **E-E-A-T gaps** — blog authored by Organization (no named experts), thin pages. *[Medium]*
-5. **54 real Google reviews not surfaced** in content or schema. *[Medium]*
+### What the real Google data says (GSC, 17 Oct – 13 Nov vs the 28 days before)
+- Clicks **703** (+68%), impressions **7,043** (+58%), CTR 10%. Growth is almost all brand: branded clicks 454 (from 225); **non-branded clicks 12** (from 14), on 2,403 impressions.
+- Average position fell from 9.6 to 17.7 because Google now shows the site for **335 non-brand queries** (190 before), mostly on page 2–8 — e.g. "higher education inventory management" (759 impressions, position 74). That is a widening footprint, not a loss.
+- The five comparison pages are **not yet known to Google**: GSC's copy of the sitemap has 61 URLs (last read 10 Nov) against 66 live.
+- GA4 (data from 4 Nov): organic 208 sessions, paid 109, AI assistants 13 (all ChatGPT). **GA4 has no key events configured**, so every channel shows 0 conversions there. (Google Ads' own conversion tag does work; it recorded its first lead on 13 Nov.)
+- Paid sessions dropped to **1 on Saturday 15 Nov** — consistent with the Google Ads prepay balance running out. Check billing.
+
+### Top 5 issues
+1. **Critical — off-site authority.** 2 referring hosts (unchanged since 6 Nov); academiaerp.com has 28 and a PageRank rank ~100× better. This is why non-brand clicks stay near zero. *(backlinks, geo)*
+2. **High — pages contradict the confirmed facts.** `/solutions/by-state` ("16+ years", "12 modules", "24/7 support", "regional teams"), `/solutions/coimbatore` ("12+ years", "50,000+ students"), a guide saying "nine products", an unverified "ISO 9001" claim, and three stale `public/ai-*.json/txt` files with "50,000+ students" and "since 2014". *(content, geo)*
+3. **High — trust claims that may not be real.** "How Symbiosis unified 5 campuses" on `/solutions/multi-campus-management` (Pune; conflicts with the client list and the 4-week plan), and five guides dated "1 March 2024" though the files first appear in Sep 2026. If not real, these are a reputational and E-E-A-T risk. *(content)*
+4. **High — new pages not discovered; internal linking gaps.** Comparison pages are unknown to Google and linked only from `/comparisons`; `/resources/college-erp-buyers-guide`, `/solutions/coimbatore` and `/about/team` have no internal links; the Coimbatore hero image 404s. *(google, content)*
+5. **High — buyers see no proof.** No product page shows client logos, testimonials, case studies or product screenshots in its main content (SXO trust 5/15, media 4/15). The School and Hostel ad landing pages show an all-college logo wall. *(sxo)*
 
 ### Top 5 quick wins
-1. Claim software-review profiles (G2, Capterra, SoftwareSuggest, TrustRadius) — instant citations + authority.
-2. Add named **Person** authors with bios to blog Article schema.
-3. Expand thin pages (`/partners` 124w, `/academy` 232w, `/solutions/by-state` 225w).
-4. Add legitimate **AggregateRating** reflecting the 54 Google reviews.
-5. Add a **Content-Security-Policy** header (every other security header is already in place).
+1. Resubmit the sitemap in GSC and request indexing for the five `/comparisons/aveon-vs-*` pages; add them to `llms.txt`.
+2. Correct the contradictory stats on `/solutions/by-state`, `/solutions/coimbatore` and the guide; delete `public/ai-search.json`, `ai-search-instructions.txt`, `ai-crawl-metadata.json`.
+3. Mark `demo_request`, `form_submit`, `phone_click`, `whatsapp_click` as GA4 key events.
+4. Fix the Coimbatore hero image path; link the buyer's guide, Coimbatore page, team page and comparison pages from nav/footer/product pages.
+5. Shorten the comparison and other >60-char titles with `title.absolute` (drops the " | Aveon Infotech" suffix).
 
 ---
 
-## Technical SEO — 90/100
+## Technical SEO — 93/100
+**Works:** all 66 sitemap URLs 200, self-canonical, indexable, one H1, JSON-LD on every page; sitemap valid and declared in robots.txt; legacy `.php`, http, apex and trailing-slash variants 308 in one hop; server-rendered HTML; IndexNow key live; `/get-started*` landing pages are `noindex` and outside the sitemap (consistent, deliberate).
+**Findings:**
+- *Medium* — three guessed state slugs (`college-erp-kerala`, `-andhra-pradesh`, `-uttar-pradesh`) return 404 rather than 308; the eight slugs that were real 308 correctly. Only matters if those three were ever linked or indexed.
+- *Medium* — drift: `/products/college-erp` H1/title and `/services` title changed since baseline. Both were deliberate keyword retargeting (4–5 Nov); watch GSC for two weeks, then re-baseline.
+- *Low* — CSP is Report-Only and allows `unsafe-inline`/`unsafe-eval`; `messtoken.aveoninfotech.com` is indexable; 404 page has a `/_not-found` canonical and two robots metas; sitemap lastmod has 39 URLs on the same date.
 
-**What works**
-- `robots.txt` is clean: `Allow: /`, blocks only `/api/` and `/studio/`, and declares deliberate groups for every major AI crawler (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot…).
-- `sitemap.xml`: 59 URLs, submitted to GSC, **0 warnings / 0 errors**.
-- Legacy PHP URLs **308-redirect** to new routes (`/college-erp.php → /products/college-erp`, `/our-team.php → /about/team`, etc.).
-- Security headers present: HSTS (2-year), `X-Content-Type-Options`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy`, `Permissions-Policy`.
-- Content is **server-rendered** (2,000+ words without JS); canonicals are self-referential and match Google's chosen canonical.
-- Key pages confirmed **"Submitted and indexed"** via the URL Inspection API; breadcrumb rich results PASS.
+## Content quality — 70/100 · On-page — 78/100 · Images — 82/100
+**Works:** `/partners` expanded (124 → 593 words); comparison pages are distinct (62–68% unique text each) with a strong "How we compared" disclosure; guides have bylines and author boxes; no duplicate titles or descriptions; 100% image alt coverage; AVIF with dimensions.
+**Findings:** the contradictions and doubtful trust claims above (High); three blog posts of 132–196 words and three product pages of ~240–257 words on one template (Medium); 20 of 66 titles over 60 characters (Medium); meta keywords tag still on all pages (Low); client-logo alt text is abbreviations; filenames with spaces/parentheses; hero images lazy-loaded on four pages; only two OG images; `/about` says "exclusively for educational institutions" while selling warehouse and offshore services. E-E-A-T 62/100 — the organisation byline (owner decision) caps Expertise.
 
-**Findings**
-- **[Medium] Legacy `.php` URLs still out-rank their new targets.** `/college-erp.php` pulls 1,479 impressions at position 4.7, while its redirect target `/products/college-erp` gets only 427 impressions at position 6.9. The 308s are correct — Google just hasn't finished consolidating equity. Keep the redirects, resubmit new URLs via the Indexing API, and audit internal links to ensure they point to the new paths.
-- **[Low] No Content-Security-Policy header** — the one missing security header. Add it report-only first.
-- **[Low] App subdomains in search** (`messtoken.aveoninfotech.com`) surface for client-portal queries. Confirm app subdomains are `noindex` where appropriate.
+## Schema — 84/100
+**Works:** valid JSON-LD everywhere; Organization/LocalBusiness/WebSite with shared `@id`s; NAP matches GBP; comparison pages carry WebPage + BreadcrumbList + FAQPage and mark competitors only as plain SoftwareApplication stubs.
+**Findings:** product pages other than college-erp lack BreadcrumbList and SoftwareApplication (Medium); `/solutions/coimbatore` has no page entity (Medium); LocalBusiness lacks `geo`, `sameAs` to GBP and a place-link `hasMap` (needs the real coordinates and GBP URL from the owner); comparison pages lack `datePublished`. Google retired FAQ rich results in May 2026 — keep FAQPage, but don't add it for SERP reasons.
 
----
-
-## Content Quality — 72/100
-
-**What works**
-- Money pages are substantial: `/products/college-erp` ~2,593 words, `/products/university-erp` ~1,973 words, `/comparisons` ~1,500 words.
-- 12 topical blog guides covering real buyer questions (NAAC, NBA, AICTE, NIRF, OBE, ERP migration, multi-campus).
-- FAQ content present and marked up on product, contact and accreditation pages.
-
-**Findings**
-- **[Medium] Blog authorship is `Organization`, not a credentialed `Person`.** In a B2B/compliance-adjacent niche, named experts with bios and `sameAs` (LinkedIn) are far stronger E-E-A-T signals.
-- **[Medium → partially fixed] Thin pages.** `/partners` was genuinely thin (~124w) and has been **expanded (2026-11-06)** with per-model detail, a why-partner section, a how-it-works process and an FAQ (plus FAQ + breadcrumb schema). *Correction:* the automated counts for `/academy`, `/solutions/by-state` and `/solutions/coimbatore` were understated by the renderer — on review `/academy` and `/solutions/by-state` are substantial hub/landing pages, not thin; `/solutions/coimbatore` is short but acceptable.
-- **[Low] Guides batch-published on the same date** (`datePublished = dateModified = 2026-11-03` across several). Stagger updates and add original data/screenshots so the pages read as genuinely maintained.
-
----
-
-## On-Page SEO — 85/100
-
-**What works**
-- Unique, keyword-aligned titles and meta descriptions per page.
-- Clear heading hierarchy; descriptive internal links between related products.
-- `og:`/`twitter:` tags, `theme-color`, and correct canonicals.
-
-**Findings**
-- **[Medium] Non-branded intent under-served by internal anchors.** Head terms (college erp software, campus management system) rank page 2+; internal anchor text and hub structure under-reinforce them. Build a topic-cluster model with exact/partial-match anchors pointing to money pages.
-- **[Low] Legacy `meta keywords` tag present** — deprecated and ignored by Google. Harmless but worth removing.
-
----
-
-## Schema & Structured Data — 95/100
-
-**What works**
-- Sitewide **Organization + LocalBusiness + WebSite** JSON-LD, valid and consistent.
-- Product pages carry **SoftwareApplication + FAQPage + BreadcrumbList**.
-- Blog carries **Article + WebPage + BreadcrumbList** with dates.
-- GSC rich-results verdict **PASS** (breadcrumbs detected).
-
-**Findings**
-- **[Medium] No `AggregateRating`/`Review` schema** despite 4.2★ / 54 Google reviews. Add legitimate rating markup to earn review rich results.
-- **[Low] Schema uneven across page types.** `/solutions/*` lack FAQ/SoftwareApplication; `/products/iqac-naac-nba/naac` has FAQ but no BreadcrumbList. Standardise.
-
----
-
-## Performance (Core Web Vitals) — 88/100
-
-**Field data (CrUX, real users — what Google ranks on):**
-
-| Metric | Origin p75 | Rating |
-|---|---|---|
-| LCP | 2,181 ms | ✅ Fast |
-| CLS | 0.03 | ✅ Fast |
-| INP | 266 ms | ⚠️ Needs improvement |
-| TTFB | 750 ms | ✅ Fast |
-
-**Lab (Lighthouse mobile):** Performance 85 · Accessibility 96 · Best-Practices 100 · SEO 100 · page weight 942 KiB.
-
-**Findings**
-- **[Medium] INP borderline (266 ms; good < 200 ms).** Reduce unused JavaScript (~450 ms flagged) and defer non-critical scripts.
-- **[Low] Lab LCP 4.3s vs field 2.18s** — lab is stricter; field passes, so no urgent action. LCP image is already preloaded with `fetchpriority`.
-
----
-
-## AI Search Readiness (GEO) — 80/100
-
-**What works**
-- `robots.txt` explicitly welcomes AI crawlers; content is server-rendered and extractable.
-- Rich entity schema + FAQ/Q&A structure supports passage-level citation.
-
-**Findings**
-- **[High] No off-site brand authority for AI engines to cite.** Answer engines favour entities with third-party corroboration. With ~2 referring hosts and a branded-only footprint, the brand lacks what's needed for non-branded AI citations. *Same lever as the backlink problem.*
-- **[Low] No `llms.txt` / Content-Signal / Markdown delivery** — optional hygiene, not ranking factors today.
-
----
-
-## Off-Site Authority & Backlinks — 35/100 ⚠️ *The decisive category*
-
-**Findings**
-- **[Critical] Near-zero backlink profile.** Common Crawl shows only **2 referring hosts**; domain PageRank rank ~51,994,670 (harmonic-centrality rank ~10.9M). This is *the* reason non-branded commercial terms don't rank and traffic is 98% branded.
-- **[High] No measurable authority flow to new URLs.** Historical equity isn't translating into non-branded rankings.
-
-**Recommendation:** A sustained link/citation program is the highest-ROI work available to this site — software review sites, Indian edtech directories, client case-study links, HARO/press, partner co-marketing. Target **20–30 quality referring domains over 2–3 months**, paired with the internal topic-cluster model so new authority lands on money pages.
-
----
-
-## Local SEO — 82/100
-
-**What works**
-- `LocalBusiness` schema sitewide with exact NAP (Coimbatore 641004), hours, geo and map link.
-- Google Business Profile exists (**4.2★ / 54 reviews**); dedicated `/solutions/coimbatore` and state pages.
-
-**Findings**
-- **[Medium] Review equity not surfaced on-site.** Add a testimonials section + legitimate `AggregateRating`.
-- **[Medium] Local landing pages thin/templated.** Add locally specific proof (named institutions, local case studies) and build India edtech citations.
-
----
-
-## Images — 88/100
-
-- **100% alt-text coverage** on sampled pages (0 of 81 homepage images missing alt).
-- Next.js image pipeline serves **WebP** with responsive `srcset` and `fetchpriority` on the LCP image.
-- **[Low]** Spot-check alt descriptiveness and ensure OG images are page-specific.
-
----
-
-## Scoring Breakdown
-
-| Category | Weight | Score | Weighted |
+## Performance — 86/100
+| | LCP | INP | CLS |
 |---|---|---|---|
-| Technical SEO | 22% | 90 | 19.8 |
-| Content Quality | 23% | 72 | 16.6 |
-| On-Page SEO | 20% | 85 | 17.0 |
-| Schema / Structured Data | 10% | 95 | 9.5 |
-| Performance (CWV) | 10% | 88 | 8.8 |
-| AI Search Readiness | 10% | 80 | 8.0 |
-| Images | 5% | 88 | 4.4 |
-| **Overall** | | | **≈ 84** |
+| CrUX origin (field) | 2,326 ms ✅ | **261 ms ⚠️** | 0.03 ✅ |
+| CrUX homepage (field) | 2,251 ms ✅ | 222 ms ⚠️ | 0.03 ✅ |
 
-> Off-site authority (score 35) sits *outside* these on-page weights by design. If authority were folded in, the effective "will this site grow non-branded traffic?" score would be far lower. **Treat backlinks as Priority #1 regardless of the 84.**
+Lab (mobile): `/` 96, `/products/college-erp` 89 (TBT 400 ms), `/comparisons/aveon-vs-camu` 95, `/get-started/school-erp` 93; lab LCP ~1.1 s everywhere. **INP over 200 ms is the one Core Web Vitals miss**; homepage TBT rose 70 → 230 ms. Cut client JS and defer third-party scripts.
 
-See `ACTION-PLAN.md` for the prioritised roadmap and `findings/` for per-category detail.
+## AI search readiness — 77/100 (GEO 71, agent readiness 92)
+**Works:** all 15 major AI crawlers allowed and served full HTML; `llms.txt` live (the 6 Nov "no llms.txt" finding was wrong); Lighthouse Agentic Browsing 3/3; comparison pages and the campus-ERP guide are highly citable. Platform estimates: Bing Copilot 72, Google AI Overviews 62, ChatGPT 45, Perplexity 35.
+**Findings:** no Wikidata, YouTube, or review-site presence (High, authority); stale `public/ai-*` files (Medium); homepage lacks a plain "who is Aveon" sentence (Medium); comparison pages missing from `llms.txt` (Medium); go-live time stated three ways — "30 days", "30 working days", "four weeks" (Low); `/contact` demo form has five inputs without label association (Medium, agent and accessibility).
+
+## Search experience (separate score) — 54/100
+Page types mostly match the SERPs; "campus management system" lands on `/products` ("Our Products", phrase absent) — High mismatch. "College ERP" and "school management software" SERPs are ~50–60% "best of" lists where Aveon is absent. Paid landing pages are structurally sound but: School/Hostel variants show college proof, the only offer is a 30-minute demo, no price signal, no product visual, no NAAC variant.
+
+## Local (separate score) — 74/100
+NAP consistent everywhere on-site and in schema. Gaps: no reviews shown on-site, citations mostly unverified (Justdial, Sulekha, Clutch, GoodFirms unconfirmed; IndiaMART lacks street line and phone), location pages templated and thin, no Maps place link on `/contact`.
+
+## Backlinks — insufficient data (Tier 0)
+2 referring hosts; Common Crawl data still Jan–Mar 2026, so November work won't show yet. Competitors: academiaerp.com 28 hosts, iitms.co.in 3 hosts but PageRank rank ~0.5M vs Aveon ~52M. Add a free Moz key and verify Bing Webmaster to measure properly. Target 20–30 referring domains by Feb 2027. **Do not enable the hidden "Powered by Aveon" client-portal links until each host passes `scripts/portal-check.mjs`** (two portals were found infected on 3 Nov).
+
+---
+
+## Fixed since 6 Nov
+- Homepage lab performance 85 → 96; lab LCP 4.3 s → 1.1 s.
+- Five comparison pages live with full schema; `/partners` no longer thin; breadcrumbs added on most key pages; CSP header added (report-only).
+- Sitemap 59 → 66 URLs; GSC clicks +68%.
+
+## Unchanged since 6 Nov
+- 2 referring hosts; ~98% branded clicks; organisation-only authorship; `messtoken` subdomain indexable; meta keywords tag; `/solutions/coimbatore` thin.
+
+See `ACTION-PLAN.md` for the prioritised fix list.

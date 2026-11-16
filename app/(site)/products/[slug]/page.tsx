@@ -5,6 +5,7 @@ import { products, getProduct, applyProductOverrides, type Product } from "@/lib
 import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 import CTASection from "@/components/sections/CTASection";
 import RelatedGuides from "@/components/blog/RelatedGuides";
+import CompareVendorsLinks from "@/components/sections/CompareVendorsLinks";
 import ProductHeroImage, { productImages } from "@/components/sections/ProductHeroImage";
 import UniversityERPContent, { universityErpFaqs } from "@/components/sections/UniversityERPContent";
 import CollegeERPContent, { collegeErpFaqs } from "@/components/sections/CollegeERPContent";
@@ -389,6 +390,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </section>
 
+      {["college-erp", "university-erp", "school-erp"].includes(product.slug) && <CompareVendorsLinks />}
       <RelatedGuides slugs={guidesBySlug[product.slug] ?? defaultGuides} />
       <CTASection />
     </>

@@ -100,46 +100,37 @@ export default function MultiCampusPage() {
         </div>
       </section>
 
-      {/* Case Study */}
+      {/* How a multi-campus rollout works (no named client: none is approved for publication) */}
       <section className="bg-primary-50 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
           <h2 className="mb-8 text-[clamp(28px,4vw,40px)] font-extrabold text-navy-900">
-            How Symbiosis Unified 5 Campuses
+            How a Multi-Campus Rollout Works
           </h2>
           <div className="grid gap-12 sm:grid-cols-2">
             <div>
-              <h3 className="mb-4 font-bold text-navy-900">Challenge</h3>
+              <h3 className="mb-4 font-bold text-navy-900">Where groups usually start</h3>
               <ul className="space-y-2 text-navy-700">
-                <li>• 5 separate campuses with different systems</li>
-                <li>• No unified student database</li>
-                <li>• Inconsistent admissions process</li>
-                <li>• Difficult institutional reporting for accreditation</li>
+                <li>• Each campus runs its own system, or its own copy of one</li>
+                <li>• No single student or staff record across the group</li>
+                <li>• Admissions and fee rules differ from campus to campus</li>
+                <li>• Group-level and accreditation reports are assembled by hand</li>
               </ul>
             </div>
             <div>
-              <h3 className="mb-4 font-bold text-navy-900">Solution with Aveon</h3>
+              <h3 className="mb-4 font-bold text-navy-900">What changes with Aveon</h3>
               <ul className="space-y-2 text-navy-700">
-                <li>✓ Single unified platform for all campuses</li>
-                <li>✓ Centralized student management</li>
-                <li>✓ Standardized academic processes</li>
-                <li>✓ Automated NAAC reporting</li>
+                <li>✓ One database and one login for every campus</li>
+                <li>✓ Group-wide rules, with campus-level settings where they genuinely differ</li>
+                <li>✓ Consolidated dashboards for management, campus-wise drill-down for principals</li>
+                <li>✓ NAAC and NBA data captured once and reported per campus or for the group</li>
               </ul>
             </div>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600">40%</div>
-              <p className="text-sm text-navy-700">Admin time reduced</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600">100%</div>
-              <p className="text-sm text-navy-700">Data consistency</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600">2 weeks</div>
-              <p className="text-sm text-navy-700">Implementation time</p>
-            </div>
-          </div>
+          <p className="mt-8 max-w-[800px] text-navy-700">
+            Campuses are usually brought on one at a time, each following Aveon&apos;s four-week playbook: data
+            migration, configuration, role-based training and a supervised go-live. Ask for references from
+            multi-campus groups in your state when you book a demo.
+          </p>
         </div>
       </section>
 

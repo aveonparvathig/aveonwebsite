@@ -174,11 +174,11 @@ export default async function StateCollegeERPPage({ params }: StatePageProps) {
               <p className="mt-2 text-navy-700 font-semibold">Institutions across India</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">1M+</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.students}</p>
               <p className="mt-2 text-navy-700 font-semibold">Students Served</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-primary-600">16+</p>
+              <p className="text-5xl font-bold text-primary-600">{siteConfig.stats.yearsExperience}</p>
               <p className="mt-2 text-navy-700 font-semibold">Years Experience</p>
             </div>
           </div>

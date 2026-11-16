@@ -70,8 +70,28 @@ export default function Footer({
                 </Link>
               </li>
               <li>
+                <Link href="/about/team" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
+                  Our Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions/coimbatore" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
+                  Coimbatore Office
+                </Link>
+              </li>
+              <li>
                 <Link href="/pricing" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
                   Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/comparisons" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
+                  Compare ERP Vendors
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources/college-erp-buyers-guide" className="block py-1.5 text-navy-700 transition-colors hover:text-primary-600">
+                  ERP Buyer&apos;s Guide
                 </Link>
               </li>
               {company.map((n) => (
